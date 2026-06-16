@@ -1,0 +1,314 @@
+{
+  "case_id": "CASE_G",
+  "case_name": "Blind Audit Mixed Pattern Set",
+  "case_brief": "Blind audit case: no brief should be entered. The analysis engine should infer the most likely crime type from detected patterns.",
+  "accounts": {
+    "G001": {
+      "person": "SHAHID KHAN",
+      "bank": "ICICI",
+      "account_number": "020217664067",
+      "file": "G001_SHAHID_KHAN_ICICI.xlsx",
+      "role": "Blind audit hub",
+      "scenario": "Mixed undisclosed suspicious network",
+      "suspicious": true,
+      "fraud_patterns": [
+        3,
+        5,
+        12,
+        14,
+        22,
+        25
+      ],
+      "hidden_pattern_counts": {
+        "case_12_hawala_matched_pair": 16,
+        "case_13_fifo": 16,
+        "case_6_dwell_time": 48,
+        "case_8_velocity_spike": 24,
+        "case_19_new_counterparty": 24,
+        "case_2_layering": 24,
+        "case_17_single_counterparty": 24,
+        "case_14_cash_fragmentation": 8
+      },
+      "transaction_count": 1274,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "G002": {
+      "person": "MEERA PILLAI",
+      "bank": "Axis",
+      "account_number": "92007054058014",
+      "file": "G002_MEERA_PILLAI_Axis.csv",
+      "role": "Clean salaried control",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 631,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "G003": {
+      "person": "GANESH KUMAR",
+      "bank": "Canara",
+      "account_number": "57075693133470",
+      "file": "G003_GANESH_KUMAR_Canara.csv",
+      "role": "Blind audit clean",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 720,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "G004": {
+      "person": "USHA RANI",
+      "bank": "SBI",
+      "account_number": "00000083314151388",
+      "file": "G004_USHA_RANI_SBI.xlsx",
+      "role": "Blind audit round-trip",
+      "scenario": "Circular flow account",
+      "suspicious": true,
+      "fraud_patterns": [
+        1,
+        13,
+        22,
+        25
+      ],
+      "hidden_pattern_counts": {
+        "case_12_hawala_matched_pair": 16
+      },
+      "transaction_count": 813,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "G005": {
+      "person": "NILESH KULKARNI",
+      "bank": "HDFC",
+      "account_number": "50105560368973",
+      "file": "G005_NILESH_KULKARNI_HDFC.xlsx",
+      "role": "Clean family savings",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 670,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "G006": {
+      "person": "KARTHIK MENON",
+      "bank": "ICICI",
+      "account_number": "020229020512",
+      "file": "G006_KARTHIK_MENON_ICICI.pdf",
+      "role": "Blind audit mule",
+      "scenario": "Unlabelled mule flow",
+      "suspicious": true,
+      "fraud_patterns": [
+        2,
+        6,
+        17,
+        22,
+        25
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 928,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "G007": {
+      "person": "RAMESH GOWDA",
+      "bank": "Axis",
+      "account_number": "92003145770059",
+      "file": "G007_RAMESH_GOWDA_Axis.pdf",
+      "role": "Blind audit clean",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 730,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "G008": {
+      "person": "LATHA MURTHY",
+      "bank": "Canara",
+      "account_number": "94459208932001",
+      "file": "G008_LATHA_MURTHY_Canara.pdf",
+      "role": "Blind audit round-trip",
+      "scenario": "Circular flow account",
+      "suspicious": true,
+      "fraud_patterns": [
+        1,
+        13,
+        22,
+        25
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 886,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "G009": {
+      "person": "VINAY PATIL",
+      "bank": "SBI",
+      "account_number": "00000088286284450",
+      "file": "G009_VINAY_PATIL_SBI.csv",
+      "role": "Clean small business",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 643,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "G010": {
+      "person": "SANJANA HEGDE",
+      "bank": "HDFC",
+      "account_number": "50104213636038",
+      "file": "G010_SANJANA_HEGDE_HDFC.pdf",
+      "role": "Blind audit mule",
+      "scenario": "Unlabelled mule flow",
+      "suspicious": true,
+      "fraud_patterns": [
+        2,
+        6,
+        17,
+        22,
+        25
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 973,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "G011": {
+      "person": "MALLIKA DAS",
+      "bank": "ICICI",
+      "account_number": "020230447110",
+      "file": "G011_MALLIKA_DAS_ICICI.pdf",
+      "role": "Blind audit clean",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 749,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "G012": {
+      "person": "RAHUL SINGH",
+      "bank": "Axis",
+      "account_number": "92000286525315",
+      "file": "G012_RAHUL_SINGH_Axis.pdf",
+      "role": "Blind audit round-trip",
+      "scenario": "Circular flow account",
+      "suspicious": true,
+      "fraud_patterns": [
+        1,
+        13,
+        22,
+        25
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 822,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "G013": {
+      "person": "TANVI RAO",
+      "bank": "Canara",
+      "account_number": "06195371263936",
+      "file": "G013_TANVI_RAO_Canara.pdf",
+      "role": "Blind audit hub",
+      "scenario": "Mixed undisclosed suspicious network",
+      "suspicious": true,
+      "fraud_patterns": [
+        3,
+        5,
+        12,
+        14,
+        22,
+        25
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1085,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    }
+  },
+  "expected_score_ranking": [
+    {
+      "rank": 1,
+      "account": "G001",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Mixed undisclosed suspicious network"
+    },
+    {
+      "rank": 2,
+      "account": "G013",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Mixed undisclosed suspicious network"
+    },
+    {
+      "rank": 3,
+      "account": "G006",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Unlabelled mule flow"
+    },
+    {
+      "rank": 4,
+      "account": "G010",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Unlabelled mule flow"
+    },
+    {
+      "rank": 5,
+      "account": "G004",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Circular flow account"
+    }
+  ]
+}

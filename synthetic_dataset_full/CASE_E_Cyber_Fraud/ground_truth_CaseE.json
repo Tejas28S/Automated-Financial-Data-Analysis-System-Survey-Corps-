@@ -1,0 +1,227 @@
+{
+  "case_id": "CASE_E",
+  "case_name": "Cyber Fraud and OTP Scam Collections",
+  "case_brief": "Cyber-fraud collections show sudden velocity spikes, many new counterparties, and synchronized transfers into mule accounts.",
+  "accounts": {
+    "E001": {
+      "person": "SUNIL YADAV",
+      "bank": "ICICI",
+      "account_number": "020250763928",
+      "file": "E001_SUNIL_YADAV_ICICI.pdf",
+      "role": "Cyber collection account",
+      "scenario": "Velocity spike and new counterparties",
+      "suspicious": true,
+      "fraud_patterns": [
+        8,
+        9,
+        12,
+        14,
+        19,
+        21,
+        22
+      ],
+      "hidden_pattern_counts": {
+        "case_6_dwell_time": 48,
+        "case_8_velocity_spike": 24,
+        "case_19_new_counterparty": 24,
+        "case_2_layering": 24,
+        "case_17_single_counterparty": 24,
+        "case_14_cash_fragmentation": 8
+      },
+      "transaction_count": 1015,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "E002": {
+      "person": "REKHA PILLAI",
+      "bank": "Axis",
+      "account_number": "92004382823429",
+      "file": "E002_REKHA_PILLAI_Axis.xlsx",
+      "role": "Clean salaried control",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 752,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "E003": {
+      "person": "FARHAN KHAN",
+      "bank": "Canara",
+      "account_number": "83403070154803",
+      "file": "E003_FARHAN_KHAN_Canara.pdf",
+      "role": "Cash-out terminal",
+      "scenario": "ATM withdrawals after fraud credits",
+      "suspicious": true,
+      "fraud_patterns": [
+        14,
+        16,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1169,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "E004": {
+      "person": "ANAND KUMAR",
+      "bank": "SBI",
+      "account_number": "00000021109660790",
+      "file": "E004_ANAND_KUMAR_SBI.pdf",
+      "role": "Cyber collection account",
+      "scenario": "Velocity spike and new counterparties",
+      "suspicious": true,
+      "fraud_patterns": [
+        8,
+        9,
+        12,
+        14,
+        19,
+        21,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 925,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "E005": {
+      "person": "BINDHU NAIR",
+      "bank": "HDFC",
+      "account_number": "50106622824000",
+      "file": "E005_BINDHU_NAIR_HDFC.xlsx",
+      "role": "Clean family savings",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 705,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "E006": {
+      "person": "CHANDAN SHARMA",
+      "bank": "ICICI",
+      "account_number": "020203160378",
+      "file": "E006_CHANDAN_SHARMA_ICICI.pdf",
+      "role": "Cash-out terminal",
+      "scenario": "ATM withdrawals after fraud credits",
+      "suspicious": true,
+      "fraud_patterns": [
+        14,
+        16,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1097,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "E007": {
+      "person": "DEEPAK JOSHI",
+      "bank": "Axis",
+      "account_number": "92004646239051",
+      "file": "E007_DEEPAK_JOSHI_Axis.xlsx",
+      "role": "Cyber collection account",
+      "scenario": "Velocity spike and new counterparties",
+      "suspicious": true,
+      "fraud_patterns": [
+        8,
+        9,
+        12,
+        14,
+        19,
+        21,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 839,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "E008": {
+      "person": "ARCHANA PILLAI",
+      "bank": "Canara",
+      "account_number": "89020532670189",
+      "file": "E008_ARCHANA_PILLAI_Canara.pdf",
+      "role": "OTP mule",
+      "scenario": "Fast pass-through of victim credits",
+      "suspicious": true,
+      "fraud_patterns": [
+        2,
+        6,
+        8,
+        17,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 821,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    }
+  },
+  "expected_score_ranking": [
+    {
+      "rank": 1,
+      "account": "E001",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Velocity spike and new counterparties"
+    },
+    {
+      "rank": 2,
+      "account": "E004",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Velocity spike and new counterparties"
+    },
+    {
+      "rank": 3,
+      "account": "E007",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Velocity spike and new counterparties"
+    },
+    {
+      "rank": 4,
+      "account": "E008",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Fast pass-through of victim credits"
+    },
+    {
+      "rank": 5,
+      "account": "E003",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "ATM withdrawals after fraud credits"
+    }
+  ]
+}

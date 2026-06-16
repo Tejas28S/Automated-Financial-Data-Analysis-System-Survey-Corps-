@@ -1,0 +1,286 @@
+{
+  "case_id": "CASE_C",
+  "case_name": "Money Mule Layering Chain",
+  "case_brief": "Funds from multiple sources pass quickly through mule accounts with very low dwell time before reaching terminal accounts.",
+  "accounts": {
+    "C001": {
+      "person": "PRIYA NAIR",
+      "bank": "ICICI",
+      "account_number": "020217057699",
+      "file": "C001_PRIYA_NAIR_ICICI.pdf",
+      "role": "Mule account",
+      "scenario": "Near-zero dwell pass-through",
+      "suspicious": true,
+      "fraud_patterns": [
+        2,
+        6,
+        7,
+        9,
+        17,
+        22
+      ],
+      "hidden_pattern_counts": {
+        "case_6_dwell_time": 48,
+        "case_8_velocity_spike": 24,
+        "case_19_new_counterparty": 24,
+        "case_2_layering": 24,
+        "case_17_single_counterparty": 24
+      },
+      "transaction_count": 973,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "C002": {
+      "person": "ROHIT SHARMA",
+      "bank": "Axis",
+      "account_number": "92001309128488",
+      "file": "C002_ROHIT_SHARMA_Axis.csv",
+      "role": "Clean salaried control",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 677,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "C003": {
+      "person": "KAVYA REDDY",
+      "bank": "Canara",
+      "account_number": "82024393923959",
+      "file": "C003_KAVYA_REDDY_Canara.csv",
+      "role": "Terminal receiver",
+      "scenario": "Convergence point",
+      "suspicious": true,
+      "fraud_patterns": [
+        3,
+        5,
+        16,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1130,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "C004": {
+      "person": "NIKHIL GUPTA",
+      "bank": "SBI",
+      "account_number": "00000009800526394",
+      "file": "C004_NIKHIL_GUPTA_SBI.xlsx",
+      "role": "Mule account",
+      "scenario": "Near-zero dwell pass-through",
+      "suspicious": true,
+      "fraud_patterns": [
+        2,
+        6,
+        7,
+        9,
+        17,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 912,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "C005": {
+      "person": "SMITHA PILLAI",
+      "bank": "HDFC",
+      "account_number": "50108412349073",
+      "file": "C005_SMITHA_PILLAI_HDFC.xlsx",
+      "role": "Clean family savings",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 651,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "C006": {
+      "person": "ADITYA KUMAR",
+      "bank": "ICICI",
+      "account_number": "020243441211",
+      "file": "C006_ADITYA_KUMAR_ICICI.pdf",
+      "role": "Terminal receiver",
+      "scenario": "Convergence point",
+      "suspicious": true,
+      "fraud_patterns": [
+        3,
+        5,
+        16,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1113,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "C007": {
+      "person": "TARA SINGH",
+      "bank": "Axis",
+      "account_number": "92009836258973",
+      "file": "C007_TARA_SINGH_Axis.xlsx",
+      "role": "Mule account",
+      "scenario": "Near-zero dwell pass-through",
+      "suspicious": true,
+      "fraud_patterns": [
+        2,
+        6,
+        7,
+        9,
+        17,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 902,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "C008": {
+      "person": "VENKAT RAO",
+      "bank": "Canara",
+      "account_number": "55211454707071",
+      "file": "C008_VENKAT_RAO_Canara.pdf",
+      "role": "Layering intermediary",
+      "scenario": "Multi-hop layering account",
+      "suspicious": true,
+      "fraud_patterns": [
+        2,
+        5,
+        6,
+        17,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1216,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "C009": {
+      "person": "AYESHA KHAN",
+      "bank": "SBI",
+      "account_number": "00000066940687935",
+      "file": "C009_AYESHA_KHAN_SBI.pdf",
+      "role": "Clean small business",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 720,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "C010": {
+      "person": "LALITHA DEVI",
+      "bank": "HDFC",
+      "account_number": "50101915561318",
+      "file": "C010_LALITHA_DEVI_HDFC.pdf",
+      "role": "Mule account",
+      "scenario": "Near-zero dwell pass-through",
+      "suspicious": true,
+      "fraud_patterns": [
+        2,
+        6,
+        7,
+        9,
+        17,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 975,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "C011": {
+      "person": "MOHAN DAS",
+      "bank": "ICICI",
+      "account_number": "020295628984",
+      "file": "C011_MOHAN_DAS_ICICI.csv",
+      "role": "Layering intermediary",
+      "scenario": "Multi-hop layering account",
+      "suspicious": true,
+      "fraud_patterns": [
+        2,
+        5,
+        6,
+        17,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1176,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    }
+  },
+  "expected_score_ranking": [
+    {
+      "rank": 1,
+      "account": "C001",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Near-zero dwell pass-through"
+    },
+    {
+      "rank": 2,
+      "account": "C004",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Near-zero dwell pass-through"
+    },
+    {
+      "rank": 3,
+      "account": "C007",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Near-zero dwell pass-through"
+    },
+    {
+      "rank": 4,
+      "account": "C010",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Near-zero dwell pass-through"
+    },
+    {
+      "rank": 5,
+      "account": "C008",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Multi-hop layering account"
+    }
+  ]
+}

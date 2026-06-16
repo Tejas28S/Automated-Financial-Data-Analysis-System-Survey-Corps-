@@ -1,0 +1,235 @@
+{
+  "case_id": "CASE_D",
+  "case_name": "Government Scheme Diversion",
+  "case_brief": "Government benefit payments appear to be diverted using multiple beneficiary names mapped to a small number of destination accounts.",
+  "accounts": {
+    "D001": {
+      "person": "PREETHI IYER",
+      "bank": "Axis",
+      "account_number": "92009555855256",
+      "file": "D001_PREETHI_IYER_Axis.xlsx",
+      "role": "Scheme operator",
+      "scenario": "Ghost beneficiary diversion",
+      "suspicious": true,
+      "fraud_patterns": [
+        3,
+        4,
+        14,
+        18,
+        19,
+        22
+      ],
+      "hidden_pattern_counts": {
+        "case_18_ghost_beneficiary": 32,
+        "case_16_fan_in": 32,
+        "case_14_cash_fragmentation": 8
+      },
+      "transaction_count": 1135,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "D002": {
+      "person": "GOPAL VERMA",
+      "bank": "Canara",
+      "account_number": "29052485296528",
+      "file": "D002_GOPAL_VERMA_Canara.pdf",
+      "role": "Clean salaried control",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 668,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "D003": {
+      "person": "RESHMA KHAN",
+      "bank": "SBI",
+      "account_number": "00000018989995151",
+      "file": "D003_RESHMA_KHAN_SBI.xlsx",
+      "role": "Cash withdrawal account",
+      "scenario": "Cash fragmentation after credits",
+      "suspicious": true,
+      "fraud_patterns": [
+        14,
+        17,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 895,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "D004": {
+      "person": "BABU LAL",
+      "bank": "HDFC",
+      "account_number": "50109725448934",
+      "file": "D004_BABU_LAL_HDFC.csv",
+      "role": "Scheme operator",
+      "scenario": "Ghost beneficiary diversion",
+      "suspicious": true,
+      "fraud_patterns": [
+        3,
+        4,
+        14,
+        18,
+        19,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1132,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "D005": {
+      "person": "RANJIT SINGH",
+      "bank": "ICICI",
+      "account_number": "020225652740",
+      "file": "D005_RANJIT_SINGH_ICICI.csv",
+      "role": "Clean family savings",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 747,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    },
+    "D006": {
+      "person": "SUNITA DEVI",
+      "bank": "Axis",
+      "account_number": "92006478117231",
+      "file": "D006_SUNITA_DEVI_Axis.csv",
+      "role": "Cash withdrawal account",
+      "scenario": "Cash fragmentation after credits",
+      "suspicious": true,
+      "fraud_patterns": [
+        14,
+        17,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 916,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "D007": {
+      "person": "KAVITHA RAO",
+      "bank": "Canara",
+      "account_number": "98701896443908",
+      "file": "D007_KAVITHA_RAO_Canara.pdf",
+      "role": "Scheme operator",
+      "scenario": "Ghost beneficiary diversion",
+      "suspicious": true,
+      "fraud_patterns": [
+        3,
+        4,
+        14,
+        18,
+        19,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1074,
+      "expected_score_range": [
+        75,
+        95
+      ]
+    },
+    "D008": {
+      "person": "ARUN SHARMA",
+      "bank": "SBI",
+      "account_number": "00000078046861796",
+      "file": "D008_ARUN_SHARMA_SBI.xlsx",
+      "role": "Benefit receiver hub",
+      "scenario": "Multiple beneficiary names to one account",
+      "suspicious": true,
+      "fraud_patterns": [
+        16,
+        18,
+        22
+      ],
+      "hidden_pattern_counts": {},
+      "transaction_count": 1142,
+      "expected_score_range": [
+        50,
+        75
+      ]
+    },
+    "D009": {
+      "person": "DIVYA MENON",
+      "bank": "HDFC",
+      "account_number": "50102617434237",
+      "file": "D009_DIVYA_MENON_HDFC.csv",
+      "role": "Clean small business",
+      "scenario": "Clean control account",
+      "suspicious": false,
+      "fraud_patterns": [],
+      "hidden_pattern_counts": {},
+      "transaction_count": 742,
+      "expected_score_range": [
+        0,
+        20
+      ]
+    }
+  },
+  "expected_score_ranking": [
+    {
+      "rank": 1,
+      "account": "D001",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Ghost beneficiary diversion"
+    },
+    {
+      "rank": 2,
+      "account": "D004",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Ghost beneficiary diversion"
+    },
+    {
+      "rank": 3,
+      "account": "D007",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Ghost beneficiary diversion"
+    },
+    {
+      "rank": 4,
+      "account": "D003",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Cash fragmentation after credits"
+    },
+    {
+      "rank": 5,
+      "account": "D006",
+      "score_range": [
+        75,
+        95
+      ],
+      "reason": "Cash fragmentation after credits"
+    }
+  ]
+}

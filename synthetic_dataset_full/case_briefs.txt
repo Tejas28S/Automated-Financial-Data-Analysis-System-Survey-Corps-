@@ -1,0 +1,20 @@
+===== CASE A - College Admission Bribery Network =====
+Admission payments are suspected to be routed through personal accounts and education-service entities before cash withdrawal or onward transfer.
+
+===== CASE B - Hawala Settlement Operation =====
+Cash settlement and electronic transfer pairs indicate hawala-style movement with small commission differences and delayed matching credits.
+
+===== CASE C - Money Mule Layering Chain =====
+Funds from multiple sources pass quickly through mule accounts with very low dwell time before reaching terminal accounts.
+
+===== CASE D - Government Scheme Diversion =====
+Government benefit payments appear to be diverted using multiple beneficiary names mapped to a small number of destination accounts.
+
+===== CASE E - Cyber Fraud and OTP Scam Collections =====
+Cyber-fraud collections show sudden velocity spikes, many new counterparties, and synchronized transfers into mule accounts.
+
+===== CASE F - Illegal Loan App Collections =====
+Loan-app collections show small periodic repayments from many individuals, generic narrations, and aggregation into operator accounts.
+
+===== CASE G - Blind Audit Mixed Pattern Set =====
+Blind audit case: no brief should be entered. The analysis engine should infer the most likely crime type from detected patterns.

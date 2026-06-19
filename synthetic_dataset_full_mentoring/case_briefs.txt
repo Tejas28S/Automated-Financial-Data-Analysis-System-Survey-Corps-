@@ -1,0 +1,17 @@
+===== Admission Bribery / Education Payment Routing =====
+Look for structured payments from many students or parents, convergence into education-service accounts, and cash withdrawal after collections.
+
+===== Hawala Operation =====
+Look for matched debit-credit pairs with 2-3 percent commission difference within 24-48 hours.
+
+===== Mule Chain / Layering =====
+Look for near-zero dwell time, multi-hop chains, and convergence into terminal accounts.
+
+===== Government Scheme Fraud =====
+Look for multiple beneficiary names mapping to the same account number and APBS/MGNREGA-style credits.
+
+===== Cyber Fraud / OTP Scam =====
+Look for velocity spikes, synchronized transactions, and many new counterparties.
+
+===== Blind Audit =====
+Enter no case brief. The system should infer the likely crime pattern from hard-coded findings.

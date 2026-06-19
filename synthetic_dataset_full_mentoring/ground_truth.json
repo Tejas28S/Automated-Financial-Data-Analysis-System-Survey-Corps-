@@ -1,0 +1,155 @@
+{
+  "dataset_summary": {
+    "total_accounts": 70,
+    "total_transactions": 275730,
+    "date_range": "01/08/2022 to 30/06/2024",
+    "failed_transactions": 180,
+    "reversal_pairs": 95,
+    "planted_fraud_transactions": 1676,
+    "format_counts": {
+      "digital_pdf": 25,
+      "excel": 25,
+      "scanned_pdf": 12,
+      "csv": 8
+    },
+    "role_counts": {
+      "SMURF_SOURCE": 10,
+      "CLEAN": 14,
+      "HAWALA": 8,
+      "MULE": 15,
+      "HUB": 8,
+      "TERMINAL": 5,
+      "DORMANT": 6,
+      "GHOST": 4
+    }
+  },
+  "data_quality_issues": {
+    "date_format_variations": {
+      "count": 0,
+      "note": "Not injected in this build; kept clean for extraction baseline."
+    },
+    "exact_duplicates": {
+      "row_count": 0
+    },
+    "near_duplicates": {
+      "row_count": 0
+    },
+    "missing_narration": {
+      "row_count": 0
+    },
+    "missing_balance": {
+      "row_count": 0
+    },
+    "ocr_errors": {
+      "affected_accounts": [
+        "ACC051",
+        "ACC052",
+        "ACC053",
+        "ACC054",
+        "ACC055",
+        "ACC056",
+        "ACC057",
+        "ACC058",
+        "ACC059",
+        "ACC060",
+        "ACC061",
+        "ACC062"
+      ],
+      "note": "Mild page-level scan blur/rotation applied to scanned PDFs."
+    }
+  },
+  "fraud_patterns": {
+    "round_trip": [
+      {
+        "accounts": [
+          "ACC001",
+          "ACC005",
+          "ACC011",
+          "ACC019"
+        ],
+        "amount": 200000
+      }
+    ],
+    "mule_chain": [
+      {
+        "path": [
+          "ACC013",
+          "ACC021",
+          "ACC033",
+          "ACC044"
+        ],
+        "events": 120
+      }
+    ],
+    "smurfing": [
+      {
+        "collection_account": "ACC025",
+        "sender_count": 520
+      }
+    ],
+    "hawala": [
+      {
+        "debit_account": "ACC010",
+        "credit_account": "ACC031",
+        "occurrences": 6
+      }
+    ],
+    "dormancy_activation": [
+      {
+        "accounts": [
+          "ACC052",
+          "ACC054",
+          "ACC056"
+        ]
+      }
+    ],
+    "common_upi_handle": [
+      {
+        "upi_id": "payments2023@ybl",
+        "accounts": [
+          "ACC003",
+          "ACC017",
+          "ACC029",
+          "ACC008"
+        ]
+      }
+    ],
+    "convergence": [
+      {
+        "terminal_account": "ACC044",
+        "feeders": [
+          "ACC001",
+          "ACC005",
+          "ACC013",
+          "ACC021",
+          "ACC025",
+          "ACC033"
+        ]
+      }
+    ],
+    "synchronized_transactions": [
+      {
+        "dates": [
+          "14/06/2023",
+          "22/07/2023",
+          "08/09/2023",
+          "15/11/2023",
+          "03/02/2024"
+        ]
+      }
+    ],
+    "ghost_beneficiary": [
+      {
+        "account": "ACC062",
+        "unique_names_used": 12
+      }
+    ],
+    "velocity_spike": [
+      {
+        "account": "ACC037",
+        "spike_txns": 55,
+        "spike_period": "01/09/2023 to 07/09/2023"
+      }
+    ]
+  }
+}

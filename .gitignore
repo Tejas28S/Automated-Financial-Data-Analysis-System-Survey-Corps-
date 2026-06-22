@@ -1,0 +1,39 @@
+# Environment variables — never commit API keys to version control
+.env
+
+# Python bytecode — generated automatically, not needed in version control
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment folders
+venv/
+.venv/
+env/
+
+# Local storage — generated at runtime on each machine
+storage/chromadb/
+storage/llm_cache/
+
+# Upload folder — investigator files are not part of the codebase
+uploads/
+
+# Output files — generated reports and graphs
+outputs/reports/
+outputs/graphs/
+
+# Persisted extraction runs — contain REAL (de-anonymised) transaction data.
+# Generated locally on each run; must never be committed.
+outputs/extractions/
+
+# Local-only verification viewer & dev tools — internal demo aids, never pushed.
+tools/
+
+# macOS metadata files
+.DS_Store
+
+# IDE project files
+.vscode/
+.idea/
+*.swp

@@ -44,17 +44,31 @@ _DATE_LIKE = re.compile(r"^\d{1,4}[/\-.]\d{1,2}[/\-.]\d{2,4}")
 _META_LABELS = {
     "account_number": ["account number", "account no", "a/c number", "a/c no",
                        "acct number", "acct no", "account #"],
-    "account_holder": ["account holder", "account name", "customer name",
-                       "holder name", "a/c holder", "name of account holder"],
-    "ifsc_code": ["ifsc code", "ifsc"],
+    "account_holder": ["account holder", "account name", "account title",
+                       "customer name", "holder name", "a/c holder",
+                       "name of account holder", "primary holder", "name"],
+    "ifsc_code": ["ifsc code", "ifsc", "ifs code", "rtgs/neft ifsc"],
     "branch": ["branch name", "branch address", "branch"],
-    "account_type": ["account type", "a/c type", "scheme"],
+    "branch_code": ["branch code", "branch sol id", "sol id", "branch id"],
+    "account_type": ["account type", "a/c type", "type of account", "scheme",
+                     "product", "product type"],
     "bank_name": ["bank name", "bank"],
     "currency": ["currency"],
+    "customer_id": ["customer id", "cif no", "cif number", "cif", "customer number"],
+    "micr_code": ["micr code", "micr"],
+    "nominee_name": ["nominee name", "nominee", "name of nominee"],
+    "joint_holder": ["joint holder", "joint holders", "second holder"],
+    "branch_email": ["branch email", "branch e-mail", "email id", "e-mail"],
+    "branch_phone": ["branch phone", "branch contact", "mobile number",
+                     "regd. mobile number", "phone"],
     "opening_balance": ["opening balance", "brought forward"],
-    "closing_balance": ["closing balance", "carried forward"],
+    "closing_balance": ["closing balance", "carried forward", "available balance"],
     "statement_period": ["statement period", "period"],
 }
+
+# Cells that are pure separators between a label and its value (some exports put the
+# ":" in its own column, so the value is two cells to the right of the label).
+_SEPARATOR_CELLS = {":", "-", "=", "::", ":-"}
 
 # ── Column-header keyword map (header label → standard field), priority order ───
 # Used to map the transaction table's columns DETERMINISTICALLY from their header
@@ -62,17 +76,21 @@ _META_LABELS = {
 # (standard_field, [keyword spellings, most specific first]).
 _COL_KEYWORDS = [
     ("date", ["transaction date", "txn date", "value date", "posting date",
-              "tran date", "date"]),
-    ("narration", ["narration", "description", "particulars", "remarks",
-                   "transaction details", "details"]),
+              "tran date", "tran_date", "post date", "date"]),
+    ("narration", ["narration", "description", "particulars", "particular",
+                   "remarks", "transaction details", "details"]),
     ("balance", ["closing balance", "running balance", "available balance",
-                 "balance"]),
-    ("debit", ["withdrawal amt", "withdrawal", "withdrawals", "debit amount",
-               "debit", "w/drl", "dr amount", "dr"]),
-    ("credit", ["deposit amt", "deposit", "deposits", "credit amount",
-                "credit", "cr amount", "cr"]),
-    ("cheque_number", ["cheque number", "cheque no", "chq no", "instrument no",
-                       "chq"]),
+                 "balance", "bal"]),
+    # "dr_amt"/"cr_amt" (and the spaced forms) are common debit/credit column names
+    # in core-banking exports; without them the columns went unmapped and every
+    # amount came out zero. Listed before the bare "dr"/"cr" which are skipped on
+    # substring matching (too short) but still used for an EXACT header match.
+    ("debit", ["withdrawal amt", "withdrawals", "withdrawal", "debit amount",
+               "dr_amt", "dr amt", "debit", "w/drl", "dr amount", "dr"]),
+    ("credit", ["deposit amt", "deposits", "deposit", "credit amount",
+                "cr_amt", "cr amt", "credit", "cr amount", "cr"]),
+    ("cheque_number", ["cheque number", "cheque no", "chq no", "chqno",
+                       "instrument no", "chq"]),
     ("reference_number", ["chq/ref no", "reference no", "reference number",
                           "reference", "ref no", "utr", "rrn", "ref"]),
 ]
@@ -134,6 +152,31 @@ def _detect_header_index(rows: List[list]) -> int:
     if not rows:
         return 0
 
+    # ── Primary: locate the header by COLUMN-KEYWORD content ──────────────────
+    # The real transaction header names recognisable columns (a date column plus at
+    # least one of debit/credit/balance/narration). A key:value metadata row such as
+    # "Intrest Rate | 2.50 % p.a. | Email | Not Available" maps to NONE of these, so
+    # it can no longer be mistaken for the header (the bug that produced 0 rows on
+    # statements with a wide 2-panel metadata block above the table). We pick the
+    # all-text row with the most mapped fields that is immediately followed (after
+    # any blank rows) by a data row.
+    best_idx, best_score = None, 0
+    for i, r in enumerate(rows):
+        if not _row_is_all_text(r):
+            continue
+        cmap = _infer_column_map([str(c) for c in r if not _is_blank(c)])
+        core = {f for f in cmap if f in ("date", "narration", "debit", "credit", "balance")}
+        # A genuine header has a date column plus at least one money/narration column.
+        if "date" not in core or len(core) < 2:
+            continue
+        j = i + 1
+        while j < len(rows) and all(_is_blank(c) for c in rows[j]):
+            j += 1
+        if j < len(rows) and _row_has_data(rows[j]) and len(core) > best_score:
+            best_idx, best_score = i, len(core)
+    if best_idx is not None:
+        return best_idx
+
     widths = [len([c for c in r if not _is_blank(c)]) for r in rows]
     data_flags = [_row_has_data(r) for r in rows]
 
@@ -166,9 +209,45 @@ def _detect_header_index(rows: List[list]) -> int:
     return 0
 
 
+def _sniff_delimiter(content: str) -> str:
+    """
+    Detects the field delimiter of a CSV-like file (comma, tab, semicolon, pipe).
+
+    Bank "CSV" exports are not always comma-separated — some are TAB-delimited. We
+    let csv.Sniffer inspect a sample; if it is inconclusive we pick, among the
+    common delimiters, the one that yields the most consistent column count across
+    the first several non-empty lines. Falls back to comma.
+    """
+    sample = content[:8192]
+    try:
+        dialect = csv.Sniffer().sniff(sample, delimiters=",\t;|")
+        if dialect.delimiter in ",\t;|":
+            return dialect.delimiter
+    except (csv.Error, Exception):
+        pass
+
+    # Manual fallback: score each candidate by how many lines share the modal width.
+    lines = [ln for ln in sample.splitlines() if ln.strip()][:15]
+    best, best_score = ",", -1
+    for cand in (",", "\t", ";", "|"):
+        counts = [ln.count(cand) for ln in lines if ln.count(cand) > 0]
+        if not counts:
+            continue
+        modal = Counter(counts).most_common(1)[0]
+        score = modal[1] * modal[0]  # consistency × number of fields
+        if score > best_score:
+            best, best_score = cand, score
+    return best
+
+
 def _norm_label(s) -> str:
-    """Lower-case, collapse whitespace, drop a trailing colon — for label matching."""
-    return re.sub(r"\s+", " ", str(s).strip().lower()).rstrip(":").strip()
+    """
+    Normalises a metadata label for matching: lower-case, underscores → spaces,
+    collapse whitespace, drop a trailing colon. The underscore step lets a label
+    printed as "ACCOUNT_NAME" match the "account name" vocabulary.
+    """
+    t = str(s).strip().lower().replace("_", " ")
+    return re.sub(r"\s+", " ", t).rstrip(":").strip()
 
 
 def _parse_metadata_block(rows: List[list]) -> Dict[str, str]:
@@ -184,40 +263,74 @@ def _parse_metadata_block(rows: List[list]) -> Dict[str, str]:
     details: Dict[str, str] = {}
     period_from = period_to = ""
 
+    def _match_field(label: str):
+        """Returns the standard field a normalised label maps to, or None.
+        Prefers an EXACT variant match over a startswith match, and the LONGEST
+        variant, so "account number" is not shadowed by the generic "name"."""
+        best_field = None
+        best_len = -1
+        for field, variants in _META_LABELS.items():
+            for v in variants:
+                if label == v or label.startswith(v + " ") or label.startswith(v):
+                    if len(v) > best_len:
+                        best_field, best_len = field, len(v)
+        return best_field
+
+    def _record(label_raw: str, value: str):
+        nonlocal period_from, period_to
+        label = _norm_label(label_raw)
+        value = str(value).strip().lstrip(":").strip()
+        if not label or not value or value in _SEPARATOR_CELLS:
+            return
+        if label.startswith("period from") or label == "from":
+            period_from = value
+            return
+        if label.startswith("period to") or label == "to":
+            period_to = value
+            return
+        field = _match_field(label)
+        if field:
+            details.setdefault(field, value)
+
     for r in rows:
         cells = [str(c).strip() for c in r if not _is_blank(c)]
         if not cells:
             continue
 
-        if len(cells) >= 2:
-            # Two-cell layout: label in the first cell, value in the next.
-            label = _norm_label(cells[0])
-            value = cells[1].strip()
-        else:
-            # Single-cell layout: "Account No: 12345" or a "# Account No: 12345"
-            # comment line. Strip a leading comment marker and split on the colon.
+        # Single cell carrying "Label: value" (or "# Label: value" comment line).
+        if len(cells) == 1:
             text = cells[0].lstrip("#").strip()
-            if ":" not in text:
-                continue
-            label_part, _, value = text.partition(":")
-            label = _norm_label(label_part)
-            value = value.strip()
-
-        if not value:
+            if ":" in text:
+                lbl, _, val = text.partition(":")
+                _record(lbl, val)
             continue
 
-        # "Period From" / "Period To" are combined into one statement_period.
-        if label.startswith("period from") or label == "from":
-            period_from = value
-            continue
-        if label.startswith("period to") or label == "to":
-            period_to = value
-            continue
-
-        for field, variants in _META_LABELS.items():
-            if any(label == v or label.startswith(v) for v in variants):
-                details.setdefault(field, value)
-                break
+        # Multi-cell row. Banks lay metadata out in several ways on ONE row:
+        #   "Label", "value"                     (2 cells)
+        #   "Label", ":", "value"                (separator in its own cell)
+        #   "Label", ":", "value", "Label2", ":", "value2"   (two side-by-side panels)
+        # We WALK the cells: at each cell that is a known label, the value is the next
+        # non-separator cell. This recovers every label:value pair on the row and
+        # never mistakes a stray ":" cell for the value.
+        i = 0
+        n = len(cells)
+        matched_any = False
+        while i < n:
+            label = _norm_label(cells[i])
+            if _match_field(label) or label in ("period from", "period to", "from", "to"):
+                j = i + 1
+                while j < n and cells[j].strip() in _SEPARATOR_CELLS:
+                    j += 1
+                if j < n and _norm_label(cells[j]) and not _match_field(_norm_label(cells[j])):
+                    _record(cells[i], cells[j])
+                    matched_any = True
+                    i = j + 1
+                    continue
+            i += 1
+        # Fallback for a simple 2-cell row where the first cell wasn't a known label
+        # but the layout is clearly "label, value" (keeps prior behaviour).
+        if not matched_any and n >= 2 and cells[1].strip() not in _SEPARATOR_CELLS:
+            _record(cells[0], cells[1])
 
     if (period_from or period_to) and "statement_period" not in details:
         details["statement_period"] = f"{period_from} to {period_to}".strip()
@@ -463,11 +576,18 @@ def _read_csv_file(file_path: str) -> Tuple[Optional[pd.DataFrame], Dict[str, st
             )
             return None, {}
 
+        # ── Detect the field delimiter ───────────────────────────────────────
+        # Not every "CSV" is comma-separated — Indian bank exports also use TAB or
+        # semicolon/pipe. csv.Sniffer inspects a sample; we fall back to comma. The
+        # detected delimiter is used for BOTH the header scan and the final parse,
+        # otherwise a tab-delimited file collapses into one garbled column.
+        delimiter = _sniff_delimiter(content)
+
         # ── Find where the transaction table actually starts ─────────────────
         # csv.reader correctly counts fields even when a value is quoted and
-        # contains a comma, so the field-count detection is reliable.
+        # contains the delimiter, so the field-count detection is reliable.
         try:
-            rows = list(csv.reader(io.StringIO(content)))
+            rows = list(csv.reader(io.StringIO(content), delimiter=delimiter))
         except Exception as error:
             logger.error(
                 "extractor_excel_csv._read_csv_file: "
@@ -491,6 +611,7 @@ def _read_csv_file(file_path: str) -> Tuple[Optional[pd.DataFrame], Dict[str, st
             df = pd.read_csv(
                 file_path,
                 encoding=encoding,
+                sep=delimiter,
                 skiprows=skiprows,
                 engine="python",
                 skip_blank_lines=True,

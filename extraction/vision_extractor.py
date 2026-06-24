@@ -55,6 +55,47 @@ RETRY_DELAY_SECONDS = 2
 
 # Bump this if the prompt/output shape changes, so old cache entries are ignored.
 _CACHE_VERSION = "v1"
+# Separate cache version for the text-transcription path (Stage 1 of the new image
+# pipeline) so its cache never collides with the JSON reader's cache.
+_TRANSCRIBE_CACHE_VERSION = "vtext_v1"
+
+# Stage 1 prompt — the vision model's ONLY job is faithful transcription. It does
+# NOT classify columns, split debit/credit, or emit JSON. Keeping output as plain,
+# date-anchored lines means the proven deterministic text parser (the same one the
+# digital-PDF path uses) can process every row downstream — the model reads pixels,
+# code does the structuring. Shorter per-row output than JSON also means fewer
+# truncations on long statements (more rows fit before the token cap).
+VISION_TRANSCRIBE_PROMPT = (
+    "You are a bank-statement TRANSCRIPTION engine for a police financial "
+    "investigation. Read THIS IMAGE and transcribe it as plain text. Do NOT analyse, "
+    "classify, summarise, or output JSON or a table grid.\n"
+    "\n"
+    "Output EXACTLY two sections, in this order:\n"
+    "\n"
+    "ACCOUNT DETAILS:\n"
+    "Write one 'Label: value' line for each identity field that is visible — "
+    "Account Holder, Account Number, IFSC, Bank Name, Branch, Account Type, "
+    "Statement Period, Opening Balance, Closing Balance. Omit a field that is not "
+    "shown. If this image is a continuation page with no account header at all, "
+    "write the single line: ACCOUNT DETAILS: (none on this page)\n"
+    "\n"
+    "TRANSACTIONS:\n"
+    "Write ONE LINE per transaction row, in the exact top-to-bottom order shown.\n"
+    "Each line MUST begin with the transaction date, then the description text, then "
+    "the money values exactly as printed, with the RUNNING BALANCE as the LAST number "
+    "on the line. Separate fields with single spaces. Keep amounts exactly as printed "
+    "(keep commas and decimals, e.g. 1,250.00).\n"
+    "\n"
+    "RULES:\n"
+    "- Transcribe EVERY transaction row you can see; never skip or summarise a row.\n"
+    "- If a debit/withdrawal OR credit/deposit cell is EMPTY, write NOTHING for it "
+    "(no 0, no dash) — write only the amount that actually has a value, then the "
+    "balance. So a normal row has just two numbers: the amount and the balance.\n"
+    "- If a value is blurred and truly unreadable, write UNREADABLE in its place; "
+    "never drop the row.\n"
+    "- Do NOT output column headers, table borders, pipes, bullets, or row numbers.\n"
+    "- Output nothing except the two sections described above.\n"
+)
 
 # The exact instruction we give the vision model. It is written as a strict OCR +
 # structuring task so the model returns data, not conversation.
@@ -236,6 +277,113 @@ def extract_statement_from_image(image_path: str) -> Dict[str, Any]:
 
     logger.error("vision_extractor.extract_statement_from_image: all attempts failed for '%s'", image_path)
     return {"account_details": {}, "transactions": [], "engine": "failed", "raw_chars": 0}
+
+
+def transcribe_image_to_text(image_path: str) -> Dict[str, Any]:
+    """
+    Stage 1 of the redesigned image pipeline: VISION → TEXT ONLY.
+
+    Sends a statement image to the Groq vision model and asks ONLY for a faithful
+    plain-text transcription (an account-details header block + one date-anchored
+    line per transaction). The model does NOT assign columns, split debit/credit,
+    or emit JSON — that structuring is done downstream by deterministic code, the
+    same proven parser the digital-PDF path uses.
+
+    Why this is better than asking vision for JSON directly:
+      • Completeness — shorter per-row output than JSON means fewer truncations on
+        long statements (more rows fit before the token cap), and a deterministic
+        parser never "gives up" mid-list the way a JSON generator can.
+      • Auditability — the structuring step is plain code, not a model decision.
+      • Continuation — the text of several images can be grouped and parsed together.
+
+    The result is cached on disk keyed by the image bytes (re-running the same image
+    costs 0 tokens). Returns:
+        {"text": <transcription>, "engine": "groq_vision_text",
+         "source": "groq"|"cache", "raw_chars": int}
+    On total failure returns text="" with engine="failed" so the caller can fall
+    back to the JSON reader (the accuracy floor) without crashing.
+    """
+    with open(image_path, "rb") as f:
+        image_bytes = f.read()
+    cache_key = hashlib.md5(
+        image_bytes + f"{GROQ_VISION_MODEL}{_TRANSCRIBE_CACHE_VERSION}".encode("utf-8")
+    ).hexdigest()
+    cache_file = LLM_CACHE_DIR / f"vtext_{cache_key}.json"
+
+    if cache_file.exists():
+        try:
+            with open(cache_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            data["engine"] = "groq_vision_text"
+            data["source"] = "cache"
+            logger.info(
+                "vision_extractor.transcribe_image_to_text: CACHE HIT for '%s' "
+                "(no API call, 0 tokens).", Path(image_path).name,
+            )
+            return data
+        except Exception as e:
+            logger.warning("vision_extractor: bad transcription cache %s (%s); re-reading.",
+                           cache_file, e)
+            cache_file.unlink(missing_ok=True)
+
+    if not GROQ2_KEY:
+        raise RuntimeError(
+            "GROQ2 key not found in .env — add it before reading statement images "
+            "(it is the key used for the vision reader)."
+        )
+
+    logger.info("vision_extractor.transcribe_image_to_text: reading '%s' (Groq vision, text)",
+                Path(image_path).name)
+    client = Groq(api_key=GROQ2_KEY)
+    data_url = _bounded_jpeg_data_url(image_path)
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            response = client.chat.completions.create(
+                model=GROQ_VISION_MODEL,
+                messages=[{
+                    "role": "user",
+                    "content": [
+                        {"type": "image_url", "image_url": {"url": data_url}},
+                        {"type": "text", "text": VISION_TRANSCRIBE_PROMPT},
+                    ],
+                }],
+                temperature=0,        # deterministic reading
+                max_tokens=8000,      # plenty of room; text is shorter than JSON per row
+            )
+            raw = response.choices[0].message.content.strip()
+            data = {
+                "text": raw,
+                "engine": "groq_vision_text",
+                "raw_chars": len(raw),
+                "source": "groq",
+            }
+            try:
+                with open(cache_file, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=2, default=str)
+            except Exception as e:
+                logger.warning("vision_extractor: could not write transcription cache %s (%s)",
+                               cache_file, e)
+            logger.info(
+                "vision_extractor.transcribe_image_to_text: transcribed '%s' → %d chars",
+                Path(image_path).name, len(raw),
+            )
+            return data
+        except Exception as err:
+            logger.warning(
+                "vision_extractor.transcribe_image_to_text: attempt %d failed: %s",
+                attempt, err,
+            )
+            if _is_nonretryable(err):
+                logger.error("vision_extractor.transcribe_image_to_text: non-retryable "
+                             "error — not retrying.")
+                break
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_DELAY_SECONDS)
+
+    logger.error("vision_extractor.transcribe_image_to_text: all attempts failed for '%s'",
+                 image_path)
+    return {"text": "", "engine": "failed", "raw_chars": 0, "source": "failed"}
 
 
 def extract_structured_from_scanned_pdf(

@@ -175,7 +175,18 @@ STANDARD_COLUMNS = ["Date", "Time", "Narration", "Debit", "Credit", "Balance", "
 # being dropped just because a bank labelled the column "CHQNO" or "Ref No".
 # Team decision: a cheque number and a transaction reference are DIFFERENT things in
 # an investigation, so they are kept as two separate fields, never merged.
-REFERENCE_COLUMNS = ["Reference_Number", "Cheque_Number"]
+#
+# Four distinct identifier concepts, each its own field (all ADDITIVE, all optional):
+#   Transaction_ID        — the bank's own per-row id from a dedicated "Tran Id" column
+#   Reference_Number      — the value from a dedicated "Ref No / Reference Number" column
+#   Transaction_Reference — an identifier parsed OUT OF the narration text
+#                           (UPI/UTR/IMPS/NEFT/RRN id embedded in "UPI/506.../NAME")
+#   Cheque_Number         — a cheque/instrument number
+# A statement may carry any subset; absent ones stay blank (never guessed). Keeping
+# the dedicated-column reference separate from the narration-embedded one removes the
+# old ambiguity where both landed in a single "Reference_Number" field.
+REFERENCE_COLUMNS = ["Transaction_ID", "Reference_Number",
+                     "Transaction_Reference", "Cheque_Number"]
 
 # ── Validation Tolerances ────────────────────────────────────────────────────
 # When checking balance arithmetic (previous_balance + credit - debit = current_balance),
@@ -221,7 +232,7 @@ EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 DIGITAL_PDF_CHAR_THRESHOLD = 100
 
 # Complete list of file extensions that the system accepts from investigators.
-SUPPORTED_EXTENSIONS = [".pdf", ".xlsx", ".xls", ".csv", ".docx", ".jpg", ".jpeg", ".png"]
+SUPPORTED_EXTENSIONS = [".pdf", ".xlsx", ".xls", ".csv", ".docx", ".txt", ".jpg", ".jpeg", ".png"]
 
 
 # ── Startup key check ────────────────────────────────────────────────────────

@@ -95,6 +95,7 @@ def persist_extraction_run(
 
     clean_path = session_dir / "clean_transactions.csv"
     flagged_path = session_dir / "flagged_transactions.csv"
+    duplicates_path = session_dir / "duplicates.csv"
     metadata_path = session_dir / "metadata.json"
 
     statements = statements or []
@@ -122,6 +123,52 @@ def persist_extraction_run(
         with open(stmt_path, "w", encoding="utf-8") as f:
             json.dump(bundle, f, indent=2, default=str)
         statement_files.append(stmt_path.name)
+
+    # ── 2a. Separate exact duplicates into their own CSV ──────────────────────
+    # mark_duplicates() tags later copies of a transaction with `duplicate_of` (the
+    # txn_id of the first occurrence). Per investigator request, duplicates are NOT
+    # mixed into the clean table — they are pulled out into duplicates.csv with a
+    # full audit trail (which clean row each duplicates, its date/amount/narration,
+    # and the reason). The clean table then keeps only the FIRST occurrence of each
+    # transaction. Nothing is lost: every duplicate is recorded in duplicates.csv.
+    duplicates_out = pd.DataFrame()
+    clean_df = clean_df.reset_index(drop=True)
+    if "duplicate_of" in clean_df.columns and not clean_df.empty:
+        rownum_by_txnid = {
+            tid: i for i, tid in enumerate(clean_df.get("txn_id", pd.Series(dtype=str)).tolist())
+        }
+        dup_mask = clean_df["duplicate_of"].notna()
+        if dup_mask.any():
+            dup_records = []
+            for i, row in clean_df[dup_mask].iterrows():
+                debit = float(row.get("Debit", 0) or 0)
+                credit = float(row.get("Credit", 0) or 0)
+                amount = debit if debit > 0 else credit
+                date_val = row.get("Date", "")
+                if pd.notna(date_val) and hasattr(date_val, "strftime"):
+                    date_val = date_val.strftime("%d/%m/%Y")
+                dup_records.append({
+                    "duplicate_row_number": int(i),
+                    "original_row_number": rownum_by_txnid.get(row.get("duplicate_of"), ""),
+                    "account_number": row.get("Account_ID", ""),
+                    "date": date_val,
+                    "amount": amount,
+                    "debit": debit,
+                    "credit": credit,
+                    "narration": row.get("Narration", ""),
+                    "reason_flagged": "exact_duplicate (same Date + Narration + Debit + Credit + Account)",
+                })
+            duplicates_out = pd.DataFrame(dup_records)
+        # Keep only first occurrences in the clean table.
+        clean_df = clean_df[clean_df["duplicate_of"].isna()].reset_index(drop=True)
+    # Always write the file WITH headers (even when there are no duplicates) so the
+    # output schema is stable and downstream readers never hit an empty file.
+    if duplicates_out.empty:
+        duplicates_out = pd.DataFrame(columns=[
+            "duplicate_row_number", "original_row_number", "account_number",
+            "date", "amount", "debit", "credit", "narration", "reason_flagged",
+        ])
+    duplicates_out.to_csv(duplicates_path, index=False)
 
     # ── 2. Combined clean transactions → CSV, led by REAL identity columns ────
     # The Account_ID column already holds the REAL account number, and IFSC_Code
@@ -152,9 +199,11 @@ def persist_extraction_run(
         "output_files": {
             "clean_transactions": clean_path.name,
             "flagged_transactions": flagged_path.name,
+            "duplicates": duplicates_path.name,
             "statements_dir": "statements/",
             "statement_files": statement_files,
         },
+        "duplicate_count": int(len(duplicates_out)),
     }
     with open(metadata_path, "w", encoding="utf-8") as f:
         json.dump(metadata, f, indent=2, default=str)
@@ -169,6 +218,7 @@ def persist_extraction_run(
         "folder": str(session_dir),
         "clean_csv": str(clean_path),
         "flagged_csv": str(flagged_path),
+        "duplicates_csv": str(duplicates_path),
         "metadata_json": str(metadata_path),
         "statements_dir": str(statements_dir),
     }

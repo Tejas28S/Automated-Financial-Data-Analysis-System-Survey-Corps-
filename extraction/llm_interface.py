@@ -48,6 +48,7 @@ from extraction.llm_structurer import (
 from extraction.vision_extractor import (
     extract_statement_from_image,
     extract_structured_from_scanned_pdf,
+    transcribe_image_to_text,
 )
 
 logger = logging.getLogger(__name__)
@@ -104,6 +105,16 @@ def read_image(image_path: str) -> Dict[str, Any]:
     it is limited to image files and uses the dedicated vision key.
     """
     return extract_statement_from_image(image_path)
+
+
+def transcribe_image(image_path: str) -> Dict[str, Any]:
+    """
+    Image route, Stage 1: a vision model TRANSCRIBES the picture to plain text (it
+    does not structure transactions). Like read_image this is the one unavoidable
+    place raw pixels leave the machine — limited to image files, dedicated vision
+    key. The structuring afterwards is deterministic code on the returned text.
+    """
+    return transcribe_image_to_text(image_path)
 
 
 def read_scanned_pdf(file_path: str, max_pages: int = None) -> Dict[str, Any]:

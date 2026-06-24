@@ -129,3 +129,49 @@ def extract_text_from_docx(file_path: str) -> str:
             error,
         )
         return ""
+
+
+def extract_text_from_txt(file_path: str) -> str:
+    """
+    Reads a plain-text (.txt) bank statement into a raw text string.
+
+    Some banks export a fixed-width / space-aligned plain-text statement. There is
+    nothing to decode — we just read the characters — but Indian banking software
+    sometimes writes non-UTF-8 files, so we try a few encodings in order before
+    giving up. The returned text is handed to the SAME deterministic text parser the
+    digital PDFs use (standardise_digital_pdf_transactions), so .txt statements get
+    the identical header/footer/id-column handling with no extra logic.
+
+    Parameters:
+        file_path (str): Absolute path to the .txt file.
+
+    Returns:
+        str: The file's text, or "" if it cannot be read.
+    """
+    from pathlib import Path
+
+    for encoding in ("utf-8-sig", "utf-8", "latin-1", "cp1252"):
+        try:
+            with open(file_path, encoding=encoding) as f:
+                text = f.read()
+            logger.info(
+                "extractor_docx.extract_text_from_txt: Read '%s' with encoding '%s' "
+                "(%d characters).", Path(file_path).name, encoding, len(text),
+            )
+            return text
+        except UnicodeDecodeError:
+            continue
+        except FileNotFoundError:
+            logger.error(
+                "extractor_docx.extract_text_from_txt: File not found: %s", file_path)
+            return ""
+        except Exception as error:
+            logger.error(
+                "extractor_docx.extract_text_from_txt: Error reading TXT '%s': %s",
+                file_path, error)
+            return ""
+
+    logger.error(
+        "extractor_docx.extract_text_from_txt: All encodings failed for '%s'.",
+        file_path)
+    return ""

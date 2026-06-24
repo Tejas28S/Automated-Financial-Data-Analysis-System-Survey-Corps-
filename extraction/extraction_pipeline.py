@@ -54,7 +54,7 @@ from extraction.router import route_file
 from extraction.extractor_digital_pdf import extract_text_from_digital_pdf
 from extraction.extractor_ocr import extract_text_with_ocr_audit
 from extraction.extractor_excel_csv import extract_dataframe_from_excel_csv
-from extraction.extractor_docx import extract_text_from_docx
+from extraction.extractor_docx import extract_text_from_docx, extract_text_from_txt
 from extraction.account_extractor import (
     reconcile_account_details,
     extract_account_details_from_text,
@@ -69,7 +69,9 @@ from extraction.llm_interface import (
     extract_metadata_llm,
     read_image,
     read_scanned_pdf,
+    transcribe_image,
 )
+from extraction.image_grouping import group_images
 from extraction.standardiser import (
     standardise_dataframe_direct,
     standardise_transaction_records,
@@ -151,7 +153,19 @@ def run_extraction_pipeline(
     # used to write one structured JSON per statement at the end (Problems 4 & 7).
     statements: List[Dict[str, Any]] = []
 
-    for file_index, file_info in enumerate(files, start=1):
+    # ── Split images out for the dedicated image pipeline ─────────────────────
+    # Image uploads need a CROSS-FILE step (grouping continuation pages of one
+    # statement), so they are processed together as a batch AFTER the normal
+    # per-file loop. Every other format (PDF / Excel / CSV / DOCX) is unchanged.
+    # Partition is by extension — identical to how the router labels images — so no
+    # PDF is ever re-routed here.
+    _IMAGE_EXTS = {".png", ".jpg", ".jpeg"}
+    image_files = [f for f in files
+                   if Path(f.get("file_path", "")).suffix.lower() in _IMAGE_EXTS]
+    other_files = [f for f in files
+                   if Path(f.get("file_path", "")).suffix.lower() not in _IMAGE_EXTS]
+
+    for file_index, file_info in enumerate(other_files, start=1):
         file_path = file_info.get("file_path", "")
         account_id = file_info.get("account_id", f"ACC{file_index:03d}")
         bank_name = file_info.get("bank_name", "Unknown Bank")
@@ -160,7 +174,7 @@ def run_extraction_pipeline(
             "extraction_pipeline.run_extraction_pipeline: "
             "Processing file %d of %d: '%s'",
             file_index,
-            len(files),
+            len(other_files),
             Path(file_path).name,
         )
 
@@ -215,6 +229,49 @@ def run_extraction_pipeline(
                 "error": str(file_error),
             })
             continue
+
+    # ── IMAGE BATCH: transcribe → group → parse (one statement per group) ─────
+    # Images are handled together because grouping continuation pages of the same
+    # statement is a cross-file decision. Each resulting group becomes ONE statement
+    # bundle, accumulated exactly like a normal file's result.
+    if image_files:
+        try:
+            image_results = _process_image_batch(image_files, max_ocr_pages)
+        except Exception as batch_error:
+            logger.error(
+                "extraction_pipeline.run_extraction_pipeline: image batch FAILED: %s. "
+                "Continuing with the rest of the run.", batch_error,
+            )
+            image_results = []
+            for f in image_files:
+                files_failed.append(f.get("file_path", ""))
+                per_file_records.append({
+                    "file": Path(f.get("file_path", "")).name,
+                    "account_id": f.get("account_id", ""),
+                    "bank_name": f.get("bank_name", ""),
+                    "status": "FAILED",
+                    "error": str(batch_error),
+                })
+
+        for clean_df, flagged_df, file_record in image_results:
+            if clean_df is not None and not clean_df.empty:
+                all_clean_dfs.append(clean_df)
+            if flagged_df is not None and not flagged_df.empty:
+                all_flagged_dfs.append(flagged_df)
+            files_processed += 1
+            per_file_records.append(file_record)
+            statements.append({
+                "file": file_record["file"],
+                "account_details": file_record.get("account_details", {}),
+                "clean_df": clean_df if clean_df is not None else pd.DataFrame(),
+            })
+            logger.info(
+                "extraction_pipeline.run_extraction_pipeline: "
+                "image group '%s' complete: %d clean, %d flagged.",
+                file_record.get("file"),
+                len(clean_df) if clean_df is not None else 0,
+                len(flagged_df) if flagged_df is not None else 0,
+            )
 
     # ── Combine all per-file DataFrames into one unified DataFrame ──────────
     logger.info(
@@ -553,6 +610,8 @@ def _process_single_file(
             raw_text = extract_text_from_digital_pdf(file_path)
         elif route == "docx":
             raw_text = extract_text_from_docx(file_path)
+        elif route == "text":
+            raw_text = extract_text_from_txt(file_path)
         elif route == "excel_csv":
             raw_df = extract_dataframe_from_excel_csv(file_path, account_id, bank_name)
         else:
@@ -691,4 +750,210 @@ def _process_single_file(
         details.get("account_holder"), details.get("account_number"),
     )
 
+    return clean_df, flagged_df, file_record
+
+
+def _process_image_batch(
+    image_files: List[Dict[str, str]],
+    max_ocr_pages: int = None,
+) -> List[tuple]:
+    """
+    The redesigned IMAGE pipeline (image route only — PDF/Excel/CSV are untouched).
+
+        Stage 1  Vision → TEXT      transcribe each image (vision reads pixels only;
+                                    it does NOT structure transactions or emit JSON).
+        Stage 2  GROUP              decide which images are pages of ONE statement vs
+                                    separate statements (deterministic; see
+                                    image_grouping.py). Biased toward keeping apart.
+        Stage 3+4  PARSE            each group's combined text runs through the SAME
+                                    proven text ladder the digital-PDF path uses
+                                    (cheap parse → validate → LLM schema discovery on
+                                    a sample → deterministic reparse → full read), so
+                                    code does the structuring and tokens scale with
+                                    documents, not rows.
+
+    Returns a list of (clean_df, flagged_df, file_record) — ONE per statement group.
+    """
+    # ── Stage 1: transcribe every image to text (cached per image) ────────────
+    items: List[Dict[str, Any]] = []
+    for idx, fi in enumerate(image_files):
+        path = fi.get("file_path", "")
+        try:
+            res = transcribe_image(path)
+        except Exception as e:
+            logger.error("extraction_pipeline._process_image_batch: transcription failed "
+                         "for '%s': %s", Path(path).name, e)
+            res = {"text": "", "source": "failed"}
+        items.append({
+            "name": Path(path).name,
+            "path": path,
+            "account_id": fi.get("account_id", f"ACC{idx + 1:03d}"),
+            "bank_name": fi.get("bank_name", "Unknown Bank"),
+            "text": res.get("text", ""),
+            "source": res.get("source"),
+        })
+
+    # ── Stage 2: group images into statements ─────────────────────────────────
+    groups = group_images(items)
+
+    # ── Stage 3+4: parse each group into one statement bundle ─────────────────
+    results: List[tuple] = []
+    for group_index, group in enumerate(groups, start=1):
+        members = [items[i] for i in group["indices"]]
+        try:
+            results.append(_process_image_group(members, group, group_index))
+        except Exception as e:
+            logger.error("extraction_pipeline._process_image_batch: group %d (%s) failed: %s",
+                         group_index, group.get("names"), e)
+            # Surface the failure as an empty bundle so nothing is silently lost.
+            fr = {
+                "file": f"image_group_{group_index} ({', '.join(group.get('names', []))})",
+                "route": "image", "status": "FAILED", "error": str(e),
+                "image_group": {"members": group.get("names"), "reason": group.get("reason"),
+                                "confidence": group.get("confidence")},
+            }
+            results.append((pd.DataFrame(), pd.DataFrame(), fr))
+    return results
+
+
+def _process_image_group(
+    members: List[Dict[str, Any]],
+    group: Dict[str, Any],
+    group_index: int,
+) -> tuple:
+    """
+    Turns ONE group of images (the pages of a single statement) into a clean/flagged
+    pair. The combined transcription is treated exactly like any other text source:
+    identity is read code-first (regex), transactions go through the tiered ladder,
+    and — as an accuracy floor — if the ladder cannot reconcile the parse we fall
+    back to the original Vision→JSON reader per image (so we never do worse than the
+    old pipeline).
+    """
+    combined_text = "\n".join(m["text"] for m in members if m.get("text"))
+    names = [m["name"] for m in members]
+    account_id = members[0]["account_id"]
+    bank_name = members[0]["bank_name"]
+
+    file_record: Dict[str, Any] = {
+        "file": f"image_group_{group_index} ({', '.join(names)})",
+        "account_ref": account_id,
+        "bank_name": bank_name,
+        "status": "ok",
+        "route": "image",
+        "ocr": "n/a",
+        "tier": "image_transcribe_parse",
+        "column_map_source": "image_text_ladder",
+        # Stage-1 vision calls that actually spent tokens (cache hits are free).
+        "llm_calls": sum(1 for m in members if m.get("source") == "groq"),
+        "image_group": {
+            "members": names,
+            "reason": group.get("reason"),
+            "confidence": group.get("confidence"),
+        },
+    }
+
+    # ── Tier 1 — identity, code-first (regex, fully local); LLM only if empty ──
+    content_details = extract_account_details_from_text(combined_text)
+    if not (content_details.get("account_holder")
+            or content_details.get("account_number")
+            or content_details.get("ifsc_code")):
+        header_text = "\n".join(combined_text.splitlines()[:40])
+        meta = extract_metadata_llm(header_text, file_record["file"])
+        file_record["llm_calls"] = file_record.get("llm_calls", 0) + 1
+        details = _details_from_meta(meta, account_id, bank_name)
+        file_record["metadata_source"] = "llm_fallback"
+    else:
+        details = reconcile_account_details(content_details, account_id, bank_name)
+        file_record["metadata_source"] = "regex"
+
+    # ── Tiers 2–5 — the shared text ladder (cheap parse → validate → escalate) ─
+    standard_df, grade = _extract_text_transactions(
+        combined_text, file_record, account_id, bank_name, details)
+
+    # ── Accuracy floor — fall back to the original Vision→JSON reader ──────────
+    # Only if the text ladder could NOT reconcile (verdict FAIL). We read each image
+    # as structured JSON (the old path), merge, and keep it ONLY if it reconciles at
+    # least as well — so this can never make the result worse.
+    if grade is None or grade.get("verdict") != "PASS":
+        fb_rows: List[Dict[str, Any]] = []
+        fb_calls = 0
+        for m in members:
+            try:
+                vision = read_image(m["path"])
+            except Exception as e:
+                logger.warning("extraction_pipeline._process_image_group: JSON fallback "
+                               "failed for '%s': %s", m["name"], e)
+                continue
+            if vision.get("source") == "groq":
+                fb_calls += 1
+            if not (details.get("account_number") or details.get("ifsc_code")):
+                vd = vision.get("account_details") or {}
+                if vd:
+                    details = reconcile_account_details(vd, account_id, bank_name)
+            fb_rows.extend(vision.get("transactions", []))
+
+        if fb_rows:
+            fb_df = standardise_transaction_records(
+                fb_rows, account_id, details.get("bank_name") or bank_name)
+            fb_grade = grade_parse(fb_df, expected_rows=len(fb_rows) or None)
+            better = (grade is None
+                      or fb_grade["reconciliation_rate"] >= grade["reconciliation_rate"])
+            if len(fb_df) and better:
+                standard_df, grade = fb_df, fb_grade
+                file_record["tier"] = "image_vision_json_fallback"
+                file_record["column_map_source"] = "vision_json"
+                file_record["llm_calls"] = file_record.get("llm_calls", 0) + fb_calls
+                file_record["reconciliation_rate"] = round(fb_grade["reconciliation_rate"], 3)
+                file_record["has_balance_column"] = fb_grade["has_balance_column"]
+                file_record["ordering"] = fb_grade["ordering"]
+
+    if standard_df is None:
+        from extraction.standardiser import _create_empty_standard_dataframe
+        standard_df = _create_empty_standard_dataframe()
+
+    # ── Chronological order: flip a newest-first statement to oldest-first ─────
+    if (grade is not None and grade.get("ordering") == "newest_first"
+            and not standard_df.empty):
+        standard_df = standard_df.iloc[::-1].reset_index(drop=True)
+
+    # Derive the closing balance from the last running balance when not printed.
+    if not standard_df.empty and "Balance" in standard_df.columns:
+        bals = standard_df["Balance"].dropna()
+        if len(bals) and not details.get("closing_balance"):
+            details["closing_balance"] = f"{float(bals.iloc[-1]):.2f}"
+
+    # ── Stamp the REAL account number + IFSC on every row ─────────────────────
+    real_account = details.get("account_number") or ""
+    if not real_account or real_account.upper() == "UNREADABLE":
+        real_account = f"UNKNOWN-image_group_{group_index}"
+    real_ifsc = details.get("ifsc_code") or "UNKNOWN"
+    standard_df["Account_ID"] = real_account
+    standard_df["IFSC_Code"] = real_ifsc
+
+    # ── Validate and clean (shared by all routes) ─────────────────────────────
+    clean_df, flagged_df = validate_and_clean(standard_df)
+
+    details["account_number"] = real_account
+    file_record["account_details"] = details
+    file_record["rows_standardised"] = len(standard_df)
+    file_record["rows_clean"] = len(clean_df)
+    file_record["rows_flagged"] = len(flagged_df)
+
+    rows_into_output = len(clean_df) + len(flagged_df)
+    file_record["validation"] = {
+        "llm_transactions": file_record.get("llm_txn_count", len(standard_df)),
+        "rows_in_output": rows_into_output,
+        "all_rows_accounted_for": rows_into_output >= len(standard_df),
+        "account_number_in_text": bool(details.get("account_number", "")
+                                       and details["account_number"] in combined_text),
+        "ifsc_in_text": bool(details.get("ifsc_code", "")
+                             and details["ifsc_code"] in combined_text),
+    }
+    logger.info(
+        "extraction_pipeline._process_image_group: '%s' → %d clean, %d flagged "
+        "(holder=%r account_number=%r, tier=%s).",
+        file_record["file"], len(clean_df), len(flagged_df),
+        details.get("account_holder"), details.get("account_number"),
+        file_record.get("tier"),
+    )
     return clean_df, flagged_df, file_record

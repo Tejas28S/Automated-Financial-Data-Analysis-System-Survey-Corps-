@@ -109,6 +109,54 @@ _PAGE_NOISE = re.compile(
 # An embedded "Page X of Y" fragment to scrub out of a narration if it slips in.
 _PAGE_FRAGMENT = re.compile(r"\s*page\s+\d+\s+of\s+\d+\s*", re.IGNORECASE)
 
+# Legal / disclaimer / footer boilerplate that banks print below or between the
+# transaction rows (deposit-insurance notices, "computer generated statement",
+# signature waivers, end-of-statement banners). These lines do NOT start with a
+# date, so the continuation-stitching logic would otherwise glue them onto the
+# preceding transaction's narration (observed in real statements). The phrases are
+# generic banking/legal boilerplate — NOT any specific bank's name — so the
+# anti-overfitting guard is unaffected. We only ever drop a line that matches one
+# of these AND does not start with a date, so a real transaction can't be removed.
+_FOOTER_NOISE = re.compile(
+    r"computer[ \-]generated|system[ \-]generated|"
+    r"requires?\s+no\s+signature|does\s+not\s+require\s+(?:a\s+|any\s+)?signature|"
+    r"each\s+depositor|deposit\s+insurance|\bDICGC\b|insured\s+up\s+to|"
+    r"schedule\s+of\s+charges|most\s+important\s+document|"
+    r"constituent\s+notifies|discrepancy\s+in\s+this\s+statement|"
+    r"transaction\(s\)\s+in\s+the\s+statement|"
+    r"end\s+of\s+statement|closing\s+balance\s+as\s+on|"
+    r"this\s+is\s+a\s+(?:computer|system)|"
+    # ── report-style page furniture / footer (e.g. IDBI report exports) ──
+    r"end\s+of\s+report|pages?\s+printed|chief\s+manager|manager\s*/\s*chief|"
+    r"report\s+for\s+the\s+period|report\s+to\s*:|service\s+out\s*let|"
+    r"account\s+opening\s+balance|brought\s+forward|carried\s+forward|"
+    r"total\s*\(\s*curr|grand\s+total|opening\s+balance\s*:|"
+    r"https?://|www\.|\bsignature\b|"
+    # A standalone print-date label line ("Date :23-09-2025") in a report footer.
+    # Requires the label at the START followed by ':'/'-' then a date — so it never
+    # matches a column-header "Date Tran ..." (no separator) or a real transaction.
+    r"^date\s*[:=\-]\s*\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4}\s*$",
+    re.IGNORECASE,
+)
+# A separator line of dashes / underscores / equals (table rules, page rules).
+_SEPARATOR_LINE = re.compile(r"^[\s\-_=*~.]{6,}$")
+
+# Markers that START a page-summary / statement-summary / footer BLOCK. Once one of
+# these appears, every following line up to the next real transaction (a date-started
+# line) is page metadata — counts, totals, carried-forward values, toll-free numbers,
+# signatures — NOT transaction data. Filtering individual lines is not enough here
+# because the block also contains bare number lines ("1,14,098.00") and count lines
+# ("Dr. Count 19") that match no single keyword; block detection removes the whole
+# section in one go. Generic banking vocabulary only — no bank identity.
+_FOOTER_BLOCK_START = re.compile(
+    r"\bpage\s+summary\b|\bstatement\s+summary\b|\bstatement\s+information\b|"
+    r"\bcarried\s+forward\b|\bc/?f\s+total\b|\bpage\s+total\b|\bgrand\s+total\b|"
+    r"\bend\s+of\s+statement\b|\bend\s+of\s+report\b|\btoll\s*free\b|"
+    r"\bdr\.?\s*count\b|\bcr\.?\s*count\b|\btotal\s+debits?\b|\btotal\s+credits?\b|"
+    r"\bgenerated\s+on\b|\bchief\s+manager\b",
+    re.IGNORECASE,
+)
+
 # Standard column-header vocabulary (generic banking terms — NOT any bank's name, so
 # the anti-overfitting guard is unaffected). A line carrying several of these and NO
 # money amount is a repeated column-header row we should drop before parsing.
@@ -161,13 +209,45 @@ def _strip_noise_lines(lines: List[str]) -> List[str]:
     corrupts rows and can push an otherwise-parseable statement onto the costly LLM
     path). It only drops lines that carry NO money amount and do not begin with a
     date, so a real transaction row can never be removed.
+
+    Page-summary / statement-summary / footer SECTIONS are removed as a whole BLOCK:
+    once a block-start marker (e.g. "Page Summary", "Carried Forward", "Dr. Count")
+    is seen, every following line is dropped until the next real transaction (a
+    date-started line) resumes on the following page. This catches the bare number
+    and count lines inside such a block that no per-line keyword would match — while
+    still never removing a transaction row, because a date-started line always ends
+    the block.
     """
     out = []
+    in_footer_block = False
     for ln in lines:
         s = ln.strip()
         if not s:
             continue
+        is_date_start = bool(DATE_AT_LINE_START_PATTERN.match(s))
+
+        # Inside a page-summary/footer block: keep dropping until a transaction
+        # (date-started line) resumes, then leave the block and process that line.
+        if in_footer_block:
+            if is_date_start:
+                in_footer_block = False
+            else:
+                continue
+
+        # A block-start marker (never a date-started line) opens the footer block.
+        if not is_date_start and _FOOTER_BLOCK_START.search(s):
+            in_footer_block = True
+            continue
+
         if _PAGE_NOISE.match(s) or _is_header_line(s):
+            continue
+        # Drop pure separator rules (dashes/underscores) — they would otherwise be
+        # stitched into the preceding transaction's narration.
+        if _SEPARATOR_LINE.match(s):
+            continue
+        # Drop individual legal/disclaimer/footer/report boilerplate lines. Guarded by
+        # "does not start with a date" so a real transaction row is never removed.
+        if _FOOTER_NOISE.search(s) and not is_date_start:
             continue
         out.append(ln)
     return out
@@ -350,7 +430,8 @@ def standardise_transactions(
 
 # Columns produced by the rich digital-PDF parser (date/time + ref/cheque + type).
 RICH_COLUMNS = [
-    "Date", "Time", "Narration", "Reference_Number", "Cheque_Number",
+    "Date", "Time", "Narration",
+    "Transaction_ID", "Reference_Number", "Transaction_Reference", "Cheque_Number",
     "Debit", "Credit", "Balance", "Transaction_Type", "Account_ID", "Bank_Name",
 ]
 
@@ -371,6 +452,50 @@ _REF_IN_TEXT = re.compile(
     r"(?:NO|NUMBER|ID|#)?\s*[:.#/\-]*\s*([0-9][0-9A-Z]{5,})\b",
     re.IGNORECASE,
 )
+
+# ── Leading id-column support (Transaction Id / Reference No printed as columns) ──
+# Some statements print dedicated id columns BETWEEN the date and the narration:
+#     Date | Tran Id | Ref Num | Particulars | Debit | Credit | Balance
+# This is detected from the HEADER (never from a bank name) and the matching tokens
+# are peeled off the FRONT of each row into Transaction_ID / Reference_Number. An
+# id-shaped token is required, so a row that lacks the columns is never corrupted.
+#
+# id-shaped token: optional 0–4 letter prefix, then ≥3 digits, then optional
+# alphanumerics and an optional "/NN" or "-NN" suffix. Matches "S19547297",
+# "6533157212", "0214713/25"; does NOT match a narration token like "UPI/506.../X"
+# (which starts with letters immediately followed by "/").
+_ID_TOKEN_RE = re.compile(r"^[A-Za-z]{0,4}\d{3,}[A-Za-z0-9]*(?:[/\-]\d{1,4})?$")
+
+
+def _detect_leading_id_columns(raw_lines: List[str]) -> List[str]:
+    """
+    Reads the transaction-table HEADER to see whether dedicated id columns are
+    printed BEFORE the narration column, and returns them in print order — a subset
+    of ["transaction_id", "reference_number"]. Returns [] when the statement has no
+    such columns (the overwhelmingly common case), so the default parser is used
+    unchanged. Driven purely by header text — no bank identity is involved.
+    """
+    region = "\n".join(raw_lines[:22]).lower()
+    narr_positions = [region.find(w) for w in ("particular", "narration", "description")
+                      if region.find(w) >= 0]
+    if not narr_positions:
+        return []
+    narr_pos = min(narr_positions)
+
+    # "Tran Id" / "Transaction Id" / "Transn Id" / "Txn Id", or a standalone "Tran"
+    # that does not mean a date column.
+    txn_m = re.search(
+        r"\btrans(?:action|n)?\s*id\b|\btxn\s*id\b|\btran\s*id\b|\btran\b(?!\s*date)",
+        region)
+    ref_m = re.search(r"\bref(?:erence)?\s*(?:no|num|number)\b|\brrn\b|\butr\b", region)
+
+    found = []
+    if txn_m and txn_m.start() < narr_pos:
+        found.append(("transaction_id", txn_m.start()))
+    if ref_m and ref_m.start() < narr_pos:
+        found.append(("reference_number", ref_m.start()))
+    found.sort(key=lambda x: x[1])
+    return [name for name, _ in found]
 
 
 def _extract_ref_cheque(narration: str, has_ref: bool, has_cheque: bool) -> tuple:
@@ -402,6 +527,227 @@ def _extract_ref_cheque(narration: str, has_ref: bool, has_cheque: bool) -> tupl
     return ref, cheque
 
 
+def _try_fill_amounts(line: str, require_balance: bool) -> dict:
+    """
+    Tries to extract the transaction amounts from a CONTINUATION line that belongs
+    to a date-started record whose amounts are still pending (Bug A fix).
+
+    A continuation line supplies amounts when it ends with ≥2 money tokens (if
+    require_balance=True) or ≥1 (if require_balance=False). Any non-money prefix
+    text on the line is returned as narration_prefix so it can be appended to the
+    record's narration rather than lost.
+
+    Returns a dict {"amount", "Balance", "narration_prefix"} on success, or None
+    if this line does NOT look like an amounts line.
+    """
+    tokens = line.split()
+    money = []
+    while tokens and _is_money_token(tokens[-1]) and len(money) < 3:
+        money.insert(0, tokens.pop())
+
+    if require_balance:
+        if len(money) < 2:
+            return None
+        balance_str = money[-1]
+        amount_str = money[-2]
+    else:
+        if len(money) < 1:
+            return None
+        balance_str = ""
+        amount_str = money[-1]
+
+    return {
+        "amount": _clean_amount(amount_str),
+        "Balance": balance_str,
+        "narration_prefix": " ".join(tokens).strip(),
+    }
+
+
+# ── Header-driven column parser ───────────────────────────────────────────────
+# Some statements print the columns in an order the positional (balance-from-end)
+# parser cannot read — most importantly when the NARRATION column is printed LAST
+# and each row begins with a transaction-id instead of a date, e.g.:
+#     Tran_ID  Tran_Date  Dr_Amt  Cr_Amt  Balance  Narration
+#     M3300329 06-10-2022 0       50000   50000    TRFR FROM: SUNITA KAVYA SETHI
+# For these the date is not at the line start and the money columns are in the
+# MIDDLE, so the positional parser yields zero rows (and the pipeline would then
+# escalate to the LLM and hit token limits). When a header row is present we can
+# read the column ORDER from it and parse each row by walking that order. This is
+# fully bank-agnostic: it is driven entirely by the statement's own header text.
+
+# A loose amount token for the header parser: bare integers, decimals, Indian
+# commas, optional leading minus, optional CR/DR suffix. Unlike _MONEY_TOKEN this
+# does NOT require a decimal part, because dedicated debit/credit columns often
+# print whole-rupee amounts ("0", "50000").
+_LOOSE_AMOUNT_RE = re.compile(
+    r"^-?(?:\d{1,3}(?:,\d{2,3})*|\d+)(?:\.\d{1,2})?\s*\(?(?:CR|DR)?\)?$",
+    re.IGNORECASE,
+)
+# A single date token (anchored). Reuses the same shapes as _DATE_ANYWHERE_PATTERN.
+_DATE_TOKEN_RE = re.compile(
+    r"^(?:\d{1,2}[/\-.][0-9A-Za-z]{2,9}[/\-.]\d{2,4}|\d{4}[/\-.]\d{1,2}[/\-.]\d{1,2})$"
+)
+
+
+def _classify_header_token(tok: str) -> str:
+    """Maps one header-cell word to a column role. Generic banking vocabulary only."""
+    low = tok.lower()
+    if any(w in low for w in ("narration", "description", "particular",
+                              "remarks", "detail")):
+        return "narration"
+    if "balance" in low:
+        return "balance"
+    if "withdraw" in low or "debit" in low or low == "dr" or low.startswith("dr_") \
+            or low.startswith("dr ") or low.startswith("dramt") or low.startswith("dr."):
+        return "debit"
+    if "deposit" in low or "credit" in low or low == "cr" or low.startswith("cr_") \
+            or low.startswith("cr ") or low.startswith("cramt") or low.startswith("cr."):
+        return "credit"
+    if "value" in low and "date" in low:
+        return "value_date"
+    if "date" in low:
+        return "date"
+    if "time" in low:
+        return "time"
+    if "cheque" in low or "chq" in low or "instrument" in low:
+        return "cheque"
+    if "ref" in low or low.endswith("id") or "utr" in low or "rrn" in low \
+            or "txn" in low or "serial" in low or low in ("sr", "srno", "sno"):
+        return "ref"
+    return "other"
+
+
+def _find_header_row(lines: List[str]):
+    """
+    Locates the transaction-table HEADER row near the top of the text and returns
+    (index, roles) where roles is the ordered list of column roles. Returns
+    (None, None) if no usable header is found.
+
+    A usable header: has a date column, a narration column, and at least one of
+    debit/credit/balance; contains no actual amount VALUE (so a data row is not
+    mistaken for a header); and — critically — the narration is the LAST data
+    column. The narration-last constraint is what makes front-to-back walking
+    unambiguous; statements with narration in the middle are left to the positional
+    parser (which already handles them).
+    """
+    for i, ln in enumerate(lines[:40]):
+        s = ln.strip()
+        if not s:
+            continue
+        toks = [t for t in re.split(r"\s+", s) if t]
+        if len(toks) < 4:
+            continue
+        roles = [_classify_header_token(t) for t in toks]
+        role_set = set(roles)
+        if not ("date" in role_set and "narration" in role_set
+                and ({"debit", "credit", "balance"} & role_set)):
+            continue
+        # A header row carries no real amount value.
+        if any(_LOOSE_AMOUNT_RE.match(t) and any(c.isdigit() for c in t) for t in toks):
+            continue
+        # Narration must be the last amount/text column (nothing numeric after it).
+        narr_idx = roles.index("narration")
+        if {"debit", "credit", "balance"} & set(roles[narr_idx + 1:]):
+            continue
+        return i, roles
+    return None, None
+
+
+def _row_by_roles(toks: List[str], roles: List[str], account_id: str,
+                  bank_name: str):
+    """
+    Parses one tokenised line according to the header column ROLES (narration is
+    guaranteed last by _find_header_row). Returns a record dict, or None if the
+    line does not fit the role layout (→ it is a narration continuation line).
+    """
+    i = 0
+    date_str = time_str = balance_str = narration = ""
+    debit = credit = None
+    for role in roles:
+        if role == "narration":
+            narration = " ".join(toks[i:]).strip()
+            i = len(toks)
+            break
+        if i >= len(toks):
+            return None
+        tok = toks[i]
+        if role in ("date", "value_date"):
+            if not _DATE_TOKEN_RE.match(tok):
+                return None  # expected a date here → this is not a new row
+            if role == "date":
+                date_str = tok
+            i += 1
+        elif role == "time":
+            if _TIME_ONLY_LINE.match(tok):
+                time_str = tok
+                i += 1  # time is optional; only consume if present
+        elif role in ("debit", "credit", "balance"):
+            if not _LOOSE_AMOUNT_RE.match(tok):
+                return None  # expected an amount here → not a data row
+            if role == "debit":
+                debit = _clean_amount(tok)
+            elif role == "credit":
+                credit = _clean_amount(tok)
+            else:
+                balance_str = tok
+            i += 1
+        else:  # ref / cheque / other → consume one positional token if present
+            i += 1
+
+    if not date_str:
+        return None
+
+    # Derive the single amount + explicit direction from the debit/credit columns.
+    d = debit or 0.0
+    c = credit or 0.0
+    if d > 0 and c == 0:
+        amount, direction = d, "D"
+    elif c > 0 and d == 0:
+        amount, direction = c, "C"
+    elif d > 0 and c > 0:
+        amount, direction = (d, "D") if d >= c else (c, "C")
+    else:
+        amount, direction = 0.0, ""
+
+    return {
+        "Date": date_str,
+        "Time": time_str,
+        "Narration": narration,
+        "amount": amount,
+        "dr_cr": direction,
+        "Balance": balance_str,
+        "Account_ID": account_id,
+        "Bank_Name": bank_name,
+    }
+
+
+def _parse_by_header(lines: List[str], roles: List[str], account_id: str,
+                     bank_name: str) -> list:
+    """
+    Parses all transaction rows using the column ROLES read from the header. Lines
+    that do not fit the role layout are treated as narration continuations of the
+    preceding transaction (multi-line narration support). `lines` should already be
+    noise-stripped (page furniture, repeated headers and footer boilerplate removed).
+    """
+    records = []
+    current = None
+    for ln in lines:
+        s = ln.strip()
+        if not s:
+            continue
+        toks = s.split()
+        rec = _row_by_roles(toks, roles, account_id, bank_name)
+        if rec is not None:
+            if current:
+                records.append(current)
+            current = rec
+        elif current is not None:
+            current["Narration"] = (current.get("Narration", "") + " " + s).strip()
+    if current:
+        records.append(current)
+    return records
+
+
 def standardise_digital_pdf_transactions(
     raw_text: str,
     account_id: str,
@@ -425,10 +771,22 @@ def standardise_digital_pdf_transactions(
     Returns a DataFrame with the RICH_COLUMNS schema.
     """
     schema = schema or {}
-    lines = [ln for ln in (raw_text or "").splitlines() if ln.strip()]
+    raw_lines = [ln for ln in (raw_text or "").splitlines() if ln.strip()]
+    # Detect the column-header row (and its column order) BEFORE noise stripping —
+    # _strip_noise_lines removes header rows, but we need the header to learn the
+    # column layout for the header-driven fallback parser further below.
+    header_idx, header_roles = _find_header_row(raw_lines)
+    # Detect dedicated leading id columns (Tran Id / Ref No printed between the date
+    # and the narration). Generalised from the header text — [] for the vast majority
+    # of statements, so the default parser path is unchanged.
+    leading_id_columns = _detect_leading_id_columns(raw_lines)
+    if leading_id_columns:
+        logger.info(
+            "standardiser.standardise_digital_pdf_transactions: detected leading id "
+            "columns from header: %s", leading_id_columns)
     # Drop page furniture (page numbers, repeated column-header rows) so a multi-page
     # statement's repeating header/footer can't be stitched into a real transaction.
-    lines = _strip_noise_lines(lines)
+    lines = _strip_noise_lines(raw_lines)
 
     # ── Read the discovered schema so it actually DRIVES parsing (not decorative) ─
     # date_format    → tried first when parsing dates (disambiguates DD/MM vs MM/DD)
@@ -458,28 +816,77 @@ def standardise_digital_pdf_transactions(
             opening_balance = m.group(1)
 
     # ── 1+2. Parse rows (date-anchored, with multi-line stitching) ────────────
+    # Two classes of multi-line narration bugs are handled here:
+    #
+    # Bug A — amounts on a continuation line (not on the date line). Some PDFs
+    # (or some pdfplumber extraction modes) put the amounts column on a different
+    # physical line than the date. The old code returned None from
+    # _parse_single_transaction_line when there were no money tokens, setting
+    # current=None and silently dropping ALL continuation lines for that transaction.
+    # Fix: return a PARTIAL record (amounts_pending=True) when the date line has no
+    # money tokens, then fill amounts from the first continuation line that does.
+    #
+    # Bug B — cross-row y-coordinate mixing — is fixed upstream in the extractor
+    # (table-aware cell extraction). The continuation stitching here is a defensive
+    # second layer that still handles whatever text comes in.
     records = []
     current = None
     for line in lines:
         s = line.strip()
         if DATE_AT_LINE_START_PATTERN.match(s):
             if current:
-                records.append(current)
-            current = _parse_single_transaction_line(s, require_balance=require_balance)
+                # Only keep records that received amounts (either on the date line
+                # or from a subsequent continuation line).
+                if not current.get("_amounts_pending"):
+                    records.append(current)
+            current = _parse_single_transaction_line(
+                s, require_balance=require_balance,
+                leading_id_columns=leading_id_columns)
             if current:
                 current["Account_ID"] = account_id
                 current["Bank_Name"] = bank_name
         elif current is not None and narration_wraps:
-            # A continuation line. If it is JUST a timestamp (some banks wrap the
-            # transaction time onto its own line), record it as the Time instead of
-            # polluting the narration. Otherwise extend the narration.
             if _TIME_ONLY_LINE.match(s):
                 if not current.get("Time"):
                     current["Time"] = s
+            elif current.get("_amounts_pending"):
+                # This record still needs its amounts. Check whether THIS
+                # continuation line supplies them (has ≥2 money tokens at the end).
+                pending = _try_fill_amounts(s, require_balance)
+                if pending:
+                    current["amount"] = pending["amount"]
+                    current["Balance"] = pending["Balance"]
+                    current["_amounts_pending"] = False
+                    # Any non-amount text on the amounts line belongs in narration.
+                    if pending.get("narration_prefix"):
+                        current["Narration"] = (
+                            current.get("Narration", "") + " " + pending["narration_prefix"]
+                        ).strip()
+                else:
+                    # No amounts yet — still narration text.
+                    current["Narration"] = (current.get("Narration", "") + " " + s).strip()
             else:
                 current["Narration"] = (current.get("Narration", "") + " " + s).strip()
-    if current:
+    if current and not current.get("_amounts_pending"):
         records.append(current)
+
+    # ── Header-driven fallback ────────────────────────────────────────────────
+    # If a usable column header was detected (narration printed last) and the
+    # positional parser under-produced, re-parse by the header's column order. We
+    # only adopt the header parse when it recovers MORE rows, so statements the
+    # positional parser already handles correctly are never disturbed. This is what
+    # rescues layouts like "Tran_ID Date Dr Cr Balance Narration" (0 positional rows)
+    # WITHOUT any LLM call — which is also why those statements no longer hit the
+    # token-limit (413) errors on the LLM fallback path.
+    if header_roles is not None:
+        hdr_records = _parse_by_header(lines, header_roles, account_id, bank_name)
+        if len(hdr_records) > len(records):
+            logger.info(
+                "standardiser.standardise_digital_pdf_transactions: header-driven "
+                "parse recovered %d rows (positional parser got %d) — using header parse.",
+                len(hdr_records), len(records),
+            )
+            records = hdr_records
 
     if not records:
         return pd.DataFrame(columns=RICH_COLUMNS)
@@ -508,16 +915,25 @@ def standardise_digital_pdf_transactions(
     if "Transaction_Type" not in df.columns:
         df["Transaction_Type"] = ""
 
-    # ── 4. Reference / cheque numbers (gated by the discovered schema) ────────
+    # ── 4. Identifiers ────────────────────────────────────────────────────────
+    # Transaction_Reference = an id parsed OUT OF the narration (UPI/UTR/IMPS id).
+    # Cheque_Number         = a cheque/instrument number from the narration.
+    # Transaction_ID / Reference_Number were already peeled per-row from the
+    # statement's dedicated columns (when the header declared them) and live on the
+    # records; we only ensure the columns exist and never overwrite them here.
     has_ref = bool(schema.get("has_reference_number", True))
     has_chq = bool(schema.get("has_cheque_number", True))
-    refs, cheques = [], []
+    txn_refs, cheques = [], []
     for narr in df["Narration"].tolist():
         r, c = _extract_ref_cheque(str(narr), has_ref, has_chq)
-        refs.append(r)
+        txn_refs.append(r)
         cheques.append(c)
-    df["Reference_Number"] = refs
+    df["Transaction_Reference"] = txn_refs
     df["Cheque_Number"] = cheques
+    if "Transaction_ID" not in df.columns:
+        df["Transaction_ID"] = ""
+    if "Reference_Number" not in df.columns:
+        df["Reference_Number"] = ""
 
     # ── Correct debit/credit direction from the running balance ───────────────
     df = _correct_direction_by_balance(df, _clean_amount_to_float(opening_balance))
@@ -568,7 +984,13 @@ def standardise_llm_transactions(
             "Date": t.get("date", ""),
             "Time": t.get("time", ""),
             "Narration": t.get("description", ""),
-            "Reference_Number": t.get("reference_number", ""),
+            # The LLM returns its understanding of a reference as "reference_number";
+            # under the new field semantics that is a narration-derived identifier, so
+            # it maps to Transaction_Reference. A dedicated id column, if the LLM
+            # reports one, maps to Transaction_ID / Reference_Number.
+            "Transaction_ID": t.get("transaction_id", ""),
+            "Reference_Number": t.get("reference_no_column", ""),
+            "Transaction_Reference": t.get("reference_number", ""),
             "Cheque_Number": t.get("cheque_number", ""),
             "Debit": t.get("debit", ""),
             "Credit": t.get("credit", ""),
@@ -583,7 +1005,8 @@ def standardise_llm_transactions(
     df["Date"] = df["Date"].apply(_parse_date)
     for col in ["Debit", "Credit", "Balance"]:
         df[col] = df[col].apply(_clean_amount_to_float)
-    for col in ["Time", "Narration", "Reference_Number", "Cheque_Number",
+    for col in ["Time", "Narration", "Transaction_ID", "Reference_Number",
+                "Transaction_Reference", "Cheque_Number",
                 "Transaction_Type", "Account_ID", "Bank_Name"]:
         df[col] = df[col].astype(str).str.strip().replace({"nan": "", "None": "", "NaT": ""})
 
@@ -761,6 +1184,32 @@ def _match_reference_cheque_columns(columns, exclude=None):
     return ref_col, chq_col
 
 
+# Header keywords that denote the bank's own per-row TRANSACTION ID column (distinct
+# from a transaction reference). Generic vocabulary, no bank names.
+_TXN_ID_HINTS = ("tranid", "txnid", "transactionid")
+
+
+def _match_transaction_id_column(columns, exclude=None):
+    """
+    Finds, by MEANING, a dedicated Transaction-ID column ("Tran Id", "Txn ID",
+    "Transaction ID"). A column that also mentions "ref" is treated as a reference,
+    not a transaction id, so "Ref Txn No" is never misfiled here. Returns the column
+    name or None. Generalised by label, never by bank.
+    """
+    exclude = set(c for c in (exclude or []) if c is not None)
+
+    def norm(c):
+        return re.sub(r"[^a-z0-9]", "", str(c).lower())
+
+    for col in columns:
+        if col in exclude:
+            continue
+        n = norm(col)
+        if n and any(h in n for h in _TXN_ID_HINTS) and "ref" not in n:
+            return col
+    return None
+
+
 def standardise_dataframe_direct(
     raw_df: pd.DataFrame,
     column_map: Dict[str, Any],
@@ -840,8 +1289,24 @@ def standardise_dataframe_direct(
     if "Date" not in column_rename.values():
         column_rename = _guess_column_mapping(raw_df.columns)
 
+    # Avoid a duplicate-column crash after rename. Some statements carry BOTH a
+    # "Date" and a "Value Date" column (or "Balance" and "Closing Balance"); when the
+    # mapper points the standard field at one of them, the OTHER raw column whose
+    # literal name already equals the rename target would survive, producing two
+    # identically-named columns. df["Date"] would then return a DataFrame and crash
+    # date parsing (the whole file failed with 0 rows). We drop the un-mapped raw
+    # column whose name collides with a rename target before renaming. Generalised —
+    # no bank or column is special-cased.
+    rename_targets = set(column_rename.values())
+    collide = [c for c in raw_df.columns
+               if c not in column_rename and str(c) in rename_targets]
+    source_df = raw_df.drop(columns=collide) if collide else raw_df
+
     # Create a copy with renamed columns
-    df = raw_df.rename(columns=column_rename).copy()
+    df = source_df.rename(columns=column_rename).copy()
+    # Belt-and-braces: if any duplicate column names remain, keep the first.
+    if df.columns.duplicated().any():
+        df = df.loc[:, ~df.columns.duplicated()]
 
     # Ensure all required standard columns are present
     # If a column is missing, add it as NaN/0
@@ -875,6 +1340,16 @@ def standardise_dataframe_direct(
         logger.info(
             "standardiser.standardise_dataframe_direct: matched reference column %r, "
             "cheque column %r (semantic, label-independent).", ref_src, chq_src)
+
+    # Transaction_ID (a dedicated per-row id column) and Transaction_Reference (an id
+    # parsed out of narration text) are populated by the text-PDF path; for a direct
+    # Excel/CSV DataFrame they stay blank unless a dedicated column is matched. They
+    # are added here so the schema is consistent across every source.
+    tranid_src = _match_transaction_id_column(
+        raw_df.columns, exclude=set(column_rename.keys()) | {ref_src, chq_src})
+    df["Transaction_ID"] = (df[tranid_src].map(_clean_identifier)
+                            if tranid_src is not None and tranid_src in df.columns else "")
+    df["Transaction_Reference"] = ""
 
     # Clean and type each column
     df = _clean_and_type_columns(df)
@@ -1043,7 +1518,8 @@ def _parse_text_lines(
     return df[STANDARD_COLUMNS].copy().reset_index(drop=True)
 
 
-def _parse_single_transaction_line(line: str, require_balance: bool = True) -> Optional[Dict[str, Any]]:
+def _parse_single_transaction_line(line: str, require_balance: bool = True,
+                                   leading_id_columns: List[str] = None) -> Optional[Dict[str, Any]]:
     """
     Parses a single transaction line from a space-separated bank statement.
 
@@ -1060,9 +1536,15 @@ def _parse_single_transaction_line(line: str, require_balance: bool = True) -> O
             statement has NO balance column (balance_position == "none"), set this
             False: the single trailing money token is taken as the amount and the
             Balance is left blank rather than rejecting the row.
+        leading_id_columns (list[str]): ordered id columns the HEADER declared
+            BETWEEN the date and the narration (subset of "transaction_id",
+            "reference_number"). When set, each is peeled off the front of the row
+            ONLY if the next token is id-shaped; otherwise peeling stops and the
+            token stays in the narration. Default None → classic behaviour.
 
     Returns:
         dict: Record with keys: "Date", "Narration", "amount", "Balance"
+              (plus Transaction_ID / Reference_Number when present).
               Returns None if the line cannot be parsed as a transaction.
     """
     # ── Step 1: peel the date(s) off the front ─────────────────────────────
@@ -1093,6 +1575,28 @@ def _parse_single_transaction_line(line: str, require_balance: bool = True) -> O
     if m3:
         rest = rest[m3.end():].strip()
 
+    # ── Step 1d: peel dedicated leading id columns (Tran Id / Ref No) ──────
+    # Done AFTER the date(s) and time so it works whether the id column is printed
+    # right after the transaction date (e.g. "Date|TranId|RefNum|Particulars") or
+    # after a value date (e.g. "TransDt|ValueDt|TransnID|Particulars"). Driven by
+    # the header (never a bank name); each id is consumed only when the next token
+    # is id-shaped, so a row without these columns is never corrupted.
+    txn_id = ref_no = ""
+    if leading_id_columns:
+        toks = rest.split()
+        k = 0
+        for col in leading_id_columns:
+            if k < len(toks) and _ID_TOKEN_RE.match(toks[k]):
+                if col == "transaction_id":
+                    txn_id = toks[k]
+                elif col == "reference_number":
+                    ref_no = toks[k]
+                k += 1
+            else:
+                break
+        if k:
+            rest = " ".join(toks[k:])
+
     # ── Step 1d: explicit Dr./Cr. marker ──────────────────────────────────
     # The most reliable direction signal — essential for statements listed
     # newest-first (e.g. IDBI), where the running-balance trick would be inverted.
@@ -1100,6 +1604,12 @@ def _parse_single_transaction_line(line: str, require_balance: bool = True) -> O
     md = re.search(r"\b(Dr|Cr)\.?\s+(?:INR|RS\.?|₹|\d)", rest, re.IGNORECASE)
     if md:
         direction = "D" if md.group(1).lower() == "dr" else "C"
+
+    # Some banks print the amount/balance's Cr/Dr marker as a SEPARATE token
+    # ("500.00 Cr" instead of "500.00Cr"). Re-attach a standalone trailing-style
+    # Dr/Cr to the number before it so the amount/balance peeler sees a single money
+    # token. \b after the marker means "Crore"/"Drone" inside a narration is safe.
+    rest = re.sub(r"(\d)\s+(Dr|Cr)\b\.?", r"\1\2", rest, flags=re.IGNORECASE)
 
     # ── Step 2: pull the trailing amounts off the end ──────────────────────
     # The last money token is the running balance; the one before it is the
@@ -1112,10 +1622,46 @@ def _parse_single_transaction_line(line: str, require_balance: bool = True) -> O
 
     if require_balance:
         if len(money) < 2:
-            # Need at least an amount and a balance to be a usable transaction row.
+            if len(money) == 0:
+                # No money tokens on the date line at all. This happens when the PDF
+                # layout puts the amounts column on a continuation line (Bug A). Return
+                # a PARTIAL record so the continuation handler can fill the amounts in.
+                narration = " ".join(tokens).strip()
+                narration = re.sub(
+                    r"\s+(?:Dr|Cr)\.?(?:\s+(?:INR|RS|Rs|₹))?\s*$", "", narration,
+                    flags=re.IGNORECASE).strip()
+                narration = re.sub(r"\s+(?:INR|RS|Rs|₹)\s*$", "", narration,
+                                   flags=re.IGNORECASE).strip()
+                return {
+                    "Date": date_str,
+                    "Time": time_str,
+                    "Narration": narration,
+                    "Transaction_ID": txn_id,
+                    "Reference_Number": ref_no,
+                    "amount": None,
+                    "dr_cr": direction,
+                    "Balance": "",
+                    "_amounts_pending": True,
+                }
+            # Only one money token — not enough to tell amount from balance; discard.
             return None
         balance_str = money[-1]
-        amount_str = money[-2]
+        if len(money) == 3:
+            # Three money tokens: Debit | Credit | Balance (statements with separate
+            # debit and credit columns). The parser normally takes money[-2] as the
+            # amount, which is the credit column. For debit transactions, credit = 0
+            # and the real amount is in money[-3] (the debit column). Use whichever
+            # of the two is non-zero; fall back to money[-2] if ambiguous.
+            amt_candidate = money[-2]
+            alt_candidate = money[-3]
+            amt_val = _clean_amount(amt_candidate) or 0.0
+            alt_val = _clean_amount(alt_candidate) or 0.0
+            if amt_val == 0.0 and alt_val != 0.0:
+                amount_str = alt_candidate
+            else:
+                amount_str = amt_candidate
+        else:
+            amount_str = money[-2]
     else:
         # Schema says there is no running balance — the trailing money token is the
         # amount and there is no balance to read.
@@ -1135,6 +1681,8 @@ def _parse_single_transaction_line(line: str, require_balance: bool = True) -> O
         "Date": date_str,
         "Time": time_str,
         "Narration": narration,
+        "Transaction_ID": txn_id,
+        "Reference_Number": ref_no,
         "amount": _clean_amount(amount_str),
         "dr_cr": direction,  # 'D'/'C' when the bank marks direction explicitly
         "Balance": balance_str,  # cleaned later
@@ -1306,6 +1854,46 @@ def _clean_amount_to_float(value: Any) -> float:
         return 0.0
 
 
+def _clean_balance_to_float(value: Any) -> float:
+    """
+    Like _clean_amount_to_float but SIGN-AWARE for a running-balance value.
+
+    A balance often carries a CR/DR suffix that denotes its sign rather than a
+    transaction direction:
+        "3400.05CR" / "3400.05 Cr" / "3400.05(Cr)"  →  +3400.05  (account in credit)
+        "1099.95DR" / "1099.95 Dr" / "1099.95(Dr)"  →  -1099.95  (account overdrawn)
+    A bare leading minus ("-32.00") is also honoured. Statements that print no
+    CR/DR suffix and no minus are returned exactly as before (positive). This keeps
+    the balance chain correctly signed across an overdraft, which the downstream
+    balance-reconciliation uses as a secondary check on debit/credit direction.
+    """
+    if pd.isna(value) or value is None:
+        return 0.0
+    if isinstance(value, (int, float)):
+        return float(value)
+
+    raw = str(value).strip()
+    # Detect the direction marker before stripping it.
+    m = re.search(r"\(?(Dr|Cr)\)?\s*$", raw, flags=re.IGNORECASE)
+    sign = 1.0
+    if m and m.group(1).lower() == "dr":
+        sign = -1.0
+
+    cleaned = raw.replace("₹", "").replace(",", "").replace(" ", "")
+    cleaned = re.sub(r"\(?(?:Dr|Cr)\)?$", "", cleaned, flags=re.IGNORECASE)
+    if cleaned in ("-", "nil", "NIL", "N/A", "n/a", ""):
+        return 0.0
+
+    try:
+        val = float(cleaned)
+    except ValueError:
+        return 0.0
+    # If the number already carried its own minus sign, don't double-negate.
+    if val < 0:
+        return val
+    return sign * val
+
+
 def _parse_date(date_value: Any, preferred_format: str = None) -> Optional[pd.Timestamp]:
     """
     Parses a date value from any of the common Indian bank statement date formats.
@@ -1393,15 +1981,32 @@ def _clean_and_type_columns(df: pd.DataFrame, date_format: str = None) -> pd.Dat
     if "Date" in df.columns:
         df["Date"] = df["Date"].apply(lambda v: _parse_date(v, preferred_format=date_format))
 
-    # ── Numeric columns (Debit, Credit, Balance) ───────────────────────────
-    for col in ["Debit", "Credit", "Balance"]:
+    # ── Numeric columns (Debit, Credit) ─────────────────────────────────────
+    # Debit/Credit carry the transaction amount magnitude; a (Dr)/(Cr) marker on
+    # them is only a direction hint, never a sign — keep the existing cleaner.
+    for col in ["Debit", "Credit"]:
         if col in df.columns:
             df[col] = df[col].apply(_clean_amount_to_float)
+
+    # ── Balance column (sign-aware) ──────────────────────────────────────────
+    # A running balance may carry a CR/DR SUFFIX that denotes the sign of the
+    # balance, not a transaction direction: "3400.05CR" = +3400.05 (in credit),
+    # "1099.95DR" = -1099.95 (overdrawn). Interpreting this gives a correctly
+    # signed balance chain, which makes the balance-reconciliation direction check
+    # (_correct_direction_by_balance) accurate across an overdraft boundary. This
+    # is purely additive — statements without a CR/DR suffix are unaffected.
+    if "Balance" in df.columns:
+        df["Balance"] = df["Balance"].apply(_clean_balance_to_float)
 
     # ── Narration column ────────────────────────────────────────────────────
     if "Narration" in df.columns:
         # Convert to string and strip extra whitespace
         df["Narration"] = df["Narration"].astype(str).str.strip()
+        # Collapse embedded newlines/tabs/multiple spaces into a single space. Some
+        # Excel/CSV exports store a multi-line narration inside ONE cell (e.g.
+        # "ATM WDL\n\nATM CASH ..."), which would otherwise produce ragged multi-line
+        # cells in the output CSV. Idempotent for already-single-line narrations.
+        df["Narration"] = df["Narration"].str.replace(r"\s+", " ", regex=True).str.strip()
         # Replace pandas NaN string representations with empty string
         df["Narration"] = df["Narration"].replace({"nan": "", "None": "", "NaT": ""})
 

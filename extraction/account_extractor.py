@@ -48,6 +48,7 @@ BANK_KEYWORDS = {
     "karnataka bank": "Karnataka Bank", "bank of maharashtra": "Bank of Maharashtra",
     "indian overseas": "Indian Overseas Bank", "citi": "Citibank",
     "standard chartered": "Standard Chartered", "hsbc": "HSBC",
+    "idfc first": "IDFC First Bank", "idfc": "IDFC First Bank",
 }
 
 # IFSC prefix (bank code) → bank name. Covers the common Indian banks.
@@ -60,12 +61,34 @@ IFSC_PREFIX_TO_BANK = {
     "UCBA": "UCO Bank", "FDRL": "Federal Bank", "INDB": "IndusInd Bank", "RATN": "RBL Bank",
     "KARB": "Karnataka Bank", "PSIB": "Punjab & Sind Bank", "CORP": "Corporation Bank",
     "CITI": "Citibank", "SCBL": "Standard Chartered", "HSBC": "HSBC",
+    "IDFB": "IDFC First Bank", "BDBL": "Bandhan Bank",
+    # Additional common Indian bank IFSC prefixes (reference data, not per-bank logic).
+    "JAKA": "Jammu & Kashmir Bank", "SIBL": "South Indian Bank",
+    "TMBL": "Tamilnad Mercantile Bank", "CIUB": "City Union Bank",
+    "DLXB": "Dhanlaxmi Bank", "KVBL": "Karur Vysya Bank", "DCBL": "DCB Bank",
+    "AUBL": "AU Small Finance Bank", "ESFB": "Equitas Small Finance Bank",
+    "UJVN": "Ujjivan Small Finance Bank", "PYTM": "Paytm Payments Bank",
+    "FINO": "Fino Payments Bank", "AIRP": "Airtel Payments Bank",
+    "UTBI": "United Bank of India", "ANDB": "Andhra Bank", "SYNB": "Syndicate Bank",
+    "ORBC": "Oriental Bank of Commerce", "VIJB": "Vijaya Bank", "DENA": "Dena Bank",
+    "ALLA": "Allahabad Bank", "BKDN": "Dena Bank", "TJSB": "TJSB Sahakari Bank",
+    "SVCB": "SVC Co-operative Bank", "ABHY": "Abhyudaya Co-operative Bank",
+    "NKGS": "NKGSB Co-operative Bank", "SURY": "Suryoday Small Finance Bank",
 }
 
 # The standard set of identity fields every statement produces.
+# Extended with customer_id, branch_address, currency, and customer_address to
+# handle the broader field set present in modern Indian bank statements.
 ACCOUNT_FIELDS = [
     "account_holder", "account_number", "ifsc_code", "bank_name",
-    "branch", "account_type", "statement_period", "opening_balance", "closing_balance",
+    "branch", "branch_address", "account_type", "statement_period",
+    "opening_balance", "closing_balance",
+    "customer_id", "currency", "customer_address",
+    # Extended identity fields present in modern Indian bank statements. All are
+    # OPTIONAL — extracted when clearly labelled, left blank otherwise (never guessed).
+    "joint_holder", "nominee_name", "micr_code", "branch_code",
+    "branch_phone", "branch_email", "branch_gstin", "product_type",
+    "ckyc_number",
 ]
 
 
@@ -166,6 +189,15 @@ def reconcile_account_details(
             # the field is never blank when the document showed *something*.
             final[field] = "" if _is_blank(content_val) else str(content_val).strip()
 
+    # IFSC → bank fallback: every Indian IFSC encodes its bank in the first 4 letters.
+    # If the bank name is still blank but we have a well-formed IFSC, derive it. This
+    # works for EVERY source (Excel, CSV, PDF, image) and never overwrites a bank name
+    # that was actually read from the document.
+    if _is_blank(final.get("bank_name")) and not _is_blank(final.get("ifsc_code")):
+        derived = IFSC_PREFIX_TO_BANK.get(str(final["ifsc_code"])[:4].upper(), "")
+        if derived:
+            final["bank_name"] = derived
+
     final["account_ref"] = account_ref  # internal id, kept for analysis linkage
     return final
 
@@ -179,7 +211,8 @@ def reconcile_account_details(
 _NEXT_LABEL = (
     r"IFSC|IFS|Account|A/?C|Period|Branch|Page|City|State|Phone|Email|MICR|CIF|"
     r"Cust|Customer|Balance|RTGS|NEFT|Drawing|Interest|MOD|Nomination|Currency|"
-    r"Status|Scheme|Address|Limit|Date"
+    r"Status|Scheme|Address|Limit|Date|GSTIN|Nominee|Joint|Product|CKYC|Time|"
+    r"Nomination|MAB|QAB|Cleared|Uncleared|Code|Open"
 )
 
 
@@ -202,13 +235,66 @@ def _labelled(text: str, label_alts: str, sep_optional: bool = False) -> str:
     return m.group(1).strip() if m else ""
 
 
-# Holder is often a bare "MR / MRS / MS / SHRI / SMT ..." line with no label. We
-# capture the title plus following ALL-CAPS words (names are printed in caps),
-# which stops cleanly before Title-Case header text like "Your Base Branch".
+def _labelled_multiline(text: str, label_alts: str, max_lines: int = 4) -> str:
+    """
+    Like _labelled() but captures multi-line values (addresses, long branch names).
+
+    After matching the label line, collects continuation lines until a blank
+    line, another known field label (followed by a separator), or max_lines is
+    reached.  All parts are joined with a single space.
+    """
+    pattern = rf"(?:{label_alts})\s*[:\-=]\s*([^\n]*)"
+    m = re.search(pattern, text, re.IGNORECASE | re.MULTILINE)
+    if not m:
+        return ""
+
+    first_line = m.group(1).strip()
+    parts = [first_line] if first_line else []
+
+    _next_label_re = re.compile(
+        rf"^\s*(?:{_NEXT_LABEL})\s*[:\-=]", re.IGNORECASE
+    )
+    # m.end() points to the character just before the \n that terminates the matched
+    # line.  text[m.end():].splitlines() would therefore produce an empty first
+    # element (the content between m.end() and that \n, which is nothing), causing
+    # the loop to break immediately on "if not s".  Skip to the next \n first.
+    remainder_start = text.find("\n", m.end())
+    if remainder_start == -1:
+        return " ".join(parts).strip()
+
+    for raw_line in text[remainder_start + 1:].splitlines():
+        if len(parts) >= max_lines:
+            break
+        s = raw_line.strip()
+        if not s:
+            break
+        if _next_label_re.match(s):
+            break
+        parts.append(s)
+
+    return " ".join(parts).strip()
+
+
+# Holder is often a bare "Mr / Mrs / Ms / Shri / Smt ..." line with no label. We
+# capture the title plus the following name words. Two generalisations over the
+# original pattern:
+#   1. The TITLE is matched case-insensitively (inline (?i:...)) so "Mr. Nidhi
+#      Verma" (mixed-case, as SBI prints it) is recognised, not just "MR NIDHI".
+#   2. Name words may be Title-Case OR ALL-CAPS — "[A-Z][A-Za-z'.]+" — so both
+#      "Nidhi Verma" and "RITU SARITA" match. The first letter must be uppercase,
+#      which still excludes lowercase header noise.
+# Inter-word gaps use [ \t] (NOT \s) so the match never crosses a line boundary
+# and swallows the next header field (e.g. "...Verma\nBranch Code").
 # NOTE: deliberately NO "KUM" here — it was matching inside names like "KUMAR".
-# \s* (not \s+) so "MR.KASULABADA" (no space after the dot) is still captured.
+#
+# The title must be followed by a real separator — a dot ("MR.KASULABADA") or at
+# least one space ("Mr. Nidhi") — via (?:\.[ \t]*|[ \t]+). This is what stops the
+# title "DR" from matching the first two letters of an unrelated all-caps word like
+# "DRUK"/"DRDO" (which has no separator after DR). The leading \b prevents matching
+# a title inside another word.
 _HOLDER_TITLE_RE = re.compile(
-    r"\b((?:MR|MRS|MS|SHRI|SMT|M/S|DR)\.?\s*[A-Z]{2,}(?:\s+[A-Z]{2,}){0,5})",
+    r"\b((?i:MR|MRS|MS|MISS|SHRI|SMT|M/S|DR)(?:\.[ \t]*|[ \t]+)"
+    r"[A-Z][A-Za-z'.]+(?:[ \t]+[A-Z][A-Za-z'.&]+){0,5})",
 )
 
 # Opening/closing balance: the value MUST be a number (optionally after Rs/INR/₹).
@@ -222,6 +308,19 @@ def _balance_after(text: str, label_alts: str) -> str:
     )
     return m.group(1).replace(",", "") if m else ""
 
+# Corporate account holders (e.g. "STAR RETAIL LLP", "ABC PVT LTD") carry no
+# personal title.  We recognise them by a trailing entity-type suffix.
+# IMPORTANT: uses [ \t]+ (space/tab only, NOT \n) so the pattern never matches
+# across line boundaries and accidentally captures a statement-period line
+# ("STATEMENT FOR 16-Apr-2025\nSTAR RETAIL LLP" → matched the suffix "LLP").
+_COMPANY_ENTITY_RE = re.compile(
+    r"\b([A-Z][A-Z0-9&\./\-]*(?:[ \t]+[A-Z0-9&\./\-]+)*[ \t]+"
+    r"(?:LLP|LLC|PLC|LTD\.?|PVT\.?[ \t]*LTD\.?|PRIVATE[ \t]+LIMITED|"
+    r"PUBLIC[ \t]+LIMITED|LIMITED|INC\.?|CORP(?:ORATION)?|"
+    r"INDUSTRIES|ENTERPRISES|SOLUTIONS|SERVICES|SYSTEMS))\b",
+    re.IGNORECASE,
+)
+
 # Some banks (e.g. Bank of Baroda) print the holder as the very FIRST line with no
 # label at all. As a last resort we take the first header line that looks like a
 # name: 2–4 words, letters only, and not a known header/keyword line.
@@ -231,6 +330,17 @@ _NOT_NAME_WORDS = {
     "micr", "current", "savings", "saving", "date", "page", "summary", "pin",
     "phone", "email", "detailed", "relationship", "registered", "profile",
     "opening", "closing", "balance", "transaction", "deposit", "withdrawal",
+}
+# Words that signal a line is a BRANCH or ADDRESS, not a person/company name. The
+# first-line-name fallback must reject these so a branch line ("ASHOKA ROAD MYSURU")
+# is never mistaken for the account holder. Generic geographic/postal vocabulary —
+# not tied to any bank or city.
+_ADDRESS_HINT_WORDS = {
+    "road", "street", "nagar", "building", "marg", "floor", "block", "sector",
+    "plot", "lane", "complex", "tower", "phase", "cross", "main", "colony",
+    "layout", "extension", "society", "premise", "premises", "chowk", "ward",
+    "district", "dist", "taluk", "tehsil", "village", "town", "city", "po",
+    "p.o", "near", "opp", "behind", "no.", "bldg",
 }
 
 
@@ -243,7 +353,11 @@ def _first_line_name(header: str) -> str:
         words = s.split()
         if not (2 <= len(words) <= 4):
             continue
+        low_words = set(w.strip(".,").lower() for w in words)
         if any(w in s.lower() for w in _NOT_NAME_WORDS):
+            continue
+        # Reject branch/address lines (e.g. "ASHOKA ROAD MYSURU").
+        if low_words & _ADDRESS_HINT_WORDS:
             continue
         if _NAME_LINE_RE.match(s):
             return s
@@ -258,6 +372,48 @@ _ACCNO_LINE_RE = re.compile(
 # account's own); scanning the whole document would grab counterparties' IFSCs
 # out of the transaction rows.
 _IFSC_RE_FIND = re.compile(r"\b([A-Z]{4}0[A-Z0-9]{6})\b")
+
+# A money token with a 2-decimal part — used to tell a metadata line from a
+# transaction row (so identity detection never reads the transaction table).
+_MONEY_IN_LINE_RE = re.compile(r"\b\d{1,3}(?:,\d{2,3})*\.\d{2}\b|\b\d+\.\d{2}\b")
+# A date anywhere in a line.
+_DATE_IN_LINE_RE = re.compile(
+    r"\d{1,2}[/\-.][0-9A-Za-z]{2,9}[/\-.]\d{2,4}|\d{4}[/\-.]\d{1,2}[/\-.]\d{1,2}")
+# Column-header vocabulary; a line with >=3 of these is the transaction table header.
+_TABLE_HEADER_WORDS = ("date", "narration", "description", "particular", "remarks",
+                       "debit", "credit", "withdrawal", "deposit", "balance",
+                       "cheque", "instrument")
+
+
+def _looks_like_transaction(line: str) -> bool:
+    """True if a line looks like a transaction row (a date AND a 2-decimal amount)."""
+    s = line.strip()
+    return bool(_DATE_IN_LINE_RE.search(s)) and bool(_MONEY_IN_LINE_RE.search(s))
+
+
+def _metadata_region(text: str, max_lines: int = 25) -> str:
+    """
+    Returns the account-identity region: the lines BEFORE the transaction table
+    begins. The table begins at the first column-header row (>=3 header words) or
+    the first transaction-like row (date + amount). Identity detectors that scan
+    unlabelled text (IFSC by shape, bank keyword, the unlabelled-holder fallbacks)
+    must use THIS region, never the transaction rows — otherwise, on a statement
+    with no metadata header (just a table), they would read a counterparty's IFSC
+    or a transaction line as the account holder. Statements with a normal header are
+    unaffected (their metadata sits above the table, inside this region).
+    """
+    out = []
+    for ln in text.splitlines()[:max_lines + 15]:
+        s = ln.strip()
+        low = s.lower()
+        if sum(1 for w in _TABLE_HEADER_WORDS if w in low) >= 3:
+            break
+        if _looks_like_transaction(s):
+            break
+        out.append(ln)
+        if len(out) >= max_lines:
+            break
+    return "\n".join(out)
 
 
 def extract_account_details_from_text(text: str) -> Dict[str, str]:
@@ -286,10 +442,12 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
     if not text or not text.strip():
         return details
 
-    # The account's own identity lives in the HEADER. We scope IFSC, bank and the
-    # unlabelled-holder fallback to the header so we never pick up a counterparty's
-    # details out of the transaction rows further down.
-    header = "\n".join(text.splitlines()[:25])
+    # The account's own identity lives ABOVE the transaction table. We scope IFSC,
+    # bank and the unlabelled-holder fallbacks to this metadata region so we never
+    # pick up a counterparty's IFSC or a transaction row as identity — critical for
+    # statements that have NO metadata header (just a table), where we prefer to
+    # leave a field blank rather than read it wrong.
+    header = _metadata_region(text)
 
     # ── Account holder ────────────────────────────────────────────────────────
     # Attempt 1: labels that END in "name" — the value follows, with or without a
@@ -301,16 +459,66 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
         sep_optional=True,
     )
     # Attempt 2: shorter labels that DO require a colon (avoids false matches).
+    # "account title" is Bandhan Bank's label for the account holder.
     if not holder:
-        holder = _labelled(text, r"account\s*holders?|account\s*name|a/?c\s*holders?")
+        holder = _labelled(
+            text,
+            r"account\s*holders?|account\s*name|account\s*title|a/?c\s*holders?",
+        )
     # Attempt 3: an unlabelled "MR/MRS/… NAME" line in the header.
     if not holder:
         m = _HOLDER_TITLE_RE.search(header)
         if m:
-            holder = re.sub(r"\s{2,}", " ", m.group(1)).strip()
-    # Attempt 4: an unlabelled name as the very first header line (Bank of Baroda).
+            raw = re.sub(r"\s{2,}", " ", m.group(1)).strip()
+            # Strip any trailing token that is a known field label (e.g. "MICR" in
+            # "M/S CRYSTAL MARKETING MICR:" — the regex captures it as an ALL-CAPS
+            # name word but it is actually the next field's label).
+            raw = re.sub(
+                rf"\s+(?:{_NEXT_LABEL})\s*$", "", raw, flags=re.IGNORECASE,
+            ).strip()
+            holder = raw
+    # Attempt 4: text that appears BEFORE "ACCOUNT :" on the same header line.
+    # Some bank layouts (e.g. IDFC First Bank) print:
+    #   "PIONEER HOLDINGS ACCOUNT :PRABHADEVI BRANCH"
+    # The company name precedes the "ACCOUNT :" label on one combined line.
+    if not holder:
+        m = re.search(r"^(.+?)\s+ACCOUNT\s*:", header, re.IGNORECASE | re.MULTILINE)
+        if m:
+            candidate = m.group(1).strip()
+            cand_low = candidate.lower()
+            # Accept only if it looks like a name (not too long, no digits at start,
+            # not itself a metadata phrase like "statement for ...").
+            if (3 <= len(candidate) <= 60
+                    and not candidate[0].isdigit()
+                    and not any(w in cand_low for w in (
+                        "statement", "customer", "acct", "account", "period",
+                    ))):
+                holder = candidate
+    # Attempt 5: an unlabelled name as the very first header line (Bank of Baroda).
     if not holder:
         holder = _first_line_name(header)
+    # Attempt 6: unlabelled company entity in the header (LLP, Ltd, Pvt Ltd, etc.).
+    # Covers corporate accounts that carry no MR/MRS title and no "Account Holder"
+    # label.  We skip any match that itself looks like a bank name (contains "bank").
+    if not holder:
+        for cm in _COMPANY_ENTITY_RE.finditer(header):
+            candidate = re.sub(r"\s{2,}", " ", cm.group(1)).strip()
+            if "bank" in candidate.lower():
+                continue
+            holder = candidate
+            break
+    # Attempt 7: the holder printed immediately AFTER the account number on the same
+    # line, optionally past a "/CCY" currency tag — e.g.
+    # "Account Number :8642666611469255/INR ANJALI". Generalised by layout, not bank.
+    if not holder:
+        m = re.search(
+            r"account\s*(?:number|no\.?)\s*[:\-=]?\s*\d{6,}(?:\s*/\s*[A-Z]{3})?[ \t]+"
+            r"([A-Z][A-Za-z]+(?:[ \t]+[A-Z][A-Za-z&.]+){0,3})",
+            header, re.IGNORECASE)
+        if m:
+            cand = m.group(1).strip()
+            if cand.lower() not in _NOT_NAME_WORDS:
+                holder = cand
     details["account_holder"] = holder
 
     # ── Account number ────────────────────────────────────────────────────────
@@ -362,19 +570,122 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
     if details["ifsc_code"]:
         bank = IFSC_PREFIX_TO_BANK.get(details["ifsc_code"][:4].upper(), "")
     if not bank:
-        # Leading word-boundary only (so "icici" still matches "icicibank.com"),
-        # which is safe here because the reliable IFSC-prefix path already ran.
+        # Match a bank in the METADATA REGION only (the identity block above the
+        # transaction table). We never scan the footer / transaction body: those
+        # carry COUNTERPARTY bank names inside NEFT/IMPS narrations. On a pure-table
+        # statement with no header this finds nothing and bank_name stays blank — we
+        # prefer empty over a wrong guess.
         header_low = header.lower()
-        for keyword, name in BANK_KEYWORDS.items():
-            if re.search(rf"\b{re.escape(keyword)}", header_low):
+
+        # Pass 1 — LONGEST full canonical bank name present wins. This is what stops
+        # a shorter name shadowing a longer one: "Central Bank of India" must win over
+        # the "Bank of India" substring inside it, and "State Bank of India" over
+        # "Bank of India". Purely length-ordered over the canonical name list — no
+        # bank is special-cased, so it generalises to every name in the table.
+        canonical_names = set(BANK_KEYWORDS.values()) | set(IFSC_PREFIX_TO_BANK.values())
+        for name in sorted(canonical_names, key=len, reverse=True):
+            if re.search(rf"\b{re.escape(name.lower())}\b", header_low):
                 bank = name
                 break
+
+        # Pass 2 — abbreviation / keyword fallback (SBI, PNB, HDFC, IDFC, …) when the
+        # full name is not spelled out. Longest keyword first so a short code can't
+        # win over a more specific phrase; bounded \b…\b so "sbi" never matches inside
+        # an "SBIN…" IFSC.
+        if not bank:
+            for keyword, name in sorted(BANK_KEYWORDS.items(),
+                                        key=lambda kv: len(kv[0]), reverse=True):
+                if re.search(rf"\b{re.escape(keyword)}\b", header_low):
+                    bank = name
+                    break
     details["bank_name"] = bank
+
+    # ── Customer ID / CIF number ──────────────────────────────────────────────
+    # Many banks print this as "Customer ID", "CIF No", or "CIF Number".
+    details["customer_id"] = _labelled(
+        text,
+        r"customer\s*(?:id|number|no\.?)|cif\s*(?:no\.?|number|id)?|"
+        r"client\s*(?:id|number|no\.?)|cust(?:omer)?\s*(?:no\.?|id)",
+    )
+
+    # ── Branch address (multi-line) ───────────────────────────────────────────
+    details["branch_address"] = _labelled_multiline(
+        text, r"branch\s*address|address\s*of\s*(?:the\s*)?branch", max_lines=3,
+    )
+
+    # ── Extended identity fields (all optional, clearly-labelled only) ─────────
+    # Joint holder / second account holder.
+    details["joint_holder"] = _labelled(
+        text, r"joint\s*holders?|second\s*holders?|joint\s*account\s*holders?")
+    # Nominee.
+    details["nominee_name"] = _labelled(
+        text, r"nominee\s*name|name\s*of\s*nominee|nominee")
+    # MICR code (9-digit code; capture digits only to avoid trailing label spill).
+    mm = re.search(r"MICR(?:\s*(?:code|no\.?|number))?\s*[:\-=]?\s*(\d{6,9})",
+                   text, re.IGNORECASE)
+    if mm:
+        details["micr_code"] = mm.group(1)
+    # Branch code / branch id.
+    mb = re.search(r"branch\s*(?:code|id)\s*[:\-=]?\s*([A-Za-z0-9]{2,12})",
+                   text, re.IGNORECASE)
+    if mb:
+        details["branch_code"] = mb.group(1)
+    # Branch phone (digits, possibly with separators).
+    details["branch_phone"] = _labelled(
+        text, r"branch\s*phone(?:\s*number)?|branch\s*(?:tel|telephone)")
+    # Branch email.
+    me = re.search(r"branch\s*email(?:\s*address)?\s*[:\-=]?\s*([\w.\-]+@[\w.\-]+)",
+                   text, re.IGNORECASE)
+    if me:
+        details["branch_email"] = me.group(1)
+    # Branch GSTIN (15-char GST identifier).
+    mg = re.search(r"(?:branch\s*)?gstin\s*[:\-=]?\s*([0-9A-Z]{15})",
+                   text, re.IGNORECASE)
+    if mg:
+        details["branch_gstin"] = mg.group(1).upper()
+    # Product / scheme name. A product name legitimately CONTAINS the word
+    # "Account" (e.g. "Current Account Biz-Premium"), so we cannot use the generic
+    # _labelled() here (its _NEXT_LABEL list would truncate at "Account"). Stop only
+    # at a clearly different field label or 2+ spaces.
+    mp2 = re.search(
+        r"product(?:\s*type)?\s*[:\-=]\s*([^\n]+?)"
+        r"(?:\s{2,}|\s+(?:Email|Branch|MAB|QAB|Nominee|IFSC|MICR|Account\s+Type|"
+        r"Account\s+Branch|Currency|Status)\b|$)",
+        text, re.IGNORECASE | re.MULTILINE)
+    if mp2:
+        details["product_type"] = mp2.group(1).strip()
+    # CKYC number — REQUIRE a masked/alphanumeric KYC token (X's + digits, 10–14
+    # chars). Some layouts print the label and value on separate lines / out of
+    # order; demanding the token shape means we return blank rather than grabbing
+    # adjacent text like "STATEMENT OF" (prefer empty over wrong).
+    mck = re.search(r"ckyc\s*(?:no\.?|number)?\s*[:\-=]?\s*([X0-9]{10,14})\b",
+                    text, re.IGNORECASE)
+    if not mck:
+        mck = re.search(r"([X]{6,}\d{2,6})\b", text)  # bare masked KYC token nearby
+    if mck:
+        details["ckyc_number"] = mck.group(1)
+
+    # ── Currency ─────────────────────────────────────────────────────────────
+    details["currency"] = _labelled(text, r"currency")
+    if not details["currency"]:
+        mc = re.search(r"\b(INR|USD|GBP|EUR|AED|SGD|JPY|CNY)\b", header)
+        if mc:
+            details["currency"] = mc.group(1).upper()
+
+    # ── Customer address (multi-line) ─────────────────────────────────────────
+    # Use specific labels only — generic "address" risks picking up the bank's own
+    # registered office address printed in the footer.
+    details["customer_address"] = _labelled_multiline(
+        text,
+        r"customer\s*address|address\s*of\s*(?:the\s*)?(?:account\s*)?holder|"
+        r"correspondence\s*address|registered\s*address|mailing\s*address",
+        max_lines=4,
+    )
 
     logger.info(
         "account_extractor.extract_account_details_from_text: "
-        "holder=%r account_number=%r ifsc=%r bank=%r",
+        "holder=%r account_number=%r ifsc=%r bank=%r customer_id=%r",
         details["account_holder"], details["account_number"],
-        details["ifsc_code"], details["bank_name"],
+        details["ifsc_code"], details["bank_name"], details["customer_id"],
     )
     return details

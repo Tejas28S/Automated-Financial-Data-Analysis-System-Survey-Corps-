@@ -90,6 +90,14 @@ def route_file(file_path: str) -> str:
         logger.info("router.route_file: Routed to 'docx'")
         return "docx"
 
+    # ── Plain-text statements (.txt) ──────────────────────────────────────────
+    # Some banks export a fixed-width / space-aligned plain-text statement. It is
+    # read as raw text and handed to the SAME deterministic text parser the digital
+    # PDFs use, so it inherits the header/footer/id-column handling for free.
+    if extension == ".txt":
+        logger.info("router.route_file: Routed to 'text'")
+        return "text"
+
     # ── Image files (photographs of bank statements) ──────────────────────────
     # An investigator may photograph a printed bank statement with their phone.
     # These go through the OCR pipeline (Tesseract → Groq Vision fallback).
@@ -119,7 +127,7 @@ def route_file(file_path: str) -> str:
     )
     raise ValueError(
         f"Unsupported file extension '{extension}'. "
-        f"Supported types: .pdf, .xlsx, .xls, .csv, .docx, .jpg, .jpeg, .png"
+        f"Supported types: .pdf, .xlsx, .xls, .csv, .docx, .txt, .jpg, .jpeg, .png"
     )
 
 

@@ -147,6 +147,13 @@ def grade_parse(df: pd.DataFrame, expected_rows: int = None) -> Dict[str, Any]:
         "has_balance_column": False,
         "failing_row_indices": [],
         "rows_checked": 0,
+        # score = reconciliation_rate × completeness_ratio. This — NOT the bare rate —
+        # is what the pipeline uses to compare two candidate parses, because the rate
+        # alone is not comparable across parses of different sizes: a degenerate 1-row
+        # parse trivially "reconciles" at 1.0 while having captured almost nothing.
+        # Multiplying by completeness makes a fuller, well-reconciling parse always
+        # win, so a sparse/garbage parse can never beat or block a better one.
+        "score": 0.0,
         "verdict": "FAIL",
     }
     if df is None or n == 0:
@@ -194,6 +201,7 @@ def grade_parse(df: pd.DataFrame, expected_rows: int = None) -> Dict[str, Any]:
         result["rows_checked"] = checked
         failing = failing | structural_fail
         result["failing_row_indices"] = sorted(failing)
+        result["score"] = rate * result["completeness_ratio"]
         result["verdict"] = (
             "PASS" if rate >= ACCEPT_RECONCILE_RATE
             and result["completeness_ratio"] >= MIN_COMPLETENESS_RATIO
@@ -206,6 +214,11 @@ def grade_parse(df: pd.DataFrame, expected_rows: int = None) -> Dict[str, Any]:
         proxy_rate = (n - len(structural_fail)) / n if n else 0.0
         result["reconciliation_rate"] = proxy_rate  # reported as best-available confidence
         result["failing_row_indices"] = sorted(structural_fail)
+        # Without a balance chain we have no real reconciliation evidence, so the
+        # comparison score is the weaker proxy × completeness — this keeps a 1-row
+        # "no balance column" parse (proxy 1.0, completeness ~0) from out-scoring a
+        # full parse that genuinely reconciles.
+        result["score"] = proxy_rate * result["completeness_ratio"]
         result["verdict"] = (
             "PASS" if proxy_rate >= ACCEPT_RECONCILE_RATE
             and result["completeness_ratio"] >= MIN_COMPLETENESS_RATIO

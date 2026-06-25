@@ -170,6 +170,84 @@ def _is_money_token(token: str) -> bool:
     return bool(_MONEY_TOKEN.match(token.strip()))
 
 
+# A short token that some layouts print as a trailing column AFTER the balance, which
+# is NOT a money token (no decimals) and would otherwise make the from-the-end amount
+# peeler see "no amounts" and drop the whole row. Two generic, bank-agnostic shapes:
+#   • a short bare-numeric code — an "Init. Br" branch / posting code (2535, 248, 100)
+#   • a transaction-CHANNEL / mode code — the standard last column on some layouts
+#     (UPI, NEFT, IMPS, RTGS, ATM, POS, CLG, …). Generic banking vocabulary, NOT any
+#     bank's name, so the anti-overfitting guard is unaffected.
+# We only ever skip such a token when doing so reveals a proper amount+balance pair, so
+# this never eats a narration word.
+_TRAILING_CODE_RE = re.compile(r"^\d{1,6}$")
+_TRAILING_CHANNEL_RE = re.compile(
+    r"^(?:UPI|NEFT|IMPS|RTGS|ATM|POS|CLG|ECS|NACH|ACH|MOB|INB|BIL|CASH|TFR|CHQ|"
+    r"EMI|IFT|VMT|EDC|SETU|ABB|CWDR|PUR|MPS|FT)$",
+    re.IGNORECASE,
+)
+# At most this many trailing non-money code columns are skipped (kept tiny on purpose).
+_MAX_TRAILING_CODES = 2
+
+
+def _is_trailing_code(tok: str) -> bool:
+    """True if a token is a short non-money trailing CODE column (numeric or channel)."""
+    return bool(_TRAILING_CODE_RE.match(tok) or _TRAILING_CHANNEL_RE.match(tok))
+
+
+def _peel_trailing_amounts(tokens: List[str]) -> List[str]:
+    """
+    Peels the trailing run of monetary tokens off `tokens` (MUTATING it) and returns
+    them left-to-right. Up to 3 are taken (separate Debit | Credit | Balance columns).
+
+    Layout robustness (generic, bank-agnostic — keys on token SHAPE, never identity):
+    some statements print a short non-money CODE column AFTER the balance (e.g. Axis
+    prints an "Init. Br" branch code; some banks print a trailing "Channel" column like
+    UPI/NEFT). The balance is then no longer the last token, so a naive from-the-end
+    peel finds nothing and the row is dropped. To handle that, if the line does NOT
+    already end in a money token we skip up to _MAX_TRAILING_CODES short trailing code
+    tokens — but ONLY when that exposes at least two trailing money tokens (amount +
+    balance). The guard means a row genuinely ending in narration (no trailing balance)
+    is never mis-peeled, so statements that already parse are completely unaffected
+    (their last token is money, so the skip block is never entered).
+    """
+    if tokens and not _is_money_token(tokens[-1]):
+        skip = 0
+        while (skip < _MAX_TRAILING_CODES and len(tokens) > skip
+               and not _is_money_token(tokens[-1 - skip])
+               and _is_trailing_code(tokens[-1 - skip])):
+            skip += 1
+        # Adopt the skip only if it reveals a real amount+balance pair right before it.
+        if (skip and len(tokens) >= skip + 2
+                and _is_money_token(tokens[-1 - skip])
+                and _is_money_token(tokens[-2 - skip])):
+            del tokens[len(tokens) - skip:]
+
+    money: List[str] = []
+    while tokens and _is_money_token(tokens[-1]) and len(money) < 3:
+        money.insert(0, tokens.pop())
+    return money
+
+
+def _peel_leading_amounts(tokens: List[str]) -> List[str]:
+    """
+    Peels the LEADING run of monetary tokens off the FRONT of `tokens` (MUTATING it)
+    and returns them left-to-right. Up to 3 are taken (Debit | Credit | Balance).
+
+    This is the mirror of _peel_trailing_amounts, for NARRATION-LAST layouts that print
+    the amount columns right after the date and the free-text narration LAST, e.g.:
+        31-01-2025  1000.00  1000.00 Cr.  Transfer From A/C…
+    For these the running balance is the LAST amount token of the leading run and the
+    remaining tokens are the narration. It is only ever called as a fallback when the
+    from-the-end peel found nothing (see _parse_single_transaction_line), so a normal
+    balance-last statement — whose first non-date token is narration text, not money —
+    never enters this path and is completely unaffected. Bank-agnostic (token shape only).
+    """
+    lead: List[str] = []
+    while tokens and _is_money_token(tokens[0]) and len(lead) < 3:
+        lead.append(tokens.pop(0))
+    return lead
+
+
 def count_transaction_like_lines(raw_text: str) -> int:
     """
     Estimate of how many lines in the raw text LOOK like transaction rows: a line
@@ -541,9 +619,7 @@ def _try_fill_amounts(line: str, require_balance: bool) -> dict:
     if this line does NOT look like an amounts line.
     """
     tokens = line.split()
-    money = []
-    while tokens and _is_money_token(tokens[-1]) and len(money) < 3:
-        money.insert(0, tokens.pop())
+    money = _peel_trailing_amounts(tokens)
 
     if require_balance:
         if len(money) < 2:
@@ -1616,9 +1692,18 @@ def _parse_single_transaction_line(line: str, require_balance: bool = True,
     # transaction amount. Reference/cheque numbers (no decimals) stay in the
     # narration. Layout-independent across bank column orders.
     tokens = rest.split()
-    money = []
-    while tokens and _is_money_token(tokens[-1]) and len(money) < 3:
-        money.insert(0, tokens.pop())
+    money = _peel_trailing_amounts(tokens)
+
+    # NARRATION-LAST fallback: some layouts print the amounts right AFTER the date and
+    # the narration LAST (e.g. "31-01-2025 1000.00 1000.00 Cr. Transfer From …"). The
+    # from-the-end peel above finds no amounts there, so when it comes up short, peel the
+    # amount run from the FRONT instead; the remaining tokens become the narration. This
+    # only runs when the normal trailing peel failed, so a balance-last statement — whose
+    # first post-date token is narration text, not money — is never affected.
+    if require_balance and len(money) < 2:
+        lead = _peel_leading_amounts(tokens)
+        if len(lead) >= 2:
+            money = lead
 
     if require_balance:
         if len(money) < 2:

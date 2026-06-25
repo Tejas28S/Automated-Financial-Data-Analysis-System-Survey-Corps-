@@ -482,8 +482,10 @@ def _extract_text_transactions(
         if schema.get("source") in ("groq", "cache"):
             df_s = standardise_digital_pdf_transactions(raw_text, account_id, bank, opening, schema)
             grade_s = grade_parse(df_s, expected_rows=expected)
-            # Adopt only if it reconciles at least as well as the cheap parse.
-            if grade_s["reconciliation_rate"] >= grade["reconciliation_rate"]:
+            # Adopt only if STRICTLY better by score (rate × completeness), so a sparser
+            # schema parse can never displace a fuller one and the cheap deterministic
+            # parse stays the source of truth on a tie.
+            if grade_s["score"] > grade["score"]:
                 df, grade = df_s, grade_s
                 file_record["tier"] = "schema_reparse"
                 file_record["column_map"] = {
@@ -499,7 +501,13 @@ def _extract_text_transactions(
         llm_df = standardise_llm_transactions(
             structured.get("transactions", []), account_id, bank, opening)
         grade_l = grade_parse(llm_df, expected_rows=expected)
-        if len(llm_df) and grade_l["reconciliation_rate"] >= grade["reconciliation_rate"]:
+        # Replace the deterministic parse ONLY if the LLM read is STRICTLY better by
+        # score (rate × completeness). This is the core regression fix: a degenerate
+        # 1-row parse used to score a meaningless 1.0 on bare rate and made the pipeline
+        # REJECT the LLM's correct, complete read (0.99 ≥ 1.0 is false). Comparing by
+        # score keeps the deterministic result authoritative unless the LLM clearly
+        # improves it — and stops a sparse LLM result from ever winning either.
+        if len(llm_df) and grade_l["score"] > grade["score"]:
             df, grade = llm_df, grade_l
             file_record["tier"] = "llm_full_read"
             file_record["column_map"] = {"engine": "llm_structurer_fallback"}
@@ -896,8 +904,11 @@ def _process_image_group(
             fb_df = standardise_transaction_records(
                 fb_rows, account_id, details.get("bank_name") or bank_name)
             fb_grade = grade_parse(fb_df, expected_rows=len(fb_rows) or None)
+            # Compare on score (rate × completeness), not bare rate, so a sparse vision
+            # read can't out-score a fuller text-ladder parse; ≥ keeps the vision floor
+            # as the tie-breaker (its original accuracy-floor intent).
             better = (grade is None
-                      or fb_grade["reconciliation_rate"] >= grade["reconciliation_rate"])
+                      or fb_grade["score"] >= grade["score"])
             if len(fb_df) and better:
                 standard_df, grade = fb_df, fb_grade
                 file_record["tier"] = "image_vision_json_fallback"

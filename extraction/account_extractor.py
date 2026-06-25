@@ -598,6 +598,25 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
                 if re.search(rf"\b{re.escape(keyword)}\b", header_low):
                     bank = name
                     break
+
+        # Pass 3 — the bank names ITSELF in its legal footer boilerplate. Some layouts
+        # never print the bank in the header but always carry a "Registered Office" /
+        # "Regd. Office" / "Head/Corporate Office" legend that does (e.g. "REGISTERED
+        # OFFICE - AXIS BANK LTD, ..."). We scan ONLY that boilerplate window — never a
+        # transaction narration — so a counterparty bank inside a NEFT/IMPS narration is
+        # never picked up. Generic across banks (every bank prints a registered office);
+        # keyed purely on the canonical name list, so no bank is special-cased.
+        if not bank:
+            for m in re.finditer(
+                    r"(?:registered|regd\.?|head|corporate)\s*off?ice[^\n]{0,160}",
+                    text, re.IGNORECASE):
+                segment = m.group(0).lower()
+                for name in sorted(canonical_names, key=len, reverse=True):
+                    if re.search(rf"\b{re.escape(name.lower())}\b", segment):
+                        bank = name
+                        break
+                if bank:
+                    break
     details["bank_name"] = bank
 
     # ── Customer ID / CIF number ──────────────────────────────────────────────

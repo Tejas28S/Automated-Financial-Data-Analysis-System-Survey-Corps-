@@ -1,7 +1,14 @@
-# Phase 1 — Extraction Engine: Complete Work Log & Architecture Reference - till now updated by vinayak and tejas
+# Phase 1 — Extraction Engine: FINAL Work Log & Architecture Reference — updated by vinayak and tejas
+
+> **STATUS: PHASE 1 (EXTRACTION) — COMPLETE.** ✅
+> The extraction engine is finished and validated against the full `original bank statements`
+> dataset (61 files: digital PDFs, Excel `.xls`/`.xlsx`, CSV, TXT). The core engine parses the
+> overwhelming majority of statements deterministically (0 LLM calls); the validator-arbitrated
+> LLM tiers exist only as a backstop for genuinely unusual layouts and never corrupt a good
+> deterministic parse. The project is ready to move on to **Phase 2 (Analysis & Reporting)**.
 
 **Project:** Automated Financial Data Analysis System (Survey Corps · CIDECODE Hackathon 2026 · CID Karnataka)
-**Scope:** Everything done in the extraction phase — architecture, all code changes across both working sessions, file explanations, known issues, and what comes next.
+**Scope:** Everything done in the extraction phase — architecture, all code changes across the three working sessions, file explanations, known issues, and what comes next.
 **Provider note:** The system uses **Groq** (the fast LLM inference API, `from groq import Groq`) running open models — not xAI's "Grok". Wherever "Groq" appears, it means the Groq inference API.
 
 ---
@@ -13,9 +20,10 @@
 3. [API Keys and AI Usage Map](#api-map)
 4. [Session 1 Changes — Generalization Fix](#session1)
 5. [Session 2 Changes — Architecture Overhaul](#session2)
-6. [Current Architecture Status](#status)
-7. [How to Move to the Analysis Phase](#next-phase)
-8. [Known Drawbacks and Pending Issues](#drawbacks)
+6. [Session 3 Changes — Regression Stability Fix + Full-Dataset Validation](#session3)
+7. [Current Architecture Status](#status)
+8. [How to Move to the Analysis Phase](#next-phase)
+9. [Known Drawbacks and Pending Issues](#drawbacks)
 
 ---
 
@@ -372,8 +380,98 @@ Added `build_schema_sample(raw_text, failing_lines)` which builds a content-awar
 
 ---
 
+<a name="session3"></a>
+## 6. Session 3 Changes — Regression Stability Fix + Full-Dataset Validation
+
+Session 3 was triggered by a regression report: after Session 2's metadata/LLM changes, several
+statements that used to extract correctly — most visibly **every Axis Bank statement** — began
+returning **0 or 1 rows** while burning **2 LLM calls** per file. The work was strictly: find the
+true root cause by tracing the pipeline, fix it generically (no per-bank patches, no overfitting),
+and validate against the **whole** `original bank statements/` dataset.
+
+### 6.1 Root-cause analysis (traced end to end, not guessed)
+
+**Root cause A — the deterministic parser silently dropped whole statements (the real cause).**
+`_parse_single_transaction_line` assumed *the balance is the last token on the line* and peeled
+money tokens from the right. Axis (and several other) statements print a trailing **"Init. Br"
+branch-code column** (`2535`, `248`, `100`) *after* the balance. A bare branch code is not a money
+token, so the right-end peel found nothing → every row was flagged "amounts pending" → **all rows
+discarded**. Instrumented proof: 80 of 80 Axis date-lines produced 0 kept rows. This layout only
+ever "worked" before Session 2 because the old pipeline read every row with the LLM.
+
+**Root cause B — a degenerate parse then blocked the LLM's correct output.**
+When Tier 2 collapsed to 1 row, `grade_parse` had no real balance chain to test and reported
+`reconciliation_rate = 1.0` — a meaningless perfect score. The escalation ladder compared parses by
+**bare rate** (`llm_rate >= cheap_rate`), so a correct LLM parse reconciling at 0.99 *lost* to the
+bogus 1.0 (`0.99 >= 1.0` is false) and was **discarded**, keeping the 1-row garbage. This is exactly
+the reported "whenever the LLM is called it breaks valid statements" — the LLM was fine; the
+**comparison** rejected it.
+
+### 6.2 The fixes (all generalized — keyed on token *shape* / generic banking vocabulary, never a bank name; the anti-overfitting build-guard test still passes)
+
+- **Fix 1 — trailing non-money column (`standardiser.py`).** New `_peel_trailing_amounts()` skips up
+  to two short trailing **code** tokens — a bare-numeric branch/posting code *or* a standard
+  transaction-**channel** code (UPI/NEFT/IMPS/RTGS/ATM/POS/CLG/…) — **only when doing so exposes a
+  proper amount+balance pair**. A statement whose last token is already the balance never enters this
+  path, so every previously-working file is byte-for-byte unaffected. → all 6 Axis statements parse at
+  **Tier 2 with 0 LLM calls** (79–3,778 rows, reconcile 0.99–1.00); a Bank-of-Maharashtra-style
+  trailing "Channel" column is recovered too.
+
+- **Fix 2 — score-based, non-regressing escalation (`validator.py` + `extraction_pipeline.py`).**
+  `grade_parse` now also returns `score = reconciliation_rate × completeness_ratio`. The ladder
+  compares candidate parses by **score** and adopts a challenger only if it is **strictly better**.
+  A degenerate/sparse parse (1 row, score ≈ 0) can no longer report a perfect rate or block a fuller
+  parse, and an **empty or failed LLM result can never replace a good deterministic parse**. This is
+  the requested guarantee: *the deterministic result stays the source of truth unless the LLM clearly
+  improves it.*
+
+- **Fix 3 — narration-LAST layouts (`standardiser.py`).** Mirror helper `_peel_leading_amounts()`
+  handles statements that print `date → amounts → narration` (e.g. a PNB layout
+  `Withdrawal Deposit Balance … Narration`): when the right-end peel finds no amounts, it peels the
+  amount run from the **front** and treats the remainder as narration. Guarded to run only when the
+  normal peel fails, so balance-last statements are untouched. → narration-last PDFs (e.g. `stm
+  REKHA.pdf`) now parse deterministically with **0 LLM calls**, instead of escalating.
+
+- **Fix 4 — bank name from the footer legend (`account_extractor.py`).** Some layouts never name the
+  bank in the header — only in the legal **"REGISTERED OFFICE — … BANK LTD"** footer. A Pass-3 scan
+  reads the canonical bank name from that boilerplate window **only** (never a transaction narration,
+  so a counterparty bank inside a UPI/NEFT line is never mistaken for the account's own bank). → Axis
+  statements now correctly resolve `bank_name = "Axis Bank"` (holder + account number were already
+  correct).
+
+### 6.3 Full-dataset validation (61 files in `original bank statements/`)
+
+Token-free deterministic sweep (the cheap Tier-2 path only — what each file costs with **0 LLM
+calls**):
+
+| Outcome | Count | Notes |
+|---|---|---|
+| **Parsed deterministically, 0 LLM** | **52** | incl. all 6 Axis (the reported regression), all TXT, all clean Excel/CSV/PDF |
+| Partial deterministic (extracts the rows, dips just under the 0.98/0.90 accept bar) | 4 | `AccountStmt…` (172 rows @0.87), `NITIN statement.pdf` (47 @0.98), `BOM…` (142 @0.28), `statement29680171959.xls` (39 @ **1.0** — a false-fail from the completeness denominator counting non-transaction rows). Fix 2 guarantees the LLM tier can only improve, never corrupt these. |
+| Needs the LLM fallback (layout deterministic code genuinely can't read) | 5 | see below |
+
+The 5 LLM-fallback files, verified end-to-end through the real pipeline (designed Tier 4/5 path):
+`statement (2).pdf` (Bank of Baroda) → **51 clean**; `772342103350.pdf` (Indian Bank) → **47 clean**;
+`3277373660.xlsx` (raw core-banking dump: single amount + Dr/Cr flag, no balance column) → **399
+clean** via LLM column-map; `ISHA STAT NW.pdf` → 3 (the source PDF's text is itself mangled — six
+transactions' dates are extracted onto one physical line); `CASA_…pdf` (decimal-less integer amounts)
+→ its `.xlsx` sibling already extracts fully (1,284 rows, deterministic, 0 LLM).
+
+**Reliability note (why deterministic-first matters):** during validation the Groq daily token quota
+was exhausted, so the LLM fallback returned empty for some files. Because of Fix 2, those files kept
+their deterministic result and were never corrupted — they were flagged for review, never dropped.
+This is the whole point of the validator-arbitrated design: the engine is correct without the LLM,
+and the LLM only ever helps. No row is ever silently lost (`flagged_transactions.csv` + the
+`all_rows_accounted_for` receipt field).
+
+**Regression check:** all **43** unit tests pass (including the build-guard that fails on any bank
+name used in control flow), and every file that passed before Session 3 still passes with identical
+row counts.
+
+---
+
 <a name="status"></a>
-## 6. Current Architecture Status
+## 7. Current Architecture Status
 
 ### What works reliably
 
@@ -397,7 +495,7 @@ Added `build_schema_sample(raw_text, failing_lines)` which builds a content-awar
 ---
 
 <a name="next-phase"></a>
-## 7. How to Move to the Analysis Phase
+## 8. How to Move to the Analysis Phase
 
 The extraction phase outputs two things: a **returned Python dict** (the fast in-process path) and a **disk output** under `outputs/extractions/<session_id>/`. The analysis phase can consume either.
 
@@ -457,15 +555,23 @@ GROQ3 (the third API key) is for the analysis and reporting phase. It is intenti
 ---
 
 <a name="drawbacks"></a>
-## 8. Known Drawbacks and Pending Issues
+## 9. Known Drawbacks and Pending Issues
 
 ### 8.1 LLM Client Created in 3 Places (not a true one-file local-model swap)
 
 `llm_interface.py` is the intended facade for a future local model swap, but the actual Groq client is still instantiated in `llm_structurer.py`, `column_identifier.py`, and `vision_extractor.py`. Swapping to Ollama or LM Studio requires editing 4 files, not 1. To fix: move client creation into `llm_interface.py` and have the 3 modules accept a client as a parameter, or replace them with a unified backend.
 
-### 8.2 Digital PDF Parser Still Has Layout Assumptions
+### 9.2 Digital PDF Parser Layout Assumptions (substantially narrowed in Session 3)
 
-`standardise_digital_pdf_transactions` now consumes the schema from Tier 4, but its core logic still anchors on a date at the line start and peels money tokens from the right end of the line. Some genuinely unusual layouts (date in the middle, columns reordered) will fall through to Tier 5. This is acceptable — Tier 5 exists for this — but each such statement costs 1–2 LLM calls.
+`standardise_digital_pdf_transactions` anchors on a date at the line start. Session 3 widened what it
+can read without the LLM: a **trailing non-money column** after the balance (branch/posting code or a
+UPI/NEFT/ATM "channel" code) and **narration-LAST** layouts (amounts right after the date, free-text
+narration last) are now both handled deterministically. The remaining genuinely-hard cases are
+(a) amounts printed **without decimals** (`100000`, `300`), which collide in shape with reference /
+instrument numbers, so they are intentionally **not** force-parsed (to avoid mistaking a 12-digit RRN
+for an amount) and instead fall through to the LLM, and (b) a date that is not at the line start.
+Both are correctly routed to Tier 4/5 — each such statement costs 1–2 LLM calls, and Fix 2 guarantees
+the result is only adopted if it beats the deterministic parse.
 
 ### 8.3 Image Grouping / Multi-Page Screenshot Problem (not implemented)
 

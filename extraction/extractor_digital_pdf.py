@@ -329,6 +329,23 @@ def _extract_page_as_text(page, page_number: int = 1) -> str:
         if not table_lines:
             return full_text
 
+        # Collapsed-rows guard: some PDFs store all transaction rows as a single
+        # table cell separated by \n (e.g. HDFC statements where pdfplumber cannot
+        # detect per-row cell boundaries). In that case the table gives far fewer
+        # date-starting lines than extract_text() — fall back to extract_text()
+        # which reads character y-coordinates and correctly emits one line per row.
+        tbl_date_count = sum(1 for l in table_lines if _DATE_START_RE.match(l.strip()))
+        txt_date_count = sum(1 for l in full_text.splitlines()
+                             if _DATE_START_RE.match(l.strip()))
+        if txt_date_count > tbl_date_count * 1.5 and txt_date_count >= 3:
+            logger.debug(
+                "extractor_digital_pdf._extract_page_as_text: "
+                "page %d — collapsed-rows detected (table=%d date-lines, "
+                "text=%d date-lines); falling back to extract_text().",
+                page_number, tbl_date_count, txt_date_count,
+            )
+            return full_text
+
         if page_number == 1:
             # Page 1: prepend only the metadata section (lines before the first
             # transaction date). These are never inside the table, so we need them

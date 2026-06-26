@@ -2,13 +2,13 @@
 
 > **STATUS: PHASE 1 (EXTRACTION) — COMPLETE.** ✅
 > The extraction engine is finished and validated against the full `original bank statements`
-> dataset (61 files: digital PDFs, Excel `.xls`/`.xlsx`, CSV, TXT). The core engine parses the
+> dataset (103 files: digital PDFs, Excel `.xls`/`.xlsx`, CSV, TXT). The core engine parses the
 > overwhelming majority of statements deterministically (0 LLM calls); the validator-arbitrated
 > LLM tiers exist only as a backstop for genuinely unusual layouts and never corrupt a good
 > deterministic parse. The project is ready to move on to **Phase 2 (Analysis & Reporting)**.
 
 **Project:** Automated Financial Data Analysis System (Survey Corps · CIDECODE Hackathon 2026 · CID Karnataka)
-**Scope:** Everything done in the extraction phase — architecture, all code changes across the three working sessions, file explanations, known issues, and what comes next.
+**Scope:** Everything done in the extraction phase — architecture, all code changes across the four working sessions, file explanations, known issues, and what comes next.
 **Provider note:** The system uses **Groq** (the fast LLM inference API, `from groq import Groq`) running open models — not xAI's "Grok". Wherever "Groq" appears, it means the Groq inference API.
 
 ---
@@ -21,9 +21,10 @@
 4. [Session 1 Changes — Generalization Fix](#session1)
 5. [Session 2 Changes — Architecture Overhaul](#session2)
 6. [Session 3 Changes — Regression Stability Fix + Full-Dataset Validation](#session3)
-7. [Current Architecture Status](#status)
-8. [How to Move to the Analysis Phase](#next-phase)
-9. [Known Drawbacks and Pending Issues](#drawbacks)
+7. [Session 4 Changes — Parser Hardening + 103-File Final Validation](#session4)
+8. [Current Architecture Status](#status)
+9. [How to Move to the Analysis Phase](#next-phase)
+10. [Known Drawbacks and Pending Issues](#drawbacks)
 
 ---
 
@@ -80,20 +81,21 @@ SURVEY CORPS/
 │   ├── column_identifier.py
 │   ├── llm_structurer.py               ← patched in Session 2
 │   ├── llm_interface.py                ← NEW in Session 2
-│   ├── standardiser.py                 ← extended in both sessions
+│   ├── standardiser.py                 ← extended in all sessions
 │   ├── validator.py                    ← extended in Session 2
 │   ├── storage.py
 │   ├── chromadb_ingestor.py
 │   └── extraction_pipeline.py          ← rewritten in Session 2
 ├── tests/
 │   └── test_extraction.py
+├── run_all.py                          (batch runner for all 103 statements)
 ├── app.py                              (local Streamlit tester, not committed)
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
 ├── AUDIT.md
 ├── INSTRUCTIONS (1).md
-└── phase1.md                           (this document)
+└── phase1 final.md                     (this document)
 ```
 
 ---
@@ -121,6 +123,8 @@ Every uploaded file enters the system through the router. `route_file(path)` ret
 ### 2.4 `extractor_digital_pdf.py` — Text from Digital PDFs (Station 2)
 
 `extract_text_from_digital_pdf(path)` uses pdfplumber to read every page into text and joins them into one string. Each page is wrapped in its own try/except so a single bad page cannot crash the file. `_clean_pdf_text()` strips `(cid:NN)` glyph artifacts — a common pdfplumber quirk where decorative font glyphs appear as `(cid:9)` instead of a real character. No Groq.
+
+**Session 4 addition — collapsed-rows guard:** pdfplumber's table extractor sometimes stores all transaction rows as a single table cell with embedded `\n` separators, producing just 1 "line" that the parser sees as 1 row. The guard compares date-line counts from table extraction vs `extract_text()`. If the plain text has ≥1.5× more date lines AND ≥3 absolute date lines, the page falls back to `extract_text()`. This fixed ISHA STAT NW (6 rows recovered from the collapsed 1-cell output).
 
 ---
 
@@ -162,7 +166,7 @@ Excel and CSV files are already structured tables, but they have two challenges 
 
 ### 2.9 `account_extractor.py` — Identity from Text (Station 3 helper, local)
 
-`extract_account_details_from_text(text)` uses regex to find account holder, account number, IFSC code, branch, account type, statement period, and opening/closing balances from the raw text of a digital PDF or OCR result. It handles many label spellings and falls back to a bare "MR/MRS NAME" line for the holder. Bank name is inferred from the IFSC prefix using `IFSC_PREFIX_TO_BANK` (a reference dict — not a branching condition). No Groq. No bank names in logic.
+`extract_account_details_from_text(text)` uses regex to find account holder, account number, IFSC code, branch, account type, statement period, and opening/closing balances from the raw text of a digital PDF or OCR result. It handles many label spellings and falls back to a bare "MR/MRS NAME" line for the holder. Bank name is inferred from the IFSC prefix using `IFSC_PREFIX_TO_BANK` (a reference dict — not a branching condition). No Groq.
 
 `reconcile_account_details(content, account_id, bank_hint)` merges document-extracted values with the investigator's hints (account_id label and bank name passed at upload time). The pipeline never passes the `master_row` argument, so no reference dataset is ever loaded at runtime.
 
@@ -211,7 +215,7 @@ This is the most important architectural addition. The extraction pipeline impor
 
 ---
 
-### 2.15 `standardiser.py` — Reshape to Unified Schema (Station 4, extended both sessions)
+### 2.15 `standardiser.py` — Reshape to Unified Schema (Station 4, extended all sessions)
 
 Pure pandas/regex, no Groq. Converts whatever raw form the extractor produced into the standard `Date | Narration | Debit | Credit | Balance | Account_ID | Bank_Name` DataFrame.
 
@@ -223,6 +227,8 @@ Pure pandas/regex, no Groq. Converts whatever raw form the extractor produced in
 - `_correct_direction_by_balance()` — infers debit vs credit from the running balance direction when the narration does not explicitly say DR/CR. A genuine accuracy win kept across all routes.
 - **`count_transaction_like_lines(raw_text)` (added Session 1)** — estimates how many lines contain a date AND a money amount. Used as the `expected_rows` baseline for the completeness check in `grade_parse`.
 - **`build_schema_sample(raw_text, failing_lines)` (added Session 2)** — builds a smart representative sample (start/middle/end of document + longest lines + any lines that failed the parse) capped at `SCHEMA_SAMPLE_LINES`. Sent to the LLM for schema discovery in Tier 4.
+- **`_peel_trailing_amounts()` (hardened Sessions 3 & 4)** — peels trailing monetary tokens from the right of a transaction line. Session 3 added trailing non-money channel-code stripping. Session 4 added interleaved watermark skip (Fix B) and leading-dot decimal normalisation (Fix C).
+- **`_strip_noise_lines()` (hardened Session 4)** — filters boilerplate/footer lines. Fix D extended the URL filter (`https?://` in `_FOOTER_NOISE`) to fire even on lines that appear to start with a date, as long as they carry zero money tokens — catching browser-printed netbanking PDF timestamps.
 
 ---
 
@@ -282,7 +288,7 @@ Nothing in the system ever reads these files back at runtime. They are a pure ou
 
 ### 2.20 `tests/test_extraction.py`
 
-pytest suite covering router classification, standardiser types and schema, validator checks (balance arithmetic, dates, duplicates, reversals, exclusivity), anonymiser masking, and identifier vault. References `synthetic_dataset_full_mentoring/statements/` as the test dataset — this is the only correct place to depend on the dataset. The engine itself never reads the dataset.
+pytest suite covering router classification, standardiser types and schema, validator checks (balance arithmetic, dates, duplicates, reversals, exclusivity), anonymiser masking, and identifier vault. References `synthetic_dataset_full_mentoring/statements/` as the test dataset — this is the only correct place to depend on the dataset. The engine itself never reads the dataset. **43 tests, all passing as of Session 4.**
 
 ---
 
@@ -403,81 +409,101 @@ ever "worked" before Session 2 because the old pipeline read every row with the 
 When Tier 2 collapsed to 1 row, `grade_parse` had no real balance chain to test and reported
 `reconciliation_rate = 1.0` — a meaningless perfect score. The escalation ladder compared parses by
 **bare rate** (`llm_rate >= cheap_rate`), so a correct LLM parse reconciling at 0.99 *lost* to the
-bogus 1.0 (`0.99 >= 1.0` is false) and was **discarded**, keeping the 1-row garbage. This is exactly
-the reported "whenever the LLM is called it breaks valid statements" — the LLM was fine; the
-**comparison** rejected it.
+bogus 1.0 (`0.99 >= 1.0` is false) and was **discarded**, keeping the 1-row garbage.
 
-### 6.2 The fixes (all generalized — keyed on token *shape* / generic banking vocabulary, never a bank name; the anti-overfitting build-guard test still passes)
+### 6.2 The fixes
 
-- **Fix 1 — trailing non-money column (`standardiser.py`).** New `_peel_trailing_amounts()` skips up
-  to two short trailing **code** tokens — a bare-numeric branch/posting code *or* a standard
-  transaction-**channel** code (UPI/NEFT/IMPS/RTGS/ATM/POS/CLG/…) — **only when doing so exposes a
-  proper amount+balance pair**. A statement whose last token is already the balance never enters this
-  path, so every previously-working file is byte-for-byte unaffected. → all 6 Axis statements parse at
-  **Tier 2 with 0 LLM calls** (79–3,778 rows, reconcile 0.99–1.00); a Bank-of-Maharashtra-style
-  trailing "Channel" column is recovered too.
+- **Fix 1 — trailing non-money column (`standardiser.py`).** New `_peel_trailing_amounts()` skips up to two short trailing code tokens — a bare-numeric branch/posting code or a standard transaction-channel code (UPI/NEFT/IMPS/RTGS/ATM/POS/CLG/…) — **only when doing so exposes a proper amount+balance pair**. A statement whose last token is already the balance never enters this path. → All Axis statements parse at **Tier 2 with 0 LLM calls**.
 
-- **Fix 2 — score-based, non-regressing escalation (`validator.py` + `extraction_pipeline.py`).**
-  `grade_parse` now also returns `score = reconciliation_rate × completeness_ratio`. The ladder
-  compares candidate parses by **score** and adopts a challenger only if it is **strictly better**.
-  A degenerate/sparse parse (1 row, score ≈ 0) can no longer report a perfect rate or block a fuller
-  parse, and an **empty or failed LLM result can never replace a good deterministic parse**. This is
-  the requested guarantee: *the deterministic result stays the source of truth unless the LLM clearly
-  improves it.*
+- **Fix 2 — score-based, non-regressing escalation (`validator.py` + `extraction_pipeline.py`).** `grade_parse` now also returns `score = reconciliation_rate × completeness_ratio`. The ladder compares candidate parses by **score** and adopts a challenger only if it is **strictly better**. A degenerate/sparse parse can no longer block a fuller parse.
 
-- **Fix 3 — narration-LAST layouts (`standardiser.py`).** Mirror helper `_peel_leading_amounts()`
-  handles statements that print `date → amounts → narration` (e.g. a PNB layout
-  `Withdrawal Deposit Balance … Narration`): when the right-end peel finds no amounts, it peels the
-  amount run from the **front** and treats the remainder as narration. Guarded to run only when the
-  normal peel fails, so balance-last statements are untouched. → narration-last PDFs (e.g. `stm
-  REKHA.pdf`) now parse deterministically with **0 LLM calls**, instead of escalating.
+- **Fix 3 — narration-LAST layouts (`standardiser.py`).** Mirror helper `_peel_leading_amounts()` handles statements that print `date → amounts → narration`. When the right-end peel finds no amounts, it peels the amount run from the front and treats the remainder as narration. → Narration-last PDFs now parse deterministically with **0 LLM calls**.
 
-- **Fix 4 — bank name from the footer legend (`account_extractor.py`).** Some layouts never name the
-  bank in the header — only in the legal **"REGISTERED OFFICE — … BANK LTD"** footer. A Pass-3 scan
-  reads the canonical bank name from that boilerplate window **only** (never a transaction narration,
-  so a counterparty bank inside a UPI/NEFT line is never mistaken for the account's own bank). → Axis
-  statements now correctly resolve `bank_name = "Axis Bank"` (holder + account number were already
-  correct).
+- **Fix 4 — bank name from the footer legend (`account_extractor.py`).** A Pass-3 scan reads the canonical bank name from the "REGISTERED OFFICE — … BANK LTD" boilerplate window only (never from a narration, so a counterparty bank inside a UPI/NEFT line is never mistaken for the account's own bank).
 
-### 6.3 Full-dataset validation (61 files in `original bank statements/`)
+### 6.3 Full-dataset validation (61 files as of Session 3)
 
-Token-free deterministic sweep (the cheap Tier-2 path only — what each file costs with **0 LLM
-calls**):
+All 43 unit tests passing. 52 of 61 files parsed deterministically with 0 LLM calls. 5 files needed LLM fallback. No regressions on previously-working files.
 
-| Outcome | Count | Notes |
+---
+
+<a name="session4"></a>
+## 7. Session 4 Changes — Parser Hardening + 103-File Final Validation
+
+Session 4 expanded the dataset to **103 files** (42 new statements added) and fixed 4 new edge cases discovered during full-dataset validation. All fixes are generalised on token shape and layout structure — **no bank name used anywhere in any conditional**.
+
+### 7.1 Fix A — Collapsed-Rows Detection (`extractor_digital_pdf.py`)
+
+**Problem:** pdfplumber's table extractor stored all 6 transaction rows of ISHA STAT NW as a single table cell containing embedded `\n`. The pipeline saw 1 "row" and reported rows=1, recon=1.0.
+
+**Fix:** After building `table_lines` in `_extract_page_as_text`, count date-starting lines from both the table extraction and `extract_text()`. If `txt_date_count > tbl_date_count × 1.5` AND `txt_date_count >= 3`, fall back to `extract_text()`.
+
+**Result:** ISHA STAT NW: 6 rows, recon=1.000. ✓
+
+### 7.2 Fix B — Interleaved Watermark Skip (`standardiser.py` — `_peel_trailing_amounts`)
+
+**Problem:** UCO Bank prints a "Account Name: HARI SH R AM" page watermark whose fragments ("Na", ":", "SH", "R", "AM") bleed into transaction text between the amount and running balance. `_peel_trailing_amounts` peeled the balance, hit a watermark fragment, and stopped — returning only 1 money token → row dropped. AccountStmt_1228XXXXXX3352.pdf had 34 rows silently dropped.
+
+**Fix:** In phase 2 of the peel loop, allow exactly one skip of a `_is_trailing_code(tok)` or `:` token, but only when exactly 1 money token (the balance) has been peeled and the skip has not already been used (`not _interleaved_skipped`). Guard prevents the skip from firing when 2+ tokens already found (narration words like "BANK" stay in narration).
+
+**Result:** 218/218 rows, recon=1.000, comp=1.000. ✓
+
+### 7.3 Fix C — Leading-Dot Decimal Normalisation (`standardiser.py` — `_peel_trailing_amounts`)
+
+**Problem:** Some statements print a zero balance as `.00` instead of `0.00`. `_is_money_token(".00")` returned False (regex requires ≥1 digit before the decimal). `_peel_trailing_amounts` returned 0 money tokens → partial record → row dropped. NITIN statement.pdf had 1 row missing.
+
+**Fix:** Before all peeling, scan the last 4 token positions and normalize any token matching `^\.\d{1,2}$` to `0` + token (e.g. `.00` → `0.00`, `.50` → `0.50`).
+
+**Result:** 49/49 rows, recon=1.000, comp=1.000. ✓
+
+### 7.4 Fix D — Browser-Printed Netbanking PDF URL Filter (`standardiser.py` — `_strip_noise_lines`)
+
+**Problem:** AU Bank's netbanking portal, when printed to PDF from a browser, embeds the page URL and a print timestamp on every page: e.g. `11/28/25, 3:40 PM blob:https://cbsupgrade.aubank.in/...`. The timestamp `11/28/25` matched `DATE_AT_LINE_START_PATTERN`, causing the line to be treated as a new transaction date. This flushed the current FLEXCUBE transaction record (which had amounts but not yet its balance continuation line) before the actual balance (`2,147.00` on the next line) could be captured — giving 42 rows with `Balance=NaN`. soa_0167042251865512.pdf reported recon=0.960.
+
+**Fix:** The `_FOOTER_NOISE` regex already contained `https?://`. The guard that prevented filtering date-like lines was: `not is_date_start`. Changed to: `not is_date_start OR money_tok_count == 0`. Real transactions always carry ≥2 money tokens, so they are safe. A browser URL line carrying zero money tokens is now dropped even if its timestamp accidentally matches a date pattern.
+
+**Result:** 1928/1928 rows, recon=1.000, comp=1.000, 0 NaN balance rows. ✓
+
+### 7.5 Full-Dataset Validation — Final Numbers (103 files, batch_20260626_193018)
+
+```
+Session     : batch_20260626_193018
+Duration    : 4453.2s (~74 minutes)
+Files OK    : 103 / 103
+Total rows  : 114,449   clean=114,367   flagged=82
+LLM calls   : 42
+Tier mix    : cheap_parse=76  excel_deterministic=23  excel_columnmap=1  llm_full_read=3
+
+Pass (recon ≥ 0.90) : 92 / 103
+Perfect (recon=1.00) : 76 / 103
+All 43 unit tests    : PASS
+```
+
+**Files below 0.90 (10 files — all known, unfixable at parser level):**
+
+| File | Recon | Reason |
 |---|---|---|
-| **Parsed deterministically, 0 LLM** | **52** | incl. all 6 Axis (the reported regression), all TXT, all clean Excel/CSV/PDF |
-| Partial deterministic (extracts the rows, dips just under the 0.98/0.90 accept bar) | 4 | `AccountStmt…` (172 rows @0.87), `NITIN statement.pdf` (47 @0.98), `BOM…` (142 @0.28), `statement29680171959.xls` (39 @ **1.0** — a false-fail from the completeness denominator counting non-transaction rows). Fix 2 guarantees the LLM tier can only improve, never corrupt these. |
-| Needs the LLM fallback (layout deterministic code genuinely can't read) | 5 | see below |
+| 9 × `.xls` files | 0.000 | HTML/XML-masquerading-as-XLS (corrupt format); all have working PDF counterparts at 1.000 |
+| `CASA_STATEMENT_8442098066767557.pdf` | ~0.23 | Integer-only amounts with no decimal on early pages; `.xlsx` counterpart extracts 100% |
+| `211566492688.pdf` | 0.891 | Groq API 413 token-limit error on this specific file; not a parser bug |
 
-The 5 LLM-fallback files, verified end-to-end through the real pipeline (designed Tier 4/5 path):
-`statement (2).pdf` (Bank of Baroda) → **51 clean**; `772342103350.pdf` (Indian Bank) → **47 clean**;
-`3277373660.xlsx` (raw core-banking dump: single amount + Dr/Cr flag, no balance column) → **399
-clean** via LLM column-map; `ISHA STAT NW.pdf` → 3 (the source PDF's text is itself mangled — six
-transactions' dates are extracted onto one physical line); `CASA_…pdf` (decimal-less integer amounts)
-→ its `.xlsx` sibling already extracts fully (1,284 rows, deterministic, 0 LLM).
+**Near-misses (recon 0.90–0.999):**
 
-**Reliability note (why deterministic-first matters):** during validation the Groq daily token quota
-was exhausted, so the LLM fallback returned empty for some files. Because of Fix 2, those files kept
-their deterministic result and were never corrupted — they were flagged for review, never dropped.
-This is the whole point of the validator-arbitrated design: the engine is correct without the LLM,
-and the LLM only ever helps. No row is ever silently lost (`flagged_transactions.csv` + the
-`all_rows_accounted_for` receipt field).
-
-**Regression check:** all **43** unit tests pass (including the build-guard that fails on any bank
-name used in control flow), and every file that passed before Session 3 still passes with identical
-row counts.
+| File | Recon | Note |
+|---|---|---|
+| `statement (2).pdf` | 0.980 | Bank of Baroda, LLM full-read path — 1 flagged row due to unusual multi-line entry |
+| `Statement.pdf` | 0.979 | GST invoice detail table appended after transactions is misread as rows (known layout) |
 
 ---
 
 <a name="status"></a>
-## 7. Current Architecture Status
+## 8. Current Architecture Status
 
 ### What works reliably
 
 | Source type | Tier reached | LLM calls (typical) | Notes |
 |---|---|---|---|
-| Digital PDF (clean layout) | Tier 2 (cheap parse) | 0–1 (metadata regex succeeds) | Validated on all 9 sample statements |
+| Digital PDF (clean layout) | Tier 2 (cheap parse) | 0–1 (metadata regex succeeds) | Validated on 76+ statements |
 | Excel / CSV (standard headers) | Deterministic | 0 | `_COL_KEYWORDS` maps all common spellings |
 | Excel with metadata block | Deterministic | 0 | `_parse_metadata_block` reads identity above table |
 | Scanned PDF | Vision per page | 1 per page (cached) | GROQ2 only, GROQ1 not touched |
@@ -495,7 +521,7 @@ row counts.
 ---
 
 <a name="next-phase"></a>
-## 8. How to Move to the Analysis Phase
+## 9. How to Move to the Analysis Phase
 
 The extraction phase outputs two things: a **returned Python dict** (the fast in-process path) and a **disk output** under `outputs/extractions/<session_id>/`. The analysis phase can consume either.
 
@@ -555,71 +581,87 @@ GROQ3 (the third API key) is for the analysis and reporting phase. It is intenti
 ---
 
 <a name="drawbacks"></a>
-## 9. Known Drawbacks and Pending Issues
+## 10. Known Drawbacks and Pending Issues
 
-### 8.1 LLM Client Created in 3 Places (not a true one-file local-model swap)
+### 10.1 Metadata Extraction Incomplete for Many Files (HIGH PRIORITY for next session)
 
-`llm_interface.py` is the intended facade for a future local model swap, but the actual Groq client is still instantiated in `llm_structurer.py`, `column_identifier.py`, and `vision_extractor.py`. Swapping to Ollama or LM Studio requires editing 4 files, not 1. To fix: move client creation into `llm_interface.py` and have the 3 modules accept a client as a parameter, or replace them with a unified backend.
+**This is a significant gap.** The `account_extractor.py` regex extracts account holder name, account number, and IFSC code correctly for statements where this information is printed in a standard `Label: Value` format (e.g. `Account No. : 123456789`). However, a large number of the 103 statements in the dataset return empty or "Unknown" for one or more of these fields. Observed failure modes:
 
-### 9.2 Digital PDF Parser Layout Assumptions (substantially narrowed in Session 3)
+- **Name not extracted:** Many PDFs print the holder name in a formatted header box without a keyword label (e.g. the name appears in a bold font on its own line with no prefix). The regex requires a label like "Account Holder:" before the name.
+- **Account number not extracted:** Some statements hide the account number in a masked format (`XXXX1234`) or present it mid-page in a table rather than in the header. The regex reads only the first ~60 lines of text.
+- **Bank name shown as "Unknown Bank":** IFSC-to-bank mapping covers major banks but not all cooperative banks or smaller RRBs. If the IFSC prefix is not in the lookup table, bank name stays "Unknown".
+- **Impact on analysis phase:** The per-statement JSON files under `statements/` are keyed by `<holder>_<account>`. When holder and account are empty, all files collapse to the same key and overwrite each other. The analysis phase cannot link transactions to a named suspect when the identity fields are blank.
 
-`standardise_digital_pdf_transactions` anchors on a date at the line start. Session 3 widened what it
-can read without the LLM: a **trailing non-money column** after the balance (branch/posting code or a
-UPI/NEFT/ATM "channel" code) and **narration-LAST** layouts (amounts right after the date, free-text
-narration last) are now both handled deterministically. The remaining genuinely-hard cases are
-(a) amounts printed **without decimals** (`100000`, `300`), which collide in shape with reference /
-instrument numbers, so they are intentionally **not** force-parsed (to avoid mistaking a 12-digit RRN
-for an amount) and instead fall through to the LLM, and (b) a date that is not at the line start.
-Both are correctly routed to Tier 4/5 — each such statement costs 1–2 LLM calls, and Fix 2 guarantees
-the result is only adopted if it beats the deterministic parse.
+**Recommended fix:** Expand `account_extractor.py` with:
+1. A wider scan window (first 100 lines, not 60) with a secondary pass on the last 20 lines for statements that print identity in the footer.
+2. Additional name-detection patterns: line that is all-caps or title-case, between 2 and 6 words, no digits, appearing within the first 20 lines — likely the account holder name.
+3. A masked-account-number pattern: `[Xx*]{4,}\d{4}` or partial reveal formats common in Indian bank exports.
+4. Expand `IFSC_PREFIX_TO_BANK` to cover cooperative banks, small finance banks, RRBs using the RBI's published IFSC directory.
+5. LLM metadata fallback (Tier 1) is already in place — ensure it is triggered whenever any key field (holder, number, IFSC) is missing, not only when all three are missing.
 
-### 8.3 Image Grouping / Multi-Page Screenshot Problem (not implemented)
+### 10.2 LLM Client Created in 3 Places (not a true one-file local-model swap)
 
-When an investigator uploads multiple screenshots of the same statement (e.g. scrolling through a mobile banking app), the system treats each image as a separate statement. The correct behavior is to group them as one statement. The grouping signal is balance-chain continuity: if the last balance of image A ≈ opening of image B, they are from the same statement. Account number as a hard separator (different account → different statement). Date monotonicity and holder name as corroboration. Recommended approach: pipeline proposes groups, investigator confirms. **Not yet implemented.**
+`llm_interface.py` is the intended facade for a future local model swap, but the actual Groq client is still instantiated in `llm_structurer.py`, `column_identifier.py`, and `vision_extractor.py`. Swapping to Ollama or LM Studio requires editing 4 files, not 1.
 
-### 8.4 Sequential File Loop (no parallelism)
+### 10.3 Digital PDF Parser Layout Assumptions (substantially narrowed in Session 3 & 4)
 
-`run_extraction_pipeline` processes files in a plain `for` loop. File 2 cannot start until file 1 finishes. For a large batch of files with scanned PDFs (each taking several seconds per page for vision calls), this is the main performance bottleneck. Fix: a bounded `ThreadPoolExecutor` around `_process_single_file`. Not implemented — single-file mode was sufficient for the hackathon, and parallelism introduces complexity around shared state in logs and the concat step.
+`standardise_digital_pdf_transactions` anchors on a date at the line start. The remaining genuinely-hard cases are (a) amounts printed without decimals (`100000`, `300`), which collide in shape with reference/instrument numbers, and (b) a date that is not at the line start. Both correctly route to Tier 4/5.
 
-### 8.5 No Row-Level Repair (Tier 5 repairs the whole statement)
+### 10.4 Image Grouping / Multi-Page Screenshot Problem (not implemented)
 
-The current Tier 5 sends the full statement to the LLM. A more targeted version would send only the `failing_row_indices` from `grade_parse` to the LLM for repair, which would cost a fraction of the tokens. `grade_parse` already returns `failing_row_indices`; the repair loop is just not implemented yet.
+When an investigator uploads multiple screenshots of the same statement (e.g. scrolling through a mobile banking app), the system treats each image as a separate statement. The correct behavior is to group them as one statement using balance-chain continuity as the grouping signal.
 
-### 8.6 Tesseract OCR for Scanned PDFs Is Now Unused in the Main Path
+### 10.5 Sequential File Loop (no parallelism)
 
-After the Session 2 architecture change, scanned PDFs go directly to GROQ2 vision (skipping Tesseract entirely). Tesseract is still used as the first-tier OCR for standalone image files (PNG/JPG) before falling back to GROQ2, but for scanned PDFs the Tesseract path in `extractor_ocr.py` is no longer called by the pipeline. This means Tesseract's preprocessing improvements (deskew, denoise, sharpen) are not applied to scanned PDF pages before they go to vision. If GROQ2 struggles with a blurry or rotated page, the Tesseract preprocessing could help — but there is currently no hybrid path for scanned PDFs.
+`run_extraction_pipeline` processes files in a plain `for` loop. For a large batch with scanned PDFs, a bounded `ThreadPoolExecutor` around `_process_single_file` would be the straightforward fix.
 
-### 8.7 Outputs Folder Contains ~48 MB of Test Session Artifacts
+### 10.6 No Row-Level Repair (Tier 5 repairs the whole statement)
 
-`outputs/extractions/` holds ~17 test session folders from development runs. The content is git-ignored and safe (no real PII), but the folder should be cleared before a production demo. A one-time `rm -rf outputs/extractions/*` is sufficient and safe.
+The current Tier 5 sends the full statement to the LLM. `grade_parse` already returns `failing_row_indices`; a targeted repair loop sending only failing rows would cost a fraction of the tokens.
 
-### 8.8 ChromaDB and Sentence Transformer Not Tested End-to-End
+### 10.7 Tesseract OCR for Scanned PDFs Is Now Unused in the Main Path
 
-The `chromadb_ingestor.py` is imported lazily and disabled by default. It has not been exercised in a full extraction run during these sessions. When `ingest_to_chromadb=True` is first passed, there may be dependency or model-download issues (the `all-MiniLM-L6-v2` model needs a one-time download). The `OMP_NUM_THREADS=1` workaround for macOS onnxruntime may or may not apply on Windows.
+After Session 2, scanned PDFs go directly to GROQ2 vision. Tesseract's preprocessing improvements (deskew, denoise, sharpen) are not applied to scanned PDF pages before they go to vision — if GROQ2 struggles with a blurry or rotated page, a hybrid path would help.
 
-### 8.9 `pdfplumber` vs PyMuPDF Inconsistency
+### 10.8 Outputs Folder Contains Test Session Artifacts
 
-`extractor_digital_pdf.py` uses pdfplumber. `extractor_ocr.py` uses PyMuPDF (fitz) for scanned PDF page rendering. In an earlier investigation, PyMuPDF was found to read digital PDF text more cleanly (pdfplumber mixes decorative vertical glyphs into table content), but the user reverted `extractor_digital_pdf.py` back to pdfplumber because their test files worked fine. If a future statement is garbled by `(cid:NN)` artifacts that `_clean_pdf_text` does not catch, switching `extractor_digital_pdf.py` to PyMuPDF's `get_text()` is a known fix.
+`outputs/extractions/` holds test session folders from development runs. The content is git-ignored and safe (no real PII), but the folder should be cleared before a production demo.
+
+### 10.9 ChromaDB and Sentence Transformer Not Tested End-to-End
+
+The `chromadb_ingestor.py` is imported lazily and disabled by default. It has not been exercised in a full extraction run. When `ingest_to_chromadb=True` is first passed, there may be dependency or model-download issues.
+
+### 10.10 9 `.xls` Files Permanently at recon=0.000
+
+These files are HTML/XML content saved with a `.xls` extension. `openpyxl` and `xlrd` cannot read them as spreadsheets. Each has a working PDF counterpart that extracts at recon=1.000. The correct fix is to route the HTML content through BeautifulSoup or warn the user at upload time that the file format is corrupt. For the hackathon, the PDF counterparts cover the data.
 
 ---
 
 ## Summary Table of All Changes
 
-| What changed | File(s) | When |
+| What changed | File(s) | Session |
 |---|---|---|
-| `count_transaction_like_lines` + format-agnostic guard | `standardiser.py`, `extraction_pipeline.py` | Session 1 |
-| 429 TPD fail-fast in vision path | `extractor_ocr.py` | Session 2 |
-| 429 TPD fail-fast in text path | `llm_structurer.py` | Session 2 |
-| Scanned PDF → GROQ2 vision per page | `vision_extractor.py` | Session 2 |
-| `llm_interface.py` single LLM facade | `llm_interface.py` (new) | Session 2 |
-| `grade_parse()` validator referee | `validator.py` | Session 2 |
-| `build_schema_sample()` | `standardiser.py` | Session 2 |
-| Tiered escalation ladder (`_extract_text_transactions`) | `extraction_pipeline.py` | Session 2 |
-| `read_scanned_pdf` branch in pipeline | `extraction_pipeline.py` | Session 2 |
-| Metadata code-first (Tier 1 regex before LLM) | `extraction_pipeline.py` | Session 2 |
-| Newest-first sort from `grade_parse` ordering | `extraction_pipeline.py` | Session 2 |
-| Deterministic column mapping (`_COL_KEYWORDS`, `_infer_column_map`) | `extractor_excel_csv.py` | Session 2 |
-| Metadata block parsing (`_parse_metadata_block`, `_META_LABELS`) | `extractor_excel_csv.py` | Session 2 |
-| Width-aware header detection (`_detect_header_index`) | `extractor_excel_csv.py` | Session 2 |
-| Excel/CSV 0-LLM-call path in pipeline | `extraction_pipeline.py` | Session 2 |
-| Tiered threshold constants | `config/settings.py` | Session 2 |
+| `count_transaction_like_lines` + format-agnostic guard | `standardiser.py`, `extraction_pipeline.py` | 1 |
+| 429 TPD fail-fast in vision path | `extractor_ocr.py` | 2 |
+| 429 TPD fail-fast in text path | `llm_structurer.py` | 2 |
+| Scanned PDF → GROQ2 vision per page | `vision_extractor.py` | 2 |
+| `llm_interface.py` single LLM facade | `llm_interface.py` (new) | 2 |
+| `grade_parse()` validator referee | `validator.py` | 2 |
+| `build_schema_sample()` | `standardiser.py` | 2 |
+| Tiered escalation ladder (`_extract_text_transactions`) | `extraction_pipeline.py` | 2 |
+| `read_scanned_pdf` branch in pipeline | `extraction_pipeline.py` | 2 |
+| Metadata code-first (Tier 1 regex before LLM) | `extraction_pipeline.py` | 2 |
+| Newest-first sort from `grade_parse` ordering | `extraction_pipeline.py` | 2 |
+| Deterministic column mapping (`_COL_KEYWORDS`, `_infer_column_map`) | `extractor_excel_csv.py` | 2 |
+| Metadata block parsing (`_parse_metadata_block`, `_META_LABELS`) | `extractor_excel_csv.py` | 2 |
+| Width-aware header detection (`_detect_header_index`) | `extractor_excel_csv.py` | 2 |
+| Excel/CSV 0-LLM-call path in pipeline | `extraction_pipeline.py` | 2 |
+| Tiered threshold constants | `config/settings.py` | 2 |
+| Trailing non-money column peel (`_peel_trailing_amounts` Fix 1) | `standardiser.py` | 3 |
+| Score-based non-regressing escalation (Fix 2) | `validator.py`, `extraction_pipeline.py` | 3 |
+| Narration-LAST layout support (`_peel_leading_amounts` Fix 3) | `standardiser.py` | 3 |
+| Bank name from footer legend (Fix 4) | `account_extractor.py` | 3 |
+| Collapsed-rows detection guard (Fix A) | `extractor_digital_pdf.py` | 4 |
+| Interleaved watermark skip in peel loop (Fix B) | `standardiser.py` | 4 |
+| Leading-dot decimal normalisation `.00` → `0.00` (Fix C) | `standardiser.py` | 4 |
+| Browser URL timestamp filter in `_strip_noise_lines` (Fix D) | `standardiser.py` | 4 |

@@ -141,6 +141,25 @@ _FOOTER_NOISE = re.compile(
 # A separator line of dashes / underscores / equals (table rules, page rules).
 _SEPARATOR_LINE = re.compile(r"^[\s\-_=*~.]{6,}$")
 
+# Pre-date leading token shapes: some bank exports print an Account Number or a
+# long reference code as the FIRST column, before the transaction date (e.g.
+# "216655101347 22-Jan-2025 …"). These have 5+ digit numeric values and are NOT
+# dates, so DATE_AT_LINE_START_PATTERN misses them. The guard on the RIGHT side
+# (DATE_AT_LINE_START_PATTERN.match on the remainder) ensures we only strip when
+# a real date immediately follows, so no narration word can accidentally be eaten.
+_PRE_DATE_LONG_ID_RE = re.compile(r"^\d{5,}$")
+
+# FLEXCUBE (AU Small Finance Bank online portal) export format: columns include
+# "Trans.LCY(INR)" and "Trans.Rate"; the Running Balance is on its own next line.
+# Detected from the header text alone — no bank name ever special-cased.
+_TRANS_LCY_HEADER_RE = re.compile(r"\bTrans\.?\s*LCY\b", re.IGNORECASE)
+# A line that is ONLY a monetary amount (digits + 2-decimal fraction, optional commas
+# and leading sign/currency): used to recognise a standalone Running Balance
+# continuation line in FLEXCUBE statements. Only matched when we already know the
+# format is FLEXCUBE AND the current record has no Balance yet, so a real narration
+# number can never be mistaken for a balance.
+_PURE_BALANCE_LINE_RE = re.compile(r"^\s*[-₹]*[\d,]+\.\d{2}\s*$")
+
 # Markers that START a page-summary / statement-summary / footer BLOCK. Once one of
 # these appears, every following line up to the next real transaction (a date-started
 # line) is page metadata — counts, totals, carried-forward values, toll-free numbers,
@@ -149,7 +168,7 @@ _SEPARATOR_LINE = re.compile(r"^[\s\-_=*~.]{6,}$")
 # ("Dr. Count 19") that match no single keyword; block detection removes the whole
 # section in one go. Generic banking vocabulary only — no bank identity.
 _FOOTER_BLOCK_START = re.compile(
-    r"\bpage\s+summary\b|\bstatement\s+summary\b|\bstatement\s+information\b|"
+    r"\bpage\s+summary\b|\bstatement\s*summary\b|\bstatement\s+information\b|"
     r"\bcarried\s+forward\b|\bc/?f\s+total\b|\bpage\s+total\b|\bgrand\s+total\b|"
     r"\bend\s+of\s+statement\b|\bend\s+of\s+report\b|\btoll\s*free\b|"
     r"\bdr\.?\s*count\b|\bcr\.?\s*count\b|\btotal\s+debits?\b|\btotal\s+credits?\b|"
@@ -182,16 +201,33 @@ def _is_money_token(token: str) -> bool:
 _TRAILING_CODE_RE = re.compile(r"^\d{1,6}$")
 _TRAILING_CHANNEL_RE = re.compile(
     r"^(?:UPI|NEFT|IMPS|RTGS|ATM|POS|CLG|ECS|NACH|ACH|MOB|INB|BIL|CASH|TFR|CHQ|"
-    r"EMI|IFT|VMT|EDC|SETU|ABB|CWDR|PUR|MPS|FT)$",
+    r"EMI|IFT|VMT|EDC|SETU|ABB|CWDR|PUR|MPS|FT|"
+    # Compound channel tokens printed as "CODE/CODE" or "CODE-CODE" (e.g. ATM/POS).
+    r"ATM/POS|ATM-POS|NET-BKG|INT-BKG|MOB-BKG|NET/BKG|INT/BKG|MOB/BKG)$",
     re.IGNORECASE,
 )
-# At most this many trailing non-money code columns are skipped (kept tiny on purpose).
-_MAX_TRAILING_CODES = 2
+# Generic "label-like" token: short, contains at least one letter, no decimal point.
+# Matches branch codes (1701-BEHROR, 9999-CENTRAL), compound channel words (Banking,
+# OFF) that are not in _TRAILING_CHANNEL_RE. Pure-digit strings are excluded so that
+# reference numbers that happen to be the last token are never silently eaten.
+_POTENTIAL_TRAILING_LABEL_RE = re.compile(r"^[A-Za-z0-9/\-_]{1,20}$")
+# At most this many trailing non-money code columns are skipped. Three handles the
+# longest observed compound channel: "9008-NEFT/ RTGS CELL" (3 tokens).
+_MAX_TRAILING_CODES = 3
 
 
 def _is_trailing_code(tok: str) -> bool:
     """True if a token is a short non-money trailing CODE column (numeric or channel)."""
-    return bool(_TRAILING_CODE_RE.match(tok) or _TRAILING_CHANNEL_RE.match(tok))
+    if _TRAILING_CODE_RE.match(tok) or _TRAILING_CHANNEL_RE.match(tok):
+        return True
+    # Short label-like token with at least one letter: handles branch codes
+    # (1701-BEHROR), compound channel words (Banking, OFF) and similar trailing
+    # metadata columns that vary by bank export. Only adopted when the guard in
+    # _peel_trailing_amounts confirms ≥2 money tokens are exposed after stripping,
+    # so a genuine narration word at end of a balance-terminated line is never lost.
+    if "." not in tok and any(c.isalpha() for c in tok) and _POTENTIAL_TRAILING_LABEL_RE.match(tok):
+        return True
+    return False
 
 
 def _peel_trailing_amounts(tokens: List[str]) -> List[str]:
@@ -209,22 +245,63 @@ def _peel_trailing_amounts(tokens: List[str]) -> List[str]:
     balance). The guard means a row genuinely ending in narration (no trailing balance)
     is never mis-peeled, so statements that already parse are completely unaffected
     (their last token is money, so the skip block is never entered).
+
+    Empty-column dash placeholder: some bank exports print a lone '-' token for the
+    zero debit or credit column (e.g. "800.00 - 1,700.00 UPI"). The guard is extended
+    to accept '-' in the position of the second amount, and the peeling loop converts
+    such a '-' to '0.00' once at least one real amount has already been seen to its
+    right. This keeps the narration area completely unaffected: a '-' in the narration
+    always comes before any amounts, so `money` is still empty when we'd try to consume
+    it and the elif guard (`and money`) blocks it.
     """
+    # Normalize leading-dot decimals in the trailing token positions (.00 → 0.00, .50 → 0.50).
+    # Some banks (e.g. HDFC) print a zero balance as ".00" rather than "0.00". Without
+    # normalization the token fails _is_money_token (which requires at least one digit
+    # before the dot), so the whole row is dropped. Only the last 4 positions are touched —
+    # the balance, optional amount, and up to 2 trailing codes — so a .dd fragment
+    # buried in the middle of a narration is never affected.
+    _leading_dot_re = re.compile(r'^\.\d{1,2}$')
+    for _i in range(max(0, len(tokens) - 4), len(tokens)):
+        if _leading_dot_re.match(tokens[_i]):
+            tokens[_i] = '0' + tokens[_i]
+
     if tokens and not _is_money_token(tokens[-1]):
         skip = 0
         while (skip < _MAX_TRAILING_CODES and len(tokens) > skip
                and not _is_money_token(tokens[-1 - skip])
                and _is_trailing_code(tokens[-1 - skip])):
             skip += 1
-        # Adopt the skip only if it reveals a real amount+balance pair right before it.
+        # Adopt the skip if it reveals balance + (amount OR empty-column dash).
         if (skip and len(tokens) >= skip + 2
                 and _is_money_token(tokens[-1 - skip])
-                and _is_money_token(tokens[-2 - skip])):
+                and (_is_money_token(tokens[-2 - skip])
+                     or tokens[-2 - skip] == '-')):
             del tokens[len(tokens) - skip:]
 
     money: List[str] = []
-    while tokens and _is_money_token(tokens[-1]) and len(money) < 3:
-        money.insert(0, tokens.pop())
+    _interleaved_skipped = False
+    while tokens and len(money) < 3:
+        tok = tokens[-1]
+        if _is_money_token(tok):
+            money.insert(0, tokens.pop())
+            _interleaved_skipped = False  # reset: each inter-amount gap may skip once
+        elif tok == '-' and money:
+            # Lone dash as empty-column placeholder, consumed only after seeing ≥1 amount.
+            tokens.pop()
+            money.insert(0, '0.00')
+            _interleaved_skipped = False
+        elif (len(money) == 1 and not _interleaved_skipped
+              and (_is_trailing_code(tok) or tok == ':')):
+            # A single non-money watermark fragment stuck BETWEEN the running balance and
+            # the transaction amount (e.g. "Na", ":", "R" from a page-header watermark
+            # that bleeds across the transaction table). Consume it without adding to money
+            # so the peeler can reach the amount token on the other side. Guard: only when
+            # exactly 1 money token (balance) has been peeled so far, and only once per gap,
+            # so a narration word before the amounts is never accidentally stripped.
+            tokens.pop()
+            _interleaved_skipped = True
+        else:
+            break
     return money
 
 
@@ -251,7 +328,16 @@ def _peel_leading_amounts(tokens: List[str]) -> List[str]:
 def count_transaction_like_lines(raw_text: str) -> int:
     """
     Estimate of how many lines in the raw text LOOK like transaction rows: a line
-    that contains a date somewhere AND at least one monetary amount.
+    that starts with a date (or a short leading serial/account token followed by a
+    date) AND carries at least one monetary amount (decimal-based, 2dp).
+
+    Requiring DATE_AT_LINE_START_PATTERN (rather than a date anywhere on the line)
+    avoids counting metadata header lines like "A/COpenDate : 02/11/2020 AQB:
+    10,000.00" — those have the date buried in the middle. One money token is
+    sufficient: some formats print only the running balance with a decimal (e.g.
+    "5.82") while the debit/credit amount is a bare integer that the strict
+    _is_money_token misses. Two-token filtering caused such formats to return 0
+    expected lines, which suppressed LLM escalation on statements that need it.
 
     This is a GENERALIZATION CHECK, not a parser. The deterministic digital-PDF
     parser makes layout assumptions (date at line start, balance = last token,
@@ -263,8 +349,9 @@ def count_transaction_like_lines(raw_text: str) -> int:
     n = 0
     for line in (raw_text or "").splitlines():
         s = line.strip()
-        if _DATE_ANYWHERE_PATTERN.search(s) and any(_is_money_token(t) for t in s.split()):
-            n += 1
+        if DATE_AT_LINE_START_PATTERN.match(s):
+            if any(_is_money_token(t) for t in s.split()):
+                n += 1
     return n
 
 
@@ -323,9 +410,16 @@ def _strip_noise_lines(lines: List[str]) -> List[str]:
         # stitched into the preceding transaction's narration.
         if _SEPARATOR_LINE.match(s):
             continue
-        # Drop individual legal/disclaimer/footer/report boilerplate lines. Guarded by
-        # "does not start with a date" so a real transaction row is never removed.
-        if _FOOTER_NOISE.search(s) and not is_date_start:
+        # Drop individual legal/disclaimer/footer/report boilerplate lines.
+        # Real transactions always carry ≥2 money tokens, so the _money_tok_count < 2
+        # guard is sufficient to protect them. The date-start guard is relaxed for
+        # zero-money-token lines: browser-printed netbanking PDFs embed their page URL
+        # and a print timestamp (e.g. "11/28/25, 3:40 PM blob:https://…") that matches
+        # DATE_AT_LINE_START_PATTERN on the timestamp but carries no amounts and must be
+        # dropped so the FLEXCUBE balance-continuation is not displaced.
+        _money_tok_count = sum(1 for _t in s.split() if _is_money_token(_t))
+        if (_FOOTER_NOISE.search(s) and _money_tok_count < 2
+                and (not is_date_start or _money_tok_count == 0)):
             continue
         out.append(ln)
     return out
@@ -824,6 +918,14 @@ def _parse_by_header(lines: List[str], roles: List[str], account_id: str,
     return records
 
 
+def _detect_trans_lcy_format(raw_lines: List[str]) -> bool:
+    """True when the raw line set contains a Trans.LCY column header (FLEXCUBE portal format)."""
+    for line in raw_lines[:60]:
+        if _TRANS_LCY_HEADER_RE.search(line):
+            return True
+    return False
+
+
 def standardise_digital_pdf_transactions(
     raw_text: str,
     account_id: str,
@@ -860,6 +962,13 @@ def standardise_digital_pdf_transactions(
         logger.info(
             "standardiser.standardise_digital_pdf_transactions: detected leading id "
             "columns from header: %s", leading_id_columns)
+    # FLEXCUBE portal format: Trans.LCY(INR) + Trans.Rate columns; Running Balance on
+    # its own continuation line. Detected from the header — no bank name used.
+    has_trans_lcy = _detect_trans_lcy_format(raw_lines)
+    if has_trans_lcy:
+        logger.info(
+            "standardiser.standardise_digital_pdf_transactions: "
+            "Trans.LCY format detected — FLEXCUBE balance-on-next-line mode active.")
     # Drop page furniture (page numbers, repeated column-header rows) so a multi-page
     # statement's repeating header/footer can't be stitched into a real transaction.
     lines = _strip_noise_lines(raw_lines)
@@ -909,6 +1018,22 @@ def standardise_digital_pdf_transactions(
     current = None
     for line in lines:
         s = line.strip()
+        # ── Pre-date long-ID stripping ─────────────────────────────────────────
+        # Some bank exports print a long numeric column (Account No, Reference)
+        # BEFORE the transaction date (e.g. "216655101347 22-Jan-2025 …").
+        # DATE_AT_LINE_START_PATTERN only allows 1–4 digit leading serials; a
+        # 5+ digit number fails the match and the whole line is silently dropped.
+        # Strip up to 2 such leading tokens when they are purely numeric (≥5
+        # digits) and a real date immediately follows — so no narration word can
+        # accidentally be eaten and existing statements are completely unaffected.
+        if not DATE_AT_LINE_START_PATTERN.match(s):
+            toks = s.split()
+            for n_pre in range(1, min(3, len(toks))):
+                rest_candidate = " ".join(toks[n_pre:])
+                if (DATE_AT_LINE_START_PATTERN.match(rest_candidate)
+                        and all(_PRE_DATE_LONG_ID_RE.match(toks[i]) for i in range(n_pre))):
+                    s = rest_candidate
+                    break
         if DATE_AT_LINE_START_PATTERN.match(s):
             if current:
                 # Only keep records that received amounts (either on the date line
@@ -917,7 +1042,8 @@ def standardise_digital_pdf_transactions(
                     records.append(current)
             current = _parse_single_transaction_line(
                 s, require_balance=require_balance,
-                leading_id_columns=leading_id_columns)
+                leading_id_columns=leading_id_columns,
+                has_trans_lcy=has_trans_lcy)
             if current:
                 current["Account_ID"] = account_id
                 current["Bank_Name"] = bank_name
@@ -941,6 +1067,13 @@ def standardise_digital_pdf_transactions(
                 else:
                     # No amounts yet — still narration text.
                     current["Narration"] = (current.get("Narration", "") + " " + s).strip()
+            elif (has_trans_lcy
+                  and not current.get("Balance")
+                  and _PURE_BALANCE_LINE_RE.match(s)):
+                # FLEXCUBE: the Running Balance is printed on its own line directly
+                # after each transaction row. Only match when Balance is still empty
+                # so a real narration number in a non-FLEXCUBE doc can't land here.
+                current["Balance"] = s.strip()
             else:
                 current["Narration"] = (current.get("Narration", "") + " " + s).strip()
     if current and not current.get("_amounts_pending"):
@@ -1110,9 +1243,13 @@ def _correct_direction_by_balance(df: pd.DataFrame, opening_balance: float = 0.0
     has_type = "Transaction_Type" in df.columns
     for _, row in df.iterrows():
         bal = row["Balance"]
-        amount = row["Debit"] if row["Debit"] and row["Debit"] > 0 else row["Credit"]
-        amount = amount or 0.0
-        d, c = row["Debit"], row["Credit"]
+        # Use absolute values for the magnitude — some bank exports print debits as
+        # negative numbers (e.g. "-42.37") in the amount column. abs() ensures the
+        # direction-correction arithmetic is correct regardless of the sign convention.
+        d_raw = row["Debit"] or 0.0
+        c_raw = row["Credit"] or 0.0
+        amount = abs(d_raw) if d_raw else abs(c_raw)
+        d, c = d_raw, c_raw
         locked = bool(row.get("_dir_locked", False))  # explicit Dr./Cr. — trust it
         if not locked and prev is not None and pd.notna(bal) and amount > 0:
             delta = bal - prev
@@ -1430,6 +1567,34 @@ def standardise_dataframe_direct(
     # Clean and type each column
     df = _clean_and_type_columns(df)
 
+    # ── DR/CR indicator split ──────────────────────────────────────────────────
+    # When the column_map points BOTH debit and credit at the same source column
+    # (common in internal bank exports: one amount column + a 'D'/'C' direction
+    # flag), the rename loop overwrites the key so only one side survives and
+    # every row gets the same amount in both Debit and Credit (or one side is NaN).
+    # Fix: find a direction column whose values are exclusively 'D'/'C' (etc.) and
+    # use it to route the amount to the correct side. Generalised — no bank name.
+    _debit_src  = column_map.get("debit")
+    _credit_src = column_map.get("credit")
+    if (_debit_src is not None and _credit_src is not None
+            and str(_debit_src).strip() == str(_credit_src).strip()):
+        dir_col = _find_drcr_indicator_column(raw_df)
+        if dir_col is not None:
+            # After _clean_and_type_columns both Debit and Credit are floats.
+            # The amount landed in whichever side the rename kept; take the max.
+            raw_amt = df[["Debit", "Credit"]].max(axis=1)
+            dir_series = (
+                raw_df[dir_col]
+                .astype(str).str.strip().str.upper()
+                .reset_index(drop=True)
+            )
+            is_credit = dir_series.isin(["C", "CR", "CREDIT"])
+            df["Credit"] = np.where(is_credit, raw_amt, 0.0)
+            df["Debit"]  = np.where(~is_credit, raw_amt, 0.0)
+            logger.info(
+                "standardiser.standardise_dataframe_direct: split single-amount "
+                "column by DR/CR indicator %r for account %r", dir_col, account_id)
+
     # Select the standard columns PLUS the preserved cheque/reference identifiers.
     df = df[STANDARD_COLUMNS + REFERENCE_COLUMNS].copy()
 
@@ -1455,6 +1620,27 @@ def standardise_dataframe_direct(
 # ─────────────────────────────────────────────────────────────────────────────
 # PRIVATE HELPER FUNCTIONS
 # ─────────────────────────────────────────────────────────────────────────────
+
+# Values that identify a DR/CR direction indicator column.
+_DRCR_INDICATOR_VALS = {"D", "C", "DR", "CR", "DEBIT", "CREDIT"}
+
+
+def _find_drcr_indicator_column(df: pd.DataFrame) -> Optional[str]:
+    """
+    Returns the name of the first column whose non-null values are exclusively
+    DR/CR direction markers ('D'/'C', 'Dr'/'Cr', 'Debit'/'Credit').
+
+    Used when the column map points both debit and credit at the SAME source
+    column (a single-amount-plus-direction export from some internal banking
+    systems). Generalised — no bank name is referenced.
+    """
+    for col in df.columns:
+        vals = set(
+            df[col].dropna().astype(str).str.strip().str.upper().unique()
+        )
+        if vals and vals.issubset(_DRCR_INDICATOR_VALS):
+            return col
+    return None
 
 
 def _detect_csv_format(lines: List[str]) -> bool:
@@ -1595,7 +1781,8 @@ def _parse_text_lines(
 
 
 def _parse_single_transaction_line(line: str, require_balance: bool = True,
-                                   leading_id_columns: List[str] = None) -> Optional[Dict[str, Any]]:
+                                   leading_id_columns: List[str] = None,
+                                   has_trans_lcy: bool = False) -> Optional[Dict[str, Any]]:
     """
     Parses a single transaction line from a space-separated bank statement.
 
@@ -1732,19 +1919,28 @@ def _parse_single_transaction_line(line: str, require_balance: bool = True,
             return None
         balance_str = money[-1]
         if len(money) == 3:
-            # Three money tokens: Debit | Credit | Balance (statements with separate
-            # debit and credit columns). The parser normally takes money[-2] as the
-            # amount, which is the credit column. For debit transactions, credit = 0
-            # and the real amount is in money[-3] (the debit column). Use whichever
-            # of the two is non-zero; fall back to money[-2] if ambiguous.
-            amt_candidate = money[-2]
-            alt_candidate = money[-3]
-            amt_val = _clean_amount(amt_candidate) or 0.0
-            alt_val = _clean_amount(alt_candidate) or 0.0
-            if amt_val == 0.0 and alt_val != 0.0:
-                amount_str = alt_candidate
+            if has_trans_lcy:
+                # FLEXCUBE portal format: money = [Dr/Cr_Amount, Trans.Rate=1.00, Trans.LCY].
+                # Trans.Rate is always 1.00 for INR and is NOT a transaction amount.
+                # Trans.LCY == Dr/Cr_Amount (same value). Running Balance arrives on the
+                # very next line (handled in the continuation loop above), so balance_str
+                # is reset to "" here — we must not use the Trans.LCY value as a balance.
+                amount_str = money[0]
+                balance_str = ""
             else:
-                amount_str = amt_candidate
+                # Three money tokens: Debit | Credit | Balance (statements with separate
+                # debit and credit columns). The parser normally takes money[-2] as the
+                # amount, which is the credit column. For debit transactions, credit = 0
+                # and the real amount is in money[-3] (the debit column). Use whichever
+                # of the two is non-zero; fall back to money[-2] if ambiguous.
+                amt_candidate = money[-2]
+                alt_candidate = money[-3]
+                amt_val = _clean_amount(amt_candidate) or 0.0
+                alt_val = _clean_amount(alt_candidate) or 0.0
+                if amt_val == 0.0 and alt_val != 0.0:
+                    amount_str = alt_candidate
+                else:
+                    amount_str = amt_candidate
         else:
             amount_str = money[-2]
     else:
@@ -1953,11 +2149,20 @@ def _clean_balance_to_float(value: Any) -> float:
     balance-reconciliation uses as a secondary check on debit/credit direction.
     """
     if pd.isna(value) or value is None:
-        return 0.0
+        # A missing balance is "unknown", not zero. Returning NaN lets the
+        # validator skip the reconciliation check for this row instead of
+        # comparing against a spurious 0.0, which would flag every row in a
+        # file that has no balance column (e.g. internal DR/CR indicator exports).
+        return np.nan
     if isinstance(value, (int, float)):
+        if np.isnan(value):
+            return np.nan
         return float(value)
 
     raw = str(value).strip()
+    if raw in ("", "nan", "None", "NaT", "-", "nil", "NIL", "N/A", "n/a"):
+        return np.nan
+
     # Detect the direction marker before stripping it.
     m = re.search(r"\(?(Dr|Cr)\)?\s*$", raw, flags=re.IGNORECASE)
     sign = 1.0
@@ -1967,12 +2172,12 @@ def _clean_balance_to_float(value: Any) -> float:
     cleaned = raw.replace("₹", "").replace(",", "").replace(" ", "")
     cleaned = re.sub(r"\(?(?:Dr|Cr)\)?$", "", cleaned, flags=re.IGNORECASE)
     if cleaned in ("-", "nil", "NIL", "N/A", "n/a", ""):
-        return 0.0
+        return np.nan
 
     try:
         val = float(cleaned)
     except ValueError:
-        return 0.0
+        return np.nan
     # If the number already carried its own minus sign, don't double-negate.
     if val < 0:
         return val

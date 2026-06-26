@@ -85,8 +85,18 @@ for directory in [
 # crashes silently mid-run.
 GROQ1_KEY = os.getenv("GROQ1")  # column identification (column_identifier.py)
 GROQ2_KEY = os.getenv("GROQ2")  # vision OCR fallback   (extractor_ocr.py)
-# NOTE: GROQ3 is intentionally NOT loaded here. It belongs to the analysis phase.
-# Loading it in extraction code would blur the phase split the keys exist to keep.
+# GROQ3–GROQ5: additional keys for the extraction key-rotation pool.
+# When GROQ1 hits its daily/per-minute quota the pool rotates to the next
+# available key automatically — no manual intervention needed.
+GROQ3_KEY = os.getenv("GROQ3")
+GROQ4_KEY = os.getenv("GROQ4")
+GROQ5_KEY = os.getenv("GROQ5")
+
+# Ordered pool used by llm_structurer for round-robin key rotation on 429s.
+# Only non-empty keys are included; GROQ2 is excluded (it is the vision key).
+GROQ_EXTRACTION_KEY_POOL: list = [
+    k for k in [GROQ1_KEY, GROQ3_KEY, GROQ4_KEY, GROQ5_KEY] if k
+]
 
 # ── Tesseract OCR ────────────────────────────────────────────────────────────
 # Where is the Tesseract executable? We deliberately do NOT hardcode one machine's

@@ -45,12 +45,15 @@ from typing import Any, Dict, List
 
 from groq import Groq
 
-from config.settings import GROQ1_KEY, GROQ_MODEL, LLM_CACHE_DIR
+from config.settings import GROQ_EXTRACTION_KEY_POOL, GROQ_MODEL, LLM_CACHE_DIR
 
 logger = logging.getLogger(__name__)
 
 MAX_RETRIES = 3
 RETRY_DELAY_SECONDS = 2
+
+# Index of the currently active key in the pool — advances on 429 rate-limit errors.
+_pool_idx: int = 0
 _CACHE_VERSION = "structurer_v1"
 
 # How many text lines to send per transaction-reading chunk. Kept SMALL so a single
@@ -108,25 +111,42 @@ _TXN_PROMPT = (
 )
 
 
-def _client() -> Groq:
-    if not GROQ1_KEY:
+def _client(key: str) -> Groq:
+    if not key:
         raise RuntimeError(
-            "GROQ1 key not found in .env — add it before running extraction "
-            "(it is the key used to understand and structure statements)."
+            "No GROQ extraction key available — add at least GROQ1 to .env."
         )
-    return Groq(api_key=GROQ1_KEY)
+    return Groq(api_key=key)
 
 
 def _call_json(system_prompt: str, user_text: str, max_tokens: int = 4000) -> Dict[str, Any]:
     """
     One Groq call that is forced to return a valid JSON object.
 
-    max_tokens defaults to 4000 (not 8000) because the free tier counts the RESERVED
-    output tokens toward the 12,000 tokens/minute limit — an 8k reservation plus the
-    chunk input was overflowing it and getting rejected with HTTP 413.
+    Key rotation: on a 429 rate-limit error (per-minute OR daily quota) the pool
+    index advances to the next available key and the call is retried immediately.
+    All GROQ1–GROQ5 keys in .env are tried before giving up.
+
+    413 (payload too large) is never retried — rotating keys cannot fix a request
+    that is too big for the model's context window.
     """
-    client = _client()
-    for attempt in range(1, MAX_RETRIES + 1):
+    global _pool_idx
+
+    if not GROQ_EXTRACTION_KEY_POOL:
+        raise RuntimeError(
+            "No GROQ extraction keys found in .env — add GROQ1 (and optionally "
+            "GROQ3–GROQ5) before running extraction."
+        )
+
+    # We allow up to (pool_size × MAX_RETRIES) total attempts so every key gets
+    # at least MAX_RETRIES tries before the call is abandoned.
+    pool_size = len(GROQ_EXTRACTION_KEY_POOL)
+    total_attempts = pool_size * MAX_RETRIES
+
+    for attempt in range(1, total_attempts + 1):
+        key = GROQ_EXTRACTION_KEY_POOL[_pool_idx % pool_size]
+        client = _client(key)
+        key_label = f"key[{_pool_idx % pool_size}]"
         try:
             resp = client.chat.completions.create(
                 model=GROQ_MODEL,
@@ -140,17 +160,35 @@ def _call_json(system_prompt: str, user_text: str, max_tokens: int = 4000) -> Di
             )
             return json.loads(resp.choices[0].message.content)
         except Exception as err:
-            logger.warning("llm_structurer._call_json: attempt %d failed: %s", attempt, err)
             es = str(err).lower()
-            # 413 = payload too large (identical body → identical fail).
-            # 429 TPD = daily quota exhausted (resets tomorrow, not in 2 s).
-            if ("413" in es or "too large" in es
-                    or ("429" in es and ("per day" in es or "tokens per day" in es or "tpd" in es))):
-                logger.error("llm_structurer._call_json: non-retryable error (413 or daily quota) "
-                             "— not retrying.")
+            logger.warning(
+                "llm_structurer._call_json: attempt %d/%d (%s) failed: %s",
+                attempt, total_attempts, key_label, err,
+            )
+
+            # 413 = payload too large — rotating keys cannot fix this.
+            if "413" in es or "too large" in es or "context_length_exceeded" in es:
+                logger.error(
+                    "llm_structurer._call_json: request too large (%s) — not retrying.",
+                    key_label,
+                )
                 break
-            if attempt < MAX_RETRIES:
+
+            # 429 = rate-limited — rotate to the next key in the pool.
+            if "429" in es or "rate_limit" in es or "rate limit" in es:
+                _pool_idx += 1
+                next_label = f"key[{_pool_idx % pool_size}]"
+                logger.warning(
+                    "llm_structurer._call_json: rate-limited on %s — rotating to %s.",
+                    key_label, next_label,
+                )
+                # No sleep needed — the new key has its own fresh quota.
+                continue
+
+            # Transient error — wait and retry on the same key.
+            if attempt < total_attempts:
                 time.sleep(RETRY_DELAY_SECONDS)
+
     return {}
 
 

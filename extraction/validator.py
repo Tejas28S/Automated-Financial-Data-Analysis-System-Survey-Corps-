@@ -524,6 +524,54 @@ def _check_debit_credit_exclusivity(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def find_first_balance_break(df: pd.DataFrame) -> Dict[str, Any]:
+    """
+    Walks the DataFrame in row order and returns the FIRST row where the running
+    balance chain breaks (prev_balance + credit - debit ≠ current_balance within
+    BALANCE_TOLERANCE).
+
+    Called after validate_and_clean whenever flagged rows with flag_reason ==
+    "balance_mismatch" exist.  The first broken row is the root cause; all
+    downstream rows are cascading victims of that one extraction error.
+
+    Returns a dict describing the first break, or None if the chain is clean:
+        {
+          "row_index": int,       # 0-based position in the DataFrame
+          "date": str,
+          "narration": str,
+          "debit": float,
+          "credit": float,
+          "balance": float,
+          "expected_balance": float,   # what the balance SHOULD have been
+          "delta": float,              # actual − expected
+        }
+    """
+    if df is None or len(df) < 2:
+        return None
+
+    balances = [_as_float(v) for v in df["Balance"]] if "Balance" in df.columns else [0.0] * len(df)
+    debits   = [_as_float(v) for v in df["Debit"]]   if "Debit"   in df.columns else [0.0] * len(df)
+    credits  = [_as_float(v) for v in df["Credit"]]  if "Credit"  in df.columns else [0.0] * len(df)
+
+    for i in range(1, len(df)):
+        prev_b = balances[i - 1]
+        cur_b  = balances[i]
+        expected = prev_b + credits[i] - debits[i]
+        if abs(expected - cur_b) > BALANCE_TOLERANCE:
+            row = df.iloc[i]
+            return {
+                "row_index": int(i),
+                "date": str(row.get("Date", "")),
+                "narration": str(row.get("Narration", ""))[:120],
+                "debit": debits[i],
+                "credit": credits[i],
+                "balance": cur_b,
+                "expected_balance": round(expected, 2),
+                "delta": round(cur_b - expected, 2),
+            }
+    return None
+
+
 def mark_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     """
     Tags exact duplicate transactions WITHOUT deleting any of them (Problem 6).

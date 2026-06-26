@@ -80,8 +80,9 @@ from extraction.standardiser import (
     count_transaction_like_lines,
     build_schema_sample,
 )
-from extraction.validator import validate_and_clean, mark_duplicates, grade_parse
+from extraction.validator import validate_and_clean, mark_duplicates, grade_parse, find_first_balance_break
 from extraction.storage import persist_extraction_run
+from extraction.sqlite_exporter import export_to_sqlite
 
 # Set up a logger for this module.
 logger = logging.getLogger(__name__)
@@ -374,6 +375,28 @@ def run_extraction_pipeline(
             statements=statements,
         )
 
+    # ── SQLite export — ready for the analysis phase ──────────────────────────
+    sqlite_path = ""
+    if persist and not unified_clean_df.empty:
+        try:
+            from config.settings import OUTPUT_DIR
+            sqlite_path = export_to_sqlite(
+                clean_df=unified_clean_df,
+                session_id=session_id,
+                output_dir=OUTPUT_DIR,
+                per_file_records=per_file_records,
+            )
+            storage_paths["sqlite_db"] = sqlite_path
+            logger.info(
+                "extraction_pipeline.run_extraction_pipeline: "
+                "SQLite database written → %s", sqlite_path,
+            )
+        except Exception as sqlite_err:
+            logger.error(
+                "extraction_pipeline.run_extraction_pipeline: "
+                "SQLite export failed (non-fatal): %s", sqlite_err,
+            )
+
     result = {
         "clean_df": unified_clean_df,
         "flagged_df": unified_flagged_df,
@@ -385,6 +408,7 @@ def run_extraction_pipeline(
         "session_id": session_id,
         "per_file": per_file_records,
         "storage_paths": storage_paths,
+        "sqlite_path": sqlite_path,
     }
 
     logger.info(
@@ -735,9 +759,6 @@ def _process_single_file(
     file_record["rows_flagged"] = len(flagged_df)
 
     # ── Validation (requirements 8 & 9) ───────────────────────────────────────
-    # 9: every transaction the LLM identified must end up in the output (clean +
-    #    flagged). Any gap is rows dropped for an unparseable date — surfaced here.
-    # 8: the key account identifiers must be traceable back to the raw text.
     rows_into_output = len(clean_df) + len(flagged_df)
     llm_rows = file_record.get("llm_txn_count", len(standard_df))
     text_for_check = (raw_text or "")
@@ -751,6 +772,41 @@ def _process_single_file(
         "ifsc_in_text": bool(details.get("ifsc_code", "")
                              and details["ifsc_code"] in text_for_check),
     }
+
+    # ── Transaction count audit (Priority 4) ─────────────────────────────────
+    expected = file_record.get("expected_txn_lines", 0) or 0
+    extracted = len(standard_df)
+    completeness = round(extracted / expected, 3) if expected > 0 else 1.0
+    count_audit: Dict[str, Any] = {
+        "expected_transaction_count": expected,
+        "extracted_transaction_count": extracted,
+        "clean_transaction_count": len(clean_df),
+        "flagged_transaction_count": len(flagged_df),
+        "completeness_ratio": completeness,
+    }
+    if completeness < 0.85 and expected > 0:
+        logger.warning(
+            "extraction_pipeline._process_single_file: LOW COMPLETENESS '%s' — "
+            "extracted %d of %d expected transaction-like lines (ratio %.2f).",
+            Path(file_path).name, extracted, expected, completeness,
+        )
+
+    # ── First balance break (Priority 5) ──────────────────────────────────────
+    # Surface the exact row where the balance chain first breaks, so the root
+    # cause is immediately visible rather than buried in hundreds of flagged rows.
+    balance_mismatch_rows = flagged_df[
+        flagged_df.get("flag_reason", pd.Series(dtype=str)) == "balance_mismatch"
+    ] if not flagged_df.empty and "flag_reason" in flagged_df.columns else pd.DataFrame()
+
+    first_break = None
+    if not balance_mismatch_rows.empty:
+        # Run find_first_balance_break on the full standard_df (pre-split) so
+        # the chain walk sees every row in chronological order.
+        first_break = find_first_balance_break(standard_df)
+
+    count_audit["first_balance_break"] = first_break
+    file_record["transaction_count_audit"] = count_audit
+
     logger.info(
         "extraction_pipeline._process_single_file: '%s' → %d clean, %d flagged "
         "(holder=%r account_number=%r).",
@@ -960,6 +1016,24 @@ def _process_image_group(
         "ifsc_in_text": bool(details.get("ifsc_code", "")
                              and details["ifsc_code"] in combined_text),
     }
+
+    # Transaction count audit + first balance break for image groups.
+    expected_img = file_record.get("expected_txn_lines", 0) or 0
+    extracted_img = len(standard_df)
+    completeness_img = round(extracted_img / expected_img, 3) if expected_img > 0 else 1.0
+    img_break = None
+    if not flagged_df.empty and "flag_reason" in flagged_df.columns:
+        if (flagged_df["flag_reason"] == "balance_mismatch").any():
+            img_break = find_first_balance_break(standard_df)
+    file_record["transaction_count_audit"] = {
+        "expected_transaction_count": expected_img,
+        "extracted_transaction_count": extracted_img,
+        "clean_transaction_count": len(clean_df),
+        "flagged_transaction_count": len(flagged_df),
+        "completeness_ratio": completeness_img,
+        "first_balance_break": img_break,
+    }
+
     logger.info(
         "extraction_pipeline._process_image_group: '%s' → %d clean, %d flagged "
         "(holder=%r account_number=%r, tier=%s).",

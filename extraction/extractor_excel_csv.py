@@ -43,10 +43,10 @@ _DATE_LIKE = re.compile(r"^\d{1,4}[/\-.]\d{1,2}[/\-.]\d{2,4}")
 # vocabulary only (no bank names), so the anti-overfitting guard is unaffected.
 _META_LABELS = {
     "account_number": ["account number", "account no", "a/c number", "a/c no",
-                       "acct number", "acct no", "account #"],
+                       "acct number", "acct no", "account #", "account"],
     "account_holder": ["account holder", "account name", "account title",
                        "customer name", "holder name", "a/c holder",
-                       "name of account holder", "primary holder", "name"],
+                       "name of account holder", "primary holder", "acct name", "name"],
     "ifsc_code": ["ifsc code", "ifsc", "ifs code", "rtgs/neft ifsc"],
     "branch": ["branch name", "branch address", "branch"],
     "branch_code": ["branch code", "branch sol id", "sol id", "branch id"],
@@ -383,6 +383,51 @@ def _infer_column_map(columns) -> Dict[str, str]:
     return cmap
 
 
+def _extract_metadata_from_columns(df: "pd.DataFrame") -> Dict[str, str]:
+    """
+    Extracts account metadata from transaction-table columns that are constant
+    across all rows (e.g. an "ACCOUNT" column that repeats the same account number
+    on every transaction row, or an "ACCT NAME" column).
+
+    Some bank exports include these columns inside the transaction table rather
+    than in a key:value header block. This function harvests them deterministically
+    without any LLM call.
+
+    Only extracts a field when the column has exactly one distinct non-empty value
+    (i.e. it is constant), so we never silently pick the wrong value from a column
+    that varies per row.
+    """
+    # Column-name variants → metadata field.  Normalised to lowercase for matching.
+    _COL_META = [
+        ("account_number", ["account", "account no", "account number", "account_no",
+                            "account_number", "acct no", "acct number", "acct",
+                            "a/c no", "a/c number"]),
+        ("account_holder", ["acct name", "account name", "account holder", "customer name",
+                            "account_name", "acct_name", "holder name", "name"]),
+        ("bank_name",      ["bank", "bank name", "bank_name"]),
+    ]
+    result: Dict[str, str] = {}
+    normed_cols = {c: c.strip().lower() for c in df.columns}
+
+    for field, variants in _COL_META:
+        if field in result:
+            continue
+        for col, norm in normed_cols.items():
+            if norm not in variants:
+                continue
+            # Column found — check for single distinct non-empty value.
+            vals = df[col].dropna().astype(str).str.strip()
+            vals = vals[vals != ""].unique()
+            if len(vals) == 1:
+                result[field] = vals[0]
+                logger.info(
+                    "extractor_excel_csv._extract_metadata_from_columns: "
+                    "extracted %s=%r from column %r", field, vals[0], col)
+                break
+
+    return result
+
+
 def extract_dataframe_from_excel_csv(
     file_path: str,
     account_id: str,
@@ -457,6 +502,13 @@ def extract_dataframe_from_excel_csv(
     # helper columns (so Account_ID / Bank_Name can never be mistaken for a field).
     inferred_map = _infer_column_map(df.columns)
 
+    # Supplement the header-block metadata with any identity found in constant
+    # transaction-table columns (e.g. "ACCOUNT" = 17496072039317, "ACCT NAME" =
+    # "Sarita Deepa"). Header-block values take precedence (setdefault).
+    col_meta = _extract_metadata_from_columns(df)
+    for k, v in col_meta.items():
+        metadata.setdefault(k, v)
+
     # Attach the investigator-provided identifiers to every row.
     # This is essential for cross-account analysis — every transaction must
     # carry its account identity so we can trace money flows between accounts.
@@ -495,7 +547,16 @@ def _read_excel_file(file_path: str) -> Tuple[Optional[pd.DataFrame], Dict[str, 
         # header=None → see every row (including any metadata rows above the table).
         # dtype=str preserves values like an account number with a leading zero
         # (otherwise pandas would coerce it to a float and corrupt it).
-        raw = pd.read_excel(file_path, engine="openpyxl", header=None, dtype=str)
+        # openpyxl handles .xlsx; xlrd handles legacy .xls files.
+        ext = Path(file_path).suffix.lower()
+        engine = "openpyxl"
+        if ext == ".xls":
+            try:
+                import xlrd  # noqa: F401
+                engine = "xlrd"
+            except ImportError:
+                pass  # openpyxl will fail below; we'll log it
+        raw = pd.read_excel(file_path, engine=engine, header=None, dtype=str)
     except Exception as error:
         logger.error(
             "extractor_excel_csv._read_excel_file: "

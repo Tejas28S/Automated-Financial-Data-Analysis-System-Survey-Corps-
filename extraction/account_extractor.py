@@ -198,6 +198,12 @@ def reconcile_account_details(
         if derived:
             final["bank_name"] = derived
 
+    # Apply holder-name noise stripping to every path that sets account_holder
+    # (PDF regex, LLM metadata, Excel/CSV metadata block). This is the single
+    # place so the clean applies uniformly regardless of source.
+    if final.get("account_holder"):
+        final["account_holder"] = _clean_holder_name(final["account_holder"])
+
     final["account_ref"] = account_ref  # internal id, kept for analysis linkage
     return final
 
@@ -416,6 +422,63 @@ def _metadata_region(text: str, max_lines: int = 25) -> str:
     return "\n".join(out)
 
 
+# Status / role words that some banks append to the holder name on the same line
+# ("Mrs. Anjali Bose  Primary", "RAVI KUMAR  Joint Holder"). These are generic
+# banking/account-status words — no bank is hard-coded. Stripping them from the
+# extracted name removes a common class of false-positive trailing noise.
+_TRAILING_HOLDER_NOISE = re.compile(
+    r"\s+(Primary|Secondary|Joint(?:\s*Holder)?|Nominee|Single|Sole|"
+    r"Account\s*Holder|Account\s*Type|Savings|Current|Salary|"
+    r"Holder\s*Type|Status)\s*$",
+    re.IGNORECASE,
+)
+
+
+def _clean_holder_name(raw: str) -> str:
+    """
+    Removes two kinds of noise that contaminate extracted account holder names:
+
+    1. Leading single-token noise — a single non-name word (≤2 chars, or a lone
+       possessive-s artefact like "s" from "Holder's") at the START of the value.
+       This occurs when pdfplumber renders an apostrophe-s as a separate word
+       ("Account Holder's Name" → "Holder s Name"; the regex captures "s …").
+
+    2. Trailing status/role words — "Primary", "Secondary", "Joint Holder" etc.
+       Some banks print the account-role designation immediately after the name on
+       the same physical line; the _labelled() value therefore includes it.
+
+    The check is purely structural (word length ≤2 and not a title prefix) —
+    it never references any bank name or specific format.
+    """
+    if not raw:
+        return raw
+    name = raw.strip()
+
+    # Strip a leading dash/hyphen separator that some CSV exports prepend
+    # (e.g. "- KAVYA BOSE" from a metadata row starting with "- ").
+    name = re.sub(r"^[-–—]\s+", "", name).strip()
+
+    # Strip trailing status word first (so it doesn't interfere with the leading check).
+    name = _TRAILING_HOLDER_NOISE.sub("", name).strip()
+
+    # Strip a leading single-character or two-character non-title word. Titles like
+    # "Mr", "Ms", "DR" are ≤2 chars but must NOT be stripped — they are always
+    # followed immediately by a period or space+uppercase (typical name pattern).
+    # We therefore only strip when the second token starts with a title prefix,
+    # which means the stripped token was noise, not the title itself.
+    parts = name.split()
+    if len(parts) >= 2:
+        first = parts[0].rstrip(".")
+        rest_start = parts[1][:2].lower()
+        is_title = first.lower() in ("mr", "mrs", "ms", "miss", "dr", "shri", "smt", "m/s")
+        is_noise = (len(first) <= 2 and not is_title
+                    and rest_start in ("mr", "ms", "dr", "sh", "sm", "m/"))
+        if is_noise:
+            name = " ".join(parts[1:]).strip()
+
+    return name
+
+
 def extract_account_details_from_text(text: str) -> Dict[str, str]:
     """
     Extracts the account identity from ANY bank statement's text — not just the
@@ -519,7 +582,7 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
             cand = m.group(1).strip()
             if cand.lower() not in _NOT_NAME_WORDS:
                 holder = cand
-    details["account_holder"] = holder
+    details["account_holder"] = _clean_holder_name(holder)
 
     # ── Account number ────────────────────────────────────────────────────────
     m = _ACCNO_LINE_RE.search(text)

@@ -159,10 +159,44 @@ def run_extraction_pipeline(
     # per-file loop. Every other format (PDF / Excel / CSV / DOCX) is unchanged.
     # Partition is by extension — identical to how the router labels images — so no
     # PDF is ever re-routed here.
+    # ── PREFLIGHT: confirm every input file is actually on disk and non-empty ──
+    # A batch run can otherwise hit a "file not found" cliff if the staging/upload
+    # directory is cleaned, expires, or never finished writing partway through the
+    # run — which presents, per-file, as dozens of unrelated "parse failures" on files
+    # that were never actually opened. We surface that here, loudly and up front, as a
+    # distinct FAILED reason instead of letting it masquerade as a parsing problem.
+    present_files = []
+    for f in files:
+        fp = f.get("file_path", "")
+        p = Path(fp)
+        try:
+            exists = p.is_file()
+            size = p.stat().st_size if exists else 0
+        except OSError:
+            exists, size = False, 0
+        if not exists or size == 0:
+            reason = "file_not_found" if not exists else "file_empty"
+            logger.error(
+                "extraction_pipeline.run_extraction_pipeline: PREFLIGHT %s — '%s' is "
+                "missing or empty on disk; it will not be processed.", reason, fp)
+            files_failed.append(fp)
+            per_file_records.append({
+                "file": p.name, "account_id": f.get("account_id", ""),
+                "bank_name": f.get("bank_name", ""), "status": "FAILED",
+                "error": f"preflight: {reason} ({fp})",
+            })
+        else:
+            present_files.append(f)
+    if len(present_files) < len(files):
+        logger.warning(
+            "extraction_pipeline.run_extraction_pipeline: PREFLIGHT — %d of %d input "
+            "files were missing/empty and were skipped before processing.",
+            len(files) - len(present_files), len(files))
+
     _IMAGE_EXTS = {".png", ".jpg", ".jpeg"}
-    image_files = [f for f in files
+    image_files = [f for f in present_files
                    if Path(f.get("file_path", "")).suffix.lower() in _IMAGE_EXTS]
-    other_files = [f for f in files
+    other_files = [f for f in present_files
                    if Path(f.get("file_path", "")).suffix.lower() not in _IMAGE_EXTS]
 
     for file_index, file_info in enumerate(other_files, start=1):
@@ -352,6 +386,10 @@ def run_extraction_pipeline(
         # documents, not rows), and the per-file balance-reconciliation rate and the
         # tier each file resolved at — the proof of correctness for the team/jury.
         "total_llm_calls": sum(r.get("llm_calls", 0) for r in per_file_records),
+        # Multi-key Groq rotation visibility: how many times a daily-quota-exhausted
+        # key was rotated off during this run (0 on a healthy single/first key). Lets
+        # us see from metadata.json whether rotation fired without guessing.
+        "key_rotations": _total_key_rotations(),
         "reconciliation_by_file": {
             r.get("file"): r.get("reconciliation_rate")
             for r in per_file_records if "reconciliation_rate" in r
@@ -373,6 +411,17 @@ def run_extraction_pipeline(
             summary=summary,
             statements=statements,
         )
+        # Auto-generate the extraction summary report (txt + json) for the team and
+        # as the analysis phase's input manifest. Never let a report error break the run.
+        try:
+            from extraction.report_generator import generate_extraction_report
+            report_dir = storage_paths.get("folder")
+            if report_dir:
+                generate_extraction_report(unified_clean_df, unified_flagged_df,
+                                           per_file_records, summary, report_dir)
+        except Exception as report_error:
+            logger.warning("extraction_pipeline: summary report generation failed: %s",
+                           report_error)
 
     result = {
         "clean_df": unified_clean_df,
@@ -401,6 +450,15 @@ def run_extraction_pipeline(
     )
 
     return result
+
+
+def _total_key_rotations() -> int:
+    """Total Groq key rotations (text + vision pools) for the audit trail."""
+    try:
+        from extraction.key_pool import TEXT_POOL, VISION_POOL
+        return TEXT_POOL.rotations + VISION_POOL.rotations
+    except Exception:
+        return 0
 
 
 def _details_from_meta(meta: Dict[str, str], account_id: str, bank_name: str) -> Dict[str, Any]:
@@ -635,9 +693,15 @@ def _process_single_file(
             # the headers are not recognisable.
             inferred = raw_df.attrs.get("inferred_column_map", {}) or {}
             core_map = {k: v for k, v in inferred.items()
-                        if k in ("date", "narration", "debit", "credit", "balance")}
-            is_complete = ("date" in core_map and "balance" in core_map
-                           and ("debit" in core_map or "credit" in core_map))
+                        if k in ("date", "narration", "debit", "credit", "balance",
+                                 "amount", "drcr_flag")}
+            # A table is deterministically parseable when it has a date column AND any
+            # money signal: a running balance, separate debit/credit columns, or a
+            # single amount column (optionally with a Dr/Cr direction flag — the
+            # core-banking AMT_TXN + COD_DRCR layout). Only when none of these is
+            # recognised do we fall back to the LLM column identifier.
+            is_complete = ("date" in core_map and any(
+                k in core_map for k in ("balance", "debit", "credit", "amount")))
 
             if is_complete:
                 column_map = core_map

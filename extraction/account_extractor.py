@@ -344,6 +344,32 @@ _ADDRESS_HINT_WORDS = {
 }
 
 
+# A captured "name" value that is actually a stray LABEL (not a real name). In a
+# two-column header, a regex anchored to one label can capture the NEIGHBOURING
+# label's text — e.g. joint_holder="Opening" (start of "Opening Balance"),
+# nominee_name="JOINT HOLDER :". These must be rejected as not-extracted rather than
+# stored as if they were a person's name. Generic banking-label vocabulary, never a
+# bank name or a person — so it cannot reject a real holder.
+_LABEL_FRAGMENT_WORDS = {
+    "opening", "closing", "period", "joint holder", "joint", "holder", "nominee",
+    "nominee name", "nominee registered", "branch", "branch name", "branch address",
+    "scheme", "currency", "account", "account no", "account number", "balance",
+    "statement", "customer", "customer no", "ifsc", "ifsc code", "micr", "micr code",
+    "b/f", "c/f", "name", "address", "registered", "not registered", "cust", "cif",
+}
+
+
+def _is_label_fragment(value: str) -> bool:
+    """True if a captured value is really a label fragment, not a name/identity value."""
+    if not value:
+        return False
+    v = re.sub(r"\s+", " ", str(value).strip())
+    if v.endswith(":"):
+        return True
+    vn = v.lower().rstrip(":").strip()
+    return vn in _LABEL_FRAGMENT_WORDS or all(ch in "-:. " for ch in vn)
+
+
 def _first_line_name(header: str) -> str:
     """Last-resort holder: the first header line that looks like an unlabelled name."""
     for line in header.splitlines()[:6]:
@@ -450,10 +476,16 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
     header = _metadata_region(text)
 
     # ── Account holder ────────────────────────────────────────────────────────
+    # IMPORTANT: holder detection is scoped to the metadata region (`header`), never
+    # the full transaction body. The account holder is always printed in the header;
+    # scanning the body lets a counterparty narration such as
+    # "UPI/CUSTOMERNAME/5405655919/…" be mistaken for the holder (the "customer name"
+    # label matching the spaceless "CUSTOMERNAME"). Restricting to the header removes
+    # that whole class of false matches without losing any real holder.
     # Attempt 1: labels that END in "name" — the value follows, with or without a
     # colon ("Account Holders Name TOLLWAYS INFRA PROJECTS PRIVATE LIMITED").
     holder = _labelled(
-        text,
+        header,
         r"account\s*holders?\s*name|name\s*of\s*(?:the\s*)?account\s*holders?|"
         r"customer\s*name|cust(?:omer)?\s*name|holders?\s*name",
         sep_optional=True,
@@ -462,21 +494,26 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
     # "account title" is Bandhan Bank's label for the account holder.
     if not holder:
         holder = _labelled(
-            text,
+            header,
             r"account\s*holders?|account\s*name|account\s*title|a/?c\s*holders?",
         )
-    # Attempt 3: an unlabelled "MR/MRS/… NAME" line in the header.
+    # Attempt 2b: a bare "Name :" label, but only at the START of a header line so it
+    # can never match the "Name" inside "Branch Name :" / "Scheme Name :" / "Nominee
+    # Name :" (which start with another word). Some banks label the holder simply
+    # "Name : SUMIT PATEL" on a line that also carries the next field. The value runs
+    # to 2+ spaces or the next known label, exactly like _labelled.
     if not holder:
-        m = _HOLDER_TITLE_RE.search(header)
-        if m:
-            raw = re.sub(r"\s{2,}", " ", m.group(1)).strip()
-            # Strip any trailing token that is a known field label (e.g. "MICR" in
-            # "M/S CRYSTAL MARKETING MICR:" — the regex captures it as an ALL-CAPS
-            # name word but it is actually the next field's label).
-            raw = re.sub(
-                rf"\s+(?:{_NEXT_LABEL})\s*$", "", raw, flags=re.IGNORECASE,
-            ).strip()
-            holder = raw
+        mname = re.search(
+            rf"^(?:a/?c\s*|account\s*)?name\s*[:=]\s*([^\n]+?)"
+            rf"(?:\s{{2,}}|\s+(?:{_NEXT_LABEL})\b|$)",
+            header, re.IGNORECASE | re.MULTILINE)
+        if mname:
+            cand = re.sub(r"\s{2,}", " ", mname.group(1)).strip()
+            cand_low = cand.lower()
+            if (cand and not cand[0].isdigit()
+                    and not any(w in cand_low.split() for w in _NOT_NAME_WORDS)
+                    and "bank" not in cand_low):
+                holder = cand
     # Attempt 4: text that appears BEFORE "ACCOUNT :" on the same header line.
     # Some bank layouts (e.g. IDFC First Bank) print:
     #   "PIONEER HOLDINGS ACCOUNT :PRABHADEVI BRANCH"
@@ -494,6 +531,68 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
                         "statement", "customer", "acct", "account", "period",
                     ))):
                 holder = candidate
+    # Attempt 4a (BEFORE the label-anchored 4b): a CLEAN, UNLABELLED multi-word name on
+    # the first header line. In a two-column header the holder's full name often sits
+    # alone on the first line ("KAVYA BOSE") while a CITY prints before a right-column
+    # label further down ("LUCKNOW  Customer No :971228349"). Without this, 4b grabs the
+    # city. A first-line clean name (no digits, no label, 2–4 name words, not an address
+    # / known-keyword line — all enforced by _first_line_name) is the stronger holder
+    # signal, so it runs first. It is gated to ≥2 words so it never fires on a file
+    # whose holder is a single token sitting before a label (handled by 4b below), and
+    # _first_line_name skips any first line carrying digits/labels (e.g. "DEEPAK Period :
+    # 01-03-2025"), so those files still resolve correctly through 4b.
+    if not holder:
+        fln = _first_line_name(header)
+        if fln and len(fln.split()) >= 2:
+            holder = fln
+    # Attempt 4b: a name printed at the START of a header line, immediately FOLLOWED
+    # by a strong identity label on the same line — e.g.
+    #   "RAVI KUMAR IFSC: SBIN0965900 MICR: 887165858"
+    # Here the holder carries no title and no "Account Holder" label, and the line
+    # also contains digits (the IFSC/MICR), so the digit-free first-line fallback
+    # below rejects it. This generalises Attempt 4 ("text before ACCOUNT :") to the
+    # other strong identity labels banks pack onto the holder's line. Driven purely by
+    # layout (a name token run that ends at a known label), never by a bank name.
+    if not holder:
+        # The name run allows a parenthesised token ("(OPC)") and digits so a company
+        # name like "VELORA TEXTILES (OPC) PRIVATE LIMITED" is captured WHOLE (before
+        # this, the parens broke the run and only the "PRIVATE LIMITED" suffix matched).
+        m = re.search(
+            r"^([A-Z][A-Za-z.&]+(?:[ \t]+[A-Za-z0-9.&()/-]+){0,6})[ \t]+"
+            r"(?:IFSC|IFS|MICR|CIF|CKYC|Customer\s+(?:No|ID|Number)|Cust\.?\s*Reln|"
+            r"A/?c\s*(?:No|Number)|Account\s+(?:No|Number)|Scheme|"
+            r"Period|Statement|Currency)\b",
+            header, re.IGNORECASE | re.MULTILINE)
+        if m:
+            cand = re.sub(r"\s{2,}", " ", m.group(1)).strip()
+            cand_low = cand.lower()
+            words = set(w.strip(".,").lower() for w in cand.split())
+            # Accept only if it really looks like a personal/company name: not a known
+            # header keyword, not a branch/address line, and not a bank name.
+            if (not (words & _NOT_NAME_WORDS)
+                    and not (words & _ADDRESS_HINT_WORDS)
+                    and "bank" not in cand_low):
+                holder = cand
+    # Attempt 4c (lower priority than the label-anchored attempts above): an
+    # unlabelled "MR/MRS/… NAME" line in the header. This is deliberately AFTER the
+    # label-anchored attempts because a bare title match is lower-precision — a
+    # statement's NOMINEE or JOINT holder also carries a title (e.g. "Nominee Name :
+    # MRS REKHA"), and the real first holder ("DEEPAK") may carry none. We therefore
+    # reject a title match that directly follows a nominee/joint/guardian label.
+    if not holder:
+        for m in _HOLDER_TITLE_RE.finditer(header):
+            preceding = header[max(0, m.start() - 40):m.start()].lower()
+            if re.search(r"nominee|joint\s*holder|second\s*holder|guardian|"
+                         r"next\s*of\s*kin", preceding):
+                continue  # this titled name is a nominee/joint holder, not the holder
+            raw = re.sub(r"\s{2,}", " ", m.group(1)).strip()
+            # Strip any trailing token that is a known field label (e.g. "MICR" in
+            # "M/S CRYSTAL MARKETING MICR:" — captured as an ALL-CAPS name word but
+            # actually the next field's label).
+            raw = re.sub(rf"\s+(?:{_NEXT_LABEL})\s*$", "", raw, flags=re.IGNORECASE).strip()
+            if raw:
+                holder = raw
+                break
     # Attempt 5: an unlabelled name as the very first header line (Bank of Baroda).
     if not holder:
         holder = _first_line_name(header)
@@ -519,12 +618,55 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
             cand = m.group(1).strip()
             if cand.lower() not in _NOT_NAME_WORDS:
                 holder = cand
+    # Normalise: strip leading separator/punctuation a label like "Name :- ANJALI DAS"
+    # (colon-dash separator) leaves on the value, and collapse inner whitespace. A real
+    # holder always starts with a letter (or a company "M/S"), so this only removes junk.
+    if holder:
+        holder = re.sub(r"^[\s\-:=.,/]+", "", re.sub(r"\s{2,}", " ", holder)).strip()
+    # Reject a captured value that is really a stray label (two-column header bleed).
+    if _is_label_fragment(holder):
+        holder = ""
     details["account_holder"] = holder
 
     # ── Account number ────────────────────────────────────────────────────────
-    m = _ACCNO_LINE_RE.search(text)
-    if m:
-        details["account_number"] = m.group(1)
+    # Collect every account-labelled numeric candidate in the HEADER (never the
+    # transaction body, which is full of counterparty/reference numbers), then prefer
+    # the LONGEST plausible one. Indian account numbers run ~9–18 digits, so an
+    # 8-digit value sitting near an account label is usually a customer ID / branch
+    # code, not the account number. The label set includes the generic
+    # "Statement of Account No" and the "CASA … Details" account header. Length
+    # arithmetic + header scoping only — no bank/filename-specific rule.
+    acct_candidates = re.findall(
+        r"(?:a/?c|account|acct|casa[\w \t/.-]*?details|statement\s+of\s+account)\s*"
+        r"(?:number|no\.?|num)?\s*(?:[:\-=#]|\s)*?(\d{8,20})",
+        header, re.IGNORECASE)
+    if not acct_candidates:
+        m = _ACCNO_LINE_RE.search(text)  # legacy full-text fallback
+        if m:
+            acct_candidates = [m.group(1)]
+    if acct_candidates:
+        plausible = [c for c in acct_candidates if 9 <= len(c) <= 20]
+        details["account_number"] = max(plausible or acct_candidates, key=len)
+
+    # ── Bare "ACCOUNT_NO  HOLDER NAME" metadata line (no labels) ──────────────
+    # Some core-banking CSV/XLS exports print the identity UNLABELLED as the first
+    # metadata line: "25078124219247  YASH DUBEY  for the period 11-09-2024 - to- …".
+    # This is in-DOCUMENT data (never the filename), so extracting it is legitimate.
+    # Scoped to the header's first lines and requires a long account-shaped number
+    # immediately followed by a name, so a transaction row can't be misread as this.
+    if not details["account_holder"] or not details["account_number"]:
+        for line in header.splitlines()[:3]:
+            mbn = re.match(
+                r"^\s*(\d{9,20})\s+([A-Z][A-Za-z]+(?:[ \t]+[A-Z][A-Za-z&.]+){0,3})\b",
+                line.strip())
+            if mbn:
+                cand_name = re.sub(r"\s+", " ", mbn.group(2)).strip()
+                if cand_name.lower() not in _NOT_NAME_WORDS and "bank" not in cand_name.lower():
+                    if not details["account_number"]:
+                        details["account_number"] = mbn.group(1)
+                    if not details["account_holder"]:
+                        details["account_holder"] = cand_name
+                    break
 
     # ── IFSC code (header only, by unique shape) ──────────────────────────────
     m = _IFSC_RE_FIND.search(header.upper())
@@ -614,12 +756,13 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
     )
 
     # ── Extended identity fields (all optional, clearly-labelled only) ─────────
-    # Joint holder / second account holder.
-    details["joint_holder"] = _labelled(
-        text, r"joint\s*holders?|second\s*holders?|joint\s*account\s*holders?")
+    # Joint holder / second account holder. The label-fragment guard rejects a
+    # two-column header bleed (e.g. joint_holder="Opening", nominee="JOINT HOLDER :").
+    jh = _labelled(text, r"joint\s*holders?|second\s*holders?|joint\s*account\s*holders?")
+    details["joint_holder"] = "" if _is_label_fragment(jh) else jh
     # Nominee.
-    details["nominee_name"] = _labelled(
-        text, r"nominee\s*name|name\s*of\s*nominee|nominee")
+    nm = _labelled(text, r"nominee\s*name|name\s*of\s*nominee|nominee")
+    details["nominee_name"] = "" if _is_label_fragment(nm) else nm
     # MICR code (9-digit code; capture digits only to avoid trailing label spill).
     mm = re.search(r"MICR(?:\s*(?:code|no\.?|number))?\s*[:\-=]?\s*(\d{6,9})",
                    text, re.IGNORECASE)

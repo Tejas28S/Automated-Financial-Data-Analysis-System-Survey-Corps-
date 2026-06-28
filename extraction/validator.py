@@ -282,8 +282,26 @@ def validate_and_clean(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
     # Work on a fresh copy to avoid modifying the original DataFrame
     working_df = df.copy()
 
+    # ── Drop statement SUMMARY / TOTALS rows (not transactions) ───────────────
+    # Some templates print a "Total Debits / Total Credits" row at the end with a
+    # placeholder impossible date (e.g. 01/01/6999) and a narration that is just a
+    # row count ("2382"). These are statement metadata, not transactions — remove them
+    # so they are neither counted nor surfaced as invalid_date flags. The test is
+    # deliberately strict (impossible year AND a purely-numeric narration), so a real
+    # transaction can never match. Logged, never silently relevant to a real row.
+    working_df = _drop_summary_rows(working_df)
+    if working_df.empty:
+        empty = df.iloc[0:0].copy()
+        return empty, empty
+
     # Initialise the "flag_reason" column for tracking why rows are flagged
     working_df["flag_reason"] = None  # None means "not flagged yet"
+    # Companion diagnostic column: for a balance_mismatch row it carries the PROBABLE
+    # extraction cause (missing_amount / direction_inverted / missing_transaction …)
+    # so the investigator and the analysis phase can act on it. Blank for every other
+    # row. flag_reason itself is left untouched (the output contract the tests and the
+    # analysis phase depend on).
+    working_df["mismatch_diagnosis"] = ""
 
     # ── Check 1: Date Validity ────────────────────────────────────────────────
     working_df = _check_date_validity(working_df)
@@ -296,13 +314,20 @@ def validate_and_clean(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
     # ── Check 3: Debit/Credit Exclusivity ─────────────────────────────────────
     working_df = _check_debit_credit_exclusivity(working_df)
 
+    # ── Check 4: Narration-bloat safety net (multiple transactions in one row) ──
+    working_df = _check_narration_bloat(working_df)
+
     # ── Split into clean and flagged ──────────────────────────────────────────
     flagged_mask = working_df["flag_reason"].notna()
     flagged_df = working_df[flagged_mask].copy()
     clean_df = working_df[~flagged_mask].copy()
 
-    # Remove the flag_reason column from the clean DataFrame (it's always None there)
+    # Remove the flag_reason column from the clean DataFrame (it's always None there).
+    # The mismatch_diagnosis companion is also clean-only noise here (always blank),
+    # so it stays on flagged rows and is dropped from the clean table.
     clean_df = clean_df.drop(columns=["flag_reason"])
+    if "mismatch_diagnosis" in clean_df.columns:
+        clean_df = clean_df.drop(columns=["mismatch_diagnosis"])
 
     logger.info(
         "validator.validate_and_clean: "
@@ -327,6 +352,36 @@ def validate_and_clean(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
     )
 
     return clean_df.reset_index(drop=True), flagged_df.reset_index(drop=True)
+
+
+import re as _re
+
+
+def _drop_summary_rows(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Removes statement summary/totals rows (impossible placeholder date AND a narration
+    that is purely a row-count number). Strict by design — a real transaction never has
+    both an impossible year and a numeric-only narration — so no transaction is lost.
+    """
+    if df.empty or "Date" not in df.columns:
+        return df
+
+    def _is_summary(row) -> bool:
+        dt = row["Date"]
+        if not isinstance(dt, pd.Timestamp) or pd.isna(dt):
+            return False
+        if 1950 <= dt.year <= 2100:
+            return False  # plausible year → a real (or normally-flagged) row
+        narr = str(row.get("Narration", "")).strip()
+        return bool(_re.fullmatch(r"\d{1,7}", narr))  # narration is only a count
+
+    mask = df.apply(_is_summary, axis=1)
+    n = int(mask.sum())
+    if n:
+        logger.info("validator._drop_summary_rows: removed %d statement summary/totals "
+                    "row(s) (impossible date + numeric-only narration).", n)
+        return df[~mask].reset_index(drop=True)
+    return df
 
 
 def _check_date_validity(df: pd.DataFrame) -> pd.DataFrame:
@@ -378,6 +433,53 @@ def _check_date_validity(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def _classify_balance_mismatch(
+    prev_balance: float, curr_balance: float, debit: float, credit: float,
+    tol: float = BALANCE_TOLERANCE,
+) -> str:
+    """
+    Best-effort classification of WHY a balance row failed to reconcile, so the
+    validator becomes an extraction-debugging tool rather than a bare arithmetic
+    checker (Issues 3 & 7). Pure row-local arithmetic — no bank knowledge, so it
+    generalises to every statement.
+
+    The running balance is internally consistent in a real export, so a mismatch is
+    almost always an EXTRACTION defect. The shape of the discrepancy points at which
+    defect it is:
+
+      • missing_amount        — the balance moved but BOTH debit and credit are zero:
+                                the transaction amount was never captured. This is the
+                                signature of a lost continuation line, a page-break
+                                split, or an OCR omission on the amount column.
+      • direction_inverted    — swapping debit<->credit reconciles the row: the
+                                direction was read the wrong way (a credit parsed as a
+                                debit or vice-versa).
+      • missing_transaction   — this row's own amount is applied correctly but a gap
+                                remains: a whole transaction BETWEEN the previous row
+                                and this one was not extracted (page-break drop / OCR
+                                omission / parser row loss).
+      • balance_jump_no_change— the balance changed while this row records no movement
+                                and no amount: a structural row loss.
+
+    Returns a short diagnosis string (never raises).
+    """
+    expected = prev_balance + credit - debit
+    diff = curr_balance - expected
+    actual_delta = curr_balance - prev_balance
+
+    if debit <= tol and credit <= tol:
+        return "missing_amount" if abs(actual_delta) > tol else "balance_jump_no_change"
+
+    # Would swapping the direction reconcile it?
+    if abs((prev_balance + debit - credit) - curr_balance) <= tol:
+        return "direction_inverted"
+
+    if abs(diff) > tol:
+        return "missing_transaction"
+
+    return "balance_mismatch"
+
+
 def _check_balance_arithmetic(df: pd.DataFrame) -> pd.DataFrame:
     """
     Flags rows where the running balance does not match the expected arithmetic.
@@ -423,6 +525,16 @@ def _check_balance_arithmetic(df: pd.DataFrame) -> pd.DataFrame:
             # Need at least 2 rows to check balance arithmetic
             continue
 
+        # Skip the running-balance check entirely when this account has NO usable
+        # balance column — a real running balance varies row to row, so an absent /
+        # all-zero / constant Balance means the source simply did not print one (e.g.
+        # a core-banking export with only an amount + Dr/Cr flag). Reconciling against
+        # a non-existent balance would wrongly flag EVERY transaction. Mirrors the
+        # has_balance test in grade_parse so the two agree.
+        acct_balances = [_as_float(df.loc[ix, "Balance"]) for ix in account_indices]
+        if len({round(b, 2) for b in acct_balances if abs(b) > 0.0}) <= 1:
+            continue
+
         for i in range(1, len(account_indices)):
             prev_idx = account_indices[i - 1]
             curr_idx = account_indices[i]
@@ -448,6 +560,10 @@ def _check_balance_arithmetic(df: pd.DataFrame) -> pd.DataFrame:
             # Check if the actual balance is within the allowed tolerance
             if abs(expected_balance - curr_balance) > BALANCE_TOLERANCE:
                 df.loc[curr_idx, "flag_reason"] = "balance_mismatch"
+                # Classify the PROBABLE extraction cause so the flagged row is a
+                # debugging lead, not just "mismatch" (Issues 3 & 7).
+                df.loc[curr_idx, "mismatch_diagnosis"] = _classify_balance_mismatch(
+                    prev_balance, curr_balance, debit, credit)
                 logger.debug(
                     "validator._check_balance_arithmetic: "
                     "Balance mismatch at row %d for account '%s': "
@@ -508,6 +624,37 @@ def _check_debit_credit_exclusivity(df: pd.DataFrame) -> pd.DataFrame:
             both_filled_count,
         )
 
+    return df
+
+
+# A date anywhere in a narration — used only to count how many transactions a bloated
+# narration has swallowed. Generic shapes; no bank/format assumption.
+_DATE_IN_NARRATION = __import__("re").compile(
+    r"\d{1,2}[/\-][0-9A-Za-z]{2,9}[/\-]\d{2,4}|\d{4}[/\-]\d{1,2}[/\-]\d{1,2}")
+
+
+def _check_narration_bloat(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Detection safety net for the narration-bloat defect (multiple transactions glued
+    into one row's Narration when the row-start detector misses a template's row shape
+    — Bug Group F). It does NOT fix parsing; it makes the failure VISIBLE and countable
+    instead of hiding inside the generic balance-mismatch bucket.
+
+    Deliberately strict so it never reclassifies a legitimately verbose single
+    narration: a row is flagged only if its Narration is very long (>400 chars) AND
+    contains ≥4 date-like substrings — a shape no real single UPI/NEFT/IMPS narration
+    in this dataset comes close to. Only applies to rows not already flagged.
+    """
+    if "Narration" not in df.columns:
+        return df
+    narr = df["Narration"].astype(str)
+    n_dates = narr.apply(lambda s: len(_DATE_IN_NARRATION.findall(s)))
+    bloated = (narr.str.len() > 400) & (n_dates >= 4) & df["flag_reason"].isna()
+    df.loc[bloated, "flag_reason"] = "narration_contains_multiple_transactions"
+    cnt = int(bloated.sum())
+    if cnt:
+        logger.info("validator._check_narration_bloat: flagged %d row(s) whose narration "
+                    "swallowed multiple transactions.", cnt)
     return df
 
 
@@ -599,7 +746,9 @@ def _mark_reversals(df: pd.DataFrame) -> pd.DataFrame:
         return df
 
     # ── Mark reversals by keyword detection ──────────────────────────────────
-    narration_lower = df["Narration"].str.lower()
+    # Coerce to str first: a statement may have a blank/NaN narration cell, and a
+    # float NaN is not iterable — without this the keyword scan crashes the whole run.
+    narration_lower = df["Narration"].astype(str).str.lower()
     keyword_reversal_mask = narration_lower.apply(
         lambda narration: any(keyword in narration for keyword in REVERSAL_KEYWORDS)
     )

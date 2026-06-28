@@ -62,8 +62,16 @@ DATE_FORMATS = [
 # mentoring format. Matches, e.g.:
 #   02/06/18, 02-06-2018, 2018-06-02   (numeric, 2- or 4-digit year)
 #   3 May 2018, 16-Oct-2018, 16 Oct 18 (month-name styles)
+# The OPTIONAL leading token before the date is a serial / CTR-batch / reference
+# number some core-banking statements print BEFORE the date on every transaction line
+# (e.g. "5114634 12-02-2020 …", "88888 13-05-2020 …", "2.3379367E7 20-08-2020 …").
+# It is numeric (digits, with an optional decimal/scientific form), so a narration
+# WORD before a date never matches; and the date must follow it IMMEDIATELY, so this
+# only fires on the genuine reference-before-date row shape (Bug F — without it, every
+# such row failed the "is this a new row?" check and got swallowed into the previous
+# transaction's narration). Widened from the old 1–4 digit serial to up to ~13 chars.
 DATE_AT_LINE_START_PATTERN = re.compile(
-    r"^\s*(?:\d{1,4}\s+)?("                       # optional leading serial no. (IDBI: "1 31/03/2021 …")
+    r"^\s*(?:\d[\d.]{0,11}(?:[eE]\d+)?\s+)?("    # optional leading serial/CTR/ref number
     r"\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4}"          # 02/06/18, 01-04-2019
     r"|\d{4}[/\-]\d{1,2}[/\-]\d{1,2}"            # 2018-06-02
     r"|\d{1,2}[ \-][A-Za-z]{3,9}[ \-]\d{2,4}"    # 3 May 2018, 16-Oct-2018
@@ -99,6 +107,49 @@ _DATE_ANYWHERE_PATTERN = re.compile(
 # the time onto its own line; we record it as the row's Time instead of letting it
 # pollute the narration. e.g. "16:23:06", "08:04:44 PM".
 _TIME_ONLY_LINE = re.compile(r"^\d{1,2}:\d{2}(?::\d{2})?\s*(?:[AaPp][Mm])?$")
+
+# ── Narration cleanup: footer-block / date-column bleed ───────────────────────
+# On some multi-page templates pdfplumber's linear read mixes the NEXT page's date
+# column (a run of dates) and the page FOOTER (generated-on / registered-office /
+# requesting-branch lines) into the LAST transaction's narration field. The row's
+# amounts/balance are correct (the chain still reconciles) — only the narration is
+# polluted. We trim both ends structurally. These sentinels never occur inside a real
+# UPI/NEFT/IMPS narration and never a bank NAME, so the cleanup is bank-agnostic and
+# cannot corrupt a legitimate narration.
+#
+# Leading date-column bleed: 3+ back-to-back dates at the very start (a real narration
+# never opens with three dates; a value-date+txn-date pair is only two, so it is safe).
+_LEADING_DATE_SEQUENCE = re.compile(
+    r"^(?:\d{1,2}[/\-.][0-9A-Za-z]{2,9}[/\-.]\d{2,4}\s+){3,}")
+# Footer sentinels: everything from the first match onward is page footer, not txn.
+_NARRATION_FOOTER_SENTINELS = re.compile(
+    r"\bGenerated\s*On\b|\bGenerated\s*By\b|\bRequesting\s*Branch\s*Code\b|"
+    r"\bStatement\s*of\s*account\b|\bRegistered\s*Office\b|"
+    r"closing\s+balance\s+includes\s+funds\s+earmarked|"
+    r"contents\s+of\s+this\s+statement|\bPage\s*No\.?\s*:?\s*\d|"
+    r"customercare@[\w.]+|\bGST\s*(?:Number|No)\b\s*[-:]|"
+    r"\bTotal\s+Number\s+of\s+Transactions\b",
+    re.IGNORECASE)
+
+
+def _clean_narration(narration: str) -> str:
+    """
+    Removes page-header date-column bleed (leading run of dates) and page-footer bleed
+    (everything from a footer sentinel onward) from a transaction narration. Returns
+    the trimmed narration. Structural and bank-agnostic — only ever removes content
+    that is unambiguously page furniture, never real transaction text.
+    """
+    if not narration:
+        return narration
+    s = _LEADING_DATE_SEQUENCE.sub("", narration)
+    m = _NARRATION_FOOTER_SENTINELS.search(s)
+    if m:
+        s = s[:m.start()]
+    # Strip a TRAILING run of 3+ bare amount tokens — the next page's amount/balance
+    # column bleeding onto the end of this row. A real narration never ends with three
+    # consecutive bare decimal amounts, so this only removes column bleed.
+    s = re.sub(r"(?:\s-?[\d,]+\.\d{2}){3,}\s*$", "", s)
+    return re.sub(r"\s{2,}", " ", s).strip()
 
 # Page furniture that is never a transaction: standalone page numbers / "Page X of Y".
 _PAGE_NOISE = re.compile(
@@ -157,6 +208,35 @@ _FOOTER_BLOCK_START = re.compile(
     re.IGNORECASE,
 )
 
+# PAGE-HEADER furniture: identity / account-summary label lines that a bank reprints
+# at the TOP of every printed page (holder, branch, scheme, currency, statement
+# period, the page's book/available balance, "Statement of Account No …"). On page 2+
+# this block is injected BETWEEN a transaction and its continuation — the page-break
+# fragmentation defect (Issue 1). If left in the stream it is stitched into the
+# pending transaction's narration, and worse, a summary line that ends in a money
+# amount ("Book Balance  296.30") can be mis-bound as the pending row's amount by the
+# continuation handler — silently corrupting the row and breaking the balance chain.
+#
+# We remove these the same proven way footer boilerplate is removed: ONLY when the
+# line does NOT start with a date (so a real transaction row can never be dropped) and
+# carries no leading transaction date. The vocabulary is generic banking-statement
+# furniture — never a bank name and never a phrase that appears inside a UPI/NEFT
+# narration — so the anti-overfitting guard is unaffected and the existing
+# `_amounts_pending` continuation logic can now reach the real continuation line and
+# stitch the split transaction back together across the page boundary.
+_PAGE_HEADER_NOISE = re.compile(
+    r"^\s*statement\s+of\s+account\b|"
+    r"\bcustomer\s+(?:no|id|number)\b\s*[:\-]|"
+    r"\bscheme\s*[:\-]|\bcurrency\s*[:\-]|"
+    r"\b(?:period\s+from|for\s+the\s+period|statement\s+period)\b|"
+    r"\baccount\s+(?:name|holder|status)\b|"
+    r"\bbranch\s+(?:name|address)\b|"
+    r"\b(?:book|available|uncleared|ledger)\s+balance\b|"
+    r"\bjoint\s+holder\b|"
+    r"^\s*opening\s+balance\b",
+    re.IGNORECASE,
+)
+
 # Standard column-header vocabulary (generic banking terms — NOT any bank's name, so
 # the anti-overfitting guard is unaffected). A line carrying several of these and NO
 # money amount is a repeated column-header row we should drop before parsing.
@@ -200,7 +280,39 @@ def _is_header_line(s: str) -> bool:
     return sum(1 for w in _HEADER_WORDS if w in low) >= 3
 
 
-def _strip_noise_lines(lines: List[str]) -> List[str]:
+def _norm_line(s: str) -> str:
+    """Whitespace-normalised line key used for repeated-furniture detection."""
+    return re.sub(r"\s+", " ", s.strip())
+
+
+def _repeated_furniture_lines(lines: List[str], min_count: int = 3) -> set:
+    """
+    Identifies REPRINTED page furniture by frequency: lines that recur identically
+    `min_count`+ times and are NOT transaction content (do not start with a date and
+    do not end in a money token) are the identity/address header (and footer) a bank
+    stamps on every page. A genuine transaction narration is effectively unique — its
+    counterparty name and reference make it appear once — so it never reaches the
+    threshold. This is what lets us strip a multi-line reprinted header BLOCK
+    (including its bare address lines like "LUCKNOW" that match no keyword) while
+    NEVER removing a real transaction's narration or a one-off reference wrap.
+
+    Purely frequency-based and bank-agnostic: no label, bank name, or value is
+    special-cased. Returns a set of whitespace-normalised line strings.
+    """
+    from collections import Counter
+    counts: Counter = Counter()
+    for ln in lines:
+        s = ln.strip()
+        if not s or DATE_AT_LINE_START_PATTERN.match(s):
+            continue
+        toks = s.split()
+        if toks and _is_money_token(toks[-1]):
+            continue
+        counts[_norm_line(s)] += 1
+    return {k for k, c in counts.items() if c >= min_count}
+
+
+def _strip_noise_lines(lines: List[str], repeated: set = None) -> List[str]:
     """
     Removes page numbers and repeated column-header rows BEFORE parsing.
 
@@ -239,7 +351,29 @@ def _strip_noise_lines(lines: List[str]) -> List[str]:
             in_footer_block = True
             continue
 
-        if _PAGE_NOISE.match(s) or _is_header_line(s):
+        if _is_header_line(s):
+            # A reprinted column-header row marks a PAGE BOUNDARY. The reprinted
+            # identity/address header BLOCK sits immediately above it. Remove that
+            # block backward so it is not stitched into the previous transaction's
+            # narration. We only pop a line that is confirmed page furniture —
+            # reprinted on most pages (in `repeated`) or a known identity label
+            # (_PAGE_HEADER_NOISE) — and we STOP at the first real transaction line (a
+            # date-started line or one ending in a money token) or at a one-off
+            # narration/reference wrap. This is what keeps a unique reference tail
+            # (e.g. "PAYTMPAYME 130718408826") while dropping "IFSC Code : …".
+            while out:
+                prev = out[-1].strip()
+                if DATE_AT_LINE_START_PATTERN.match(prev):
+                    break
+                ptoks = prev.split()
+                if ptoks and _is_money_token(ptoks[-1]):
+                    break
+                if (repeated and _norm_line(prev) in repeated) or _PAGE_HEADER_NOISE.search(prev):
+                    out.pop()
+                else:
+                    break
+            continue
+        if _PAGE_NOISE.match(s):
             continue
         # Drop pure separator rules (dashes/underscores) — they would otherwise be
         # stitched into the preceding transaction's narration.
@@ -249,8 +383,99 @@ def _strip_noise_lines(lines: List[str]) -> List[str]:
         # "does not start with a date" so a real transaction row is never removed.
         if _FOOTER_NOISE.search(s) and not is_date_start:
             continue
+        # Drop reprinted PAGE-HEADER furniture (identity / page-summary label lines)
+        # that a multi-page statement injects between a transaction and its
+        # continuation (Issue 1 — page-break fragmentation). Same guard: never a
+        # date-started line, so a real transaction row can never be removed.
+        if _PAGE_HEADER_NOISE.search(s) and not is_date_start:
+            continue
         out.append(ln)
     return out
+
+
+# A date TRUNCATED at a page boundary: the day and month print at the foot of one
+# page with the trailing separator, but the YEAR is carried to the top of the next
+# page (e.g. "10-05- UPI/… 2,000.00 2,017.00(Cr)" with the "2024" appearing later as
+# "2024 Kha/…"). The negative lookahead (?!\d) is what separates this from a COMPLETE
+# date — "10-05-2024 …" has a digit right after the 2nd separator, so it never
+# matches. This partial form realistically only occurs when a date is split across a
+# printing boundary, which is exactly the structure we want to repair.
+_PARTIAL_DATE_AT_START = re.compile(r"^(\d{1,2}[/\-]\d{1,2}[/\-])(?!\d)")
+# A continuation fragment that BEGINS with the carried-over year. The \b after the
+# digits rejects a longer number (a ref/account run like "8855611820") and a 3-digit
+# address number ("546 52 …"), so only a real 2- or 4-digit year is borrowed.
+_LEADING_YEAR_FRAGMENT = re.compile(r"^(\d{4}|\d{2})\b(.*)$")
+
+
+def _is_year_fragment(frag: str):
+    """
+    Returns (year, remainder) if `frag` is a carried-over YEAR continuation — it
+    BEGINS with a plausible 4-digit (1990–2099) or 2-digit year and is NOT itself a
+    complete transaction (it does not END in a money/balance token). Otherwise None.
+
+    The "does not end in money" test is the key discriminator: the year-continuation
+    line ("2025 30-Oct-2025 1844390447") carries the previous row's year plus narration
+    /reference text and no balance, whereas a genuine next transaction
+    ("2025-11-19 … 200.00(Cr)") ends in its balance. This is what lets us borrow the
+    year even when the fragment ALSO looks date-like (e.g. "2025 30-Oct-2025 …", where
+    the leading-serial rule would otherwise treat it as a new date-started row).
+    """
+    ym = _LEADING_YEAR_FRAGMENT.match(frag)
+    if not ym:
+        return None
+    year = ym.group(1)
+    if len(year) == 4 and not (1990 <= int(year) <= 2099):
+        return None
+    toks = frag.split()
+    if toks and _is_money_token(toks[-1]):
+        return None  # a complete transaction line, not a year continuation
+    return year, ym.group(2).strip()
+
+
+def _rejoin_page_split_dates(lines: List[str], window: int = 40) -> List[str]:
+    """
+    Repairs transactions whose DATE was split across a PAGE BOUNDARY (Issue 1 —
+    page-break interruption, the date-split variant). When a line starts with a date
+    that is missing its year (day-month + trailing separator, no following digit), the
+    year was carried to the top of the next page as a leading-year fragment. We splice
+    the year back onto the truncated date so the row — which already carries its own
+    amount and balance — is recognised as a transaction, and strip the year from the
+    fragment so its remaining text stays as the narration/reference continuation.
+
+    Fully structural and bank-agnostic: it keys on a truncated date followed by an
+    orphaned year, never on any filename / bank / value, and changes nothing when the
+    pattern is absent. Safeguards: bounded forward window; the YEAR fragment is checked
+    BEFORE the next-transaction break (because the fragment can itself look date-like),
+    and is accepted only when it is a plausible year AND not a complete transaction
+    line (no trailing balance); a real next transaction (date-started AND ending in a
+    balance) ends the search so a year is never stolen across a real row; and the
+    splice is kept only if it yields a genuinely complete, parseable date.
+    """
+    out = [ln for ln in lines]
+    n = len(out)
+    for i in range(n):
+        head = out[i].strip()
+        m = _PARTIAL_DATE_AT_START.match(head)
+        if not m:
+            continue
+        for j in range(i + 1, min(n, i + 1 + window)):
+            frag = out[j].strip()
+            if not frag:
+                continue
+            yr = _is_year_fragment(frag)
+            if yr is not None:
+                year, remainder = yr
+                completed = m.group(1) + year + head[m.end():]
+                if DATE_AT_LINE_START_PATTERN.match(completed):
+                    out[i] = completed
+                    out[j] = remainder  # drop the year; keep the rest as continuation
+                break
+            # A genuine next transaction (date-started AND carrying its own balance)
+            # ends the search — there is no year to borrow before it.
+            toks = frag.split()
+            if DATE_AT_LINE_START_PATTERN.match(frag) and toks and _is_money_token(toks[-1]):
+                break
+    return [ln for ln in out if ln.strip()]
 
 
 def build_schema_sample(raw_text: str, failing_lines: List[str] = None,
@@ -549,7 +774,18 @@ def _try_fill_amounts(line: str, require_balance: bool) -> dict:
         if len(money) < 2:
             return None
         balance_str = money[-1]
-        amount_str = money[-2]
+        if len(money) == 3:
+            # Three money tokens on the continuation line: Debit | Credit | Balance
+            # (statements with separate debit and credit columns). money[-2] is the
+            # CREDIT column, which is 0 for a debit transaction — so naively taking it
+            # as the amount yields 0 and the row is mis-amounted. Mirror the main
+            # line parser: use whichever of debit (money[-3]) / credit (money[-2]) is
+            # non-zero; fall back to money[-2] if ambiguous.
+            amt_val = _clean_amount(money[-2]) or 0.0
+            alt_val = _clean_amount(money[-3]) or 0.0
+            amount_str = money[-3] if (amt_val == 0.0 and alt_val != 0.0) else money[-2]
+        else:
+            amount_str = money[-2]
     else:
         if len(money) < 1:
             return None
@@ -786,7 +1022,16 @@ def standardise_digital_pdf_transactions(
             "columns from header: %s", leading_id_columns)
     # Drop page furniture (page numbers, repeated column-header rows) so a multi-page
     # statement's repeating header/footer can't be stitched into a real transaction.
-    lines = _strip_noise_lines(raw_lines)
+    # `repeated` flags lines reprinted on every page (the identity/address header
+    # block), so the whole block is removed at each page boundary — including bare
+    # address lines that match no keyword — without touching unique narration.
+    repeated = _repeated_furniture_lines(raw_lines)
+    lines = _strip_noise_lines(raw_lines, repeated=repeated)
+    # Repair transactions whose DATE was split across a page boundary (the day-month
+    # at the foot of one page, the year carried to the top of the next). Without this
+    # the page-bottom row is not recognised as a transaction and is dropped, breaking
+    # the running-balance chain at every page break (Issue 1 — page-split date).
+    lines = _rejoin_page_split_dates(lines)
 
     # ── Read the discovered schema so it actually DRIVES parsing (not decorative) ─
     # date_format    → tried first when parsing dates (disambiguates DD/MM vs MM/DD)
@@ -891,12 +1136,13 @@ def standardise_digital_pdf_transactions(
     if not records:
         return pd.DataFrame(columns=RICH_COLUMNS)
 
-    # Scrub any embedded "Page X of Y" fragment that slipped into a narration and
-    # collapse the whitespace it leaves behind.
+    # Scrub any embedded "Page X of Y" fragment, then strip page-header date-column
+    # bleed and page-footer bleed (a correct row whose narration absorbed furniture).
     for rec in records:
         narr = rec.get("Narration", "")
         if narr:
-            rec["Narration"] = re.sub(r"\s{2,}", " ", _PAGE_FRAGMENT.sub(" ", narr)).strip()
+            narr = re.sub(r"\s{2,}", " ", _PAGE_FRAGMENT.sub(" ", narr)).strip()
+            rec["Narration"] = _clean_narration(narr)
 
     df = pd.DataFrame(records)
 
@@ -1029,6 +1275,15 @@ def _correct_direction_by_balance(df: pd.DataFrame, opening_balance: float = 0.0
     """
     if df.empty:
         return df
+    # Sign normalisation: some templates store a debit (or credit) as a NEGATIVE
+    # number (e.g. Debit = -27.14). The magnitude is the amount; the sign is just the
+    # template's direction convention. Take the absolute value so the running-balance
+    # check below sees correct magnitudes and assigns direction from the balance delta
+    # (a negative Debit was previously treated as 0 and broke the chain on every row).
+    # Only negative values change — a normal positive amount is untouched.
+    for _col in ("Debit", "Credit"):
+        if _col in df.columns:
+            df[_col] = df[_col].apply(lambda v: abs(v) if pd.notna(v) and v < 0 else v)
     prev = opening_balance if opening_balance else None
     debits, credits, types = [], [], []
     has_type = "Transaction_Type" in df.columns
@@ -1307,6 +1562,27 @@ def standardise_dataframe_direct(
     # Belt-and-braces: if any duplicate column names remain, keep the first.
     if df.columns.duplicated().any():
         df = df.loc[:, ~df.columns.duplicated()]
+
+    # ── Single AMOUNT column + a Dr/Cr direction flag → split into Debit/Credit ──
+    # Core-banking exports (Finacle/FLEXCUBE) often carry one signed-by-flag amount
+    # ("AMT_TXN_LCY") plus a direction column ("COD_DRCR" = D/C) instead of separate
+    # Debit and Credit columns. We split the amount accordingly. Triggered only when an
+    # Amount column exists and neither Debit nor Credit was mapped, so statements that
+    # already have real debit/credit columns are never disturbed. Fully generalised —
+    # driven by the column ROLE, never by a bank name.
+    if "Amount" in df.columns and "Debit" not in df.columns and "Credit" not in df.columns:
+        amt = df["Amount"].map(_clean_amount_to_float).fillna(0.0)
+        if "Drcr_flag" in df.columns:
+            flag = df["Drcr_flag"].astype(str).str.strip().str.upper()
+            is_debit = flag.str.startswith("D")  # D / DR / DEBIT → debit; else credit
+            df["Debit"] = amt.where(is_debit, 0.0)
+            df["Credit"] = amt.where(~is_debit, 0.0)
+        else:
+            # No direction flag: a leading minus marks a debit, otherwise credit.
+            neg = df["Amount"].astype(str).str.strip().str.startswith("-")
+            df["Debit"] = amt.abs().where(neg, 0.0)
+            df["Credit"] = amt.abs().where(~neg, 0.0)
+        df = df.drop(columns=[c for c in ("Amount", "Drcr_flag") if c in df.columns])
 
     # Ensure all required standard columns are present
     # If a column is missing, add it as NaN/0

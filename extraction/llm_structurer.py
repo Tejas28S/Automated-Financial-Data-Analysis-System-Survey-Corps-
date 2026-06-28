@@ -108,15 +108,6 @@ _TXN_PROMPT = (
 )
 
 
-def _client() -> Groq:
-    if not GROQ1_KEY:
-        raise RuntimeError(
-            "GROQ1 key not found in .env — add it before running extraction "
-            "(it is the key used to understand and structure statements)."
-        )
-    return Groq(api_key=GROQ1_KEY)
-
-
 def _call_json(system_prompt: str, user_text: str, max_tokens: int = 4000) -> Dict[str, Any]:
     """
     One Groq call that is forced to return a valid JSON object.
@@ -124,8 +115,17 @@ def _call_json(system_prompt: str, user_text: str, max_tokens: int = 4000) -> Di
     max_tokens defaults to 4000 (not 8000) because the free tier counts the RESERVED
     output tokens toward the 12,000 tokens/minute limit — an 8k reservation plus the
     chunk input was overflowing it and getting rejected with HTTP 413.
+
+    On a daily-quota (429 TPD) error the current text key is marked dead and the call
+    is retried once on the next key in the text pool (multi-key rotation). With a
+    single configured key this is identical to the previous immediate-fail behaviour.
     """
-    client = _client()
+    from extraction.key_pool import TEXT_POOL, is_daily_quota_error, AllKeysExhausted
+    try:
+        client, key = TEXT_POOL.client()
+    except AllKeysExhausted as e:
+        logger.error("llm_structurer._call_json: %s", e)
+        return {}
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             resp = client.chat.completions.create(
@@ -142,12 +142,19 @@ def _call_json(system_prompt: str, user_text: str, max_tokens: int = 4000) -> Di
         except Exception as err:
             logger.warning("llm_structurer._call_json: attempt %d failed: %s", attempt, err)
             es = str(err).lower()
-            # 413 = payload too large (identical body → identical fail).
-            # 429 TPD = daily quota exhausted (resets tomorrow, not in 2 s).
-            if ("413" in es or "too large" in es
-                    or ("429" in es and ("per day" in es or "tokens per day" in es or "tpd" in es))):
-                logger.error("llm_structurer._call_json: non-retryable error (413 or daily quota) "
-                             "— not retrying.")
+            # 429 TPD = daily quota exhausted → rotate to the next text key and retry.
+            if is_daily_quota_error(err):
+                TEXT_POOL.mark_dead(key)
+                try:
+                    client, key = TEXT_POOL.client()
+                    logger.info("llm_structurer._call_json: rotated to a fresh text key — retrying.")
+                    continue
+                except AllKeysExhausted as e2:
+                    logger.error("llm_structurer._call_json: %s", e2)
+                    break
+            # 413 = payload too large (identical body → identical fail; never retry).
+            if "413" in es or "too large" in es:
+                logger.error("llm_structurer._call_json: non-retryable error (413) — not retrying.")
                 break
             if attempt < MAX_RETRIES:
                 time.sleep(RETRY_DELAY_SECONDS)

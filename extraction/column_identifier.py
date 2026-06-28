@@ -233,16 +233,17 @@ def _call_groq_with_retry(anonymised_sample: str, file_path: str) -> tuple:
         RuntimeError: if the GROQ1 key is missing — we refuse to silently pretend
                       Groq ran. (run_extraction_pipeline checks this up front too.)
     """
-    if not GROQ1_KEY:
-        # No key => Groq genuinely cannot run. Fail loudly with a readable message
-        # rather than quietly returning a guess the team would mistake for Groq.
+    # Build the client from the TEXT key pool (column identification is a text call).
+    # With one configured key this is identical to before; with several it can rotate
+    # off a daily-quota-exhausted key. Fails loudly if no key is configured at all.
+    from extraction.key_pool import TEXT_POOL, is_daily_quota_error, AllKeysExhausted
+    try:
+        client, _pool_key = TEXT_POOL.client()
+    except AllKeysExhausted:
         raise RuntimeError(
-            "GROQ1 key not found in .env — add it before running extraction "
-            "(it is the key used for column identification)."
+            "No usable GROQ text key found in .env — add GROQ1 (and optionally GROQ4) "
+            "before running extraction (used for column identification)."
         )
-
-    # Initialise the Groq client using the GROQ1 key from settings.py.
-    client = Groq(api_key=GROQ1_KEY)
 
     # ── System prompt: tells Groq what its job is ────────────────────────
     # This is the instruction we give the AI before showing it the document.
@@ -346,6 +347,16 @@ def _call_groq_with_retry(anonymised_sample: str, file_path: str) -> tuple:
                 attempt,
                 api_error,
             )
+            # Daily-quota error → mark this key dead and rotate to the next text key.
+            if is_daily_quota_error(api_error):
+                TEXT_POOL.mark_dead(_pool_key)
+                try:
+                    client, _pool_key = TEXT_POOL.client()
+                    logger.info("column_identifier: rotated to a fresh text key — retrying.")
+                    continue
+                except AllKeysExhausted:
+                    logger.error("column_identifier: all text keys exhausted — stopping.")
+                    break
 
         # Wait before retrying to avoid hitting rate limits immediately.
         if attempt < MAX_RETRIES:

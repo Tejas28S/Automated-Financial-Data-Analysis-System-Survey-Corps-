@@ -20,3 +20,4 @@ matplotlib
 python-multipart
 aiofiles
 streamlit
+xlrd>=2.0.1

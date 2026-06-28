@@ -434,15 +434,15 @@ def run_groq_vision_on_image(image_path: str) -> str:
         str: Extracted text from Groq Vision, preserving table layout.
              Returns empty string on API failure after all retries.
     """
-    if not GROQ2_KEY:
-        # No vision key => the fallback genuinely cannot run. Fail loudly with a
-        # readable message rather than silently returning blank text.
+    from extraction.key_pool import VISION_POOL, is_daily_quota_error, AllKeysExhausted
+    try:
+        client, _pool_key = VISION_POOL.client()
+    except AllKeysExhausted:
+        # No vision key => the fallback genuinely cannot run. Fail loudly.
         raise RuntimeError(
-            "GROQ2 key not found in .env — add it before running extraction "
-            "(it is the key used for the blurry-image OCR fallback)."
+            "No usable GROQ vision key found in .env — add GROQ2 (and optionally GROQ5) "
+            "for the blurry-image OCR fallback."
         )
-
-    client = Groq(api_key=GROQ2_KEY)
 
     # Downscale + JPEG-encode so the request stays under Groq Vision's size limit
     # (a full-resolution scan triggers HTTP 413 "Request Entity Too Large").
@@ -497,6 +497,15 @@ def run_groq_vision_on_image(image_path: str) -> str:
                 Path(image_path).name,
                 groq_error,
             )
+            if is_daily_quota_error(groq_error):
+                VISION_POOL.mark_dead(_pool_key)
+                try:
+                    client, _pool_key = VISION_POOL.client()
+                    logger.info("extractor_ocr: rotated to a fresh vision key — retrying.")
+                    continue
+                except AllKeysExhausted:
+                    logger.error("extractor_ocr: all vision keys exhausted — stopping.")
+                    break
             if _is_nonretryable(groq_error):
                 logger.error(
                     "extractor_ocr.run_groq_vision_on_image: non-retryable error "

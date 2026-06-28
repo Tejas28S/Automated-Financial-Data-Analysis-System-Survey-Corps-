@@ -216,14 +216,15 @@ def extract_statement_from_image(image_path: str) -> Dict[str, Any]:
             logger.warning("vision_extractor: bad cache file %s (%s); re-reading.", cache_file, e)
             cache_file.unlink(missing_ok=True)
 
-    if not GROQ2_KEY:
-        raise RuntimeError(
-            "GROQ2 key not found in .env — add it before reading statement images "
-            "(it is the key used for the vision reader)."
-        )
-
+    from extraction.key_pool import VISION_POOL, is_daily_quota_error, AllKeysExhausted
     logger.info("vision_extractor.extract_statement_from_image: reading '%s' (Groq vision)", Path(image_path).name)
-    client = Groq(api_key=GROQ2_KEY)
+    try:
+        client, _pool_key = VISION_POOL.client()
+    except AllKeysExhausted:
+        raise RuntimeError(
+            "No usable GROQ vision key found in .env — add GROQ2 (and optionally GROQ5) "
+            "before reading statement images."
+        )
     # Downscale + JPEG-encode so a full-resolution phone photo / large scan stays
     # under Groq Vision's request-size limit (avoids HTTP 413 "Entity Too Large").
     data_url = _bounded_jpeg_data_url(image_path)
@@ -268,6 +269,15 @@ def extract_statement_from_image(image_path: str) -> Dict[str, Any]:
                 "vision_extractor.extract_statement_from_image: attempt %d failed: %s",
                 attempt, err,
             )
+            if is_daily_quota_error(err):
+                VISION_POOL.mark_dead(_pool_key)
+                try:
+                    client, _pool_key = VISION_POOL.client()
+                    logger.info("vision_extractor: rotated to a fresh vision key — retrying.")
+                    continue
+                except AllKeysExhausted:
+                    logger.error("vision_extractor: all vision keys exhausted — stopping.")
+                    break
             if _is_nonretryable(err):
                 logger.error("vision_extractor.extract_statement_from_image: non-retryable "
                              "error (payload too large) — not retrying.")
@@ -326,15 +336,15 @@ def transcribe_image_to_text(image_path: str) -> Dict[str, Any]:
                            cache_file, e)
             cache_file.unlink(missing_ok=True)
 
-    if not GROQ2_KEY:
-        raise RuntimeError(
-            "GROQ2 key not found in .env — add it before reading statement images "
-            "(it is the key used for the vision reader)."
-        )
-
+    from extraction.key_pool import VISION_POOL, is_daily_quota_error, AllKeysExhausted
     logger.info("vision_extractor.transcribe_image_to_text: reading '%s' (Groq vision, text)",
                 Path(image_path).name)
-    client = Groq(api_key=GROQ2_KEY)
+    try:
+        client, _pool_key = VISION_POOL.client()
+    except AllKeysExhausted:
+        raise RuntimeError(
+            "No usable GROQ vision key found in .env — add GROQ2 (and optionally GROQ5)."
+        )
     data_url = _bounded_jpeg_data_url(image_path)
 
     for attempt in range(1, MAX_RETRIES + 1):
@@ -374,6 +384,15 @@ def transcribe_image_to_text(image_path: str) -> Dict[str, Any]:
                 "vision_extractor.transcribe_image_to_text: attempt %d failed: %s",
                 attempt, err,
             )
+            if is_daily_quota_error(err):
+                VISION_POOL.mark_dead(_pool_key)
+                try:
+                    client, _pool_key = VISION_POOL.client()
+                    logger.info("vision_extractor: rotated to a fresh vision key — retrying.")
+                    continue
+                except AllKeysExhausted:
+                    logger.error("vision_extractor: all vision keys exhausted — stopping.")
+                    break
             if _is_nonretryable(err):
                 logger.error("vision_extractor.transcribe_image_to_text: non-retryable "
                              "error — not retrying.")

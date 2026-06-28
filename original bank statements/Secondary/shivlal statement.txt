@@ -1,0 +1,625 @@
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK, SANGARIA                                                          Page  1
+ REP31
+                                        Customer Account Ledger Report
+
+ Report To          : M
+ SolId              :
+ Set Id             : 218320   SANGARIA
+ Gl Sub Head Code   :
+ Acct Range         : 3127637522775626  to  3127637522775626
+ Currency Code      :
+ Account Label      :
+ Open/Closed A/cs (O/C) :
+ Period             : 01-05-2025 to 08-07-2025
+ Limit Details      : Y
+ Order by GL. Date.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK SANGARIA                                                           Page  2
+
+                                    Customer Account Ledger Report from 01-05-2025 to 08-07-2025
+
+ Service OutLet   : 218320  SANGARIA
+ Account No       : 3127637522775626  INR SHIV LAL BISHNOI
+ Gl Sub Head Code :
+ Opening Balance  :                 0.00
+ Peg Review date  : 31-12-2099
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified
+   Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                 Order by GL. Date.
+ 19-05-2025  19-05-2025                 UPI/981989716589/P2V/9174491551@ybl/Mr Mayank Dixi                                     20.00                20.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 UPI/550544189767/P2V/kunal@okaxis/SHIV LAL BISHN                 1.00                                     19.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 NEFT/BDBLN52025051927683996/Ritu Sethi                                           1,50,212.00          1,50,231.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2322 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                               1,40,231.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2326 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                               1,30,231.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2330 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                               1,20,231.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2334 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                               1,10,231.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2338 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                               1,00,231.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2342 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                 90,231.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2342 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 90,219.20Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2346 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                 80,219.20Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2346 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 80,207.40Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2350 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                 70,207.40Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2350 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 70,195.60Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2354 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                 60,195.60Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2354 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 60,183.80Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2358 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                 50,183.80Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2358 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 50,172.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2362 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                 40,172.00Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2362 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 40,160.20Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2366 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                 30,160.20Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2366 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,148.40Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2370 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                 20,148.40Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2370 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 20,136.60Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2374 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                 10,136.60Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2374 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,124.80Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2378 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    124.80Cr CDCI      CDCI
+ 19-05-2025  19-05-2025                 ATM WDR 2378 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    113.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 UPI/514059851440/P2V/kunal@okaxis/SHIV LAL BISHN                 1.00                                    112.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 UPI/514005559109/P2V/kunal@okaxis/SHIV LAL BISHN                 1.00                                    111.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 UPI/514067094069/P2V/kunal@okaxis/SHIV LAL BISHN                 1.00                                    110.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 UPI/170627779699/P2V/7617210583@upi/MrMUKULAHIRWAR                                    100.00               210.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 UPI/514093495834/P2M/pankaj@okpayaxis/Google               179.00                                     31.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 NEFT/BDBLN52025052027825963/Pankaj Sanjay Tiwari                                 1,50,311.00          1,50,342.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2520 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                               1,30,342.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2520 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                               1,30,330.20Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2523 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                               1,10,330.20Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2523 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                               1,10,318.40Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2526 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 90,318.40Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2526 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 90,306.60Cr CDCI      CDCI
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                            Page Total Credit  :                3,00,643.00
+                            Page Total Debit   :                2,10,336.40
+
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK SANGARIA                                                           Page  3
+
+                                    Customer Account Ledger Report from 01-05-2025 to 08-07-2025
+
+ Service OutLet   : 218320  SANGARIA
+ Account No       : 3127637522775626  INR SHIV LAL BISHNOI
+ Gl Sub Head Code :
+ B/F Balance      :            90,306.60Cr
+ Peg Review date  : 31-12-2099
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified
+   Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 20-05-2025  20-05-2025                 ATM WDR 2529 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 70,306.60Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2529 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 70,294.80Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2532 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 50,294.80Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2532 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 50,283.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2535 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,283.00Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2535 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,271.20Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2538 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,271.20Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2538 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,259.40Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2541 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    259.40Cr CDCI      CDCI
+ 20-05-2025  20-05-2025                 ATM WDR 2541 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    247.60Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 UPI/550797023234/P2V/kunal@okaxis/SHIV LAL BISHN                 1.00                                    246.60Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 514111027053 E4 SUVIDHA COMPLEX    \                     100.00                                    146.60Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 IMPS-IN/514111499415/9174491551/SHIV LAL                                           10,000.00            10,146.60Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7961 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    146.60Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7961 PNB \REFUGEE COLONY           \ JODHP                11.80                                    134.80Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 IMPS-IN/514112501967/9584601506/SHIV LAL                                           20,000.00            20,134.80Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 IMPS-IN/514112502317/9174491551/SHIV LAL                                            8,600.00            28,734.80Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7964 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                  8,734.80Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7964 PNB \REFUGEE COLONY           \ JODHP                11.80                                  8,723.00Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7967 PNB \REFUGEE COLONY           \ JODHP             8,500.00                                    223.00Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7967 PNB \REFUGEE COLONY           \ JODHP                11.80                                    211.20Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 IMPS-IN/514112546405/9993782822/S S FINA                                           50,235.00            50,446.20Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7970 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,446.20Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7970 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,434.40Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7973 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,434.40Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7973 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,422.60Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7976 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    422.60Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7976 PNB \REFUGEE COLONY           \ JODHP                11.80                                    410.80Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 IMPS-IN/514113620817/9993782822/S S FINA                                           50,235.00            50,645.80Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7980 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,645.80Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7980 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,634.00Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7983 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,634.00Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7983 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,622.20Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7986 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    622.20Cr CDCI      CDCI
+ 21-05-2025  21-05-2025                 ATM WDR 7986 PNB \REFUGEE COLONY           \ JODHP                11.80                                    610.40Cr CDCI      CDCI
+ 22-05-2025  22-05-2025                 ATM WDR 514208021204 SHASTRI NAGAR JODHPUR \                     100.00                                    510.40Cr CDCI      CDCI
+ 22-05-2025  22-05-2025                 NEFT/IDFBN52025052242711409/DIVYA AANYA SINGH                                           5.00               515.40Cr CDCI      CDCI
+ 22-05-2025  22-05-2025                 ATM WDR 514215031915 SARDARPURA JODHPUR    \                     200.00                                    315.40Cr CDCI      CDCI
+ 22-05-2025  22-05-2025                 IMPS-IN/514233056813/9199656917/THE AEST                                           50,235.00            50,550.40Cr CDCI      CDCI
+ 22-05-2025  22-05-2025                 ATM WDR 2732 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,550.40Cr CDCI      CDCI
+ 22-05-2025  22-05-2025                 ATM WDR 2732 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,538.60Cr CDCI      CDCI
+ 22-05-2025  22-05-2025                 ATM WDR 2735 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,538.60Cr CDCI      CDCI
+ 22-05-2025  22-05-2025                 ATM WDR 2735 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,526.80Cr CDCI      CDCI
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                            Page Total Credit  :                1,89,310.00
+                            Page Total Debit   :                2,69,089.80
+
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK SANGARIA                                                           Page  4
+
+                                    Customer Account Ledger Report from 01-05-2025 to 08-07-2025
+
+ Service OutLet   : 218320  SANGARIA
+ Account No       : 3127637522775626  INR SHIV LAL BISHNOI
+ Gl Sub Head Code :
+ B/F Balance      :            10,526.80Cr
+ Peg Review date  : 31-12-2099
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified
+   Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 22-05-2025  22-05-2025                 ATM WDR 2738 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    526.80Cr CDCI      CDCI
+ 22-05-2025  22-05-2025                 ATM WDR 2738 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    515.00Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 514309011187  SARDARPURA  JODHPUR  \                     200.00                                    315.00Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 NEFT/IDFBN52025052343906407/RADHA AANYA MISHRA                                   1,00,273.00          1,00,588.00Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2802 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 80,588.00Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2802 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 80,576.20Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2805 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 60,576.20Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2805 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 60,564.40Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2808 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 40,564.40Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2808 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 40,552.60Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2811 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 20,552.60Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2811 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 20,540.80Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2814 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                    540.80Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 2814 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    529.00Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 NEFT/IDFBN52025052343965071/RADHA AANYA MISHRA                                     50,235.00            50,764.00Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 6272 PNB \MADHUBAN COLONY          \ JODHP            20,000.00                                 30,764.00Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 6272 PNB \MADHUBAN COLONY          \ JODHP                11.80                                 30,752.20Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 4107 PNB \MADHUBAN COLONY          \ JODHP            20,000.00                                 10,752.20Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 4107 PNB \MADHUBAN COLONY          \ JODHP                11.80                                 10,740.40Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 4121 PNB \MADHUBAN COLONY          \ JODHP             9,500.00                                  1,240.40Cr CDCI      CDCI
+ 23-05-2025  23-05-2025                 ATM WDR 4121 PNB \MADHUBAN COLONY          \ JODHP                11.80                                  1,228.60Cr CDCI      CDCI
+ 24-05-2025  24-05-2025                 ATM WDR 4249 PNB \MADHUBAN COLONY          \ JODHP             1,000.00                                    228.60Cr CDCI      CDCI
+ 24-05-2025  24-05-2025                 ATM WDR 4249 PNB \MADHUBAN COLONY          \ JODHP                11.80                                    216.80Cr CDCI      CDCI
+ 24-05-2025  24-05-2025                 NEFT/BDBLN52025052428172177/Isha Geeta Joshi                                     1,00,273.00          1,00,489.80Cr CDCI      CDCI
+ 24-05-2025  24-05-2025                 ATM WDR 6391 PNB \MADHUBAN COLONY          \ JODHP            20,000.00                                 80,489.80Cr CDCI      CDCI
+ 24-05-2025  24-05-2025                 ATM WDR 6391 PNB \MADHUBAN COLONY          \ JODHP                11.80                                 80,478.00Cr CDCI      CDCI
+ 24-05-2025  24-05-2025                 ATM WDR 4265 PNB \MADHUBAN COLONY          \ JODHP            20,000.00                                 60,478.00Cr CDCI      CDCI
+ 25-05-2025  24-05-2025                 CBDCL/514421214717/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy             5,000.00                                 55,478.00Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3086 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 35,478.00Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3086 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 35,466.20Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3089 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 15,466.20Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3089 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 15,454.40Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM/CWDR/INSUFFBAL/T4149700/3092/6524970800063313                 11.80                                 15,442.60Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3095 PNB \PNB SHASTRI NAGAR        \ JODHP            15,000.00                                    442.60Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3095 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    430.80Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 NEFT/BDBLN52025052528231983/Isha Geeta Joshi                                       50,235.00            50,665.80Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3146 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,665.80Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3146 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,654.00Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3149 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,654.00Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 3149 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,642.20Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM/CWDR/INSUFFBAL/T4149700/3152/6524970800063313                 11.80                                 10,630.40Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 8219 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    630.40Cr CDCI      CDCI
+ 25-05-2025  25-05-2025                 ATM WDR 8219 PNB \REFUGEE COLONY           \ JODHP                11.80                                    618.60Cr CDCI      CDCI
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                            Page Total Credit  :                3,01,016.00
+                            Page Total Debit   :                3,10,924.20
+
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK SANGARIA                                                           Page  5
+
+                                    Customer Account Ledger Report from 01-05-2025 to 08-07-2025
+
+ Service OutLet   : 218320  SANGARIA
+ Account No       : 3127637522775626  INR SHIV LAL BISHNOI
+ Gl Sub Head Code :
+ B/F Balance      :               618.60Cr
+ Peg Review date  : 31-12-2099
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified
+   Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 26-05-2025  26-05-2025                 CBDCL/514608249177/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                    616.60Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 514608026614  SARDARPURA  JODHPUR  \                     200.00                                    416.60Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 NEFT/BDBLN52025052628260104/Isha Geeta Joshi                                       50,235.00            50,651.60Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3210 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,651.60Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3210 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,639.80Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3213 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,639.80Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3213 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,628.00Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3216 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    628.00Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3216 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    616.20Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 CBDCL/514610250579/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                    614.20Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 IMPS-IN/514610421497/9598583556/BHARAT T                                           50,235.00            50,849.20Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3233 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,849.20Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3233 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,837.40Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3236 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,837.40Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3236 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,825.60Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM/CWDR/INSUFFBAL/T4149700/3239/6524970800063313                 11.80                                 10,813.80Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3242 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    813.80Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3242 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    802.00Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 CBDCL/514610251457/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               500.00                                    302.00Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 IMPS-IN/514611521767/9598583556/BHARAT T                                           50,235.00            50,537.00Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3257 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,537.00Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3257 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,525.20Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3260 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,525.20Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3260 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,513.40Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 UPI/514648972919/P2V/19VAQtNnusa1CNRSbh2RcPXFTtpe/                                  5,000.00            15,513.40Cr CDCI      CDCI
+ 26-05-2025  26-05-2025                 ATM WDR 3297 PNB \PNB SHASTRI NAGAR        \ JODHP            15,500.00                                     13.40Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 CBDCL/514708279498/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                     11.40Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 IMPS-IN/514709736009/9946057090/J LINK T                                           50,235.00            50,246.40Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8310 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,246.40Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8310 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,234.60Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8313 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,234.60Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8313 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,222.80Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8316 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    222.80Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8316 PNB \REFUGEE COLONY           \ JODHP                11.80                                    211.00Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 CBDCL/514710281283/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     11.00Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 IMPS-IN/514710987304/0000000000/RM TRADE                                           50,235.00            50,246.00Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 3348 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,246.00Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 3348 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,234.20Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 3351 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,234.20Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 3351 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,222.40Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 3354 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    222.40Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 3354 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    210.60Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 CBDCL/514710282103/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     10.60Cr CDCI      CDCI
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                            Page Total Credit  :                2,56,175.00
+                            Page Total Debit   :                2,56,783.00
+
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK SANGARIA                                                           Page  6
+
+                                    Customer Account Ledger Report from 01-05-2025 to 08-07-2025
+
+ Service OutLet   : 218320  SANGARIA
+ Account No       : 3127637522775626  INR SHIV LAL BISHNOI
+ Gl Sub Head Code :
+ B/F Balance      :                10.60Cr
+ Peg Review date  : 31-12-2099
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified
+   Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 27-05-2025  27-05-2025                 IMPS-IN/514710850784/9598583556/BHARAT T                                           50,235.00            50,245.60Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8320 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,245.60Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8320 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,233.80Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8323 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,233.80Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8323 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,222.00Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8329 PNB \REFUGEE COLONY           \ JODHP             9,500.00                                    722.00Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 ATM WDR 8329 PNB \REFUGEE COLONY           \ JODHP                11.80                                    710.20Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 CBDCL/514711283015/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               700.00                                     10.20Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 NEFT/INDBN52025052705552616/VANTAGE                                                     1.00                11.20Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 UPI/160730985276/P2V/8120150384@upi/MrDEEPESHAHIRW                                  1,000.00             1,011.20Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 UPI/160748688367/P2V/8120150384@upi/MrDEEPESHAHIRW                                    992.00             2,003.20Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 UPI/160946103727/P2V/8120150384@upi/MrDEEPESHAHIRW                                  2,300.00             4,303.20Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 CBDCL/514716293049/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy             4,000.00                                    303.20Cr CDCI      CDCI
+ 27-05-2025  27-05-2025                 CBDCL/514716293050/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                    103.20Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 CBDCL/514809311453/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                    101.20Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 NEFT/IDFBN52025052848732425/SUNRISE                                                50,235.00            50,336.20Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 3523 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,336.20Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 3523 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,324.40Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 3526 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,324.40Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 3526 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,312.60Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 3529 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    312.60Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 3529 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    300.80Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 CBDCL/514810313722/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                    100.80Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 NEFT/IDFBN52025052848750522/VAISHALI TIW                                           50,235.00            50,335.80Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8439 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,335.80Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8439 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,324.00Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8442 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,324.00Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8442 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,312.20Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8445 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    312.20Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8445 PNB \REFUGEE COLONY           \ JODHP                11.80                                    300.40Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 CBDCL/514811315498/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                    100.40Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 IMPS-IN/514811139519/7054954494/SHAMIYA                                            50,235.00            50,335.40Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8461 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,335.40Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8461 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,323.60Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8464 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,323.60Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8464 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,311.80Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8470 PNB \REFUGEE COLONY           \ JODHP             9,500.00                                    811.80Cr CDCI      CDCI
+ 28-05-2025  28-05-2025                 ATM WDR 8470 PNB \REFUGEE COLONY           \ JODHP                11.80                                    800.00Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 CBDCL/514909343186/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               600.00                                    200.00Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 NEFT/IDFBN52025052949926878/TANVI CHAUHAN                                          50,235.00            50,435.00Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8502 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,435.00Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8502 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,423.20Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8505 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,423.20Cr CDCI      CDCI
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                            Page Total Credit  :                2,55,468.00
+                            Page Total Debit   :                2,45,055.40
+
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK SANGARIA                                                           Page  7
+
+                                    Customer Account Ledger Report from 01-05-2025 to 08-07-2025
+
+ Service OutLet   : 218320  SANGARIA
+ Account No       : 3127637522775626  INR SHIV LAL BISHNOI
+ Gl Sub Head Code :
+ B/F Balance      :            10,423.20Cr
+ Peg Review date  : 31-12-2099
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified
+   Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 29-05-2025  29-05-2025                 ATM WDR 8505 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,411.40Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8508 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    411.40Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8508 PNB \REFUGEE COLONY           \ JODHP                11.80                                    399.60Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 CBDCL/514910344624/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               300.00                                     99.60Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 IMPS-IN/514912077068/9946056081/BELLWISH                                           50,235.00            50,334.60Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8516 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,334.60Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8516 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,322.80Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8519 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,322.80Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8519 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,311.00Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8522 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    311.00Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8522 PNB \REFUGEE COLONY           \ JODHP                11.80                                    299.20Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 CBDCL/514912348306/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     99.20Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 IMPS-IN/514913165603/9946056081/BELLWISH                                           50,235.00            50,334.20Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8525 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,334.20Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8525 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,322.40Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8528 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,322.40Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8528 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,310.60Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8531 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    310.60Cr CDCI      CDCI
+ 29-05-2025  29-05-2025                 ATM WDR 8531 PNB \REFUGEE COLONY           \ JODHP                11.80                                    298.80Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 CBDCL/515008371289/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               100.00                                    198.80Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 NEFT/BDBLN52025053028594673/Rekha Neha Mishra                                      50,235.00            50,433.80Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8588 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,433.80Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8588 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,422.00Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8591 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,422.00Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8591 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,410.20Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8594 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    410.20Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8594 PNB \REFUGEE COLONY           \ JODHP                11.80                                    398.40Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 CBDCL/515009372316/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               300.00                                     98.40Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 NEFT/IDFBN52025053050120173/SUNRISE                                                50,235.00            50,333.40Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 3734 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,333.40Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 3734 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,321.60Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 3737 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,321.60Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 3737 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,309.80Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 3740 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    309.80Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 3740 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    298.00Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 CBDCL/515011374090/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     98.00Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 NEFT/YESBN12025053005661555/HORIZON                                                50,235.00            50,333.00Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8612 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,333.00Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8612 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,321.20Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8615 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,321.20Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8615 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,309.40Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8618 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    309.40Cr CDCI      CDCI
+ 30-05-2025  30-05-2025                 ATM WDR 8618 PNB \REFUGEE COLONY           \ JODHP                11.80                                    297.60Cr CDCI      CDCI
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                            Page Total Credit  :                2,51,175.00
+                            Page Total Debit   :                2,61,300.60
+
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK SANGARIA                                                           Page  8
+
+                                    Customer Account Ledger Report from 01-05-2025 to 08-07-2025
+
+ Service OutLet   : 218320  SANGARIA
+ Account No       : 3127637522775626  INR SHIV LAL BISHNOI
+ Gl Sub Head Code :
+ B/F Balance      :               297.60Cr
+ Peg Review date  : 31-12-2099
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified
+   Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 30-05-2025  30-05-2025                 CBDCL/515020389012/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               250.00                                     47.60Cr CDCI      CDCI
+ 31-05-2025  31-05-2025                 CBDCL/515109401721/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                     45.60Cr CDCI      CDCI
+ 31-05-2025  31-05-2025                 IMPS-IN/515111316725/7054954494/SHAMIYA                                            50,235.00            50,280.60Cr CDCI      CDCI
+ 31-05-2025  31-05-2025                 ATM WDR 8662 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,280.60Cr CDCI      CDCI
+ 31-05-2025  31-05-2025                 ATM WDR 8662 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,268.80Cr CDCI      CDCI
+ 31-05-2025  31-05-2025                 ATM WDR 8665 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,268.80Cr CDCI      CDCI
+ 31-05-2025  31-05-2025                 ATM WDR 8665 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,257.00Cr CDCI      CDCI
+ 31-05-2025  31-05-2025                 ATM WDR 8668 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    257.00Cr CDCI      CDCI
+ 31-05-2025  31-05-2025                 ATM WDR 8668 PNB \REFUGEE COLONY           \ JODHP                11.80                                    245.20Cr CDCI      CDCI
+ 31-05-2025  31-05-2025                 CBDCL/515112407587/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     45.20Cr CDCI      CDCI
+ 01-06-2025  01-06-2025                 ATM/CWDR/INSUFFBAL/31202003/515208003094/652497080                11.80                                     33.40Cr CDCI      CDCI
+ 01-06-2025  01-06-2025                 ATM/CWDR/INSUFFBAL/31202003/515208020629/652497080                11.80                                     21.60Cr CDCI      CDCI
+ 01-06-2025  01-06-2025                 CBDCL/515209447134/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                     19.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 CBDCL/515308479930/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                     17.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 NEFT/BDBLN52025060228776121/Ritu Isha Pat                                          50,235.00            50,252.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 ATM WDR 4065 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,252.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 ATM WDR 4068 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,252.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 ATM WDR 4071 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    252.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 CBDCL/515311487717/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     52.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 TRRR/515311487717/02-06-2025 11:55:32/CBD                                             200.00               252.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 CBDCL/515311487787/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                    250.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 CBDCL/515316500266/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               100.00                                    150.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 NEFT/BDBLN52025060228796283/Ritu Isha Pat                                          50,235.00            50,385.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 ATM WDR 515316006912 E LOBBY SUVIDHA COMPLE\                  10,000.00                                 40,385.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 ATM WDR 515316011616 E LOBBY SUVIDHA COMPLE\                  10,000.00                                 30,385.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 ATM WDR 515316013725 E LOBBY SUVIDHA COMPLE\                  10,000.00                                 20,385.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 ATM WDR 515316024063 E LOBBY SUVIDHA COMPLE\                  10,000.00                                 10,385.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 ATM WDR 515316004452 E LOBBY SUVIDHA COMPLE\                  10,000.00                                    385.60Cr CDCI      CDCI
+ 02-06-2025  02-06-2025                 CBDCL/515316501895/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               350.00                                     35.60Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 CBDCL/515409528658/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                     33.60Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 NEFT/BDBLN52025060328855327/Zenith Traders                                         50,235.00            50,268.60Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412027492  SARDARPURA  JODHPUR  \                  10,000.00                                 40,268.60Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412027492  SARDARPURA  JODHPUR  \                      27.14                                 40,241.46Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412010403  SARDARPURA  JODHPUR  \                  10,000.00                                 30,241.46Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412010403  SARDARPURA  JODHPUR  \                      27.14                                 30,214.32Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412030467  SARDARPURA  JODHPUR  \                  10,000.00                                 20,214.32Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412030467  SARDARPURA  JODHPUR  \                      27.14                                 20,187.18Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412015752  SARDARPURA  JODHPUR  \                  10,000.00                                 10,187.18Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412015752  SARDARPURA  JODHPUR  \                      27.14                                 10,160.04Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412000334  SARDARPURA  JODHPUR  \                  10,000.00                                    160.04Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 515412000334  SARDARPURA  JODHPUR  \                      27.14                                    132.90Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 CBDCL/515412537918/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               100.00                                     32.90Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 NEFT/BDBLN52025060328887182/Ritu Isha Pat                                          50,235.00            50,267.90Cr CDCI      CDCI
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                            Page Total Credit  :                2,51,375.00
+                            Page Total Debit   :                2,01,404.70
+
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK SANGARIA                                                           Page  9
+
+                                    Customer Account Ledger Report from 01-05-2025 to 08-07-2025
+
+ Service OutLet   : 218320  SANGARIA
+ Account No       : 3127637522775626  INR SHIV LAL BISHNOI
+ Gl Sub Head Code :
+ B/F Balance      :            50,267.90Cr
+ Peg Review date  : 31-12-2099
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified
+   Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 03-06-2025  03-06-2025                 ATM WDR 4239 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,267.90Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 4242 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,267.90Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 CBDCL/515416548055/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                 10,067.90Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 4245 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                     67.90Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 4245 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                     56.10Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 IMPS-IN/515439688105/8879872926/F B INDU                                           50,235.00            50,291.10Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 8019 PNB \MADHUBAN COLONY          \ JODHP            20,000.00                                 30,291.10Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 8019 PNB \MADHUBAN COLONY          \ JODHP                11.80                                 30,279.30Cr CDCI      CDCI
+ 03-06-2025  03-06-2025                 ATM WDR 8024 PNB \MADHUBAN COLONY          \ JODHP            20,000.00                                 10,279.30Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 CBDCL/515508570660/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                 10,079.30Cr CDCI      CDCI
+ 04-06-2025  01-06-2025                 INTT. 3127637522775626:24-04-2025to31-05-2025                                           4.00            10,083.30Cr 5190403D1 5190403D1
+ 04-06-2025  04-06-2025                 ATM WDR 8994 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                     83.30Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 8994 PNB \REFUGEE COLONY           \ JODHP                11.80                                     71.50Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 CBDCL/515509571535/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy                 2.00                                     69.50Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 IMPS-IN/515540008618/8879872926/F B INDU                                           50,235.00            50,304.50Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 8997 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,304.50Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 8997 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,292.70Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9000 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,292.70Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9000 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,280.90Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9003 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    280.90Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9003 PNB \REFUGEE COLONY           \ JODHP                11.80                                    269.10Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 CBDCL/515509572329/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     69.10Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 NEFT/IDFBN52025060455488017/APEX MERCANTILE                                        50,235.00            50,304.10Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9014 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 30,304.10Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9014 PNB \REFUGEE COLONY           \ JODHP                11.80                                 30,292.30Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9017 PNB \REFUGEE COLONY           \ JODHP            20,000.00                                 10,292.30Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9017 PNB \REFUGEE COLONY           \ JODHP                11.80                                 10,280.50Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9020 PNB \REFUGEE COLONY           \ JODHP            10,000.00                                    280.50Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 9020 PNB \REFUGEE COLONY           \ JODHP                11.80                                    268.70Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 CBDCL/515513580511/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     68.70Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 NEFT/BDBLN52025060428939121/Ritu Isha Pat                                          50,235.00            50,303.70Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 4356 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,303.70Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 4356 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,291.90Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 4359 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,291.90Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 4359 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,280.10Cr CDCI      CDCI
+ 04-06-2025  04-06-2025                 ATM WDR 4361 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    280.10Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 CBDCL/515609610440/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     80.10Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 NEFT/BDBLN52025060529000945/Isha Anjali Rao                                        50,235.00            50,315.10Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 4491 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 30,315.10Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 4491 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 30,303.30Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 4494 PNB \PNB SHASTRI NAGAR        \ JODHP            20,000.00                                 10,303.30Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 4494 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                 10,291.50Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 4497 PNB \PNB SHASTRI NAGAR        \ JODHP            10,000.00                                    291.50Cr CDCI      CDCI
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                            Page Total Credit  :                2,51,179.00
+                            Page Total Debit   :                3,01,155.40
+
+
+ 08-07-2025 16:35:28               PUNJAB NATIONAL BANK SANGARIA                                                           Page 10
+
+                                    Customer Account Ledger Report from 01-05-2025 to 08-07-2025
+
+ Service OutLet   : 218320  SANGARIA
+ Account No       : 3127637522775626  INR SHIV LAL BISHNOI
+ Gl Sub Head Code :
+ B/F Balance      :               291.50Cr
+ Peg Review date  : 31-12-2099
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   GL.     Value       Instrmnt         Particulars                                               Transaction          Transaction                Balance   Entry     Verified
+   Date    Date         Number                                                                   Debit Amount        Credit Amount                          User Id   User Id
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ 05-06-2025  05-06-2025                 ATM WDR 4497 PNB \PNB SHASTRI NAGAR        \ JODHP                11.80                                    279.70Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 CBDCL/515612616371/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     79.70Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 NEFT/BDBLN52025060529031547/Isha Anjali Rao                                        50,235.00            50,314.70Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 1362 PNB \PNB BRANCH CHOPASANI     \ JODHP            20,000.00                                 30,314.70Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 1362 PNB \PNB BRANCH CHOPASANI     \ JODHP                11.80                                 30,302.90Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 1365 PNB \PNB BRANCH CHOPASANI     \ JODHP            20,000.00                                 10,302.90Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 1365 PNB \PNB BRANCH CHOPASANI     \ JODHP                11.80                                 10,291.10Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 1368 PNB \PNB BRANCH CHOPASANI     \ JODHP            10,000.00                                    291.10Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 1368 PNB \PNB BRANCH CHOPASANI     \ JODHP                11.80                                    279.30Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 CBDCL/515615623821/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     79.30Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM/CWDR/INSUFFBAL/TL113100/1384/6524970800063313                 11.80                                     67.50Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 NEFT/BDBLN52025060529051593/Isha Anjali Rao                                        50,235.00            50,302.50Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 6722 PNB \MADHUBAN COLONY          \ JODHP            20,000.00                                 30,302.50Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 6722 PNB \MADHUBAN COLONY          \ JODHP                11.80                                 30,290.70Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 6725 PNB \MADHUBAN COLONY          \ JODHP            20,000.00                                 10,290.70Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 6725 PNB \MADHUBAN COLONY          \ JODHP                11.80                                 10,278.90Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 6728 PNB \MADHUBAN COLONY          \ JODHP            10,000.00                                    278.90Cr CDCI      CDCI
+ 05-06-2025  05-06-2025                 ATM WDR 6728 PNB \MADHUBAN COLONY          \ JODHP                11.80                                    267.10Cr CDCI      CDCI
+ 06-06-2025  06-06-2025                 CBDCL/515709647156/19VAQtNnusa1CNRSbh2RcPXFTtpeeVy               200.00                                     67.10Cr CDCI      CDCI
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                                 Order by GL. Date.
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+          Date                  Limits(S.L.+TODs)                 Draw Power                Int Rate
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+       01-05-2025                               0.00                            0.00          2.7000
+       01-07-2025                               0.00                            0.00          2.5000
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                            Page Total Credit  :                1,00,470.00
+                            Page Total Debit   :                1,00,694.40
+
+                            Closing Balance    :                      67.10
+
+                            Total Credit       :               21,56,811.00
+                            Total Debit        :               21,56,743.90
+
+                            Signature          :
+
+
+                                                                                                                   Signature
+                                        ************* 11  pages printed. End of Report*************
+

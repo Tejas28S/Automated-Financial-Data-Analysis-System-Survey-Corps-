@@ -123,7 +123,8 @@ _COL_KEYWORDS = [
 # is unaffected and this generalises to any export that labels its identity columns.
 _IDENTITY_COL_MAP = [
     ("account_number", [r"^a/?c\s*no$", r"^ac_?no$", r"^acct\s*(?:no|number)$",
-                        r"^account\s*(?:no|num|number)$", r"\baccount\s*number\b"]),
+                        r"^account\s*(?:no|num|number)$", r"\baccount\s*number\b",
+                        r"^account$"]),
     ("account_holder", [r"^ac_?name$", r"^a/?c\s*name$", r"^acct\s*name$",
                         r"^account\s*(?:name|holder|title)$", r"\baccount\s*holder\b",
                         r"^customer\s*name$", r"^holder\s*name$", r"^name$"]),
@@ -462,7 +463,13 @@ def _identity_from_columns(df: pd.DataFrame, used_cols: set) -> Dict[str, str]:
     found: Dict[str, str] = {}
     cols = [c for c in df.columns if str(c) not in {"Account_ID", "Bank_Name"}]
     used = {str(c) for c in (used_cols or set())}
-    norm = {c: re.sub(r"\s+", " ", str(c).strip().lower().replace("_", " ")) for c in cols}
+    # Normalise headers for matching: lowercase, underscores→spaces, collapse runs,
+    # AND strip trailing label punctuation ("ACCOUNT NO." → "account no", "IFSC:" →
+    # "ifsc") so a header that merely ends in a period/colon still matches the
+    # $-anchored vocabulary patterns. Generic — no bank- or file-specific text.
+    norm = {c: re.sub(r"[\s.:;,#*]+$", "",
+                      re.sub(r"\s+", " ", str(c).strip().lower().replace("_", " ")))
+            for c in cols}
     for field, patterns in _IDENTITY_COL_MAP:
         for c in cols:
             if str(c) in used:

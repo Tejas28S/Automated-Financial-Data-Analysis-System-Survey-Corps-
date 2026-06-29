@@ -984,6 +984,82 @@ def _parse_by_header(lines: List[str], roles: List[str], account_id: str,
     return records
 
 
+def standardise_fixed_width_text(
+    raw_text: str,
+    account_id: str,
+    bank_name: str,
+    opening_balance: str = "",
+) -> pd.DataFrame:
+    """
+    Fallback parser for FIXED-WIDTH plain-text ledgers (e.g. core-banking "Customer
+    Account Ledger" TXT exports). These print each transaction on one line that ends
+    with trailing non-money columns — an Entry-User / Verified-User id, a channel code —
+    which block the positional money-peeler used by the normal text parser (it stops at
+    the first non-money token from the right and finds nothing). Here we first strip a
+    short run of trailing PURE-ALPHA tokens (user ids / channel codes), then peel the
+    trailing amount + balance (tolerating Dr/Cr suffixes and Indian commas), take the
+    leading date(s), and treat the middle as narration. Direction is then corrected from
+    the running balance. Structural and bank-agnostic — keyed on token shape, never on a
+    bank name or filename.
+    """
+    records = []
+    if not opening_balance:
+        m = re.search(
+            r"(?:opening\s*balance|b/?f)\s*[:\-]?\s*(?:Rs\.?|INR|₹)?\s*([\d,]+\.\d{2})",
+            raw_text or "", re.IGNORECASE)
+        if m:
+            opening_balance = m.group(1)
+    for line in (raw_text or "").splitlines():
+        s = line.strip()
+        m = DATE_AT_LINE_START_PATTERN.match(s)
+        if not m:
+            continue
+        date_str = m.group(1).strip()
+        rest = s[m.end():].strip()
+        m2 = DATE_AT_LINE_START_PATTERN.match(rest)   # skip a value date if present
+        if m2:
+            rest = rest[m2.end():].strip()
+        toks = rest.split()
+        # Strip a short run of trailing pure-alpha tokens (user ids / channel codes).
+        stripped = 0
+        while toks and stripped < 4 and re.fullmatch(r"[A-Za-z]{2,}", toks[-1]) \
+                and not _is_money_token(toks[-1]):
+            toks.pop(); stripped += 1
+        money = []
+        while toks and _is_money_token(toks[-1]) and len(money) < 3:
+            money.insert(0, toks.pop())
+        if len(money) < 2:           # need at least an amount and a balance
+            continue
+        balance_str = money[-1]
+        if len(money) == 3:          # debit | credit | balance → pick the non-zero side
+            amt_val = _clean_amount(money[-2]) or 0.0
+            alt_val = _clean_amount(money[-3]) or 0.0
+            amount_str = money[-3] if (amt_val == 0.0 and alt_val != 0.0) else money[-2]
+        else:
+            amount_str = money[-2]
+        records.append({
+            "Date": date_str, "Time": "",
+            "Narration": " ".join(toks).strip(),
+            # NOTE: a Cr/Dr suffix on the BALANCE marks the running-balance sign, NOT
+            # the transaction direction — so we do NOT lock direction here; it is
+            # derived authoritatively from the balance delta below.
+            "amount": _clean_amount(amount_str), "dr_cr": "",
+            "Balance": balance_str, "Account_ID": account_id, "Bank_Name": bank_name,
+        })
+    if not records:
+        return pd.DataFrame(columns=RICH_COLUMNS)
+    df = pd.DataFrame(records)
+    df["_dir_locked"] = False
+    if "amount" in df.columns:
+        df = _infer_debit_credit_from_amount(df)
+    df = _clean_and_type_columns(df)
+    df = _correct_direction_by_balance(df, _clean_amount_to_float(opening_balance))
+    for col in RICH_COLUMNS:
+        if col not in df.columns:
+            df[col] = 0.0 if col in ("Debit", "Credit", "Balance") else ""
+    return df[RICH_COLUMNS].dropna(subset=["Date"]).reset_index(drop=True)
+
+
 def standardise_digital_pdf_transactions(
     raw_text: str,
     account_id: str,
@@ -2057,6 +2133,29 @@ def _infer_debit_credit_from_amount(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def _recover_money_token(cleaned: str) -> Optional[float]:
+    """
+    Recovers the monetary value from a cell that carries a stray fragment — e.g. a
+    wrapped narration that bled into the amount column so pdfplumber yields a cell like
+    "N\\n9173.00" or "ARA1\\n9173.00". Prefers a decimal money token (the amount almost
+    always prints with paise, e.g. 9173.00); otherwise falls back to the longest digit
+    run. Returns None if the cell holds no numeric token at all.
+
+    This is only ever consulted AFTER a plain float() parse has already failed, so it
+    can only recover a value that would otherwise be dropped as 0.0 — it can never
+    change a cell that already parsed cleanly.
+    """
+    nums = re.findall(r"\d+(?:\.\d+)?", cleaned)
+    if not nums:
+        return None
+    decimals = [t for t in nums if "." in t]
+    pick = max(decimals or nums, key=len)
+    try:
+        return float(pick)
+    except ValueError:
+        return None
+
+
 def _clean_amount(value_str: str) -> Optional[float]:
     """
     Converts a string representation of a currency amount to a float.
@@ -2090,7 +2189,8 @@ def _clean_amount(value_str: str) -> Optional[float]:
     try:
         return float(cleaned)
     except ValueError:
-        return None
+        # Cell may carry a stray fragment from a wrapped narration ("N\n9173.00").
+        return _recover_money_token(cleaned)
 
 
 def _clean_amount_to_float(value: Any) -> float:
@@ -2127,7 +2227,10 @@ def _clean_amount_to_float(value: Any) -> float:
     try:
         return float(cleaned)
     except ValueError:
-        return 0.0
+        # Cell may carry a stray fragment from a wrapped narration ("N\n9173.00") —
+        # recover the numeric token rather than silently dropping the amount as 0.0.
+        recovered = _recover_money_token(cleaned)
+        return recovered if recovered is not None else 0.0
 
 
 def _clean_balance_to_float(value: Any) -> float:

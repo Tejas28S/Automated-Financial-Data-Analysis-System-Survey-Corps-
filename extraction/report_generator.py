@@ -103,6 +103,8 @@ def generate_extraction_report(
     try:
         (out / "extraction_summary_report.json").write_text(json.dumps(report, indent=2))
         (out / "extraction_summary_report.txt").write_text(_format_txt(report))
+        # Per-file extraction ledger (Section 3): one auditable row per processed file.
+        _write_ledger(files, out / "extraction_ledger.json")
     except Exception as e:  # a report failure must never break a successful run
         logger.warning("report_generator: could not write report files: %s", e)
 
@@ -113,6 +115,60 @@ def generate_extraction_report(
     print(f"  Metadata: holder {with_holder}/{len(graded)}, acct {with_number}/{len(graded)}")
     print("=" * 55 + "\n")
     return report
+
+
+def _write_ledger(files: List[Dict[str, Any]], path) -> None:
+    """
+    Writes the per-file extraction ledger (Section 3) — one auditable object per
+    processed file with route, parser tier, fallback used, row counts, reconciliation,
+    zero-row status/reason, and per-field metadata + source. This is what lets any
+    number in the run be traced back to a specific file without re-running anything.
+    """
+    ledger = []
+    for f in files:
+        ad = f.get("account_details", {}) or {}
+        rows_clean = f.get("rows_clean", 0)
+        rows_flagged = f.get("rows_flagged", 0)
+        rows = f.get("rows_standardised", rows_clean + rows_flagged)
+        recon = f.get("reconciliation_rate")
+        status = f.get("status", "ok")
+        # Zero-row status: distinguish a genuine zero from a functional failure.
+        if status == "FAILED":
+            zr_status, zr_reason = "technical_failure", f.get("error", "")
+        elif rows == 0:
+            zr_status = f.get("zero_row_status", "true_zero" if f.get("zero_row_reason") else "functional_failure")
+            zr_reason = f.get("zero_row_reason", "zero rows extracted; no positive zero-activity evidence")
+        else:
+            zr_status, zr_reason = "ok", ""
+        ledger.append({
+            "file_name": f.get("file"),
+            "route": f.get("route"),
+            "parser_tier": f.get("tier"),
+            "fallback_method_used": f.get("fallback_method_used", ""),
+            "raw_text_char_count": f.get("raw_text_chars"),
+            "transaction_like_lines": f.get("expected_txn_lines"),
+            "rows_extracted": rows,
+            "rows_clean": rows_clean,
+            "rows_flagged": rows_flagged,
+            "reconciliation_rate": recon,
+            "zero_row_status": zr_status,
+            "zero_row_reason": zr_reason,
+            "account_number_found": bool(ad.get("account_number")
+                                         and not str(ad.get("account_number")).startswith("UNKNOWN")),
+            "account_number": ad.get("account_number", ""),
+            "holder_found": bool(ad.get("account_holder")),
+            "holder": ad.get("account_holder", ""),
+            "ifsc_found": bool(ad.get("ifsc_code") and ad.get("ifsc_code") != "UNKNOWN"),
+            "ifsc": ad.get("ifsc_code", ""),
+            "bank_name": ad.get("bank_name", ""),
+            "metadata_source": f.get("metadata_source", ""),
+            "column_map_source": f.get("column_map_source", ""),
+            "llm_calls": f.get("llm_calls", 0),
+        })
+    try:
+        Path(path).write_text(json.dumps(ledger, indent=2))
+    except Exception as e:
+        logger.warning("report_generator._write_ledger: could not write ledger: %s", e)
 
 
 def _format_txt(r: Dict[str, Any]) -> str:

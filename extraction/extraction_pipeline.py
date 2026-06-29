@@ -49,9 +49,19 @@ from typing import List, Dict, Any
 
 import pandas as pd
 
-from config.settings import STANDARD_COLUMNS, REFERENCE_COLUMNS, require_extraction_keys
+from config.settings import (
+    STANDARD_COLUMNS,
+    REFERENCE_COLUMNS,
+    require_extraction_keys,
+    MIN_COMPLETENESS_RATIO,
+)
 from extraction.router import route_file
-from extraction.extractor_digital_pdf import extract_text_from_digital_pdf
+from extraction.extractor_digital_pdf import (
+    extract_text_from_digital_pdf,
+    extract_transaction_table_df,
+    extract_coordinate_table_df,
+)
+from extraction.extractor_excel_csv import _infer_column_map
 from extraction.extractor_ocr import extract_text_with_ocr_audit
 from extraction.extractor_excel_csv import extract_dataframe_from_excel_csv
 from extraction.extractor_docx import extract_text_from_docx, extract_text_from_txt
@@ -77,6 +87,7 @@ from extraction.standardiser import (
     standardise_transaction_records,
     standardise_llm_transactions,
     standardise_digital_pdf_transactions,
+    standardise_fixed_width_text,
     count_transaction_like_lines,
     build_schema_sample,
 )
@@ -452,6 +463,32 @@ def run_extraction_pipeline(
     return result
 
 
+_ZERO_ACTIVITY_PATTERNS = [
+    r"no\s+transactions?\s+(?:in|for|during|found)",
+    r"nil\s+transactions?",
+    r"there\s+are\s+no\s+transactions",
+    r"no\s+(?:records?|entries|activity)\s+found",
+    r"(?:total\s+)?(?:no\.?\s*of\s+)?withdrawals?\s*[:\-]?\s*0\b.*deposits?\s*[:\-]?\s*0\b",
+    r"(?:total\s+)?(?:no\.?\s*of\s+)?deposits?\s*[:\-]?\s*0\b.*withdrawals?\s*[:\-]?\s*0\b",
+    # Statement-summary count/amount pairs both zero (e.g. "Withdrawal Count : 0 …
+    # Deposit Count : 0", "Total Withdrawal Amount : 0.00 … Total Deposit Amount : 0.00").
+    r"withdrawal\s+count\s*[:\-]?\s*0\b[\s\S]{0,80}deposit\s+count\s*[:\-]?\s*0\b",
+    r"deposit\s+count\s*[:\-]?\s*0\b[\s\S]{0,80}withdrawal\s+count\s*[:\-]?\s*0\b",
+    r"total\s+withdrawal\s+amount\s*[:\-]?\s*0\.00[\s\S]{0,120}total\s+deposit\s+amount\s*[:\-]?\s*0\.00",
+]
+
+
+def _adjudicate_zero_row(raw_text: str) -> dict:
+    """Section 2.1 zero-row adjudicator: only a file with positive zero-activity
+    evidence in its own text is a TRUE zero; any other zero is a functional failure."""
+    import re as _re
+    for pat in _ZERO_ACTIVITY_PATTERNS:
+        if _re.search(pat, raw_text, _re.IGNORECASE | _re.DOTALL):
+            return {"status": "true_zero", "reason": f"explicit_zero_activity_text:{pat}"}
+    return {"status": "functional_failure",
+            "reason": "readable_but_zero_rows_after_full_fallback_chain"}
+
+
 def _total_key_rotations() -> int:
     """Total Groq key rotations (text + vision pools) for the audit trail."""
     try:
@@ -494,6 +531,21 @@ def _finalise_date_time(df: pd.DataFrame) -> pd.DataFrame:
         dt = pd.to_datetime(df["Date"], errors="coerce", dayfirst=True)
         df["Date"] = dt.dt.strftime("%d/%m/%Y").fillna("")
     return df
+
+
+def _parse_score(grade: Dict[str, Any]) -> float:
+    """Coverage-aware quality score for choosing between candidate parses.
+
+    A parse is only "better" if it reconciles well AND keeps the rows. Reconciliation
+    alone is gameable: a degenerate parse that drops all but one row reconciles at 1.0
+    while silently discarding hundreds of real transactions (a wrong LLM-discovered
+    schema whose date format only matches one line does exactly this). Multiplying the
+    reconciliation rate by completeness (parsed_rows / transaction-like-lines, capped
+    at 1.0 and identical across candidates for the same source) makes escalation
+    monotonic in BOTH dimensions, so a higher-recon parse can never win by throwing
+    transactions away. This keeps the cascade's "escalating can only improve" promise.
+    """
+    return float(grade.get("reconciliation_rate", 0.0)) * float(grade.get("completeness_ratio", 1.0))
 
 
 def _extract_text_transactions(
@@ -540,8 +592,9 @@ def _extract_text_transactions(
         if schema.get("source") in ("groq", "cache"):
             df_s = standardise_digital_pdf_transactions(raw_text, account_id, bank, opening, schema)
             grade_s = grade_parse(df_s, expected_rows=expected)
-            # Adopt only if it reconciles at least as well as the cheap parse.
-            if grade_s["reconciliation_rate"] >= grade["reconciliation_rate"]:
+            # Adopt only if it is at least as good on reconciliation AND coverage —
+            # never accept a schema that reconciles by discarding rows (see _parse_score).
+            if _parse_score(grade_s) >= _parse_score(grade):
                 df, grade = df_s, grade_s
                 file_record["tier"] = "schema_reparse"
                 file_record["column_map"] = {
@@ -557,7 +610,7 @@ def _extract_text_transactions(
         llm_df = standardise_llm_transactions(
             structured.get("transactions", []), account_id, bank, opening)
         grade_l = grade_parse(llm_df, expected_rows=expected)
-        if len(llm_df) and grade_l["reconciliation_rate"] >= grade["reconciliation_rate"]:
+        if len(llm_df) and _parse_score(grade_l) >= _parse_score(grade):
             df, grade = llm_df, grade_l
             file_record["tier"] = "llm_full_read"
             file_record["column_map"] = {"engine": "llm_structurer_fallback"}
@@ -748,6 +801,100 @@ def _process_single_file(
             standard_df, grade = _extract_text_transactions(
                 raw_text, file_record, account_id, bank_name, details)
 
+            # ── Structured-table fallback (ruled-table / wrapped-narration PDFs) ───
+            # The positional text parser fails on two related digital-PDF shapes: a
+            # ruled table whose amounts sit in fixed columns with a trailing non-money
+            # column or blank cells, AND statements whose narration WRAPS onto the line
+            # above the date (so the line-based parser sees most rows as date-less and
+            # captures only a handful). Both are read correctly by pdfplumber's own
+            # table extraction. So we re-read as a STRUCTURED table and map columns by
+            # the table's header whenever the text parse is INCOMPLETE — empty OR it
+            # captured fewer rows than the document's transaction-like lines (low
+            # completeness) — not only on a true zero. We adopt the table parse ONLY if
+            # it beats the text parse on the coverage-aware score, so it can never
+            # disturb a file that already parsed well. Generic — header-shape driven.
+            text_incomplete = (
+                standard_df is None or standard_df.empty
+                or (grade is not None
+                    and grade.get("completeness_ratio", 1.0) < MIN_COMPLETENESS_RATIO))
+            if route == "pdf_digital" and text_incomplete:
+                tdf = extract_transaction_table_df(file_path)
+                if tdf is not None and not tdf.empty:
+                    cmap = _infer_column_map(tdf.columns)
+                    core = {k: v for k, v in cmap.items()
+                            if k in ("date", "narration", "debit", "credit",
+                                     "balance", "amount", "drcr_flag")}
+                    if "date" in core and any(k in core for k in ("balance", "debit", "credit", "amount")):
+                        tdf_std = standardise_dataframe_direct(
+                            tdf, core, account_id, details.get("bank_name") or bank_name)
+                        if tdf_std is not None and not tdf_std.empty:
+                            tgrade = grade_parse(
+                                tdf_std, expected_rows=file_record.get("expected_txn_lines") or len(tdf))
+                            if (standard_df is None or standard_df.empty
+                                    or _parse_score(tgrade) > _parse_score(grade)):
+                                standard_df, grade = tdf_std, tgrade
+                                file_record["tier"] = "table_structured_fallback"
+                                file_record["column_map"] = core
+                                file_record["column_map_source"] = "pdf_table_header"
+                                file_record["fallback_method_used"] = "structured_table"
+                                logger.info("extraction_pipeline: structured-table fallback "
+                                            "recovered %d rows for '%s'.", len(tdf_std),
+                                            Path(file_path).name)
+
+            # ── Fixed-width text fallback (fixes false-zero plain-text ledgers) ────
+            # If still zero rows (e.g. a fixed-width "Account Ledger" TXT whose lines
+            # end in trailing user-id/channel columns that block the money-peeler),
+            # retry with the fixed-width parser. Triggered only on a true zero.
+            if standard_df is None or standard_df.empty:
+                fw = standardise_fixed_width_text(
+                    raw_text, account_id, details.get("bank_name") or bank_name,
+                    details.get("opening_balance", "") or "")
+                if fw is not None and not fw.empty:
+                    standard_df = fw
+                    grade = grade_parse(fw, expected_rows=count_transaction_like_lines(raw_text))
+                    file_record["tier"] = "fixed_width_text_fallback"
+                    file_record["column_map_source"] = "fixed_width_spans"
+                    file_record["fallback_method_used"] = "fixed_width_text"
+                    logger.info("extraction_pipeline: fixed-width text fallback recovered "
+                                "%d rows for '%s'.", len(fw), Path(file_path).name)
+
+            # ── Coordinate-column repair (fixes the amount==1.0 column-misread cluster) ─
+            # Generic, bank-agnostic detector: if MORE THAN 80% of the rows have
+            # Debit==1.0 or Credit==1.0, the amount column was misread (e.g. a FLEXCUBE
+            # forex layout where Trans.Rate ≈1.00 was taken as the amount). Re-read the
+            # page by WORD COORDINATES, mapping the real Dr/Cr Amount and Running Balance
+            # columns and ignoring rate/LCY. Adopt only if it reconciles strictly better.
+            if route == "pdf_digital" and standard_df is not None and len(standard_df) >= 10:
+                _d = standard_df["Debit"].astype(float) if "Debit" in standard_df else None
+                _c = standard_df["Credit"].astype(float) if "Credit" in standard_df else None
+                ones = int(((_d == 1.0).sum() if _d is not None else 0)
+                           + ((_c == 1.0).sum() if _c is not None else 0))
+                if ones / len(standard_df) > 0.8:
+                    cdf = extract_coordinate_table_df(file_path)
+                    if cdf is not None and not cdf.empty:
+                        cmap = {"date": "Date", "narration": "Narration", "debit": "Debit",
+                                "credit": "Credit", "balance": "Balance"}
+                        cstd = standardise_dataframe_direct(
+                            cdf, cmap, account_id, details.get("bank_name") or bank_name)
+                        cgrade = grade_parse(cstd, expected_rows=len(cdf))
+                        if (len(cstd) and grade is not None
+                                and cgrade["reconciliation_rate"] > grade["reconciliation_rate"]):
+                            standard_df, grade = cstd, cgrade
+                            file_record["tier"] = "coordinate_column_repair"
+                            file_record["column_map_source"] = "pdf_word_coordinates"
+                            file_record["fallback_method_used"] = "coordinate_columns"
+                            logger.info("extraction_pipeline: coordinate-column repair lifted "
+                                        "'%s' recon to %.3f (%d rows).", Path(file_path).name,
+                                        cgrade["reconciliation_rate"], len(cstd))
+
+            # A fallback may have replaced standard_df/grade after _extract_text_transactions
+            # already recorded the (stale) text-path metrics — refresh them so the ledger
+            # and report reflect the parse that was actually finalised.
+            if grade is not None:
+                file_record["reconciliation_rate"] = round(grade["reconciliation_rate"], 3)
+                file_record["has_balance_column"] = grade["has_balance_column"]
+                file_record["ordering"] = grade["ordering"]
+
     # ── Chronological order: if the statement is newest-first, flip it to
     # oldest-first (preserving within-day order) so the validator's running-balance
     # check and the analysis phase always see time moving forward.
@@ -789,6 +936,15 @@ def _process_single_file(
     file_record["rows_standardised"] = len(standard_df)
     file_record["rows_clean"] = len(clean_df)
     file_record["rows_flagged"] = len(flagged_df)
+
+    # ── Zero-row adjudication (Section 2.1) ────────────────────────────────────
+    # A file finalised at zero rows is a TRUE zero only with positive evidence — the
+    # statement itself reporting no activity. Otherwise it is a FUNCTIONAL FAILURE
+    # (readable but under-extracted), never silently absorbed into files_failed:0.
+    if len(standard_df) == 0:
+        zr = _adjudicate_zero_row(raw_text or "")
+        file_record["zero_row_status"] = zr["status"]
+        file_record["zero_row_reason"] = zr["reason"]
 
     # ── Validation (requirements 8 & 9) ───────────────────────────────────────
     # 9: every transaction the LLM identified must end up in the output (clean +

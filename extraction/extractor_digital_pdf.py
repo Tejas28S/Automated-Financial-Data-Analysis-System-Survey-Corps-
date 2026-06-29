@@ -43,9 +43,19 @@ import logging
 import re
 from pathlib import Path
 
+import pandas as pd
 import pdfplumber
 
 logger = logging.getLogger(__name__)
+
+# Header-cell vocabulary for STRUCTURED table detection (generic banking terms, never a
+# bank name). A transaction-table header row carries at least one date-column word AND
+# at least one money-column word. This is how the structured-table fallback tells the
+# ledger table apart from a metadata/key-value table on the same page.
+_TBL_DATE_WORDS = ("date", "tran date", "txn date", "value date", "posting date",
+                   "transaction date", "trans date", "gl date")
+_TBL_MONEY_WORDS = ("debit", "credit", "withdrawal", "deposit", "balance", "amount",
+                    "dr", "cr", " dr ", " cr ", "withdrawals", "deposits")
 
 # pdfplumber emits "(cid:NN)" when a PDF uses a font glyph it cannot map to a real
 # character (very common for tab stops and fancy fonts in real bank statements,
@@ -181,18 +191,41 @@ def _build_inline_narration_map(full_text: str) -> dict:
 def _metadata_lines(full_text: str) -> list:
     """
     Returns the account-metadata section from page 1's extract_text() output:
-    all lines BEFORE the first transaction row (the first line that starts with a date).
+    every line BEFORE the first transaction row (the first date-led line), PLUS any
+    later non-transaction line that carries an account-identity LABEL.
 
-    This is the only part of extract_text() we keep for table-extracted pages —
-    the table cells give us the transactions, and the metadata header is never inside
-    a table cell.
+    The table cells give us the transactions, and the metadata header is never inside
+    a table cell — but pdfplumber emits page-1 text in y-coordinate order, and some
+    layouts (e.g. an SBI statement whose IFSC/customer block sits to the side of or
+    below the opening rows) place the identity block AFTER the first transaction line.
+    Cutting at the first date would silently drop the IFSC / holder / account, leaving
+    metadata extraction to scrape a counterparty's name out of a narration. So once we
+    pass the first date we still keep label-bearing lines (IFSC, A/C No, Customer/CIF,
+    MICR, Branch, …). These are never transactions (the parser needs a leading date),
+    so this enriches identity without affecting transaction parsing.
     """
     result = []
+    seen_date = False
     for line in full_text.splitlines():
         if _DATE_START_RE.match(line.strip()):
-            break
-        result.append(line)
-    return result[:60]  # safety cap against pathological layouts
+            seen_date = True
+            continue  # transaction rows are reconstructed from the table cells
+        if not seen_date or _META_LABEL_RE.search(line):
+            result.append(line)
+    return result[:80]  # safety cap against pathological layouts
+
+
+# Account-identity labels that may appear in a page-1 metadata block emitted (in
+# y-order) below the first transaction row. Generic banking vocabulary only. We
+# require the label to be in "Label :" form (a known identity word followed shortly
+# by a colon/dash separator) so prose NARRATION lines that merely contain a word like
+# "branch" are NOT mistaken for metadata — that guards against a counterparty IFSC in
+# a narration ever being scraped as the account's own identity.
+_META_LABEL_RE = re.compile(
+    r"(?:IFSC|IFS\s*Code|MICR|A/?C|Account|Cust(?:omer)?|CIF|Branch|Nomination|Scheme)"
+    r"\b[^:\n]{0,18}[:\-]",
+    re.IGNORECASE,
+)
 
 
 def _filter_inline_map(inline_map: dict, table) -> dict:
@@ -263,6 +296,241 @@ def _table_to_lines(table, inline_map: dict = None) -> list:
         if row_text:
             lines.append(row_text)
     return lines
+
+
+# A header CELL that is genuinely a DATE column (not "Date of Birth"/"Account Open
+# Date"/"Statement Date" etc. which appear in metadata tables and would otherwise make
+# a metadata table look like a transaction header).
+_DATE_COL_CELL = re.compile(
+    r"^\s*(?:tran(?:saction)?\s*|txn\s*|value\s*|posting\s*|gl\.?\s*|trans\s*)?date\s*$",
+    re.IGNORECASE)
+_NON_TXN_DATE_CELL = re.compile(r"birth|open|expiry|kyc|statement|print|generat|report",
+                                re.IGNORECASE)
+_MONEY_COL_CELL = re.compile(
+    r"^\s*(debit|credit|withdrawals?|deposits?|balance|amount|dr|cr|"
+    r"withdrawal\s*amt|deposit\s*amt|dr\s*amt|cr\s*amt|"
+    r"debit\s*amount|credit\s*amount|transaction\s+(?:debit|credit)\s+amount)\s*$",
+    re.IGNORECASE)
+
+
+# Column-role vocabulary for COORDINATE-based header detection. Each role maps to the
+# header words that name it. "ignore" columns (forex rate / local-currency / charges)
+# must never be read as the transaction amount — that is the exact defect on FLEXCUBE
+# forex layouts where Trans.Rate (=1.00 for INR) was being read as Debit/Credit.
+_COORD_HEADER_ROLES = {
+    "date":   ("txn dt", "tran dt", "txn date", "tran date", "transaction date", "date", "gl date"),
+    "narration": ("narration", "particulars", "description", "remarks", "details"),
+    "debit":  ("dr amount", "debit amount", "withdrawal amount", "withdrawal", "debit", "dr"),
+    "credit": ("cr amount", "credit amount", "deposit amount", "deposit", "credit", "cr"),
+    "balance": ("running balance", "closing balance", "balance"),
+}
+_COORD_IGNORE = ("trans.rate", "trans rate", "rate", "trans.lcy", "lcy", "conversion",
+                 "exchange", "value", "dt value", "chq", "cheque", "ref")
+
+
+def extract_coordinate_table_df(file_path: str):
+    """
+    COORDINATE-based column reader (generalised, bank-agnostic). For PDFs whose amounts
+    sit in fixed x-columns but the linear-text flattening misreads them — most acutely
+    FLEXCUBE-style layouts that print extra Trans.Rate / Trans.LCY columns after the
+    real Dr/Cr Amount columns and put the Running Balance on its OWN line — the
+    positional text parser grabs the wrong tokens (reading the rate, ~1.00, as the
+    amount). This reader instead learns each column's x-position from the HEADER row and
+    assigns every value to a column by its x-centre, IGNORING rate/LCY/charge columns,
+    and folds a balance-only continuation line into the preceding transaction.
+
+    Returns a DataFrame with Date/Narration/Debit/Credit/Balance, or None if no usable
+    coordinate header is found. Driven entirely by header text + geometry — never by a
+    bank name or filename.
+    """
+    import pandas as pd
+
+    def _norm(s):
+        return re.sub(r"\s+", " ", (s or "").strip().lower())
+
+    try:
+        rows = []
+        with pdfplumber.open(file_path) as pdf:
+            col_x = None  # {role: (x0,x1)} learned from the first header
+            ignore_x = []
+            for page in pdf.pages:
+                try:
+                    words = page.extract_words(use_text_flow=False) or []
+                except Exception:
+                    continue
+                # group words into visual lines by rounded top
+                lines = {}
+                for w in words:
+                    lines.setdefault(round(w["top"] / 3) * 3, []).append(w)
+                ordered = [sorted(lines[top], key=lambda w: w["x0"]) for top in sorted(lines)]
+
+                def _learn_roles(word_lists, into, ign):
+                    toks = [(w["text"].lower(), w["x0"], w["x1"]) for lw in word_lists for w in lw]
+                    for role, names in _COORD_HEADER_ROLES.items():
+                        if role in into:
+                            continue
+                        for nm in names:
+                            parts = nm.split()
+                            for i in range(len(toks) - len(parts) + 1):
+                                if all(parts[k] in toks[i + k][0] for k in range(len(parts))):
+                                    into[role] = (toks[i][1], toks[i + len(parts) - 1][2]); break
+                            if role in into:
+                                break
+                    for lw in word_lists:
+                        for w in lw:
+                            if any(g in w["text"].lower() for g in _COORD_IGNORE):
+                                ign.append((w["x0"] + w["x1"]) / 2)
+
+                for li, lw in enumerate(ordered):
+                    joined = _norm(" ".join(w["text"] for w in lw))
+                    # learn columns from the header — which may wrap across 2 lines
+                    # (e.g. "… Dr Amount Cr Amount …" then "Running Balance" beneath).
+                    if col_x is None and ("amount" in joined or "withdrawal" in joined
+                                          or "debit" in joined or "credit" in joined) \
+                            and ("dt" in joined or "date" in joined):
+                        col_x = {}
+                        window = [lw]
+                        if li + 1 < len(ordered):
+                            nxt = ordered[li + 1]
+                            if not any(_DATE_START_RE.match(w["text"].strip()) for w in nxt):
+                                window.append(nxt)   # 2nd header line (Running Balance, etc.)
+                        _learn_roles(window, col_x, ignore_x)
+                        continue
+                    if not col_x or "date" not in col_x:
+                        continue
+                    # a transaction line: a date-shaped token under the date column
+                    def _center(w): return (w["x0"] + w["x1"]) / 2
+                    dx0, dx1 = col_x["date"]
+                    date_word = next((w for w in lw if _DATE_START_RE.match(w["text"].strip())
+                                      and dx0 - 20 <= _center(w) <= dx1 + 40), None)
+                    money = [w for w in lw if _MONEY_LIKE_RE.match(w["text"].strip())]
+                    if date_word:
+                        rec = {"Date": date_word["text"].strip(), "Narration": "",
+                               "Debit": "", "Credit": "", "Balance": ""}
+                        narr = []
+                        for w in lw:
+                            c = _center(w); txt = w["text"].strip()
+                            if w is date_word:
+                                continue
+                            if any(abs(c - ix) < 25 for ix in ignore_x) and _MONEY_LIKE_RE.match(txt):
+                                continue  # rate / LCY / ignored money column
+                            assigned = False
+                            for role in ("debit", "credit", "balance"):
+                                if role in col_x and _MONEY_LIKE_RE.match(txt):
+                                    rx0, rx1 = col_x[role]
+                                    if rx0 - 35 <= c <= rx1 + 35:
+                                        rec[role.capitalize()] = txt; assigned = True; break
+                            if not assigned and not _DATE_START_RE.match(txt):
+                                narr.append(txt)
+                        rec["Narration"] = " ".join(narr).strip()
+                        # A real transaction carries an amount. Page furniture that is
+                        # merely date-shaped (e.g. a print-timestamp header line
+                        # "11/28/25, 3:40 PM blob:https://…") has no Debit/Credit value
+                        # and is dropped — this prevents phantom rows.
+                        if str(rec["Debit"]).strip() or str(rec["Credit"]).strip():
+                            rows.append(rec)
+                    elif rows and money:
+                        # balance-only / continuation line: a money token under the balance
+                        # column belongs to the preceding transaction's running balance
+                        if "balance" in col_x and not rows[-1]["Balance"]:
+                            bx0, bx1 = col_x["balance"]
+                            for w in money:
+                                if bx0 - 35 <= _center(w) <= bx1 + 35:
+                                    rows[-1]["Balance"] = w["text"].strip(); break
+        if rows:
+            df = pd.DataFrame(rows)
+            if (df["Balance"].astype(str).str.strip() != "").sum() >= 0.5 * len(df):
+                logger.info("extractor_digital_pdf.extract_coordinate_table_df: '%s' → "
+                            "%d coordinate rows; columns=%s", Path(file_path).name,
+                            len(df), col_x)
+                return df
+    except Exception as e:
+        logger.warning("extractor_digital_pdf.extract_coordinate_table_df: failed for '%s': %s",
+                       file_path, e)
+    return None
+
+
+def _row_is_table_header(cells) -> bool:
+    """
+    True if a table row is a TRANSACTION-table header. Requires a genuine date COLUMN
+    cell (not 'Date of Birth' etc.) AND at least two distinct money/balance column cells
+    — the structural shape that separates a ledger header from a metadata key:value
+    table that merely mentions a date and a balance.
+    """
+    texts = [(_join_cell(c) or "").strip() for c in cells]
+    has_date_col = any(_DATE_COL_CELL.match(t) and not _NON_TXN_DATE_CELL.search(t)
+                       for t in texts)
+    money_cols = sum(1 for t in texts if _MONEY_COL_CELL.match(t))
+    return has_date_col and money_cols >= 2
+
+
+def extract_transaction_table_df(file_path: str):
+    """
+    STRUCTURED-table fallback (generalised, bank-agnostic): returns the transaction
+    ledger as a pandas DataFrame with the table's own header as columns and every data
+    row preserved — including BLANK cells (an empty Withdrawal stays empty instead of
+    collapsing) and extra trailing columns (Channel / Alpha / Chq). This is what the
+    flat-text path cannot do: when amounts sit in fixed table columns and a non-money
+    column trails the balance, the positional text parser fails, but a header-mapped
+    column read does not.
+
+    The transaction table is identified purely by its header shape (a date column word
+    AND a money/balance column word) — never by filename or bank. Rows from continuation
+    pages that repeat the same column count are appended. Returns None if no such table
+    is found, so callers fall back to the existing text path unchanged.
+    """
+    try:
+        with pdfplumber.open(file_path) as pdf:
+            header = None
+            ncols = 0
+            data_rows = []
+            header_seen = False
+
+            def _is_txn_data_row(cells):
+                # A transaction row leads with its date: the date is in the first or
+                # second cell (cell 0 may be a serial/Sr-No). Metadata rows carry their
+                # date deep in the row, so they are excluded.
+                lead = [(c or "").strip() for c in cells[:2]]
+                return any(_DATE_START_RE.match(c) for c in lead)
+
+            for page in pdf.pages:
+                try:
+                    tables = page.extract_tables() or []
+                except Exception:
+                    continue
+                for tbl in tables:
+                    if not tbl:
+                        continue
+                    hidx = next((i for i, r in enumerate(tbl) if r and _row_is_table_header(r)), None)
+                    if hidx is not None and header is None:
+                        header = [(_join_cell(c) or f"col_{j}").strip()
+                                  for j, c in enumerate(tbl[hidx])]
+                        ncols = len(header)
+                        header_seen = True
+                        body = tbl[hidx + 1:]
+                    elif header_seen:
+                        # After the header is found, collect transaction rows from this
+                        # table too (continuation pages, repeated headers, same template).
+                        body = tbl[hidx + 1:] if hidx is not None else tbl
+                    else:
+                        continue
+                    for r in body:
+                        if not r:
+                            continue
+                        cells = [_join_cell(c) for c in r]
+                        if _is_txn_data_row(cells):
+                            row = (cells + [""] * ncols)[:ncols]  # rectangular to header width
+                            data_rows.append(row)
+            if header and data_rows:
+                df = pd.DataFrame(data_rows, columns=header)
+                logger.info("extractor_digital_pdf.extract_transaction_table_df: '%s' → "
+                            "%d structured table rows, columns=%s",
+                            Path(file_path).name, len(df), header)
+                return df
+    except Exception as e:
+        logger.warning("extractor_digital_pdf.extract_transaction_table_df: failed for '%s': %s",
+                       file_path, e)
+    return None
 
 
 def _extract_page_as_text(page, page_number: int = 1) -> str:

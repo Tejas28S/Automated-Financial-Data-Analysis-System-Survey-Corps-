@@ -324,7 +324,10 @@ _COMPANY_ENTITY_RE = re.compile(
 # Some banks (e.g. Bank of Baroda) print the holder as the very FIRST line with no
 # label at all. As a last resort we take the first header line that looks like a
 # name: 2–4 words, letters only, and not a known header/keyword line.
-_NAME_LINE_RE = re.compile(r"^[A-Z][A-Za-z.]+(?:\s+[A-Z][A-Za-z.&]+){1,3}$")
+# Allows single-letter INITIALS as name tokens ("ASHOK T S", "T S RAVI") — common in
+# Indian names — by letting each token after the first be a lone capital. Still anchored
+# and word-shaped, so address/branch lines (which carry punctuation/digits) don't match.
+_NAME_LINE_RE = re.compile(r"^[A-Z][A-Za-z.]*(?:\s+[A-Z][A-Za-z.&]*){1,3}$")
 _NOT_NAME_WORDS = {
     "statement", "account", "bank", "branch", "address", "customer", "ifsc", "ifs",
     "micr", "current", "savings", "saving", "date", "page", "summary", "pin",
@@ -371,8 +374,14 @@ def _is_label_fragment(value: str) -> bool:
 
 
 def _first_line_name(header: str) -> str:
-    """Last-resort holder: the first header line that looks like an unlabelled name."""
-    for line in header.splitlines()[:6]:
+    """Last-resort holder: the first header line that looks like an unlabelled name.
+
+    Scans the whole metadata region (not just the first few lines): many templates,
+    notably SBI, print the holder name AFTER the bank/branch/address block — e.g. the
+    name sits on line ~7, right before a 'Branch Code'/'CIF' label. The strong guards
+    below (no digits, 2-4 name-shaped words, not an address/bank/known-keyword line)
+    keep this from picking up a branch or city line."""
+    for line in header.splitlines()[:14]:
         s = line.strip()
         if not s or any(ch.isdigit() for ch in s):
             continue
@@ -668,10 +677,29 @@ def extract_account_details_from_text(text: str) -> Dict[str, str]:
                         details["account_holder"] = cand_name
                     break
 
-    # ── IFSC code (header only, by unique shape) ──────────────────────────────
-    m = _IFSC_RE_FIND.search(header.upper())
-    if m:
-        details["ifsc_code"] = m.group(1)
+    # ── IFSC code — multi-window, account-scoped ──────────────────────────────
+    # Search a cascade of candidate windows so an IFSC printed just BELOW the metadata
+    # region (some templates put it under the table header) is still found, while never
+    # scanning the deep transaction body (which carries COUNTERPARTY IFSCs). Prefer an
+    # IFSC that follows an explicit IFSC label (the account's own) over a bare shape
+    # match. All windows are header-scoped, so this widens coverage without grabbing a
+    # counterparty IFSC. Generic — no bank-name branching.
+    top_lines = "\n".join((text or "").splitlines()[:40])
+    _IFSC_LABELLED = re.compile(
+        r"(?:IFSC|IFS\s*Code|RTGS\s*/?\s*NEFT\s*IFSC|IFSC\s*Code)\s*[:\-]?\s*"
+        r"([A-Z]{4}0[A-Z0-9]{6})", re.IGNORECASE)
+    ifsc = ""
+    for window in (header, top_lines):
+        lm = _IFSC_LABELLED.search(window.upper())
+        if lm:
+            ifsc = lm.group(1); break
+    if not ifsc:
+        for window in (header, top_lines):
+            sm = _IFSC_RE_FIND.search(window.upper())
+            if sm:
+                ifsc = sm.group(1); break
+    if ifsc:
+        details["ifsc_code"] = ifsc
 
     # ── Branch / account type / period ────────────────────────────────────────
     details["branch"] = _labelled(text, r"account\s*branch|home\s*branch|base\s*branch|branch")

@@ -1,0 +1,82 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260702_175031
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260702_175031
+Run timestamp: 2026-07-02T12:20:59.086250+00:00
+Elapsed seconds: 25.01
+
+Input Contract
+--------------
+Clean rows: 3212
+Flagged rows: 0
+Duplicate rows: 0
+Metadata clean rows: 3212
+Summary-report clean rows: 3212
+Count reconciliation: ok
+Reconciliation detail: CSV counts match extraction metadata.
+
+Analysis Scope
+--------------
+Total stored rows: 3212
+Eligible detection rows: 3212
+Excluded rows: 0
+Accounts: 3
+Graph nodes: 1116
+Graph edges: 2568
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 3212
+Resolved counterparty rows: 2579
+Resolution rate percent: 80.29265255292653
+LLM calls made: 0
+LLM status: active
+
+Balance Data Quality
+--------------------
+No balance inconsistencies detected in this dataset.
+
+Finding Counts
+--------------
+1_duplicate_verification: 1
+2_failed_reversed_transaction_detection: 0
+3_pass_through_routing_account: 1
+4_fund_pooling_account: 0
+5_structuring_smurfing_detection: 0
+6_money_flow_graph_construction: 1
+7_circular_flow_multi_hop_cycle_detection: 1
+8_money_trail_tracing: 32
+9_credit_to_cash_out_chains: 1
+10_cross_statement_links: 0
+11_balance_parking_account: 0
+12_hub_ranking: 0
+13_low_value_account_testing: 0
+14_reversal_clusters: 0
+15_round_value_debit_patterns: 3
+16_shared_upi_identifiers: 30
+17_round_trip_detection: 0
+18_dormant_reactivation: 0
+19_first_contact_large_transfer: 305
+21_suspicious_account_ranking: 3
+22_llm_investigated_anomalies: 1
+23_ml_ensemble_anomaly_lead: 0
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 0
+duplicate: 0
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+acct_002: total_score=1367.8669, distinct_patterns=7, total_findings=151
+acct_003: total_score=1339.998, distinct_patterns=5, total_findings=146
+acct_001: total_score=1085.8661, distinct_patterns=4, total_findings=133
+0004777623@okicici: total_score=156.5, distinct_patterns=1, total_findings=1
+0013267974@ybl: total_score=156.5, distinct_patterns=1, total_findings=1
+0070117097@upi: total_score=156.5, distinct_patterns=1, total_findings=1
+0071507560293: total_score=156.5, distinct_patterns=1, total_findings=1
+0137378806973: total_score=156.5, distinct_patterns=1, total_findings=1
+0288850824@paytm: total_score=156.5, distinct_patterns=1, total_findings=1
+035445384755: total_score=156.5, distinct_patterns=1, total_findings=1

@@ -1,0 +1,73 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260630_143052
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260630_143052
+Run timestamp: 2026-06-30T15:19:08.655640+00:00
+Elapsed seconds: 8.58
+
+Input Contract
+--------------
+Clean rows: 2085
+Flagged rows: 24
+Duplicate rows: 29
+Metadata clean rows: 2114
+Summary-report clean rows: 2114
+Count reconciliation: ok_reconciled_by_duplicates
+Reconciliation detail: Metadata clean_rows includes duplicate rows; final clean CSV excludes duplicates stored separately.
+
+Analysis Scope
+--------------
+Total stored rows: 2138
+Eligible detection rows: 1825
+Excluded rows: 313
+Accounts: 6
+Graph nodes: 574
+Graph edges: 785
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 1825
+Resolved counterparty rows: 785
+Resolution rate percent: 43.013698630136986
+LLM calls made: 0
+
+Finding Counts
+--------------
+1_duplicate_detection_cross_check: 127
+2_failed_reversed_transaction_detection: 2
+3_balance_consistency_validation: 262
+4_round_trip_detection: 0
+5_transit_pass_through_detection: 0
+6_accumulation_account_detection: 1
+7_structuring_smurfing_detection: 4
+8_money_flow_graph_construction: 1
+9_circular_flow_multi_hop_cycle_detection: 0
+10_money_trail_tracing: 0
+11_credit_to_cash_out_chains: 3
+12_cross_statement_links: 0
+13_high_throughput_accounts: 1
+14_holding_accounts: 0
+15_hub_ranking: 0
+16_internal_flow_hub: 0
+17_low_value_account_testing: 0
+18_reversal_clusters: 0
+19_round_value_debit_patterns: 4
+20_shared_upi_identifiers: 0
+21_suspicious_account_ranking: 5
+22_llm_investigated_anomalies: 1
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 284
+duplicate: 29
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+020201563824: total_score=752.226, distinct_patterns=7, total_findings=24
+1357102000000198: total_score=714.7, distinct_patterns=4, total_findings=361
+120002879229: total_score=639.0158, distinct_patterns=6, total_findings=9
+763010062770: total_score=418.3, distinct_patterns=4, total_findings=13
+12668100018596: total_score=201.3, distinct_patterns=2, total_findings=2
+50100158077633: total_score=100.5, distinct_patterns=1, total_findings=1

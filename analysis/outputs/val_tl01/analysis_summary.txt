@@ -1,0 +1,74 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/synthetic_cases/pattern_02_transit_layering/tl_case_01.csv
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/val_tl01
+Run timestamp: 2026-07-02T17:17:00.156320+00:00
+Elapsed seconds: 2.07
+
+Input Contract
+--------------
+Clean rows: 430
+Flagged rows: 0
+Duplicate rows: 0
+Metadata clean rows: 
+Summary-report clean rows: 
+Count reconciliation: ok
+Reconciliation detail: Single flat CSV input.
+
+Analysis Scope
+--------------
+Total stored rows: 430
+Eligible detection rows: 430
+Excluded rows: 0
+Accounts: 5
+Graph nodes: 38
+Graph edges: 316
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 430
+Resolved counterparty rows: 331
+Resolution rate percent: 76.97674418604652
+LLM calls made: 0
+LLM status: disabled_no_key
+
+Balance Data Quality
+--------------------
+No balance inconsistencies detected in this dataset.
+
+Finding Counts
+--------------
+1_duplicate_verification: 1
+2_failed_reversed_transaction_detection: 0
+3_pass_through_routing_account: 2
+4_fund_pooling_account: 0
+5_structuring_smurfing_detection: 0
+6_money_flow_graph_construction: 1
+7_circular_flow_multi_hop_cycle_detection: 0
+8_money_trail_tracing: 3
+9_credit_to_cash_out_chains: 0
+10_cross_statement_links: 15
+11_balance_parking_account: 1
+12_hub_ranking: 1
+13_low_value_account_testing: 0
+14_reversal_clusters: 0
+15_round_value_debit_patterns: 4
+16_shared_upi_identifiers: 0
+17_round_trip_detection: 0
+18_dormant_reactivation: 0
+19_first_contact_large_transfer: 8
+21_suspicious_account_ranking: 2
+22_llm_investigated_anomalies: 1
+23_ml_ensemble_anomaly_lead: 0
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 0
+duplicate: 0
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+721215922125: total_score=462.156, distinct_patterns=6, total_findings=27
+44883153319: total_score=141.5116, distinct_patterns=4, total_findings=10

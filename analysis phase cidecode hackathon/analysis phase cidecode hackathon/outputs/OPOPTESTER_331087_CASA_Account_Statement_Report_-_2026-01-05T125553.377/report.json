@@ -1,0 +1,3835 @@
+{
+  "case_name": "331087 CASA Account Statement_Report - 2026-01-05T125553.377",
+  "input_file": "331087 CASA Account Statement_Report - 2026-01-05T125553.377.csv",
+  "generated_at": "2026-06-29T19:36:20.480912+00:00",
+  "total_transactions_analyzed": 141,
+  "total_accounts": 1,
+  "date_range": {
+    "start": "2025-04-16",
+    "end": "2025-12-28"
+  },
+  "fraud_transactions": [
+    {
+      "transaction_id": "17243920250502000600635477",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 434907.0,
+      "direction": "credit",
+      "narration": "RTGS Cr-ICICR42025050200523111-ICIC0000011-RG ENTERPRISE--/URGENT/",
+      "reference": "",
+      "balance": 435044.0,
+      "counterparty": "42025050200523111",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427141112124486",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 53.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511746422313/ABDUL RAH/YESB/**1tint@pty/UPI//AXIeb31e6e335004bc5bd31ad48e1d937fd/27/04/2025 14:11:12",
+      "reference": "511746422313",
+      "balance": 771.0,
+      "counterparty": "1tint@pty",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427141752463999",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 100.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511787522008/Winzo Gam/YESB/**anil@ybl/Payment //AXI0f1a6edc9ee34755a2b5a2add0065ae2/27/04/2025 14:17:52",
+      "reference": "511787522008",
+      "balance": 671.0,
+      "counterparty": "anil@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427150834933723",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 100.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511779020761/WinZO/NSPB/**winzo@cashfreensdlpb/3795139288//AXId21c16516a3e4a4b933e593ec34fb5d9/27/04/2025 15:08:34",
+      "reference": "511779020761",
+      "balance": 571.0,
+      "counterparty": "winzo@cashfreensdlpb",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427154043478502",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 1.0,
+      "direction": "credit",
+      "narration": "UPI/CR/103861772639/PRIYA /CNRB/**rajes@okhdfcbank/UPI//HDFd0d6401d9c624c2e951db2b7a51761fd/27/04/2025 15:40:43",
+      "reference": "103861772639",
+      "balance": 572.0,
+      "counterparty": "rajes@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427165006725351",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 40000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/511733522670/PRIYA /CNRB/**906-1@oksbi/UPI//SBI7cc537ef1d7d4f84b1d4a8313ee3d49f/27/04/2025 16:50:06",
+      "reference": "511733522670",
+      "balance": 40572.0,
+      "counterparty": "906-1@oksbi",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "6550803a733f122abeb0",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427165253006010",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 18000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-5151BY01-CANARABANKMYSURUKAIN-27/04/25 16:52:53/0008",
+      "reference": "1891",
+      "balance": 22572.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Large Credit Followed by Cash Withdrawal",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "5ec79cac6a7458a81e7c",
+        "6550803a733f122abeb0",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "20250427165425007467",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 18000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-51518775-CANARABANKBANGALOREKAIN-27/04/25 16:54:25/0008",
+      "reference": "1940",
+      "balance": 4572.0,
+      "counterparty": "51518775",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "5ec79cac6a7458a81e7c",
+        "6550803a733f122abeb0",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "20250427165556008978",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 4000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-51518775-CANARABANKBANGALOREKAIN-27/04/25 16:55:56/0008",
+      "reference": "1942",
+      "balance": 572.0,
+      "counterparty": "51518775",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "6550803a733f122abeb0",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "20250427170038271803",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 150.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511730738196/PRIYA /FDRL/**906-2@okhdfcbank/UPI//AXIb7eb5bea5fa145e380728a3bfd368818/27/04/2025 17:00:38",
+      "reference": "511730738196",
+      "balance": 422.0,
+      "counterparty": "906-2@okhdfcbank",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427170552546122",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 80.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511753132284/Shayaan N/YESB/**cc8la@pty/UPI//AXId0a49c45b9b344698ff121450fcee745/27/04/2025 17:05:52",
+      "reference": "511753132284",
+      "balance": 342.0,
+      "counterparty": "cc8la@pty",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427172716724680",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 72.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511704228593/WinZO/NSPB/**winzo@cashfreensdlpb/3795754636//AXIc654a19caf574ffe96f9da02108257a6/27/04/2025 17:27:16",
+      "reference": "511704228593",
+      "balance": 270.0,
+      "counterparty": "winzo@cashfreensdlpb",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427180707203824",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 25.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511771336128/arruuk103/CNRB/**vaish@okaxis/UPI//AXI08c68fab7a87460f8bdb77ede1beee4e/27/04/2025 18:07:07",
+      "reference": "511771336128",
+      "balance": 245.0,
+      "counterparty": "vaish@okaxis",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Low-Value Reciprocal Account Testing",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "ae08ed2409a285af5a9d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427184709032709",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 60.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511704742214/NADEEMAHM/YESB/**62668@ybl/UPI//AXI5d5ae0f1fefd454599db5db3672cb99e/27/04/2025 18:47:09",
+      "reference": "511704742214",
+      "balance": 185.0,
+      "counterparty": "62668@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427194142587575",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 1.0,
+      "direction": "credit",
+      "narration": "UPI/CR/404024998418/SYED FAYA/CNRB/**771-2@axl/Payment //AXLa66814c9d7a242c5ab2f3970267dbd09/27/04/2025 19:41:42",
+      "reference": "404024998418",
+      "balance": 186.0,
+      "counterparty": "771-2@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427194242668300",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 93.0,
+      "direction": "credit",
+      "narration": "UPI/CR/269456632800/SYED FAYA/CNRB/**771-2@axl/Payment //AXL1e0ce028bc62470bab2279749155703b/27/04/2025 19:42:42",
+      "reference": "269456632800",
+      "balance": 279.0,
+      "counterparty": "771-2@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427194447834604",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 100.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511748545191/ABDUL RAH/YESB/**1tint@pty/UPI//AXIc474660947044a299235e23fbc69650a/27/04/2025 19:44:47",
+      "reference": "511748545191",
+      "balance": 179.0,
+      "counterparty": "1tint@pty",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427204943578690",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 70.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511789650546/Winzo Gam/YESB/**anil@ybl/Payment //AXI7ca8312210b840f1b37d294614c8e300/27/04/2025 20:49:43",
+      "reference": "511789650546",
+      "balance": 109.0,
+      "counterparty": "anil@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427222826333462",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 50.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511739665176/BP Petrol/YESB/**11167@ybl/UPI//AXIcaa3bed31f69409b8295c65b17ad7021/27/04/2025 22:28:26",
+      "reference": "511739665176",
+      "balance": 59.0,
+      "counterparty": "11167@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427231328441350",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 50.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511721156377/WinZO/NSPB/**winzo@cashfreensdlpb/3797292214//AXIf4ce83e6bfc24f75afb2c9d835b7d87e/27/04/2025 23:13:28",
+      "reference": "511721156377",
+      "balance": 9.0,
+      "counterparty": "winzo@cashfreensdlpb",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427233043770374",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 10.0,
+      "direction": "credit",
+      "narration": "UPI/CR/103888642695/Mrs ASIRA/IDIB/**geeta@okhdfcbank/UPI//HDF32bf4aa1fff6461293d836d0e5ac8f79/27/04/2025 23:30:43",
+      "reference": "103888642695",
+      "balance": 19.0,
+      "counterparty": "geeta@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250427234429987716",
+      "account_id": "110236092552",
+      "date": "2025-04-27",
+      "time": "",
+      "amount": 10.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511704853792/WinZO/NSPB/**winzo@cashfreensdlpb/3797368539//AXIf244e1dcc3be4296963a6607dae0b888/27/04/2025 23:44:29",
+      "reference": "511704853792",
+      "balance": 9.0,
+      "counterparty": "winzo@cashfreensdlpb",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250428105133190706",
+      "account_id": "110236092552",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 10.0,
+      "direction": "credit",
+      "narration": "UPI/CR/511811466910/ARMAN  KH/CNRB/**vaish@okaxis/UPI//AXI41489a103e254bec8bd9961a6ed9693c/28/04/2025 10:51:33",
+      "reference": "511811466910",
+      "balance": 19.0,
+      "counterparty": "vaish@okaxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Low-Value Reciprocal Account Testing",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "ae08ed2409a285af5a9d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250428105236256379",
+      "account_id": "110236092552",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 19.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511821873646/Winzo Gam/YESB/**games@ptybl/UPI//PYTM50428802974077508625XXXXXXXXXXX/28/04/2025 10:52:36",
+      "reference": "511821873646",
+      "balance": 0.0,
+      "counterparty": "games@ptybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250428105311294050",
+      "account_id": "110236092552",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 150.0,
+      "direction": "credit",
+      "narration": "UPI/CR/103899496869/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDF74cf92837c6346c1bec62a6946368ba3/28/04/2025 10:53:11",
+      "reference": "103899496869",
+      "balance": 150.0,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250428133649554026",
+      "account_id": "110236092552",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 150.0,
+      "direction": "debit",
+      "narration": "UPI/DR/511883782672/PRASHANTH/YESB/**65212@ybl/UPI//AXIe31abf30286d45d3a21b97f951d8eaa6/28/04/2025 13:36:49",
+      "reference": "511883782672",
+      "balance": 0.0,
+      "counterparty": "65212@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250428183510383803",
+      "account_id": "110236092552",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 300.0,
+      "direction": "credit",
+      "narration": "UPI/CR/283365915535/ARMAN KHAN/KKBK/**96073@ybl/Payment //YBLb1971e080e8f4e1ea183908be1ad1cfb/28/04/2025 18:35:10",
+      "reference": "283365915535",
+      "balance": 300.0,
+      "counterparty": "96073@ybl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250428190043482533",
+      "account_id": "110236092552",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/548476508713/PRIYA /FDRL/**906-2@okaxis/UPI//AXI99db99b546c7461bb85bf2a62ee68cf4/28/04/2025 19:00:43",
+      "reference": "548476508713",
+      "balance": 400.0,
+      "counterparty": "906-2@okaxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250428190301679235",
+      "account_id": "110236092552",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 400.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548496601366/Duggepogu/SBIN/**514-2@ybl/UPI//AXIa0350153a17940f3b6d56c03ab73f196/28/04/2025 19:03:01",
+      "reference": "548496601366",
+      "balance": 0.0,
+      "counterparty": "514-2@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429104753345687",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/548583716526/PRIYA /PPIW/**28871@fam/UPI Paym//TOTd250429104753CC5717B13D7F4AD9895/29/04/2025 10:47:53",
+      "reference": "548583716526",
+      "balance": 100.0,
+      "counterparty": "28871@fam",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429110749520572",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 6.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548539036275/NAGVENI/PKGB/**rekha@oksbi/UPI//AXI67a2e8d0c86b430f86055bb7385a6bce/29/04/2025 11:07:49",
+      "reference": "548539036275",
+      "balance": 94.0,
+      "counterparty": "rekha@oksbi",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429113727314636",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 50.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548505543317/PRIYA /FDRL/**906-2@okhdfcbank/UPI//AXI6fa3f0526f074e0dab6a6f0569cf9d0e/29/04/2025 11:37:27",
+      "reference": "548505543317",
+      "balance": 44.0,
+      "counterparty": "906-2@okhdfcbank",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429114831986371",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 40.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548550147007/WinZO/NSPB/**winzo@cashfreensdlpb/3802539117//AXI7f6c53c3e1d647c5b60cb9528b92d878/29/04/2025 11:48:31",
+      "reference": "548550147007",
+      "balance": 4.0,
+      "counterparty": "winzo@cashfreensdlpb",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429133337471998",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/510904525902/ALFIYA ME/SIBL/**20072@axl/Payment //AXL51471f47d0794cef8314acae4864d11d/29/04/2025 13:33:37",
+      "reference": "510904525902",
+      "balance": 104.0,
+      "counterparty": "20072@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429134148981971",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 10.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548507448649/M K PARAS/KARB/**01532@axl/UPI//AXI058413e58b8843389b82135d0ede62bc/29/04/2025 13:41:48",
+      "reference": "548507448649",
+      "balance": 94.0,
+      "counterparty": "01532@axl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429134415129362",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 90.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548577058693/636144047/PPIW/**40477@mbk/UPI//AXI7b1e0aa74c974941b7d7aa05fccbd35b/29/04/2025 13:44:15",
+      "reference": "548577058693",
+      "balance": 4.0,
+      "counterparty": "40477@mbk",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429154612772306",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 150.0,
+      "direction": "credit",
+      "narration": "UPI/CR/548503052407/ARMAN  KH/CNRB/**vaish@okaxis/UPI//AXIa74c536071494df182fb1d8acdce29e7/29/04/2025 15:46:12",
+      "reference": "548503052407",
+      "balance": 154.0,
+      "counterparty": "vaish@okaxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429154753860219",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 150.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548557158586/Sunil M V/UTIB/**23667@okbizaxis/UPI//AXIe299c2972c5b483da45eed76401e4edf/29/04/2025 15:47:53",
+      "reference": "548557158586",
+      "balance": 4.0,
+      "counterparty": "23667@okbizaxis",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429164712065035",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/548510366277/PRIYA /CNRB/**906-1@okaxis/UPI//AXIb6869e41e6674e5f9cea5c2a943e948d/29/04/2025 16:47:12",
+      "reference": "548510366277",
+      "balance": 104.0,
+      "counterparty": "906-1@okaxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429164834142460",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 104.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548593875949/Santhosha/YESB/**692we@pty/UPI//AXI4a5d7e1a2bcb48b491087dec75886631/29/04/2025 16:48:34",
+      "reference": "548593875949",
+      "balance": 0.0,
+      "counterparty": "692we@pty",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429183134993264",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/103977404662/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDF895587cee430435aace544505ee44ddf/29/04/2025 18:31:34",
+      "reference": "103977404662",
+      "balance": 100.0,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250429183355173193",
+      "account_id": "110236092552",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 100.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548573768526/Aslam Pas/KKBK/**26145@kotak/UPI//AXIc086b2bf1f6a44d7ab647046d2163abb/29/04/2025 18:33:55",
+      "reference": "548573768526",
+      "balance": 0.0,
+      "counterparty": "26145@kotak",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250430144003541838",
+      "account_id": "110236092552",
+      "date": "2025-04-30",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104020508077/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDFaf6e2a4d5fe347fdb9eb1a63523686e7/30/04/2025 14:40:03",
+      "reference": "104020508077",
+      "balance": 100.0,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250430144052589826",
+      "account_id": "110236092552",
+      "date": "2025-04-30",
+      "time": "",
+      "amount": 100.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512064622412/IQBAL/YESB/**49469@ybl/UPI//AXId3bb469d13b54ec5b9045f10f41a55c5/30/04/2025 14:40:52",
+      "reference": "512064622412",
+      "balance": 0.0,
+      "counterparty": "49469@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502101210247460",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 200.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104121249771/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDFfd4e992567874fb2b8dc3909f1826f11/02/05/2025 10:12:10",
+      "reference": "104121249771",
+      "balance": 200.0,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502105301978577",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 23.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548824454707/920657390/PPIW/**73909@mbk/UPI//AXIe32789c2f2314a5b904f4b656d454800/02/05/2025 10:53:01",
+      "reference": "548824454707",
+      "balance": 177.0,
+      "counterparty": "73909@mbk",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502121540683559",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 40.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548810957835/WinZO/NSPB/**winzo@cashfreensdlpb/3814937953//AXIde337db2b3234148a072d7b9c27b18b9/02/05/2025 12:15:40",
+      "reference": "548810957835",
+      "balance": 137.0,
+      "counterparty": "winzo@cashfreensdlpb",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502134337489256",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 500.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548803369312/920657390/PPIW/**73909@mbk/UPI//AXI27faaa5f1f0e4b7a9c60927f0f4b8a86/02/05/2025 13:43:37",
+      "reference": "548803369312",
+      "balance": 434544.0,
+      "counterparty": "73909@mbk",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502143759893264",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 13.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548807380219/SUDHAYINI/YESB/**90713@ybl/UPI//AXIbed539c0741c4687af6d61024ca20f6b/02/05/2025 14:37:59",
+      "reference": "548807380219",
+      "balance": 4531.0,
+      "counterparty": "90713@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502155807465872",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 277.0,
+      "direction": "debit",
+      "narration": "UPI/DR/669784929591/PRASHANTH/YESB/**41617@ybl/Payment //YBL8a33ac1b70484e2790bbe8159695647f/02/05/2025 15:58:07",
+      "reference": "669784929591",
+      "balance": 4254.0,
+      "counterparty": "41617@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502160001576778",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 220.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548895070870/MANJUNATH/YESB/**03452@ybl/UPI//AXI010b21c33b0f4fda986d13cb21560efb/02/05/2025 16:00:01",
+      "reference": "548895070870",
+      "balance": 4034.0,
+      "counterparty": "03452@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502162335942970",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 1000.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548840282253/ARMAN KHAN/KKBK/**96073@axl/UPI//AXIa9606fbc101a44e3a27136084764cb44/02/05/2025 16:23:35",
+      "reference": "548840282253",
+      "balance": 3034.0,
+      "counterparty": "96073@axl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Repeated Round-Value Debit Pattern",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "20250502182046869911",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 500.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548812392370/PRIYA /FDRL/**10280@jupiteraxis/UPI//AXI3779a397545c4895b7bb36b30d75ef10/02/05/2025 18:20:46",
+      "reference": "548812392370",
+      "balance": 2534.0,
+      "counterparty": "10280@jupiteraxis",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502183753282432",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 1000.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548874093064/ABDUL RAH/YESB/**18332@ybl/UPI//AXIb999a13fc94c4e5a9a6c02f09ba3ab8f/02/05/2025 18:37:53",
+      "reference": "548874093064",
+      "balance": 1534.0,
+      "counterparty": "18332@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Repeated Round-Value Debit Pattern",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "20250502190141348015",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 134.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548809295744/SYED FAYA/CNRB/**ashok@ybl/UPI//AXI128ed3a6a49841febd7d6dd29d72b314/02/05/2025 19:01:41",
+      "reference": "548809295744",
+      "balance": 1400.0,
+      "counterparty": "ashok@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502190314486320",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 100.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548838099072/WinZO/NSPB/**winzo@cashfreensdlpb/3816571175//AXI46b2cf60683c45adb4c2b6faf60d3892/02/05/2025 19:03:14",
+      "reference": "548838099072",
+      "balance": 1300.0,
+      "counterparty": "winzo@cashfreensdlpb",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502191259412197",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 300.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512208001127/M SUMAIYA/SBIN/**anil@okicici/UPI//AXIe4cc0c66cfce4a029630f1c3ac447293/02/05/2025 19:12:59",
+      "reference": "512208001127",
+      "balance": 1000.0,
+      "counterparty": "anil@okicici",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502191341472904",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 30.0,
+      "direction": "debit",
+      "narration": "UPI/DR/548895899417/M SUMAIYA/SBIN/**anil@okicici/UPI//AXIb3af736ff435420c8e40de7dac9546ee/02/05/2025 19:13:41",
+      "reference": "548895899417",
+      "balance": 970.0,
+      "counterparty": "anil@okicici",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502193312359131",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 931.02,
+      "direction": "debit",
+      "narration": "UPI/DR/548864892235/Airtel Pa/YESB/**paytm@ptybl/AirtelPo//PYTM50502805364091295785XXXXXXXXXXX/02/05/2025 19:33:12",
+      "reference": "548864892235",
+      "balance": 38.98,
+      "counterparty": "paytm@ptybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250502203405650124",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 20.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512206506362/Ejaz Ahmed/YESB/**12rho@pty/UPI//AXI8cbc958f5499482c933f978b5a02e1a3/02/05/2025 20:34:05",
+      "reference": "512206506362",
+      "balance": 18.98,
+      "counterparty": "12rho@pty",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503092056605470",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 8.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512306829775/920657390/PPIW/**73909@mbk/UPI//AXI885c7f1901e94767bff663e86d0dd483/03/05/2025 09:20:56",
+      "reference": "512306829775",
+      "balance": 10.98,
+      "counterparty": "73909@mbk",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503122043147826",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 250.0,
+      "direction": "debit",
+      "narration": "UPI/DR/129525257032/ARMAN KHAN/KKBK/**96073@ybl/Payment //YBL4cb59d60f3ff4e94a9100d1d4eb7d19c/03/05/2025 12:20:43",
+      "reference": "129525257032",
+      "balance": 467040.98,
+      "counterparty": "96073@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503124405739677",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 10.0,
+      "direction": "credit",
+      "narration": "UPI/CR/410580111235/PRIYA /FDRL/**10280@jupiteraxis/Sent via//AXIJUP46841153767207979171843896863/03/05/2025 12:44:05",
+      "reference": "410580111235",
+      "balance": 2050.98,
+      "counterparty": "10280@jupiteraxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503124540843905",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104188252629/PRIYA /HDFC/**748-2@wahdfcbank/PAY BY W//HDFCWC7E9A2567FA5FA1F8BDD5056932541/03/05/2025 12:45:40",
+      "reference": "104188252629",
+      "balance": 2150.98,
+      "counterparty": "748-2@wahdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503125851729215",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 500.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512392048082/920657390/PPIW/**73909@mbk/UPI//AXI818b994480014b64acf56b6b79304be7/03/05/2025 12:58:51",
+      "reference": "512392048082",
+      "balance": 1650.98,
+      "counterparty": "73909@mbk",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503132728666506",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 1000.0,
+      "direction": "debit",
+      "narration": "UPI/DR/908124749513/RAYAN AHM/PPIW/**73909@mbk/Payment //AXL0cec9892fe5e43399016c615432bb089/03/05/2025 13:27:28",
+      "reference": "908124749513",
+      "balance": 650.98,
+      "counterparty": "73909@mbk",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "20250503140626193113",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 120.0,
+      "direction": "debit",
+      "narration": "UPI/DR/121361928133/Shamoj/YESB/**a6e8w@pty/Payment //AXL6a89c6507382445e927209e881c1d134/03/05/2025 14:06:26",
+      "reference": "121361928133",
+      "balance": 530.98,
+      "counterparty": "a6e8w@pty",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503142703447402",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 484.0,
+      "direction": "debit",
+      "narration": "UPI/DR/621968342876/PRASHANTH/YESB/**65212@ybl/Payment //YBL17bc7dae5fe041aea8becd29811b92c3/03/05/2025 14:27:03",
+      "reference": "621968342876",
+      "balance": 46.98,
+      "counterparty": "65212@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503174340200690",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 40.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512392462239/WinZO/NSPB/**winzo@cashfreensdlpb/3820621319//AXIb20b2036455b48fab5aa918726577bda/03/05/2025 17:43:40",
+      "reference": "512392462239",
+      "balance": 6.98,
+      "counterparty": "winzo@cashfreensdlpb",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503185252778859",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 50.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104210049975/PRIYA /HDFC/**748-2@wahdfcbank/PAY BY W//HDFCWCA741190339D91729B38870DCE225E/03/05/2025 18:52:52",
+      "reference": "104210049975",
+      "balance": 56.98,
+      "counterparty": "748-2@wahdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250503195034250773",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 50.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512314180419/ABDUL RAH/YESB/**18332@ybl/UPI//AXI95ed8836de274780947df22015929d81/03/05/2025 19:50:34",
+      "reference": "512314180419",
+      "balance": 6.98,
+      "counterparty": "18332@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250504182223234182",
+      "account_id": "110236092552",
+      "date": "2025-05-04",
+      "time": "",
+      "amount": 150.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104261686829/PRIYA /HDFC/**748-2@wahdfcbank/PAY BY W//HDFCWC69C0DD78AE8284CB113CD8B867027/04/05/2025 18:22:23",
+      "reference": "104261686829",
+      "balance": 156.98,
+      "counterparty": "748-2@wahdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250504182252264110",
+      "account_id": "110236092552",
+      "date": "2025-05-04",
+      "time": "",
+      "amount": 80.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549035733870/SUDHAYINI/YESB/**90713@ybl/UPI//AXIc99025a98b7140ac971cf9a215402c06/04/05/2025 18:22:52",
+      "reference": "549035733870",
+      "balance": 76.98,
+      "counterparty": "90713@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250504203713359460",
+      "account_id": "110236092552",
+      "date": "2025-05-04",
+      "time": "",
+      "amount": 20.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549051055089/ABDUL RAH/YESB/**18332@ybl/UPI//AXI847d53ff3b364dc7ad127b0f8063bb70/04/05/2025 20:37:13",
+      "reference": "549051055089",
+      "balance": 56.98,
+      "counterparty": "18332@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250504210712419259",
+      "account_id": "110236092552",
+      "date": "2025-05-04",
+      "time": "",
+      "amount": 50.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549013657027/Winzo Gam/YESB/**games@ptybl/UPI Intent//PYTM50504805802779567109XXXXXXXXXXX/04/05/2025 21:07:12",
+      "reference": "549013657027",
+      "balance": 6.98,
+      "counterparty": "games@ptybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250504212131311262",
+      "account_id": "110236092552",
+      "date": "2025-05-04",
+      "time": "",
+      "amount": 10.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104276442506/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDFd3e3ed81b7c549dcb96ea14d51200ed1/04/05/2025 21:21:31",
+      "reference": "104276442506",
+      "balance": 16.98,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250504212505530786",
+      "account_id": "110236092552",
+      "date": "2025-05-04",
+      "time": "",
+      "amount": 10.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549055767764/Winzo Gam/YESB/**anil@ybl/Payment //AXIbcfa40dcbc994a71bdfabb4c70fc82b2/04/05/2025 21:25:05",
+      "reference": "549055767764",
+      "balance": 6.98,
+      "counterparty": "anil@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250504223847898718",
+      "account_id": "110236092552",
+      "date": "2025-05-04",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/512452783231/PRIYA /FDRL/**906-2@oksbi/UPI//SBI0418948d51e446568550830758ecf15d/04/05/2025 22:38:47",
+      "reference": "512452783231",
+      "balance": 106.98,
+      "counterparty": "906-2@oksbi",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505003519073536",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 400.0,
+      "direction": "credit",
+      "narration": "UPI/CR/111217753227/RIZWAN PA/UBIN/**priya@axl/Payment //AXLbc63f798df734f04b0760b0371e2a4b9/05/05/2025 00:35:19",
+      "reference": "111217753227",
+      "balance": 506.98,
+      "counterparty": "priya@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505014321497545",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 400.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549110870404/PRIYAa/CNRB/**271-1@okaxis/UPI//AXIdaf0ba28a68f4a808cfb7826e1824ea0/05/05/2025 01:43:21",
+      "reference": "549110870404",
+      "balance": 106.98,
+      "counterparty": "271-1@okaxis",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505014436503015",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 400.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549143264962/PRIYA /FDRL/**10280@jupiteraxis/UPI//AXI185f65dd0e5a4f869b565b30b6093d03/05/05/2025 01:44:36",
+      "reference": "549143264962",
+      "balance": 106.98,
+      "counterparty": "10280@jupiteraxis",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505024753734932",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 100.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549149364349/BINU O P/YESB/**5vmal@ptys/UPI//AXI2890e47ea59249a8ba06333c2ce98e0b/05/05/2025 02:47:53",
+      "reference": "549149364349",
+      "balance": 6.98,
+      "counterparty": "5vmal@ptys",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505033223867098",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 10.0,
+      "direction": "credit",
+      "narration": "UPI/CR/582017341255/PRIYA /FDRL/**10280@jupiteraxis/Sent via//AXIJUP09422993070080268303352587515/05/05/2025 03:32:23",
+      "reference": "582017341255",
+      "balance": 16.98,
+      "counterparty": "10280@jupiteraxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505033418873556",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 16.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549119663600/Winzo Gam/YESB/**anil@ybl/Payment //AXI5615a2bfbd624ef79879726727298640/05/05/2025 03:34:18",
+      "reference": "549119663600",
+      "balance": 0.98,
+      "counterparty": "anil@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505153414817928",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 10000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/175213854244/MEHEK/CNRB/**38850@axl/Payment //AXL836c47e8d1314efeb6e7a01ebce30abd/05/05/2025 15:34:14",
+      "reference": "175213854244",
+      "balance": 10000.98,
+      "counterparty": "38850@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "778c454e3b3c6e1cea1f",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505153723001856",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 10000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-KBL15083-KBLCITBCOLONYMYSOREKAIN-05/05/25 15:37:23/0008",
+      "reference": "512515681472",
+      "balance": 0.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Large Credit Followed by Cash Withdrawal",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "778c454e3b3c6e1cea1f",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "20250505153958148579",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 1.0,
+      "direction": "credit",
+      "narration": "UPI/CR/655474631485/MEHEK/CNRB/**38850@ibl/Payment //IBL5e0ae6e3dbc342a1990df5df6cbe81aa/05/05/2025 15:39:58",
+      "reference": "655474631485",
+      "balance": 1.98,
+      "counterparty": "38850@ibl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505155314912121",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 2000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/348012745365/MEHEK/CNRB/**38850@axl/Payment //AXL700659dc1c2149adaf5cb40319b352de/05/05/2025 15:53:14",
+      "reference": "348012745365",
+      "balance": 2001.98,
+      "counterparty": "38850@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2a27f97cf2f217e0817d",
+        "3d208627d7cd1e4519d2",
+        "40ad1b8cf366e0c1b5f0",
+        "40c0fa7d3bc5f41acb8d",
+        "4dcbcc52656c57254a6a",
+        "5b26a15861d4bcaa43f1",
+        "63aca0441334bedaf132",
+        "95640b514c3a89888f48",
+        "a1c75d1e1c75934623f3",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43",
+        "f8dc1ad1b02db8653608"
+      ]
+    },
+    {
+      "transaction_id": "20250505155332930664",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 2000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/150704809159/MEHEK/CNRB/**38850@axl/Payment //AXL1f6859df00484bb18af49ce4f47ae4a0/05/05/2025 15:53:32",
+      "reference": "150704809159",
+      "balance": 4001.98,
+      "counterparty": "38850@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "343b3763a84bec75f7f5",
+        "3d208627d7cd1e4519d2",
+        "3faa96591c0372a213c4",
+        "40c0fa7d3bc5f41acb8d",
+        "469a17f20a2a722cff78",
+        "7d3d89f42f072799943a",
+        "95640b514c3a89888f48",
+        "98bea0c5e0d31b60621c",
+        "ac686d53bd02225e42a7",
+        "bcfa93028466ef166302",
+        "ce85ef5923ec4259c8de",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505155351946479",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 2000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/940096435766/MEHEK/CNRB/**38850@axl/Payment //AXL4b29e50c6b4047b385849b3ba44f7af3/05/05/2025 15:53:51",
+      "reference": "940096435766",
+      "balance": 6001.98,
+      "counterparty": "38850@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2da5324ae89431dc24f5",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "4f2210055fbaa5aa44fd",
+        "592b835bef3c4718003a",
+        "5b26a15861d4bcaa43f1",
+        "84a997bd76cb04dbf176",
+        "98bea0c5e0d31b60621c",
+        "b386a56f79053456b072",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43",
+        "f4b2759d3d42aa796078"
+      ]
+    },
+    {
+      "transaction_id": "20250505155409964826",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 2000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/964596848401/MEHEK/CNRB/**38850@axl/Payment //AXL96b4f26a71034c548f07612b61608c60/05/05/2025 15:54:09",
+      "reference": "964596848401",
+      "balance": 8001.98,
+      "counterparty": "38850@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2642fa5c46c635fd45eb",
+        "282aa066ad2f09e2a89e",
+        "343b3763a84bec75f7f5",
+        "35474695b45870cdeab6",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "4dcbcc52656c57254a6a",
+        "592b835bef3c4718003a",
+        "bcfa93028466ef166302",
+        "bd63ca03b6ca1f72ee80",
+        "cf12d8c00f22b72d1a43",
+        "e4b8b1a852ea017f0d0c"
+      ]
+    },
+    {
+      "transaction_id": "20250505155427981158",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 2000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/765451555406/MEHEK/CNRB/**38850@axl/Payment //AXLb6d09a6e6b2f48448f40e71d7b43e060/05/05/2025 15:54:27",
+      "reference": "765451555406",
+      "balance": 10001.98,
+      "counterparty": "38850@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2a27f97cf2f217e0817d",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "7d3d89f42f072799943a",
+        "82de4dd6a67c5517e411",
+        "84a997bd76cb04dbf176",
+        "921c821f66624ddc2a64",
+        "a197d69554749aa1ab86",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43",
+        "e4b8b1a852ea017f0d0c",
+        "fae2939ba015d6bc0745"
+      ]
+    },
+    {
+      "transaction_id": "20250505155442995312",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 2000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/978605148926/MEHEK/CNRB/**38850@axl/Payment //AXL7770ec1e483c4b97a310defadcb5bade/05/05/2025 15:54:42",
+      "reference": "978605148926",
+      "balance": 12001.98,
+      "counterparty": "38850@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2642fa5c46c635fd45eb",
+        "2da5324ae89431dc24f5",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "469a17f20a2a722cff78",
+        "5569cb10c8fb911d3583",
+        "7fd399b2f57a02356b83",
+        "921c821f66624ddc2a64",
+        "ac4e71e440926faf6888",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43",
+        "f8dc1ad1b02db8653608"
+      ]
+    },
+    {
+      "transaction_id": "20250505155509025103",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 2000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/489868486340/MEHEK/CNRB/**38850@axl/Payment //AXL312022ead3e24819b8842f5a130f8dad/05/05/2025 15:55:09",
+      "reference": "489868486340",
+      "balance": 14001.98,
+      "counterparty": "38850@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "120d24f94814bceba1eb",
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "4f2210055fbaa5aa44fd",
+        "5569cb10c8fb911d3583",
+        "96f0e156e1f9b2d2607b",
+        "a1c75d1e1c75934623f3",
+        "ac686d53bd02225e42a7",
+        "bcfa93028466ef166302",
+        "bd63ca03b6ca1f72ee80",
+        "cf12d8c00f22b72d1a43",
+        "fae2939ba015d6bc0745"
+      ]
+    },
+    {
+      "transaction_id": "20250505155528039972",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 2000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/750144933054/MEHEK/CNRB/**38850@axl/Payment //AXLa841929e92a34dce845c3a0ad1833c35/05/05/2025 15:55:28",
+      "reference": "750144933054",
+      "balance": 16001.98,
+      "counterparty": "38850@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "35474695b45870cdeab6",
+        "3d208627d7cd1e4519d2",
+        "3faa96591c0372a213c4",
+        "40ad1b8cf366e0c1b5f0",
+        "40c0fa7d3bc5f41acb8d",
+        "7fd399b2f57a02356b83",
+        "816fe570758e1c5a62b1",
+        "96f0e156e1f9b2d2607b",
+        "a197d69554749aa1ab86",
+        "b386a56f79053456b072",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505155744028028",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 1000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-KBL05220-NRMOHALLAMYSOREKAIN-05/05/25 15:57:44/0008",
+      "reference": "512515664065",
+      "balance": 15001.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Large Credit Followed by Cash Withdrawal",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "120d24f94814bceba1eb",
+        "282aa066ad2f09e2a89e",
+        "35e0192660bf9e166d15",
+        "63aca0441334bedaf132",
+        "778c454e3b3c6e1cea1f",
+        "816fe570758e1c5a62b1",
+        "82de4dd6a67c5517e411",
+        "ac4e71e440926faf6888",
+        "ce85ef5923ec4259c8de",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b",
+        "f4b2759d3d42aa796078"
+      ]
+    },
+    {
+      "transaction_id": "20250505155845029368",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 10000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-KBL05220-NRMOHALLAMYSOREKAIN-05/05/25 15:58:45/0008",
+      "reference": "512515664067",
+      "balance": 5001.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Large Credit Followed by Cash Withdrawal",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "120d24f94814bceba1eb",
+        "282aa066ad2f09e2a89e",
+        "63aca0441334bedaf132",
+        "778c454e3b3c6e1cea1f",
+        "816fe570758e1c5a62b1",
+        "82de4dd6a67c5517e411",
+        "ac4e71e440926faf6888",
+        "ce85ef5923ec4259c8de",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b",
+        "f4b2759d3d42aa796078"
+      ]
+    },
+    {
+      "transaction_id": "20250505155937030538",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 1000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-KBL15095-KBLNRMOHALLAMYSOREKAIN-05/05/25 15:59:37/0008",
+      "reference": "512515763835",
+      "balance": 4001.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Large Credit Followed by Cash Withdrawal",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "120d24f94814bceba1eb",
+        "282aa066ad2f09e2a89e",
+        "35e0192660bf9e166d15",
+        "63aca0441334bedaf132",
+        "778c454e3b3c6e1cea1f",
+        "816fe570758e1c5a62b1",
+        "82de4dd6a67c5517e411",
+        "ac4e71e440926faf6888",
+        "ce85ef5923ec4259c8de",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b",
+        "f4b2759d3d42aa796078"
+      ]
+    },
+    {
+      "transaction_id": "20250505160023031606",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 4000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-KBL05220-NRMOHALLAMYSOREKAIN-05/05/25 16:00:23/0008",
+      "reference": "512516664069",
+      "balance": 1.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Large Credit Followed by Cash Withdrawal",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "120d24f94814bceba1eb",
+        "282aa066ad2f09e2a89e",
+        "63aca0441334bedaf132",
+        "778c454e3b3c6e1cea1f",
+        "816fe570758e1c5a62b1",
+        "82de4dd6a67c5517e411",
+        "ac4e71e440926faf6888",
+        "ce85ef5923ec4259c8de",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b",
+        "f4b2759d3d42aa796078"
+      ]
+    },
+    {
+      "transaction_id": "20250505192930137110",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 600.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104323579684/PRIYA /HDFC/**748-2@wahdfcbank/PAY BY W//HDFCWCF36D5335C6133D33FA9E47B04D89E/05/05/2025 19:29:30",
+      "reference": "104323579684",
+      "balance": 601.98,
+      "counterparty": "748-2@wahdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250505194221356182",
+      "account_id": "110236092552",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 599.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512504532245/PAWAN KUM/BARB/**69407@barodampay/UPI//AXIfc2e80c05ac54973a5098024d4158e0d/05/05/2025 19:42:21",
+      "reference": "512504532245",
+      "balance": 2.98,
+      "counterparty": "69407@barodampay",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507103925671381",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104403667279/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDFf8231e5baf3a4d5f852d191b544382d5/07/05/2025 10:39:25",
+      "reference": "104403667279",
+      "balance": 102.98,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507104028735753",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 10000.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104403722236/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDF124781445d7d407d96f36f7b500abc92/07/05/2025 10:40:28",
+      "reference": "104403722236",
+      "balance": 10102.98,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507104910267617",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 10000.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549347532015/ST PHILOM/UTIB/**7.sanj@axisbank/collegef//AXI3c8b325f2704462bac6e08a704bafc38/07/05/2025 10:49:10",
+      "reference": "549347532015",
+      "balance": 102.98,
+      "counterparty": "7.sanj@axisbank",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "20250507113215983443",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 8.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549356826978/920657390/PPIW/**73909@mbk/UPI//AXIb07807db3e424c23babf5dd583e1c5a1/07/05/2025 11:32:15",
+      "reference": "549356826978",
+      "balance": 94.98,
+      "counterparty": "73909@mbk",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507132540280176",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 122.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549320732499/PRASHANTH/YESB/**07547@ybl/UPI//AXI2a631a3252c240068ef08e2043f4e66c/07/05/2025 13:25:40",
+      "reference": "549320732499",
+      "balance": 2472.98,
+      "counterparty": "07547@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507134459529382",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 18.0,
+      "direction": "debit",
+      "narration": "UPI/DR/700746551506/RAYAN AHM/PPIW/**73909@mbk/Payment //AXL897e6f526dad4d75bd58b6ce420f008e/07/05/2025 13:44:59",
+      "reference": "700746551506",
+      "balance": 2454.98,
+      "counterparty": "73909@mbk",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507135135943865",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 800.0,
+      "direction": "debit",
+      "narration": "UPI/DR/059586770255/Dinesh sh/YESB/**0qnww@ptys/Payment //AXLf1b3308f84744717b1b379c09583d8e4/07/05/2025 13:51:35",
+      "reference": "059586770255",
+      "balance": 1654.98,
+      "counterparty": "0qnww@ptys",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507142212788704",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 500.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549328341462/920657390/PPIW/**73909@mbk/UPI//AXI2f8d9f4e55c34defb30e784dd5ad2fee/07/05/2025 14:22:12",
+      "reference": "549328341462",
+      "balance": 1154.98,
+      "counterparty": "73909@mbk",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507142336868537",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 18.0,
+      "direction": "credit",
+      "narration": "UPI/CR/549301744545/ARMAN  KH/CNRB/**vaish@okaxis/UPI//AXI85e46044ae6c417ab5fa11700c2a6bff/07/05/2025 14:23:36",
+      "reference": "549301744545",
+      "balance": 1172.98,
+      "counterparty": "vaish@okaxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Low-Value Reciprocal Account Testing",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "ae08ed2409a285af5a9d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507154106112756",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 1.0,
+      "direction": "credit",
+      "narration": "UPI/CR/549332847277/ARMAN  KH/CNRB/**vaish@okaxis/UPI//AXI8bc6472a3c5a429fac95dc55163eae7d/07/05/2025 15:41:06",
+      "reference": "549332847277",
+      "balance": 1494.98,
+      "counterparty": "vaish@okaxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Low-Value Reciprocal Account Testing",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "ae08ed2409a285af5a9d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43",
+        "fbb263491b15877ee74c"
+      ]
+    },
+    {
+      "transaction_id": "20250507154649418143",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 1490.0,
+      "direction": "debit",
+      "narration": "UPI/DR/549341249788/ARMAN KHAN/KKBK/**96073@axl/UPI//AXIfb2fa5c50f9845d8b972e2fe9b40dde9/07/05/2025 15:46:49",
+      "reference": "549341249788",
+      "balance": 4.98,
+      "counterparty": "96073@axl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250507211455157417",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 1.0,
+      "direction": "credit",
+      "narration": "UPI/CR/549361987484/ARMAN  KH/CNRB/**vaish@okaxis/UPI//AXI4201f468723a4e29bbfadb67aa0f9ac4/07/05/2025 21:14:55",
+      "reference": "549361987484",
+      "balance": 5.98,
+      "counterparty": "vaish@okaxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Low-Value Reciprocal Account Testing",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "ae08ed2409a285af5a9d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43",
+        "fbb263491b15877ee74c"
+      ]
+    },
+    {
+      "transaction_id": "20250508134048039764",
+      "account_id": "110236092552",
+      "date": "2025-05-08",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/603868526577/RIZWAN PA/UBIN/**priya@axl/Payment //AXL00aca0c3ed24487aba95b3c7152f762d/08/05/2025 13:40:48",
+      "reference": "603868526577",
+      "balance": 105.98,
+      "counterparty": "priya@axl",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250508134142098901",
+      "account_id": "110236092552",
+      "date": "2025-05-08",
+      "time": "",
+      "amount": 100.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512857216934/Dinesh sh/YESB/**0qnww@ptys/UPI//AXIdd80c9e049024335b8e53fd8ce80e48a/08/05/2025 13:41:42",
+      "reference": "512857216934",
+      "balance": 5.98,
+      "counterparty": "0qnww@ptys",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250508195420533361",
+      "account_id": "110236092552",
+      "date": "2025-05-08",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104493119508/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDF96c8e9f77e5d4188b7d7defa29837f1a/08/05/2025 19:54:20",
+      "reference": "104493119508",
+      "balance": 105.98,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250508212157472666",
+      "account_id": "110236092552",
+      "date": "2025-05-08",
+      "time": "",
+      "amount": 20.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512830659740/Google In/UTIB/**panka@okpayaxis/UPI//AXI365cc6de9675481b845a737905c2d4a3/08/05/2025 21:21:57",
+      "reference": "512830659740",
+      "balance": 85.98,
+      "counterparty": "panka@okpayaxis",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250508222729715338",
+      "account_id": "110236092552",
+      "date": "2025-05-08",
+      "time": "",
+      "amount": 50.0,
+      "direction": "debit",
+      "narration": "UPI/DR/512830168060/ABDUL RAH/YESB/**18332@ybl/UPI//AXI586d5f9806484168847986be9cda20d1/08/05/2025 22:27:29",
+      "reference": "512830168060",
+      "balance": 35.98,
+      "counterparty": "18332@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250515094432046605",
+      "account_id": "110236092552",
+      "date": "2025-05-15",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/104837109616/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDF4dc25840ff2f428d849bf3404a64fab1/15/05/2025 09:44:32",
+      "reference": "104837109616",
+      "balance": 135.98,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "20250518213039306417",
+      "account_id": "110236092552",
+      "date": "2025-05-18",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/105037374139/PRIYA /HDFC/**46564@okhdfcbank/UPI//HDFe8762f13b0914ab5906ba08cccc28f4e/18/05/2025 21:30:39",
+      "reference": "105037374139",
+      "balance": 235.98,
+      "counterparty": "46564@okhdfcbank",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "bcfa93028466ef166302",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "6036620250502008100000159",
+      "account_id": "110236092552",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 430000.0,
+      "direction": "debit",
+      "narration": "HAMEED UR RAHMAN - LASHKAR-MYS",
+      "reference": "001240095732",
+      "balance": 4544.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Repeated Round-Value Debit Pattern",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "38e641e08e14977ea7ac",
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "6036620250507000300000075",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 245000.0,
+      "direction": "debit",
+      "narration": "CASA. Cheque Withdrawal - LASHKAR-MYS",
+      "reference": "001240095735",
+      "balance": 2594.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "6036620250507000300000137",
+      "account_id": "110236092552",
+      "date": "2025-05-07",
+      "time": "",
+      "amount": 255000.0,
+      "direction": "debit",
+      "narration": "CASA. Cheque Withdrawal - LASHKAR-MYS",
+      "reference": "001240095736",
+      "balance": 1493.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "64071620250423172866",
+      "account_id": "110236092552",
+      "date": "2025-04-23",
+      "time": "",
+      "amount": 42.0,
+      "direction": "debit",
+      "narration": "APY Contri for(500966300851)04-2025",
+      "reference": "000000000000",
+      "balance": 824.0,
+      "counterparty": "500966300851",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "3d208627d7cd1e4519d2",
+        "40c0fa7d3bc5f41acb8d",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "64500620250503008700000076",
+      "account_id": "110236092552",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 465000.0,
+      "direction": "debit",
+      "narration": "HAMEED - LASHKAR-MYS",
+      "reference": "001240095734",
+      "balance": 2040.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Repeated Round-Value Debit Pattern",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "cf12d8c00f22b72d1a43",
+        "cff4b904db03672f8e8b"
+      ]
+    },
+    {
+      "transaction_id": "PMSBY33103603201128999",
+      "account_id": "110236092552",
+      "date": "2025-05-25",
+      "time": "",
+      "amount": 20.0,
+      "direction": "debit",
+      "narration": "PMSBY Renewal(25-26)-331036032-01128999",
+      "reference": "",
+      "balance": 215.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "552592512561b8584e8e",
+        "cf12d8c00f22b72d1a43",
+        "fbfb5d76550f6030f52d"
+      ]
+    },
+    {
+      "transaction_id": "PMSBY33103603201128999#occurrence-2",
+      "account_id": "110236092552",
+      "date": "2025-05-25",
+      "time": "",
+      "amount": 20.0,
+      "direction": "debit",
+      "narration": "PMSBY Renewal(25-26)-331036032-01128999",
+      "reference": "",
+      "balance": 195.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "552592512561b8584e8e",
+        "5b3d49b03e4db1783105",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "PMSBY33103603201128999#occurrence-3",
+      "account_id": "110236092552",
+      "date": "2025-05-25",
+      "time": "",
+      "amount": 20.0,
+      "direction": "debit",
+      "narration": "PMSBY Renewal(25-26)-331036032-01128999",
+      "reference": "",
+      "balance": 175.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "5b3d49b03e4db1783105",
+        "cf12d8c00f22b72d1a43",
+        "fbfb5d76550f6030f52d"
+      ]
+    },
+    {
+      "transaction_id": "PMSBY33103603201128999#occurrence-4",
+      "account_id": "110236092552",
+      "date": "2025-05-26",
+      "time": "",
+      "amount": 20.0,
+      "direction": "credit",
+      "narration": "REV : PMSBY Renewal(25-26)-331036032-01128999 25-MAY-25 06.41.32.513946 AM",
+      "reference": "",
+      "balance": 195.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "21223b120b434890c0b6",
+        "cf12d8c00f22b72d1a43"
+      ]
+    },
+    {
+      "transaction_id": "PMSBY33103603201128999#occurrence-5",
+      "account_id": "110236092552",
+      "date": "2025-05-26",
+      "time": "",
+      "amount": 20.0,
+      "direction": "credit",
+      "narration": "REV : PMSBY Renewal(25-26)-331036032-01128999 25-MAY-25 06.41.31.965511 AM",
+      "reference": "",
+      "balance": 215.98,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "21223b120b434890c0b6",
+        "cf12d8c00f22b72d1a43"
+      ]
+    }
+  ],
+  "flagged_accounts": [
+    {
+      "account_id": "110236092552",
+      "patterns_triggered": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Low-Value Reciprocal Account Testing",
+        "Repeated Round-Value Debit Pattern",
+        "Structuring / Smurfing Detection",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "distinct_pattern_count": 9,
+      "total_flagged_transactions": 562,
+      "account_holder": "PRIYA SUNITA KAPOOR",
+      "bank_name": "5151",
+      "total_credit": 1485518.0,
+      "total_debit": 1485298.02,
+      "total_volume": 2970816.02,
+      "transaction_count": 141,
+      "total_findings": 52
+    },
+    {
+      "account_id": "vaish@okaxis",
+      "patterns_triggered": [
+        "Low-Value Reciprocal Account Testing"
+      ],
+      "distinct_pattern_count": 1,
+      "total_flagged_transactions": 5,
+      "total_findings": 1
+    }
+  ],
+  "patterns_detected": [
+    {
+      "pattern_id": 1,
+      "pattern_name": "Duplicate Transaction Cross-Check",
+      "findings_count": 35,
+      "findings": [
+        {
+          "finding_id": "552592512561b8584e8e",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions PMSBY33103603201128999 and PMSBY33103603201128999#occurrence-2 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "5b3d49b03e4db1783105",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions PMSBY33103603201128999#occurrence-2 and PMSBY33103603201128999#occurrence-3 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "fbfb5d76550f6030f52d",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions PMSBY33103603201128999 and PMSBY33103603201128999#occurrence-3 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "fbb263491b15877ee74c",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250507154106112756 and 20250507211455157417 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "5ec79cac6a7458a81e7c",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250427165253006010 and 20250427165425007467 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "35e0192660bf9e166d15",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155744028028 and 20250505155937030538 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "95640b514c3a89888f48",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155314912121 and 20250505155332930664 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "98bea0c5e0d31b60621c",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155332930664 and 20250505155351946479 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "5b26a15861d4bcaa43f1",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155314912121 and 20250505155351946479 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "592b835bef3c4718003a",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155351946479 and 20250505155409964826 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "343b3763a84bec75f7f5",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155332930664 and 20250505155409964826 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "4dcbcc52656c57254a6a",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155314912121 and 20250505155409964826 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "e4b8b1a852ea017f0d0c",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155409964826 and 20250505155427981158 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "84a997bd76cb04dbf176",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155351946479 and 20250505155427981158 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "7d3d89f42f072799943a",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155332930664 and 20250505155427981158 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "2a27f97cf2f217e0817d",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155314912121 and 20250505155427981158 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "921c821f66624ddc2a64",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155427981158 and 20250505155442995312 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "2642fa5c46c635fd45eb",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155409964826 and 20250505155442995312 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "2da5324ae89431dc24f5",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155351946479 and 20250505155442995312 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "469a17f20a2a722cff78",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155332930664 and 20250505155442995312 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "f8dc1ad1b02db8653608",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155314912121 and 20250505155442995312 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "5569cb10c8fb911d3583",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155442995312 and 20250505155509025103 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "fae2939ba015d6bc0745",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155427981158 and 20250505155509025103 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "bd63ca03b6ca1f72ee80",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155409964826 and 20250505155509025103 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "4f2210055fbaa5aa44fd",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155351946479 and 20250505155509025103 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "ac686d53bd02225e42a7",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155332930664 and 20250505155509025103 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "a1c75d1e1c75934623f3",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155314912121 and 20250505155509025103 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "96f0e156e1f9b2d2607b",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155509025103 and 20250505155528039972 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "7fd399b2f57a02356b83",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155442995312 and 20250505155528039972 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "a197d69554749aa1ab86",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155427981158 and 20250505155528039972 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "35474695b45870cdeab6",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155409964826 and 20250505155528039972 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "b386a56f79053456b072",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155351946479 and 20250505155528039972 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "3faa96591c0372a213c4",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155332930664 and 20250505155528039972 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "40ad1b8cf366e0c1b5f0",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 20250505155314912121 and 20250505155528039972 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "21223b120b434890c0b6",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions PMSBY33103603201128999#occurrence-4 and PMSBY33103603201128999#occurrence-5 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 5,
+      "pattern_name": "Transit / Pass-Through Detection",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "3d208627d7cd1e4519d2",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 115,
+          "explanation": "Account 110236092552 processed 2970816.02 in combined inflow/outflow with a 100.0% throughput ratio across multiple counterparties, consistent with pass-through use.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 6,
+      "pattern_name": "Accumulation Account Detection",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "bcfa93028466ef166302",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 45,
+          "explanation": "Account 110236092552 received 1485518.00 from many counterparties while debiting only 100.0% of total credits, consistent with accumulation.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 7,
+      "pattern_name": "Structuring / Smurfing Detection",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "38e641e08e14977ea7ac",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 16,
+          "explanation": "Account 110236092552 made 16 debit transactions on 2025-05-02; each was below the runtime individual cutoff, while together they totalled 435088.02.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 11,
+      "pattern_name": "High-Throughput Pass-Through Accounts",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "40c0fa7d3bc5f41acb8d",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 115,
+          "explanation": "Account 110236092552 received 1485518.00 from 18 sources and disbursed 1485298.02 to 40 targets, retaining only 0.0% of inflow — consistent with high-throughput pass-through.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 14,
+      "pattern_name": "Large Credit Followed by Cash Withdrawal",
+      "findings_count": 10,
+      "findings": [
+        {
+          "finding_id": "6550803a733f122abeb0",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 4,
+          "explanation": "Account 110236092552 received a credit of 40000.00 followed by 3 ATM/cash withdrawal(s) totalling 40000.00 (100% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "778c454e3b3c6e1cea1f",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 6,
+          "explanation": "Account 110236092552 received a credit of 10000.00 followed by 5 ATM/cash withdrawal(s) totalling 26000.00 (260% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "63aca0441334bedaf132",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110236092552 received a credit of 2000.00 followed by 4 ATM/cash withdrawal(s) totalling 16000.00 (800% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "ce85ef5923ec4259c8de",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110236092552 received a credit of 2000.00 followed by 4 ATM/cash withdrawal(s) totalling 16000.00 (800% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "f4b2759d3d42aa796078",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110236092552 received a credit of 2000.00 followed by 4 ATM/cash withdrawal(s) totalling 16000.00 (800% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "282aa066ad2f09e2a89e",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110236092552 received a credit of 2000.00 followed by 4 ATM/cash withdrawal(s) totalling 16000.00 (800% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "82de4dd6a67c5517e411",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110236092552 received a credit of 2000.00 followed by 4 ATM/cash withdrawal(s) totalling 16000.00 (800% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "ac4e71e440926faf6888",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110236092552 received a credit of 2000.00 followed by 4 ATM/cash withdrawal(s) totalling 16000.00 (800% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "120d24f94814bceba1eb",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110236092552 received a credit of 2000.00 followed by 4 ATM/cash withdrawal(s) totalling 16000.00 (800% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "816fe570758e1c5a62b1",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110236092552 received a credit of 2000.00 followed by 4 ATM/cash withdrawal(s) totalling 16000.00 (800% of credit) within 0 day(s).",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 16,
+      "pattern_name": "Repeated Round-Value Debit Pattern",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "cff4b904db03672f8e8b",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 16,
+          "explanation": "Account 110236092552 made 16 round-value debits totalling 1474000.00, with repeated amounts: ₹1,000 x5, ₹10,000 x3.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 19,
+      "pattern_name": "Low-Value Reciprocal Account Testing",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "ae08ed2409a285af5a9d",
+          "accounts": [
+            "110236092552",
+            "vaish@okaxis"
+          ],
+          "transaction_count": 5,
+          "explanation": "Accounts 110236092552 and vaish@okaxis exchanged 5 low-value transaction(s) (amounts: 25.00, 10.00, 18.00, 1.00, 1.00), consistent with account-testing behaviour — larger transfers were subsequently observed.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 21,
+      "pattern_name": "Top Suspicious Account Ranking",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "cf12d8c00f22b72d1a43",
+          "accounts": [
+            "110236092552"
+          ],
+          "transaction_count": 130,
+          "explanation": "Account 110236092552 is flagged by 8 distinct pattern types with 51 total finding(s): accumulation_account_detection, duplicate_detection_cross_check, high_throughput_pass_through_detection, large_credit_followed_by_cash_withdrawal, low_value_reciprocal_account_testing, repeated_round_value_debit_pattern, structuring_smurfing_detection, transit_pass_through_detection.",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "key_transactions": [
+    "17243920250502000600635477",
+    "20250427141112124486",
+    "20250427141752463999",
+    "20250427150834933723",
+    "20250427154043478502",
+    "20250427165006725351",
+    "20250427165253006010",
+    "20250427165425007467",
+    "20250427165556008978",
+    "20250427170038271803",
+    "20250427170552546122",
+    "20250427172716724680",
+    "20250427180707203824",
+    "20250427184709032709",
+    "20250427194142587575",
+    "20250427194242668300",
+    "20250427194447834604",
+    "20250427204943578690",
+    "20250427222826333462",
+    "20250427231328441350",
+    "20250427233043770374",
+    "20250427234429987716",
+    "20250428105133190706",
+    "20250428105236256379",
+    "20250428105311294050",
+    "20250428133649554026",
+    "20250428183510383803",
+    "20250428190043482533",
+    "20250428190301679235",
+    "20250429104753345687",
+    "20250429110749520572",
+    "20250429113727314636",
+    "20250429114831986371",
+    "20250429133337471998",
+    "20250429134148981971",
+    "20250429134415129362",
+    "20250429154612772306",
+    "20250429154753860219",
+    "20250429164712065035",
+    "20250429164834142460",
+    "20250429183134993264",
+    "20250429183355173193",
+    "20250430144003541838",
+    "20250430144052589826",
+    "20250502101210247460",
+    "20250502105301978577",
+    "20250502121540683559",
+    "20250502134337489256",
+    "20250502143759893264",
+    "20250502155807465872",
+    "20250502160001576778",
+    "20250502162335942970",
+    "20250502182046869911",
+    "20250502183753282432",
+    "20250502190141348015",
+    "20250502190314486320",
+    "20250502191259412197",
+    "20250502191341472904",
+    "20250502193312359131",
+    "20250502203405650124",
+    "20250503092056605470",
+    "20250503122043147826",
+    "20250503124405739677",
+    "20250503124540843905",
+    "20250503125851729215",
+    "20250503132728666506",
+    "20250503140626193113",
+    "20250503142703447402",
+    "20250503174340200690",
+    "20250503185252778859",
+    "20250503195034250773",
+    "20250504182223234182",
+    "20250504182252264110",
+    "20250504203713359460",
+    "20250504210712419259",
+    "20250504212131311262",
+    "20250504212505530786",
+    "20250504223847898718",
+    "20250505003519073536",
+    "20250505014321497545",
+    "20250505014436503015",
+    "20250505024753734932",
+    "20250505033223867098",
+    "20250505033418873556",
+    "20250505153414817928",
+    "20250505153723001856",
+    "20250505153958148579",
+    "20250505155314912121",
+    "20250505155332930664",
+    "20250505155351946479",
+    "20250505155409964826",
+    "20250505155427981158",
+    "20250505155442995312",
+    "20250505155509025103",
+    "20250505155528039972",
+    "20250505155744028028",
+    "20250505155845029368",
+    "20250505155937030538",
+    "20250505160023031606",
+    "20250505192930137110",
+    "20250505194221356182",
+    "20250507103925671381",
+    "20250507104028735753",
+    "20250507104910267617",
+    "20250507113215983443",
+    "20250507132540280176",
+    "20250507134459529382",
+    "20250507135135943865",
+    "20250507142212788704",
+    "20250507142336868537",
+    "20250507154106112756",
+    "20250507154649418143",
+    "20250507211455157417",
+    "20250508134048039764",
+    "20250508134142098901",
+    "20250508195420533361",
+    "20250508212157472666",
+    "20250508222729715338",
+    "20250515094432046605",
+    "20250518213039306417",
+    "6036620250502008100000159",
+    "6036620250507000300000075",
+    "6036620250507000300000137",
+    "64071620250423172866",
+    "64500620250503008700000076",
+    "PMSBY33103603201128999",
+    "PMSBY33103603201128999#occurrence-2",
+    "PMSBY33103603201128999#occurrence-3",
+    "PMSBY33103603201128999#occurrence-4",
+    "PMSBY33103603201128999#occurrence-5"
+  ],
+  "overview": "Analysis of 331087 CASA Account Statement_Report - 2026-01-05T125553.377.csv containing 141 transactions across 1 accounts from 2025-04-16 to 2025-12-28. The engine detected 52 finding(s) across 9 pattern type(s): Duplicate Transaction Cross-Check, Transit / Pass-Through Detection, Accumulation Account Detection, Structuring / Smurfing Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking. 2 account(s) were flagged as suspicious with 130 transaction(s) identified as potentially fraudulent."
+}

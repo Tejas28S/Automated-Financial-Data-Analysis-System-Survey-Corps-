@@ -46,6 +46,11 @@ logger = logging.getLogger(__name__)
 
 # Keywords in narration that suggest a transaction was reversed or failed
 REVERSAL_KEYWORDS = ["reversal", "failed", "return", "reversed", "failure", "bounce", "dishonour"]
+SOURCE_ACCOUNT_ID_COLUMN = "source_account_id"
+
+
+def _account_group_column(df: pd.DataFrame) -> str:
+    return SOURCE_ACCOUNT_ID_COLUMN if SOURCE_ACCOUNT_ID_COLUMN in df.columns else "Account_ID"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -516,9 +521,10 @@ def _check_balance_arithmetic(df: pd.DataFrame) -> pd.DataFrame:
     # Only perform arithmetic on rows with valid dates (those not already flagged)
     unflagged_mask = df["flag_reason"].isna()
 
-    for account_id in df["Account_ID"].unique():
+    group_col = _account_group_column(df)
+    for account_id in df[group_col].unique():
         # Process each account's transactions independently
-        account_mask = (df["Account_ID"] == account_id) & unflagged_mask
+        account_mask = (df[group_col] == account_id) & unflagged_mask
         account_indices = df.index[account_mask].tolist()
 
         if len(account_indices) < 2:
@@ -662,9 +668,10 @@ def mark_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     """
     Tags exact duplicate transactions WITHOUT deleting any of them (Problem 6).
 
-    A duplicate is a row where Date, Narration, Debit, Credit, and Account_ID are
-    all identical to an earlier row. This can happen when a multi-page PDF repeats
-    a header row, a file is uploaded twice, or two statements overlap in period.
+    A duplicate is a row where Date, Narration, Debit, Credit, and the reliable
+    per-source account key are all identical to an earlier row. This can happen
+    when a multi-page PDF repeats a header row, a file is uploaded twice, or two
+    statements overlap in period.
 
     Instead of dropping them (which loses evidence), we KEEP every row and add a
     `duplicate_of` column: the first occurrence has duplicate_of = None, and each
@@ -687,13 +694,15 @@ def mark_duplicates(df: pd.DataFrame) -> pd.DataFrame:
         df["duplicate_of"] = []
         return df
 
-    # Give every row a stable id (account + position) so we can reference it.
+    group_col = _account_group_column(df)
+
+    # Give every row a stable id (account/source + position) so we can reference it.
     df["txn_id"] = [
-        f"{acc}_{i:06d}" for i, acc in enumerate(df["Account_ID"].tolist())
+        f"{acc}_{i:06d}" for i, acc in enumerate(df[group_col].tolist())
     ]
     df["duplicate_of"] = None
 
-    key_cols = ["Date", "Narration", "Debit", "Credit", "Account_ID"]
+    key_cols = ["Date", "Narration", "Debit", "Credit", group_col]
     first_seen = {}  # fingerprint -> txn_id of the first row with that fingerprint
     dup_count = 0
     for idx in df.index:
@@ -758,6 +767,7 @@ def _mark_reversals(df: pd.DataFrame) -> pd.DataFrame:
     # For each debit row, check if the next row is a credit for the same amount
     # with a reversal keyword. This catches cases where the narration says
     # "REVERSAL" on the credit side but not the debit side.
+    group_col = _account_group_column(df)
     for i in range(len(df) - 1):
         curr_row = df.iloc[i]
         next_row = df.iloc[i + 1]
@@ -767,7 +777,7 @@ def _mark_reversals(df: pd.DataFrame) -> pd.DataFrame:
             curr_row["Debit"] > 0 and
             next_row["Credit"] > 0 and
             abs(curr_row["Debit"] - next_row["Credit"]) < BALANCE_TOLERANCE and
-            curr_row["Account_ID"] == next_row["Account_ID"]
+            curr_row[group_col] == next_row[group_col]
         ):
             # Check if the next row's narration contains a reversal keyword
             next_narration = str(next_row["Narration"]).lower()

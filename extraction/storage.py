@@ -45,6 +45,15 @@ import pandas as pd
 from config.settings import EXTRACTIONS_DIR
 
 logger = logging.getLogger(__name__)
+SOURCE_ACCOUNT_ID_COLUMN = "source_account_id"
+
+
+def _append_column_last(df: pd.DataFrame, column: str) -> pd.DataFrame:
+    """Ensure an additive output column is present and physically last."""
+    out = df.copy()
+    if column not in out.columns:
+        out[column] = ""
+    return out[[c for c in out.columns if c != column] + [column]]
 
 
 def _df_to_records(df: pd.DataFrame) -> List[Dict[str, Any]]:
@@ -157,6 +166,7 @@ def persist_extraction_run(
                     "credit": credit,
                     "narration": row.get("Narration", ""),
                     "reason_flagged": "exact_duplicate (same Date + Narration + Debit + Credit + Account)",
+                    "source_account_id": row.get(SOURCE_ACCOUNT_ID_COLUMN, ""),
                 })
             duplicates_out = pd.DataFrame(dup_records)
         # Keep only first occurrences in the clean table.
@@ -167,7 +177,9 @@ def persist_extraction_run(
         duplicates_out = pd.DataFrame(columns=[
             "duplicate_row_number", "original_row_number", "account_number",
             "date", "amount", "debit", "credit", "narration", "reason_flagged",
+            "source_account_id",
         ])
+    duplicates_out = _append_column_last(duplicates_out, SOURCE_ACCOUNT_ID_COLUMN)
     duplicates_out.to_csv(duplicates_path, index=False)
 
     # ── 2. Combined clean transactions → CSV, led by REAL identity columns ────
@@ -185,9 +197,11 @@ def persist_extraction_run(
         lead = ["account_number", "account_holder", "ifsc_code"]
         present_lead = [c for c in lead if c in clean_out.columns]
         clean_out = clean_out[present_lead + [c for c in clean_out.columns if c not in present_lead]]
+    clean_out = _append_column_last(clean_out, SOURCE_ACCOUNT_ID_COLUMN)
     clean_out.to_csv(clean_path, index=False)
 
     # ── 3. Flagged rows → CSV. Surfaced, NEVER dropped silently. ──────────────
+    flagged_df = _append_column_last(flagged_df, SOURCE_ACCOUNT_ID_COLUMN)
     flagged_df.to_csv(flagged_path, index=False)
 
     # ── 4. Metadata → JSON: the run's audit receipt ───────────────────────────

@@ -1,0 +1,73 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/synthetic_cases/pattern_03_accumulation/ac_case_01.csv
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/val_ac01
+Run timestamp: 2026-07-02T17:17:07.018353+00:00
+Elapsed seconds: 2.65
+
+Input Contract
+--------------
+Clean rows: 525
+Flagged rows: 0
+Duplicate rows: 0
+Metadata clean rows: 
+Summary-report clean rows: 
+Count reconciliation: ok
+Reconciliation detail: Single flat CSV input.
+
+Analysis Scope
+--------------
+Total stored rows: 525
+Eligible detection rows: 525
+Excluded rows: 0
+Accounts: 6
+Graph nodes: 71
+Graph edges: 354
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 525
+Resolved counterparty rows: 375
+Resolution rate percent: 71.42857142857143
+LLM calls made: 0
+LLM status: disabled_no_key
+
+Balance Data Quality
+--------------------
+No balance inconsistencies detected in this dataset.
+
+Finding Counts
+--------------
+1_duplicate_verification: 1
+2_failed_reversed_transaction_detection: 0
+3_pass_through_routing_account: 0
+4_fund_pooling_account: 1
+5_structuring_smurfing_detection: 0
+6_money_flow_graph_construction: 1
+7_circular_flow_multi_hop_cycle_detection: 0
+8_money_trail_tracing: 3
+9_credit_to_cash_out_chains: 0
+10_cross_statement_links: 21
+11_balance_parking_account: 1
+12_hub_ranking: 1
+13_low_value_account_testing: 0
+14_reversal_clusters: 0
+15_round_value_debit_patterns: 3
+16_shared_upi_identifiers: 1
+17_round_trip_detection: 0
+18_dormant_reactivation: 0
+19_first_contact_large_transfer: 12
+21_suspicious_account_ranking: 1
+22_llm_investigated_anomalies: 1
+23_ml_ensemble_anomaly_lead: 0
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 0
+duplicate: 0
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+42963560676: total_score=478.9209, distinct_patterns=7, total_findings=29

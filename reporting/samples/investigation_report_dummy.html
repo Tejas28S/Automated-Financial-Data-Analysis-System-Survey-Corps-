@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<!--
+  report_template.html — Single-source visual design for the forensic report.
+  Jinja2-filled by build_report.py, rendered to A4 PDF by Playwright (page.pdf).
+  Tier colour system (strong / weak / lead) is reused in the live interface so the
+  PDF and the app feel like one product.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root{
+    --ink:#1a2332; --muted:#5b6b7f; --line:#d8e0ea; --paper:#ffffff;
+    --brand:#0f3d6e; --brand-soft:#eaf1f9;
+    --strong:#b3261e; --strong-soft:#fbeae8;      /* strong-tier findings */
+    --weak:#8a6d00; --weak-soft:#fbf4dd;          /* weak-tier findings   */
+    --lead:#5a2ea6; --lead-soft:#f0eafb;          /* AI-flagged leads     */
+    --ok:#1d7a4d;
+  }
+  @page{ size:A4; margin:20mm 18mm; }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:"Helvetica Neue",Arial,"Segoe UI",sans-serif;
+    color:var(--ink); font-size:10.5pt; line-height:1.5;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  h1,h2,h3{ color:var(--brand); font-weight:700; line-height:1.2; }
+  h2{ font-size:16pt; margin:0 0 4mm; padding-bottom:2mm; border-bottom:2px solid var(--brand); }
+  h3{ font-size:12pt; margin:0 0 2mm; }
+  p{ margin:0 0 3mm; }
+  .muted{ color:var(--muted); }
+  .section{ page-break-before:always; }
+
+  /* ── Title page ── */
+  .title-page{ height:257mm; display:flex; flex-direction:column; justify-content:center; text-align:center; }
+  .title-page .kicker{ letter-spacing:3px; text-transform:uppercase; color:var(--muted); font-size:10pt; }
+  .title-page h1{ font-size:30pt; margin:6mm 0 2mm; }
+  .title-page .team{ font-size:13pt; color:var(--ink); margin-top:2mm; }
+  .title-badge{ display:inline-block; margin:5mm auto 0; padding:2mm 6mm; background:var(--brand-soft);
+                border:1px solid var(--line); border-radius:3mm; color:var(--brand); font-weight:700; letter-spacing:1px; }
+  .title-meta{ margin-top:14mm; color:var(--muted); font-size:10pt; }
+  .confidential{ margin-top:16mm; padding:4mm 8mm; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+                 color:var(--muted); font-size:9pt; font-style:italic; max-width:150mm; margin-left:auto; margin-right:auto; }
+
+  /* ── Tables ── */
+  table{ width:100%; border-collapse:collapse; margin:2mm 0 4mm; font-size:9.5pt; page-break-inside:avoid; }
+  th{ background:var(--brand-soft); color:var(--brand); text-align:left; font-weight:700;
+      padding:2mm 3mm; border-bottom:1.5px solid var(--brand); }
+  td{ padding:1.8mm 3mm; border-bottom:1px solid var(--line); vertical-align:top; }
+  tr:nth-child(even) td{ background:#fafcff; }
+  td.num,th.num{ text-align:right; font-variant-numeric:tabular-nums; }
+
+  /* ── Stat strip ── */
+  .stats{ display:flex; flex-wrap:wrap; gap:3mm; margin:3mm 0 5mm; }
+  .stat{ flex:1 1 30%; min-width:40mm; border:1px solid var(--line); border-radius:2mm; padding:3mm; background:var(--paper); }
+  .stat .n{ font-size:16pt; font-weight:700; color:var(--brand); }
+  .stat .l{ font-size:8.5pt; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+
+  /* ── Account finding blocks ── */
+  .account{ page-break-inside:avoid; margin-bottom:7mm; border:1px solid var(--line); border-radius:2mm; overflow:hidden; }
+  .account-head{ display:flex; justify-content:space-between; align-items:center;
+                 padding:3mm 4mm; background:var(--brand-soft); border-bottom:1px solid var(--line); }
+  .account-head .who{ font-size:12pt; font-weight:700; color:var(--brand); }
+  .account-head .sub{ font-size:9pt; color:var(--muted); }
+  .rankpill{ background:var(--brand); color:#fff; font-weight:700; font-size:9pt; padding:1mm 3mm; border-radius:10mm; }
+  .account-body{ padding:3mm 4mm; }
+  ul.findings{ margin:0 0 3mm; padding-left:5mm; }
+  ul.findings li{ margin-bottom:2mm; }
+  ul.findings li .ptag{ font-weight:700; }
+  .assess{ margin-top:2mm; padding:2mm 3mm; border-radius:2mm; font-weight:600; font-size:9.5pt; }
+  .tag-strong{ color:var(--strong); }
+  .tag-weak{ color:var(--weak); }
+  .badge{ display:inline-block; font-size:7.5pt; font-weight:700; text-transform:uppercase; letter-spacing:.5px;
+          padding:.5mm 2mm; border-radius:2mm; vertical-align:middle; }
+  .badge.strong{ background:var(--strong-soft); color:var(--strong); }
+  .badge.weak{ background:var(--weak-soft); color:var(--weak); }
+  .badge.lead{ background:var(--lead-soft); color:var(--lead); }
+  .assess.a-strong{ background:var(--strong-soft); color:var(--strong); }
+  .assess.a-weak{ background:var(--weak-soft); color:var(--weak); }
+
+  /* ── Graphs ── */
+  .graph-block{ page-break-inside:avoid; margin-bottom:6mm; }
+  .graph-block img{ width:100%; border:1px solid var(--line); border-radius:2mm; }
+  .graph-note{ padding:8mm; text-align:center; color:var(--muted); font-style:italic;
+               border:1px dashed var(--line); border-radius:2mm; }
+
+  /* ── AI leads (distinct heading colour) ── */
+  .leads h2{ color:var(--lead); border-bottom-color:var(--lead); }
+  .lead-item{ page-break-inside:avoid; border-left:3px solid var(--lead); background:var(--lead-soft);
+              padding:2mm 3mm; margin-bottom:3mm; border-radius:0 2mm 2mm 0; }
+
+  /* ── TOC ── */
+  .toc li{ margin-bottom:2mm; }
+  .toc .dots{ color:var(--line); }
+
+  .legend td:first-child{ font-weight:700; white-space:nowrap; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ 4.1 TITLE PAGE ══════════ -->
+<div class="title-page">
+  <div class="kicker">Confidential · For Investigative Use</div>
+  <h1>Financial Investigation<br>Analysis Report</h1>
+  <div class="title-badge">CIDECODE · Team Survey Corps</div>
+  <div class="team">Multi-Accused Cross-Account Investigation Engine</div>
+  <div class="title-meta">
+    Case reference: <strong>run_20260702_125349</strong><br>
+    Generated: 02 July 2026, 15:46
+  </div>
+  <div class="confidential">
+    This report presents investigative leads based on transaction pattern analysis.
+    It does not establish guilt — all findings should be independently verified before action.
+  </div>
+</div>
+
+<!-- ══════════ 4.2 TABLE OF CONTENTS ══════════ -->
+<div class="section">
+  <h2>Table of Contents</h2>
+  <ul class="toc" style="list-style:none;padding:0;">
+    <li>1 &nbsp; Input Summary</li>
+    <li>2 &nbsp; Analysis Summary</li>
+    <li>3 &nbsp; Findings by Account</li>
+    <li>4 &nbsp; Money-Flow Graphs</li>
+    
+    <li>5 &nbsp; Final Summary</li>
+  </ul>
+</div>
+
+<!-- ══════════ 4.3 INPUT SUMMARY ══════════ -->
+<div class="section">
+  <h2>1 · Input Summary</h2>
+  <p>This report is based on <strong>4</strong> uploaded statement
+     file(s) covering <strong>4</strong> account(s) and
+     <strong>9,816</strong> transactions, spanning
+     2022-08-01 to 2024-06-30.</p>
+  <table>
+    <thead><tr><th>Source Account ID</th><th>Account Number</th><th>Account Holder</th><th>Bank</th><th>IFSC</th></tr></thead>
+    <tbody>
+    
+      <tr><td>acct_001</td><td>00000051399615291</td>
+          <td>Ravi Kumar Sharma</td><td>State Bank of India</td><td>SBIN0393634</td></tr>
+    
+      <tr><td>acct_002</td><td>50105414883065</td>
+          <td>Meena Iyer</td><td>HDFC Bank</td><td>HDFC0212257</td></tr>
+    
+      <tr><td>acct_003</td><td>020235590238</td>
+          <td>Arjun Mehta</td><td>ICICI Bank</td><td>ICIC0608551</td></tr>
+    
+      <tr><td>acct_004</td><td>92003285733731</td>
+          <td>Deepa Nair</td><td>Axis Bank</td><td>UTIB0775715</td></tr>
+    
+    </tbody>
+  </table>
+</div>
+
+<!-- ══════════ 4.4 ANALYSIS SUMMARY ══════════ -->
+<div class="section">
+  <h2>2 · Analysis Summary</h2>
+  <p>The engine ran 4 account(s) through the full
+     deterministic detector suite and built a money-flow graph of
+     3,440 nodes and
+     3,704 transaction edges.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">4</div><div class="l">Accounts analysed</div></div>
+    <div class="stat"><div class="n">9,816</div><div class="l">Transactions</div></div>
+    <div class="stat"><div class="n">39.7%</div><div class="l">Counterparties resolved</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Accounts flagged</div></div>
+  </div>
+  <p class="muted">12 transactions were excluded from analysis due to balance inconsistencies identified during extraction.</p>
+</div>
+
+<!-- ══════════ 4.5 FINDINGS — ONE BLOCK PER RANKED ACCOUNT ══════════ -->
+<div class="section">
+  <h2>3 · Findings by Account</h2>
+  
+  
+  <div class="account">
+    <div class="account-head">
+      <div>
+        <div class="who">Deepa Nair <span class="badge strong">strong</span></div>
+        <div class="sub">acct_004 · Axis Bank · A/C 92003285733731 · Score 1,589</div>
+      </div>
+      <div class="rankpill">Rank #1</div>
+    </div>
+    <div class="account-body">
+      <ul class="findings">
+        
+        <li><span class="ptag">First Contact Large Transfer</span>
+            <span class="badge strong">strong</span>
+            — mohammed54@oksbi and acct_004 had no prior observed relationship before a large transfer of 32000.00 on 2022-08-28. <span class="muted">(+59 more of this type)</span></li>
+        
+        <li><span class="ptag">Cross Statement Links</span>
+            <span class="badge strong">strong</span>
+            — Matched flow link: debit of 850.00 from acct_004 matches credit of 850.00 to acct_002 on 2022-08-18. <span class="muted">(+22 more of this type)</span></li>
+        
+        <li><span class="ptag">Shared Upi Identifiers</span>
+            <span class="badge strong">strong</span>
+            — UPI identifier &#39;farhan713@ybl&#39; appears across 2 different accounts: acct_001, acct_004. This may indicate shared ownership or coordinated activity. <span class="muted">(+3 more of this type)</span></li>
+        
+        <li><span class="ptag">Money Trail Tracing</span>
+            <span class="badge strong">strong</span>
+            — Credit acct_004_008281 of 32000.00 was traced FIFO into 21 subsequent debit(s); 32000.00 was allocated and 0.00 remains untraced. <span class="muted">(+1 more of this type)</span></li>
+        
+        <li><span class="ptag">Round Trip Detection</span>
+            <span class="badge strong">strong</span>
+            — Money left acct_004, moved through acct_001, and returned to acct_004 within 5 day(s) at comparable amounts. <span class="muted">(+1 more of this type)</span></li>
+        
+        <li><span class="ptag">Structuring Smurfing Detection</span>
+            <span class="badge strong">strong</span>
+            — Account acct_004 made 7 credit transactions on 2023-01-18; each was below the runtime individual cutoff, while together they totalled 116550.00.</li>
+        
+        <li><span class="ptag">Circular Flow Multi Hop Cycle Detection</span>
+            <span class="badge weak">weak</span>
+            — The directed account graph contains a 4-account cycle: acct_001 → acct_004 → acct_003 → acct_002 → acct_001. <span class="muted">(+11 more of this type)</span></li>
+        
+        <li><span class="ptag">Failed Reversed Transaction Detection</span>
+            <span class="badge weak">weak</span>
+            — Debit acct_004_008619 is followed 3 day(s) later by near-equal credit acct_004_008627 with explicit reversal/reference evidence.</li>
+        
+        <li><span class="ptag">Money Flow Graph Construction</span>
+            <span class="badge weak">structural</span>
+            — Money-flow graph constructed with 3440 nodes and 3704 directed transaction edges.</li>
+        
+      </ul>
+      
+      <h3>Supporting transactions</h3>
+      <table>
+        <thead><tr><th>Date</th><th>Type</th><th class="num">Amount</th><th>Counterparty</th><th>Reference</th></tr></thead>
+        <tbody>
+        
+          <tr><td>2022-08-28</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>mohammed54@oksbi</td><td>25325329</td></tr>
+        
+          <tr><td>2022-08-29</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>tara822@ybl</td><td>097426185746</td></tr>
+        
+          <tr><td>2022-09-05</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>anand904@okaxis</td><td>92003285733731</td></tr>
+        
+          <tr><td>2022-09-12</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>ayesha730@okaxis</td><td>3980322253</td></tr>
+        
+          <tr><td>2022-09-18</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>mallika528@oksbi</td><td>5430957084</td></tr>
+        
+          <tr><td>2022-11-24</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>pooja378@okaxis</td><td>194383270871</td></tr>
+        
+          <tr><td>2022-12-04</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>mohan452@ybl</td><td>422401823768</td></tr>
+        
+          <tr><td>2022-12-05</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>tara105@okaxis</td><td>23156901</td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="assess a-strong">
+        Assessment: 7 strong pattern type(s) across
+        8 distinct pattern(s) — strong evidence.
+      </div>
+    </div>
+  </div>
+  
+  <div class="account">
+    <div class="account-head">
+      <div>
+        <div class="who">Ravi Kumar Sharma <span class="badge strong">strong</span></div>
+        <div class="sub">acct_001 · State Bank of India · A/C 00000051399615291 · Score 1,461</div>
+      </div>
+      <div class="rankpill">Rank #2</div>
+    </div>
+    <div class="account-body">
+      <ul class="findings">
+        
+        <li><span class="ptag">First Contact Large Transfer</span>
+            <span class="badge strong">strong</span>
+            — 0001214 and acct_001 had no prior observed relationship before a large transfer of 191134.33 on 2023-06-21. <span class="muted">(+65 more of this type)</span></li>
+        
+        <li><span class="ptag">Cross Statement Links</span>
+            <span class="badge strong">strong</span>
+            — Matched flow link: debit of 850.00 from acct_001 matches credit of 850.00 to acct_003 on 2022-08-14. <span class="muted">(+40 more of this type)</span></li>
+        
+        <li><span class="ptag">Shared Upi Identifiers</span>
+            <span class="badge strong">strong</span>
+            — UPI identifier &#39;farhan713@ybl&#39; appears across 2 different accounts: acct_001, acct_004. This may indicate shared ownership or coordinated activity. <span class="muted">(+3 more of this type)</span></li>
+        
+        <li><span class="ptag">Round Trip Detection</span>
+            <span class="badge strong">strong</span>
+            — Money left acct_001, moved through acct_002, and returned to acct_001 within 7 day(s) at comparable amounts. <span class="muted">(+2 more of this type)</span></li>
+        
+        <li><span class="ptag">Money Trail Tracing</span>
+            <span class="badge strong">strong</span>
+            — Credit acct_001_001211 of 191134.33 was traced FIFO into 117 subsequent debit(s); 191134.33 was allocated and 0.00 remains untraced. <span class="muted">(+1 more of this type)</span></li>
+        
+        <li><span class="ptag">Circular Flow Multi Hop Cycle Detection</span>
+            <span class="badge weak">weak</span>
+            — The directed account graph contains a 4-account cycle: acct_001 → acct_004 → acct_003 → acct_002 → acct_001. <span class="muted">(+11 more of this type)</span></li>
+        
+        <li><span class="ptag">Money Flow Graph Construction</span>
+            <span class="badge weak">structural</span>
+            — Money-flow graph constructed with 3440 nodes and 3704 directed transaction edges.</li>
+        
+      </ul>
+      
+      <h3>Supporting transactions</h3>
+      <table>
+        <thead><tr><th>Date</th><th>Type</th><th class="num">Amount</th><th>Counterparty</th><th>Reference</th></tr></thead>
+        <tbody>
+        
+          <tr><td>2023-06-21</td><td>Credit</td><td class="num">Rs 191,134.33</td>
+              <td>0001214</td><td>511808174851</td></tr>
+        
+          <tr><td>2024-02-24</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>Meena Iyer</td><td>898680490255</td></tr>
+        
+          <tr><td>2022-09-02</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>farhan319@ybl</td><td>44900649</td></tr>
+        
+          <tr><td>2022-09-04</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>ramesh778@okhdfc</td><td>088325478697</td></tr>
+        
+          <tr><td>2022-11-03</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>sanjana408@okaxis</td><td>957273172197</td></tr>
+        
+          <tr><td>2023-01-04</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>savitha353@oksbi</td><td>0773564018</td></tr>
+        
+          <tr><td>2023-01-08</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>ganesh128@okaxis</td><td>32320999</td></tr>
+        
+          <tr><td>2023-02-09</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>ranjit204@okhdfc</td><td>91232776</td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="assess a-strong">
+        Assessment: 6 strong pattern type(s) across
+        6 distinct pattern(s) — strong evidence.
+      </div>
+    </div>
+  </div>
+  
+  <div class="account">
+    <div class="account-head">
+      <div>
+        <div class="who">Arjun Mehta <span class="badge strong">strong</span></div>
+        <div class="sub">acct_003 · ICICI Bank · A/C 020235590238 · Score 1,049</div>
+      </div>
+      <div class="rankpill">Rank #3</div>
+    </div>
+    <div class="account-body">
+      <ul class="findings">
+        
+        <li><span class="ptag">Cross Statement Links</span>
+            <span class="badge strong">strong</span>
+            — Matched flow link: debit of 850.00 from acct_001 matches credit of 850.00 to acct_003 on 2022-08-14. <span class="muted">(+27 more of this type)</span></li>
+        
+        <li><span class="ptag">Money Trail Tracing</span>
+            <span class="badge strong">strong</span>
+            — Credit acct_003_007164 of 44100.00 was traced FIFO into 18 subsequent debit(s); 44100.00 was allocated and 0.00 remains untraced. <span class="muted">(+4 more of this type)</span></li>
+        
+        <li><span class="ptag">Structuring Smurfing Detection</span>
+            <span class="badge strong">strong</span>
+            — Account acct_003 made 9 credit transactions on 2024-03-02; each was below the runtime individual cutoff, while together they totalled 118650.00. <span class="muted">(+1 more of this type)</span></li>
+        
+        <li><span class="ptag">First Contact Large Transfer</span>
+            <span class="badge strong">strong</span>
+            — 41755734 and acct_003 had no prior observed relationship before a large transfer of 32000.00 on 2023-05-04.</li>
+        
+        <li><span class="ptag">Circular Flow Multi Hop Cycle Detection</span>
+            <span class="badge weak">weak</span>
+            — The directed account graph contains a 4-account cycle: acct_001 → acct_004 → acct_003 → acct_002 → acct_001. <span class="muted">(+11 more of this type)</span></li>
+        
+        <li><span class="ptag">Duplicate Verification</span>
+            <span class="badge weak">weak</span>
+            — Extraction flagged this row as a duplicate, but the independent account/amount/date/narration cross-check found no corroborating match. <span class="muted">(+3 more of this type)</span></li>
+        
+        <li><span class="ptag">Money Flow Graph Construction</span>
+            <span class="badge weak">structural</span>
+            — Money-flow graph constructed with 3440 nodes and 3704 directed transaction edges.</li>
+        
+        <li><span class="ptag">Balance Parking Account</span>
+            <span class="badge weak">weak</span>
+            — Account acct_003 received 11728200.00 in total credits but only disbursed 3218725.00, retaining 73% of inflows. Balance grew from 227589.85 to 8747064.85 (+8519475.00), consistent with a holding/accumulation pattern.</li>
+        
+      </ul>
+      
+      <h3>Supporting transactions</h3>
+      <table>
+        <thead><tr><th>Date</th><th>Type</th><th class="num">Amount</th><th>Counterparty</th><th>Reference</th></tr></thead>
+        <tbody>
+        
+          <tr><td>2024-02-06</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>020235590238</td><td>688981181026</td></tr>
+        
+          <tr><td>2024-03-23</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>020235590238</td><td>746496023356</td></tr>
+        
+          <tr><td>2023-05-04</td><td>Credit</td><td class="num">Rs 32,000.00</td>
+              <td>41755734</td><td>020235590238</td></tr>
+        
+          <tr><td>2022-12-23</td><td>Debit</td><td class="num">Rs 24,000.00</td>
+              <td>Ravi Kumar Sharma</td><td>299392308030</td></tr>
+        
+          <tr><td>2023-09-18</td><td>Credit</td><td class="num">Rs 24,000.00</td>
+              <td>020235590238</td><td>654505053137</td></tr>
+        
+          <tr><td>2023-03-04</td><td>Debit</td><td class="num">Rs 11,200.00</td>
+              <td>Ravi Kumar Sharma</td><td>9646488225</td></tr>
+        
+          <tr><td>2022-09-06</td><td>Credit</td><td class="num">Rs 11,200.00</td>
+              <td>00377128</td><td>020235590238</td></tr>
+        
+          <tr><td>2024-04-09</td><td>Credit</td><td class="num">Rs 11,200.00</td>
+              <td>020235590238</td><td>576289379853</td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="assess a-strong">
+        Assessment: 5 strong pattern type(s) across
+        7 distinct pattern(s) — strong evidence.
+      </div>
+    </div>
+  </div>
+  
+  <div class="account">
+    <div class="account-head">
+      <div>
+        <div class="who">Meena Iyer <span class="badge strong">strong</span></div>
+        <div class="sub">acct_002 · HDFC Bank · A/C 50105414883065 · Score 833</div>
+      </div>
+      <div class="rankpill">Rank #4</div>
+    </div>
+    <div class="account-body">
+      <ul class="findings">
+        
+        <li><span class="ptag">Cross Statement Links</span>
+            <span class="badge strong">strong</span>
+            — Matched flow link: debit of 850.00 from acct_004 matches credit of 850.00 to acct_002 on 2022-08-18. <span class="muted">(+17 more of this type)</span></li>
+        
+        <li><span class="ptag">First Contact Large Transfer</span>
+            <span class="badge strong">strong</span>
+            — 75184791 and acct_002 had no prior observed relationship before a large transfer of 24000.00 on 2022-08-15. <span class="muted">(+2 more of this type)</span></li>
+        
+        <li><span class="ptag">Round Trip Detection</span>
+            <span class="badge strong">strong</span>
+            — Money left acct_001, moved through acct_002, and returned to acct_001 within 7 day(s) at comparable amounts.</li>
+        
+        <li><span class="ptag">Circular Flow Multi Hop Cycle Detection</span>
+            <span class="badge weak">weak</span>
+            — The directed account graph contains a 4-account cycle: acct_001 → acct_004 → acct_003 → acct_002 → acct_001. <span class="muted">(+11 more of this type)</span></li>
+        
+        <li><span class="ptag">Duplicate Verification</span>
+            <span class="badge weak">weak</span>
+            — Extraction flagged this row as a duplicate, but the independent account/amount/date/narration cross-check found no corroborating match. <span class="muted">(+2 more of this type)</span></li>
+        
+        <li><span class="ptag">Money Flow Graph Construction</span>
+            <span class="badge weak">structural</span>
+            — Money-flow graph constructed with 3440 nodes and 3704 directed transaction edges.</li>
+        
+      </ul>
+      
+      <h3>Supporting transactions</h3>
+      <table>
+        <thead><tr><th>Date</th><th>Type</th><th class="num">Amount</th><th>Counterparty</th><th>Reference</th></tr></thead>
+        <tbody>
+        
+          <tr><td>2024-02-24</td><td>Debit</td><td class="num">Rs 32,000.00</td>
+              <td>Ravi Kumar Sharma</td><td>898680490255</td></tr>
+        
+          <tr><td>2023-03-14</td><td>Debit</td><td class="num">Rs 24,000.00</td>
+              <td>Ravi Kumar Sharma</td><td>70282615982249</td></tr>
+        
+          <tr><td>2023-06-21</td><td>Debit</td><td class="num">Rs 24,000.00</td>
+              <td>Ravi Kumar Sharma</td><td>030941050388</td></tr>
+        
+          <tr><td>2023-12-08</td><td>Debit</td><td class="num">Rs 24,000.00</td>
+              <td>Ravi Kumar Sharma</td><td>7732538024</td></tr>
+        
+          <tr><td>2024-02-04</td><td>Debit</td><td class="num">Rs 24,000.00</td>
+              <td>Ravi Kumar Sharma</td><td>9646453114</td></tr>
+        
+          <tr><td>2022-11-23</td><td>Debit</td><td class="num">Rs 24,000.00</td>
+              <td>Deepa Nair</td><td>26471154</td></tr>
+        
+          <tr><td>2023-06-11</td><td>Debit</td><td class="num">Rs 24,000.00</td>
+              <td>Deepa Nair</td><td>55203594829696</td></tr>
+        
+          <tr><td>2022-08-15</td><td>Credit</td><td class="num">Rs 24,000.00</td>
+              <td>75184791</td><td>50105414883065</td></tr>
+        
+        </tbody>
+      </table>
+      
+      <div class="assess a-strong">
+        Assessment: 4 strong pattern type(s) across
+        5 distinct pattern(s) — strong evidence.
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+<!-- ══════════ 4.6 GRAPHS ══════════ -->
+<div class="section">
+  <h2>4 · Money-Flow Graphs</h2>
+  
+  <div class="graph-block">
+    <h3>Account Interconnection Graph</h3>
+    
+      <img src="file:///Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260702_125349/graphs/money_flow_network.png" alt="Account Interconnection Graph">
+    
+    <p class="muted">How money moved between the accounts under investigation and their counterparties.</p>
+  </div>
+  
+  <div class="graph-block">
+    <h3>Suspicious Activity Timeline</h3>
+    
+      <img src="file:///Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260702_125349/graphs/suspicious_timeline.png" alt="Suspicious Activity Timeline">
+    
+    <p class="muted">When flagged activity clustered in time across the investigated accounts.</p>
+  </div>
+  
+  <div class="graph-block">
+    <h3>Fraud-Pattern Summary</h3>
+    
+      <img src="file:///Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260702_125349/graphs/fraud_pattern_summary.png" alt="Fraud-Pattern Summary">
+    
+    <p class="muted">Which fraud patterns fired, and how often, across the investigated accounts.</p>
+  </div>
+  
+</div>
+
+<!-- ══════════ 4.7 AI-FLAGGED LEADS (conditional) ══════════ -->
+
+
+<!-- ══════════ 4.8 FINAL SUMMARY ══════════ -->
+<div class="section">
+  <h2>5 · Final Summary</h2>
+  
+  <p>4 account(s) were ranked by composite suspicion score.
+     The highest-scoring accounts show the broadest, strongest pattern evidence and warrant priority review.</p>
+  <table>
+    <thead><tr><th>Rank</th><th>Account</th><th class="num">Score</th><th>Key Concern</th></tr></thead>
+    <tbody>
+    
+      <tr><td>1</td><td>Deepa Nair (acct_004)</td><td class="num">1,589</td><td>First Contact Large Transfer</td></tr>
+    
+      <tr><td>2</td><td>Ravi Kumar Sharma (acct_001)</td><td class="num">1,461</td><td>First Contact Large Transfer</td></tr>
+    
+      <tr><td>3</td><td>Arjun Mehta (acct_003)</td><td class="num">1,049</td><td>Cross Statement Links</td></tr>
+    
+      <tr><td>4</td><td>Meena Iyer (acct_002)</td><td class="num">833</td><td>Cross Statement Links</td></tr>
+    
+    </tbody>
+  </table>
+  
+  <h3>Score legend</h3>
+  <table class="legend">
+    <thead><tr><th>Score Range</th><th>What It Means</th></tr></thead>
+    <tbody>
+    
+      <tr><td>600+</td><td>Strong evidence across multiple independent pattern types — high investigative priority</td></tr>
+    
+      <tr><td>300–599</td><td>Moderate evidence, worth follow-up but less urgent</td></tr>
+    
+      <tr><td>Below 300</td><td>Weak or isolated signals, mostly for reference</td></tr>
+    
+    </tbody>
+  </table>
+  <p class="muted" style="margin-top:6mm;font-size:8.5pt;">
+    Generated by the Survey Corps Investigation Engine for CIDECODE · Run run_20260702_125349 · 02 July 2026, 15:46.
+    All findings are investigative leads requiring independent verification.
+  </p>
+</div>
+
+</body>
+</html>

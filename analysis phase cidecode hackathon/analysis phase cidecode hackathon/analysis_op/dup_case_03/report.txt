@@ -1,0 +1,843 @@
+======================================================================
+  dup_case_03 — Analysis Summary
+======================================================================
+
+Fraud Transactions:
+----------------------------------------
+  219320109917_000000
+    Account   : 219320109917
+    Date      : 2025-02-01
+    Amount    : 73523.0
+    Direction : credit
+    Narration : N/IDIBN2502019150927/IDFB0519334/CRYSTAL SUPPLY ENTERPRISE
+    Pattern   : Accumulation Account Detection
+
+  219320109917_000019
+    Account   : 219320109917
+    Date      : 2025-03-03
+    Amount    : 35318.0
+    Direction : credit
+    Narration : N/IDIBN2503033339083/PUNB0575893/CARMEN TRINITY VENTURE
+    Pattern   : Accumulation Account Detection
+
+  219320109917_000027
+    Account   : 219320109917
+    Date      : 2025-03-17
+    Amount    : 22520.0
+    Direction : credit
+    Narration : UPI/554444191817/CR/KAVYABOSE/SBIN/60274405686@sbin0408236.ifsc.npci/UPI
+    Pattern   : Accumulation Account Detection, Round Trip Detection, Transit / Pass-Through Detection
+
+  219320109917_000035
+    Account   : 219320109917
+    Date      : 2025-04-03
+    Amount    : 81285.0
+    Direction : credit
+    Narration : N/IDIBN2504038850904/ICIC0474758/Global Enterprise
+    Pattern   : Accumulation Account Detection
+
+  219320109917_000043
+    Account   : 219320109917
+    Date      : 2025-04-14
+    Amount    : 15774.0
+    Direction : credit
+    Narration : UPI/639604991817/CR/KAVYABOSE/SBIN/60274405686@sbin0408236.ifsc.npci/UPI
+    Pattern   : Accumulation Account Detection, Transit / Pass-Through Detection
+
+  219320109917_000053
+    Account   : 219320109917
+    Date      : 2025-05-03
+    Amount    : 50557.0
+    Direction : credit
+    Narration : N/IDIBN2505032163734/MAHB0221058/Northern Traders Company
+    Pattern   : Accumulation Account Detection
+
+  219320109917_000060
+    Account   : 219320109917
+    Date      : 2025-05-12
+    Amount    : 20334.0
+    Direction : credit
+    Narration : UPI/363086437404/CR/KAVYABOSE/SBIN/60274405686@sbin0408236.ifsc.npci/UPI
+    Pattern   : Accumulation Account Detection, Transit / Pass-Through Detection
+
+  219320109917_000072
+    Account   : 219320109917
+    Date      : 2025-06-01
+    Amount    : 77255.0
+    Direction : credit
+    Narration : N/IDIBN2506019281087/PUNB0532501/HANUMAN DICO
+    Pattern   : Accumulation Account Detection
+
+  219320109917_000077
+    Account   : 219320109917
+    Date      : 2025-06-09
+    Amount    : 20742.0
+    Direction : credit
+    Narration : UPI/288841300706/CR/KAVYABOSE/SBIN/60274405686@sbin0408236.ifsc.npci/UPI
+    Pattern   : Accumulation Account Detection, Round Trip Detection, Transit / Pass-Through Detection
+
+  219320109917_000082
+    Account   : 219320109917
+    Date      : 2025-07-01
+    Amount    : 35385.0
+    Direction : credit
+    Narration : N/IDIBN2507015081906/CNRB0876036/BANSILAL TRADERS
+    Pattern   : Accumulation Account Detection
+
+  342949044011_000034
+    Account   : 342949044011
+    Date      : 2025-03-31
+    Amount    : 14107.0
+    Direction : credit
+    Narration : UPI/CR/464611356308/KAVY/SBIN/**60274405686@sbin0408236.ifsc.npci/UPI//ICI4729635545
+    Pattern   : Transit / Pass-Through Detection
+
+  342949044011_000049
+    Account   : 342949044011
+    Date      : 2025-04-28
+    Amount    : 22135.0
+    Direction : credit
+    Narration : UPI/CR/386656858763/KAVY/SBIN/**60274405686@sbin0408236.ifsc.npci/UPI//ICI1183170378
+    Pattern   : Round Trip Detection, Transit / Pass-Through Detection
+
+  342949044011_000063
+    Account   : 342949044011
+    Date      : 2025-05-26
+    Amount    : 30124.0
+    Direction : credit
+    Narration : UPI/CR/843455142030/KAVY/SBIN/**60274405686@sbin0408236.ifsc.npci/UPI//ICI8582622296
+    Pattern   : Transit / Pass-Through Detection
+
+  342949044011_000081
+    Account   : 342949044011
+    Date      : 2025-06-23
+    Amount    : 15315.0
+    Direction : credit
+    Narration : UPI/CR/954706442341/KAVY/SBIN/**60274405686@sbin0408236.ifsc.npci/UPI//ICI8519278025
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000001
+    Account   : 60274405686
+    Date      : 2025-02-03
+    Amount    : 2952.0
+    Direction : debit
+    Narration : UPI/074563282994/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@kkbk0847797.ifsc.npci. NPCI/UPI/BESCOM
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000002
+    Account   : 60274405686
+    Date      : 2025-02-06
+    Amount    : 3904.0
+    Direction : debit
+    Narration : UPI/614634895593/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@kkbk0838628.ifsc.npci. NPCI/UPI/INDIANOIL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000004
+    Account   : 60274405686
+    Date      : 2025-02-08
+    Amount    : 2228.0
+    Direction : debit
+    Narration : UPI/037704002979/FROM: 60274405686@sbin0408236.ifsc.npci/TO: medplus@ybl@fdrl0117022.ifsc.npci. NPCI/UPI/PHARMACY
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000005
+    Account   : 60274405686
+    Date      : 2025-02-11
+    Amount    : 2406.0
+    Direction : debit
+    Narration : UPI/669141191683/FROM: 60274405686@sbin0408236.ifsc.npci/TO: jio.mobile@ibl@utib0309247.ifsc.npci. NPCI/UPI/JIO
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000006
+    Account   : 60274405686
+    Date      : 2025-02-12
+    Amount    : 1939.0
+    Direction : debit
+    Narration : UPI/561889455791/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@icic0932351.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000007
+    Account   : 60274405686
+    Date      : 2025-02-15
+    Amount    : 4092.0
+    Direction : debit
+    Narration : UPI/640974859218/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@punb0292324.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000013
+    Account   : 60274405686
+    Date      : 2025-02-26
+    Amount    : 2611.0
+    Direction : debit
+    Narration : UPI/900932414724/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@idfb0129795.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000014
+    Account   : 60274405686
+    Date      : 2025-02-27
+    Amount    : 2988.0
+    Direction : debit
+    Narration : UPI/758902147998/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@icic0100242.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000015
+    Account   : 60274405686
+    Date      : 2025-03-02
+    Amount    : 3054.0
+    Direction : debit
+    Narration : UPI/499764373974/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@cnrb0370050.ifsc.npci. NPCI/UPI/BESCOM
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000017
+    Account   : 60274405686
+    Date      : 2025-03-05
+    Amount    : 2606.0
+    Direction : debit
+    Narration : UPI/452934531040/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@barb0914932.ifsc.npci. NPCI/UPI/BESCOM
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000018
+    Account   : 60274405686
+    Date      : 2025-03-06
+    Amount    : 4313.0
+    Direction : debit
+    Narration : UPI/837762984194/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@idib0437750.ifsc.npci. NPCI/UPI/DMART
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000019
+    Account   : 60274405686
+    Date      : 2025-03-07
+    Amount    : 1057.0
+    Direction : debit
+    Narration : UPI/018175495162/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@utib0950045.ifsc.npci. NPCI/UPI/IRCTC
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000020
+    Account   : 60274405686
+    Date      : 2025-03-09
+    Amount    : 3895.0
+    Direction : debit
+    Narration : UPI/988477243226/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@mahb0358268.ifsc.npci. NPCI/UPI/INDIANOIL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000021
+    Account   : 60274405686
+    Date      : 2025-03-12
+    Amount    : 2511.0
+    Direction : debit
+    Narration : UPI/821439499336/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@fdrl0568689.ifsc.npci. NPCI/UPI/BESCOM
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000022
+    Account   : 60274405686
+    Date      : 2025-03-13
+    Amount    : 670.0
+    Direction : debit
+    Narration : UPI/831988835381/FROM: 60274405686@sbin0408236.ifsc.npci/TO: jio.mobile@ibl@cnrb0598335.ifsc.npci. NPCI/UPI/JIO
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000023
+    Account   : 60274405686
+    Date      : 2025-03-14
+    Amount    : 2757.0
+    Direction : debit
+    Narration : UPI/886993962398/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@punb0604068.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000024
+    Account   : 60274405686
+    Date      : 2025-03-15
+    Amount    : 814.0
+    Direction : debit
+    Narration : UPI/938242512063/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@cnrb0100684.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000026
+    Account   : 60274405686
+    Date      : 2025-03-17
+    Amount    : 22520.0
+    Direction : debit
+    Narration : UPI/554444191817/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, Failed / Reversed Transaction Detection, Round Trip Detection, Transit / Pass-Through Detection
+
+  60274405686_000027
+    Account   : 60274405686
+    Date      : 2025-03-17
+    Amount    : 22520.0
+    Direction : debit
+    Narration : UPI/554444191817/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000028
+    Account   : 60274405686
+    Date      : 2025-03-18
+    Amount    : 3169.0
+    Direction : debit
+    Narration : UPI/969982459924/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@icic0308542.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000029
+    Account   : 60274405686
+    Date      : 2025-03-18
+    Amount    : 22520.0
+    Direction : credit
+    Narration : REVERSAL OF UPI/554444191817/SHIV LAL BISHNOI/219320109917
+    Pattern   : Failed / Reversed Transaction Detection, Round Trip Detection, Transit / Pass-Through Detection
+
+  60274405686_000031
+    Account   : 60274405686
+    Date      : 2025-03-23
+    Amount    : 2697.0
+    Direction : debit
+    Narration : UPI/637165363270/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@kkbk0379343.ifsc.npci. NPCI/UPI/IRCTC
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000033
+    Account   : 60274405686
+    Date      : 2025-03-28
+    Amount    : 637.0
+    Direction : debit
+    Narration : UPI/100469574878/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@hdfc0689623.ifsc.npci. NPCI/UPI/BESCOM
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000034
+    Account   : 60274405686
+    Date      : 2025-03-30
+    Amount    : 3319.0
+    Direction : debit
+    Narration : UPI/180753912492/FROM: 60274405686@sbin0408236.ifsc.npci/TO: jio.mobile@ibl@sbin0882076.ifsc.npci. NPCI/UPI/JIO
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000035
+    Account   : 60274405686
+    Date      : 2025-03-31
+    Amount    : 14107.0
+    Direction : debit
+    Narration : UPI/464611356308/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check, Transit / Pass-Through Detection
+
+  60274405686_000036
+    Account   : 60274405686
+    Date      : 2025-03-31
+    Amount    : 14107.0
+    Direction : debit
+    Narration : UPI/471421095485/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000037
+    Account   : 60274405686
+    Date      : 2025-04-02
+    Amount    : 3581.0
+    Direction : debit
+    Narration : UPI/872203555006/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@kkbk0226031.ifsc.npci. NPCI/UPI/BESCOM
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000040
+    Account   : 60274405686
+    Date      : 2025-04-05
+    Amount    : 1661.0
+    Direction : debit
+    Narration : UPI/178531874401/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@cnrb0311816.ifsc.npci. NPCI/UPI/IRCTC
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000043
+    Account   : 60274405686
+    Date      : 2025-04-11
+    Amount    : 3436.0
+    Direction : debit
+    Narration : UPI/449788613550/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@utib0117612.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000044
+    Account   : 60274405686
+    Date      : 2025-04-13
+    Amount    : 2807.0
+    Direction : debit
+    Narration : UPI/484085559930/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@barb0240722.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000045
+    Account   : 60274405686
+    Date      : 2025-04-14
+    Amount    : 15774.0
+    Direction : debit
+    Narration : UPI/639604991817/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, Transit / Pass-Through Detection
+
+  60274405686_000046
+    Account   : 60274405686
+    Date      : 2025-04-14
+    Amount    : 15774.0
+    Direction : debit
+    Narration : UPI/639604991817/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000047
+    Account   : 60274405686
+    Date      : 2025-04-14
+    Amount    : 3508.0
+    Direction : debit
+    Narration : UPI/901424464141/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@hdfc0158445.ifsc.npci. NPCI/UPI/INDIANOIL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000048
+    Account   : 60274405686
+    Date      : 2025-04-16
+    Amount    : 1241.0
+    Direction : debit
+    Narration : UPI/990655881645/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@fdrl0175967.ifsc.npci. NPCI/UPI/BESCOM
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000049
+    Account   : 60274405686
+    Date      : 2025-04-19
+    Amount    : 4143.0
+    Direction : debit
+    Narration : UPI/869793746599/FROM: 60274405686@sbin0408236.ifsc.npci/TO: jio.mobile@ibl@fdrl0506896.ifsc.npci. NPCI/UPI/JIO
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000050
+    Account   : 60274405686
+    Date      : 2025-04-21
+    Amount    : 3338.0
+    Direction : debit
+    Narration : UPI/479244939923/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@idib0236156.ifsc.npci. NPCI/UPI/DMART
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000051
+    Account   : 60274405686
+    Date      : 2025-04-23
+    Amount    : 4017.0
+    Direction : debit
+    Narration : UPI/699351361034/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@icic0551438.ifsc.npci. NPCI/UPI/DMART
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000052
+    Account   : 60274405686
+    Date      : 2025-04-26
+    Amount    : 18.0
+    Direction : debit
+    Narration : AMB CHRGS FOR APR 2025
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000053
+    Account   : 60274405686
+    Date      : 2025-04-27
+    Amount    : 18.0
+    Direction : debit
+    Narration : AMB CHRGS FOR APR 2025
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000054
+    Account   : 60274405686
+    Date      : 2025-04-28
+    Amount    : 22135.0
+    Direction : debit
+    Narration : UPI/386656858763/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check, Failed / Reversed Transaction Detection, Round Trip Detection, Transit / Pass-Through Detection
+
+  60274405686_000055
+    Account   : 60274405686
+    Date      : 2025-04-28
+    Amount    : 22135.0
+    Direction : debit
+    Narration : UPI/172193050526/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000056
+    Account   : 60274405686
+    Date      : 2025-04-29
+    Amount    : 4395.0
+    Direction : debit
+    Narration : UPI/131336515356/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@cnrb0991106.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000057
+    Account   : 60274405686
+    Date      : 2025-04-29
+    Amount    : 22135.0
+    Direction : credit
+    Narration : REVERSAL OF UPI/386656858763/Yash Dubey/342949044011
+    Pattern   : Failed / Reversed Transaction Detection, Round Trip Detection, Transit / Pass-Through Detection
+
+  60274405686_000061
+    Account   : 60274405686
+    Date      : 2025-05-04
+    Amount    : 3247.0
+    Direction : debit
+    Narration : UPI/024658675707/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@punb0294148.ifsc.npci. NPCI/UPI/DMART
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000062
+    Account   : 60274405686
+    Date      : 2025-05-05
+    Amount    : 1088.0
+    Direction : debit
+    Narration : UPI/416089043970/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@utib0633211.ifsc.npci. NPCI/UPI/DMART
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000063
+    Account   : 60274405686
+    Date      : 2025-05-06
+    Amount    : 426.0
+    Direction : debit
+    Narration : UPI/269083893456/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@idfb0196414.ifsc.npci. NPCI/UPI/INDIANOIL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000064
+    Account   : 60274405686
+    Date      : 2025-05-09
+    Amount    : 1668.0
+    Direction : debit
+    Narration : UPI/752740480000/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@barb0333340.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000065
+    Account   : 60274405686
+    Date      : 2025-05-11
+    Amount    : 722.0
+    Direction : debit
+    Narration : UPI/294624194565/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@icic0274843.ifsc.npci. NPCI/UPI/IRCTC
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000066
+    Account   : 60274405686
+    Date      : 2025-05-12
+    Amount    : 20334.0
+    Direction : debit
+    Narration : UPI/363086437404/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, Transit / Pass-Through Detection
+
+  60274405686_000067
+    Account   : 60274405686
+    Date      : 2025-05-12
+    Amount    : 20334.0
+    Direction : debit
+    Narration : UPI/363086437404/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000068
+    Account   : 60274405686
+    Date      : 2025-05-12
+    Amount    : 4017.0
+    Direction : debit
+    Narration : UPI/433291366510/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@cnrb0944415.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000069
+    Account   : 60274405686
+    Date      : 2025-05-15
+    Amount    : 3882.0
+    Direction : debit
+    Narration : UPI/727046268182/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@hdfc0419097.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000071
+    Account   : 60274405686
+    Date      : 2025-05-21
+    Amount    : 3263.0
+    Direction : debit
+    Narration : UPI/870586311156/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@icic0291521.ifsc.npci. NPCI/UPI/DMART
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000072
+    Account   : 60274405686
+    Date      : 2025-05-23
+    Amount    : 2431.0
+    Direction : debit
+    Narration : UPI/694857087737/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@idfb0479121.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000073
+    Account   : 60274405686
+    Date      : 2025-05-24
+    Amount    : 2225.0
+    Direction : debit
+    Narration : UPI/943554975123/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@kkbk0136121.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000074
+    Account   : 60274405686
+    Date      : 2025-05-26
+    Amount    : 30124.0
+    Direction : debit
+    Narration : UPI/843455142030/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check, Transit / Pass-Through Detection
+
+  60274405686_000075
+    Account   : 60274405686
+    Date      : 2025-05-26
+    Amount    : 30124.0
+    Direction : debit
+    Narration : UPI/163489082382/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000076
+    Account   : 60274405686
+    Date      : 2025-05-27
+    Amount    : 4067.0
+    Direction : debit
+    Narration : UPI/314438948475/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@utib0529926.ifsc.npci. NPCI/UPI/IRCTC
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000079
+    Account   : 60274405686
+    Date      : 2025-05-31
+    Amount    : 4069.0
+    Direction : debit
+    Narration : UPI/450982216118/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@hdfc0499308.ifsc.npci. NPCI/UPI/BESCOM
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000080
+    Account   : 60274405686
+    Date      : 2025-06-03
+    Amount    : 2680.0
+    Direction : debit
+    Narration : UPI/665280558879/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@utib0109409.ifsc.npci. NPCI/UPI/INDIANOIL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000081
+    Account   : 60274405686
+    Date      : 2025-06-06
+    Amount    : 1951.0
+    Direction : debit
+    Narration : UPI/089287756423/FROM: 60274405686@sbin0408236.ifsc.npci/TO: medplus@ybl@mahb0690951.ifsc.npci. NPCI/UPI/PHARMACY
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000082
+    Account   : 60274405686
+    Date      : 2025-06-08
+    Amount    : 661.0
+    Direction : debit
+    Narration : UPI/418503478063/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@icic0583125.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000083
+    Account   : 60274405686
+    Date      : 2025-06-09
+    Amount    : 20742.0
+    Direction : debit
+    Narration : UPI/288841300706/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, Failed / Reversed Transaction Detection, Round Trip Detection, Transit / Pass-Through Detection
+
+  60274405686_000084
+    Account   : 60274405686
+    Date      : 2025-06-09
+    Amount    : 20742.0
+    Direction : debit
+    Narration : UPI/288841300706/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000085
+    Account   : 60274405686
+    Date      : 2025-06-10
+    Amount    : 20742.0
+    Direction : credit
+    Narration : REVERSAL OF UPI/288841300706/SHIV LAL BISHNOI/219320109917
+    Pattern   : Failed / Reversed Transaction Detection, Round Trip Detection, Transit / Pass-Through Detection
+
+  60274405686_000086
+    Account   : 60274405686
+    Date      : 2025-06-11
+    Amount    : 686.0
+    Direction : debit
+    Narration : UPI/703194394698/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@idib0762436.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000088
+    Account   : 60274405686
+    Date      : 2025-06-16
+    Amount    : 3498.0
+    Direction : debit
+    Narration : UPI/910604039885/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@sbin0518692.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000089
+    Account   : 60274405686
+    Date      : 2025-06-18
+    Amount    : 3825.0
+    Direction : debit
+    Narration : UPI/894178071077/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@barb0826634.ifsc.npci. NPCI/UPI/IRCTC
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000091
+    Account   : 60274405686
+    Date      : 2025-06-21
+    Amount    : 4458.0
+    Direction : debit
+    Narration : UPI/295174424517/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@kkbk0591719.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000092
+    Account   : 60274405686
+    Date      : 2025-06-22
+    Amount    : 3884.0
+    Direction : debit
+    Narration : UPI/463999565270/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@barb0580138.ifsc.npci. NPCI/UPI/IRCTC
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000093
+    Account   : 60274405686
+    Date      : 2025-06-23
+    Amount    : 15315.0
+    Direction : debit
+    Narration : UPI/954706442341/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check, Transit / Pass-Through Detection
+
+  60274405686_000094
+    Account   : 60274405686
+    Date      : 2025-06-23
+    Amount    : 15315.0
+    Direction : debit
+    Narration : UPI/092803715392/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  60274405686_000095
+    Account   : 60274405686
+    Date      : 2025-06-24
+    Amount    : 81.0
+    Direction : debit
+    Narration : UPI/028077482149/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@idib0243107.ifsc.npci. NPCI/UPI/BIGBASKET
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000096
+    Account   : 60274405686
+    Date      : 2025-06-27
+    Amount    : 694.0
+    Direction : debit
+    Narration : UPI/563423409391/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@utib0123796.ifsc.npci. NPCI/UPI/AIRTEL
+    Pattern   : Transit / Pass-Through Detection
+
+  60274405686_000099
+    Account   : 60274405686
+    Date      : 2025-07-10
+    Amount    : 2500.0
+    Direction : debit
+    Narration : UPI/305305914964/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 84030412795@idfb0266918.ifsc.npci. NPCI/UPI
+    Pattern   : Transit / Pass-Through Detection
+
+  84030412795_000080
+    Account   : 84030412795
+    Date      : 2025-07-10
+    Amount    : 2500.0
+    Direction : credit
+    Narration : UPI/MOB/305305914964/Payment from PhonePe KAVYA BOSE/60274405686@sbin0408236.ifsc.npci
+    Pattern   : Transit / Pass-Through Detection
+
+Accounts:
+----------------------------------------
+  60274405686
+    Holder             : KAVYA BOSE
+    Patterns Triggered : Duplicate Transaction Cross-Check, Failed / Reversed Transaction Detection, Round Trip Detection, Transit / Pass-Through Detection
+    Flagged Txns       : 107
+    Total Credit       : 463207.0
+    Total Debit        : 402205.0
+
+  219320109917
+    Holder             : SHIV LAL BISHNOI
+    Patterns Triggered : Accumulation Account Detection, Round Trip Detection
+    Flagged Txns       : 20
+    Total Credit       : 433240.0
+    Total Debit        : 256243.0
+
+  342949044011
+    Holder             : Yash Dubey
+    Patterns Triggered : Round Trip Detection
+    Flagged Txns       : 3
+    Total Credit       : 392746.0
+    Total Debit        : 246816.0
+
+Key Transactions to Detect:
+----------------------------------------
+  219320109917_000000
+  219320109917_000019
+  219320109917_000027
+  219320109917_000035
+  219320109917_000043
+  219320109917_000053
+  219320109917_000060
+  219320109917_000072
+  219320109917_000077
+  219320109917_000082
+  342949044011_000034
+  342949044011_000049
+  342949044011_000063
+  342949044011_000081
+  60274405686_000001
+  60274405686_000002
+  60274405686_000004
+  60274405686_000005
+  60274405686_000006
+  60274405686_000007
+  60274405686_000013
+  60274405686_000014
+  60274405686_000015
+  60274405686_000017
+  60274405686_000018
+  60274405686_000019
+  60274405686_000020
+  60274405686_000021
+  60274405686_000022
+  60274405686_000023
+  60274405686_000024
+  60274405686_000026
+  60274405686_000027
+  60274405686_000028
+  60274405686_000029
+  60274405686_000031
+  60274405686_000033
+  60274405686_000034
+  60274405686_000035
+  60274405686_000036
+  60274405686_000037
+  60274405686_000040
+  60274405686_000043
+  60274405686_000044
+  60274405686_000045
+  60274405686_000046
+  60274405686_000047
+  60274405686_000048
+  60274405686_000049
+  60274405686_000050
+  60274405686_000051
+  60274405686_000052
+  60274405686_000053
+  60274405686_000054
+  60274405686_000055
+  60274405686_000056
+  60274405686_000057
+  60274405686_000061
+  60274405686_000062
+  60274405686_000063
+  60274405686_000064
+  60274405686_000065
+  60274405686_000066
+  60274405686_000067
+  60274405686_000068
+  60274405686_000069
+  60274405686_000071
+  60274405686_000072
+  60274405686_000073
+  60274405686_000074
+  60274405686_000075
+  60274405686_000076
+  60274405686_000079
+  60274405686_000080
+  60274405686_000081
+  60274405686_000082
+  60274405686_000083
+  60274405686_000084
+  60274405686_000085
+  60274405686_000086
+  60274405686_000088
+  60274405686_000089
+  60274405686_000091
+  60274405686_000092
+  60274405686_000093
+  60274405686_000094
+  60274405686_000095
+  60274405686_000096
+  60274405686_000099
+  84030412795_000080
+
+======================================================================

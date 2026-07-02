@@ -1,0 +1,82 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260702_125349
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260702_125349
+Run timestamp: 2026-07-02T07:24:53.739958+00:00
+Elapsed seconds: 45.63
+
+Input Contract
+--------------
+Clean rows: 9816
+Flagged rows: 12
+Duplicate rows: 7
+Metadata clean rows: 9823
+Summary-report clean rows: 9823
+Count reconciliation: ok_reconciled_by_duplicates
+Reconciliation detail: Metadata clean_rows includes duplicate rows; final clean CSV excludes duplicates stored separately.
+
+Analysis Scope
+--------------
+Total stored rows: 9835
+Eligible detection rows: 9816
+Excluded rows: 19
+Accounts: 4
+Graph nodes: 3440
+Graph edges: 3704
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 9816
+Resolved counterparty rows: 3901
+Resolution rate percent: 39.74123879380603
+LLM calls made: 0
+LLM status: active
+
+Balance Data Quality
+--------------------
+12 transactions were excluded from analysis due to balance inconsistencies identified during extraction.
+
+Finding Counts
+--------------
+1_duplicate_verification: 7
+2_failed_reversed_transaction_detection: 1
+3_pass_through_routing_account: 0
+4_fund_pooling_account: 0
+5_structuring_smurfing_detection: 3
+6_money_flow_graph_construction: 1
+7_circular_flow_multi_hop_cycle_detection: 14
+8_money_trail_tracing: 9
+9_credit_to_cash_out_chains: 0
+10_cross_statement_links: 55
+11_balance_parking_account: 1
+12_hub_ranking: 0
+13_low_value_account_testing: 0
+14_reversal_clusters: 0
+15_round_value_debit_patterns: 0
+16_shared_upi_identifiers: 4
+17_round_trip_detection: 3
+18_dormant_reactivation: 0
+19_first_contact_large_transfer: 129
+21_suspicious_account_ranking: 4
+22_llm_investigated_anomalies: 1
+23_ml_ensemble_anomaly_lead: 0
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 12
+duplicate: 7
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+acct_004: total_score=1588.6495, distinct_patterns=8, total_findings=105
+acct_001: total_score=1460.6613, distinct_patterns=6, total_findings=128
+acct_003: total_score=1048.8941, distinct_patterns=7, total_findings=53
+acct_002: total_score=833.1323, distinct_patterns=5, total_findings=37
+0000136: total_score=156.5, distinct_patterns=1, total_findings=1
+0001122: total_score=156.5, distinct_patterns=1, total_findings=1
+0001214: total_score=156.5, distinct_patterns=1, total_findings=1
+0008595: total_score=156.5, distinct_patterns=1, total_findings=1
+27228025: total_score=156.5, distinct_patterns=1, total_findings=1
+3569191833: total_score=156.5, distinct_patterns=1, total_findings=1

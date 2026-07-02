@@ -96,6 +96,20 @@ from extraction.storage import persist_extraction_run
 
 # Set up a logger for this module.
 logger = logging.getLogger(__name__)
+SOURCE_ACCOUNT_ID_COLUMN = "source_account_id"
+
+
+def _source_account_id(sequence_number: int) -> str:
+    return f"acct_{sequence_number:03d}"
+
+
+def _stamp_source_account_id(df: pd.DataFrame, source_account_id: str) -> pd.DataFrame:
+    """Attach the per-file/per-statement grouping key without touching parsed identity."""
+    if df is None:
+        return df
+    out = df.copy()
+    out[SOURCE_ACCOUNT_ID_COLUMN] = source_account_id
+    return out
 
 
 def run_extraction_pipeline(
@@ -210,17 +224,21 @@ def run_extraction_pipeline(
     other_files = [f for f in present_files
                    if Path(f.get("file_path", "")).suffix.lower() not in _IMAGE_EXTS]
 
+    source_sequence = 1
     for file_index, file_info in enumerate(other_files, start=1):
         file_path = file_info.get("file_path", "")
         account_id = file_info.get("account_id", f"ACC{file_index:03d}")
         bank_name = file_info.get("bank_name", "Unknown Bank")
+        source_id = _source_account_id(source_sequence)
+        source_sequence += 1
 
         logger.info(
             "extraction_pipeline.run_extraction_pipeline: "
-            "Processing file %d of %d: '%s'",
+            "Processing file %d of %d: '%s' as %s",
             file_index,
             len(other_files),
             Path(file_path).name,
+            source_id,
         )
 
         try:
@@ -228,6 +246,7 @@ def run_extraction_pipeline(
                 file_path=file_path,
                 account_id=account_id,
                 bank_name=bank_name,
+                source_account_id=source_id,
                 max_ocr_pages=max_ocr_pages,
             )
 
@@ -269,6 +288,7 @@ def run_extraction_pipeline(
             per_file_records.append({
                 "file": Path(file_path).name,
                 "account_id": account_id,
+                "source_account_id": source_id,
                 "bank_name": bank_name,
                 "status": "FAILED",
                 "error": str(file_error),
@@ -281,7 +301,11 @@ def run_extraction_pipeline(
     # bundle, accumulated exactly like a normal file's result.
     if image_files:
         try:
-            image_results = _process_image_batch(image_files, max_ocr_pages)
+            image_results = _process_image_batch(
+                image_files,
+                max_ocr_pages,
+                start_source_sequence=source_sequence,
+            )
         except Exception as batch_error:
             logger.error(
                 "extraction_pipeline.run_extraction_pipeline: image batch FAILED: %s. "
@@ -339,7 +363,9 @@ def run_extraction_pipeline(
         )
     else:
         unified_clean_df = pd.DataFrame(
-            columns=STANDARD_COLUMNS + REFERENCE_COLUMNS + ["is_reversed", "txn_id", "duplicate_of"])
+            columns=STANDARD_COLUMNS + REFERENCE_COLUMNS + [
+                "is_reversed", "txn_id", "duplicate_of", SOURCE_ACCOUNT_ID_COLUMN,
+            ])
         logger.warning(
             "extraction_pipeline.run_extraction_pipeline: "
             "No clean rows produced from any file."
@@ -348,7 +374,8 @@ def run_extraction_pipeline(
     if all_flagged_dfs:
         unified_flagged_df = pd.concat(all_flagged_dfs, ignore_index=True)
     else:
-        unified_flagged_df = pd.DataFrame(columns=STANDARD_COLUMNS + REFERENCE_COLUMNS + ["flag_reason"])
+        unified_flagged_df = pd.DataFrame(
+            columns=STANDARD_COLUMNS + REFERENCE_COLUMNS + ["flag_reason", SOURCE_ACCOUNT_ID_COLUMN])
 
     # Present Date as a calendar date only (no false "00:00:00") and guarantee the
     # separate Time column exists. Validation already ran on the datetime values.
@@ -630,6 +657,7 @@ def _process_single_file(
     file_path: str,
     account_id: str,
     bank_name: str,
+    source_account_id: str,
     max_ocr_pages: int = None,
 ) -> tuple:
     """
@@ -663,6 +691,7 @@ def _process_single_file(
     file_record: Dict[str, Any] = {
         "file": Path(file_path).name,
         "account_ref": account_id,
+        "source_account_id": source_account_id,
         "bank_name": bank_name,
         "status": "ok",
         "ocr": "n/a",
@@ -926,6 +955,7 @@ def _process_single_file(
 
     standard_df["Account_ID"] = real_account   # the account column = real number
     standard_df["IFSC_Code"] = real_ifsc       # IFSC column on every transaction
+    standard_df = _stamp_source_account_id(standard_df, source_account_id)
 
     # ── Component 5: Validate and clean (shared by all routes) ────────────
     clean_df, flagged_df = validate_and_clean(standard_df)
@@ -976,6 +1006,7 @@ def _process_single_file(
 def _process_image_batch(
     image_files: List[Dict[str, str]],
     max_ocr_pages: int = None,
+    start_source_sequence: int = 1,
 ) -> List[tuple]:
     """
     The redesigned IMAGE pipeline (image route only — PDF/Excel/CSV are untouched).
@@ -1020,8 +1051,9 @@ def _process_image_batch(
     results: List[tuple] = []
     for group_index, group in enumerate(groups, start=1):
         members = [items[i] for i in group["indices"]]
+        source_id = _source_account_id(start_source_sequence + group_index - 1)
         try:
-            results.append(_process_image_group(members, group, group_index))
+            results.append(_process_image_group(members, group, group_index, source_id))
         except Exception as e:
             logger.error("extraction_pipeline._process_image_batch: group %d (%s) failed: %s",
                          group_index, group.get("names"), e)
@@ -1029,6 +1061,7 @@ def _process_image_batch(
             fr = {
                 "file": f"image_group_{group_index} ({', '.join(group.get('names', []))})",
                 "route": "image", "status": "FAILED", "error": str(e),
+                "source_account_id": source_id,
                 "image_group": {"members": group.get("names"), "reason": group.get("reason"),
                                 "confidence": group.get("confidence")},
             }
@@ -1040,6 +1073,7 @@ def _process_image_group(
     members: List[Dict[str, Any]],
     group: Dict[str, Any],
     group_index: int,
+    source_account_id: str,
 ) -> tuple:
     """
     Turns ONE group of images (the pages of a single statement) into a clean/flagged
@@ -1057,6 +1091,7 @@ def _process_image_group(
     file_record: Dict[str, Any] = {
         "file": f"image_group_{group_index} ({', '.join(names)})",
         "account_ref": account_id,
+        "source_account_id": source_account_id,
         "bank_name": bank_name,
         "status": "ok",
         "route": "image",
@@ -1149,6 +1184,7 @@ def _process_image_group(
     real_ifsc = details.get("ifsc_code") or "UNKNOWN"
     standard_df["Account_ID"] = real_account
     standard_df["IFSC_Code"] = real_ifsc
+    standard_df = _stamp_source_account_id(standard_df, source_account_id)
 
     # ── Validate and clean (shared by all routes) ─────────────────────────────
     clean_df, flagged_df = validate_and_clean(standard_df)

@@ -23,6 +23,9 @@ uploads/
 outputs/reports/
 outputs/graphs/
 
+# Oversized generated ground-truth artifact; requires Git LFS if it must be shared.
+Bank-statements-dataset 2/Bank-statements-dataset/ground_truth_artifacts/ground_truth.json
+
 # Persisted extraction runs — contain REAL (de-anonymised) transaction data.
 # Generated locally on each run; must never be committed.
 outputs/extractions/

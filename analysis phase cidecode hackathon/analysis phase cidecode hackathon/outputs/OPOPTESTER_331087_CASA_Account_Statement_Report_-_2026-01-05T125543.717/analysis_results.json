@@ -1,0 +1,1009 @@
+{
+  "run_metadata": {
+    "input_path": "C:\\Users\\msant\\OneDrive\\Desktop\\analysis phase cidecode hackathon\\OPOPTESTER\\331087 CASA Account Statement_Report - 2026-01-05T125543.717.csv",
+    "output_dir": "C:\\Users\\msant\\OneDrive\\Desktop\\analysis phase cidecode hackathon\\analysis phase cidecode hackathon\\outputs\\OPOPTESTER_331087_CASA_Account_Statement_Report_-_2026-01-05T125543.717",
+    "db_path": "C:\\Users\\msant\\OneDrive\\Desktop\\analysis phase cidecode hackathon\\analysis phase cidecode hackathon\\outputs\\OPOPTESTER_331087_CASA_Account_Statement_Report_-_2026-01-05T125543.717\\analysis.db",
+    "run_timestamp": "2026-06-29T19:36:16.178084+00:00",
+    "elapsed_seconds": 0.75,
+    "input_manifest": [
+      {
+        "path": "C:\\Users\\msant\\OneDrive\\Desktop\\analysis phase cidecode hackathon\\OPOPTESTER\\331087 CASA Account Statement_Report - 2026-01-05T125543.717.csv",
+        "headers": [
+          "CTR BATCH NO",
+          "TXN DT",
+          "POST DATE",
+          "TXN TYPE",
+          "Unnamed: 4",
+          "Unnamed: 5",
+          "REF CHQ NO",
+          "NARRATION",
+          "REF TXN NO",
+          "TXN BRANCH",
+          "DEBIT",
+          "CREDIT",
+          "BALANCE",
+          "account_id",
+          "account_holder"
+        ],
+        "rows": 11
+      }
+    ],
+    "config": {
+      "balance_tolerance": 1.0,
+      "money_epsilon": 0.01,
+      "duplicate_date_window_days": 1,
+      "duplicate_amount_relative_tolerance": 0.005,
+      "duplicate_narration_similarity": 0.8,
+      "reversal_amount_relative_tolerance": 0.02,
+      "reversal_narration_similarity": 0.45,
+      "reversal_window_multiplier": 3.0,
+      "default_round_trip_window_days": 30,
+      "settlement_window_multiplier": 10.0,
+      "max_round_trip_hops": 5,
+      "max_cycle_length": 6,
+      "upper_amount_quantile": 0.99,
+      "high_volume_quantile": 0.75,
+      "high_ratio_quantile": 0.75,
+      "low_ratio_quantile": 0.25,
+      "dense_activity_quantile": 0.95,
+      "minimum_cluster_size": 3,
+      "maximum_findings_per_pattern": 5000,
+      "maximum_trace_debits": 10000,
+      "llm_model": "llama-3.1-8b-instant",
+      "enable_llm_fallback": false,
+      "sqlite_busy_timeout_ms": 30000,
+      "high_throughput_min_counterparties": 3,
+      "high_throughput_retention_max": 0.1,
+      "credit_to_cash_window_days": 3,
+      "round_value_min_repeats": 3,
+      "round_value_divisor": 1000.0,
+      "low_value_test_max_amount": 100.0,
+      "low_value_test_min_pairs": 2,
+      "reversal_cluster_min_pairs": 3,
+      "hub_ranking_min_degree": 3
+    }
+  },
+  "baseline_summary": {
+    "row_counts": {
+      "total": 11,
+      "eligible": 11,
+      "excluded": 0,
+      "by_source_bucket": {
+        "clean": 11
+      },
+      "by_exclusion_reason": {}
+    },
+    "account_count": 1,
+    "date_range": {
+      "start": "2024-12-19",
+      "end": "2025-05-05"
+    },
+    "transaction_amounts": {
+      "median": 4500.0,
+      "p75": 14750.0,
+      "p90": 500000.0,
+      "p95": 500000.0,
+      "p99": 500000.0,
+      "maximum": 500000.0,
+      "median_absolute_deviation": 4450.0
+    },
+    "median_transactions_per_account": 11.0,
+    "thresholds": {
+      "typical_transaction_gap_days": 5.0,
+      "reversal_window_days": 15,
+      "round_trip_window_days": 30,
+      "round_trip_min_retention_ratio": 0.6,
+      "transit_throughput_ratio_min": 0.9999230473258945,
+      "transit_volume_min": 1039560.0,
+      "transit_transaction_count_min": 11.0,
+      "accumulation_credit_min": 519800.0,
+      "accumulation_outflow_to_inflow_max": 0.9999230473258945,
+      "accumulation_unique_counterparty_min": 5.0,
+      "structuring_individual_amount_max": 500000.0,
+      "structuring_min_count": 3,
+      "structuring_collective_amount_min": 1500000.0,
+      "high_value_amount": 14750.0,
+      "high_throughput_volume_min": 1039560.0,
+      "credit_to_cash_amount_min": 14750.0,
+      "round_value_collective_min": 13500.0,
+      "holding_credit_min": 519800.0,
+      "holding_retention_min": 0.3,
+      "hub_flow_volume_min": 1039560.0
+    },
+    "top_accounts_by_volume": [
+      {
+        "account_id": "110216248295",
+        "transaction_count": 11,
+        "total_volume": 1039560.0,
+        "throughput_ratio": 0.9999230473258945
+      }
+    ],
+    "top_accounts_by_connectivity": [
+      {
+        "account_id": "110216248295",
+        "unique_counterparty_count": 5,
+        "total_volume": 1039560.0
+      }
+    ]
+  },
+  "counterparty_resolution": {
+    "eligible_rows": 11,
+    "resolved_counterparty_rows": 5,
+    "resolution_rate_percent": 45.45454545454545,
+    "method_counts": {
+      "deterministic": 5,
+      "unresolved": 6
+    },
+    "ledger_pair_count": 0,
+    "llm_call_count": 0,
+    "llm_available": false,
+    "cache_entry_count": 0
+  },
+  "suspicious_accounts": [
+    {
+      "account_id": "110216248295",
+      "distinct_pattern_count": 5,
+      "pattern_breakdown": {
+        "5_transit_pass_through_detection": 1,
+        "6_accumulation_account_detection": 1,
+        "11_high_throughput_pass_through_detection": 1,
+        "14_large_credit_followed_by_cash_withdrawal": 2,
+        "21_top_suspicious_account_ranking": 1
+      },
+      "finding_ids": [
+        "61662cf89fcccd8fcc5b",
+        "eaac1de8db482d2044b9",
+        "aa1370bf9ae314ae2088",
+        "71236683d6a977fc7ede",
+        "eee47c0eef68f80af356",
+        "58403ceab10ad8d759bb"
+      ],
+      "total_findings": 6
+    }
+  ],
+  "findings_by_pattern": {
+    "1_duplicate_detection_cross_check": [],
+    "2_failed_reversed_transaction_detection": [],
+    "3_balance_consistency_validation": [],
+    "4_round_trip_detection": [],
+    "5_transit_pass_through_detection": [
+      {
+        "pattern_id": 5,
+        "pattern_name": "transit_pass_through_detection",
+        "accounts": [
+          "110216248295"
+        ],
+        "txn_ids": [
+          "20250426194536389886",
+          "20250501172148549817",
+          "17243920250502000600632491",
+          "20250501235256362421",
+          "20250505184624045697"
+        ],
+        "explanation": "Account 110216248295 processed 1039560.00 in combined inflow/outflow with a 100.0% throughput ratio across multiple counterparties, consistent with pass-through use.",
+        "confidence_tier": "high",
+        "details": {
+          "total_credit": 519800.0,
+          "total_debit": 519760.0,
+          "total_volume": 1039560.0,
+          "throughput_ratio": 0.9999230473258945,
+          "counterparty_count": 5,
+          "runtime_thresholds": {
+            "throughput_ratio_min": 0.9999230473258945,
+            "volume_min": 1039560.0,
+            "transaction_count_min": 11.0
+          },
+          "source_documents": [
+            {
+              "txn_id": "20250426194536389886",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250501172148549817",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250501235256362421",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "17243920250502000600632491",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250505184624045697",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            }
+          ]
+        },
+        "finding_id": "61662cf89fcccd8fcc5b"
+      }
+    ],
+    "6_accumulation_account_detection": [
+      {
+        "pattern_id": 6,
+        "pattern_name": "accumulation_account_detection",
+        "accounts": [
+          "110216248295"
+        ],
+        "txn_ids": [
+          "20250426194536389886",
+          "20250501172148549817",
+          "17243920250502000600632491"
+        ],
+        "explanation": "Account 110216248295 received 519800.00 from many counterparties while debiting only 100.0% of total credits, consistent with accumulation.",
+        "confidence_tier": "high",
+        "details": {
+          "total_credit": 519800.0,
+          "total_debit": 519760.0,
+          "outflow_to_inflow_ratio": 0.9999230473258945,
+          "unique_counterparty_count": 5,
+          "observed_inbound_source_count": 3,
+          "runtime_thresholds": {
+            "credit_min": 519800.0,
+            "outflow_to_inflow_max": 0.9999230473258945,
+            "unique_counterparty_min": 5.0
+          },
+          "source_documents": [
+            {
+              "txn_id": "20250426194536389886",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250501172148549817",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "17243920250502000600632491",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            }
+          ]
+        },
+        "finding_id": "eaac1de8db482d2044b9"
+      }
+    ],
+    "7_structuring_smurfing_detection": [],
+    "8_money_flow_graph_construction": [],
+    "9_circular_flow_multi_hop_cycle_detection": [],
+    "10_money_trail_tracing": [],
+    "11_high_throughput_pass_through_detection": [
+      {
+        "pattern_id": 11,
+        "pattern_name": "high_throughput_pass_through_detection",
+        "accounts": [
+          "110216248295"
+        ],
+        "txn_ids": [
+          "20250426194536389886",
+          "20250501172148549817",
+          "17243920250502000600632491",
+          "20250501235256362421",
+          "20250505184624045697"
+        ],
+        "explanation": "Account 110216248295 received 519800.00 from 3 sources and disbursed 519760.00 to 2 targets, retaining only 0.0% of inflow — consistent with high-throughput pass-through.",
+        "confidence_tier": "high",
+        "details": {
+          "total_credit": 519800.0,
+          "total_debit": 519760.0,
+          "retention_ratio": 7.695267410542516e-05,
+          "inbound_source_count": 3,
+          "outbound_target_count": 2,
+          "runtime_thresholds": {
+            "volume_min": 1039560.0,
+            "retention_max": 0.1,
+            "min_counterparties": 3
+          },
+          "source_documents": [
+            {
+              "txn_id": "20250426194536389886",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250501172148549817",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250501235256362421",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "17243920250502000600632491",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250505184624045697",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            }
+          ]
+        },
+        "finding_id": "aa1370bf9ae314ae2088"
+      }
+    ],
+    "12_matched_internal_flow_hub_detection": [],
+    "13_cross_statement_money_flow_links": [],
+    "14_large_credit_followed_by_cash_withdrawal": [
+      {
+        "pattern_id": 14,
+        "pattern_name": "large_credit_followed_by_cash_withdrawal",
+        "accounts": [
+          "110216248295"
+        ],
+        "txn_ids": [
+          "20250426194536389886",
+          "20250426194714006864",
+          "20250426194850009121",
+          "20250426194944010402"
+        ],
+        "explanation": "Account 110216248295 received a credit of 19500.00 followed by 3 ATM/cash withdrawal(s) totalling 19500.00 (100% of credit) within 0 day(s).",
+        "confidence_tier": "high",
+        "details": {
+          "credit_amount": 19500.0,
+          "total_cash_withdrawn": 19500.0,
+          "withdrawal_ratio": 1.0,
+          "withdrawal_count": 3,
+          "duration_days": 0,
+          "withdrawal_amounts": [
+            5000.0,
+            10000.0,
+            4500.0
+          ],
+          "runtime_thresholds": {
+            "credit_min": 14750.0,
+            "window_days": 3
+          },
+          "source_documents": [
+            {
+              "txn_id": "20250426194536389886",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250426194714006864",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250426194850009121",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250426194944010402",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            }
+          ]
+        },
+        "finding_id": "71236683d6a977fc7ede"
+      },
+      {
+        "pattern_id": 14,
+        "pattern_name": "large_credit_followed_by_cash_withdrawal",
+        "accounts": [
+          "110216248295"
+        ],
+        "txn_ids": [
+          "17243920250502000600632491",
+          "79508320250502000800000160"
+        ],
+        "explanation": "Account 110216248295 received a credit of 500000.00 followed by 1 ATM/cash withdrawal(s) totalling 500000.00 (100% of credit) within 0 day(s).",
+        "confidence_tier": "high",
+        "details": {
+          "credit_amount": 500000.0,
+          "total_cash_withdrawn": 500000.0,
+          "withdrawal_ratio": 1.0,
+          "withdrawal_count": 1,
+          "duration_days": 0,
+          "withdrawal_amounts": [
+            500000.0
+          ],
+          "runtime_thresholds": {
+            "credit_min": 14750.0,
+            "window_days": 3
+          },
+          "source_documents": [
+            {
+              "txn_id": "17243920250502000600632491",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "79508320250502000800000160",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            }
+          ]
+        },
+        "finding_id": "eee47c0eef68f80af356"
+      }
+    ],
+    "15_accumulation_holding_account_detection": [],
+    "16_repeated_round_value_debit_pattern": [],
+    "17_shared_upi_identifier_detection": [],
+    "18_reversal_cluster_detection": [],
+    "19_low_value_reciprocal_account_testing": [],
+    "20_high_risk_internal_flow_hub_ranking": [],
+    "21_top_suspicious_account_ranking": [
+      {
+        "pattern_id": 21,
+        "pattern_name": "top_suspicious_account_ranking",
+        "accounts": [
+          "110216248295"
+        ],
+        "txn_ids": [
+          "20250426194536389886",
+          "20250501172148549817",
+          "17243920250502000600632491",
+          "20250501235256362421",
+          "20250505184624045697",
+          "20250426194714006864",
+          "20250426194850009121",
+          "20250426194944010402",
+          "79508320250502000800000160"
+        ],
+        "explanation": "Account 110216248295 is flagged by 4 distinct pattern types with 5 total finding(s): accumulation_account_detection, high_throughput_pass_through_detection, large_credit_followed_by_cash_withdrawal, transit_pass_through_detection.",
+        "confidence_tier": "high",
+        "details": {
+          "distinct_pattern_count": 4,
+          "pattern_ids": [
+            5,
+            6,
+            11,
+            14
+          ],
+          "pattern_names": [
+            "accumulation_account_detection",
+            "high_throughput_pass_through_detection",
+            "large_credit_followed_by_cash_withdrawal",
+            "transit_pass_through_detection"
+          ],
+          "total_findings": 5,
+          "total_transactions_involved": 9,
+          "source_documents": [
+            {
+              "txn_id": "20250426194536389886",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250426194714006864",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250426194850009121",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250426194944010402",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250501172148549817",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250501235256362421",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "17243920250502000600632491",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "79508320250502000800000160",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            },
+            {
+              "txn_id": "20250505184624045697",
+              "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+              "page": ""
+            }
+          ]
+        },
+        "finding_id": "58403ceab10ad8d759bb"
+      }
+    ]
+  },
+  "all_findings": [
+    {
+      "pattern_id": 5,
+      "pattern_name": "transit_pass_through_detection",
+      "accounts": [
+        "110216248295"
+      ],
+      "txn_ids": [
+        "20250426194536389886",
+        "20250501172148549817",
+        "17243920250502000600632491",
+        "20250501235256362421",
+        "20250505184624045697"
+      ],
+      "explanation": "Account 110216248295 processed 1039560.00 in combined inflow/outflow with a 100.0% throughput ratio across multiple counterparties, consistent with pass-through use.",
+      "confidence_tier": "high",
+      "details": {
+        "total_credit": 519800.0,
+        "total_debit": 519760.0,
+        "total_volume": 1039560.0,
+        "throughput_ratio": 0.9999230473258945,
+        "counterparty_count": 5,
+        "runtime_thresholds": {
+          "throughput_ratio_min": 0.9999230473258945,
+          "volume_min": 1039560.0,
+          "transaction_count_min": 11.0
+        },
+        "source_documents": [
+          {
+            "txn_id": "20250426194536389886",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250501172148549817",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250501235256362421",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "17243920250502000600632491",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250505184624045697",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          }
+        ]
+      },
+      "finding_id": "61662cf89fcccd8fcc5b"
+    },
+    {
+      "pattern_id": 6,
+      "pattern_name": "accumulation_account_detection",
+      "accounts": [
+        "110216248295"
+      ],
+      "txn_ids": [
+        "20250426194536389886",
+        "20250501172148549817",
+        "17243920250502000600632491"
+      ],
+      "explanation": "Account 110216248295 received 519800.00 from many counterparties while debiting only 100.0% of total credits, consistent with accumulation.",
+      "confidence_tier": "high",
+      "details": {
+        "total_credit": 519800.0,
+        "total_debit": 519760.0,
+        "outflow_to_inflow_ratio": 0.9999230473258945,
+        "unique_counterparty_count": 5,
+        "observed_inbound_source_count": 3,
+        "runtime_thresholds": {
+          "credit_min": 519800.0,
+          "outflow_to_inflow_max": 0.9999230473258945,
+          "unique_counterparty_min": 5.0
+        },
+        "source_documents": [
+          {
+            "txn_id": "20250426194536389886",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250501172148549817",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "17243920250502000600632491",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          }
+        ]
+      },
+      "finding_id": "eaac1de8db482d2044b9"
+    },
+    {
+      "pattern_id": 11,
+      "pattern_name": "high_throughput_pass_through_detection",
+      "accounts": [
+        "110216248295"
+      ],
+      "txn_ids": [
+        "20250426194536389886",
+        "20250501172148549817",
+        "17243920250502000600632491",
+        "20250501235256362421",
+        "20250505184624045697"
+      ],
+      "explanation": "Account 110216248295 received 519800.00 from 3 sources and disbursed 519760.00 to 2 targets, retaining only 0.0% of inflow — consistent with high-throughput pass-through.",
+      "confidence_tier": "high",
+      "details": {
+        "total_credit": 519800.0,
+        "total_debit": 519760.0,
+        "retention_ratio": 7.695267410542516e-05,
+        "inbound_source_count": 3,
+        "outbound_target_count": 2,
+        "runtime_thresholds": {
+          "volume_min": 1039560.0,
+          "retention_max": 0.1,
+          "min_counterparties": 3
+        },
+        "source_documents": [
+          {
+            "txn_id": "20250426194536389886",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250501172148549817",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250501235256362421",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "17243920250502000600632491",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250505184624045697",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          }
+        ]
+      },
+      "finding_id": "aa1370bf9ae314ae2088"
+    },
+    {
+      "pattern_id": 14,
+      "pattern_name": "large_credit_followed_by_cash_withdrawal",
+      "accounts": [
+        "110216248295"
+      ],
+      "txn_ids": [
+        "20250426194536389886",
+        "20250426194714006864",
+        "20250426194850009121",
+        "20250426194944010402"
+      ],
+      "explanation": "Account 110216248295 received a credit of 19500.00 followed by 3 ATM/cash withdrawal(s) totalling 19500.00 (100% of credit) within 0 day(s).",
+      "confidence_tier": "high",
+      "details": {
+        "credit_amount": 19500.0,
+        "total_cash_withdrawn": 19500.0,
+        "withdrawal_ratio": 1.0,
+        "withdrawal_count": 3,
+        "duration_days": 0,
+        "withdrawal_amounts": [
+          5000.0,
+          10000.0,
+          4500.0
+        ],
+        "runtime_thresholds": {
+          "credit_min": 14750.0,
+          "window_days": 3
+        },
+        "source_documents": [
+          {
+            "txn_id": "20250426194536389886",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250426194714006864",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250426194850009121",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250426194944010402",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          }
+        ]
+      },
+      "finding_id": "71236683d6a977fc7ede"
+    },
+    {
+      "pattern_id": 14,
+      "pattern_name": "large_credit_followed_by_cash_withdrawal",
+      "accounts": [
+        "110216248295"
+      ],
+      "txn_ids": [
+        "17243920250502000600632491",
+        "79508320250502000800000160"
+      ],
+      "explanation": "Account 110216248295 received a credit of 500000.00 followed by 1 ATM/cash withdrawal(s) totalling 500000.00 (100% of credit) within 0 day(s).",
+      "confidence_tier": "high",
+      "details": {
+        "credit_amount": 500000.0,
+        "total_cash_withdrawn": 500000.0,
+        "withdrawal_ratio": 1.0,
+        "withdrawal_count": 1,
+        "duration_days": 0,
+        "withdrawal_amounts": [
+          500000.0
+        ],
+        "runtime_thresholds": {
+          "credit_min": 14750.0,
+          "window_days": 3
+        },
+        "source_documents": [
+          {
+            "txn_id": "17243920250502000600632491",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "79508320250502000800000160",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          }
+        ]
+      },
+      "finding_id": "eee47c0eef68f80af356"
+    },
+    {
+      "pattern_id": 21,
+      "pattern_name": "top_suspicious_account_ranking",
+      "accounts": [
+        "110216248295"
+      ],
+      "txn_ids": [
+        "20250426194536389886",
+        "20250501172148549817",
+        "17243920250502000600632491",
+        "20250501235256362421",
+        "20250505184624045697",
+        "20250426194714006864",
+        "20250426194850009121",
+        "20250426194944010402",
+        "79508320250502000800000160"
+      ],
+      "explanation": "Account 110216248295 is flagged by 4 distinct pattern types with 5 total finding(s): accumulation_account_detection, high_throughput_pass_through_detection, large_credit_followed_by_cash_withdrawal, transit_pass_through_detection.",
+      "confidence_tier": "high",
+      "details": {
+        "distinct_pattern_count": 4,
+        "pattern_ids": [
+          5,
+          6,
+          11,
+          14
+        ],
+        "pattern_names": [
+          "accumulation_account_detection",
+          "high_throughput_pass_through_detection",
+          "large_credit_followed_by_cash_withdrawal",
+          "transit_pass_through_detection"
+        ],
+        "total_findings": 5,
+        "total_transactions_involved": 9,
+        "source_documents": [
+          {
+            "txn_id": "20250426194536389886",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250426194714006864",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250426194850009121",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250426194944010402",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250501172148549817",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250501235256362421",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "17243920250502000600632491",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "79508320250502000800000160",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          },
+          {
+            "txn_id": "20250505184624045697",
+            "doc_id": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+            "page": ""
+          }
+        ]
+      },
+      "finding_id": "58403ceab10ad8d759bb"
+    }
+  ],
+  "excluded_rows": {
+    "balance_mismatch": [],
+    "duplicate": [],
+    "other": []
+  },
+  "possible_same_owner": [],
+  "balance_validation": {
+    "rows_checked": 11,
+    "status_counts": {
+      "anchor": 1,
+      "consistent": 10
+    },
+    "newly_excluded_count": 0
+  },
+  "graph_summary": {
+    "node_count": 6,
+    "edge_count": 5
+  },
+  "graph": {
+    "directed": true,
+    "multigraph": true,
+    "graph": {
+      "pattern_id": 8,
+      "pattern_name": "money_flow_graph_construction"
+    },
+    "nodes": [
+      {
+        "observed_account": true,
+        "account_holder": "AISHWARYA KIRAN",
+        "bank_name": "14751",
+        "ifsc_code": "",
+        "total_volume": 1039560.0,
+        "throughput_ratio": 0.9999230473258945,
+        "unique_counterparty_count": 5,
+        "id": "110216248295"
+      },
+      {
+        "observed_account": false,
+        "id": "nitin@okaxis"
+      },
+      {
+        "observed_account": false,
+        "id": "geeta@okicici"
+      },
+      {
+        "observed_account": false,
+        "id": "palla@axl"
+      },
+      {
+        "observed_account": false,
+        "id": "42025050200522496"
+      },
+      {
+        "observed_account": false,
+        "id": "12902@ybl"
+      }
+    ],
+    "edges": [
+      {
+        "amount": 50.0,
+        "date": "2025-05-01",
+        "time": "",
+        "txn_id": "20250501235256362421",
+        "txn_ids": [
+          "20250501235256362421"
+        ],
+        "confidence_tier": "high",
+        "flag_reason": "",
+        "reference": "104111329554",
+        "ledger_pair_id": "",
+        "source_document": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+        "source": "110216248295",
+        "target": "palla@axl",
+        "key": "20250501235256362421"
+      },
+      {
+        "amount": 10.0,
+        "date": "2025-05-05",
+        "time": "",
+        "txn_id": "20250505184624045697",
+        "txn_ids": [
+          "20250505184624045697"
+        ],
+        "confidence_tier": "high",
+        "flag_reason": "",
+        "reference": "104320465511",
+        "ledger_pair_id": "",
+        "source_document": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+        "source": "110216248295",
+        "target": "12902@ybl",
+        "key": "20250505184624045697"
+      },
+      {
+        "amount": 19500.0,
+        "date": "2025-04-26",
+        "time": "",
+        "txn_id": "20250426194536389886",
+        "txn_ids": [
+          "20250426194536389886"
+        ],
+        "confidence_tier": "high",
+        "flag_reason": "",
+        "reference": "548214083402",
+        "ledger_pair_id": "",
+        "source_document": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+        "source": "nitin@okaxis",
+        "target": "110216248295",
+        "key": "20250426194536389886"
+      },
+      {
+        "amount": 100.0,
+        "date": "2025-05-01",
+        "time": "",
+        "txn_id": "20250501172148549817",
+        "txn_ids": [
+          "20250501172148549817"
+        ],
+        "confidence_tier": "high",
+        "flag_reason": "",
+        "reference": "512122328244",
+        "ledger_pair_id": "",
+        "source_document": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+        "source": "geeta@okicici",
+        "target": "110216248295",
+        "key": "20250501172148549817"
+      },
+      {
+        "amount": 500000.0,
+        "date": "2025-05-02",
+        "time": "",
+        "txn_id": "17243920250502000600632491",
+        "txn_ids": [
+          "17243920250502000600632491"
+        ],
+        "confidence_tier": "high",
+        "flag_reason": "",
+        "reference": "",
+        "ledger_pair_id": "",
+        "source_document": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+        "source": "42025050200522496",
+        "target": "110216248295",
+        "key": "17243920250502000600632491"
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+======================================================================
+  331087 CASA Account Statement_Report - 2026-01-05T125543.717 — Analysis Summary
+======================================================================
+
+Fraud Transactions:
+----------------------------------------
+  17243920250502000600632491
+    Account   : 110216248295
+    Date      : 2025-05-02
+    Amount    : 500000.0
+    Direction : credit
+    Narration : RTGS Cr-ICICR42025050200522496-ICIC0000011-RG ENTERPRISE--/URGENT/
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250426194536389886
+    Account   : 110216248295
+    Date      : 2025-04-26
+    Amount    : 19500.0
+    Direction : credit
+    Narration : UPI/CR/548214083402/Muhammed /ESMF/**nitin@okaxis/UPI//AXIeaad039e5e844319b6141cc784efd4e9/26/04/2025 19:45:36
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250426194714006864
+    Account   : 110216248295
+    Date      : 2025-04-26
+    Amount    : 5000.0
+    Direction : debit
+    Narration : ATM Cash-ESAF0633-VELLAMUNDAWAYANADKLIN-26/04/25 19:47:14/0008
+    Pattern   : Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250426194850009121
+    Account   : 110216248295
+    Date      : 2025-04-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-ESAF0633-VELLAMUNDAWAYANADKLIN-26/04/25 19:48:50/0008
+    Pattern   : Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250426194944010402
+    Account   : 110216248295
+    Date      : 2025-04-26
+    Amount    : 4500.0
+    Direction : debit
+    Narration : ATM Cash-ESAF0633-VELLAMUNDAWAYANADKLIN-26/04/25 19:49:44/0008
+    Pattern   : Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250501172148549817
+    Account   : 110216248295
+    Date      : 2025-05-01
+    Amount    : 100.0
+    Direction : credit
+    Narration : UPI/CR/512122328244/Muhammed /SBIN/**geeta@okicici/UPI//ICI426df9070ef9446c99133ebce8402584/01/05/2025 17:21:48
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250501235256362421
+    Account   : 110216248295
+    Date      : 2025-05-01
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/104111329554/Mr DONISH/CBIN/**palla@axl/UPI//HDF5875d70e57cc4f119c7f6a86fa18f3d6/01/05/2025 23:52:56
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250505184624045697
+    Account   : 110216248295
+    Date      : 2025-05-05
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/104320465511/USMAN/YESB/**12902@ybl/UPI//HDFab635e88005a45a18c4252db081f2cb0/05/05/2025 18:46:24
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  79508320250502000800000160
+    Account   : 110216248295
+    Date      : 2025-05-02
+    Amount    : 500000.0
+    Direction : debit
+    Narration : Cash Withdrawal - NALLOORNAD
+    Pattern   : Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+Accounts:
+----------------------------------------
+  110216248295
+    Holder             : AISHWARYA KIRAN
+    Patterns Triggered : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+    Flagged Txns       : 28
+    Total Credit       : 519800.0
+    Total Debit        : 519760.0
+
+Key Transactions to Detect:
+----------------------------------------
+  17243920250502000600632491
+  20250426194536389886
+  20250426194714006864
+  20250426194850009121
+  20250426194944010402
+  20250501172148549817
+  20250501235256362421
+  20250505184624045697
+  79508320250502000800000160
+
+======================================================================

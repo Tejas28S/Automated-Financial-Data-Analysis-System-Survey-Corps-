@@ -1,0 +1,53 @@
+{
+  "trails": [
+    {
+      "accounts": [
+        "acct_001"
+      ],
+      "allocations": [
+        {
+          "allocated_from_credit": 3912.0,
+          "balance_after_debit": 188345.0,
+          "counterparty_account": "irctc.pay@axisbank",
+          "counterparty_name_raw": "IRCTC",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-17",
+          "debit_amount": 3912.0,
+          "debit_txn_id": "acct_001_000087",
+          "narration": "UPI/349817338770/DR/IRCTC/PUNB/irctc.pay@axisbank@punb0832523.ifsc.npci/UPI",
+          "remaining_after_allocation": 368917.0
+        }
+      ],
+      "credited_amount": 372829.0,
+      "finding_id": "eb5974b1ff5c375d0e7a",
+      "source_credit_txn_id": "acct_001_000085",
+      "trace_status": "partially_traced"
+    },
+    {
+      "accounts": [
+        "acct_001"
+      ],
+      "allocations": [
+        {
+          "allocated_from_credit": 352326.8,
+          "balance_after_debit": 383069.1,
+          "counterparty_account": "2503197022608",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.65,
+          "counterparty_resolution_method": "narration_similarity_match",
+          "date": "2025-03-19",
+          "debit_amount": 352326.8,
+          "debit_txn_id": "acct_001_000096",
+          "narration": "MB NEFT/UTIBN2503197022608/Priya Venk/Priya Venkatesh/",
+          "remaining_after_allocation": 0.0
+        }
+      ],
+      "credited_amount": 352326.8,
+      "finding_id": "7d391b7359dfe22d1383",
+      "source_credit_txn_id": "acct_001_000094",
+      "trace_status": "exhausted"
+    }
+  ],
+  "type": "money_trail_all_accounts"
+}

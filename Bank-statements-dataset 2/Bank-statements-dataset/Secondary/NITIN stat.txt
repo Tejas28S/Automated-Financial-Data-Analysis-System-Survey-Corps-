@@ -1,0 +1,231 @@
+                                                             KERALA GRAMIN BANK
+                                                               VAKERY (40211)
+
+                                                            STATEMENT OF ACCOUNT
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Account Number                         : SB101 40211101047567 NITIN ADITYA
+                                         226 VEMBILATH
+                                         MOODAKOLLI (PO)
+                                         WAYANAD (DT) - 673592
+
+From Date                              : 01-01-2025
+To Date                                : 29-07-2025
+Based on                               : Transaction Date
+--------------------------------------------------------------------------------------------------------------------------------------------
+Trans Dt Value Dt Transn ID     Transaction Particulars                           Ins Number          Debit         Credit           Balance
+--------------------------------------------------------------------------------------------------------------------------------------------
+23-04-25 23-04-25 MG39180/1     BY CASH                                                                             500.00         500.00 Cr
+23-04-25 23-04-25 S5927983/2    UPI/511363494693/Cr/SHREYA  /SBIN/divakaranvembil                                   150.00         650.00 Cr
+24-04-25 24-04-25 S8666209/2    UPI/548033649949/Cr/PALLAV  /FDRL/amit@oki                                   170.00         820.00 Cr
+24-04-25 24-04-25 S8683270/1    UPI/103713147243/Dr/DEEPA DA/YESB/paytmqr583v39@p                    174.00                        646.00 Cr
+25-04-25 25-04-25 S9863603/1    UPI/548103297781/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                        617.00 Cr
+25-04-25 25-04-25 S349005/1     UPI/511549241565/Dr/NITIN   /SBIN/sidharthsuresh2                     10.00                        607.00 Cr
+25-04-25 25-04-25 S372372/2     UPI/511518004246/Cr/NITIN   /SBIN/sidharthsuresh2                                    10.00         617.00 Cr
+26-04-25 26-04-25 S1772363/1    UPI/511670135672/Dr/KARA    /KLGB/livinggreen777@                      1.00                        616.00 Cr
+26-04-25 26-04-25 S1778417/2    UPI/548277735131/Cr/KARA    /KLGB/livinggreen777@                                     1.00         617.00 Cr
+26-04-25 26-04-25 S1826206/1    UPI/511671779998/Dr/ROHAN   /IOBA/swati@oksbi                     100.00                        517.00 Cr
+26-04-25 26-04-25 S1831032/2    UPI/511671641749/Cr/NITIN   /FDRL/abhijith7025228                                   100.00         617.00 Cr
+26-04-25 26-04-25 S1934783/1    UPI/511674874994/Dr/ROHAN   /IOBA/swati@oksbi                     140.00                        477.00 Cr
+26-04-25 26-04-25 S2066455/1    UPI/511678451295/Dr/KARA    /KLGB/livinggreen777@                     50.00                        427.00 Cr
+26-04-25 26-04-25 S2424447/1    UPI/511631768441/Dr/KOMAL   /YESB/paytmqr5xmqvw@p                    200.00                        227.00 Cr
+26-04-25 26-04-25 S3196599/1    UPI/548264101500/Dr/PRADE   /KLGB/abhishekkannan8                     10.00                        217.00 Cr
+27-04-25 27-04-25 S3729073/2    UPI/511725903057/Cr/ANIL    /UBIN/lathadivakaran0                                    90.00         307.00 Cr
+27-04-25 27-04-25 S3739082/1    UPI/511726104337/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                        278.00 Cr
+27-04-25 27-04-25 S3750665/1    UPI/511715660263/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                        249.00 Cr
+27-04-25 27-04-25 S4796687/1    UPI/511733187836/Dr/KARA    /YESB/paytm.s14cy5n@p                     10.00                        239.00 Cr
+27-04-25 27-04-25 S5149489/1    UPI/511740355119/Dr/KARA    /YESB/paytm.s14cy5n@p                    155.00                         84.00 Cr
+28-04-25 28-04-25 S5965586/1    UPI/757680011185/Dr/TARUN   /IOBA/mohit@okh                      1.00                         83.00 Cr
+28-04-25 28-04-25 S6213133/2    Cr.for UTR:YESIG51180026581  MAHILA SAMAJ KALYAN                                  40001.00       40084.00 Cr
+28-04-25 28-04-25 S6265071/1    CWDR/511811018879/28-04-2025 11:52:56/CMN                          10000.00                      30084.00 Cr
+28-04-25 28-04-25 S6267616/1    CWDR/511811019569/28-04-2025 11:53:55/CMN                          10000.00                      20084.00 Cr
+28-04-25 28-04-25 S6270395/1    CWDR/511811007588/28-04-2025 11:54:59/CMN                          10000.00                      10084.00 Cr
+28-04-25 28-04-25 S6273190/1    CWDR/511811018653/28-04-2025 11:56:01/CMN                          10000.00                         84.00 Cr
+28-04-25 28-04-25 S7235775/2    UPI/511809625013/Cr/NITIN   /SBIN/sidharthsuresh2                                   700.00         784.00 Cr
+29-04-25 29-04-25 S8281393/1    UPI/869904481195/Dr/TARUN   /IOBA/mohit@okh                      5.00                        779.00 Cr
+29-04-25 29-04-25 S9227772/1    UPI/903570211195/Dr/TARUN   /IOBA/mohit@okh                      1.00                        778.00 Cr
+29-04-25 29-04-25 S9435842/2    Cr.for UTR:HDFCH00207260617  SHIVA INFRA DEVELOPM                                 40000.00       40778.00 Cr
+29-04-25 29-04-25 S9476476/1    CWDR/000000007822/29-04-2025 17:47:48/CMN                          15000.00                      25778.00 Cr
+29-04-25 29-04-25 S9479233/1    CWDR/000000007823/29-04-2025 17:48:46/CMN                          15000.00                      10778.00 Cr
+29-04-25 29-04-25 S9482019/1    CWDR/000000007824/29-04-2025 17:49:45/CMN                          10000.00                        778.00 Cr
+29-04-25 29-04-25 S9676042/2    UPI/548560912613/Cr/NITIN   /SBIN/sidharthsuresh2                                   700.00        1478.00 Cr
+29-04-25 29-04-25 S217482/1     UPI/511930257614/Dr/Divya   /ESMF/ibrahemibra469@                    100.00                       1378.00 Cr
+30-04-25 30-04-25 S675782/1     UPI/975261381205/Dr/TARUN   /IOBA/mohit@okh                      2.00                       1376.00 Cr
+30-04-25 30-04-25 S986155/1     UPI/512082321783/Dr/radha   /SIBL/primeindia765@o                    150.00                       1226.00 Cr
+30-04-25 30-04-25 S1400399/1    UPI/101627781205/Dr/TARUN   /IOBA/mohit@okh                      5.00                       1221.00 Cr
+30-04-25 30-04-25 S1411439/1    UPI/101997811205/Dr/TARUN   /IOBA/mohit@okh                      1.00                       1220.00 Cr
+30-04-25 30-04-25 S1530906/2    IMPS/512016239456/30-04-2025 16:14:13/MBA                                         10000.00       11220.00 Cr
+30-04-25 30-04-25 S1551517/1    CWDR/512016012670/30-04-2025 16:17:29/CMN                          10000.00                       1220.00 Cr
+30-04-25 30-04-25 S1558357/1    CWDR/512016013716/30-04-2025 16:20:11/CMN                           1024.78                        195.22 Cr
+30-04-25 30-04-25 S1576231/1    DBTR/512016015622/30-04-2025 16:27:13/CMN                             12.98                        182.24 Cr
+30-04-25 30-04-25 S1596677/2    Cr.for UTR:RMGBN25120950082  RakhiMohil                                           30000.00       30182.24 Cr
+30-04-25 30-04-25 S1603014/1    DBTR/512016015836/30-04-2025 16:37:05/CMN                             12.98                      30169.26 Cr
+30-04-25 30-04-25 S1604880/1    CWDR/512016030319/30-04-2025 16:37:44/CMN                          10024.78                      20144.48 Cr
+30-04-25 30-04-25 S1620358/1    CWDR/512016588930/30-04-2025 16:44:52/CMN                          10024.78                      10119.70 Cr
+30-04-25 30-04-25 S1625386/1    CWDR/512016589451/30-04-2025 16:46:44/CMN                           8724.78                       1394.92 Cr
+30-04-25 30-04-25 S2490116/2    UPI/512059500225/Cr/NITIN   /SBIN/sidharthsuresh2                                   500.00        1894.92 Cr
+30-04-25 01-05-25 S2662528/1    UPI/512104202336/Dr/Deepa   /ESMF/sachoos.sacu.19                     60.00                       1834.92 Cr
+30-04-25 01-05-25 S3209492/1    UPI/512182968956/Dr/Divya Me/YESB/paytm.s17m4ek@p                    125.00                       1709.92 Cr
+30-04-25 01-05-25 S3326571/1    UPI/512128826489/Dr/Pooja Me/UTIB/pankaj@ok                    200.90                       1509.02 Cr
+01-05-25 01-05-25 S4159538/2    UPI/512100167237/Cr/ANIL    /UBIN/lathadivakaran0                                   500.00        2009.02 Cr
+01-05-25 01-05-25 S4175780/1    UPI/512100676430/Dr/Deepa   /YESB/mohit@ybl                    1600.00                        409.02 Cr
+01-05-25 01-05-25 S4221965/1    UPI/512144544429/Dr/radha   /YESB/paytmqr5e7clk@p                     60.00                        349.02 Cr
+01-05-25 02-05-25 S4795591/2    UPI/254980331225/Cr/Pooja Me/utib/goog-payments@a                                     6.00         355.02 Cr
+01-05-25 02-05-25 S4795729/2    UPI/254984701225/Cr/Pooja Me/utib/goog-payments@a                                     6.00         361.02 Cr
+02-05-25 02-05-25 S5196451/1    UPI/285312231225/Dr/TARUN   /IOBA/mohit@okh                      1.00                        360.02 Cr
+02-05-25 02-05-25 S5521260/1    UPI/512222744365/Dr/Divya Me/YESB/paytm.s17m4ek@p                    126.00                        234.02 Cr
+02-05-25 02-05-25 S5773393/2    IMPS/512213933383/02-05-2025 13:17:48/MBA                                         40000.00       40234.02 Cr
+02-05-25 02-05-25 S5777296/1    UPI/304975321225/Dr/TARUN   /IOBA/mohit@okh                      1.00                      40233.02 Cr
+02-05-25 02-05-25 S5809995/1    CWDR/000000008070/02-05-2025 13:27:07/CMN                          15000.00                      25233.02 Cr
+02-05-25 02-05-25 S5812831/1    CWDR/000000008071/02-05-2025 13:28:08/CMN                          15000.00                      10233.02 Cr
+02-05-25 02-05-25 S5815691/1    CWDR/000000008072/02-05-2025 13:29:12/CMN                           9900.00                        333.02 Cr
+02-05-25 02-05-25 S6137726/1    UPI/512237190649/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                        304.02 Cr
+02-05-25 02-05-25 S6267991/1    UPI/512240459808/Dr/Divya Me/YESB/paytm.s17m4ek@p                     10.00                        294.02 Cr
+02-05-25 02-05-25 S6381578/1    UPI/512243236107/Dr/VAISHALI/YESB/paytm.s182e8t@p                     10.00                        284.02 Cr
+02-05-25 02-05-25 S6387288/2    UPI/548862511062/Cr/NITIN   /SBIN/sidharthsuresh2                                   650.00         934.02 Cr
+02-05-25 02-05-25 S6686587/1    UPI/548898590099/Dr/DEEPA DA/YESB/paytmqr583v2s@p                    288.00                        646.02 Cr
+02-05-25 02-05-25 S6912269/1    UPI/512250057511/Dr/Meera   /YESB/paytmqr5dveq1@p                     30.00                        616.02 Cr
+02-05-25 02-05-25 S6930798/1    UPI/512295402627/Dr/Divya Me/YESB/paytm.s17m4ek@p                     44.00                        572.02 Cr
+03-05-25 03-05-25 S7684508/2    UPI/512371255046/Cr/KARA    /CNRB/nikhil@oksb                                     1.00         573.02 Cr
+03-05-25 03-05-25 S7688737/1    UPI/395756891235/Dr/KARA    /CNRB/nikhil@oksb                      1.00                        572.02 Cr
+03-05-25 03-05-25 S7954769/1    UPI/404392981235/Dr/KARA    /CNRB/nikhil@oksb                      1.00                        571.02 Cr
+03-05-25 03-05-25 S8367731/1    UPI/512380788796/Dr/Divya Me/YESB/paytm.s17m4ek@p                     22.00                        549.02 Cr
+03-05-25 03-05-25 S8678321/1    UPI/512388851128/Dr/Divya Me/YESB/paytm.s17m4ek@p                     20.00                        529.02 Cr
+03-05-25 03-05-25 S8739342/2    IMPS/512316006103/03-05-2025 16:38:22/MBA                                         40000.00       40529.02 Cr
+03-05-25 03-05-25 S8762013/1    UPI/548963790965/Dr/VAISHALI/YESB/paytm.s182e8t@p                     10.00                      40519.02 Cr
+03-05-25 03-05-25 S8775257/1    CWDR/512316681662/03-05-2025 16:52:31/CMN                          10000.00                      30519.02 Cr
+03-05-25 03-05-25 S8778249/1    CWDR/512316681794/03-05-2025 16:53:36/CMN                          10000.00                      20519.02 Cr
+03-05-25 03-05-25 S8781368/1    CWDR/512316681912/03-05-2025 16:54:42/CMN                          10000.00                      10519.02 Cr
+03-05-25 03-05-25 S8784522/1    CWDR/512316682050/03-05-2025 16:55:51/CMN                           9900.00                        619.02 Cr
+03-05-25 03-05-25 S9150308/1    UPI/512392267425/Dr/DEEPA DA/YESB/paytmqr28100505                     40.00                        579.02 Cr
+03-05-25 03-05-25 S9167776/1    UPI/512355500172/Dr/Kunal Bo/YESB/neha@ybl                      20.00                        559.02 Cr
+03-05-25 03-05-25 S9279516/1    UPI/512329876327/Dr/Divya Me/YESB/paytm.s17m4ek@p                     10.00                        549.02 Cr
+03-05-25 03-05-25 S9683519/1    UPI/512304925201/Dr/Pooja Me/ICIC/gpayrecharge@ic                     29.00                        520.02 Cr
+04-05-25 04-05-25 S618179/2     UPI/512459059490/Cr/NITIN   /SBIN/sidharthsuresh2                                   650.00        1170.02 Cr
+04-05-25 04-05-25 S1480250/1    UPI/512439174255/Dr/KARA    /YESB/paytm.s14cy5n@p                     68.00                       1102.02 Cr
+04-05-25 04-05-25 S1481041/1    UPI/512446315421/Dr/KARA    /YESB/paytm.s14cy5n@p                     40.00                       1062.02 Cr
+05-05-25 05-05-25 S2348723/1    UPI/602941971255/Dr/KARA    /CNRB/nikhil@oksb                      1.00                       1061.02 Cr
+05-05-25 05-05-25 S2468996/2    IMPS/512510742043/05-05-2025 10:38:29/MBA                                         40000.00       41061.02 Cr
+05-05-25 05-05-25 S2475524/1    UPI/512566846710/Dr/ANIL    /UBIN/lathadivakaran0                   1000.00                      40061.02 Cr
+05-05-25 05-05-25 S2489289/1    CWDR/512510847781/05-05-2025 10:47:17/CMN                          10000.00                      30061.02 Cr
+05-05-25 05-05-25 S2493112/1    CWDR/512510847953/05-05-2025 10:48:41/CMN                          10027.14                      20033.88 Cr
+05-05-25 05-05-25 S2496262/1    CWDR/512510848098/05-05-2025 10:49:50/CMN                          10027.14                      10006.74 Cr
+05-05-25 05-05-25 S2500046/1    CWDR/512510848265/05-05-2025 10:51:12/CMN                           9527.14                        479.60 Cr
+05-05-25 05-05-25 S2555372/1    CWDR/512511918971/05-05-2025 11:10:20/CMN                            427.14                         52.46 Cr
+05-05-25 05-05-25 S3000790/1    UPI/549157433455/Dr/Divya Me/YESB/paytm.s17m4ek@p                     48.00                          4.46 Cr
+05-05-25 05-05-25 S3408416/2    UPI/549101734499/Cr/NITIN   /SBIN/sidharthsuresh2                                   700.00         704.46 Cr
+05-05-25 05-05-25 S3526658/2    UPI/512584634127/Cr/ANIL    /UBIN/lathadivakaran0                                  1000.00        1704.46 Cr
+05-05-25 05-05-25 S3694013/1    UPI/512588675441/Dr/Meera   /FDRL/aboobackernoush                   1000.00                        704.46 Cr
+05-05-25 05-05-25 S3981603/1    UPI/512561819988/Dr/VAISHALI/YESB/paytm.s182e8t@p                     10.00                        694.46 Cr
+05-05-25 05-05-25 S3998399/1    UPI/549146754648/Dr/DEEPA DA/YESB/paytmqrummyhlb8                    175.00                        519.46 Cr
+05-05-25 05-05-25 S4019900/1    UPI/549104053701/Dr/AISHW/YESB/bhavana@ybl                         50.00                        469.46 Cr
+05-05-25 05-05-25 S4042333/2    UPI/512596207727/Cr/ANIL    /UBIN/lathadivakaran0                                    20.00         489.46 Cr
+05-05-25 05-05-25 S4123712/1    UPI/512534525020/Dr/Divya Me/YESB/paytm.s17m4ek@p                     80.00                        409.46 Cr
+06-05-25 06-05-25 S5068764/1    UPI/714184881265/Dr/KARA    /CNRB/nikhil@oksb                      1.00                        408.46 Cr
+06-05-25 06-05-25 S5257386/1    UPI/512615732660/Dr/Divya Me/YESB/paytm.s17m4ek@p                     95.00                        313.46 Cr
+06-05-25 06-05-25 S5585924/1    UPI/730825771265/Dr/KARA    /CNRB/nikhil@oksb                      1.00                        312.46 Cr
+06-05-25 06-05-25 S5720327/2    IMPS/512614508938/06-05-2025 14:12:01/MBA                                         39999.00       40311.46 Cr
+06-05-25 06-05-25 S5760850/1    CWDR/000000008357/06-05-2025 14:29:11/CMN                          15000.00                      25311.46 Cr
+06-05-25 06-05-25 S5763063/1    CWDR/000000008358/06-05-2025 14:30:12/CMN                          15000.00                      10311.46 Cr
+06-05-25 06-05-25 S5765439/1    CWDR/000000008359/06-05-2025 14:31:12/CMN                           9927.14                        384.32 Cr
+06-05-25 06-05-25 S6044594/1    UPI/512626382387/Dr/Divya Me/YESB/paytm.s17m4ek@p                     20.00                        364.32 Cr
+06-05-25 06-05-25 S6217381/1    UPI/512607186743/Dr/Neha/YESB/paytmqr64m00u@p                         10.00                        354.32 Cr
+06-05-25 06-05-25 S6558921/1    UPI/512632291812/Dr/VAISHALI/YESB/paytm.s182e8t@p                     20.00                        334.32 Cr
+06-05-25 06-05-25 S6594621/1    UPI/512638165672/Dr/DEEPA DA/YESB/paytmqrummyhlb8                    178.00                        156.32 Cr
+06-05-25 06-05-25 S6645854/2    UPI/512605707880/Cr/NITIN   /SBIN/sidharthsuresh2                                   650.00         806.32 Cr
+06-05-25 06-05-25 S6940855/1    UPI/512644068138/Dr/Pooja Me/ICIC/gpayrecharge@ic                     29.00                        777.32 Cr
+07-05-25 07-05-25 S7568182/1    UPI/817175531275/Dr/KARA    /CNRB/nikhil@oksb                      1.00                        776.32 Cr
+07-05-25 07-05-25 S7572172/2    UPI/512773552873/Cr/KARA    /CNRB/nikhil@okic                                     2.00         778.32 Cr
+07-05-25 07-05-25 S7980369/1    UPI/512763713968/Dr/Divya Me/YESB/paytm.s17m4ek@p                     60.00                        718.32 Cr
+07-05-25 07-05-25 S8402139/11   PrRvSq 512511918971dt050525                                                         400.00        1118.32 Cr
+07-05-25 07-05-25 S8494488/2    Cr.for UTR:YESIG51270116344  DUHTEA COLLECTION                                    40000.00       41118.32 Cr
+07-05-25 07-05-25 S8518705/1    UPI/512770229817/Dr/Divya Me/YESB/paytm.s17m4ek@p                     20.00                      41098.32 Cr
+07-05-25 07-05-25 S8521596/1    CWDR/000000001836/07-05-2025 16:17:13/CMN                          20027.14                      21071.18 Cr
+07-05-25 07-05-25 S8523506/1    UPI/512770400663/Dr/ANIL    /UBIN/lathadivakaran0                   1000.00                      20071.18 Cr
+07-05-25 07-05-25 S8523996/1    CWDR/000000001837/07-05-2025 16:18:09/CMN                          20027.14                         44.04 Cr
+07-05-25 07-05-25 S8602372/1    UPI/549348754225/Dr/SANJA   /ICIC/getepay.esafban                     10.00                         34.04 Cr
+07-05-25 07-05-25 S8926007/1    UPI/549381370663/Dr/SANJA   /ICIC/getepay.esafban                     20.00                         14.04 Cr
+07-05-25 07-05-25 S9482723/2    UPI/549326403544/Cr/NITIN   /SBIN/sidharthsuresh2                                   700.00         714.04 Cr
+08-05-25 08-05-25 S9654251/1    UPI/512803800323/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                        685.04 Cr
+08-05-25 08-05-25 S29646/1      UPI/512891643847/Dr/Divya Me/YESB/paytm.s17m4ek@p                    140.00                        545.04 Cr
+08-05-25 08-05-25 S31594/1      UPI/921447971285/Dr/KARA    /CNRB/nikhil@oksb                      1.00                        544.04 Cr
+08-05-25 08-05-25 S115531/1     UPI/512893856837/Dr/ANIL    /UBIN/lathadivakaran0                    500.00                         44.04 Cr
+08-05-25 08-05-25 S1458399/2    UPI/512825842311/Cr/ANIL    /UBIN/lathadivakaran0                                  1500.00        1544.04 Cr
+08-05-25 08-05-25 S1623518/1    UPI/549492561695/Dr/DEEPAK  /SIBL/bhqr.2376861a@s                    184.00                       1360.04 Cr
+08-05-25 08-05-25 S1824466/1    UPI/512833084024/Dr/SUNITA  /UTIB/gpay-1125145395                    930.00                        430.04 Cr
+08-05-25 08-05-25 S1870565/1    UPI/512869758307/Dr/DEEPA DA/YESB/paytmqr583v39@p                    402.00                         28.04 Cr
+09-05-25 09-05-25 S2374377/1    UPI/119154831295/Dr/KARA    /CNRB/nikhil@oksb                      1.00                         27.04 Cr
+09-05-25 09-05-25 S3003500/2    IMPS/512913354415/09-05-2025 13:15:00/MBA                                         40000.00       40027.04 Cr
+09-05-25 09-05-25 S3066284/1    DBTR/512913012221/09-05-2025 13:39:24/CMN                             15.34                      40011.70 Cr
+12-05-25 12-05-25 S962639/2     UPI/549843293530/Cr/PALLAV  /FDRL/amit@oki                                   650.00       40661.70 Cr
+12-05-25 12-05-25 S966371/1     UPI/549822917132/Dr/nidhi   /FDRL/kavya@oka                   1580.00                      39081.70 Cr
+12-05-25 12-05-25 S967869/1     UPI/549838118595/Dr/nidhi   /FDRL/kavya@oka                    650.00                      38431.70 Cr
+12-05-25 12-05-25 S970760/1     UPI/549831137953/Dr/nidhi   /FDRL/kavya@oka                    100.00                      38331.70 Cr
+12-05-25 12-05-25 S984010/1     UPI/549803322951/Dr/nidhi   /FDRL/kavya@oka                    200.00                      38131.70 Cr
+12-05-25 12-05-25 S1059896/1    UPI/549878731324/Dr/nidhi   /FDRL/kavya@oka                    100.00                      38031.70 Cr
+13-05-25 13-05-25 S2587132/1    UPI/513376067032/Dr/Divya Me/YESB/paytm.s17m4ek@p                    185.00                      37846.70 Cr
+13-05-25 13-05-25 S3165906/1    UPI/513390675470/Dr/VAISHALI/YESB/paytm.s182e8t@p                     10.00                      37836.70 Cr
+14-05-25 14-05-25 S5425913/1    UPI/513439423896/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                      37807.70 Cr
+14-05-25 14-05-25 S5429717/1    UPI/513439509445/Dr/MR KOMAL/CIUB/NITIN173-2@                    100.00                      37707.70 Cr
+15-05-25 15-05-25 S7004604/1    UPI/513572480708/Dr/ANIL    /UBIN/lathadivakaran0                    500.00                      37207.70 Cr
+17-05-25 17-05-25 S2819016/1    UPI/513709202142/Dr/NITIN   /FDRL/abhijith7025228                    500.00                      36707.70 Cr
+17-05-25 17-05-25 S3413543/1    UPI/513727893673/Dr/nidhi   /FDRL/kavya@oka                    500.00                      36207.70 Cr
+18-05-25 18-05-25 S4717365/1    UPI/550479964671/Dr/PALLAV  /FDRL/kavya@oka                   6000.00                      30207.70 Cr
+19-05-25 19-05-25 S6654310/1    UPI/513993802751/Dr/PALLAV  /FDRL/kavya@oka                    200.00                      30007.70 Cr
+21-05-25 21-05-25 S1568533/1    UPI/514101594132/Dr/NITIN   /FDRL/abhijith7025228                    500.00                      29507.70 Cr
+25-05-25 25-05-25 S1141377/1    UPI/514593175763/Dr/KARA    /YESB/paytm.s14cy5n@p                    138.00                      29369.70 Cr
+25-05-25 25-05-25 S1142117/1    UPI/514552754486/Dr/KARA    /YESB/paytm.s14cy5n@p                     40.00                      29329.70 Cr
+25-05-25 25-05-25 S1575134/1    UPI/514500954562/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                      29300.70 Cr
+26-05-25 26-05-25 S3407132/1    UPI/551257948137/Dr/VAISHALI/YESB/paytm.s182e8t@p                     20.00                      29280.70 Cr
+27-05-25 27-05-25 S4190609/1    UPI/514751987688/Dr/TARUN   /SBIN/ravi@ok                  20000.00                       9280.70 Cr
+27-05-25 27-05-25 S4794889/1    UPI/514766515001/Dr/Deepa   /SBIN/radha@oks                    200.00                       9080.70 Cr
+27-05-25 27-05-25 S4978062/1    UPI/514771005870/Dr/Divya Me/YESB/paytm.s17m4ek@p                     50.00                       9030.70 Cr
+27-05-25 27-05-25 S5004497/1    UPI/514771640446/Dr/Deepa   /SBIN/radha@oks                     60.00                       8970.70 Cr
+27-05-25 27-05-25 S5591389/1    UPI/514785866818/Dr/REKHA DE/KLGB/9048608823@cnrb                    100.00                       8870.70 Cr
+27-05-25 27-05-25 S6158209/1    UPI/514702529791/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                       8841.70 Cr
+28-05-25 28-05-25 S8333502/1    UPI/514817482787/Dr/Divya Me/YESB/paytm.s17m4ek@p                    114.00                       8727.70 Cr
+28-05-25 28-05-25 S9233072/1    UPI/514831420296/Dr/VAISHALI/YESB/paytm.s182e8t@p                     10.00                       8717.70 Cr
+28-05-25 28-05-25 S9706849/1    UPI/514852318550/Dr/DEEPAK  /SIBL/bhqr.2376861a@s                     60.00                       8657.70 Cr
+28-05-25 28-05-25 S136434/1     UPI/514857916612/Dr/SANJA   /UBIN/mufeedamufi7352                   3000.00                       5657.70 Cr
+29-05-25 29-05-25 S2053429/1    UPI/514984775455/Dr/SUNITA  /FDRL/beautysports01@                    380.00                       5277.70 Cr
+29-05-25 29-05-25 S2135219/1    UPI/551546654576/Dr/DEEPA DA/YESB/paytmqrummyhlb8                    329.00                       4948.70 Cr
+29-05-25 29-05-25 S2196243/1    UPI/514924769489/Dr/MR ANJAL/YESB/bharatpe9072209                     50.00                       4898.70 Cr
+30-05-25 30-05-25 S2643189/1    UPI/515008451279/Dr/Divya Me/YESB/paytm.s17m4ek@p                     67.00                       4831.70 Cr
+30-05-25 30-05-25 S3256556/1    UPI/551697608125/Dr/KARA    /SBIN/rajesh@oksbi                    3000.00                       1831.70 Cr
+30-05-25 30-05-25 S3331959/1    UPI/515064306436/Dr/Anita   /YESB/paytmqr59qdyy@p                     20.00                       1811.70 Cr
+30-05-25 30-05-25 S3594639/1    UPI/515026474722/Dr/Divya Me/YESB/paytm.s17m4ek@p                     20.00                       1791.70 Cr
+30-05-25 30-05-25 S4632898/1    UPI/515046537031/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                       1762.70 Cr
+31-05-25 31-05-25 S5450742/1    UPI/515164511090/Dr/VAISHAL /BARB/fathi62828269@b                    505.00                       1257.70 Cr
+31-05-25 31-05-25 S5487515/1    UPI/515165359238/Dr/RAHUL RA/YESB/karan@ybl                      30.00                       1227.70 Cr
+31-05-25 31-05-25 S5500308/1    UPI/515165701783/Dr/Aanya Se/UTIB/gpay-1126216533                    100.00                       1127.70 Cr
+31-05-25 31-05-25 S5667151/1    UPI/515169750653/Dr/Divya Me/YESB/paytm.s17m4ek@p                     64.00                       1063.70 Cr
+31-05-25 31-05-25 S6685878/1    UPI/515193325680/Dr/Divya Me/YESB/paytm.s17m4ek@p                    155.00                        908.70 Cr
+31-05-25 31-05-25 S7356076/1    UPI/515106931769/Dr/Pooja Me/UTIB/pankaj@ok                     69.00                        839.70 Cr
+01-06-25 01-06-25 S7834851/1    UPI/515275322073/Dr/Divya Me/YESB/paytm.s17m4ek@p                     70.00                        769.70 Cr
+02-06-25 02-06-25 S574987/1     UPI/515372162846/Dr/BHAVANA /FDRL/kunal@okic                    431.00                        338.70 Cr
+02-06-25 02-06-25 S1508086/1    UPI/515394243986/Dr/Divya Me/YESB/paytm.s17m4ek@p                    120.00                        218.70 Cr
+03-06-25 03-06-25 S4805383/1    UPI/515473488598/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                        189.70 Cr
+03-06-25 03-06-25 S4985358/1    UPI/515478646831/Dr/Pooja Me/UTIB/pankaj@ok                     29.00                        160.70 Cr
+04-06-25 04-06-25 S7768592/1    UPI/515529785279/Dr/Pooja Me/UTIB/pankaj@ok                     69.00                         91.70 Cr
+05-06-25 05-06-25 S290003/1     UPI/515689161713/Dr/Pooja Me/UTIB/pankaj@ok                     69.00                         22.70 Cr
+06-06-25 06-06-25 S1562687/1    UPI/552303930507/Dr/PALLAVI /KSBK/princekk0807199                     10.00                         12.70 Cr
+07-06-25 07-06-25 S5114268/1    UPI/515892402200/Dr/YASH   /YESB/paytmqr1vbt64m5                       8.00                          4.70 Cr
+18-07-25 18-07-25 S5077904/2    UPI/519932715730/Cr/MR KOMAL/CIUB/NITIN173-2@                                     5.00           9.70 Cr
+18-07-25 18-07-25 S5079666/2    UPI/519945103983/Cr/MR KOMAL/CIUB/NITIN173-2@                                     1.00          10.70 Cr
+--------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                             370351.30      370362.00
+--------------------------------------------------------------------------------------------------------------------------------------------
+                                                                CERTIFICATE
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Certified that the above print out copy of entries/copy of the printout of original data is taken from the device or digital record source
+named Core Banking Solution Software of Kerala Gramin Bank. The digital device or the digital record source was under the lawful control
+of the Bank for regularly creating, storing or processing the information for the purposes of carrying out regular banking business and
+during this period, the computer or the communication device was working properly and the relevant information was regularly fed into the
+computer during the ordinary course of banking business. If the computer/digital device at any point of time was not working properly or
+ out of operation, then it has not affected the electronic/digital record or its accuracy.
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Date:                                                           Signatory II                                                     Signatory I

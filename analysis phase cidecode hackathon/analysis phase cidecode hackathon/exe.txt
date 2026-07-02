@@ -1,0 +1,89 @@
+================================================================================
+EXE.TXT — EXECUTION & RUN GUIDE FOR SYSTEM CODE & CSVs
+CiDeCode Hackathon | Financial Crime Analysis Platform
+================================================================================
+
+This guide describes how to execute the backend CLI engine and batch process the synthetic CSV cases.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. CORE BACKEND PIPELINE (CLI ENGINE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The backend analysis engine is executed using Python. The main entry point is the 
+reproducible command-line tool `analysis_engine/cli.py`.
+
+Execution Command:
+  python -m analysis_engine.cli --input <CSV_FILE> --output-dir <OUTPUT_DIR>
+
+Optional Flags:
+  --no-llm           Disable optional LLM counterparty resolution (default).
+  --trace-credits    Specify credit transaction IDs to trace for money trails (Pattern 10).
+  --verbose, -v      Enable detailed debug logging to stdout.
+
+Example (Run Single Case):
+  python -m analysis_engine.cli --input synthetic_data/pattern_01_round_trip/rt_case_01.csv --output-dir outputs/rt_case_01 --no-llm
+
+Generated Output Files:
+  1. SQLite database:    outputs/<case_name>/analysis.db
+  2. Raw results JSON:   outputs/<case_name>/analysis_results.json
+  3. Rich Report JSON:   analysis_op/<case_name>/report.json
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. RUN ASSISTANT (NATIVE DESKTOP DRAG & DROP APP)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+To open the interactive Drag & Drop desktop window, execute:
+  python run_all_csvs.py
+
+Features:
+  • Drag & Drop: Drag any CSV file directly into the application window to analyze it instantly.
+  • In-App Console: See standard logs and patterns compiled in real-time.
+  • File outputs: Creates `outputs/<case_name>/analysis.db` and copies `outputs/<case_name>/report.json` directly into that folder.
+  • Direct Actions: Pop open the outputs directory in Windows Explorer using the action buttons upon completion.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. MAPPING OF PATTERNS & CSV FOLDERS TO PY CODE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Below is the mapping between the CSV datasets, the 10 financial fraud patterns, 
+and the corresponding detector files under `analysis_engine/detectors/`:
+
+Pattern 1 — Duplicate X-Check
+  • CSV Folder: synthetic_data/pattern_06_duplicates/ (dup_case_01..03)
+  • Code File:  [duplicate.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/detectors/duplicate.py)
+
+Pattern 2 — Reversals
+  • CSV Folder: Run as part of standard detectors on all datasets.
+  • Code File:  [reversal.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/detectors/reversal.py)
+
+Pattern 3 — Balance Check
+  • CSV Folder: Walked and validated on all datasets.
+  • Code File:  [balance.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/balance.py) (in parent root)
+
+Pattern 4 — Round Trips
+  • CSV Folder: synthetic_data/pattern_01_round_trip/ (rt_case_01..03)
+  • Code File:  [round_trip.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/detectors/round_trip.py)
+
+Pattern 5 — Transit Accounts
+  • CSV Folder: synthetic_data/pattern_02_transit_layering/ (tl_case_01..03)
+  • Code File:  [transit.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/detectors/transit.py)
+
+Pattern 6 — Accumulation Accounts
+  • CSV Folder: synthetic_data/pattern_03_accumulation/ (ac_case_01..03)
+  • Code File:  [accumulation.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/detectors/accumulation.py)
+
+Pattern 7 — Structuring (Smurfing)
+  • CSV Folder: synthetic_data/pattern_04_structuring/ (st_case_01..04)
+  • Code File:  [structuring.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/detectors/structuring.py)
+
+Pattern 8 — Flow Graph
+  • CSV Folder: Constructed automatically on all datasets.
+  • Code File:  [graph_builder.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/detectors/graph_builder.py)
+
+Pattern 9 — Circular Flow
+  • CSV Folder: synthetic_data/pattern_09_circular_flow/ (cf_case_01..03)
+  • Code File:  [circular.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/detectors/circular.py)
+
+Pattern 10 — Money Trail
+  • CSV Folder: synthetic_data/pattern_07_money_trail/ (mt_case_01..04)
+  • Code File:  [money_trail.py](file:///c:/Users/msant/OneDrive/Desktop/analysis%20phase%20cidecode%20hackathon/analysis%20phase%20cidecode%20hackathon/analysis_engine/detectors/money_trail.py)

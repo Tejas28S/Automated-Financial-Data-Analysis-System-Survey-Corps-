@@ -1,0 +1,2158 @@
+======================================================================
+  331087 CASA Account Statement_Report - 2026-01-05T125443.633 — Analysis Summary
+======================================================================
+
+Fraud Transactions:
+----------------------------------------
+  17243920250326100300527029
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 50000.0
+    Direction : credit
+    Narration : NEFT Cr-IDFBH25085436235-IDFB0010204-OLD PAL DHABA-
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Transit / Pass-Through Detection
+
+  17243920250327100400684682
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 50000.0
+    Direction : credit
+    Narration : NEFT Cr-N086250144840006-BDBL0001000-MsS OLYMPIA GYM-
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Transit / Pass-Through Detection
+
+  17243920250327100400756283
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 61100.0
+    Direction : credit
+    Narration : NEFT Cr-N086250548414022-BDBL0001000-MsS OLYMPIA GYM-
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Transit / Pass-Through Detection
+
+  20250228160227026355
+    Account   : 110226871466
+    Date      : 2025-02-28
+    Amount    : 500.0
+    Direction : debit
+    Narration : ATM Cash-59922810-CANARABANKSHAJAPURMPIN-28/02/25 16:02:27/7367
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250301223453640630
+    Account   : 110226871466
+    Date      : 2025-03-01
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/000314236327/SULTAN KH/BKID/**42814@ybl/Payment //YBLc736d5f5fa224b68b6a56e74adb946e9/01/03/2025 22:34:53
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250318112334416384
+    Account   : 110226871466
+    Date      : 2025-03-18
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544301874793/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250318112331179632208436674560/18/03/2025 11:23:34
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250318112944417415
+    Account   : 110226871466
+    Date      : 2025-03-18
+    Amount    : 120300.0
+    Direction : credit
+    Narration : INET-IMPS-CR/QUALILOGIX/IndusInd B/259510511846/P2AMOB/0000000000/18/03/2025 11:29:44/507711647080
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250318120631026057
+    Account   : 110226871466
+    Date      : 2025-03-18
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-18/03/25 12:06:31/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250318120758028449
+    Account   : 110226871466
+    Date      : 2025-03-18
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-18/03/25 12:07:58/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250318120913030462
+    Account   : 110226871466
+    Date      : 2025-03-18
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-18/03/25 12:09:13/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250318121028032500
+    Account   : 110226871466
+    Date      : 2025-03-18
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-18/03/25 12:10:28/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250318121144001741
+    Account   : 110226871466
+    Date      : 2025-03-18
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-18/03/25 12:11:44/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250318121304003964
+    Account   : 110226871466
+    Date      : 2025-03-18
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-18/03/25 12:13:04/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250318172012207042
+    Account   : 110226871466
+    Date      : 2025-03-18
+    Amount    : 200.0
+    Direction : debit
+    Narration : UPI/DR/544305779592/Mrs. MANJ/mahb/**527575882/Paid via//AXB20250318172009385465263185920000/18/03/2025 17:20:12
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250319092443675292
+    Account   : 110226871466
+    Date      : 2025-03-19
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544412347917/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250319092439136871513205964800/19/03/2025 09:24:43
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250319174427600340
+    Account   : 110226871466
+    Date      : 2025-03-19
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544417868400/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250319174423149486528029081600/19/03/2025 17:44:27
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250319175810565390
+    Account   : 110226871466
+    Date      : 2025-03-19
+    Amount    : 10.0
+    Direction : credit
+    Narration : UPI/CR/782162766426/Mrs Beena/MAHB/**01305@ybl/Payment //YBL13b08b96d4524be7b3877a7e1ae8d271/19/03/2025 17:58:10
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250319182232354405
+    Account   : 110226871466
+    Date      : 2025-03-19
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544418487261/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250319182224416601191100416000/19/03/2025 18:22:32
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320103829951235
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544525002372/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250320103824662221243953152000/20/03/2025 10:38:29
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320120513122354
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544525928430/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250320120509684053112172554000/20/03/2025 12:05:13
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320120842907449
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 110300.0
+    Direction : credit
+    Narration : INET-IMPS-CR/Mr HASHEM/Bank of Ma/60501953026/1/9957573992/20/03/2025 12:08:42/507912433389
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250320121822030159
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-T1968600-PNBJHALAMANDJODHPURRJIN-20/03/25 12:18:22/7367
+    Pattern   : High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+  20250320122833012996
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:28:33/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320122958015078
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:29:58/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320123036016049
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:30:36/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320123117017103
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:31:17/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320123202018243
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:32:02/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320123245019332
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:32:45/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320123245019332#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250320123323020283
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:33:23/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320123323020283#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250320123402021298
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250320123402021298#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:34:02/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320123442022312
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:34:42/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320123442022312#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250320123523023257
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250320123523023257#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:35:23/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250320123601024243
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 0.0
+    Direction : credit
+    Narration : ATM Cash-15415470-SHOPNO2OPPBHATITJODHPURRJIN-20/03/25 12:36:01/7367
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250320123601024243#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 0.0
+    Direction : credit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250320124113022026
+    Account   : 110226871466
+    Date      : 2025-03-20
+    Amount    : 20000.0
+    Direction : debit
+    Narration : WWWAMAZONINGURGOANhrIN-20/03/25 12:41:13/7367
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  20250321112757802360
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544637535123/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250321112753148862698057728000/21/03/2025 11:27:57
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250321121725778835
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544638092084/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250321121713161278806781952000/21/03/2025 12:17:25
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250321122547964715
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 105700.0
+    Direction : credit
+    Narration : INET-IMPS-CR/Mr PRANAB/Bank of Ma/60516293051/1/8099870351/21/03/2025 12:25:47/508012516480
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250321123201021784
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250321123201021784#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:32:01/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321123253023041
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250321123253023041#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:32:53/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321123349024369
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:33:49/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321123349024369#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250321123443025643
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:34:43/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321123443025643#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250321123536026970
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250321123536026970#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:35:36/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321123632028326
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250321123632028326#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:36:32/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321123723029564
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250321123723029564#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:37:23/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321123817030869
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250321123817030869#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:38:17/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321123911032164
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:39:11/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321123911032164#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250321124004000655
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6FXTUNIJ-RAMBHAVANGANESHCHOWJODHPURRJIN-21/03/25 12:40:04/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250321124004000655#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322102413816213
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544749001597/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250322102410222596396806144000/22/03/2025 10:24:13
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250322102526880740
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 5000.0
+    Direction : debit
+    Narration : UPI/DR/544749014808/SAMEER AH/BKID/**sumit@upi/Paid via//AXB20250322102523222906345963520000/22/03/2025 10:25:26
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+  20250322105241410968
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 500.0
+    Direction : debit
+    Narration : UPI/DR/544749316261/TALHA ENT/SBIN/**farah@sbi/S3A2//AXB20250322105237229315908157440000/22/03/2025 10:52:41
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250322135844602918
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544751474009/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250322135840276576816656384000/22/03/2025 13:58:44
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250322144252130877
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544751979658/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250322144248287246133444608000/22/03/2025 14:42:52
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250322144413210332
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 9.0
+    Direction : credit
+    Narration : UPI/CR/508171644360/NAVI TECH/ICIC/**karan@icici/Upi Fund//ICI25032233333333333333333333157054/22/03/2025 14:44:13
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250322151130676615
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544752285510/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250322151126294892587249664000/22/03/2025 15:11:30
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250322152734520393
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544752455312/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250322152730298938885324800000/22/03/2025 15:27:34
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250322160302425030
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544752843013/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250322160258307421121560576000/22/03/2025 16:03:02
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250322161909567920
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 110000.0
+    Direction : credit
+    Narration : INET-IMPS-CR/Mr NIKHIL/Bank of Ma/60503383405/1/7359937919/22/03/2025 16:19:09/508116627604
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250322163251019783
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:32:51/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163251019783#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322163338020711
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322163338020711#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:33:38/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163419021539
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:34:19/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163419021539#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322163502022394
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322163502022394#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:35:02/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163547023314
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:35:47/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163547023314#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322163631024206
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322163631024206#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:36:31/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163719025200
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322163719025200#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:37:19/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163807026172
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:38:07/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163807026172#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322163849027026
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250322163849027026#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:38:49/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163932027961
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-VRJ00579-MahadevMarketTanawaraFantRJIN-22/03/25 16:39:32/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250322163932027961#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250323002247134594
+    Account   : 110226871466
+    Date      : 2025-03-23
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/544859290596/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250323002244443485837721600000/23/03/2025 00:22:47
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250323003400271217
+    Account   : 110226871466
+    Date      : 2025-03-23
+    Amount    : 5000.0
+    Direction : debit
+    Narration : UPI/DR/544859313872/RAVI  SONI/BKID/**97499@upi/Paid via//AXB20250323003357436452956106752000/23/03/2025 00:34:00
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+  20250323003507283954
+    Account   : 110226871466
+    Date      : 2025-03-23
+    Amount    : 5000.0
+    Direction : debit
+    Narration : UPI/DR/544859316044/PRAKASH R/BKID/**amit@upi/Paid via//AXB20250323003503436287492276224000/23/03/2025 00:35:07
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+  20250323171933833210
+    Account   : 110226871466
+    Date      : 2025-03-23
+    Amount    : 26.0
+    Direction : debit
+    Narration : UPI/DR/544866410039/Navi Bill/ICIC/**panka@icici/Paid Via//PMS25032333333333333333333333499997/23/03/2025 17:19:33
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250325143757529764
+    Account   : 110226871466
+    Date      : 2025-03-25
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/545089709374/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250325143752944413189111808000/25/03/2025 14:37:57
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250325160320091464
+    Account   : 110226871466
+    Date      : 2025-03-25
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/545090607969/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250325160317965906946097152000/25/03/2025 16:03:20
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250325164459471115
+    Account   : 110226871466
+    Date      : 2025-03-25
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/545091088878/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250325164456140558271466291200/25/03/2025 16:44:59
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250325180344759285
+    Account   : 110226871466
+    Date      : 2025-03-25
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/545092203194/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250325180340996204253577216000/25/03/2025 18:03:44
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326110132958240
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/545199810299/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250326110129629713225359360000/26/03/2025 11:01:32
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326120823059966
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508500576803/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250326120819797898945085440000/26/03/2025 12:08:23
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326121416393819
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508500643418/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250326121413812757686435840000/26/03/2025 12:14:16
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326122233013323
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 20.06
+    Direction : debit
+    Narration : ATM INSUFFICIENT FUND CHARGES
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250326122313014312
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 20.06
+    Direction : debit
+    Narration : ATM INSUFFICIENT FUND CHARGES
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250326122435035594
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508500760403/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250326122432838707551682560000/26/03/2025 12:24:35
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326124826019084
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415013-BLAATMJODHPURRJIN-26/03/25 12:48:26/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326124826019084#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326124828019153
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 0.0
+    Direction : credit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250326124828019153#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 0.0
+    Direction : credit
+    Narration : ATM Cash-15415013-BLAATMJODHPURRJIN-26/03/25 12:48:28/7367
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250326124856019784
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326124856019784#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415013-BLAATMJODHPURRJIN-26/03/25 12:48:56/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326124940020869
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326124940020869#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415013-BLAATMJODHPURRJIN-26/03/25 12:49:40/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326125024021886
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326125024021886#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415013-BLAATMJODHPURRJIN-26/03/25 12:50:24/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326125137023539
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415013-BLAATMJODHPURRJIN-26/03/25 12:51:37/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326125137023539#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326125151023859
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 0.0
+    Direction : credit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250326125151023859#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 0.0
+    Direction : credit
+    Narration : ATM Cash-15415013-BLAATMJODHPURRJIN-26/03/25 12:51:51/7367
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250326125220024491
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326125220024491#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415013-BLAATMJODHPURRJIN-26/03/25 12:52:20/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326125226765391
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508501075742/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250326125222902559219957760000/26/03/2025 12:52:26
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326125307025580
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415013-BLAATMJODHPURRJIN-26/03/25 12:53:07/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250326125307025580#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326125619937187
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 47300.0
+    Direction : credit
+    Narration : INET-IMPS-CR/OLD PAL DH/IDFC BANK /50302200018/IMPSTXN/9876957189/26/03/2025 12:56:19/508512268175
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250326125953002352
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6NMOGRAX-MOGRAKALANLUNITEHSIMOGRAKALANRJIN-26/03/25 12:59:53/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250326125953002352#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326130056003800
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326130056003800#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6NMOGRAX-MOGRAKALANLUNITEHSIMOGRAKALANRJIN-26/03/25 13:00:56/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250326130229005941
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6NMOGRAX-MOGRAKALANLUNITEHSIMOGRAKALANRJIN-26/03/25 13:02:29/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250326130229005941#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326130329007244
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326130329007244#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6NMOGRAX-MOGRAKALANLUNITEHSIMOGRAKALANRJIN-26/03/25 13:03:29/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250326130424008518
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250326130424008518#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-26
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-6NMOGRAX-MOGRAKALANLUNITEHSIMOGRAKALANRJIN-26/03/25 13:04:24/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250327122320201397
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508614241748/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250327122317148322131808256000/27/03/2025 12:23:20
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327125008881689
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508614545269/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250327125005182712850362368000/27/03/2025 12:50:08
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327130144617595
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508614679515/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250327130141185633012887552000/27/03/2025 13:01:44
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327131100206053
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508614790041/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250327131057181086811496448000/27/03/2025 13:11:00
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327131158266605
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/508697309368/NAVI TECH/ICIC/**karan@icici/Upi Fund//ICI25032733333333333333333333109028/27/03/2025 13:11:58
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250327131616010774
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-27/03/25 13:16:16/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327131616010774#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 23.6
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250327131735012677
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 23.6
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250327131735012677#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-27/03/25 13:17:35/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327131851014393
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-27/03/25 13:18:51/7367
+    Pattern   : High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+  20250327131851014393#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 23.6
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250327132149893488
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508614923246/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250327132145183804644990976000/27/03/2025 13:21:49
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327135158793811
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508615284336/Mr DIPAK /MAHB/**62935@naviaxis/Paid via//AXB20250327135155199598840401920000/27/03/2025 13:51:58
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327140003003737
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250327140003003737#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-RJHAO005-+YBLJHALAMANDJODHPURRJIN-27/03/25 14:00:03/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250327140113005158
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-RJHAO005-+YBLJHALAMANDJODHPURRJIN-27/03/25 14:01:13/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250327140113005158#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250327140209006279
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-RJHAO005-+YBLJHALAMANDJODHPURRJIN-27/03/25 14:02:09/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250327140209006279#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250327140310007507
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250327140310007507#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-RJHAO005-+YBLJHALAMANDJODHPURRJIN-27/03/25 14:03:10/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250327140430009128
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250327140430009128#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-RJHAO005-+YBLJHALAMANDJODHPURRJIN-27/03/25 14:04:30/7367
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250327144148698872
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/508626209844/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTM57dba13142f548caa00aa79a51310951/27/03/2025 14:41:48
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Transit / Pass-Through Detection
+
+  20250328113223490599
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508726376092/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250328113204179597117599907840/28/03/2025 11:32:23
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328120640598052
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508726759239/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250328113204179597117599907850/28/03/2025 12:06:40
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328125313464559
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508727260803/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250328113204179597117599907860/28/03/2025 12:53:13
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328134519647355
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508727826134/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250328113204179597117599907870/28/03/2025 13:45:19
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328141234289821
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508728145113/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250328113204179597117599907880/28/03/2025 14:12:34
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328141727526734
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 61100.0
+    Direction : credit
+    Narration : INET-IMPS-CR/RAMAN  KUM/ICICI Bank/163305001886/A1/0000000000/28/03/2025 14:17:27/508714493229
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250328142303032670
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-28/03/25 14:23:03/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328142303032670#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 23.6
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250328142437001858
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-28/03/25 14:24:37/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328142437001858#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 23.6
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250328142609003754
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 23.6
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250328142609003754#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-28/03/25 14:26:09/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328145701491665
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 50100.0
+    Direction : credit
+    Narration : MOB-IMPS-CR/CHIKKOO TH/The Federa/14690100166323/VARUN  K/7994346707/28/03/2025 14:57:01/508714823824
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250328150653022259
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-28/03/25 15:06:53/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328150653022259#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 23.6
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250328150830024478
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 20000.0
+    Direction : debit
+    Narration : ATM Cash-35593401-CANARABANKJODHPURRJIN-28/03/25 15:08:30/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328150830024478#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 23.6
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250328154655646854
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/508722477360/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTM1d7e91b90f5a40ee9af01d2e16ed7ea9/28/03/2025 15:46:55
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328163132226035
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/545324532541/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTM672959d364064e538c846ea90d0ec6aa/28/03/2025 16:31:32
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328201340591882
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508733758435/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250328201336771591423344640000/28/03/2025 20:13:40
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328201340596562
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 150.0
+    Direction : credit
+    Narration : UPI/CR/508740683943/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTM7ed2d34d60ec42ff9acd0e72f971cc3d/28/03/2025 20:13:40
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250328201635842495
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 299.0
+    Direction : debit
+    Narration : UPI/DR/508733813863/Navi Bill/ICIC/**panka@icici/Paid Via//PMS25032833333333333333333336791559/28/03/2025 20:16:35
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250329160439382235
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508842254869/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250329160434376875415576576000/29/03/2025 16:04:39
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329162531504629
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 50100.0
+    Direction : credit
+    Narration : MOB-IMPS-CR/AJIN BABU/The Federa/22020100009655/VARUN  K/8921215604/29/03/2025 16:25:31/508816278112
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250329163234002665
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 16:32:34/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329163234002665#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329163342004280
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 16:33:42/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329163342004280#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329163601007684
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329163601007684#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 16:36:01/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329163702009170
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 16:37:02/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329163702009170#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329163758010298
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 20.06
+    Direction : debit
+    Narration : ATM INSUFFICIENT FUND CHARGES
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250329163854011584
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 9500.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 16:38:54/7367
+    Pattern   : High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Transit / Pass-Through Detection
+
+  20250329163854011584#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329164548923630
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508842743244/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250329160434376875415576577000/29/03/2025 16:45:48
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329170317088240
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508842965791/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250329160434376875415576580000/29/03/2025 17:03:17
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329172319449343
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/508843242317/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250329160434376875415576581000/29/03/2025 17:23:19
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329172321191324
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 50200.0
+    Direction : credit
+    Narration : MOB-IMPS-CR/AJIN BABU/The Federa/22020100009655/VARUN  K/8921215604/29/03/2025 17:23:21/508817298631
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250329172656025696
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 17:26:56/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329172656025696#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329172820028162
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 17:28:20/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329172820028162#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329172911029746
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329172911029746#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 17:29:11/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329173004031327
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 17:30:04/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329173004031327#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329173053000091
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-15415019-MAINSALAWASROADSANJODHPURRJIN-29/03/25 17:30:53/7367
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329173053000091#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329174318909249
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/545423691630/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTM0dd7ad509f244dfab9ac87592311551e/29/03/2025 17:43:18
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329183102753044
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/508837127040/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTM3030fc2106574818bcf61dc3238fb3a1/29/03/2025 18:31:02
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250329185549002183
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 500.0
+    Direction : debit
+    Narration : ATM Cash-APCN0572-SANGARIAFATASANGARIYARJIN-29/03/25 18:55:49/7367
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250329185549002183#occurrence-2
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329190204495459
+    Account   : 110226871466
+    Date      : 2025-03-29
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/545439729221/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTMcdded867660a4f9c8e0fcef02906062c/29/03/2025 19:02:04
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250330121459036749
+    Account   : 110226871466
+    Date      : 2025-03-30
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/545514427026/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTM774963cc84754c7aae28400db3b3476e/30/03/2025 12:14:59
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250330130924466735
+    Account   : 110226871466
+    Date      : 2025-03-30
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/508927380960/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTM423bd62b72d04399b215221b79a0d8ad/30/03/2025 13:09:24
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250330142339924280
+    Account   : 110226871466
+    Date      : 2025-03-30
+    Amount    : 1.0
+    Direction : credit
+    Narration : UPI/CR/508921277772/Mrs Sunit/MAHB/**05545@ptyes/Sent fro//PTM7f52f7e3902d4af8bf9a58eecf61af1f/30/03/2025 14:23:39
+    Pattern   : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331104841604562
+    Account   : 110226871466
+    Date      : 2025-03-31
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509066308665/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250331104835102153330419302400/31/03/2025 10:48:41
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331112756872551
+    Account   : 110226871466
+    Date      : 2025-03-31
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509066786383/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250331104835102153330419302500/31/03/2025 11:27:56
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331123104552537
+    Account   : 110226871466
+    Date      : 2025-03-31
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509067540434/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250331104835102153330419302600/31/03/2025 12:31:04
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331124949637117
+    Account   : 110226871466
+    Date      : 2025-03-31
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509067755214/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250331104835102153330419302700/31/03/2025 12:49:49
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331134221580770
+    Account   : 110226871466
+    Date      : 2025-03-31
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509068363908/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250331104835102153330419302800/31/03/2025 13:42:21
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331141218158713
+    Account   : 110226871466
+    Date      : 2025-03-31
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509068695147/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250331104835102153330419302900/31/03/2025 14:12:18
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331151235102847
+    Account   : 110226871466
+    Date      : 2025-03-31
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509069300636/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250331104835102153330419303000/31/03/2025 15:12:35
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331153932343735
+    Account   : 110226871466
+    Date      : 2025-03-31
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509069562498/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250331104835102153330419303300/31/03/2025 15:39:32
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250401182305658802
+    Account   : 110226871466
+    Date      : 2025-04-01
+    Amount    : 10.0
+    Direction : credit
+    Narration : MB/5992101001441/SURENDRA VISHVAKARMA/110226871466/VARUN/CANARA/hii/14962746219/01/04/2025 06:23:06
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250401231306911691
+    Account   : 110226871466
+    Date      : 2025-04-01
+    Amount    : 10.0
+    Direction : credit
+    Narration : MB/5992101001441/SURENDRA VISHVAKARMA/110226871466/VARUN/CANARA//14966111847/01/04/2025 11:13:06
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250401232344917706
+    Account   : 110226871466
+    Date      : 2025-04-01
+    Amount    : 10.0
+    Direction : credit
+    Narration : MB/5992101001441/SURENDRA VISHVAKARMA/110226871466/VARUN/CANARA/hii/14966181512/01/04/2025 11:23:45
+    Pattern   : Duplicate Transaction Cross-Check, Top Suspicious Account Ranking
+
+  20250402103615183415
+    Account   : 110226871466
+    Date      : 2025-04-02
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509291630012/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250402103229174223751192166800/02/04/2025 10:36:15
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250402124529319003
+    Account   : 110226871466
+    Date      : 2025-04-02
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/509293182149/Mrs Sunit/MAHB/**05545@ptyes/Paid via//AXB20250402103229174223751192166900/02/04/2025 12:45:29
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250402124908007362
+    Account   : 110226871466
+    Date      : 2025-04-02
+    Amount    : 5000.0
+    Direction : debit
+    Narration : ATM Cash-6NMOGRAX-MOGRAKALANLUNITEHSIMOGRAKALANRJIN-02/04/25 12:49:08/7367
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  CBDC508012513476
+    Account   : 110226871466
+    Date      : 2025-03-21
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CBDCL 777786 508012513476 Wallet Loading KALAPI GRAM
+    Pattern   : Duplicate Transaction Cross-Check, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  CBDC508116565848
+    Account   : 110226871466
+    Date      : 2025-03-22
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CBDCL 777786 508116565848 Wallet Loading KALAPI GRAM
+    Pattern   : Duplicate Transaction Cross-Check, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  CBDC508614776572
+    Account   : 110226871466
+    Date      : 2025-03-27
+    Amount    : 11000.0
+    Direction : debit
+    Narration : CBDCL 777786 508614776572 Wallet Loading KALAPI GRAM
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  CBDC508715824605
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CBDCL 777786 508715824605 Wallet Loading KALAPI GRAM
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  CBDC508715824789
+    Account   : 110226871466
+    Date      : 2025-03-28
+    Amount    : 6000.0
+    Direction : debit
+    Narration : CBDCL 777786 508715824789 Wallet Loading KALAPI GRAM
+    Pattern   : Repeated Round-Value Debit Pattern
+
+Accounts:
+----------------------------------------
+  110226871466
+    Holder             : VARUN RAO
+    Patterns Triggered : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Low-Value Reciprocal Account Testing, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+    Flagged Txns       : 2717
+    Total Credit       : 919435.56
+    Total Debit        : 885901.04
+
+  05545@ptyes
+    Patterns Triggered : Low-Value Reciprocal Account Testing
+    Flagged Txns       : 29
+    Total Credit       : 0
+    Total Debit        : 0
+
+Key Transactions to Detect:
+----------------------------------------
+  17243920250326100300527029
+  17243920250327100400684682
+  17243920250327100400756283
+  20250228160227026355
+  20250301223453640630
+  20250318112334416384
+  20250318112944417415
+  20250318120631026057
+  20250318120758028449
+  20250318120913030462
+  20250318121028032500
+  20250318121144001741
+  20250318121304003964
+  20250318172012207042
+  20250319092443675292
+  20250319174427600340
+  20250319175810565390
+  20250319182232354405
+  20250320103829951235
+  20250320120513122354
+  20250320120842907449
+  20250320121822030159
+  20250320122833012996
+  20250320122958015078
+  20250320123036016049
+  20250320123117017103
+  20250320123202018243
+  20250320123245019332
+  20250320123245019332#occurrence-2
+  20250320123323020283
+  20250320123323020283#occurrence-2
+  20250320123402021298
+  20250320123402021298#occurrence-2
+  20250320123442022312
+  20250320123442022312#occurrence-2
+  20250320123523023257
+  20250320123523023257#occurrence-2
+  20250320123601024243
+  20250320123601024243#occurrence-2
+  20250320124113022026
+  20250321112757802360
+  20250321121725778835
+  20250321122547964715
+  20250321123201021784
+  20250321123201021784#occurrence-2
+  20250321123253023041
+  20250321123253023041#occurrence-2
+  20250321123349024369
+  20250321123349024369#occurrence-2
+  20250321123443025643
+  20250321123443025643#occurrence-2
+  20250321123536026970
+  20250321123536026970#occurrence-2
+  20250321123632028326
+  20250321123632028326#occurrence-2
+  20250321123723029564
+  20250321123723029564#occurrence-2
+  20250321123817030869
+  20250321123817030869#occurrence-2
+  20250321123911032164
+  20250321123911032164#occurrence-2
+  20250321124004000655
+  20250321124004000655#occurrence-2
+  20250322102413816213
+  20250322102526880740
+  20250322105241410968
+  20250322135844602918
+  20250322144252130877
+  20250322144413210332
+  20250322151130676615
+  20250322152734520393
+  20250322160302425030
+  20250322161909567920
+  20250322163251019783
+  20250322163251019783#occurrence-2
+  20250322163338020711
+  20250322163338020711#occurrence-2
+  20250322163419021539
+  20250322163419021539#occurrence-2
+  20250322163502022394
+  20250322163502022394#occurrence-2
+  20250322163547023314
+  20250322163547023314#occurrence-2
+  20250322163631024206
+  20250322163631024206#occurrence-2
+  20250322163719025200
+  20250322163719025200#occurrence-2
+  20250322163807026172
+  20250322163807026172#occurrence-2
+  20250322163849027026
+  20250322163849027026#occurrence-2
+  20250322163932027961
+  20250322163932027961#occurrence-2
+  20250323002247134594
+  20250323003400271217
+  20250323003507283954
+  20250323171933833210
+  20250325143757529764
+  20250325160320091464
+  20250325164459471115
+  20250325180344759285
+  20250326110132958240
+  20250326120823059966
+  20250326121416393819
+  20250326122233013323
+  20250326122313014312
+  20250326122435035594
+  20250326124826019084
+  20250326124826019084#occurrence-2
+  20250326124828019153
+  20250326124828019153#occurrence-2
+  20250326124856019784
+  20250326124856019784#occurrence-2
+  20250326124940020869
+  20250326124940020869#occurrence-2
+  20250326125024021886
+  20250326125024021886#occurrence-2
+  20250326125137023539
+  20250326125137023539#occurrence-2
+  20250326125151023859
+  20250326125151023859#occurrence-2
+  20250326125220024491
+  20250326125220024491#occurrence-2
+  20250326125226765391
+  20250326125307025580
+  20250326125307025580#occurrence-2
+  20250326125619937187
+  20250326125953002352
+  20250326125953002352#occurrence-2
+  20250326130056003800
+  20250326130056003800#occurrence-2
+  20250326130229005941
+  20250326130229005941#occurrence-2
+  20250326130329007244
+  20250326130329007244#occurrence-2
+  20250326130424008518
+  20250326130424008518#occurrence-2
+  20250327122320201397
+  20250327125008881689
+  20250327130144617595
+  20250327131100206053
+  20250327131158266605
+  20250327131616010774
+  20250327131616010774#occurrence-2
+  20250327131735012677
+  20250327131735012677#occurrence-2
+  20250327131851014393
+  20250327131851014393#occurrence-2
+  20250327132149893488
+  20250327135158793811
+  20250327140003003737
+  20250327140003003737#occurrence-2
+  20250327140113005158
+  20250327140113005158#occurrence-2
+  20250327140209006279
+  20250327140209006279#occurrence-2
+  20250327140310007507
+  20250327140310007507#occurrence-2
+  20250327140430009128
+  20250327140430009128#occurrence-2
+  20250327144148698872
+  20250328113223490599
+  20250328120640598052
+  20250328125313464559
+  20250328134519647355
+  20250328141234289821
+  20250328141727526734
+  20250328142303032670
+  20250328142303032670#occurrence-2
+  20250328142437001858
+  20250328142437001858#occurrence-2
+  20250328142609003754
+  20250328142609003754#occurrence-2
+  20250328145701491665
+  20250328150653022259
+  20250328150653022259#occurrence-2
+  20250328150830024478
+  20250328150830024478#occurrence-2
+  20250328154655646854
+  20250328163132226035
+  20250328201340591882
+  20250328201340596562
+  20250328201635842495
+  20250329160439382235
+  20250329162531504629
+  20250329163234002665
+  20250329163234002665#occurrence-2
+  20250329163342004280
+  20250329163342004280#occurrence-2
+  20250329163601007684
+  20250329163601007684#occurrence-2
+  20250329163702009170
+  20250329163702009170#occurrence-2
+  20250329163758010298
+  20250329163854011584
+  20250329163854011584#occurrence-2
+  20250329164548923630
+  20250329170317088240
+  20250329172319449343
+  20250329172321191324
+  20250329172656025696
+  20250329172656025696#occurrence-2
+  20250329172820028162
+  20250329172820028162#occurrence-2
+  20250329172911029746
+  20250329172911029746#occurrence-2
+  20250329173004031327
+  20250329173004031327#occurrence-2
+  20250329173053000091
+  20250329173053000091#occurrence-2
+  20250329174318909249
+  20250329183102753044
+  20250329185549002183
+  20250329185549002183#occurrence-2
+  20250329190204495459
+  20250330121459036749
+  20250330130924466735
+  20250330142339924280
+  20250331104841604562
+  20250331112756872551
+  20250331123104552537
+  20250331124949637117
+  20250331134221580770
+  20250331141218158713
+  20250331151235102847
+  20250331153932343735
+  20250401182305658802
+  20250401231306911691
+  20250401232344917706
+  20250402103615183415
+  20250402124529319003
+  20250402124908007362
+  CBDC508012513476
+  CBDC508116565848
+  CBDC508614776572
+  CBDC508715824605
+  CBDC508715824789
+
+======================================================================

@@ -1,0 +1,75 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/uploads/run_20260702_225418/rt_case_03.csv
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260702_225418
+Run timestamp: 2026-07-02T17:24:26.400021+00:00
+Elapsed seconds: 7.81
+
+Input Contract
+--------------
+Clean rows: 420
+Flagged rows: 0
+Duplicate rows: 0
+Metadata clean rows: 
+Summary-report clean rows: 
+Count reconciliation: ok
+Reconciliation detail: Single flat CSV input.
+
+Analysis Scope
+--------------
+Total stored rows: 420
+Eligible detection rows: 420
+Excluded rows: 0
+Accounts: 5
+Graph nodes: 66
+Graph edges: 338
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 420
+Resolved counterparty rows: 348
+Resolution rate percent: 82.85714285714286
+LLM calls made: 0
+LLM status: partial_failure
+
+Balance Data Quality
+--------------------
+No balance inconsistencies detected in this dataset.
+
+Finding Counts
+--------------
+1_duplicate_verification: 1
+2_failed_reversed_transaction_detection: 0
+3_pass_through_routing_account: 2
+4_fund_pooling_account: 1
+5_structuring_smurfing_detection: 0
+6_money_flow_graph_construction: 1
+7_circular_flow_multi_hop_cycle_detection: 1
+8_money_trail_tracing: 6
+9_credit_to_cash_out_chains: 0
+10_cross_statement_links: 10
+11_balance_parking_account: 0
+12_hub_ranking: 0
+13_low_value_account_testing: 0
+14_reversal_clusters: 0
+15_round_value_debit_patterns: 4
+16_shared_upi_identifiers: 0
+17_round_trip_detection: 3
+18_dormant_reactivation: 0
+19_first_contact_large_transfer: 12
+21_suspicious_account_ranking: 3
+22_llm_investigated_anomalies: 1
+23_ml_ensemble_anomaly_lead: 0
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 0
+duplicate: 0
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+92247771802759: total_score=742.0936, distinct_patterns=6, total_findings=17
+29663337463975: total_score=700.4427, distinct_patterns=7, total_findings=16
+28317586857: total_score=633.6817, distinct_patterns=7, total_findings=17

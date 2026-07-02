@@ -1,0 +1,68 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260630_235646
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260630_235646
+Run timestamp: 2026-06-30T18:26:48.601038+00:00
+Elapsed seconds: 1.14
+
+Input Contract
+--------------
+Clean rows: 381
+Flagged rows: 1
+Duplicate rows: 0
+Metadata clean rows: 381
+Summary-report clean rows: 381
+Count reconciliation: ok
+Reconciliation detail: CSV counts match extraction metadata.
+
+Analysis Scope
+--------------
+Total stored rows: 382
+Eligible detection rows: 380
+Excluded rows: 2
+Accounts: 1
+Graph nodes: 274
+Graph edges: 320
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 380
+Resolved counterparty rows: 320
+Resolution rate percent: 84.21052631578948
+LLM calls made: 0
+
+Finding Counts
+--------------
+1_duplicate_detection_cross_check: 10
+2_failed_reversed_transaction_detection: 0
+3_balance_consistency_validation: 1
+4_round_trip_detection: 0
+5_transit_pass_through_detection: 1
+6_accumulation_account_detection: 1
+7_structuring_smurfing_detection: 2
+8_money_flow_graph_construction: 1
+9_circular_flow_multi_hop_cycle_detection: 0
+10_money_trail_tracing: 0
+11_credit_to_cash_out_chains: 0
+12_cross_statement_links: 0
+13_high_throughput_accounts: 0
+14_holding_accounts: 0
+15_hub_ranking: 0
+16_internal_flow_hub: 0
+17_low_value_account_testing: 0
+18_reversal_clusters: 0
+19_round_value_debit_patterns: 1
+20_shared_upi_identifiers: 0
+21_suspicious_account_ranking: 1
+22_llm_investigated_anomalies: 1
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 2
+duplicate: 0
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+763010062770: total_score=741.214, distinct_patterns=7, total_findings=17

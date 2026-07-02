@@ -1,0 +1,4772 @@
+{
+  "accounts": [
+    {
+      "account_number": "001029700065",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "POS/Card",
+          96
+        ],
+        [
+          "Unknown",
+          94
+        ],
+        [
+          "UPI",
+          66
+        ],
+        [
+          "Charges",
+          45
+        ],
+        [
+          "IMPS",
+          26
+        ],
+        [
+          "NEFT",
+          7
+        ],
+        [
+          "Interest",
+          7
+        ],
+        [
+          "Refund/Cashback",
+          6
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 5.16,
+        "max_balance": 117168.58
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "00869354051",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          74
+        ],
+        [
+          "IMPS",
+          39
+        ],
+        [
+          "RTGS",
+          36
+        ],
+        [
+          "UPI",
+          32
+        ],
+        [
+          "Unknown",
+          22
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 2633774.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "0167042251865512",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          1587
+        ],
+        [
+          "IMPS",
+          111
+        ],
+        [
+          "Unknown",
+          109
+        ],
+        [
+          "POS/Card",
+          30
+        ],
+        [
+          "Charges",
+          25
+        ],
+        [
+          "Internal/Bank Transfer",
+          23
+        ],
+        [
+          "Interest",
+          20
+        ],
+        [
+          "Refund/Cashback",
+          8
+        ],
+        [
+          "Loan/EMI",
+          6
+        ],
+        [
+          "Cash Deposit",
+          5
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          2
+        ],
+        [
+          "Cheque",
+          1
+        ],
+        [
+          "NEFT",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 200224.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "08874795659248",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          38
+        ],
+        [
+          "RTGS",
+          13
+        ],
+        [
+          "IMPS",
+          12
+        ],
+        [
+          "UPI",
+          9
+        ],
+        [
+          "Unknown",
+          3
+        ],
+        [
+          "Cheque",
+          1
+        ],
+        [
+          "Charges",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 94.0,
+        "max_balance": 1957199.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "0908299511379122",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          107
+        ],
+        [
+          "IMPS",
+          90
+        ],
+        [
+          "Unknown",
+          38
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          37
+        ],
+        [
+          "RTGS",
+          10
+        ],
+        [
+          "NEFT",
+          7
+        ],
+        [
+          "Loan/EMI",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 631425.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "098030016134598",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          10534
+        ],
+        [
+          "IMPS",
+          349
+        ],
+        [
+          "RTGS",
+          122
+        ],
+        [
+          "UPI",
+          17
+        ],
+        [
+          "Charges",
+          7
+        ],
+        [
+          "Unknown",
+          4
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          3
+        ],
+        [
+          "POS/Card",
+          1
+        ],
+        [
+          "Cheque",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.18,
+        "max_balance": 5255467.89
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "0996108053948",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          249
+        ],
+        [
+          "Unknown",
+          119
+        ],
+        [
+          "NEFT",
+          28
+        ],
+        [
+          "IMPS",
+          21
+        ],
+        [
+          "UPI",
+          6
+        ],
+        [
+          "Interest",
+          5
+        ],
+        [
+          "Internal/Bank Transfer",
+          2
+        ],
+        [
+          "Loan/EMI",
+          1
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "Charges",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.5,
+        "max_balance": 41460.67
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "10140211101047567",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          152
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          29
+        ],
+        [
+          "Unknown",
+          8
+        ],
+        [
+          "IMPS",
+          6
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "Loan/EMI",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 4.46,
+        "max_balance": 41118.32
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "110178980040",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          350
+        ],
+        [
+          "UPI",
+          93
+        ],
+        [
+          "IMPS",
+          31
+        ],
+        [
+          "Unknown",
+          7
+        ],
+        [
+          "Charges",
+          3
+        ],
+        [
+          "NEFT",
+          3
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 98067.06
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "110200939775",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          182
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          32
+        ],
+        [
+          "Charges",
+          14
+        ],
+        [
+          "Unknown",
+          12
+        ],
+        [
+          "IMPS",
+          11
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "NEFT",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 100045.4
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "110216248295",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          4
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          4
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "Unknown",
+          1
+        ],
+        [
+          "RTGS",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 500050.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "110226871466",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          147
+        ],
+        [
+          "UPI",
+          72
+        ],
+        [
+          "Unknown",
+          29
+        ],
+        [
+          "IMPS",
+          10
+        ],
+        [
+          "NEFT",
+          3
+        ],
+        [
+          "Charges",
+          2
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "POS/Card",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 120303.94
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "110228398061",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          257
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          99
+        ],
+        [
+          "IMPS",
+          14
+        ],
+        [
+          "Unknown",
+          4
+        ],
+        [
+          "NEFT",
+          2
+        ],
+        [
+          "Refund/Cashback",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 60000.66
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "110236092552",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          112
+        ],
+        [
+          "Unknown",
+          14
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          8
+        ],
+        [
+          "IMPS",
+          4
+        ],
+        [
+          "Cheque",
+          2
+        ],
+        [
+          "RTGS",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 467290.98
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "112108374579",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          209
+        ],
+        [
+          "Unknown",
+          44
+        ],
+        [
+          "IMPS",
+          9
+        ],
+        [
+          "Reversal",
+          3
+        ],
+        [
+          "Internal/Bank Transfer",
+          1
+        ],
+        [
+          "Loan Disbursement",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.61,
+        "max_balance": 95573.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "113154476620",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "RTGS",
+          78
+        ],
+        [
+          "IMPS",
+          49
+        ],
+        [
+          "NEFT",
+          27
+        ],
+        [
+          "Unknown",
+          15
+        ],
+        [
+          "UPI",
+          11
+        ],
+        [
+          "POS/Card",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 2029116.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "138488664629235",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          148
+        ],
+        [
+          "UPI",
+          94
+        ],
+        [
+          "Unknown",
+          7
+        ],
+        [
+          "NEFT",
+          6
+        ],
+        [
+          "Charges",
+          5
+        ],
+        [
+          "Cash Deposit",
+          4
+        ],
+        [
+          "RTGS",
+          4
+        ],
+        [
+          "IMPS",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 200536.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "14228787196",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          488
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          72
+        ],
+        [
+          "IMPS",
+          5
+        ],
+        [
+          "NEFT",
+          5
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 859280.5
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "145090675346",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          36
+        ],
+        [
+          "Unknown",
+          27
+        ],
+        [
+          "IMPS",
+          22
+        ],
+        [
+          "POS/Card",
+          7
+        ],
+        [
+          "Interest",
+          3
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          1
+        ],
+        [
+          "Internal/Bank Transfer",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.01,
+        "max_balance": 267499.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "15060151642297",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          245
+        ],
+        [
+          "Unknown",
+          14
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          12
+        ],
+        [
+          "IMPS",
+          1
+        ],
+        [
+          "POS/Card",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.17,
+        "max_balance": 233890.47
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "16423304381803",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          2446
+        ],
+        [
+          "Unknown",
+          93
+        ],
+        [
+          "IMPS",
+          14
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          14
+        ],
+        [
+          "Charges",
+          13
+        ],
+        [
+          "Interest",
+          8
+        ],
+        [
+          "POS/Card",
+          7
+        ],
+        [
+          "Cash Deposit",
+          2
+        ],
+        [
+          "Cheque",
+          2
+        ],
+        [
+          "Loan/EMI",
+          2
+        ],
+        [
+          "NEFT",
+          1
+        ],
+        [
+          "RTGS",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 891022.55
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "16649443003",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          142
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          82
+        ],
+        [
+          "NEFT",
+          20
+        ],
+        [
+          "Unknown",
+          20
+        ],
+        [
+          "IMPS",
+          14
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 87314.55
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "17496072039317",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          13493
+        ],
+        [
+          "Unknown",
+          1720
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          1176
+        ],
+        [
+          "POS/Card",
+          1065
+        ],
+        [
+          "IMPS",
+          883
+        ],
+        [
+          "Loan/EMI",
+          104
+        ],
+        [
+          "Charges",
+          61
+        ],
+        [
+          "Refund/Cashback",
+          44
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.2,
+        "max_balance": 18254661.41
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "17771917925",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "IMPS",
+          56
+        ],
+        [
+          "RTGS",
+          41
+        ],
+        [
+          "NEFT",
+          40
+        ],
+        [
+          "UPI",
+          25
+        ],
+        [
+          "Unknown",
+          12
+        ],
+        [
+          "POS/Card",
+          1
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          1
+        ],
+        [
+          "Internal/Bank Transfer",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 2781671.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "211566492688",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "IMPS",
+          36
+        ],
+        [
+          "Unknown",
+          14
+        ],
+        [
+          "UPI",
+          5
+        ],
+        [
+          "POS/Card",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 5.82,
+        "max_balance": 80010.82
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "214526512302",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          1934
+        ],
+        [
+          "IMPS",
+          622
+        ],
+        [
+          "Unknown",
+          507
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          44
+        ],
+        [
+          "Charges",
+          33
+        ],
+        [
+          "Interest",
+          9
+        ],
+        [
+          "POS/Card",
+          6
+        ],
+        [
+          "Loan/EMI",
+          5
+        ],
+        [
+          "NEFT",
+          5
+        ],
+        [
+          "RTGS",
+          2
+        ],
+        [
+          "Refund/Cashback",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 500000.01
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "21558442690581",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          27
+        ],
+        [
+          "UPI",
+          26
+        ],
+        [
+          "NEFT",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 50140.94
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "216655101347",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "Unknown",
+          162
+        ],
+        [
+          "Charges",
+          132
+        ],
+        [
+          "UPI",
+          121
+        ],
+        [
+          "POS/Card",
+          120
+        ],
+        [
+          "IMPS",
+          14
+        ],
+        [
+          "NEFT",
+          12
+        ],
+        [
+          "RTGS",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 200145.3
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "23383849532",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          672
+        ],
+        [
+          "IMPS",
+          158
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          58
+        ],
+        [
+          "NEFT",
+          28
+        ],
+        [
+          "Unknown",
+          16
+        ],
+        [
+          "Interest",
+          6
+        ],
+        [
+          "Cash Deposit",
+          2
+        ],
+        [
+          "Salary",
+          2
+        ],
+        [
+          "Internal/Bank Transfer",
+          2
+        ],
+        [
+          "Loan/EMI",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 268730.8
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "23861558411",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          284
+        ],
+        [
+          "UPI",
+          137
+        ],
+        [
+          "IMPS",
+          35
+        ],
+        [
+          "NEFT",
+          7
+        ],
+        [
+          "Unknown",
+          4
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 1765814.78
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "24704559049070",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          181
+        ],
+        [
+          "Charges",
+          163
+        ],
+        [
+          "RTGS",
+          132
+        ],
+        [
+          "IMPS",
+          126
+        ],
+        [
+          "Unknown",
+          50
+        ],
+        [
+          "UPI",
+          25
+        ],
+        [
+          "POS/Card",
+          16
+        ],
+        [
+          "Cheque",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 5014039.18
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "250269305544183",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          103
+        ],
+        [
+          "UPI",
+          32
+        ],
+        [
+          "RTGS",
+          10
+        ],
+        [
+          "Charges",
+          5
+        ],
+        [
+          "Unknown",
+          4
+        ],
+        [
+          "NEFT",
+          2
+        ],
+        [
+          "Cash Deposit",
+          2
+        ],
+        [
+          "Internal/Bank Transfer",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -300.0,
+        "max_balance": 202000.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "25078124219247",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          7274
+        ],
+        [
+          "IMPS",
+          3312
+        ],
+        [
+          "NEFT",
+          529
+        ],
+        [
+          "Unknown",
+          8
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          6
+        ],
+        [
+          "RTGS",
+          4
+        ],
+        [
+          "POS/Card",
+          3
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 401362.87
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "258082779154",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "IMPS",
+          18
+        ],
+        [
+          "Unknown",
+          11
+        ],
+        [
+          "Internal/Bank Transfer",
+          2
+        ],
+        [
+          "POS/Card",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -89678.82,
+        "max_balance": 7139968.18
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "2653101012274",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          638
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          297
+        ],
+        [
+          "Unknown",
+          238
+        ],
+        [
+          "Charges",
+          69
+        ],
+        [
+          "NEFT",
+          15
+        ],
+        [
+          "IMPS",
+          11
+        ],
+        [
+          "Cash Deposit",
+          9
+        ],
+        [
+          "POS/Card",
+          9
+        ],
+        [
+          "Internal/Bank Transfer",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 78103.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "269415176159622",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          84
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          81
+        ],
+        [
+          "Unknown",
+          8
+        ],
+        [
+          "IMPS",
+          7
+        ],
+        [
+          "NEFT",
+          7
+        ],
+        [
+          "Cash Deposit",
+          4
+        ],
+        [
+          "Interest",
+          2
+        ],
+        [
+          "POS/Card",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 10.0,
+        "max_balance": 147668.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "27078535177511",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "Unknown",
+          156
+        ],
+        [
+          "POS/Card",
+          15
+        ],
+        [
+          "UPI",
+          12
+        ],
+        [
+          "Reversal",
+          5
+        ],
+        [
+          "IMPS",
+          4
+        ],
+        [
+          "RTGS",
+          4
+        ],
+        [
+          "Charges",
+          3
+        ],
+        [
+          "Internal/Bank Transfer",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 301495.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "280442153117",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "Unknown",
+          192
+        ],
+        [
+          "IMPS",
+          11
+        ],
+        [
+          "Charges",
+          10
+        ],
+        [
+          "UPI",
+          10
+        ],
+        [
+          "Cash Deposit",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -21998.9,
+        "max_balance": 4020815.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "285265765401",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          63
+        ],
+        [
+          "Unknown",
+          5
+        ],
+        [
+          "Charges",
+          1
+        ],
+        [
+          "IMPS",
+          1
+        ],
+        [
+          "Interest",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 14.61,
+        "max_balance": 863728.63
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "294500196490",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          742
+        ],
+        [
+          "Unknown",
+          138
+        ],
+        [
+          "IMPS",
+          109
+        ],
+        [
+          "NEFT",
+          101
+        ],
+        [
+          "POS/Card",
+          10
+        ],
+        [
+          "Interest",
+          5
+        ],
+        [
+          "Charges",
+          4
+        ],
+        [
+          "Refund/Cashback",
+          3
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          2
+        ],
+        [
+          "RTGS",
+          2
+        ],
+        [
+          "Loan/EMI",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 7.68,
+        "max_balance": 1666513.83
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "29680171959",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          34
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          34
+        ],
+        [
+          "IMPS",
+          6
+        ],
+        [
+          "NEFT",
+          4
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 1.0,
+        "max_balance": 60275.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "3127637522775626",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          266
+        ],
+        [
+          "Unknown",
+          43
+        ],
+        [
+          "NEFT",
+          24
+        ],
+        [
+          "IMPS",
+          17
+        ],
+        [
+          "UPI",
+          12
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 2.5,
+        "max_balance": 150342.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "3277373660",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          683
+        ],
+        [
+          "IMPS",
+          51
+        ],
+        [
+          "Unknown",
+          18
+        ],
+        [
+          "Charges",
+          18
+        ],
+        [
+          "Refund/Cashback",
+          13
+        ],
+        [
+          "NEFT",
+          11
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": null,
+        "max_balance": null
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "33952010019682",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          890
+        ],
+        [
+          "IMPS",
+          447
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          110
+        ],
+        [
+          "NEFT",
+          75
+        ],
+        [
+          "Unknown",
+          58
+        ],
+        [
+          "Charges",
+          34
+        ],
+        [
+          "Interest",
+          15
+        ],
+        [
+          "POS/Card",
+          15
+        ],
+        [
+          "Cash Deposit",
+          6
+        ],
+        [
+          "Loan/EMI",
+          3
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -0.0,
+        "max_balance": 132731.91
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "3431120000174",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          270
+        ],
+        [
+          "UPI",
+          250
+        ],
+        [
+          "Unknown",
+          59
+        ],
+        [
+          "IMPS",
+          14
+        ],
+        [
+          "NEFT",
+          12
+        ],
+        [
+          "Charges",
+          11
+        ],
+        [
+          "POS/Card",
+          2
+        ],
+        [
+          "Cash Deposit",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 70305.1
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "351964263933349",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          3042
+        ],
+        [
+          "Unknown",
+          83
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          48
+        ],
+        [
+          "IMPS",
+          25
+        ],
+        [
+          "Charges",
+          25
+        ],
+        [
+          "Internal/Bank Transfer",
+          20
+        ],
+        [
+          "Interest",
+          7
+        ],
+        [
+          "Reversal",
+          2
+        ],
+        [
+          "RTGS",
+          2
+        ],
+        [
+          "POS/Card",
+          1
+        ],
+        [
+          "NEFT",
+          1
+        ],
+        [
+          "Refund/Cashback",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.02,
+        "max_balance": 3253473.48
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "3768480107",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          432
+        ],
+        [
+          "Unknown",
+          42
+        ],
+        [
+          "Charges",
+          20
+        ],
+        [
+          "Cash Deposit",
+          20
+        ],
+        [
+          "NEFT",
+          19
+        ],
+        [
+          "IMPS",
+          9
+        ],
+        [
+          "POS/Card",
+          5
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          3
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 53.78,
+        "max_balance": 202309.44
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "38211367068923",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          6382
+        ],
+        [
+          "Unknown",
+          1462
+        ],
+        [
+          "IMPS",
+          837
+        ],
+        [
+          "POS/Card",
+          356
+        ],
+        [
+          "NEFT",
+          252
+        ],
+        [
+          "Charges",
+          89
+        ],
+        [
+          "Loan/EMI",
+          89
+        ],
+        [
+          "Internal/Bank Transfer",
+          75
+        ],
+        [
+          "Interest",
+          63
+        ],
+        [
+          "Refund/Cashback",
+          31
+        ],
+        [
+          "Salary",
+          23
+        ],
+        [
+          "Cheque",
+          19
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          15
+        ],
+        [
+          "Reversal",
+          6
+        ],
+        [
+          "Cash Deposit",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -16015.19,
+        "max_balance": 6879729.05
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "38347344323",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          24630
+        ],
+        [
+          "IMPS",
+          1934
+        ],
+        [
+          "Unknown",
+          985
+        ],
+        [
+          "NEFT",
+          800
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          574
+        ],
+        [
+          "Cash Deposit",
+          50
+        ],
+        [
+          "Charges",
+          37
+        ],
+        [
+          "Interest",
+          31
+        ],
+        [
+          "POS/Card",
+          10
+        ],
+        [
+          "Reversal",
+          6
+        ],
+        [
+          "Loan/EMI",
+          4
+        ],
+        [
+          "Refund/Cashback",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 116047.67
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "38675866795",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          38
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          10
+        ],
+        [
+          "Unknown",
+          6
+        ],
+        [
+          "IMPS",
+          6
+        ],
+        [
+          "RTGS",
+          6
+        ],
+        [
+          "Cash Deposit",
+          2
+        ],
+        [
+          "Interest",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 20.11,
+        "max_balance": 468733.01
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "39716024090418",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "Unknown",
+          20
+        ],
+        [
+          "UPI",
+          12
+        ],
+        [
+          "POS/Card",
+          4
+        ],
+        [
+          "Cheque",
+          3
+        ],
+        [
+          "IMPS",
+          3
+        ],
+        [
+          "RTGS",
+          3
+        ],
+        [
+          "Interest",
+          2
+        ],
+        [
+          "NEFT",
+          1
+        ],
+        [
+          "Charges",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -3806.5,
+        "max_balance": 500087.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "39883624816624",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          388
+        ],
+        [
+          "Unknown",
+          11
+        ],
+        [
+          "NEFT",
+          6
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          4
+        ],
+        [
+          "Charges",
+          2
+        ],
+        [
+          "POS/Card",
+          1
+        ],
+        [
+          "RTGS",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 486063.49
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "40332817636018",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          70
+        ],
+        [
+          "UPI",
+          21
+        ],
+        [
+          "IMPS",
+          5
+        ],
+        [
+          "Charges",
+          3
+        ],
+        [
+          "NEFT",
+          2
+        ],
+        [
+          "Unknown",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.14,
+        "max_balance": 130035.63
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "4185179967",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "Unknown",
+          38
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          28
+        ],
+        [
+          "IMPS",
+          6
+        ],
+        [
+          "UPI",
+          1
+        ],
+        [
+          "RTGS",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 17.52,
+        "max_balance": 502155.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "42618891001229",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          192
+        ],
+        [
+          "UPI",
+          119
+        ],
+        [
+          "IMPS",
+          54
+        ],
+        [
+          "Unknown",
+          13
+        ],
+        [
+          "POS/Card",
+          4
+        ],
+        [
+          "Loan/EMI",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 1477557.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "43920027363506",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          89
+        ],
+        [
+          "RTGS",
+          28
+        ],
+        [
+          "IMPS",
+          10
+        ],
+        [
+          "Unknown",
+          6
+        ],
+        [
+          "POS/Card",
+          2
+        ],
+        [
+          "Charges",
+          1
+        ],
+        [
+          "UPI",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 4700738.3
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "464196045738107",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          203
+        ],
+        [
+          "UPI",
+          69
+        ],
+        [
+          "RTGS",
+          16
+        ],
+        [
+          "Unknown",
+          9
+        ],
+        [
+          "NEFT",
+          6
+        ],
+        [
+          "Cash Deposit",
+          4
+        ],
+        [
+          "POS/Card",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 202144.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "46652787342452",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          863
+        ],
+        [
+          "NEFT",
+          23
+        ],
+        [
+          "IMPS",
+          11
+        ],
+        [
+          "Salary",
+          8
+        ],
+        [
+          "Interest",
+          6
+        ],
+        [
+          "Unknown",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.01,
+        "max_balance": 6879729.03
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "46796183240954",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "IMPS",
+          68
+        ],
+        [
+          "NEFT",
+          15
+        ],
+        [
+          "Unknown",
+          9
+        ],
+        [
+          "Cheque",
+          3
+        ],
+        [
+          "UPI",
+          3
+        ],
+        [
+          "POS/Card",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 180195.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "489506257213",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          5858
+        ],
+        [
+          "IMPS",
+          1454
+        ],
+        [
+          "Unknown",
+          469
+        ],
+        [
+          "RTGS",
+          333
+        ],
+        [
+          "NEFT",
+          244
+        ],
+        [
+          "Charges",
+          8
+        ],
+        [
+          "Salary",
+          4
+        ],
+        [
+          "POS/Card",
+          1
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 4309418.38
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "49952935790",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          24
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          18
+        ],
+        [
+          "Unknown",
+          15
+        ],
+        [
+          "IMPS",
+          8
+        ],
+        [
+          "Cash Deposit",
+          2
+        ],
+        [
+          "RTGS",
+          2
+        ],
+        [
+          "Interest",
+          2
+        ],
+        [
+          "Charges",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 490781.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "50192424882238",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          96
+        ],
+        [
+          "Charges",
+          40
+        ],
+        [
+          "RTGS",
+          27
+        ],
+        [
+          "IMPS",
+          23
+        ],
+        [
+          "UPI",
+          7
+        ],
+        [
+          "POS/Card",
+          4
+        ],
+        [
+          "Unknown",
+          1
+        ],
+        [
+          "Cheque",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 4839473.2
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "520698390475976",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          6056
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          431
+        ],
+        [
+          "Unknown",
+          379
+        ],
+        [
+          "POS/Card",
+          212
+        ],
+        [
+          "Cash Deposit",
+          211
+        ],
+        [
+          "Charges",
+          96
+        ],
+        [
+          "IMPS",
+          82
+        ],
+        [
+          "NEFT",
+          45
+        ],
+        [
+          "Loan/EMI",
+          24
+        ],
+        [
+          "Refund/Cashback",
+          22
+        ],
+        [
+          "Interest",
+          19
+        ],
+        [
+          "Cheque",
+          6
+        ],
+        [
+          "Reversal",
+          6
+        ],
+        [
+          "RTGS",
+          3
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 480000.57
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "524159813738",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          34
+        ],
+        [
+          "Unknown",
+          9
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          7
+        ],
+        [
+          "POS/Card",
+          4
+        ],
+        [
+          "IMPS",
+          2
+        ],
+        [
+          "Interest",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 163.18,
+        "max_balance": 494848.18
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "5629592364",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          21
+        ],
+        [
+          "Unknown",
+          19
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          5
+        ],
+        [
+          "IMPS",
+          4
+        ],
+        [
+          "NEFT",
+          2
+        ],
+        [
+          "Interest",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 400830.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "5745305385",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          95
+        ],
+        [
+          "Unknown",
+          60
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          59
+        ],
+        [
+          "Charges",
+          49
+        ],
+        [
+          "NEFT",
+          12
+        ],
+        [
+          "IMPS",
+          5
+        ],
+        [
+          "POS/Card",
+          3
+        ],
+        [
+          "Cash Deposit",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -278.57,
+        "max_balance": 62190.43
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "5781302792632557",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          31
+        ],
+        [
+          "Unknown",
+          17
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          10
+        ],
+        [
+          "IMPS",
+          5
+        ],
+        [
+          "POS/Card",
+          2
+        ],
+        [
+          "Charges",
+          1
+        ],
+        [
+          "NEFT",
+          1
+        ],
+        [
+          "Interest",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 21.16,
+        "max_balance": 64754.66
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "57856891688032",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          1666
+        ],
+        [
+          "IMPS",
+          363
+        ],
+        [
+          "Unknown",
+          107
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          30
+        ],
+        [
+          "NEFT",
+          29
+        ],
+        [
+          "Cheque",
+          12
+        ],
+        [
+          "Interest",
+          6
+        ],
+        [
+          "Reversal",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 6879729.05
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "57918678797",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          35
+        ],
+        [
+          "Unknown",
+          7
+        ],
+        [
+          "POS/Card",
+          5
+        ],
+        [
+          "RTGS",
+          4
+        ],
+        [
+          "Interest",
+          3
+        ],
+        [
+          "Cash Deposit",
+          2
+        ],
+        [
+          "NEFT",
+          2
+        ],
+        [
+          "IMPS",
+          2
+        ],
+        [
+          "Cheque",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 559.6,
+        "max_balance": 500800.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "59649123506884",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          2
+        ],
+        [
+          "Loan/EMI",
+          2
+        ],
+        [
+          "Unknown",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -2822.74,
+        "max_balance": 24616.26
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "6147181405386",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          248
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          228
+        ],
+        [
+          "Interest",
+          22
+        ],
+        [
+          "IMPS",
+          14
+        ],
+        [
+          "NEFT",
+          12
+        ],
+        [
+          "Charges",
+          11
+        ],
+        [
+          "Unknown",
+          4
+        ],
+        [
+          "POS/Card",
+          3
+        ],
+        [
+          "Cash Deposit",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 70305.1
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "61577175569879",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "IMPS",
+          20
+        ],
+        [
+          "NEFT",
+          17
+        ],
+        [
+          "RTGS",
+          15
+        ],
+        [
+          "Unknown",
+          11
+        ],
+        [
+          "UPI",
+          6
+        ],
+        [
+          "POS/Card",
+          2
+        ],
+        [
+          "Cheque",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 5324852.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "61ASHOKAROADMYSURU57000",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          1046
+        ],
+        [
+          "Unknown",
+          29
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          11
+        ],
+        [
+          "IMPS",
+          9
+        ],
+        [
+          "Loan/EMI",
+          2
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "Reversal",
+          1
+        ],
+        [
+          "POS/Card",
+          1
+        ],
+        [
+          "RTGS",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 508181.18
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "64711576662",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          6566
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          295
+        ],
+        [
+          "IMPS",
+          274
+        ],
+        [
+          "NEFT",
+          246
+        ],
+        [
+          "Unknown",
+          83
+        ],
+        [
+          "Loan/EMI",
+          72
+        ],
+        [
+          "POS/Card",
+          22
+        ],
+        [
+          "Interest",
+          20
+        ],
+        [
+          "Salary",
+          18
+        ],
+        [
+          "Reversal",
+          6
+        ],
+        [
+          "Internal/Bank Transfer",
+          6
+        ],
+        [
+          "Charges",
+          6
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -999.14,
+        "max_balance": 120544.1
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "654658757412329",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          235
+        ],
+        [
+          "UPI",
+          65
+        ],
+        [
+          "Unknown",
+          35
+        ],
+        [
+          "RTGS",
+          17
+        ],
+        [
+          "IMPS",
+          10
+        ],
+        [
+          "Cash Deposit",
+          8
+        ],
+        [
+          "Charges",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -38150.7,
+        "max_balance": 200339.3
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "6560210068678236",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          301
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          93
+        ],
+        [
+          "IMPS",
+          42
+        ],
+        [
+          "NEFT",
+          25
+        ],
+        [
+          "Unknown",
+          8
+        ],
+        [
+          "Internal/Bank Transfer",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 2884975.4
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "68388838099",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          1142
+        ],
+        [
+          "Unknown",
+          171
+        ],
+        [
+          "IMPS",
+          42
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          34
+        ],
+        [
+          "NEFT",
+          20
+        ],
+        [
+          "Interest",
+          6
+        ],
+        [
+          "Cash Deposit",
+          2
+        ],
+        [
+          "Charges",
+          2
+        ],
+        [
+          "Cheque",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 431926.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "700870937566",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "Unknown",
+          96
+        ],
+        [
+          "POS/Card",
+          96
+        ],
+        [
+          "UPI",
+          60
+        ],
+        [
+          "Charges",
+          57
+        ],
+        [
+          "IMPS",
+          29
+        ],
+        [
+          "Refund/Cashback",
+          12
+        ],
+        [
+          "Interest",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 4.0,
+        "max_balance": 150688.8
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "72615533841078",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          119
+        ],
+        [
+          "IMPS",
+          51
+        ],
+        [
+          "UPI",
+          41
+        ],
+        [
+          "RTGS",
+          24
+        ],
+        [
+          "Unknown",
+          3
+        ],
+        [
+          "POS/Card",
+          2
+        ],
+        [
+          "Cheque",
+          1
+        ],
+        [
+          "Charges",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 987260.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "72735988647",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          128
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          68
+        ],
+        [
+          "RTGS",
+          8
+        ],
+        [
+          "Unknown",
+          8
+        ],
+        [
+          "IMPS",
+          6
+        ],
+        [
+          "NEFT",
+          2
+        ],
+        [
+          "Internal/Bank Transfer",
+          2
+        ],
+        [
+          "Interest",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 1.0,
+        "max_balance": 370062.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "74437247504910",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          1321
+        ],
+        [
+          "NEFT",
+          73
+        ],
+        [
+          "Unknown",
+          43
+        ],
+        [
+          "IMPS",
+          41
+        ],
+        [
+          "POS/Card",
+          40
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          33
+        ],
+        [
+          "Charges",
+          6
+        ],
+        [
+          "Refund/Cashback",
+          6
+        ],
+        [
+          "Cash Deposit",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 70032.57
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "74715157448",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          506
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          54
+        ],
+        [
+          "Unknown",
+          48
+        ],
+        [
+          "IMPS",
+          24
+        ],
+        [
+          "NEFT",
+          6
+        ],
+        [
+          "RTGS",
+          6
+        ],
+        [
+          "Loan/EMI",
+          4
+        ],
+        [
+          "Interest",
+          3
+        ],
+        [
+          "Cheque",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 313757.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "74818428274975",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          386
+        ],
+        [
+          "UPI",
+          29
+        ],
+        [
+          "Unknown",
+          11
+        ],
+        [
+          "RTGS",
+          9
+        ],
+        [
+          "Charges",
+          4
+        ],
+        [
+          "IMPS",
+          3
+        ],
+        [
+          "Cheque",
+          3
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 7.16,
+        "max_balance": 666614.57
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "772342103350",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "IMPS",
+          25
+        ],
+        [
+          "Unknown",
+          16
+        ],
+        [
+          "UPI",
+          5
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 271.0,
+        "max_balance": 1810442.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "7979137025",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "Unknown",
+          258
+        ],
+        [
+          "IMPS",
+          15
+        ],
+        [
+          "NEFT",
+          12
+        ],
+        [
+          "Charges",
+          9
+        ],
+        [
+          "POS/Card",
+          4
+        ],
+        [
+          "UPI",
+          3
+        ],
+        [
+          "Interest",
+          2
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 1.39,
+        "max_balance": 431265.73
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "79895082327702",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          29
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          11
+        ],
+        [
+          "Unknown",
+          9
+        ],
+        [
+          "POS/Card",
+          3
+        ],
+        [
+          "Charges",
+          3
+        ],
+        [
+          "IMPS",
+          2
+        ],
+        [
+          "RTGS",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 341069.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "80417906569",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          16
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          14
+        ],
+        [
+          "Unknown",
+          9
+        ],
+        [
+          "RTGS",
+          4
+        ],
+        [
+          "Interest",
+          2
+        ],
+        [
+          "Charges",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.8,
+        "max_balance": 468076.8
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "80708265377",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          6964
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          353
+        ],
+        [
+          "Unknown",
+          101
+        ],
+        [
+          "NEFT",
+          40
+        ],
+        [
+          "Interest",
+          40
+        ],
+        [
+          "Cash Deposit",
+          26
+        ],
+        [
+          "IMPS",
+          24
+        ],
+        [
+          "POS/Card",
+          10
+        ],
+        [
+          "Cheque",
+          7
+        ],
+        [
+          "Internal/Bank Transfer",
+          2
+        ],
+        [
+          "Loan/EMI",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 50050.2
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "81271119214",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          15324
+        ],
+        [
+          "IMPS",
+          1130
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          888
+        ],
+        [
+          "Unknown",
+          619
+        ],
+        [
+          "NEFT",
+          390
+        ],
+        [
+          "POS/Card",
+          106
+        ],
+        [
+          "Charges",
+          106
+        ],
+        [
+          "Cash Deposit",
+          58
+        ],
+        [
+          "Interest",
+          35
+        ],
+        [
+          "RTGS",
+          32
+        ],
+        [
+          "Cheque",
+          31
+        ],
+        [
+          "Refund/Cashback",
+          24
+        ],
+        [
+          "Reversal",
+          20
+        ],
+        [
+          "Loan/EMI",
+          12
+        ],
+        [
+          "Internal/Bank Transfer",
+          5
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 1477431.36
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "81954044160",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          1046
+        ],
+        [
+          "Unknown",
+          19
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          15
+        ],
+        [
+          "IMPS",
+          9
+        ],
+        [
+          "Interest",
+          4
+        ],
+        [
+          "Cheque",
+          3
+        ],
+        [
+          "Loan/EMI",
+          2
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "Reversal",
+          1
+        ],
+        [
+          "RTGS",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 508181.18
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "839178205347",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "POS/Card",
+          129
+        ],
+        [
+          "Unknown",
+          125
+        ],
+        [
+          "UPI",
+          122
+        ],
+        [
+          "Charges",
+          94
+        ],
+        [
+          "IMPS",
+          32
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          13
+        ],
+        [
+          "NEFT",
+          10
+        ],
+        [
+          "Interest",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 175777.23
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "8442098066767557",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          2039
+        ],
+        [
+          "Unknown",
+          145
+        ],
+        [
+          "IMPS",
+          74
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          41
+        ],
+        [
+          "Charges",
+          14
+        ],
+        [
+          "Interest",
+          11
+        ],
+        [
+          "NEFT",
+          10
+        ],
+        [
+          "POS/Card",
+          8
+        ],
+        [
+          "Reversal",
+          6
+        ],
+        [
+          "Loan/EMI",
+          4
+        ],
+        [
+          "Refund/Cashback",
+          2
+        ],
+        [
+          "Cheque",
+          2
+        ],
+        [
+          "Salary",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": -311.53,
+        "max_balance": 72485.37
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "85393777281",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          158
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          12
+        ],
+        [
+          "IMPS",
+          8
+        ],
+        [
+          "NEFT",
+          6
+        ],
+        [
+          "Loan/EMI",
+          4
+        ],
+        [
+          "Unknown",
+          2
+        ],
+        [
+          "RTGS",
+          2
+        ],
+        [
+          "Reversal",
+          2
+        ],
+        [
+          "Interest",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 990000.1
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "8642666611469255",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          49
+        ],
+        [
+          "Unknown",
+          10
+        ],
+        [
+          "IMPS",
+          3
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.49,
+        "max_balance": 79972.28
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "86968597794425",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          10
+        ],
+        [
+          "Unknown",
+          6
+        ],
+        [
+          "UPI",
+          6
+        ],
+        [
+          "IMPS",
+          3
+        ],
+        [
+          "POS/Card",
+          1
+        ],
+        [
+          "Charges",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 2.83,
+        "max_balance": 230102.83
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "8743200949",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "Charges",
+          16
+        ],
+        [
+          "Unknown",
+          15
+        ],
+        [
+          "Interest",
+          7
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "Refund/Cashback",
+          1
+        ],
+        [
+          "Internal/Bank Transfer",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 765.58,
+        "max_balance": 1001.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "87889641689",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "ATM/Cash Withdrawal",
+          104
+        ],
+        [
+          "UPI",
+          57
+        ],
+        [
+          "IMPS",
+          9
+        ],
+        [
+          "Reversal",
+          6
+        ],
+        [
+          "Unknown",
+          6
+        ],
+        [
+          "RTGS",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 200612.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "882358884158137",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          794
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          80
+        ],
+        [
+          "NEFT",
+          52
+        ],
+        [
+          "IMPS",
+          52
+        ],
+        [
+          "Unknown",
+          4
+        ],
+        [
+          "Interest",
+          3
+        ],
+        [
+          "Charges",
+          3
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "POS/Card",
+          1
+        ],
+        [
+          "Loan/EMI",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 229180.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "8855611820",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          995
+        ],
+        [
+          "IMPS",
+          156
+        ],
+        [
+          "Unknown",
+          26
+        ],
+        [
+          "POS/Card",
+          21
+        ],
+        [
+          "Charges",
+          16
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          15
+        ],
+        [
+          "Cheque",
+          13
+        ],
+        [
+          "Cash Deposit",
+          9
+        ],
+        [
+          "RTGS",
+          7
+        ],
+        [
+          "Interest",
+          4
+        ],
+        [
+          "Internal/Bank Transfer",
+          4
+        ],
+        [
+          "Loan/EMI",
+          3
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 1976496.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "913628731289",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          286
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          14
+        ],
+        [
+          "Unknown",
+          9
+        ],
+        [
+          "IMPS",
+          6
+        ],
+        [
+          "Internal/Bank Transfer",
+          6
+        ],
+        [
+          "Interest",
+          4
+        ],
+        [
+          "Cash Deposit",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 172593.2
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "91612657813",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          1574
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          916
+        ],
+        [
+          "Unknown",
+          263
+        ],
+        [
+          "Cash Deposit",
+          74
+        ],
+        [
+          "POS/Card",
+          55
+        ],
+        [
+          "Charges",
+          47
+        ],
+        [
+          "Interest",
+          43
+        ],
+        [
+          "NEFT",
+          16
+        ],
+        [
+          "Loan/EMI",
+          9
+        ],
+        [
+          "IMPS",
+          8
+        ],
+        [
+          "Cheque",
+          7
+        ],
+        [
+          "Internal/Bank Transfer",
+          6
+        ],
+        [
+          "Refund/Cashback",
+          4
+        ],
+        [
+          "Reversal",
+          2
+        ],
+        [
+          "RTGS",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 686080.08
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "92460899397",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          94
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          52
+        ],
+        [
+          "Unknown",
+          7
+        ],
+        [
+          "RTGS",
+          6
+        ],
+        [
+          "NEFT",
+          4
+        ],
+        [
+          "Interest",
+          2
+        ],
+        [
+          "Cheque",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 805085.52
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "9256443494527112",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "Unknown",
+          12
+        ],
+        [
+          "RTGS",
+          5
+        ],
+        [
+          "IMPS",
+          2
+        ],
+        [
+          "Interest",
+          2
+        ],
+        [
+          "UPI",
+          1
+        ],
+        [
+          "NEFT",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 3714225.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "92883409730",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          41
+        ],
+        [
+          "RTGS",
+          32
+        ],
+        [
+          "UPI",
+          22
+        ],
+        [
+          "Unknown",
+          21
+        ],
+        [
+          "IMPS",
+          14
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "POS/Card",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 5027150.32
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "95773447976527",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          104
+        ],
+        [
+          "RTGS",
+          59
+        ],
+        [
+          "Charges",
+          45
+        ],
+        [
+          "UPI",
+          20
+        ],
+        [
+          "IMPS",
+          8
+        ],
+        [
+          "POS/Card",
+          5
+        ],
+        [
+          "Unknown",
+          4
+        ],
+        [
+          "Cash Deposit",
+          1
+        ],
+        [
+          "Cheque",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 2620104.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "958533930537174",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "RTGS",
+          332
+        ],
+        [
+          "Unknown",
+          97
+        ],
+        [
+          "NEFT",
+          80
+        ],
+        [
+          "IMPS",
+          77
+        ],
+        [
+          "Charges",
+          5
+        ],
+        [
+          "Internal/Bank Transfer",
+          2
+        ],
+        [
+          "POS/Card",
+          2
+        ],
+        [
+          "UPI",
+          2
+        ],
+        [
+          "Loan/EMI",
+          2
+        ],
+        [
+          "Refund/Cashback",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 8299.3,
+        "max_balance": 4140771.2
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "9810055876",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          1235
+        ],
+        [
+          "IMPS",
+          33
+        ],
+        [
+          "NEFT",
+          23
+        ],
+        [
+          "Cash Deposit",
+          9
+        ],
+        [
+          "Unknown",
+          5
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          2
+        ],
+        [
+          "Refund/Cashback",
+          2
+        ],
+        [
+          "POS/Card",
+          1
+        ],
+        [
+          "Loan/EMI",
+          1
+        ],
+        [
+          "Charges",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 1.3,
+        "max_balance": 5728162.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "987109318802197",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "UPI",
+          17
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          12
+        ],
+        [
+          "IMPS",
+          2
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 14.03,
+        "max_balance": 50882.71
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "99572217148131",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "NEFT",
+          329
+        ],
+        [
+          "IMPS",
+          222
+        ],
+        [
+          "Charges",
+          216
+        ],
+        [
+          "RTGS",
+          79
+        ],
+        [
+          "UPI",
+          48
+        ],
+        [
+          "Unknown",
+          20
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          18
+        ],
+        [
+          "POS/Card",
+          5
+        ],
+        [
+          "Reversal",
+          3
+        ],
+        [
+          "Cheque",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 2881067.42
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "99853120144",
+      "cash_behaviour": "not cash intensive from extracted data",
+      "digital_behaviour": "digital intensive",
+      "payment_preferences": [
+        [
+          "IMPS",
+          20
+        ],
+        [
+          "Unknown",
+          6
+        ],
+        [
+          "Charges",
+          4
+        ],
+        [
+          "UPI",
+          2
+        ],
+        [
+          "Cheque",
+          1
+        ],
+        [
+          "Internal/Bank Transfer",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 5.5,
+        "max_balance": 285564.0
+      },
+      "confidence": "High"
+    },
+    {
+      "account_number": "UNKNOWN",
+      "cash_behaviour": "cash intensive",
+      "digital_behaviour": "mixed/limited digital activity",
+      "payment_preferences": [
+        [
+          "UPI",
+          194
+        ],
+        [
+          "ATM/Cash Withdrawal",
+          134
+        ],
+        [
+          "Unknown",
+          44
+        ],
+        [
+          "IMPS",
+          28
+        ],
+        [
+          "POS/Card",
+          25
+        ],
+        [
+          "NEFT",
+          11
+        ],
+        [
+          "Interest",
+          2
+        ],
+        [
+          "Cash Deposit",
+          1
+        ]
+      ],
+      "balance_behaviour": {
+        "min_balance": 0.0,
+        "max_balance": 175330.0
+      },
+      "confidence": "High"
+    }
+  ]
+}

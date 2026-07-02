@@ -1,0 +1,82 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260701_154757
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260701_154757
+Run timestamp: 2026-07-01T10:18:52.945291+00:00
+Elapsed seconds: 39.17
+
+Input Contract
+--------------
+Clean rows: 8564
+Flagged rows: 0
+Duplicate rows: 0
+Metadata clean rows: 8564
+Summary-report clean rows: 8564
+Count reconciliation: ok
+Reconciliation detail: CSV counts match extraction metadata.
+
+Analysis Scope
+--------------
+Total stored rows: 8564
+Eligible detection rows: 8564
+Excluded rows: 0
+Accounts: 10
+Graph nodes: 10
+Graph edges: 140
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 8564
+Resolved counterparty rows: 4521
+Resolution rate percent: 52.79075198505371
+LLM calls made: 0
+LLM status: disabled_no_key
+
+Balance Data Quality
+--------------------
+No balance inconsistencies detected in this dataset.
+
+Finding Counts
+--------------
+1_duplicate_verification: 1
+2_failed_reversed_transaction_detection: 0
+3_pass_through_routing_account: 2
+4_fund_pooling_account: 1
+5_structuring_smurfing_detection: 2
+6_money_flow_graph_construction: 1
+7_circular_flow_multi_hop_cycle_detection: 3960
+8_money_trail_tracing: 100
+9_credit_to_cash_out_chains: 121
+10_cross_statement_links: 66
+11_balance_parking_account: 2
+12_hub_ranking: 0
+13_low_value_account_testing: 0
+14_reversal_clusters: 0
+15_round_value_debit_patterns: 7
+16_shared_upi_identifiers: 3
+17_round_trip_detection: 6
+18_dormant_reactivation: 0
+19_first_contact_large_transfer: 0
+21_suspicious_account_ranking: 10
+22_llm_investigated_anomalies: 1
+23_ml_ensemble_anomaly_lead: 0
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 0
+duplicate: 0
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+acct_001: total_score=12419.9707, distinct_patterns=9, total_findings=2817
+acct_007: total_score=12388.0265, distinct_patterns=7, total_findings=2678
+acct_009: total_score=11647.5077, distinct_patterns=3, total_findings=2049
+acct_003: total_score=11481.8294, distinct_patterns=6, total_findings=2593
+acct_006: total_score=11398.0485, distinct_patterns=8, total_findings=2578
+acct_008: total_score=11296.5658, distinct_patterns=3, total_findings=2089
+acct_005: total_score=10231.7615, distinct_patterns=5, total_findings=2208
+acct_004: total_score=9722.6365, distinct_patterns=5, total_findings=2031
+acct_002: total_score=8247.8238, distinct_patterns=5, total_findings=1794
+acct_010: total_score=7375.5045, distinct_patterns=4, total_findings=1533

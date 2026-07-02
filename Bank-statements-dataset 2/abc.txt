@@ -1,0 +1,16 @@
+Verified and continued the prior work rather than restarting.
+The main issue was that the previous run had generated rich structured artifacts, but ground_truth.md itself was only a short stub. I replaced it with a comprehensive human-readable report at:
+[ground_truth.md](/c:/Users/msant/Downloads/Bank-statements-dataset 2/Bank-statements-dataset/ground_truth_artifacts/ground_truth.md)
+What I verified:
+Prior artifacts processed primary/ and Secondary/: 162 statement/source files.
+Deduplicated transaction corpus: 183,192 transactions.
+Accounts profiled: 111.
+Entities: 71,186.
+Relationships: 56,490.
+Money-flow records: 5,114.
+Pattern instances: 459.
+The new Markdown includes all 459 pattern instances in a complete register with accounts, files, transactions, confidence, and evidence IDs.
+I also documented the separate synthetic_data/ folder instead of silently ignoring it or incorrectly merging it into the real bank-statement investigation. It contains 34 CSV benchmark files, including the generated ground-truth CSV, and is now covered in its own section.
+Final validation checks passed: required report sections are present, pattern count matches fraud_patterns.json, and the final validation section summarizes totals, unsupported files, limitations, and uncertainties.
+
+

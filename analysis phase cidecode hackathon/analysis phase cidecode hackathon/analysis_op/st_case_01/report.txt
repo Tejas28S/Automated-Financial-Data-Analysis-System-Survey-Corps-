@@ -1,0 +1,3539 @@
+======================================================================
+  st_case_01 — Analysis Summary
+======================================================================
+
+Fraud Transactions:
+----------------------------------------
+  1925139986_000000
+    Account   : 1925139986
+    Date      : 2025-01-08
+    Amount    : 51392.0
+    Direction : credit
+    Narration : NEFT KKBKN2501087106306 NEFTINW- (Cr) APEX COMMERCE ENTERPRISE IDIB0844281 146858243049
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000001
+    Account   : 1925139986
+    Date      : 2025-01-08
+    Amount    : 1798.0
+    Direction : debit
+    Narration : UPI/017087337812/DR/IRCT/BARB/irctc.pay@axisbank@barb0285988.ifsc.npci/UPI | D/IRCTC
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000002
+    Account   : 1925139986
+    Date      : 2025-01-09
+    Amount    : 2144.0
+    Direction : debit
+    Narration : UPI/831630091808/DR/BIGB/CNRB/bbdaily@okhdfcbank@cnrb0571518.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000003
+    Account   : 1925139986
+    Date      : 2025-01-11
+    Amount    : 2243.0
+    Direction : debit
+    Narration : UPI/502691121873/DR/PHAR/IDIB/medplus@ybl@idib0938169.ifsc.npci/UPI | D/PHARMACY
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000004
+    Account   : 1925139986
+    Date      : 2025-01-13
+    Amount    : 2735.0
+    Direction : debit
+    Narration : UPI/840763279143/DR/BIGB/KKBK/bbdaily@okhdfcbank@kkbk0113658.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000005
+    Account   : 1925139986
+    Date      : 2025-01-15
+    Amount    : 4136.0
+    Direction : debit
+    Narration : UPI/531672431598/DR/AIRT/UTIB/airtel.recharge@airtel@utib0970174.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000006
+    Account   : 1925139986
+    Date      : 2025-01-16
+    Amount    : 1633.0
+    Direction : debit
+    Narration : UPI/877429470832/DR/BIGB/HDFC/bbdaily@okhdfcbank@hdfc0383982.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000007
+    Account   : 1925139986
+    Date      : 2025-01-17
+    Amount    : 118.0
+    Direction : debit
+    Narration : GST
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000008
+    Account   : 1925139986
+    Date      : 2025-01-18
+    Amount    : 1955.0
+    Direction : debit
+    Narration : UPI/588541095732/DR/PHAR/FDRL/medplus@ybl@fdrl0288005.ifsc.npci/UPI | D/PHARMACY
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000009
+    Account   : 1925139986
+    Date      : 2025-01-21
+    Amount    : 879.0
+    Direction : debit
+    Narration : UPI/860275631085/DR/BIGB/FDRL/bbdaily@okhdfcbank@fdrl0939816.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000010
+    Account   : 1925139986
+    Date      : 2025-01-24
+    Amount    : 2199.0
+    Direction : debit
+    Narration : UPI/103711148472/DR/IRCT/ICIC/irctc.pay@axisbank@icic0641439.ifsc.npci/UPI | D/IRCTC
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000011
+    Account   : 1925139986
+    Date      : 2025-01-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : CWDR/519499928246/27-01-2025 17:21:07/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  1925139986_000012
+    Account   : 1925139986
+    Date      : 2025-01-28
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CWDR/121145582114/28-01-2025 18:03:25/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  1925139986_000013
+    Account   : 1925139986
+    Date      : 2025-01-29
+    Amount    : 1721.0
+    Direction : debit
+    Narration : UPI/347279911006/DR/BIGB/MAHB/bbdaily@okhdfcbank@mahb0973162.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000014
+    Account   : 1925139986
+    Date      : 2025-01-31
+    Amount    : 11200.0
+    Direction : debit
+    Narration : NACH DR-9921702164-BAJAJ FINANCE EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000015
+    Account   : 1925139986
+    Date      : 2025-02-01
+    Amount    : 949.0
+    Direction : debit
+    Narration : UPI/014194525971/DR/DMAR/UTIB/dmart.pay@okaxis@utib0484321.ifsc.npci/UPI | D/DMART
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000016
+    Account   : 1925139986
+    Date      : 2025-02-03
+    Amount    : 1567.0
+    Direction : debit
+    Narration : UPI/925458556466/DR/INDI/ICIC/fuelpay@ybl@icic0153324.ifsc.npci/UPI | D/INDIANOIL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000017
+    Account   : 1925139986
+    Date      : 2025-02-05
+    Amount    : 83192.0
+    Direction : credit
+    Narration : NEFT KKBKN2502056812328 NEFTINW- (Cr) Crystal Supply Enterprise HDFC0398306 02625176591154
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000018
+    Account   : 1925139986
+    Date      : 2025-02-06
+    Amount    : 2836.0
+    Direction : debit
+    Narration : UPI/445407792499/DR/JIO/PUNB/jio.mobile@ibl@punb0157486.ifsc.npci/UPI | D
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000019
+    Account   : 1925139986
+    Date      : 2025-02-09
+    Amount    : 11200.0
+    Direction : debit
+    Narration : NACH DR-5892073019-BAJAJ FINANCE EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000020
+    Account   : 1925139986
+    Date      : 2025-02-12
+    Amount    : 3016.0
+    Direction : debit
+    Narration : UPI/155464567886/DR/PHAR/PUNB/medplus@ybl@punb0658470.ifsc.npci/UPI | D/PHARMACY
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000021
+    Account   : 1925139986
+    Date      : 2025-02-14
+    Amount    : 2346.0
+    Direction : debit
+    Narration : UPI/475963894160/DR/BESC/HDFC/bescom.bill@upi@hdfc0727573.ifsc.npci/UPI | D/BESCOM
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000022
+    Account   : 1925139986
+    Date      : 2025-02-17
+    Amount    : 4239.0
+    Direction : debit
+    Narration : UPI/302488290091/DR/AIRT/UTIB/airtel.recharge@airtel@utib0913271.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000023
+    Account   : 1925139986
+    Date      : 2025-02-17
+    Amount    : 89673.0
+    Direction : credit
+    Narration : NEFT ICICN2502179283456 NEFTINW- (Cr) Komal Kapoor ICIC0830384 663458340862
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  1925139986_000024
+    Account   : 1925139986
+    Date      : 2025-02-18
+    Amount    : 11200.0
+    Direction : debit
+    Narration : NACH DR-4952905530-ICICI BANK EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000025
+    Account   : 1925139986
+    Date      : 2025-02-20
+    Amount    : 3156.0
+    Direction : debit
+    Narration : UPI/456694639008/DR/BESC/FDRL/bescom.bill@upi@fdrl0394419.ifsc.npci/UPI | D/BESCOM
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000026
+    Account   : 1925139986
+    Date      : 2025-02-22
+    Amount    : 359.0
+    Direction : debit
+    Narration : UPI/029235087791/DR/AIRT/CNRB/airtel.recharge@airtel@cnrb0132199.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000027
+    Account   : 1925139986
+    Date      : 2025-02-23
+    Amount    : 7500.0
+    Direction : debit
+    Narration : NACH DR-6328048226-ICICI BANK EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000028
+    Account   : 1925139986
+    Date      : 2025-02-25
+    Amount    : 1168.0
+    Direction : debit
+    Narration : UPI/867506846313/DR/INDI/KKBK/fuelpay@ybl@kkbk0380005.ifsc.npci/UPI | D/INDIANOIL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000029
+    Account   : 1925139986
+    Date      : 2025-02-26
+    Amount    : 4400.0
+    Direction : debit
+    Narration : UPI/291126648535/DR/AIRT/FDRL/airtel.recharge@airtel@fdrl0770673.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000030
+    Account   : 1925139986
+    Date      : 2025-02-28
+    Amount    : 3348.0
+    Direction : debit
+    Narration : UPI/754927483308/DR/AIRT/MAHB/airtel.recharge@airtel@mahb0397471.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000031
+    Account   : 1925139986
+    Date      : 2025-03-03
+    Amount    : 3616.0
+    Direction : debit
+    Narration : UPI/925854668049/DR/BIGB/CNRB/bbdaily@okhdfcbank@cnrb0158949.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000032
+    Account   : 1925139986
+    Date      : 2025-03-06
+    Amount    : 644.0
+    Direction : debit
+    Narration : UPI/638956162896/DR/IRCT/HDFC/irctc.pay@axisbank@hdfc0600466.ifsc.npci/UPI | D/IRCTC
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000033
+    Account   : 1925139986
+    Date      : 2025-03-08
+    Amount    : 67112.0
+    Direction : credit
+    Narration : NEFT KKBKN2503081266011 NEFTINW- (Cr) Northern Traders Company ICIC0932084 964625933648
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000034
+    Account   : 1925139986
+    Date      : 2025-03-08
+    Amount    : 2411.0
+    Direction : debit
+    Narration : UPI/050807377071/DR/INDI/PUNB/fuelpay@ybl@punb0769469.ifsc.npci/UPI | D/INDIANOIL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000035
+    Account   : 1925139986
+    Date      : 2025-03-09
+    Amount    : 203.0
+    Direction : credit
+    Narration : 1925139986:Int.Pd:09-12-2024 to 08-03-2025
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000036
+    Account   : 1925139986
+    Date      : 2025-03-11
+    Amount    : 8000.0
+    Direction : debit
+    Narration : CWDR/555605649417/11-03-2025 10:39:50/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  1925139986_000037
+    Account   : 1925139986
+    Date      : 2025-03-14
+    Amount    : 1794.0
+    Direction : debit
+    Narration : UPI/459961486680/DR/PHAR/SBIN/medplus@ybl@sbin0254342.ifsc.npci/UPI | D/PHARMACY
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000038
+    Account   : 1925139986
+    Date      : 2025-03-16
+    Amount    : 585.0
+    Direction : debit
+    Narration : UPI/814613197014/DR/BESC/CNRB/bescom.bill@upi@cnrb0550189.ifsc.npci/UPI | D/BESCOM
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000039
+    Account   : 1925139986
+    Date      : 2025-03-17
+    Amount    : 3636.0
+    Direction : debit
+    Narration : UPI/078009124251/DR/JIO/BARB/jio.mobile@ibl@barb0236583.ifsc.npci/UPI | D
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000040
+    Account   : 1925139986
+    Date      : 2025-03-17
+    Amount    : 97448.0
+    Direction : credit
+    Narration : NEFT ICICN2503171820201 NEFTINW- (Cr) Komal Kapoor ICIC0830384 663458340862
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  1925139986_000041
+    Account   : 1925139986
+    Date      : 2025-03-17
+    Amount    : 96003.0
+    Direction : credit
+    Narration : UPI/070933479504/CR/KOMA/ICIC/663458340862@icic0830384.ifsc.npci/UPI | C
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000042
+    Account   : 1925139986
+    Date      : 2025-03-18
+    Amount    : 3788.0
+    Direction : debit
+    Narration : UPI/031006524976/DR/BIGB/FDRL/bbdaily@okhdfcbank@fdrl0832649.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000043
+    Account   : 1925139986
+    Date      : 2025-03-19
+    Amount    : 4257.0
+    Direction : debit
+    Narration : UPI/990604979194/DR/PHAR/KKBK/medplus@ybl@kkbk0971574.ifsc.npci/UPI | D/PHARMACY
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000044
+    Account   : 1925139986
+    Date      : 2025-03-22
+    Amount    : 11200.0
+    Direction : debit
+    Narration : NACH DR-0866073247-ICICI BANK EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000045
+    Account   : 1925139986
+    Date      : 2025-03-23
+    Amount    : 2804.0
+    Direction : debit
+    Narration : UPI/694175010975/DR/AIRT/UTIB/airtel.recharge@airtel@utib0999968.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000046
+    Account   : 1925139986
+    Date      : 2025-03-26
+    Amount    : 7500.0
+    Direction : debit
+    Narration : NACH DR-5043186015-BAJAJ FINANCE EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000047
+    Account   : 1925139986
+    Date      : 2025-03-29
+    Amount    : 3803.0
+    Direction : debit
+    Narration : UPI/948706881153/DR/INDI/IDIB/fuelpay@ybl@idib0710751.ifsc.npci/UPI | D/INDIANOIL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000048
+    Account   : 1925139986
+    Date      : 2025-03-30
+    Amount    : 2436.0
+    Direction : debit
+    Narration : UPI/154315533586/DR/DMAR/BARB/dmart.pay@okaxis@barb0955904.ifsc.npci/UPI | D/DMART
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000049
+    Account   : 1925139986
+    Date      : 2025-04-02
+    Amount    : 1548.0
+    Direction : debit
+    Narration : UPI/249335301417/DR/BESC/ICIC/bescom.bill@upi@icic0453683.ifsc.npci/UPI | D/BESCOM
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000050
+    Account   : 1925139986
+    Date      : 2025-04-05
+    Amount    : 3752.0
+    Direction : debit
+    Narration : UPI/857959388417/DR/BESC/IDIB/bescom.bill@upi@idib0254162.ifsc.npci/UPI | D/BESCOM
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000051
+    Account   : 1925139986
+    Date      : 2025-04-07
+    Amount    : 2249.0
+    Direction : debit
+    Narration : UPI/128969810744/DR/INDI/ICIC/fuelpay@ybl@icic0133826.ifsc.npci/UPI | D/INDIANOIL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000052
+    Account   : 1925139986
+    Date      : 2025-04-08
+    Amount    : 43967.0
+    Direction : credit
+    Narration : NEFT KKBKN2504087357423 NEFTINW- (Cr) MAA ENTERPRISE UTIB0803389 92931559520753
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000053
+    Account   : 1925139986
+    Date      : 2025-04-09
+    Amount    : 3598.0
+    Direction : debit
+    Narration : UPI/645708671532/DR/AIRT/UTIB/airtel.recharge@airtel@utib0184324.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000054
+    Account   : 1925139986
+    Date      : 2025-04-11
+    Amount    : 236.0
+    Direction : debit
+    Narration : UPI/995147128977/DR/AIRT/PUNB/airtel.recharge@airtel@punb0725842.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000055
+    Account   : 1925139986
+    Date      : 2025-04-14
+    Amount    : 7500.0
+    Direction : debit
+    Narration : NACH DR-9640321265-ICICI BANK EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000056
+    Account   : 1925139986
+    Date      : 2025-04-14
+    Amount    : 90841.0
+    Direction : credit
+    Narration : NEFT ICICN2504147605462 NEFTINW- (Cr) Komal Kapoor ICIC0830384 663458340862
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  1925139986_000057
+    Account   : 1925139986
+    Date      : 2025-04-14
+    Amount    : 91840.0
+    Direction : credit
+    Narration : UPI/594387797077/CR/KOMA/ICIC/663458340862@icic0830384.ifsc.npci/UPI | C
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000058
+    Account   : 1925139986
+    Date      : 2025-04-16
+    Amount    : 9.0
+    Direction : debit
+    Narration : MONTHLY SMS CHARGES
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000059
+    Account   : 1925139986
+    Date      : 2025-04-19
+    Amount    : 1400.0
+    Direction : debit
+    Narration : UPI/096102150317/DR/INDI/KKBK/fuelpay@ybl@kkbk0469236.ifsc.npci/UPI | D/INDIANOIL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000060
+    Account   : 1925139986
+    Date      : 2025-04-22
+    Amount    : 21400.0
+    Direction : debit
+    Narration : NACH DR-5905383786-HDFC BANK EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000061
+    Account   : 1925139986
+    Date      : 2025-04-23
+    Amount    : 2552.0
+    Direction : debit
+    Narration : UPI/032530423469/DR/BIGB/PUNB/bbdaily@okhdfcbank@punb0528619.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000062
+    Account   : 1925139986
+    Date      : 2025-04-26
+    Amount    : 3314.0
+    Direction : debit
+    Narration : UPI/771215772054/DR/DMAR/IDIB/dmart.pay@okaxis@idib0898429.ifsc.npci/UPI | D/DMART
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000063
+    Account   : 1925139986
+    Date      : 2025-04-28
+    Amount    : 2824.0
+    Direction : debit
+    Narration : UPI/154323966274/DR/DMAR/SBIN/dmart.pay@okaxis@sbin0535254.ifsc.npci/UPI | D/DMART
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000064
+    Account   : 1925139986
+    Date      : 2025-05-01
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CWDR/760193109451/01-05-2025 21:57:03/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  1925139986_000065
+    Account   : 1925139986
+    Date      : 2025-05-04
+    Amount    : 151.0
+    Direction : debit
+    Narration : UPI/795455386177/DR/BIGB/MAHB/bbdaily@okhdfcbank@mahb0969808.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000066
+    Account   : 1925139986
+    Date      : 2025-05-06
+    Amount    : 1972.0
+    Direction : debit
+    Narration : UPI/296806516217/DR/AIRT/SBIN/airtel.recharge@airtel@sbin0162666.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000067
+    Account   : 1925139986
+    Date      : 2025-05-09
+    Amount    : 78351.0
+    Direction : credit
+    Narration : NEFT KKBKN2505090455227 NEFTINW- (Cr) TECHREVIVE SOLUTIONS IDIB0569814 237068110872
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000068
+    Account   : 1925139986
+    Date      : 2025-05-09
+    Amount    : 1549.0
+    Direction : debit
+    Narration : UPI/510805956101/DR/AIRT/MAHB/airtel.recharge@airtel@mahb0933882.ifsc.npci/UPI | D/AIRTEL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000069
+    Account   : 1925139986
+    Date      : 2025-05-12
+    Amount    : 4432.0
+    Direction : debit
+    Narration : UPI/480689146337/DR/INDI/PUNB/fuelpay@ybl@punb0384694.ifsc.npci/UPI | D/INDIANOIL
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000070
+    Account   : 1925139986
+    Date      : 2025-05-12
+    Amount    : 98140.0
+    Direction : credit
+    Narration : NEFT ICICN2505126785456 NEFTINW- (Cr) Komal Kapoor ICIC0830384 663458340862
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  1925139986_000071
+    Account   : 1925139986
+    Date      : 2025-05-13
+    Amount    : 1331.0
+    Direction : debit
+    Narration : UPI/568748883433/DR/BIGB/CNRB/bbdaily@okhdfcbank@cnrb0933842.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000072
+    Account   : 1925139986
+    Date      : 2025-05-16
+    Amount    : 1670.0
+    Direction : debit
+    Narration : UPI/764734560234/DR/BESC/FDRL/bescom.bill@upi@fdrl0654834.ifsc.npci/UPI | D/BESCOM
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000073
+    Account   : 1925139986
+    Date      : 2025-05-18
+    Amount    : 4097.0
+    Direction : debit
+    Narration : UPI/434369587803/DR/PHAR/UTIB/medplus@ybl@utib0641127.ifsc.npci/UPI | D/PHARMACY
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000074
+    Account   : 1925139986
+    Date      : 2025-05-21
+    Amount    : 4329.0
+    Direction : debit
+    Narration : UPI/522066544831/DR/BESC/ICIC/bescom.bill@upi@icic0684043.ifsc.npci/UPI | D/BESCOM
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000075
+    Account   : 1925139986
+    Date      : 2025-05-23
+    Amount    : 11200.0
+    Direction : debit
+    Narration : NACH DR-1254524093-ICICI BANK EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000076
+    Account   : 1925139986
+    Date      : 2025-05-26
+    Amount    : 1291.0
+    Direction : debit
+    Narration : UPI/082181520408/DR/BIGB/IDIB/bbdaily@okhdfcbank@idib0711777.ifsc.npci/UPI | D/BIGBASKET
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000077
+    Account   : 1925139986
+    Date      : 2025-05-28
+    Amount    : 8000.0
+    Direction : debit
+    Narration : CWDR/339360686504/28-05-2025 17:01:29/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  1925139986_000078
+    Account   : 1925139986
+    Date      : 2025-05-29
+    Amount    : 882.0
+    Direction : debit
+    Narration : UPI/742451835148/DR/IRCT/IDFB/irctc.pay@axisbank@idfb0990912.ifsc.npci/UPI | D/IRCTC
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000079
+    Account   : 1925139986
+    Date      : 2025-05-31
+    Amount    : 4214.0
+    Direction : debit
+    Narration : UPI/101528364387/DR/BESC/HDFC/bescom.bill@upi@hdfc0477746.ifsc.npci/UPI | D/BESCOM
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000080
+    Account   : 1925139986
+    Date      : 2025-06-02
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CWDR/076268985279/02-06-2025 10:45:08/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  1925139986_000081
+    Account   : 1925139986
+    Date      : 2025-06-04
+    Amount    : 2207.0
+    Direction : debit
+    Narration : UPI/466883376153/DR/PHAR/SBIN/medplus@ybl@sbin0453689.ifsc.npci/UPI | D/PHARMACY
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  1925139986_000082
+    Account   : 1925139986
+    Date      : 2025-06-05
+    Amount    : 11200.0
+    Direction : debit
+    Narration : NACH DR-7379450280-HDFC BANK EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000083
+    Account   : 1925139986
+    Date      : 2025-06-07
+    Amount    : 21400.0
+    Direction : debit
+    Narration : NACH DR-1882422376-BAJAJ FINANCE EMI-139986
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000084
+    Account   : 1925139986
+    Date      : 2025-06-08
+    Amount    : 75790.0
+    Direction : credit
+    Narration : NEFT KKBKN2506088983633 NEFTINW- (Cr) SHREE KRISHNA MOBILE IDIB0694778 720641108840
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  1925139986_000085
+    Account   : 1925139986
+    Date      : 2025-06-09
+    Amount    : 143.0
+    Direction : credit
+    Narration : 1925139986:Int.Pd:11-03-2025 to 08-06-2025
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000000
+    Account   : 27241922740
+    Date      : 2025-01-06
+    Amount    : 50991.0
+    Direction : credit
+    Narration : Shree Krishna Mobile MAHBN2501069272321 - 9008-NEFT/ RTGS CELL FDRL0208275 91310479017509
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000001
+    Account   : 27241922740
+    Date      : 2025-01-07
+    Amount    : 1787.0
+    Direction : debit
+    Narration : UPI/435847791750/DR/PHARMACY/PUNB/medplus@ybl@punb0482807.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000002
+    Account   : 27241922740
+    Date      : 2025-01-08
+    Amount    : 3685.0
+    Direction : debit
+    Narration : UPI/679500117032/DR/DMART/HDFC/dmart.pay@okaxis@hdfc0529813.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000003
+    Account   : 27241922740
+    Date      : 2025-01-11
+    Amount    : 1484.0
+    Direction : debit
+    Narration : UPI/265258617170/DR/BESCOM/HDFC/bescom.bill@upi@hdfc0234299.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000004
+    Account   : 27241922740
+    Date      : 2025-01-13
+    Amount    : 21400.0
+    Direction : debit
+    Narration : NACH DR-8310971059-HDFC BANK EMI-922740
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000005
+    Account   : 27241922740
+    Date      : 2025-01-15
+    Amount    : 624.0
+    Direction : debit
+    Narration : UPI/972566327422/DR/BIGBASKET/CNRB/bbdaily@okhdfcbank@cnrb0891244.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000006
+    Account   : 27241922740
+    Date      : 2025-01-17
+    Amount    : 3060.0
+    Direction : debit
+    Narration : UPI/934179117135/DR/BIGBASKET/UTIB/bbdaily@okhdfcbank@utib0133031.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000007
+    Account   : 27241922740
+    Date      : 2025-01-20
+    Amount    : 3644.0
+    Direction : debit
+    Narration : UPI/792964963032/DR/IRCTC/FDRL/irctc.pay@axisbank@fdrl0474077.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000008
+    Account   : 27241922740
+    Date      : 2025-01-21
+    Amount    : 4330.0
+    Direction : debit
+    Narration : UPI/570027810672/DR/BIGBASKET/PUNB/bbdaily@okhdfcbank@punb0239549.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000009
+    Account   : 27241922740
+    Date      : 2025-01-24
+    Amount    : 10000.0
+    Direction : debit
+    Narration : CWDR/440228160831/24-01-2025 15:15:01/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  27241922740_000010
+    Account   : 27241922740
+    Date      : 2025-01-27
+    Amount    : 1709.0
+    Direction : debit
+    Narration : UPI/751568049324/DR/PHARMACY/HDFC/medplus@ybl@hdfc0824985.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000011
+    Account   : 27241922740
+    Date      : 2025-01-30
+    Amount    : 21400.0
+    Direction : debit
+    Narration : NACH DR-6622574741-BAJAJ FINANCE EMI-922740
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000012
+    Account   : 27241922740
+    Date      : 2025-02-01
+    Amount    : 3338.0
+    Direction : debit
+    Narration : UPI/743681923840/DR/INDIANOIL/PUNB/fuelpay@ybl@punb0192318.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000013
+    Account   : 27241922740
+    Date      : 2025-02-02
+    Amount    : 7500.0
+    Direction : debit
+    Narration : NACH DR-3236880778-ICICI BANK EMI-922740
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000014
+    Account   : 27241922740
+    Date      : 2025-02-03
+    Amount    : 1231.0
+    Direction : debit
+    Narration : UPI/090172210392/DR/PHARMACY/ICIC/medplus@ybl@icic0674498.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000015
+    Account   : 27241922740
+    Date      : 2025-02-05
+    Amount    : 143.0
+    Direction : debit
+    Narration : UPI/344599834818/DR/AIRTEL/IDFB/airtel.recharge@airtel@idfb0409366.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000016
+    Account   : 27241922740
+    Date      : 2025-02-06
+    Amount    : 42000.0
+    Direction : credit
+    Narration : TECHREVIVE SOLUTIONS MAHBN2502069089876 - 9008-NEFT/ RTGS CELL SBIN0705000 97836915056
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000017
+    Account   : 27241922740
+    Date      : 2025-02-07
+    Amount    : 128.0
+    Direction : debit
+    Narration : UPI/863709994493/DR/PHARMACY/BARB/medplus@ybl@barb0226847.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000018
+    Account   : 27241922740
+    Date      : 2025-02-08
+    Amount    : 2316.0
+    Direction : debit
+    Narration : UPI/501678044772/DR/PHARMACY/SBIN/medplus@ybl@sbin0541500.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000019
+    Account   : 27241922740
+    Date      : 2025-02-09
+    Amount    : 790.0
+    Direction : debit
+    Narration : UPI/474312804637/DR/DMART/ICIC/dmart.pay@okaxis@icic0116741.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000020
+    Account   : 27241922740
+    Date      : 2025-02-12
+    Amount    : 2148.0
+    Direction : debit
+    Narration : UPI/008048457933/DR/BIGBASKET/CNRB/bbdaily@okhdfcbank@cnrb0122573.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000021
+    Account   : 27241922740
+    Date      : 2025-02-15
+    Amount    : 15000.0
+    Direction : debit
+    Narration : CWDR/332547382618/15-02-2025 16:54:18/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  27241922740_000022
+    Account   : 27241922740
+    Date      : 2025-02-17
+    Amount    : 85436.0
+    Direction : credit
+    Narration : UPI/517523682558/CR/KOMALKAPOOR/ICIC/663458340862@icic0830384.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000023
+    Account   : 27241922740
+    Date      : 2025-02-17
+    Amount    : 94828.0
+    Direction : credit
+    Narration : Komal Kapoor ICICN2502177204431 - 9008-NEFT/ RTGS CELL ICIC0830384 663458340862
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  27241922740_000024
+    Account   : 27241922740
+    Date      : 2025-02-18
+    Amount    : 10000.0
+    Direction : debit
+    Narration : CWDR/851351900000/18-02-2025 19:36:54/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  27241922740_000025
+    Account   : 27241922740
+    Date      : 2025-02-19
+    Amount    : 3720.0
+    Direction : debit
+    Narration : UPI/455327141284/DR/BIGBASKET/MAHB/bbdaily@okhdfcbank@mahb0349478.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000026
+    Account   : 27241922740
+    Date      : 2025-02-21
+    Amount    : 2967.0
+    Direction : debit
+    Narration : UPI/985204515928/DR/INDIANOIL/IDIB/fuelpay@ybl@idib0597223.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000027
+    Account   : 27241922740
+    Date      : 2025-02-23
+    Amount    : 3095.0
+    Direction : debit
+    Narration : UPI/671665647539/DR/PHARMACY/BARB/medplus@ybl@barb0365576.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000028
+    Account   : 27241922740
+    Date      : 2025-02-24
+    Amount    : 587.0
+    Direction : debit
+    Narration : UPI/595969597801/DR/BIGBASKET/SBIN/bbdaily@okhdfcbank@sbin0161477.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000029
+    Account   : 27241922740
+    Date      : 2025-02-27
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CWDR/737961958687/27-02-2025 22:40:20/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  27241922740_000030
+    Account   : 27241922740
+    Date      : 2025-03-02
+    Amount    : 969.0
+    Direction : debit
+    Narration : UPI/271109894032/DR/IRCTC/MAHB/irctc.pay@axisbank@mahb0847687.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000031
+    Account   : 27241922740
+    Date      : 2025-03-04
+    Amount    : 393.0
+    Direction : debit
+    Narration : UPI/778151394257/DR/AIRTEL/CNRB/airtel.recharge@airtel@cnrb0887256.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000032
+    Account   : 27241922740
+    Date      : 2025-03-05
+    Amount    : 2593.0
+    Direction : debit
+    Narration : UPI/445237429131/DR/BIGBASKET/BARB/bbdaily@okhdfcbank@barb0622764.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000033
+    Account   : 27241922740
+    Date      : 2025-03-08
+    Amount    : 1712.0
+    Direction : debit
+    Narration : UPI/102942942609/DR/IRCTC/CNRB/irctc.pay@axisbank@cnrb0354652.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000034
+    Account   : 27241922740
+    Date      : 2025-03-09
+    Amount    : 890.0
+    Direction : debit
+    Narration : UPI/404778431664/DR/BIGBASKET/IDFB/bbdaily@okhdfcbank@idfb0546874.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000035
+    Account   : 27241922740
+    Date      : 2025-03-10
+    Amount    : 47167.0
+    Direction : credit
+    Narration : SUGARIFY AGENCY MAHBN2503108467892 - 9008-NEFT/ RTGS CELL IDFB0678844 67050572838
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000036
+    Account   : 27241922740
+    Date      : 2025-03-11
+    Amount    : 53.0
+    Direction : credit
+    Narration : 27241922740:Int.Pd:11-12-2024 to 10-03-2025
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000037
+    Account   : 27241922740
+    Date      : 2025-03-11
+    Amount    : 3337.0
+    Direction : debit
+    Narration : UPI/850626533898/DR/AIRTEL/FDRL/airtel.recharge@airtel@fdrl0478322.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000038
+    Account   : 27241922740
+    Date      : 2025-03-14
+    Amount    : 3331.0
+    Direction : debit
+    Narration : UPI/286680940037/DR/INDIANOIL/UTIB/fuelpay@ybl@utib0898477.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000039
+    Account   : 27241922740
+    Date      : 2025-03-16
+    Amount    : 313.0
+    Direction : debit
+    Narration : UPI/746994465786/DR/INDIANOIL/CNRB/fuelpay@ybl@cnrb0858254.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000040
+    Account   : 27241922740
+    Date      : 2025-03-17
+    Amount    : 90700.0
+    Direction : credit
+    Narration : UPI/191409230691/CR/KOMALKAPOOR/ICIC/663458340862@icic0830384.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000041
+    Account   : 27241922740
+    Date      : 2025-03-17
+    Amount    : 91584.0
+    Direction : credit
+    Narration : Komal Kapoor ICICN2503179262224 - 9008-NEFT/ RTGS CELL ICIC0830384 663458340862
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  27241922740_000042
+    Account   : 27241922740
+    Date      : 2025-03-19
+    Amount    : 4168.0
+    Direction : debit
+    Narration : UPI/598827908782/DR/PHARMACY/ICIC/medplus@ybl@icic0691554.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000043
+    Account   : 27241922740
+    Date      : 2025-03-22
+    Amount    : 1545.0
+    Direction : debit
+    Narration : UPI/940965704783/DR/PHARMACY/FDRL/medplus@ybl@fdrl0950082.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000044
+    Account   : 27241922740
+    Date      : 2025-03-23
+    Amount    : 15850.0
+    Direction : debit
+    Narration : NACH DR-2532262621-BAJAJ FINANCE EMI-922740
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000045
+    Account   : 27241922740
+    Date      : 2025-03-26
+    Amount    : 15000.0
+    Direction : debit
+    Narration : CWDR/076574367375/26-03-2025 12:49:10/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  27241922740_000046
+    Account   : 27241922740
+    Date      : 2025-03-28
+    Amount    : 11200.0
+    Direction : debit
+    Narration : NACH DR-6305077434-HDFC BANK EMI-922740
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000047
+    Account   : 27241922740
+    Date      : 2025-03-30
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CWDR/939593589632/30-03-2025 20:06:03/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  27241922740_000048
+    Account   : 27241922740
+    Date      : 2025-04-01
+    Amount    : 3332.0
+    Direction : debit
+    Narration : UPI/062389309037/DR/BIGBASKET/BARB/bbdaily@okhdfcbank@barb0442857.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000049
+    Account   : 27241922740
+    Date      : 2025-04-04
+    Amount    : 3083.0
+    Direction : debit
+    Narration : UPI/894000544760/DR/JIO/IDIB/jio.mobile@ibl@idib0247849.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000050
+    Account   : 27241922740
+    Date      : 2025-04-06
+    Amount    : 11200.0
+    Direction : debit
+    Narration : NACH DR-7974675576-BAJAJ FINANCE EMI-922740
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000051
+    Account   : 27241922740
+    Date      : 2025-04-07
+    Amount    : 50502.0
+    Direction : credit
+    Narration : MAA ENTERPRISE MAHBN2504077075557 - 9008-NEFT/ RTGS CELL PUNB0895985 2194830488629222
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000052
+    Account   : 27241922740
+    Date      : 2025-04-09
+    Amount    : 3115.0
+    Direction : debit
+    Narration : UPI/096098419864/DR/INDIANOIL/IDIB/fuelpay@ybl@idib0349297.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000053
+    Account   : 27241922740
+    Date      : 2025-04-12
+    Amount    : 118.0
+    Direction : debit
+    Narration : SMS ALERT CHARGES NEW
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000054
+    Account   : 27241922740
+    Date      : 2025-04-13
+    Amount    : 1994.0
+    Direction : debit
+    Narration : UPI/564989795853/DR/IRCTC/KKBK/irctc.pay@axisbank@kkbk0754680.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000055
+    Account   : 27241922740
+    Date      : 2025-04-14
+    Amount    : 197.0
+    Direction : debit
+    Narration : UPI/291543185179/DR/JIO/KKBK/jio.mobile@ibl@kkbk0975756.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000056
+    Account   : 27241922740
+    Date      : 2025-04-14
+    Amount    : 86457.0
+    Direction : credit
+    Narration : UPI/140578851917/CR/KOMALKAPOOR/ICIC/663458340862@icic0830384.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000057
+    Account   : 27241922740
+    Date      : 2025-04-14
+    Amount    : 90007.0
+    Direction : credit
+    Narration : Komal Kapoor ICICN2504141540628 - 9008-NEFT/ RTGS CELL ICIC0830384 663458340862
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  27241922740_000058
+    Account   : 27241922740
+    Date      : 2025-04-16
+    Amount    : 118.0
+    Direction : debit
+    Narration : MONTHLY SMS CHARGES
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000059
+    Account   : 27241922740
+    Date      : 2025-04-19
+    Amount    : 1646.0
+    Direction : debit
+    Narration : UPI/996400911629/DR/BESCOM/MAHB/bescom.bill@upi@mahb0160967.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000060
+    Account   : 27241922740
+    Date      : 2025-04-20
+    Amount    : 1203.0
+    Direction : debit
+    Narration : UPI/077701756738/DR/BESCOM/CNRB/bescom.bill@upi@cnrb0609088.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000061
+    Account   : 27241922740
+    Date      : 2025-04-23
+    Amount    : 18.0
+    Direction : debit
+    Narration : SMS ALERT CHARGES NEW
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000062
+    Account   : 27241922740
+    Date      : 2025-04-24
+    Amount    : 2360.0
+    Direction : debit
+    Narration : UPI/231977280649/DR/BIGBASKET/HDFC/bbdaily@okhdfcbank@hdfc0856194.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000063
+    Account   : 27241922740
+    Date      : 2025-04-26
+    Amount    : 4222.0
+    Direction : debit
+    Narration : UPI/573064315454/DR/IRCTC/ICIC/irctc.pay@axisbank@icic0502626.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000064
+    Account   : 27241922740
+    Date      : 2025-04-28
+    Amount    : 29.0
+    Direction : debit
+    Narration : SMS ALERT CHARGES NEW
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000065
+    Account   : 27241922740
+    Date      : 2025-04-29
+    Amount    : 2557.0
+    Direction : debit
+    Narration : UPI/755153973563/DR/BIGBASKET/ICIC/bbdaily@okhdfcbank@icic0871105.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000066
+    Account   : 27241922740
+    Date      : 2025-05-01
+    Amount    : 2470.0
+    Direction : debit
+    Narration : UPI/052010132019/DR/BESCOM/HDFC/bescom.bill@upi@hdfc0693946.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000067
+    Account   : 27241922740
+    Date      : 2025-05-03
+    Amount    : 3167.0
+    Direction : debit
+    Narration : UPI/199824108217/DR/INDIANOIL/IDFB/fuelpay@ybl@idfb0853891.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000068
+    Account   : 27241922740
+    Date      : 2025-05-05
+    Amount    : 468.0
+    Direction : debit
+    Narration : UPI/609466730281/DR/JIO/HDFC/jio.mobile@ibl@hdfc0107631.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000069
+    Account   : 27241922740
+    Date      : 2025-05-07
+    Amount    : 62039.0
+    Direction : credit
+    Narration : S R K ENTERPRISES MAHBN2505078495258 - 9008-NEFT/ RTGS CELL UTIB0847566 83947355388639
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000070
+    Account   : 27241922740
+    Date      : 2025-05-07
+    Amount    : 2376.0
+    Direction : debit
+    Narration : UPI/563578613165/DR/INDIANOIL/SBIN/fuelpay@ybl@sbin0951332.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000071
+    Account   : 27241922740
+    Date      : 2025-05-10
+    Amount    : 1116.0
+    Direction : debit
+    Narration : UPI/583113111150/DR/PHARMACY/MAHB/medplus@ybl@mahb0877384.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000072
+    Account   : 27241922740
+    Date      : 2025-05-12
+    Amount    : 98156.0
+    Direction : credit
+    Narration : UPI/704937527638/CR/KOMALKAPOOR/ICIC/663458340862@icic0830384.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000073
+    Account   : 27241922740
+    Date      : 2025-05-12
+    Amount    : 88611.0
+    Direction : credit
+    Narration : Komal Kapoor ICICN2505127190134 - 9008-NEFT/ RTGS CELL ICIC0830384 663458340862
+    Pattern   : Accumulation / Holding Account Detection, High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  27241922740_000074
+    Account   : 27241922740
+    Date      : 2025-05-13
+    Amount    : 2465.0
+    Direction : debit
+    Narration : UPI/071734286203/DR/JIO/MAHB/jio.mobile@ibl@mahb0760489.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000075
+    Account   : 27241922740
+    Date      : 2025-05-16
+    Amount    : 419.0
+    Direction : debit
+    Narration : UPI/387138614444/DR/DMART/IDFB/dmart.pay@okaxis@idfb0176616.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000076
+    Account   : 27241922740
+    Date      : 2025-05-17
+    Amount    : 941.0
+    Direction : debit
+    Narration : UPI/137856459881/DR/AIRTEL/BARB/airtel.recharge@airtel@barb0489371.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000077
+    Account   : 27241922740
+    Date      : 2025-05-20
+    Amount    : 221.0
+    Direction : debit
+    Narration : UPI/038060894675/DR/PHARMACY/PUNB/medplus@ybl@punb0492317.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000078
+    Account   : 27241922740
+    Date      : 2025-05-23
+    Amount    : 1947.0
+    Direction : debit
+    Narration : UPI/436523282963/DR/BESCOM/UTIB/bescom.bill@upi@utib0297449.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000079
+    Account   : 27241922740
+    Date      : 2025-05-24
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CWDR/679037298427/24-05-2025 13:01:46/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  27241922740_000080
+    Account   : 27241922740
+    Date      : 2025-05-27
+    Amount    : 29.0
+    Direction : debit
+    Narration : GST
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000081
+    Account   : 27241922740
+    Date      : 2025-05-30
+    Amount    : 1265.0
+    Direction : debit
+    Narration : UPI/809966515165/DR/PHARMACY/IDIB/medplus@ybl@idib0332245.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000082
+    Account   : 27241922740
+    Date      : 2025-06-02
+    Amount    : 3318.0
+    Direction : debit
+    Narration : UPI/349497162139/DR/DMART/BARB/dmart.pay@okaxis@barb0568038.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000083
+    Account   : 27241922740
+    Date      : 2025-06-03
+    Amount    : 15000.0
+    Direction : debit
+    Narration : CWDR/269021372253/03-06-2025 11:17:59/CMN
+    Pattern   : Accumulation / Holding Account Detection, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  27241922740_000084
+    Account   : 27241922740
+    Date      : 2025-06-05
+    Amount    : 59814.0
+    Direction : credit
+    Narration : Shree Krishna Mobile MAHBN2506059440966 - 9008-NEFT/ RTGS CELL BARB0729848 97700984138684
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000085
+    Account   : 27241922740
+    Date      : 2025-06-06
+    Amount    : 325.0
+    Direction : credit
+    Narration : 27241922740:Int.Pd:08-03-2025 to 05-06-2025
+    Pattern   : Accumulation / Holding Account Detection, Top Suspicious Account Ranking
+
+  27241922740_000086
+    Account   : 27241922740
+    Date      : 2025-06-06
+    Amount    : 283.0
+    Direction : debit
+    Narration : UPI/162403481861/DR/PHARMACY/HDFC/medplus@ybl@hdfc0664177.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  27241922740_000087
+    Account   : 27241922740
+    Date      : 2025-06-07
+    Amount    : 1427.0
+    Direction : debit
+    Narration : UPI/774524220555/DR/JIO/IDIB/jio.mobile@ibl@idib0436148.ifsc.npci/UPI
+    Pattern   : Accumulation / Holding Account Detection, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000000
+    Account   : 663458340862
+    Date      : 2025-01-07
+    Amount    : 894.0
+    Direction : debit
+    Narration : UPI/DR/926088480709/INDI/KKBK/**fuelpay@ybl@kkbk0640274.ifsc.npci/UPI//ICI6023288307/INDIANOIL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000001
+    Account   : 663458340862
+    Date      : 2025-01-08
+    Amount    : 44731.0
+    Direction : credit
+    Narration : NEFT:ICICN2501083850690:TECHREVIVE SOLUTIONS
+    Pattern   : High-Risk Internal Flow Hub Ranking
+
+  663458340862_000002
+    Account   : 663458340862
+    Date      : 2025-01-09
+    Amount    : 1565.0
+    Direction : debit
+    Narration : UPI/DR/337490477127/INDI/IDIB/**fuelpay@ybl@idib0332681.ifsc.npci/UPI//ICI4992527737/INDIANOIL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000003
+    Account   : 663458340862
+    Date      : 2025-01-11
+    Amount    : 4000.0
+    Direction : debit
+    Narration : UPI/DR/162592984793/INDI/MAHB/**fuelpay@ybl@mahb0963130.ifsc.npci/UPI//ICI2899879887/INDIANOIL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Repeated Round-Value Debit Pattern, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000004
+    Account   : 663458340862
+    Date      : 2025-01-13
+    Amount    : 2361.0
+    Direction : debit
+    Narration : UPI/DR/694550785855/IRCT/IDFB/**irctc.pay@axisbank@idfb0724614.ifsc.npci/UPI//ICI0678399307/IRCTC
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000005
+    Account   : 663458340862
+    Date      : 2025-01-16
+    Amount    : 2322.0
+    Direction : debit
+    Narration : UPI/DR/368535432824/AIRT/PUNB/**airtel.recharge@airtel@punb0956438.ifsc.npci/UPI//ICI3151242519/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000006
+    Account   : 663458340862
+    Date      : 2025-01-18
+    Amount    : 2735.0
+    Direction : debit
+    Narration : UPI/DR/196552998600/PHAR/PUNB/**medplus@ybl@punb0563481.ifsc.npci/UPI//ICI7039657464/PHARMACY
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000007
+    Account   : 663458340862
+    Date      : 2025-01-19
+    Amount    : 2298.0
+    Direction : debit
+    Narration : UPI/DR/769070798645/PHAR/SBIN/**medplus@ybl@sbin0112914.ifsc.npci/UPI//ICI2678672346/PHARMACY
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000008
+    Account   : 663458340862
+    Date      : 2025-01-22
+    Amount    : 2101.0
+    Direction : debit
+    Narration : UPI/DR/805672399187/INDI/KKBK/**fuelpay@ybl@kkbk0623001.ifsc.npci/UPI//ICI6588607320/INDIANOIL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000010
+    Account   : 663458340862
+    Date      : 2025-01-25
+    Amount    : 2405.0
+    Direction : debit
+    Narration : UPI/DR/744416758336/DMAR/FDRL/**dmart.pay@okaxis@fdrl0452644.ifsc.npci/UPI//ICI9208681407/DMART
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000011
+    Account   : 663458340862
+    Date      : 2025-01-28
+    Amount    : 2942.0
+    Direction : debit
+    Narration : UPI/DR/778250148484/BESC/IDFB/**bescom.bill@upi@idfb0196134.ifsc.npci/UPI//ICI5744080462/BESCOM
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000013
+    Account   : 663458340862
+    Date      : 2025-02-02
+    Amount    : 4152.0
+    Direction : debit
+    Narration : UPI/DR/801707168369/IRCT/SBIN/**irctc.pay@axisbank@sbin0215017.ifsc.npci/UPI//ICI7246633454/IRCTC
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000014
+    Account   : 663458340862
+    Date      : 2025-02-04
+    Amount    : 2268.0
+    Direction : debit
+    Narration : UPI/DR/891013937260/AIRT/HDFC/**airtel.recharge@airtel@hdfc0712760.ifsc.npci/UPI//ICI1169241898/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000015
+    Account   : 663458340862
+    Date      : 2025-02-05
+    Amount    : 81403.0
+    Direction : credit
+    Narration : NEFT:ICICN2502053495936:SHREE KRISHNA MOBILE
+    Pattern   : High-Risk Internal Flow Hub Ranking
+
+  663458340862_000016
+    Account   : 663458340862
+    Date      : 2025-02-07
+    Amount    : 2223.0
+    Direction : debit
+    Narration : UPI/DR/999150587212/JIO/ICIC/**jio.mobile@ibl@icic0386327.ifsc.npci/UPI//ICI4501956680
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000017
+    Account   : 663458340862
+    Date      : 2025-02-10
+    Amount    : 305.0
+    Direction : debit
+    Narration : UPI/DR/788474083881/BESC/FDRL/**bescom.bill@upi@fdrl0409247.ifsc.npci/UPI//ICI3388652805/BESCOM
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000018
+    Account   : 663458340862
+    Date      : 2025-02-12
+    Amount    : 3990.0
+    Direction : debit
+    Narration : UPI/DR/305891550342/PHAR/SBIN/**medplus@ybl@sbin0718844.ifsc.npci/UPI//ICI7677109310/PHARMACY
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000020
+    Account   : 663458340862
+    Date      : 2025-02-17
+    Amount    : 981.0
+    Direction : debit
+    Narration : UPI/DR/393172335970/AIRT/PUNB/**airtel.recharge@airtel@punb0801874.ifsc.npci/UPI//ICI3121032281/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000021
+    Account   : 663458340862
+    Date      : 2025-02-17
+    Amount    : 85436.0
+    Direction : debit
+    Narration : UPI/DR/517523682558/BHAV/MAHB/**27241922740@mahb0245398.ifsc.npci/UPI//ICI7553937560
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000022
+    Account   : 663458340862
+    Date      : 2025-02-17
+    Amount    : 89673.0
+    Direction : debit
+    Narration : NEFT:ICICN2502179283456:LAKSHMI DEVI K
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000023
+    Account   : 663458340862
+    Date      : 2025-02-17
+    Amount    : 96046.0
+    Direction : debit
+    Narration : UPI/DR/479889434939/ARJU/IDFB/**73808607293@idfb0880215.ifsc.npci/UPI//ICI0062453765
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000024
+    Account   : 663458340862
+    Date      : 2025-02-17
+    Amount    : 94828.0
+    Direction : debit
+    Narration : NEFT:ICICN2502177204431:Bhavana Rao
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000025
+    Account   : 663458340862
+    Date      : 2025-02-19
+    Amount    : 3503.0
+    Direction : debit
+    Narration : UPI/DR/066620714608/IRCT/IDIB/**irctc.pay@axisbank@idib0496010.ifsc.npci/UPI//ICI8934310379/IRCTC
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000026
+    Account   : 663458340862
+    Date      : 2025-02-20
+    Amount    : 1615.0
+    Direction : debit
+    Narration : UPI/DR/788480217870/BESC/PUNB/**bescom.bill@upi@punb0395017.ifsc.npci/UPI//ICI4679930356/BESCOM
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000027
+    Account   : 663458340862
+    Date      : 2025-02-22
+    Amount    : 1803.0
+    Direction : debit
+    Narration : UPI/DR/554427462085/IRCT/ICIC/**irctc.pay@axisbank@icic0101354.ifsc.npci/UPI//ICI9607314170/IRCTC
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000028
+    Account   : 663458340862
+    Date      : 2025-02-23
+    Amount    : 3774.0
+    Direction : debit
+    Narration : UPI/DR/506160630281/JIO/IDFB/**jio.mobile@ibl@idfb0900795.ifsc.npci/UPI//ICI5556125177
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000029
+    Account   : 663458340862
+    Date      : 2025-02-24
+    Amount    : 2615.0
+    Direction : debit
+    Narration : UPI/DR/243877446575/DMAR/ICIC/**dmart.pay@okaxis@icic0158702.ifsc.npci/UPI//ICI3898219813/DMART
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000031
+    Account   : 663458340862
+    Date      : 2025-02-28
+    Amount    : 4251.0
+    Direction : debit
+    Narration : UPI/DR/513837342547/BESC/ICIC/**bescom.bill@upi@icic0521626.ifsc.npci/UPI//ICI0614125830/BESCOM
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000032
+    Account   : 663458340862
+    Date      : 2025-03-02
+    Amount    : 176.0
+    Direction : debit
+    Narration : UPI/DR/730244446548/IRCT/HDFC/**irctc.pay@axisbank@hdfc0709416.ifsc.npci/UPI//ICI9964530207/IRCTC
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000033
+    Account   : 663458340862
+    Date      : 2025-03-04
+    Amount    : 372.0
+    Direction : debit
+    Narration : UPI/DR/359882204160/AIRT/IDIB/**airtel.recharge@airtel@idib0837373.ifsc.npci/UPI//ICI0986419849/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000034
+    Account   : 663458340862
+    Date      : 2025-03-07
+    Amount    : 1626.0
+    Direction : debit
+    Narration : UPI/DR/264614260972/INDI/SBIN/**fuelpay@ybl@sbin0850220.ifsc.npci/UPI//ICI1475285946/INDIANOIL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000035
+    Account   : 663458340862
+    Date      : 2025-03-08
+    Amount    : 620.0
+    Direction : debit
+    Narration : UPI/DR/071906532025/DMAR/IDFB/**dmart.pay@okaxis@idfb0847391.ifsc.npci/UPI//ICI5147488300/DMART
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000036
+    Account   : 663458340862
+    Date      : 2025-03-09
+    Amount    : 44410.0
+    Direction : credit
+    Narration : NEFT:ICICN2503099778819:BANSILAL TRADERS
+    Pattern   : High-Risk Internal Flow Hub Ranking
+
+  663458340862_000038
+    Account   : 663458340862
+    Date      : 2025-03-11
+    Amount    : 4338.0
+    Direction : debit
+    Narration : UPI/DR/899673849114/IRCT/KKBK/**irctc.pay@axisbank@kkbk0765470.ifsc.npci/UPI//ICI0483551170/IRCTC
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000039
+    Account   : 663458340862
+    Date      : 2025-03-13
+    Amount    : 10000.0
+    Direction : debit
+    Narration : CWDR/552188935330/13-03-2025 13:03:24/CMN
+    Pattern   : High-Risk Internal Flow Hub Ranking, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  663458340862_000040
+    Account   : 663458340862
+    Date      : 2025-03-14
+    Amount    : 3289.0
+    Direction : debit
+    Narration : UPI/DR/484141167607/BIGB/UTIB/**bbdaily@okhdfcbank@utib0209523.ifsc.npci/UPI//ICI2907016967/BIGBASKET
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000041
+    Account   : 663458340862
+    Date      : 2025-03-17
+    Amount    : 4064.0
+    Direction : debit
+    Narration : UPI/DR/711743707989/PHAR/IDFB/**medplus@ybl@idfb0763945.ifsc.npci/UPI//ICI7583162609/PHARMACY
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000042
+    Account   : 663458340862
+    Date      : 2025-03-17
+    Amount    : 90700.0
+    Direction : debit
+    Narration : UPI/DR/191409230691/BHAV/MAHB/**27241922740@mahb0245398.ifsc.npci/UPI//ICI1090307449
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000043
+    Account   : 663458340862
+    Date      : 2025-03-17
+    Amount    : 97448.0
+    Direction : debit
+    Narration : NEFT:ICICN2503171820201:LAKSHMI DEVI K
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000044
+    Account   : 663458340862
+    Date      : 2025-03-17
+    Amount    : 85057.0
+    Direction : debit
+    Narration : UPI/DR/430425886406/ARJU/IDFB/**73808607293@idfb0880215.ifsc.npci/UPI//ICI1635243268
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000045
+    Account   : 663458340862
+    Date      : 2025-03-17
+    Amount    : 91584.0
+    Direction : debit
+    Narration : NEFT:ICICN2503179262224:Bhavana Rao
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000046
+    Account   : 663458340862
+    Date      : 2025-03-17
+    Amount    : 96003.0
+    Direction : debit
+    Narration : UPI/DR/070933479504/LAKS/KKBK/**1925139986@kkbk0442530.ifsc.npci/UPI//ICI5047741959
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000047
+    Account   : 663458340862
+    Date      : 2025-03-19
+    Amount    : 2779.0
+    Direction : debit
+    Narration : UPI/DR/919608643629/AIRT/ICIC/**airtel.recharge@airtel@icic0157010.ifsc.npci/UPI//ICI9635650331/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000048
+    Account   : 663458340862
+    Date      : 2025-03-22
+    Amount    : 8000.0
+    Direction : debit
+    Narration : CWDR/352173167823/22-03-2025 12:39:47/CMN
+    Pattern   : High-Risk Internal Flow Hub Ranking, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  663458340862_000049
+    Account   : 663458340862
+    Date      : 2025-03-24
+    Amount    : 2933.0
+    Direction : debit
+    Narration : UPI/DR/137107891713/IRCT/KKBK/**irctc.pay@axisbank@kkbk0300884.ifsc.npci/UPI//ICI7228478665/IRCTC
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000050
+    Account   : 663458340862
+    Date      : 2025-03-26
+    Amount    : 3953.0
+    Direction : debit
+    Narration : UPI/DR/060959019884/DMAR/KKBK/**dmart.pay@okaxis@kkbk0125457.ifsc.npci/UPI//ICI2404732691/DMART
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000051
+    Account   : 663458340862
+    Date      : 2025-03-28
+    Amount    : 15000.0
+    Direction : debit
+    Narration : CWDR/494874564764/28-03-2025 12:35:34/CMN
+    Pattern   : High-Risk Internal Flow Hub Ranking, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  663458340862_000054
+    Account   : 663458340862
+    Date      : 2025-04-04
+    Amount    : 2242.0
+    Direction : debit
+    Narration : UPI/DR/838601097076/INDI/PUNB/**fuelpay@ybl@punb0208195.ifsc.npci/UPI//ICI1009200780/INDIANOIL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000055
+    Account   : 663458340862
+    Date      : 2025-04-05
+    Amount    : 1722.0
+    Direction : debit
+    Narration : UPI/DR/797142211158/DMAR/IDFB/**dmart.pay@okaxis@idfb0521094.ifsc.npci/UPI//ICI6433790718/DMART
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000056
+    Account   : 663458340862
+    Date      : 2025-04-07
+    Amount    : 62390.0
+    Direction : credit
+    Narration : NEFT:ICICN2504077632964:TECHREVIVE SOLUTIONS
+    Pattern   : High-Risk Internal Flow Hub Ranking
+
+  663458340862_000057
+    Account   : 663458340862
+    Date      : 2025-04-08
+    Amount    : 3780.0
+    Direction : debit
+    Narration : UPI/DR/935768795414/JIO/IDIB/**jio.mobile@ibl@idib0555170.ifsc.npci/UPI//ICI7289912887
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000059
+    Account   : 663458340862
+    Date      : 2025-04-14
+    Amount    : 86457.0
+    Direction : debit
+    Narration : UPI/DR/140578851917/BHAV/MAHB/**27241922740@mahb0245398.ifsc.npci/UPI//ICI5056888528
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000060
+    Account   : 663458340862
+    Date      : 2025-04-14
+    Amount    : 90841.0
+    Direction : debit
+    Narration : NEFT:ICICN2504147605462:LAKSHMI DEVI K
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000061
+    Account   : 663458340862
+    Date      : 2025-04-14
+    Amount    : 85045.0
+    Direction : debit
+    Narration : UPI/DR/190598657311/ARJU/IDFB/**73808607293@idfb0880215.ifsc.npci/UPI//ICI8555803624
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000062
+    Account   : 663458340862
+    Date      : 2025-04-14
+    Amount    : 90007.0
+    Direction : debit
+    Narration : NEFT:ICICN2504141540628:Bhavana Rao
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000063
+    Account   : 663458340862
+    Date      : 2025-04-14
+    Amount    : 91840.0
+    Direction : debit
+    Narration : UPI/DR/594387797077/LAKS/KKBK/**1925139986@kkbk0442530.ifsc.npci/UPI//ICI5251303527
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000064
+    Account   : 663458340862
+    Date      : 2025-04-14
+    Amount    : 87597.0
+    Direction : debit
+    Narration : NEFT:ICICN2504148419679:ARJUN SURESH NAIR
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000065
+    Account   : 663458340862
+    Date      : 2025-04-14
+    Amount    : 4158.0
+    Direction : debit
+    Narration : UPI/DR/443729754465/BIGB/HDFC/**bbdaily@okhdfcbank@hdfc0200553.ifsc.npci/UPI//ICI3718727204/BIGBASKET
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  663458340862_000066
+    Account   : 663458340862
+    Date      : 2025-04-16
+    Amount    : 10000.0
+    Direction : debit
+    Narration : CWDR/905176064497/16-04-2025 18:55:15/CMN
+    Pattern   : High-Risk Internal Flow Hub Ranking, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  663458340862_000067
+    Account   : 663458340862
+    Date      : 2025-04-17
+    Amount    : 1134.0
+    Direction : debit
+    Narration : UPI/DR/751056490092/INDI/IDIB/**fuelpay@ybl@idib0938393.ifsc.npci/UPI//ICI6618200435/INDIANOIL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000068
+    Account   : 663458340862
+    Date      : 2025-04-20
+    Amount    : 15000.0
+    Direction : debit
+    Narration : CWDR/159611768902/20-04-2025 21:50:04/CMN
+    Pattern   : High-Risk Internal Flow Hub Ranking, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  663458340862_000069
+    Account   : 663458340862
+    Date      : 2025-04-21
+    Amount    : 647.0
+    Direction : debit
+    Narration : UPI/DR/554253218467/AIRT/KKBK/**airtel.recharge@airtel@kkbk0456399.ifsc.npci/UPI//ICI6512254266/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000071
+    Account   : 663458340862
+    Date      : 2025-04-25
+    Amount    : 2635.0
+    Direction : debit
+    Narration : UPI/DR/867321881180/BESC/KKBK/**bescom.bill@upi@kkbk0622196.ifsc.npci/UPI//ICI5477935192/BESCOM
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000072
+    Account   : 663458340862
+    Date      : 2025-04-28
+    Amount    : 2974.0
+    Direction : debit
+    Narration : UPI/DR/951852912052/BESC/IDIB/**bescom.bill@upi@idib0615986.ifsc.npci/UPI//ICI5243782439/BESCOM
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000073
+    Account   : 663458340862
+    Date      : 2025-05-01
+    Amount    : 3160.0
+    Direction : debit
+    Narration : UPI/DR/526529991259/JIO/HDFC/**jio.mobile@ibl@hdfc0121151.ifsc.npci/UPI//ICI7996189930
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000074
+    Account   : 663458340862
+    Date      : 2025-05-04
+    Amount    : 3865.0
+    Direction : debit
+    Narration : UPI/DR/068423184452/DMAR/SBIN/**dmart.pay@okaxis@sbin0890431.ifsc.npci/UPI//ICI8326475306/DMART
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000076
+    Account   : 663458340862
+    Date      : 2025-05-07
+    Amount    : 1210.0
+    Direction : debit
+    Narration : UPI/DR/853247811668/IRCT/BARB/**irctc.pay@axisbank@barb0331215.ifsc.npci/UPI//ICI7571975261/IRCTC
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000077
+    Account   : 663458340862
+    Date      : 2025-05-09
+    Amount    : 40444.0
+    Direction : credit
+    Narration : NEFT:ICICN2505099684635:CARMEN TRINITY VENTURE
+    Pattern   : High-Risk Internal Flow Hub Ranking
+
+  663458340862_000078
+    Account   : 663458340862
+    Date      : 2025-05-09
+    Amount    : 2212.0
+    Direction : debit
+    Narration : UPI/DR/581336248149/AIRT/FDRL/**airtel.recharge@airtel@fdrl0238789.ifsc.npci/UPI//ICI5090068821/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000079
+    Account   : 663458340862
+    Date      : 2025-05-12
+    Amount    : 2613.0
+    Direction : debit
+    Narration : UPI/DR/619086695117/AIRT/BARB/**airtel.recharge@airtel@barb0603655.ifsc.npci/UPI//ICI4972977662/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000080
+    Account   : 663458340862
+    Date      : 2025-05-12
+    Amount    : 98156.0
+    Direction : debit
+    Narration : UPI/DR/704937527638/BHAV/MAHB/**27241922740@mahb0245398.ifsc.npci/UPI//ICI7994828646
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  663458340862_000081
+    Account   : 663458340862
+    Date      : 2025-05-12
+    Amount    : 98140.0
+    Direction : debit
+    Narration : NEFT:ICICN2505126785456:LAKSHMI DEVI K
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  663458340862_000082
+    Account   : 663458340862
+    Date      : 2025-05-12
+    Amount    : 88152.0
+    Direction : debit
+    Narration : UPI/DR/149777383319/ARJU/IDFB/**73808607293@idfb0880215.ifsc.npci/UPI//ICI0431256200
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  663458340862_000083
+    Account   : 663458340862
+    Date      : 2025-05-12
+    Amount    : 88611.0
+    Direction : debit
+    Narration : NEFT:ICICN2505127190134:Bhavana Rao
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  663458340862_000084
+    Account   : 663458340862
+    Date      : 2025-05-15
+    Amount    : 519.0
+    Direction : debit
+    Narration : UPI/DR/087765843945/PHAR/IDFB/**medplus@ybl@idfb0408784.ifsc.npci/UPI//ICI3471833423/PHARMACY
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000085
+    Account   : 663458340862
+    Date      : 2025-05-17
+    Amount    : 15000.0
+    Direction : debit
+    Narration : CWDR/631919932149/17-05-2025 19:23:30/CMN
+    Pattern   : High-Risk Internal Flow Hub Ranking, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  663458340862_000086
+    Account   : 663458340862
+    Date      : 2025-05-20
+    Amount    : 2319.0
+    Direction : debit
+    Narration : UPI/DR/998386762224/BIGB/UTIB/**bbdaily@okhdfcbank@utib0937716.ifsc.npci/UPI//ICI5285253617/BIGBASKET
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000087
+    Account   : 663458340862
+    Date      : 2025-05-21
+    Amount    : 4228.0
+    Direction : debit
+    Narration : UPI/DR/828456714905/AIRT/PUNB/**airtel.recharge@airtel@punb0931841.ifsc.npci/UPI//ICI6087179131/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000089
+    Account   : 663458340862
+    Date      : 2025-05-26
+    Amount    : 865.0
+    Direction : debit
+    Narration : UPI/DR/007849799796/AIRT/SBIN/**airtel.recharge@airtel@sbin0598793.ifsc.npci/UPI//ICI9057565869/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000091
+    Account   : 663458340862
+    Date      : 2025-05-31
+    Amount    : 2451.0
+    Direction : debit
+    Narration : UPI/DR/355888630952/IRCT/IDIB/**irctc.pay@axisbank@idib0457699.ifsc.npci/UPI//ICI2962139686/IRCTC
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000092
+    Account   : 663458340862
+    Date      : 2025-06-02
+    Amount    : 115.0
+    Direction : debit
+    Narration : UPI/DR/386341694010/PHAR/UTIB/**medplus@ybl@utib0880749.ifsc.npci/UPI//ICI9869532423/PHARMACY
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000093
+    Account   : 663458340862
+    Date      : 2025-06-05
+    Amount    : 3299.0
+    Direction : debit
+    Narration : UPI/DR/612273059895/JIO/KKBK/**jio.mobile@ibl@kkbk0173740.ifsc.npci/UPI//ICI1114951605
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection
+
+  663458340862_000094
+    Account   : 663458340862
+    Date      : 2025-06-08
+    Amount    : 63246.0
+    Direction : credit
+    Narration : NEFT:ICICN2506087804022:LEGEND PRIME
+    Pattern   : High-Risk Internal Flow Hub Ranking
+
+  663458340862_000095
+    Account   : 663458340862
+    Date      : 2025-06-08
+    Amount    : 3563.0
+    Direction : debit
+    Narration : UPI/DR/801584368373/AIRT/IDIB/**airtel.recharge@airtel@idib0182254.ifsc.npci/UPI//ICI5986267688/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000097
+    Account   : 663458340862
+    Date      : 2025-06-11
+    Amount    : 1367.0
+    Direction : debit
+    Narration : UPI/DR/996811046029/BESC/FDRL/**bescom.bill@upi@fdrl0458632.ifsc.npci/UPI//ICI0537769568/BESCOM
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  663458340862_000098
+    Account   : 663458340862
+    Date      : 2025-06-14
+    Amount    : 3553.0
+    Direction : debit
+    Narration : UPI/DR/949329978444/AIRT/IDIB/**airtel.recharge@airtel@idib0318455.ifsc.npci/UPI//ICI7226373951/AIRTEL
+    Pattern   : High-Risk Internal Flow Hub Ranking, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000000
+    Account   : 73808607293
+    Date      : 2025-01-07
+    Amount    : 3302.0
+    Direction : debit
+    Narration : UPI/MOB/241502345135/Pay request to BESCOM/bescom.bill@upi@idfb0381634.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000002
+    Account   : 73808607293
+    Date      : 2025-01-09
+    Amount    : 4491.0
+    Direction : debit
+    Narration : UPI/MOB/031793947448/Pay request to BESCOM/bescom.bill@upi@idfb0282290.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000003
+    Account   : 73808607293
+    Date      : 2025-01-12
+    Amount    : 3293.0
+    Direction : debit
+    Narration : UPI/MOB/462809892198/Pay request to BIGBASKET/bbdaily@okhdfcbank@cnrb0493181.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000004
+    Account   : 73808607293
+    Date      : 2025-01-15
+    Amount    : 2656.0
+    Direction : debit
+    Narration : UPI/MOB/858472301017/Pay request to AIRTEL/airtel.recharge@airtel@idib0328291.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000005
+    Account   : 73808607293
+    Date      : 2025-01-17
+    Amount    : 4483.0
+    Direction : debit
+    Narration : UPI/MOB/635206886850/Pay request to AIRTEL/airtel.recharge@airtel@utib0570268.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000006
+    Account   : 73808607293
+    Date      : 2025-01-18
+    Amount    : 2260.0
+    Direction : debit
+    Narration : UPI/MOB/107186956542/Pay request to Pharmacy/medplus@ybl@barb0638195.ifsc.npci/PHARMACY
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000007
+    Account   : 73808607293
+    Date      : 2025-01-20
+    Amount    : 803.0
+    Direction : debit
+    Narration : UPI/MOB/583175954851/Pay request to BESCOM/bescom.bill@upi@cnrb0472530.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000008
+    Account   : 73808607293
+    Date      : 2025-01-22
+    Amount    : 4223.0
+    Direction : debit
+    Narration : UPI/MOB/010968821441/Pay request to IRCTC/irctc.pay@axisbank@idfb0423587.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000009
+    Account   : 73808607293
+    Date      : 2025-01-25
+    Amount    : 3889.0
+    Direction : debit
+    Narration : UPI/MOB/138458784490/Pay request to BESCOM/bescom.bill@upi@kkbk0822631.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000010
+    Account   : 73808607293
+    Date      : 2025-01-28
+    Amount    : 1242.0
+    Direction : debit
+    Narration : UPI/MOB/453951571338/Pay request to PHARMACY/medplus@ybl@idib0156982.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000011
+    Account   : 73808607293
+    Date      : 2025-01-29
+    Amount    : 1896.0
+    Direction : debit
+    Narration : UPI/MOB/789427481315/Pay request to JIO/jio.mobile@ibl@utib0742620.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000012
+    Account   : 73808607293
+    Date      : 2025-01-31
+    Amount    : 1062.0
+    Direction : debit
+    Narration : UPI/MOB/661458486766/Pay request to BESCOM/bescom.bill@upi@sbin0654045.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000013
+    Account   : 73808607293
+    Date      : 2025-02-01
+    Amount    : 3043.0
+    Direction : debit
+    Narration : UPI/MOB/986167773243/Pay request to PHARMACY/medplus@ybl@cnrb0276421.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000014
+    Account   : 73808607293
+    Date      : 2025-02-02
+    Amount    : 4421.0
+    Direction : debit
+    Narration : UPI/MOB/525049247352/Pay request to Bescom/bescom.bill@upi@icic0839880.ifsc.npci/BESCOM
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000015
+    Account   : 73808607293
+    Date      : 2025-02-03
+    Amount    : 147.0
+    Direction : debit
+    Narration : UPI/MOB/789730913735/Pay request to BESCOM/bescom.bill@upi@utib0605804.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000016
+    Account   : 73808607293
+    Date      : 2025-02-05
+    Amount    : 3244.0
+    Direction : debit
+    Narration : UPI/MOB/538302044381/Pay request to Indianoil/fuelpay@ybl@fdrl0633017.ifsc.npci/INDIANOIL
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000017
+    Account   : 73808607293
+    Date      : 2025-02-06
+    Amount    : 1456.0
+    Direction : debit
+    Narration : UPI/MOB/239118595890/Pay request to BESCOM/bescom.bill@upi@sbin0363254.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000019
+    Account   : 73808607293
+    Date      : 2025-02-08
+    Amount    : 2619.0
+    Direction : debit
+    Narration : UPI/MOB/896340496018/Pay request to JIO/jio.mobile@ibl@utib0632371.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000020
+    Account   : 73808607293
+    Date      : 2025-02-10
+    Amount    : 822.0
+    Direction : debit
+    Narration : UPI/MOB/456058112173/Pay request to Bescom/bescom.bill@upi@icic0783777.ifsc.npci/BESCOM
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000021
+    Account   : 73808607293
+    Date      : 2025-02-12
+    Amount    : 3524.0
+    Direction : debit
+    Narration : UPI/MOB/040162324773/Pay request to Bigbasket/bbdaily@okhdfcbank@fdrl0185987.ifsc.npci/BIGBASKET
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000023
+    Account   : 73808607293
+    Date      : 2025-02-17
+    Amount    : 96046.0
+    Direction : credit
+    Narration : UPI/MOB/479889434939/Payment from PhonePe Komal Kapoor/663458340862@icic0830384.ifsc.npci
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000024
+    Account   : 73808607293
+    Date      : 2025-02-17
+    Amount    : 794.0
+    Direction : debit
+    Narration : UPI/MOB/189511963275/Pay request to Dmart/dmart.pay@okaxis@barb0551622.ifsc.npci/DMART
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000027
+    Account   : 73808607293
+    Date      : 2025-02-22
+    Amount    : 998.0
+    Direction : debit
+    Narration : UPI/MOB/651567923241/Pay request to INDIANOIL/fuelpay@ybl@kkbk0257457.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000028
+    Account   : 73808607293
+    Date      : 2025-02-24
+    Amount    : 3928.0
+    Direction : debit
+    Narration : UPI/MOB/862613584447/Pay request to PHARMACY/medplus@ybl@kkbk0297353.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000029
+    Account   : 73808607293
+    Date      : 2025-02-27
+    Amount    : 700.0
+    Direction : debit
+    Narration : UPI/MOB/179088554381/Pay request to Bigbasket/bbdaily@okhdfcbank@icic0651775.ifsc.npci/BIGBASKET
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000031
+    Account   : 73808607293
+    Date      : 2025-03-02
+    Amount    : 3228.0
+    Direction : debit
+    Narration : UPI/MOB/230986722337/Pay request to Jio/jio.mobile@ibl@fdrl0296513.ifsc.npci/JIO
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000032
+    Account   : 73808607293
+    Date      : 2025-03-04
+    Amount    : 2001.0
+    Direction : debit
+    Narration : UPI/MOB/964087083076/Pay request to Dmart/dmart.pay@okaxis@mahb0644413.ifsc.npci/DMART
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000033
+    Account   : 73808607293
+    Date      : 2025-03-07
+    Amount    : 104.0
+    Direction : debit
+    Narration : UPI/MOB/554963115400/Pay request to BIGBASKET/bbdaily@okhdfcbank@kkbk0229524.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000037
+    Account   : 73808607293
+    Date      : 2025-03-12
+    Amount    : 2079.0
+    Direction : debit
+    Narration : UPI/MOB/864052058637/Pay request to Airtel/airtel.recharge@airtel@hdfc0259230.ifsc.npci/AIRTEL
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000038
+    Account   : 73808607293
+    Date      : 2025-03-13
+    Amount    : 4055.0
+    Direction : debit
+    Narration : UPI/MOB/415962752748/Pay request to BESCOM/bescom.bill@upi@idfb0936132.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000040
+    Account   : 73808607293
+    Date      : 2025-03-16
+    Amount    : 1106.0
+    Direction : debit
+    Narration : UPI/MOB/169127402931/Pay request to AIRTEL/airtel.recharge@airtel@sbin0472518.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000041
+    Account   : 73808607293
+    Date      : 2025-03-17
+    Amount    : 85057.0
+    Direction : credit
+    Narration : UPI/MOB/430425886406/Payment from PhonePe Komal Kapoor/663458340862@icic0830384.ifsc.npci
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000042
+    Account   : 73808607293
+    Date      : 2025-03-17
+    Amount    : 1802.0
+    Direction : debit
+    Narration : UPI/MOB/968249192708/Pay request to PHARMACY/medplus@ybl@idib0312202.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000044
+    Account   : 73808607293
+    Date      : 2025-03-20
+    Amount    : 263.0
+    Direction : debit
+    Narration : UPI/MOB/063256751652/Pay request to DMART/dmart.pay@okaxis@idfb0478158.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000046
+    Account   : 73808607293
+    Date      : 2025-03-24
+    Amount    : 3561.0
+    Direction : debit
+    Narration : UPI/MOB/196844488590/Pay request to DMART/dmart.pay@okaxis@idfb0794580.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000048
+    Account   : 73808607293
+    Date      : 2025-03-29
+    Amount    : 999.0
+    Direction : debit
+    Narration : UPI/MOB/122375826521/Pay request to Jio/jio.mobile@ibl@barb0720572.ifsc.npci/JIO
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000049
+    Account   : 73808607293
+    Date      : 2025-03-31
+    Amount    : 1898.0
+    Direction : debit
+    Narration : UPI/MOB/927973877052/Pay request to Jio/jio.mobile@ibl@mahb0398787.ifsc.npci/JIO
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000050
+    Account   : 73808607293
+    Date      : 2025-04-03
+    Amount    : 3055.0
+    Direction : debit
+    Narration : UPI/MOB/306819840599/Pay request to Pharmacy/medplus@ybl@fdrl0138176.ifsc.npci/PHARMACY
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000051
+    Account   : 73808607293
+    Date      : 2025-04-06
+    Amount    : 3894.0
+    Direction : debit
+    Narration : UPI/MOB/186851782154/Pay request to Dmart/dmart.pay@okaxis@barb0478328.ifsc.npci/DMART
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000053
+    Account   : 73808607293
+    Date      : 2025-04-09
+    Amount    : 2967.0
+    Direction : debit
+    Narration : UPI/MOB/338470513681/Pay request to INDIANOIL/fuelpay@ybl@idib0904280.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000054
+    Account   : 73808607293
+    Date      : 2025-04-12
+    Amount    : 2449.0
+    Direction : debit
+    Narration : UPI/MOB/706115628190/Pay request to Bescom/bescom.bill@upi@fdrl0212309.ifsc.npci/BESCOM
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000055
+    Account   : 73808607293
+    Date      : 2025-04-14
+    Amount    : 85045.0
+    Direction : credit
+    Narration : UPI/MOB/190598657311/Payment from PhonePe Komal Kapoor/663458340862@icic0830384.ifsc.npci
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000056
+    Account   : 73808607293
+    Date      : 2025-04-14
+    Amount    : 87597.0
+    Direction : credit
+    Narration : NEFT/ICICN2504148419679/Komal Kapoor/ICIC0830384
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Top Suspicious Account Ranking
+
+  73808607293_000057
+    Account   : 73808607293
+    Date      : 2025-04-15
+    Amount    : 2521.0
+    Direction : debit
+    Narration : UPI/MOB/998738133150/Pay request to Dmart/dmart.pay@okaxis@fdrl0581529.ifsc.npci/DMART
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000058
+    Account   : 73808607293
+    Date      : 2025-04-18
+    Amount    : 2564.0
+    Direction : debit
+    Narration : UPI/MOB/481926568087/Pay request to BESCOM/bescom.bill@upi@utib0306093.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000059
+    Account   : 73808607293
+    Date      : 2025-04-20
+    Amount    : 4290.0
+    Direction : debit
+    Narration : UPI/MOB/101983527315/Pay request to JIO/jio.mobile@ibl@idfb0906970.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000060
+    Account   : 73808607293
+    Date      : 2025-04-21
+    Amount    : 2910.0
+    Direction : debit
+    Narration : UPI/MOB/348281401897/Pay request to PHARMACY/medplus@ybl@cnrb0896671.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000061
+    Account   : 73808607293
+    Date      : 2025-04-22
+    Amount    : 3195.0
+    Direction : debit
+    Narration : UPI/MOB/906618944725/Pay request to BESCOM/bescom.bill@upi@punb0950344.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000062
+    Account   : 73808607293
+    Date      : 2025-04-25
+    Amount    : 3962.0
+    Direction : debit
+    Narration : UPI/MOB/563453275765/Pay request to INDIANOIL/fuelpay@ybl@utib0468933.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000064
+    Account   : 73808607293
+    Date      : 2025-04-29
+    Amount    : 4460.0
+    Direction : debit
+    Narration : UPI/MOB/301652027733/Pay request to Bescom/bescom.bill@upi@icic0694810.ifsc.npci/BESCOM
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000066
+    Account   : 73808607293
+    Date      : 2025-05-01
+    Amount    : 1360.0
+    Direction : debit
+    Narration : UPI/MOB/630704577344/Pay request to Jio/jio.mobile@ibl@mahb0169966.ifsc.npci/JIO
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000067
+    Account   : 73808607293
+    Date      : 2025-05-04
+    Amount    : 2230.0
+    Direction : debit
+    Narration : UPI/MOB/535529618127/Pay request to Irctc/irctc.pay@axisbank@fdrl0260840.ifsc.npci/IRCTC
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000068
+    Account   : 73808607293
+    Date      : 2025-05-06
+    Amount    : 3027.0
+    Direction : debit
+    Narration : UPI/MOB/155845756362/Pay request to Dmart/dmart.pay@okaxis@icic0495114.ifsc.npci/DMART
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000070
+    Account   : 73808607293
+    Date      : 2025-05-07
+    Amount    : 129.0
+    Direction : debit
+    Narration : UPI/MOB/476466665727/Pay request to AIRTEL/airtel.recharge@airtel@idfb0529837.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000071
+    Account   : 73808607293
+    Date      : 2025-05-09
+    Amount    : 561.0
+    Direction : debit
+    Narration : UPI/MOB/258908337560/Pay request to Irctc/irctc.pay@axisbank@barb0450976.ifsc.npci/IRCTC
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000072
+    Account   : 73808607293
+    Date      : 2025-05-11
+    Amount    : 898.0
+    Direction : debit
+    Narration : UPI/MOB/357127595870/Pay request to DMART/dmart.pay@okaxis@cnrb0812597.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000073
+    Account   : 73808607293
+    Date      : 2025-05-12
+    Amount    : 3880.0
+    Direction : debit
+    Narration : UPI/MOB/253648387804/Pay request to BESCOM/bescom.bill@upi@sbin0748305.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000074
+    Account   : 73808607293
+    Date      : 2025-05-12
+    Amount    : 88152.0
+    Direction : credit
+    Narration : UPI/MOB/149777383319/Payment from PhonePe Komal Kapoor/663458340862@icic0830384.ifsc.npci
+    Pattern   : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000075
+    Account   : 73808607293
+    Date      : 2025-05-14
+    Amount    : 3732.0
+    Direction : debit
+    Narration : UPI/MOB/032546009199/Pay request to Bescom/bescom.bill@upi@hdfc0140487.ifsc.npci/BESCOM
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000077
+    Account   : 73808607293
+    Date      : 2025-05-16
+    Amount    : 1211.0
+    Direction : debit
+    Narration : UPI/MOB/624676731245/Pay request to IRCTC/irctc.pay@axisbank@kkbk0450664.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000078
+    Account   : 73808607293
+    Date      : 2025-05-18
+    Amount    : 546.0
+    Direction : debit
+    Narration : UPI/MOB/450241606888/Pay request to Bescom/bescom.bill@upi@barb0830196.ifsc.npci/BESCOM
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000080
+    Account   : 73808607293
+    Date      : 2025-05-22
+    Amount    : 317.0
+    Direction : debit
+    Narration : UPI/MOB/268361196911/Pay request to Indianoil/fuelpay@ybl@hdfc0379972.ifsc.npci/INDIANOIL
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  73808607293_000081
+    Account   : 73808607293
+    Date      : 2025-05-25
+    Amount    : 1075.0
+    Direction : debit
+    Narration : UPI/MOB/212765009642/Pay request to Jio/jio.mobile@ibl@barb0416024.ifsc.npci/JIO
+    Pattern   : Shared UPI Identifier Detection
+
+  73808607293_000082
+    Account   : 73808607293
+    Date      : 2025-05-27
+    Amount    : 2843.0
+    Direction : debit
+    Narration : UPI/MOB/041515647683/Pay request to DMART/dmart.pay@okaxis@kkbk0459016.ifsc.npci
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000001
+    Account   : 9682098120335
+    Date      : 2025-01-09
+    Amount    : 3020.0
+    Direction : debit
+    Narration : UPI/270867191360/DR/IRCTC/CNRB/irctc.pay@axisbank@cnrb0450476.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000002
+    Account   : 9682098120335
+    Date      : 2025-01-10
+    Amount    : 3514.0
+    Direction : debit
+    Narration : UPI/196859317914/DR/IRCTC/FDRL/irctc.pay@axisbank@fdrl0734884.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000003
+    Account   : 9682098120335
+    Date      : 2025-01-11
+    Amount    : 1730.0
+    Direction : debit
+    Narration : UPI/196750329377/DR/AIRTEL/MAHB/airtel.recharge@airtel@mahb0527414.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000004
+    Account   : 9682098120335
+    Date      : 2025-01-12
+    Amount    : 2196.0
+    Direction : debit
+    Narration : UPI/764317135832/DR/BESCOM/UTIB/bescom.bill@upi@utib0266904.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000005
+    Account   : 9682098120335
+    Date      : 2025-01-13
+    Amount    : 3952.0
+    Direction : debit
+    Narration : UPI/205886411512/DR/IRCTC/ICIC/irctc.pay@axisbank@icic0591131.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000006
+    Account   : 9682098120335
+    Date      : 2025-01-14
+    Amount    : 5000.0
+    Direction : debit
+    Narration : CWDR/084669134376/14-01-2025 14:07:58/CMN
+    Pattern   : Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  9682098120335_000007
+    Account   : 9682098120335
+    Date      : 2025-01-15
+    Amount    : 3691.0
+    Direction : debit
+    Narration : UPI/320623511938/DR/AIRTEL/IDFB/airtel.recharge@airtel@idfb0295968.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000008
+    Account   : 9682098120335
+    Date      : 2025-01-17
+    Amount    : 3111.0
+    Direction : debit
+    Narration : UPI/441899787576/DR/JIO/BARB/jio.mobile@ibl@barb0399700.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000010
+    Account   : 9682098120335
+    Date      : 2025-01-20
+    Amount    : 4103.0
+    Direction : debit
+    Narration : UPI/042822634594/DR/INDIANOIL/CNRB/fuelpay@ybl@cnrb0771583.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000011
+    Account   : 9682098120335
+    Date      : 2025-01-21
+    Amount    : 1091.0
+    Direction : debit
+    Narration : UPI/120899822527/DR/BESCOM/SBIN/bescom.bill@upi@sbin0630178.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000012
+    Account   : 9682098120335
+    Date      : 2025-01-23
+    Amount    : 4475.0
+    Direction : debit
+    Narration : UPI/020018952741/DR/BESCOM/MAHB/bescom.bill@upi@mahb0853305.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000013
+    Account   : 9682098120335
+    Date      : 2025-01-24
+    Amount    : 4337.0
+    Direction : debit
+    Narration : UPI/646626386305/DR/BESCOM/UTIB/bescom.bill@upi@utib0698170.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000014
+    Account   : 9682098120335
+    Date      : 2025-01-26
+    Amount    : 2647.0
+    Direction : debit
+    Narration : UPI/530654143090/DR/BESCOM/PUNB/bescom.bill@upi@punb0864155.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000015
+    Account   : 9682098120335
+    Date      : 2025-01-28
+    Amount    : 10000.0
+    Direction : debit
+    Narration : CWDR/980031574704/28-01-2025 12:17:02/CMN
+    Pattern   : Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  9682098120335_000016
+    Account   : 9682098120335
+    Date      : 2025-01-29
+    Amount    : 3272.0
+    Direction : debit
+    Narration : UPI/269958785354/DR/INDIANOIL/KKBK/fuelpay@ybl@kkbk0305606.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000017
+    Account   : 9682098120335
+    Date      : 2025-01-30
+    Amount    : 2298.0
+    Direction : debit
+    Narration : UPI/480485459737/DR/BIGBASKET/BARB/bbdaily@okhdfcbank@barb0870914.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000018
+    Account   : 9682098120335
+    Date      : 2025-01-31
+    Amount    : 3721.0
+    Direction : debit
+    Narration : UPI/936555078363/DR/IRCTC/CNRB/irctc.pay@axisbank@cnrb0436799.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000019
+    Account   : 9682098120335
+    Date      : 2025-02-03
+    Amount    : 219.0
+    Direction : debit
+    Narration : UPI/528759650156/DR/JIO/MAHB/jio.mobile@ibl@mahb0228546.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000020
+    Account   : 9682098120335
+    Date      : 2025-02-04
+    Amount    : 4319.0
+    Direction : debit
+    Narration : UPI/123221820775/DR/PHARMACY/FDRL/medplus@ybl@fdrl0452658.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000021
+    Account   : 9682098120335
+    Date      : 2025-02-06
+    Amount    : 3484.0
+    Direction : debit
+    Narration : UPI/078947348952/DR/DMART/HDFC/dmart.pay@okaxis@hdfc0221496.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000022
+    Account   : 9682098120335
+    Date      : 2025-02-07
+    Amount    : 2950.0
+    Direction : debit
+    Narration : UPI/075922990034/DR/INDIANOIL/BARB/fuelpay@ybl@barb0567366.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000024
+    Account   : 9682098120335
+    Date      : 2025-02-10
+    Amount    : 4146.0
+    Direction : debit
+    Narration : UPI/159919940921/DR/JIO/FDRL/jio.mobile@ibl@fdrl0423000.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000025
+    Account   : 9682098120335
+    Date      : 2025-02-12
+    Amount    : 4057.0
+    Direction : debit
+    Narration : UPI/945193985716/DR/IRCTC/KKBK/irctc.pay@axisbank@kkbk0358684.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000026
+    Account   : 9682098120335
+    Date      : 2025-02-15
+    Amount    : 2183.0
+    Direction : debit
+    Narration : UPI/274344674014/DR/DMART/BARB/dmart.pay@okaxis@barb0780682.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000027
+    Account   : 9682098120335
+    Date      : 2025-02-18
+    Amount    : 3201.0
+    Direction : debit
+    Narration : UPI/534528927268/DR/PHARMACY/CNRB/medplus@ybl@cnrb0571623.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000028
+    Account   : 9682098120335
+    Date      : 2025-02-20
+    Amount    : 10000.0
+    Direction : debit
+    Narration : CWDR/325532196670/20-02-2025 15:51:07/CMN
+    Pattern   : Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  9682098120335_000029
+    Account   : 9682098120335
+    Date      : 2025-02-23
+    Amount    : 1994.0
+    Direction : debit
+    Narration : UPI/748680550634/DR/PHARMACY/HDFC/medplus@ybl@hdfc0112468.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000030
+    Account   : 9682098120335
+    Date      : 2025-02-24
+    Amount    : 3456.0
+    Direction : debit
+    Narration : UPI/274653755443/DR/IRCTC/PUNB/irctc.pay@axisbank@punb0306649.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000031
+    Account   : 9682098120335
+    Date      : 2025-02-27
+    Amount    : 1123.0
+    Direction : debit
+    Narration : UPI/702292149262/DR/BIGBASKET/KKBK/bbdaily@okhdfcbank@kkbk0663478.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000033
+    Account   : 9682098120335
+    Date      : 2025-03-03
+    Amount    : 3518.0
+    Direction : debit
+    Narration : UPI/754926524025/DR/BESCOM/IDIB/bescom.bill@upi@idib0183097.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000035
+    Account   : 9682098120335
+    Date      : 2025-03-08
+    Amount    : 638.0
+    Direction : debit
+    Narration : UPI/456077685105/DR/PHARMACY/MAHB/medplus@ybl@mahb0581459.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000037
+    Account   : 9682098120335
+    Date      : 2025-03-10
+    Amount    : 531.0
+    Direction : debit
+    Narration : UPI/500091956903/DR/BESCOM/KKBK/bescom.bill@upi@kkbk0621294.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000039
+    Account   : 9682098120335
+    Date      : 2025-03-12
+    Amount    : 10000.0
+    Direction : debit
+    Narration : CWDR/650928076815/12-03-2025 21:29:33/CMN
+    Pattern   : Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  9682098120335_000040
+    Account   : 9682098120335
+    Date      : 2025-03-13
+    Amount    : 1496.0
+    Direction : debit
+    Narration : UPI/368124411488/DR/IRCTC/HDFC/irctc.pay@axisbank@hdfc0973055.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000041
+    Account   : 9682098120335
+    Date      : 2025-03-15
+    Amount    : 805.0
+    Direction : debit
+    Narration : UPI/597939759872/DR/BESCOM/KKBK/bescom.bill@upi@kkbk0241818.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000042
+    Account   : 9682098120335
+    Date      : 2025-03-18
+    Amount    : 4278.0
+    Direction : debit
+    Narration : UPI/424754175737/DR/BESCOM/SBIN/bescom.bill@upi@sbin0323845.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000043
+    Account   : 9682098120335
+    Date      : 2025-03-21
+    Amount    : 3233.0
+    Direction : debit
+    Narration : UPI/152542083473/DR/AIRTEL/IDFB/airtel.recharge@airtel@idfb0692945.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000044
+    Account   : 9682098120335
+    Date      : 2025-03-23
+    Amount    : 1927.0
+    Direction : debit
+    Narration : UPI/374642824910/DR/BIGBASKET/CNRB/bbdaily@okhdfcbank@cnrb0982505.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000045
+    Account   : 9682098120335
+    Date      : 2025-03-24
+    Amount    : 936.0
+    Direction : debit
+    Narration : UPI/216987961539/DR/JIO/SBIN/jio.mobile@ibl@sbin0610417.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000046
+    Account   : 9682098120335
+    Date      : 2025-03-26
+    Amount    : 2278.0
+    Direction : debit
+    Narration : UPI/345901974268/DR/BESCOM/CNRB/bescom.bill@upi@cnrb0827036.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000047
+    Account   : 9682098120335
+    Date      : 2025-03-27
+    Amount    : 3736.0
+    Direction : debit
+    Narration : UPI/454373913739/DR/BIGBASKET/BARB/bbdaily@okhdfcbank@barb0343880.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000048
+    Account   : 9682098120335
+    Date      : 2025-03-30
+    Amount    : 3513.0
+    Direction : debit
+    Narration : UPI/676574297657/DR/INDIANOIL/IDFB/fuelpay@ybl@idfb0947865.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000049
+    Account   : 9682098120335
+    Date      : 2025-03-31
+    Amount    : 126.0
+    Direction : debit
+    Narration : UPI/731420527040/DR/AIRTEL/SBIN/airtel.recharge@airtel@sbin0414689.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000050
+    Account   : 9682098120335
+    Date      : 2025-04-03
+    Amount    : 1353.0
+    Direction : debit
+    Narration : UPI/309062697085/DR/BESCOM/SBIN/bescom.bill@upi@sbin0339875.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000054
+    Account   : 9682098120335
+    Date      : 2025-04-08
+    Amount    : 2885.0
+    Direction : debit
+    Narration : UPI/900010961989/DR/INDIANOIL/KKBK/fuelpay@ybl@kkbk0469007.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000056
+    Account   : 9682098120335
+    Date      : 2025-04-12
+    Amount    : 1509.0
+    Direction : debit
+    Narration : UPI/406120762291/DR/INDIANOIL/HDFC/fuelpay@ybl@hdfc0922636.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000057
+    Account   : 9682098120335
+    Date      : 2025-04-14
+    Amount    : 1235.0
+    Direction : debit
+    Narration : UPI/197396497016/DR/AIRTEL/HDFC/airtel.recharge@airtel@hdfc0916366.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000058
+    Account   : 9682098120335
+    Date      : 2025-04-15
+    Amount    : 1892.0
+    Direction : debit
+    Narration : UPI/808481035803/DR/BIGBASKET/CNRB/bbdaily@okhdfcbank@cnrb0468942.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000060
+    Account   : 9682098120335
+    Date      : 2025-04-21
+    Amount    : 797.0
+    Direction : debit
+    Narration : UPI/364444256036/DR/PHARMACY/IDFB/medplus@ybl@idfb0202086.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000061
+    Account   : 9682098120335
+    Date      : 2025-04-24
+    Amount    : 1453.0
+    Direction : debit
+    Narration : UPI/596361644126/DR/JIO/ICIC/jio.mobile@ibl@icic0119484.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000062
+    Account   : 9682098120335
+    Date      : 2025-04-26
+    Amount    : 4467.0
+    Direction : debit
+    Narration : UPI/638465525159/DR/INDIANOIL/IDFB/fuelpay@ybl@idfb0439337.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000063
+    Account   : 9682098120335
+    Date      : 2025-04-29
+    Amount    : 820.0
+    Direction : debit
+    Narration : UPI/677820410149/DR/BIGBASKET/UTIB/bbdaily@okhdfcbank@utib0523598.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000064
+    Account   : 9682098120335
+    Date      : 2025-04-30
+    Amount    : 4408.0
+    Direction : debit
+    Narration : UPI/062718178550/DR/AIRTEL/IDFB/airtel.recharge@airtel@idfb0594680.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000065
+    Account   : 9682098120335
+    Date      : 2025-05-03
+    Amount    : 4287.0
+    Direction : debit
+    Narration : UPI/845368733408/DR/BIGBASKET/PUNB/bbdaily@okhdfcbank@punb0700054.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000066
+    Account   : 9682098120335
+    Date      : 2025-05-05
+    Amount    : 1229.0
+    Direction : debit
+    Narration : UPI/293524084805/DR/BESCOM/MAHB/bescom.bill@upi@mahb0920983.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000067
+    Account   : 9682098120335
+    Date      : 2025-05-06
+    Amount    : 131.0
+    Direction : debit
+    Narration : UPI/646519242353/DR/INDIANOIL/HDFC/fuelpay@ybl@hdfc0969035.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000069
+    Account   : 9682098120335
+    Date      : 2025-05-08
+    Amount    : 201.0
+    Direction : debit
+    Narration : UPI/939090606185/DR/DMART/IDFB/dmart.pay@okaxis@idfb0518202.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000070
+    Account   : 9682098120335
+    Date      : 2025-05-10
+    Amount    : 3237.0
+    Direction : debit
+    Narration : UPI/520811423072/DR/PHARMACY/MAHB/medplus@ybl@mahb0626901.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000071
+    Account   : 9682098120335
+    Date      : 2025-05-12
+    Amount    : 10000.0
+    Direction : debit
+    Narration : CWDR/416352042643/12-05-2025 13:37:20/CMN
+    Pattern   : Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  9682098120335_000072
+    Account   : 9682098120335
+    Date      : 2025-05-15
+    Amount    : 1939.0
+    Direction : debit
+    Narration : UPI/982381304285/DR/BIGBASKET/CNRB/bbdaily@okhdfcbank@cnrb0132603.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000074
+    Account   : 9682098120335
+    Date      : 2025-05-18
+    Amount    : 2123.0
+    Direction : debit
+    Narration : UPI/917859765556/DR/DMART/SBIN/dmart.pay@okaxis@sbin0208121.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000075
+    Account   : 9682098120335
+    Date      : 2025-05-20
+    Amount    : 2599.0
+    Direction : debit
+    Narration : UPI/058269361411/DR/JIO/SBIN/jio.mobile@ibl@sbin0208776.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection
+
+  9682098120335_000076
+    Account   : 9682098120335
+    Date      : 2025-05-23
+    Amount    : 2035.0
+    Direction : debit
+    Narration : UPI/380706133723/DR/BIGBASKET/HDFC/bbdaily@okhdfcbank@hdfc0846055.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+  9682098120335_000077
+    Account   : 9682098120335
+    Date      : 2025-05-25
+    Amount    : 3646.0
+    Direction : debit
+    Narration : UPI/222802722676/DR/AIRTEL/CNRB/airtel.recharge@airtel@cnrb0831360.ifsc.npci/UPI
+    Pattern   : Shared UPI Identifier Detection, Top Suspicious Account Ranking
+
+Accounts:
+----------------------------------------
+  663458340862
+    Holder             : Komal Kapoor
+    Patterns Triggered : High-Risk Internal Flow Hub Ranking, Matched Internal Flow Hub, Repeated Round-Value Debit Pattern, Shared UPI Identifier Detection, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+    Flagged Txns       : 651
+    Total Credit       : 337162.0
+    Total Debit        : 2046720.0
+
+  27241922740
+    Holder             : Bhavana Rao
+    Patterns Triggered : Accumulation / Holding Account Detection, Matched Internal Flow Hub, Repeated Round-Value Debit Pattern, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+    Flagged Txns       : 603
+    Total Credit       : 1038670.0
+    Total Debit        : 274491.0
+
+  1925139986
+    Holder             : LAKSHMI DEVI K
+    Patterns Triggered : Accumulation / Holding Account Detection, Matched Internal Flow Hub, Repeated Round-Value Debit Pattern, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+    Flagged Txns       : 595
+    Total Credit       : 964095.0
+    Total Debit        : 301826.0
+
+  73808607293
+    Holder             : ARJUN SURESH NAIR
+    Patterns Triggered : Matched Internal Flow Hub, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+    Flagged Txns       : 499
+    Total Credit       : 868733.0
+    Total Debit        : 264995.0
+
+  9682098120335
+    Holder             : AARAV GHOSH
+    Patterns Triggered : Repeated Round-Value Debit Pattern, Shared UPI Identifier Detection, Top Suspicious Account Ranking
+    Flagged Txns       : 484
+    Total Credit       : 381740.0
+    Total Debit        : 319301.0
+
+Key Transactions to Detect:
+----------------------------------------
+  1925139986_000000
+  1925139986_000001
+  1925139986_000002
+  1925139986_000003
+  1925139986_000004
+  1925139986_000005
+  1925139986_000006
+  1925139986_000007
+  1925139986_000008
+  1925139986_000009
+  1925139986_000010
+  1925139986_000011
+  1925139986_000012
+  1925139986_000013
+  1925139986_000014
+  1925139986_000015
+  1925139986_000016
+  1925139986_000017
+  1925139986_000018
+  1925139986_000019
+  1925139986_000020
+  1925139986_000021
+  1925139986_000022
+  1925139986_000023
+  1925139986_000024
+  1925139986_000025
+  1925139986_000026
+  1925139986_000027
+  1925139986_000028
+  1925139986_000029
+  1925139986_000030
+  1925139986_000031
+  1925139986_000032
+  1925139986_000033
+  1925139986_000034
+  1925139986_000035
+  1925139986_000036
+  1925139986_000037
+  1925139986_000038
+  1925139986_000039
+  1925139986_000040
+  1925139986_000041
+  1925139986_000042
+  1925139986_000043
+  1925139986_000044
+  1925139986_000045
+  1925139986_000046
+  1925139986_000047
+  1925139986_000048
+  1925139986_000049
+  1925139986_000050
+  1925139986_000051
+  1925139986_000052
+  1925139986_000053
+  1925139986_000054
+  1925139986_000055
+  1925139986_000056
+  1925139986_000057
+  1925139986_000058
+  1925139986_000059
+  1925139986_000060
+  1925139986_000061
+  1925139986_000062
+  1925139986_000063
+  1925139986_000064
+  1925139986_000065
+  1925139986_000066
+  1925139986_000067
+  1925139986_000068
+  1925139986_000069
+  1925139986_000070
+  1925139986_000071
+  1925139986_000072
+  1925139986_000073
+  1925139986_000074
+  1925139986_000075
+  1925139986_000076
+  1925139986_000077
+  1925139986_000078
+  1925139986_000079
+  1925139986_000080
+  1925139986_000081
+  1925139986_000082
+  1925139986_000083
+  1925139986_000084
+  1925139986_000085
+  27241922740_000000
+  27241922740_000001
+  27241922740_000002
+  27241922740_000003
+  27241922740_000004
+  27241922740_000005
+  27241922740_000006
+  27241922740_000007
+  27241922740_000008
+  27241922740_000009
+  27241922740_000010
+  27241922740_000011
+  27241922740_000012
+  27241922740_000013
+  27241922740_000014
+  27241922740_000015
+  27241922740_000016
+  27241922740_000017
+  27241922740_000018
+  27241922740_000019
+  27241922740_000020
+  27241922740_000021
+  27241922740_000022
+  27241922740_000023
+  27241922740_000024
+  27241922740_000025
+  27241922740_000026
+  27241922740_000027
+  27241922740_000028
+  27241922740_000029
+  27241922740_000030
+  27241922740_000031
+  27241922740_000032
+  27241922740_000033
+  27241922740_000034
+  27241922740_000035
+  27241922740_000036
+  27241922740_000037
+  27241922740_000038
+  27241922740_000039
+  27241922740_000040
+  27241922740_000041
+  27241922740_000042
+  27241922740_000043
+  27241922740_000044
+  27241922740_000045
+  27241922740_000046
+  27241922740_000047
+  27241922740_000048
+  27241922740_000049
+  27241922740_000050
+  27241922740_000051
+  27241922740_000052
+  27241922740_000053
+  27241922740_000054
+  27241922740_000055
+  27241922740_000056
+  27241922740_000057
+  27241922740_000058
+  27241922740_000059
+  27241922740_000060
+  27241922740_000061
+  27241922740_000062
+  27241922740_000063
+  27241922740_000064
+  27241922740_000065
+  27241922740_000066
+  27241922740_000067
+  27241922740_000068
+  27241922740_000069
+  27241922740_000070
+  27241922740_000071
+  27241922740_000072
+  27241922740_000073
+  27241922740_000074
+  27241922740_000075
+  27241922740_000076
+  27241922740_000077
+  27241922740_000078
+  27241922740_000079
+  27241922740_000080
+  27241922740_000081
+  27241922740_000082
+  27241922740_000083
+  27241922740_000084
+  27241922740_000085
+  27241922740_000086
+  27241922740_000087
+  663458340862_000000
+  663458340862_000001
+  663458340862_000002
+  663458340862_000003
+  663458340862_000004
+  663458340862_000005
+  663458340862_000006
+  663458340862_000007
+  663458340862_000008
+  663458340862_000010
+  663458340862_000011
+  663458340862_000013
+  663458340862_000014
+  663458340862_000015
+  663458340862_000016
+  663458340862_000017
+  663458340862_000018
+  663458340862_000020
+  663458340862_000021
+  663458340862_000022
+  663458340862_000023
+  663458340862_000024
+  663458340862_000025
+  663458340862_000026
+  663458340862_000027
+  663458340862_000028
+  663458340862_000029
+  663458340862_000031
+  663458340862_000032
+  663458340862_000033
+  663458340862_000034
+  663458340862_000035
+  663458340862_000036
+  663458340862_000038
+  663458340862_000039
+  663458340862_000040
+  663458340862_000041
+  663458340862_000042
+  663458340862_000043
+  663458340862_000044
+  663458340862_000045
+  663458340862_000046
+  663458340862_000047
+  663458340862_000048
+  663458340862_000049
+  663458340862_000050
+  663458340862_000051
+  663458340862_000054
+  663458340862_000055
+  663458340862_000056
+  663458340862_000057
+  663458340862_000059
+  663458340862_000060
+  663458340862_000061
+  663458340862_000062
+  663458340862_000063
+  663458340862_000064
+  663458340862_000065
+  663458340862_000066
+  663458340862_000067
+  663458340862_000068
+  663458340862_000069
+  663458340862_000071
+  663458340862_000072
+  663458340862_000073
+  663458340862_000074
+  663458340862_000076
+  663458340862_000077
+  663458340862_000078
+  663458340862_000079
+  663458340862_000080
+  663458340862_000081
+  663458340862_000082
+  663458340862_000083
+  663458340862_000084
+  663458340862_000085
+  663458340862_000086
+  663458340862_000087
+  663458340862_000089
+  663458340862_000091
+  663458340862_000092
+  663458340862_000093
+  663458340862_000094
+  663458340862_000095
+  663458340862_000097
+  663458340862_000098
+  73808607293_000000
+  73808607293_000002
+  73808607293_000003
+  73808607293_000004
+  73808607293_000005
+  73808607293_000006
+  73808607293_000007
+  73808607293_000008
+  73808607293_000009
+  73808607293_000010
+  73808607293_000011
+  73808607293_000012
+  73808607293_000013
+  73808607293_000014
+  73808607293_000015
+  73808607293_000016
+  73808607293_000017
+  73808607293_000019
+  73808607293_000020
+  73808607293_000021
+  73808607293_000023
+  73808607293_000024
+  73808607293_000027
+  73808607293_000028
+  73808607293_000029
+  73808607293_000031
+  73808607293_000032
+  73808607293_000033
+  73808607293_000037
+  73808607293_000038
+  73808607293_000040
+  73808607293_000041
+  73808607293_000042
+  73808607293_000044
+  73808607293_000046
+  73808607293_000048
+  73808607293_000049
+  73808607293_000050
+  73808607293_000051
+  73808607293_000053
+  73808607293_000054
+  73808607293_000055
+  73808607293_000056
+  73808607293_000057
+  73808607293_000058
+  73808607293_000059
+  73808607293_000060
+  73808607293_000061
+  73808607293_000062
+  73808607293_000064
+  73808607293_000066
+  73808607293_000067
+  73808607293_000068
+  73808607293_000070
+  73808607293_000071
+  73808607293_000072
+  73808607293_000073
+  73808607293_000074
+  73808607293_000075
+  73808607293_000077
+  73808607293_000078
+  73808607293_000080
+  73808607293_000081
+  73808607293_000082
+  9682098120335_000001
+  9682098120335_000002
+  9682098120335_000003
+  9682098120335_000004
+  9682098120335_000005
+  9682098120335_000006
+  9682098120335_000007
+  9682098120335_000008
+  9682098120335_000010
+  9682098120335_000011
+  9682098120335_000012
+  9682098120335_000013
+  9682098120335_000014
+  9682098120335_000015
+  9682098120335_000016
+  9682098120335_000017
+  9682098120335_000018
+  9682098120335_000019
+  9682098120335_000020
+  9682098120335_000021
+  9682098120335_000022
+  9682098120335_000024
+  9682098120335_000025
+  9682098120335_000026
+  9682098120335_000027
+  9682098120335_000028
+  9682098120335_000029
+  9682098120335_000030
+  9682098120335_000031
+  9682098120335_000033
+  9682098120335_000035
+  9682098120335_000037
+  9682098120335_000039
+  9682098120335_000040
+  9682098120335_000041
+  9682098120335_000042
+  9682098120335_000043
+  9682098120335_000044
+  9682098120335_000045
+  9682098120335_000046
+  9682098120335_000047
+  9682098120335_000048
+  9682098120335_000049
+  9682098120335_000050
+  9682098120335_000054
+  9682098120335_000056
+  9682098120335_000057
+  9682098120335_000058
+  9682098120335_000060
+  9682098120335_000061
+  9682098120335_000062
+  9682098120335_000063
+  9682098120335_000064
+  9682098120335_000065
+  9682098120335_000066
+  9682098120335_000067
+  9682098120335_000069
+  9682098120335_000070
+  9682098120335_000071
+  9682098120335_000072
+  9682098120335_000074
+  9682098120335_000075
+  9682098120335_000076
+  9682098120335_000077
+
+======================================================================

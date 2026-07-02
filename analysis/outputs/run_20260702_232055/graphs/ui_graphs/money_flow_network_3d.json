@@ -1,0 +1,2281 @@
+{
+  "data": {
+    "edges": [
+      {
+        "amount": 580.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-16",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000001",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000001"
+        ]
+      },
+      {
+        "amount": 3548.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-24",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000012",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000012"
+        ]
+      },
+      {
+        "amount": 3858.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-27",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000017",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000017"
+        ]
+      },
+      {
+        "amount": 1528.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-28",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000018",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000018"
+        ]
+      },
+      {
+        "amount": 3263.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-01",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000022",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000022"
+        ]
+      },
+      {
+        "amount": 2735.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-04",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000026",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000026"
+        ]
+      },
+      {
+        "amount": 959.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-28",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000109",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000109"
+        ]
+      },
+      {
+        "amount": 4185.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-08",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000168",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000168"
+        ]
+      },
+      {
+        "amount": 2597.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-30",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000201",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000201"
+        ]
+      },
+      {
+        "amount": 4485.0,
+        "confidence_score": 1.0,
+        "date": "2025-06-12",
+        "id": "acct_001->bbdaily@okhdfcbank::acct_001_000218",
+        "source": "acct_001",
+        "target": "bbdaily@okhdfcbank",
+        "txn_ids": [
+          "acct_001_000218"
+        ]
+      },
+      {
+        "amount": 15000.0,
+        "confidence_score": 0.65,
+        "date": "2025-01-17",
+        "id": "acct_001->840319458426::acct_001_000003",
+        "source": "acct_001",
+        "target": "840319458426",
+        "txn_ids": [
+          "acct_001_000003"
+        ]
+      },
+      {
+        "amount": 788.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-17",
+        "id": "acct_001->fuelpay@ybl::acct_001_000004",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000004"
+        ]
+      },
+      {
+        "amount": 4167.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-19",
+        "id": "acct_001->fuelpay@ybl::acct_001_000048",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000048"
+        ]
+      },
+      {
+        "amount": 4383.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-27",
+        "id": "acct_001->fuelpay@ybl::acct_001_000062",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000062"
+        ]
+      },
+      {
+        "amount": 2377.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-02",
+        "id": "acct_001->fuelpay@ybl::acct_001_000066",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000066"
+        ]
+      },
+      {
+        "amount": 494.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-13",
+        "id": "acct_001->fuelpay@ybl::acct_001_000079",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000079"
+        ]
+      },
+      {
+        "amount": 2501.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-19",
+        "id": "acct_001->fuelpay@ybl::acct_001_000097",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000097"
+        ]
+      },
+      {
+        "amount": 2357.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-06",
+        "id": "acct_001->fuelpay@ybl::acct_001_000118",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000118"
+        ]
+      },
+      {
+        "amount": 3662.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-12",
+        "id": "acct_001->fuelpay@ybl::acct_001_000127",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000127"
+        ]
+      },
+      {
+        "amount": 3772.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-28",
+        "id": "acct_001->fuelpay@ybl::acct_001_000153",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000153"
+        ]
+      },
+      {
+        "amount": 3482.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-25",
+        "id": "acct_001->fuelpay@ybl::acct_001_000194",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000194"
+        ]
+      },
+      {
+        "amount": 3845.0,
+        "confidence_score": 1.0,
+        "date": "2025-06-02",
+        "id": "acct_001->fuelpay@ybl::acct_001_000206",
+        "source": "acct_001",
+        "target": "fuelpay@ybl",
+        "txn_ids": [
+          "acct_001_000206"
+        ]
+      },
+      {
+        "amount": 4403.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-18",
+        "id": "acct_001->medplus@ybl::acct_001_000005",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000005"
+        ]
+      },
+      {
+        "amount": 3325.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-25",
+        "id": "acct_001->medplus@ybl::acct_001_000013",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000013"
+        ]
+      },
+      {
+        "amount": 1310.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-16",
+        "id": "acct_001->medplus@ybl::acct_001_000045",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000045"
+        ]
+      },
+      {
+        "amount": 1300.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-03",
+        "id": "acct_001->medplus@ybl::acct_001_000068",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000068"
+        ]
+      },
+      {
+        "amount": 2545.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-12",
+        "id": "acct_001->medplus@ybl::acct_001_000077",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000077"
+        ]
+      },
+      {
+        "amount": 83.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-24",
+        "id": "acct_001->medplus@ybl::acct_001_000148",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000148"
+        ]
+      },
+      {
+        "amount": 420.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-14",
+        "id": "acct_001->medplus@ybl::acct_001_000176",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000176"
+        ]
+      },
+      {
+        "amount": 3539.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-17",
+        "id": "acct_001->medplus@ybl::acct_001_000182",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000182"
+        ]
+      },
+      {
+        "amount": 457.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-29",
+        "id": "acct_001->medplus@ybl::acct_001_000199",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000199"
+        ]
+      },
+      {
+        "amount": 1442.0,
+        "confidence_score": 1.0,
+        "date": "2025-06-03",
+        "id": "acct_001->medplus@ybl::acct_001_000209",
+        "source": "acct_001",
+        "target": "medplus@ybl",
+        "txn_ids": [
+          "acct_001_000209"
+        ]
+      },
+      {
+        "amount": 4172.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-20",
+        "id": "acct_001->bescom.bill@upi::acct_001_000007",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000007"
+        ]
+      },
+      {
+        "amount": 4029.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-23",
+        "id": "acct_001->bescom.bill@upi::acct_001_000010",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000010"
+        ]
+      },
+      {
+        "amount": 117.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-22",
+        "id": "acct_001->bescom.bill@upi::acct_001_000055",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000055"
+        ]
+      },
+      {
+        "amount": 3282.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-24",
+        "id": "acct_001->bescom.bill@upi::acct_001_000058",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000058"
+        ]
+      },
+      {
+        "amount": 3143.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-18",
+        "id": "acct_001->bescom.bill@upi::acct_001_000090",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000090"
+        ]
+      },
+      {
+        "amount": 508.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-22",
+        "id": "acct_001->bescom.bill@upi::acct_001_000102",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000102"
+        ]
+      },
+      {
+        "amount": 2105.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-21",
+        "id": "acct_001->bescom.bill@upi::acct_001_000144",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000144"
+        ]
+      },
+      {
+        "amount": 633.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-02",
+        "id": "acct_001->bescom.bill@upi::acct_001_000159",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000159"
+        ]
+      },
+      {
+        "amount": 432.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-05",
+        "id": "acct_001->bescom.bill@upi::acct_001_000162",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000162"
+        ]
+      },
+      {
+        "amount": 1406.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-11",
+        "id": "acct_001->bescom.bill@upi::acct_001_000172",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000172"
+        ]
+      },
+      {
+        "amount": 3397.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-18",
+        "id": "acct_001->bescom.bill@upi::acct_001_000185",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000185"
+        ]
+      },
+      {
+        "amount": 2920.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-26",
+        "id": "acct_001->bescom.bill@upi::acct_001_000196",
+        "source": "acct_001",
+        "target": "bescom.bill@upi",
+        "txn_ids": [
+          "acct_001_000196"
+        ]
+      },
+      {
+        "amount": 3110.0,
+        "confidence_score": 0.65,
+        "date": "2025-01-20",
+        "id": "acct_001->991384216948::acct_001_000008",
+        "source": "acct_001",
+        "target": "991384216948",
+        "txn_ids": [
+          "acct_001_000008"
+        ]
+      },
+      {
+        "amount": 1873.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-23",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000011",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000011"
+        ]
+      },
+      {
+        "amount": 3068.0,
+        "confidence_score": 1.0,
+        "date": "2025-01-25",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000014",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000014"
+        ]
+      },
+      {
+        "amount": 3645.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-03",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000024",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000024"
+        ]
+      },
+      {
+        "amount": 797.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-11",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000036",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000036"
+        ]
+      },
+      {
+        "amount": 4257.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-23",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000056",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000056"
+        ]
+      },
+      {
+        "amount": 4433.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-05",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000069",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000069"
+        ]
+      },
+      {
+        "amount": 3083.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-06",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000071",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000071"
+        ]
+      },
+      {
+        "amount": 152.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-24",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000103",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000103"
+        ]
+      },
+      {
+        "amount": 1550.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-05",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000117",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000117"
+        ]
+      },
+      {
+        "amount": 3449.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-07",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000120",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000120"
+        ]
+      },
+      {
+        "amount": 4258.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-27",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000152",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000152"
+        ]
+      },
+      {
+        "amount": 3033.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-02",
+        "id": "acct_001->jio.mobile@ibl::acct_001_000160",
+        "source": "acct_001",
+        "target": "jio.mobile@ibl",
+        "txn_ids": [
+          "acct_001_000160"
+        ]
+      },
+      {
+        "amount": 544.0,
+        "confidence_score": 0.65,
+        "date": "2025-01-25",
+        "id": "acct_001->891449850056::acct_001_000015",
+        "source": "acct_001",
+        "target": "891449850056",
+        "txn_ids": [
+          "acct_001_000015"
+        ]
+      },
+      {
+        "amount": 5000.0,
+        "confidence_score": 0.65,
+        "date": "2025-01-26",
+        "id": "acct_001->657842357071::acct_001_000016",
+        "source": "acct_001",
+        "target": "657842357071",
+        "txn_ids": [
+          "acct_001_000016"
+        ]
+      },
+      {
+        "amount": 4027.0,
+        "confidence_score": 0.65,
+        "date": "2025-01-29",
+        "id": "acct_001->099988538617::acct_001_000019",
+        "source": "acct_001",
+        "target": "099988538617",
+        "txn_ids": [
+          "acct_001_000019"
+        ]
+      },
+      {
+        "amount": 3968.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-04",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000025",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000025"
+        ]
+      },
+      {
+        "amount": 2737.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-06",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000028",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000028"
+        ]
+      },
+      {
+        "amount": 983.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-08",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000030",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000030"
+        ]
+      },
+      {
+        "amount": 4113.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-09",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000032",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000032"
+        ]
+      },
+      {
+        "amount": 218.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-18",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000047",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000047"
+        ]
+      },
+      {
+        "amount": 2967.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-21",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000100",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000100"
+        ]
+      },
+      {
+        "amount": 3169.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-03",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000116",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000116"
+        ]
+      },
+      {
+        "amount": 1810.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-08",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000121",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000121"
+        ]
+      },
+      {
+        "amount": 3953.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-11",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000125",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000125"
+        ]
+      },
+      {
+        "amount": 85.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-16",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000134",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000134"
+        ]
+      },
+      {
+        "amount": 1411.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-17",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000136",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000136"
+        ]
+      },
+      {
+        "amount": 425.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-20",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000143",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000143"
+        ]
+      },
+      {
+        "amount": 2654.0,
+        "confidence_score": 1.0,
+        "date": "2025-06-05",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000211",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000211"
+        ]
+      },
+      {
+        "amount": 2101.0,
+        "confidence_score": 1.0,
+        "date": "2025-06-15",
+        "id": "acct_001->airtel.recharge@airtel::acct_001_000220",
+        "source": "acct_001",
+        "target": "airtel.recharge@airtel",
+        "txn_ids": [
+          "acct_001_000220"
+        ]
+      },
+      {
+        "amount": 733.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-08",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000031",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000031"
+        ]
+      },
+      {
+        "amount": 4446.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-14",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000039",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000039"
+        ]
+      },
+      {
+        "amount": 3153.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-15",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000043",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000043"
+        ]
+      },
+      {
+        "amount": 147.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-20",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000051",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000051"
+        ]
+      },
+      {
+        "amount": 1238.0,
+        "confidence_score": 1.0,
+        "date": "2025-02-28",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000064",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000064"
+        ]
+      },
+      {
+        "amount": 4142.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-07",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000072",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000072"
+        ]
+      },
+      {
+        "amount": 1642.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-09",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000074",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000074"
+        ]
+      },
+      {
+        "amount": 657.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-20",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000098",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000098"
+        ]
+      },
+      {
+        "amount": 277.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-13",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000175",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000175"
+        ]
+      },
+      {
+        "amount": 2144.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-21",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000189",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000189"
+        ]
+      },
+      {
+        "amount": 417.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-27",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000197",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000197"
+        ]
+      },
+      {
+        "amount": 3892.0,
+        "confidence_score": 1.0,
+        "date": "2025-06-14",
+        "id": "acct_001->dmart.pay@okaxis::acct_001_000219",
+        "source": "acct_001",
+        "target": "dmart.pay@okaxis",
+        "txn_ids": [
+          "acct_001_000219"
+        ]
+      },
+      {
+        "amount": 1216.0,
+        "confidence_score": 0.65,
+        "date": "2025-02-11",
+        "id": "acct_001->713416011781::acct_001_000035",
+        "source": "acct_001",
+        "target": "713416011781",
+        "txn_ids": [
+          "acct_001_000035"
+        ]
+      },
+      {
+        "amount": 3705.0,
+        "confidence_score": 0.65,
+        "date": "2025-02-12",
+        "id": "acct_001->682922235280::acct_001_000037",
+        "source": "acct_001",
+        "target": "682922235280",
+        "txn_ids": [
+          "acct_001_000037"
+        ]
+      },
+      {
+        "amount": 135.0,
+        "confidence_score": 0.65,
+        "date": "2025-02-14",
+        "id": "acct_001->377561826014::acct_001_000041",
+        "source": "acct_001",
+        "target": "377561826014",
+        "txn_ids": [
+          "acct_001_000041"
+        ]
+      },
+      {
+        "amount": 10000.0,
+        "confidence_score": 0.65,
+        "date": "2025-02-25",
+        "id": "acct_001->336337751130::acct_001_000059",
+        "source": "acct_001",
+        "target": "336337751130",
+        "txn_ids": [
+          "acct_001_000059"
+        ]
+      },
+      {
+        "amount": 1155.0,
+        "confidence_score": 0.65,
+        "date": "2025-02-25",
+        "id": "acct_001->466985673613::acct_001_000060",
+        "source": "acct_001",
+        "target": "466985673613",
+        "txn_ids": [
+          "acct_001_000060"
+        ]
+      },
+      {
+        "amount": 713.0,
+        "confidence_score": 0.65,
+        "date": "2025-02-26",
+        "id": "acct_001->958396896880::acct_001_000061",
+        "source": "acct_001",
+        "target": "958396896880",
+        "txn_ids": [
+          "acct_001_000061"
+        ]
+      },
+      {
+        "amount": 180018.9,
+        "confidence_score": 0.65,
+        "date": "2025-02-27",
+        "id": "acct_001->2502275453522::acct_001_000063",
+        "source": "acct_001",
+        "target": "2502275453522",
+        "txn_ids": [
+          "acct_001_000063"
+        ]
+      },
+      {
+        "amount": 3127.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-02",
+        "id": "acct_001->491355385293::acct_001_000067",
+        "source": "acct_001",
+        "target": "491355385293",
+        "txn_ids": [
+          "acct_001_000067"
+        ]
+      },
+      {
+        "amount": 5000.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-11",
+        "id": "acct_001->918754910507::acct_001_000076",
+        "source": "acct_001",
+        "target": "918754910507",
+        "txn_ids": [
+          "acct_001_000076"
+        ]
+      },
+      {
+        "amount": 3046.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-13",
+        "id": "acct_001->911946528543::acct_001_000080",
+        "source": "acct_001",
+        "target": "911946528543",
+        "txn_ids": [
+          "acct_001_000080"
+        ]
+      },
+      {
+        "amount": 4177.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-15",
+        "id": "acct_001->irctc.pay@axisbank::acct_001_000081",
+        "source": "acct_001",
+        "target": "irctc.pay@axisbank",
+        "txn_ids": [
+          "acct_001_000081"
+        ]
+      },
+      {
+        "amount": 3912.0,
+        "confidence_score": 1.0,
+        "date": "2025-03-17",
+        "id": "acct_001->irctc.pay@axisbank::acct_001_000087",
+        "source": "acct_001",
+        "target": "irctc.pay@axisbank",
+        "txn_ids": [
+          "acct_001_000087"
+        ]
+      },
+      {
+        "amount": 2173.0,
+        "confidence_score": 1.0,
+        "date": "2025-04-01",
+        "id": "acct_001->irctc.pay@axisbank::acct_001_000114",
+        "source": "acct_001",
+        "target": "irctc.pay@axisbank",
+        "txn_ids": [
+          "acct_001_000114"
+        ]
+      },
+      {
+        "amount": 4187.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-12",
+        "id": "acct_001->irctc.pay@axisbank::acct_001_000174",
+        "source": "acct_001",
+        "target": "irctc.pay@axisbank",
+        "txn_ids": [
+          "acct_001_000174"
+        ]
+      },
+      {
+        "amount": 4189.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-20",
+        "id": "acct_001->irctc.pay@axisbank::acct_001_000187",
+        "source": "acct_001",
+        "target": "irctc.pay@axisbank",
+        "txn_ids": [
+          "acct_001_000187"
+        ]
+      },
+      {
+        "amount": 4304.0,
+        "confidence_score": 1.0,
+        "date": "2025-05-22",
+        "id": "acct_001->irctc.pay@axisbank::acct_001_000190",
+        "source": "acct_001",
+        "target": "irctc.pay@axisbank",
+        "txn_ids": [
+          "acct_001_000190"
+        ]
+      },
+      {
+        "amount": 5000.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-16",
+        "id": "acct_001->857244012952::acct_001_000083",
+        "source": "acct_001",
+        "target": "857244012952",
+        "txn_ids": [
+          "acct_001_000083"
+        ]
+      },
+      {
+        "amount": 2047.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-16",
+        "id": "acct_001->824225120653::acct_001_000084",
+        "source": "acct_001",
+        "target": "824225120653",
+        "txn_ids": [
+          "acct_001_000084"
+        ]
+      },
+      {
+        "amount": 3044.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-18",
+        "id": "acct_001->765754338692::acct_001_000092",
+        "source": "acct_001",
+        "target": "765754338692",
+        "txn_ids": [
+          "acct_001_000092"
+        ]
+      },
+      {
+        "amount": 352326.8,
+        "confidence_score": 0.65,
+        "date": "2025-03-19",
+        "id": "acct_001->2503197022608::acct_001_000096",
+        "source": "acct_001",
+        "target": "2503197022608",
+        "txn_ids": [
+          "acct_001_000096"
+        ]
+      },
+      {
+        "amount": 561.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-20",
+        "id": "acct_001->235210653195::acct_001_000099",
+        "source": "acct_001",
+        "target": "235210653195",
+        "txn_ids": [
+          "acct_001_000099"
+        ]
+      },
+      {
+        "amount": 4454.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-24",
+        "id": "acct_001->422052372253::acct_001_000104",
+        "source": "acct_001",
+        "target": "422052372253",
+        "txn_ids": [
+          "acct_001_000104"
+        ]
+      },
+      {
+        "amount": 342804.5,
+        "confidence_score": 0.65,
+        "date": "2025-03-26",
+        "id": "acct_001->2503260632134::acct_001_000107",
+        "source": "acct_001",
+        "target": "2503260632134",
+        "txn_ids": [
+          "acct_001_000107"
+        ]
+      },
+      {
+        "amount": 4210.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-28",
+        "id": "acct_001->275312917960::acct_001_000110",
+        "source": "acct_001",
+        "target": "275312917960",
+        "txn_ids": [
+          "acct_001_000110"
+        ]
+      },
+      {
+        "amount": 2045.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-31",
+        "id": "acct_001->894843111084::acct_001_000113",
+        "source": "acct_001",
+        "target": "894843111084",
+        "txn_ids": [
+          "acct_001_000113"
+        ]
+      },
+      {
+        "amount": 1245.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-11",
+        "id": "acct_001->701083421939::acct_001_000126",
+        "source": "acct_001",
+        "target": "701083421939",
+        "txn_ids": [
+          "acct_001_000126"
+        ]
+      },
+      {
+        "amount": 2796.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-13",
+        "id": "acct_001->486585333920::acct_001_000128",
+        "source": "acct_001",
+        "target": "486585333920",
+        "txn_ids": [
+          "acct_001_000128"
+        ]
+      },
+      {
+        "amount": 5000.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-14",
+        "id": "acct_001->548137006545::acct_001_000129",
+        "source": "acct_001",
+        "target": "548137006545",
+        "txn_ids": [
+          "acct_001_000129"
+        ]
+      },
+      {
+        "amount": 178224.6,
+        "confidence_score": 0.65,
+        "date": "2025-04-14",
+        "id": "acct_001->2504145293889::acct_001_000131",
+        "source": "acct_001",
+        "target": "2504145293889",
+        "txn_ids": [
+          "acct_001_000131"
+        ]
+      },
+      {
+        "amount": 15000.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-18",
+        "id": "acct_001->476394634347::acct_001_000137",
+        "source": "acct_001",
+        "target": "476394634347",
+        "txn_ids": [
+          "acct_001_000137"
+        ]
+      },
+      {
+        "amount": 175120.8,
+        "confidence_score": 0.65,
+        "date": "2025-04-18",
+        "id": "acct_001->2504184119164::acct_001_000139",
+        "source": "acct_001",
+        "target": "2504184119164",
+        "txn_ids": [
+          "acct_001_000139"
+        ]
+      },
+      {
+        "amount": 3049.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-18",
+        "id": "acct_001->349891288312::acct_001_000141",
+        "source": "acct_001",
+        "target": "349891288312",
+        "txn_ids": [
+          "acct_001_000141"
+        ]
+      },
+      {
+        "amount": 2748.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-19",
+        "id": "acct_001->573580864080::acct_001_000142",
+        "source": "acct_001",
+        "target": "573580864080",
+        "txn_ids": [
+          "acct_001_000142"
+        ]
+      },
+      {
+        "amount": 2469.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-24",
+        "id": "acct_001->113618051766::acct_001_000149",
+        "source": "acct_001",
+        "target": "113618051766",
+        "txn_ids": [
+          "acct_001_000149"
+        ]
+      },
+      {
+        "amount": 2082.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-25",
+        "id": "acct_001->308602763650::acct_001_000151",
+        "source": "acct_001",
+        "target": "308602763650",
+        "txn_ids": [
+          "acct_001_000151"
+        ]
+      },
+      {
+        "amount": 2489.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-28",
+        "id": "acct_001->200474625321::acct_001_000154",
+        "source": "acct_001",
+        "target": "200474625321",
+        "txn_ids": [
+          "acct_001_000154"
+        ]
+      },
+      {
+        "amount": 8000.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-29",
+        "id": "acct_001->035632581026::acct_001_000155",
+        "source": "acct_001",
+        "target": "035632581026",
+        "txn_ids": [
+          "acct_001_000155"
+        ]
+      },
+      {
+        "amount": 4083.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-01",
+        "id": "acct_001->478844598277::acct_001_000158",
+        "source": "acct_001",
+        "target": "478844598277",
+        "txn_ids": [
+          "acct_001_000158"
+        ]
+      },
+      {
+        "amount": 986.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-03",
+        "id": "acct_001->803343717695::acct_001_000161",
+        "source": "acct_001",
+        "target": "803343717695",
+        "txn_ids": [
+          "acct_001_000161"
+        ]
+      },
+      {
+        "amount": 766.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-07",
+        "id": "acct_001->604086931319::acct_001_000167",
+        "source": "acct_001",
+        "target": "604086931319",
+        "txn_ids": [
+          "acct_001_000167"
+        ]
+      },
+      {
+        "amount": 1122.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-11",
+        "id": "acct_001->816134648196::acct_001_000173",
+        "source": "acct_001",
+        "target": "816134648196",
+        "txn_ids": [
+          "acct_001_000173"
+        ]
+      },
+      {
+        "amount": 235527.2,
+        "confidence_score": 0.65,
+        "date": "2025-05-14",
+        "id": "acct_001->2505144498383::acct_001_000178",
+        "source": "acct_001",
+        "target": "2505144498383",
+        "txn_ids": [
+          "acct_001_000178"
+        ]
+      },
+      {
+        "amount": 15000.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-20",
+        "id": "acct_001->896294584942::acct_001_000188",
+        "source": "acct_001",
+        "target": "896294584942",
+        "txn_ids": [
+          "acct_001_000188"
+        ]
+      },
+      {
+        "amount": 3973.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-27",
+        "id": "acct_001->928797884885::acct_001_000198",
+        "source": "acct_001",
+        "target": "928797884885",
+        "txn_ids": [
+          "acct_001_000198"
+        ]
+      },
+      {
+        "amount": 2225.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-29",
+        "id": "acct_001->357753741319::acct_001_000200",
+        "source": "acct_001",
+        "target": "357753741319",
+        "txn_ids": [
+          "acct_001_000200"
+        ]
+      },
+      {
+        "amount": 15000.0,
+        "confidence_score": 0.65,
+        "date": "2025-06-01",
+        "id": "acct_001->632199922600::acct_001_000203",
+        "source": "acct_001",
+        "target": "632199922600",
+        "txn_ids": [
+          "acct_001_000203"
+        ]
+      },
+      {
+        "amount": 278996.0,
+        "confidence_score": 0.65,
+        "date": "2025-06-01",
+        "id": "acct_001->2506010383895::acct_001_000205",
+        "source": "acct_001",
+        "target": "2506010383895",
+        "txn_ids": [
+          "acct_001_000205"
+        ]
+      },
+      {
+        "amount": 2642.0,
+        "confidence_score": 0.65,
+        "date": "2025-06-02",
+        "id": "acct_001->398154373766::acct_001_000207",
+        "source": "acct_001",
+        "target": "398154373766",
+        "txn_ids": [
+          "acct_001_000207"
+        ]
+      },
+      {
+        "amount": 10000.0,
+        "confidence_score": 0.65,
+        "date": "2025-06-09",
+        "id": "acct_001->032548069821::acct_001_000215",
+        "source": "acct_001",
+        "target": "032548069821",
+        "txn_ids": [
+          "acct_001_000215"
+        ]
+      },
+      {
+        "amount": 5000.0,
+        "confidence_score": 0.65,
+        "date": "2025-06-10",
+        "id": "acct_001->034416020027::acct_001_000216",
+        "source": "acct_001",
+        "target": "034416020027",
+        "txn_ids": [
+          "acct_001_000216"
+        ]
+      },
+      {
+        "amount": 268418.4,
+        "confidence_score": 0.65,
+        "date": "2025-06-10",
+        "id": "acct_001->2506102368490::acct_001_000217",
+        "source": "acct_001",
+        "target": "2506102368490",
+        "txn_ids": [
+          "acct_001_000217"
+        ]
+      },
+      {
+        "amount": 61422.0,
+        "confidence_score": 0.65,
+        "date": "2025-01-15",
+        "id": "2501158919159->acct_001::acct_001_000000",
+        "source": "2501158919159",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000000"
+        ]
+      },
+      {
+        "amount": 372829.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-16",
+        "id": "2503167882506->acct_001::acct_001_000085",
+        "source": "2503167882506",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000085"
+        ]
+      },
+      {
+        "amount": 176.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-17",
+        "id": "384961901558->acct_001::acct_001_000086",
+        "source": "384961901558",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000086"
+        ]
+      },
+      {
+        "amount": 46209.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-18",
+        "id": "2503189003183->acct_001::acct_001_000091",
+        "source": "2503189003183",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000091"
+        ]
+      },
+      {
+        "amount": 78.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-19",
+        "id": "67947948262536->acct_001::acct_001_000093",
+        "source": "67947948262536",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000093"
+        ]
+      },
+      {
+        "amount": 301.0,
+        "confidence_score": 0.65,
+        "date": "2025-06-17",
+        "id": "67947948262536->acct_001::acct_001_000224",
+        "source": "67947948262536",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000224"
+        ]
+      },
+      {
+        "amount": 352326.8,
+        "confidence_score": 0.65,
+        "date": "2025-03-19",
+        "id": "2503197022608->acct_001::acct_001_000094",
+        "source": "2503197022608",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000094"
+        ]
+      },
+      {
+        "amount": 163.0,
+        "confidence_score": 0.65,
+        "date": "2025-03-19",
+        "id": "82389122072698->acct_001::acct_001_000095",
+        "source": "82389122072698",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000095"
+        ]
+      },
+      {
+        "amount": 186834.0,
+        "confidence_score": 0.65,
+        "date": "2025-04-10",
+        "id": "2504107336049->acct_001::acct_001_000124",
+        "source": "2504107336049",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000124"
+        ]
+      },
+      {
+        "amount": 178224.6,
+        "confidence_score": 0.65,
+        "date": "2025-04-14",
+        "id": "2504145293889->acct_001::acct_001_000130",
+        "source": "2504145293889",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000130"
+        ]
+      },
+      {
+        "amount": 252252.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-05",
+        "id": "2505057997947->acct_001::acct_001_000164",
+        "source": "2505057997947",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000164"
+        ]
+      },
+      {
+        "amount": 233718.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-10",
+        "id": "2505103003681->acct_001::acct_001_000171",
+        "source": "2505103003681",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000171"
+        ]
+      },
+      {
+        "amount": 46918.0,
+        "confidence_score": 0.65,
+        "date": "2025-05-15",
+        "id": "2505158970668->acct_001::acct_001_000179",
+        "source": "2505158970668",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000179"
+        ]
+      },
+      {
+        "amount": 75113.0,
+        "confidence_score": 0.65,
+        "date": "2025-06-16",
+        "id": "2506160720831->acct_001::acct_001_000222",
+        "source": "2506160720831",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000222"
+        ]
+      },
+      {
+        "amount": 242.0,
+        "confidence_score": 0.65,
+        "date": "2025-06-17",
+        "id": "16400202955->acct_001::acct_001_000223",
+        "source": "16400202955",
+        "target": "acct_001",
+        "txn_ids": [
+          "acct_001_000223"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "cluster_id": "cluster_001",
+        "id": "acct_001",
+        "observed_account": true,
+        "pattern_count": 19,
+        "suspicion_tiers": [
+          1,
+          2,
+          3
+        ],
+        "total_score": 296.5703
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2501158919159",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "bbdaily@okhdfcbank",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "840319458426",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "fuelpay@ybl",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "medplus@ybl",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "bescom.bill@upi",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "991384216948",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "jio.mobile@ibl",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "891449850056",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "657842357071",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "099988538617",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "airtel.recharge@airtel",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "dmart.pay@okaxis",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "713416011781",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "682922235280",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "377561826014",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "336337751130",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "466985673613",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "958396896880",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2502275453522",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "491355385293",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "918754910507",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "911946528543",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "irctc.pay@axisbank",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "857244012952",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "824225120653",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2503167882506",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "384961901558",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2503189003183",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "765754338692",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "67947948262536",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2503197022608",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "82389122072698",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "235210653195",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "422052372253",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2503260632134",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "275312917960",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "894843111084",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2504107336049",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "701083421939",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "486585333920",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "548137006545",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2504145293889",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "476394634347",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2504184119164",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "349891288312",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "573580864080",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "113618051766",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "308602763650",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "200474625321",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "035632581026",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "478844598277",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "803343717695",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2505057997947",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "604086931319",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2505103003681",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "816134648196",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2505144498383",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2505158970668",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "896294584942",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "928797884885",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "357753741319",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "632199922600",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2506010383895",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "398154373766",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "032548069821",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "034416020027",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2506102368490",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "2506160720831",
+        "observed_account": false,
+        "pattern_count": 1,
+        "suspicion_tiers": [
+          3
+        ],
+        "total_score": 0.0
+      },
+      {
+        "cluster_id": "cluster_001",
+        "id": "16400202955",
+        "observed_account": false,
+        "pattern_count": 0,
+        "suspicion_tiers": [],
+        "total_score": 0.0
+      }
+    ]
+  },
+  "type": "money_flow_network_3d"
+}

@@ -1,0 +1,2854 @@
+[
+  {
+    "customer_id": "ACC_ef2f6c034326",
+    "account_number": "001029700065",
+    "metadata": {
+      "account_holder": "MR. SACHIN SUMIT GUPTA",
+      "bank": "HDFC Bank",
+      "ifsc": "RATN0000537",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_b629e2d8c4b0a4",
+      "EV_30bad0056b071f",
+      "EV_32bb74f2936d46",
+      "EV_feec2f012f4c20",
+      "EV_622931110f6a8a",
+      "EV_82e5b15c2cb437",
+      "EV_915dc91de20997",
+      "EV_bd51c9983f793c"
+    ]
+  },
+  {
+    "customer_id": "ACC_26e0c22d8b59",
+    "account_number": "00869354051",
+    "metadata": {
+      "account_holder": "STATEMENT FOR 16-Apr-2025 TO 23-Jul-2025",
+      "bank": "IDFC FIRST Bank",
+      "ifsc": "BKID0003132",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_9d4dd3d87ea5ae",
+      "EV_6017c06e670652",
+      "EV_62dd014d2d6e4c",
+      "EV_c7ab823d334192",
+      "EV_5245ae2e1f73cb",
+      "EV_617212566f7c77",
+      "EV_67c3c22e823982",
+      "EV_b1df0af73e9276"
+    ]
+  },
+  {
+    "customer_id": "ACC_c27acb88dd8d",
+    "account_number": "0167042251865512",
+    "metadata": {
+      "account_holder": "FLEXCUBE",
+      "bank": "State Bank of India",
+      "ifsc": "CBIN0280460",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_6f351c36f6382a",
+      "EV_5bfdd494276877",
+      "EV_05c982f6239f4f",
+      "EV_71d641f076ab1a",
+      "EV_3657585312ed2f",
+      "EV_337d687c8f380b",
+      "EV_690323a30b2736",
+      "EV_b45ed487e7242f"
+    ]
+  },
+  {
+    "customer_id": "ACC_ce5a7e293095",
+    "account_number": "08874795659248",
+    "metadata": {
+      "account_holder": "ANIL AARAV GHOSH MICR: 700750196",
+      "bank": "Bandhan Bank",
+      "ifsc": "BDBL0002295",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_82872de807781c",
+      "EV_0a7d2e79499082",
+      "EV_0014763bf48bd8",
+      "EV_4bbbfbc1ab2936",
+      "EV_3b821803677487",
+      "EV_30b1fb3e270b53",
+      "EV_224af6e2c79cc6",
+      "EV_20dfb24e4be9bb"
+    ]
+  },
+  {
+    "customer_id": "ACC_07290f7e72a3",
+    "account_number": "0908299511379122",
+    "metadata": {
+      "account_holder": "SACHIN SETHI",
+      "bank": "YES Bank",
+      "ifsc": "KARB0000547"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_cfcd53b4d7852f",
+      "EV_dc8a02d72e9dcb",
+      "EV_98e54da1217567",
+      "EV_1928a7b860ef56",
+      "EV_a3e990c53a4a8b",
+      "EV_566869820cd10a",
+      "EV_da72a28602c8ec",
+      "EV_30cb6d4068ca6e"
+    ]
+  },
+  {
+    "customer_id": "ACC_a0a57adac813",
+    "account_number": "098030016134598",
+    "metadata": {
+      "account_holder": "A/C type: FREEDOM FLEXI 25",
+      "bank": "State Bank of India",
+      "ifsc": "ABHY0065104"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_c018a37544915d",
+      "EV_306c133bb5ecae",
+      "EV_4bb78000b6b9ca",
+      "EV_14192c2197d9de",
+      "EV_88282a3c6ef371",
+      "EV_b678faee4e11e3",
+      "EV_97bf3547d88c8b",
+      "EV_ec51f1da4d351b"
+    ]
+  },
+  {
+    "customer_id": "ACC_6f3277c53487",
+    "account_number": "0996108053948",
+    "metadata": {
+      "account_holder": "Adivaram[00996]",
+      "bank": "State Bank of India"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_e99e30f46b06c0",
+      "EV_f0c5e8f543db47",
+      "EV_109fceaf285a73",
+      "EV_4ec227d201a273",
+      "EV_a0fc04b5eb736e",
+      "EV_7f0ad8078a3d38",
+      "EV_67f3f544ebf92f",
+      "EV_436b5bdf5485aa"
+    ]
+  },
+  {
+    "customer_id": "ACC_f2156f726645",
+    "account_number": "10140211101047567",
+    "metadata": {
+      "account_holder": "VAKERY (40211)",
+      "bank": "Kerala Gramin Bank"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_c7821bbb4771a1",
+      "EV_69256cf72457d4",
+      "EV_53a75524da9b04",
+      "EV_8c1a9772cef481",
+      "EV_6c4d8a6895078b",
+      "EV_a0f9a2966f14e0",
+      "EV_36200e6894cfcc",
+      "EV_2e8ac225ce6d63"
+    ]
+  },
+  {
+    "customer_id": "ACC_aa865890c999",
+    "account_number": "110178980040",
+    "metadata": {
+      "account_holder": "Gwalior Phoolbagh[06631]",
+      "bank": "Axis Bank"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_b8188fb57331b1",
+      "EV_ac7fd3d899fce9",
+      "EV_61f5bc0f5fb916",
+      "EV_314a7ab4471a0b",
+      "EV_b2df138f0c49b3",
+      "EV_2e898ac70b3cd1",
+      "EV_d9ff54e2deb0d1",
+      "EV_c297bc7da29863"
+    ]
+  },
+  {
+    "customer_id": "ACC_91637ac568fb",
+    "account_number": "110200939775",
+    "metadata": {
+      "account_holder": "Chaksu[04229]",
+      "bank": "Axis Bank"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_fc6ba22e3c89bb",
+      "EV_ab90a9617a2c26",
+      "EV_a063772fcc4cd0",
+      "EV_9f10a4fa13b442",
+      "EV_9b6f5802556e62",
+      "EV_c25bfb65aab4b3",
+      "EV_6fefe3f839e30d",
+      "EV_0f3ba292c78f9b"
+    ]
+  },
+  {
+    "customer_id": "ACC_8a0a28c8feb3",
+    "account_number": "110216248295",
+    "metadata": {
+      "account_holder": "Dwarka (Nallornad)[14751]",
+      "bank": "ICICI Bank",
+      "ifsc": "ICIC0000011"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_3a7237c903ff49",
+      "EV_bc200201ddd08f",
+      "EV_50b322f3deba95",
+      "EV_3e3a733da4b27e",
+      "EV_e81e8b711fd07e",
+      "EV_b2e33a6f9f3929",
+      "EV_535a97e4b0e924",
+      "EV_a0f101ac122fbb"
+    ]
+  },
+  {
+    "customer_id": "ACC_a503f3ee4aa3",
+    "account_number": "110226871466",
+    "metadata": {
+      "account_holder": "Kalapipal Gram[05992]",
+      "bank": "IndusInd Bank"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_1c39f6325bdcfa",
+      "EV_754ea644a238a9",
+      "EV_8919b71db7c622",
+      "EV_48ca6509e32f0a",
+      "EV_c2a8b9f59c07c1",
+      "EV_ece064294e5038",
+      "EV_5179bc90965d4e",
+      "EV_3d24616c11393f"
+    ]
+  },
+  {
+    "customer_id": "ACC_905b0e094d19",
+    "account_number": "110228398061",
+    "metadata": {
+      "account_holder": "Palakkad Melamuri[14452]",
+      "bank": "Axis Bank"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_6f73f3e88f1c1e",
+      "EV_5febb48ad75451",
+      "EV_e0d865711be454",
+      "EV_54a5b48cffefa6",
+      "EV_545b9eee5c1c3c",
+      "EV_45498c1b921a60",
+      "EV_402add07680f0d",
+      "EV_ef7be95a859743"
+    ]
+  },
+  {
+    "customer_id": "ACC_8da92f429a72",
+    "account_number": "110236092552",
+    "metadata": {
+      "account_holder": "Mysuru Lashkar Mohalla[11703]",
+      "bank": "Kotak Mahindra Bank",
+      "ifsc": "ICIC0000011"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_61a6d92750d8d4",
+      "EV_8b3d175a4269b2",
+      "EV_dd32e8f973c5bf",
+      "EV_55d932d6d4ec85",
+      "EV_989e6d15e75a61",
+      "EV_f70c8ef8c08dc9",
+      "EV_0d9e459c6453a6",
+      "EV_5b7a26a3e74a0f"
+    ]
+  },
+  {
+    "customer_id": "ACC_69315055ac6b",
+    "account_number": "112108374579",
+    "metadata": {
+      "account_holder": "RADHA REKHA SAXENA",
+      "ifsc": "IOBA0001452"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_9b5b03cdb025e3",
+      "EV_dbbcd96b8ab0d9",
+      "EV_8f379fd5c16fd6",
+      "EV_0d60e6f0569613",
+      "EV_550e17643416da",
+      "EV_57a90dff6cf0c3",
+      "EV_cdf3a2489ca354",
+      "EV_c805119a205e9b"
+    ]
+  },
+  {
+    "customer_id": "ACC_a938ac44679c",
+    "account_number": "113154476620",
+    "metadata": {
+      "account_holder": "JOINT HOLDER :",
+      "bank": "IDFC FIRST Bank",
+      "ifsc": "BARB0PRIARC",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_a4ed93f739c676",
+      "EV_0133546e997ca2",
+      "EV_80721c1d3421ff",
+      "EV_a5ee273fb64802",
+      "EV_b55a7880e9ab6d",
+      "EV_4e86b5c0f58da0",
+      "EV_3bab2abde6d4ca",
+      "EV_ad8ad87051b613"
+    ]
+  },
+  {
+    "customer_id": "ACC_72e375dd1b17",
+    "account_number": "138488664629235",
+    "metadata": {
+      "account_holder": "- KAVYA BOSE",
+      "bank": "IDFC FIRST Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_2073d0389d6e2e",
+      "EV_ae9b5059f42b3b",
+      "EV_3c69ecf79b5496",
+      "EV_90c542d446f9e4",
+      "EV_01c893b9d6cf10",
+      "EV_8c70328a90a22a",
+      "EV_6d8b4c270d5a2a",
+      "EV_db8b254fa8e3cd"
+    ]
+  },
+  {
+    "customer_id": "ACC_53c04a70d9d7",
+    "account_number": "14228787196",
+    "metadata": {
+      "account_holder": "QAB Required 1000.000 QAB Maintained 4.000",
+      "bank": "Bank of Maharashtra",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_d0b4f8dba090d0",
+      "EV_bf1d5a3e191b27",
+      "EV_5e515ef375ef60",
+      "EV_221b565a24a3c2",
+      "EV_611453ca56bf93",
+      "EV_58a7b443078bd9",
+      "EV_437572eecc317c",
+      "EV_a577047e6f5418"
+    ]
+  },
+  {
+    "customer_id": "ACC_3c17c65f3aba",
+    "account_number": "145090675346",
+    "metadata": {
+      "account_holder": "ADITYA RAO",
+      "bank": "Kotak Mahindra Bank",
+      "ifsc": "AUBL0002011"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_dd1dfa029b153c",
+      "EV_c0fb77d7964bb4",
+      "EV_af051292749b48",
+      "EV_de9ead2b6e1331",
+      "EV_923f1fb218bc59",
+      "EV_b2c98160c98a3c",
+      "EV_4c250c11582c8e",
+      "EV_325f4d14aee779"
+    ]
+  },
+  {
+    "customer_id": "ACC_343d940e64eb",
+    "account_number": "15060151642297",
+    "metadata": {
+      "account_holder": "ASHOK ASHOK PANDEY Branch Name : Quilandy",
+      "bank": "Federal Bank",
+      "ifsc": "FDRL0001407",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_50f9d03a9cd83f",
+      "EV_2188c266366556",
+      "EV_a56d670a22c33e",
+      "EV_91a4d1649bf1a1",
+      "EV_678aadd54ec766",
+      "EV_476fd7605a8405",
+      "EV_7cf73ddbcac0e3",
+      "EV_5042a828fe94b1"
+    ]
+  },
+  {
+    "customer_id": "ACC_b182ec4d3f4f",
+    "account_number": "16423304381803",
+    "metadata": {
+      "account_holder": "Page No .: 1",
+      "bank": "HDFC Bank",
+      "ifsc": "AIRP0000011",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_74991f9698a5df",
+      "EV_2f14791adf082b",
+      "EV_bdc03fb168b1a0",
+      "EV_8affa268910c2b",
+      "EV_280a70cc03cb6c",
+      "EV_90f32203b071d4",
+      "EV_4d91e5cde4e95c",
+      "EV_897ac25a7e5f3a"
+    ]
+  },
+  {
+    "customer_id": "ACC_dcd0fbe28ed0",
+    "account_number": "16649443003",
+    "metadata": {
+      "account_holder": "Radha",
+      "bank": "State Bank of India",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_235aa83a6ca086",
+      "EV_0e3115275e9686",
+      "EV_bb2241df5c8a09",
+      "EV_da4f5ec8c6c4bf",
+      "EV_d74b40ff24a2f2",
+      "EV_4ff352d3522231",
+      "EV_a1b8262f8db8a3",
+      "EV_cf9e01567e8031"
+    ]
+  },
+  {
+    "customer_id": "ACC_54632aa6e2e5",
+    "account_number": "17496072039317",
+    "metadata": {
+      "account_holder": "17496072039317 Sarita Deepa 0 Cr Opening Balance",
+      "bank": "HDFC Bank",
+      "ifsc": "CNRB0000259",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_6a8e5d2b488c50",
+      "EV_7184a6a7d08ac4",
+      "EV_6991796199c9d4",
+      "EV_a06106f30c43df",
+      "EV_818f5b805a5fad",
+      "EV_522caa5b438590",
+      "EV_0a5ca882eea673",
+      "EV_6891dcec9562fd"
+    ]
+  },
+  {
+    "customer_id": "ACC_08d75bc046af",
+    "account_number": "17771917925",
+    "metadata": {
+      "account_holder": "STATEMENT FOR 07-May-2025 TO 23-Jul-2025",
+      "bank": "IDFC FIRST Bank",
+      "ifsc": "BARB0PERMBA",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_62f08e99ac9b51",
+      "EV_ce5b8050b031ee",
+      "EV_f945ebe0823801",
+      "EV_2608f6565e1688",
+      "EV_58103d52431fb4",
+      "EV_b948d7de913af4",
+      "EV_df19f6ca4d6ab1",
+      "EV_32955f6ae01b9f"
+    ]
+  },
+  {
+    "customer_id": "ACC_ca6854e478b0",
+    "account_number": "211566492688",
+    "metadata": {
+      "account_holder": "DEBIT CREDIT BALANCE",
+      "bank": "IndusInd Bank",
+      "ifsc": "BDBL0001000"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_1274f888926475",
+      "EV_600fb4881923f2",
+      "EV_ab49107c40d92b",
+      "EV_d6089b6a25ffcf",
+      "EV_aa461d4729f4ae",
+      "EV_0c59d66e2c386e",
+      "EV_8c8e604a449afd",
+      "EV_7bc61bc93cadd3"
+    ]
+  },
+  {
+    "customer_id": "ACC_7c295aa4c05d",
+    "account_number": "214526512302",
+    "metadata": {
+      "bank": "Bandhan Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_023f2f7413f5d7",
+      "EV_a1738b467206be",
+      "EV_352ab29c62e3e7",
+      "EV_f6cdb784039d8c",
+      "EV_ec2b3deed76d2f",
+      "EV_764b7837be0f5d",
+      "EV_ca5e8535174027",
+      "EV_bfaebb122a67d0"
+    ]
+  },
+  {
+    "customer_id": "ACC_bc1423af188f",
+    "account_number": "21558442690581",
+    "metadata": {
+      "account_holder": "MR. SUNITA GHOSH",
+      "bank": "Bank of Baroda",
+      "ifsc": "BARB0PERINT"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_b8a73607a2f429",
+      "EV_a7e114e0d8dd7d",
+      "EV_304b61c78ca56e",
+      "EV_0b55b3714e56f8",
+      "EV_398c0c06f853d9",
+      "EV_59db3746a8209e",
+      "EV_3e259bd0e88ad7",
+      "EV_5cc43e423ca0a8"
+    ]
+  },
+  {
+    "customer_id": "ACC_4b6ba2bec92b",
+    "account_number": "216655101347",
+    "metadata": {
+      "account_holder": "AMIT CHAUHAN",
+      "bank": "IndusInd Bank",
+      "ifsc": "RATN0000176",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_c6464f817db4b5",
+      "EV_d36499cdbe2199",
+      "EV_2a9bf8aa2837ca",
+      "EV_ae6689b003bea1",
+      "EV_117d6f4f746107",
+      "EV_18dcbdc000fa14",
+      "EV_9a150582369516",
+      "EV_b2f48f13ac683e"
+    ]
+  },
+  {
+    "customer_id": "ACC_de4c8a32f92b",
+    "account_number": "23383849532",
+    "metadata": {
+      "account_holder": "Nitin : 0.00",
+      "bank": "State Bank of India",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_332fb0c9ab557c",
+      "EV_4cc25cd0bc2fb4",
+      "EV_d3fe467c8a44a2",
+      "EV_9cbf9c0ebb3cb8",
+      "EV_1efa0a355f447e",
+      "EV_913382d8565268",
+      "EV_05a4abf535afe0",
+      "EV_e4469dd8e937b4"
+    ]
+  },
+  {
+    "customer_id": "ACC_81738cbb8d04",
+    "account_number": "23861558411",
+    "metadata": {
+      "account_holder": "QAB Required 2000.000 QAB Maintained 156.780",
+      "bank": "IndusInd Bank",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_b22c55c795bdb1",
+      "EV_19ce3855a4ccc3",
+      "EV_9fef5aeb00ecfc",
+      "EV_bbfc22c49cff2d",
+      "EV_3aab0738c65003",
+      "EV_8ddd799e498d32",
+      "EV_c62c6e759cb803",
+      "EV_1efa3e4e957404"
+    ]
+  },
+  {
+    "customer_id": "ACC_037786ee2cb1",
+    "account_number": "24704559049070",
+    "metadata": {
+      "account_holder": "M/S CRYSTAL MARKETING MICR: 781750202",
+      "bank": "Bandhan Bank",
+      "ifsc": "BARB0UDHAGA",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_9f9ba92945b193",
+      "EV_01fd1fdf1e5f8b",
+      "EV_6d79089986a084",
+      "EV_1e684b4ccfcb5a",
+      "EV_17e95045f98409",
+      "EV_7417923a28f518",
+      "EV_0417fa0b612c9d",
+      "EV_d9b3a3ff988dab"
+    ]
+  },
+  {
+    "customer_id": "ACC_b3989a135de1",
+    "account_number": "250269305544183",
+    "metadata": {
+      "account_holder": "- SACHIN CHAUHAN",
+      "bank": "IDFC FIRST Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_eef3798b1178d1",
+      "EV_1da67d834b2927",
+      "EV_872e2903211bfe",
+      "EV_df897bc5882c56",
+      "EV_ea9e364135c5dd",
+      "EV_fd1c150155ee4a",
+      "EV_ed431cfc849801",
+      "EV_4ac6231d6cb188"
+    ]
+  },
+  {
+    "customer_id": "ACC_ececfbc9e19b",
+    "account_number": "25078124219247",
+    "metadata": {
+      "account_holder": "25078124219247 YASH DUBEY for the period 11-09-2024 - to- 04-01-2026",
+      "bank": "Axis Bank",
+      "ifsc": "DCBL0000457",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_2c8d848437ea26",
+      "EV_f0728ca4200689",
+      "EV_2d864285bc45eb",
+      "EV_acdc0a5d922a4a",
+      "EV_c8dfd05fc8151d",
+      "EV_442928129950f8",
+      "EV_f1dcaff7091f78",
+      "EV_0c6497d92ea6a3"
+    ]
+  },
+  {
+    "customer_id": "ACC_e3d085fa2d66",
+    "account_number": "258082779154",
+    "metadata": {
+      "account_holder": "TRAN DATE TRAN PARTICULAR DEBIT CREDIT BALANCE"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Low Risk",
+    "supporting_evidence": [
+      "EV_e73fb7e48b3518",
+      "EV_6e28ed9f0b1065",
+      "EV_331cdebfc36e7f",
+      "EV_b24604fb246383",
+      "EV_ccd67fae0fece1",
+      "EV_42d4f13c56fa7e",
+      "EV_5db5b5b6ef25d7",
+      "EV_e00aceffb85205"
+    ]
+  },
+  {
+    "customer_id": "ACC_879695dc1af6",
+    "account_number": "2653101012274",
+    "metadata": {
+      "account_holder": "Indore Khajrana Road[02653]",
+      "bank": "State Bank of India"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_1e5627395b2069",
+      "EV_79a8d00b9c267b",
+      "EV_d55b2e4b947d02",
+      "EV_15ad1862a33038",
+      "EV_26086d27b1d700",
+      "EV_00a4bda04d02fa",
+      "EV_5712f49471ed81",
+      "EV_33c4506f064225"
+    ]
+  },
+  {
+    "customer_id": "ACC_b05e2a04df72",
+    "account_number": "269415176159622",
+    "metadata": {
+      "account_holder": "- ANJALI DAS",
+      "bank": "IDFC FIRST Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_11a34186d498d0",
+      "EV_94cef59ed5a218",
+      "EV_d3e0704f1a19a7",
+      "EV_fd52469c7c767a",
+      "EV_4c4bb521fff4d7",
+      "EV_99d6f7f7753d2c",
+      "EV_850a929c78476f",
+      "EV_f16a1ec2d51fbf"
+    ]
+  },
+  {
+    "customer_id": "ACC_525fb13fed0b",
+    "account_number": "27078535177511",
+    "metadata": {
+      "account_holder": "Isha Rao MICR: 221750002",
+      "bank": "Bandhan Bank",
+      "ifsc": "BDBL0001293",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "multiple reversals"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_8aac74b40c9c0c",
+      "EV_3c9afc7154af9c",
+      "EV_f3952bfab1b631",
+      "EV_b99df58eb5e215",
+      "EV_d032882f892b33",
+      "EV_35884761bc4484",
+      "EV_1536a03007ca39",
+      "EV_bcfb678b4a9dc8"
+    ]
+  },
+  {
+    "customer_id": "ACC_1fe2bfa00d59",
+    "account_number": "280442153117",
+    "metadata": {
+      "account_holder": "Tran_ID Tran_Date Dr_Amt Cr_Amt Balance Narration",
+      "bank": "Axis Bank",
+      "ifsc": "BARB0DHEBAR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_266ac93cb4db31",
+      "EV_c7eeb75d345d97",
+      "EV_9a476610a01e48",
+      "EV_f5b04f0524b4f8",
+      "EV_97261ed0fd0615",
+      "EV_b9ece9093f4f2e",
+      "EV_04e117cffa64d3",
+      "EV_2700c96150645f"
+    ]
+  },
+  {
+    "customer_id": "ACC_0426c0a4befd",
+    "account_number": "285265765401",
+    "metadata": {
+      "account_holder": "ANJALI SUNITA",
+      "bank": "State Bank of India",
+      "ifsc": "SBIN0004161"
+    },
+    "behaviour_summary": [
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_753c209d3ac682",
+      "EV_4f0fa9060e593d",
+      "EV_91ea7dde00bae6",
+      "EV_7de4602edf9272",
+      "EV_856bdeabb5b33c",
+      "EV_f0a63365773979",
+      "EV_62113a952d272c",
+      "EV_ba9ee8c929e619"
+    ]
+  },
+  {
+    "customer_id": "ACC_290bc0874670",
+    "account_number": "294500196490",
+    "metadata": {
+      "bank": "Axis Bank",
+      "ifsc": "BDBL0002429",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_e5bd2e0a99d736",
+      "EV_a334e655da70d5",
+      "EV_312f7bb3878189",
+      "EV_b3b2993fbc6b6a",
+      "EV_d00bd117a3cbe0",
+      "EV_692b0d08deff3f",
+      "EV_02a04ddcb4b3af",
+      "EV_57f6a79b7107b1"
+    ]
+  },
+  {
+    "customer_id": "ACC_9c023963653b",
+    "account_number": "29680171959",
+    "metadata": {
+      "account_holder": "Sunita Bose",
+      "bank": "State Bank of India",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_b0ca96106f3e81",
+      "EV_afb79ed9ebda61",
+      "EV_3752f13a9ef082",
+      "EV_a420ad92aa4a41",
+      "EV_f3a2ea82d36dee",
+      "EV_0c7a7f64d77b1d",
+      "EV_ea3e399bf3f064",
+      "EV_168bec7f9aebf9"
+    ]
+  },
+  {
+    "customer_id": "ACC_5bcecda3afa1",
+    "account_number": "3127637522775626",
+    "metadata": {
+      "account_holder": "SHIV LAL BISHNOI",
+      "bank": "Punjab National Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_b9de8cf1a73451",
+      "EV_d00c9370c4f100",
+      "EV_203f7c24c139f4",
+      "EV_ebf9219a05ff2c",
+      "EV_852627b50d9288",
+      "EV_1e1766bc5ed8f9",
+      "EV_b71717699267c1",
+      "EV_68b8a6c4db69d0"
+    ]
+  },
+  {
+    "customer_id": "ACC_20716492ffc5",
+    "account_number": "3277373660",
+    "metadata": {
+      "bank": "State Bank of India",
+      "ifsc": "BDBL0001000"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "diverse counterparties"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_78fff99af6434e",
+      "EV_6b4e71397f741e",
+      "EV_c6a49b3b5678b3",
+      "EV_81e4924a123903",
+      "EV_f183e230350e33",
+      "EV_5e7cb38196b497",
+      "EV_af2314c762d4eb",
+      "EV_1b6aff9227e01e"
+    ]
+  },
+  {
+    "customer_id": "ACC_31ffd257b9da",
+    "account_number": "33952010019682",
+    "metadata": {
+      "account_holder": "Kurnool Rythu Bazar[13395]",
+      "bank": "ICICI Bank"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_b7a20ba9ec8a49",
+      "EV_9e4c2b31d5f2ba",
+      "EV_ca7970a538b84c",
+      "EV_2df89d09b13132",
+      "EV_95c2394dac539e",
+      "EV_988cfa3ed25337",
+      "EV_72c1709da81316",
+      "EV_9c8a0098ac4ef6"
+    ]
+  },
+  {
+    "customer_id": "ACC_afd75cf4ad22",
+    "account_number": "3431120000174",
+    "metadata": {
+      "account_holder": "Areacode (Areekode)[03431]",
+      "ifsc": "RBIS0GOKLEP"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_b5db5b08dec6e3",
+      "EV_19694f9f96abff",
+      "EV_4fa670afce6e54",
+      "EV_772a3682c5f916",
+      "EV_88bbe30ba55131",
+      "EV_3f9641bd985384",
+      "EV_a6f9caa0162d41",
+      "EV_4c31a671da0eec"
+    ]
+  },
+  {
+    "customer_id": "ACC_74867051c775",
+    "account_number": "351964263933349",
+    "metadata": {
+      "account_holder": "ARJUN AMIT KUMAR Branch : 001 - THOOTHUKUDI MAIN",
+      "ifsc": "TMBL0000001"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_94ab9dbc081806",
+      "EV_a856d297db5066",
+      "EV_8373a79174b9e9",
+      "EV_3f185308c1db03",
+      "EV_d003af91788ed9",
+      "EV_e368df385bbfa8",
+      "EV_2b84a567858050",
+      "EV_93c5541eb9eed0"
+    ]
+  },
+  {
+    "customer_id": "ACC_2f8b2db3299e",
+    "account_number": "3768480107",
+    "metadata": {
+      "account_holder": "SAUSAR_SAUSAR(MADHYA PRADESH)",
+      "bank": "State Bank of India",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_8725fc2ca67fc4",
+      "EV_b3be910d7f9bdc",
+      "EV_d00b723d8d4a71",
+      "EV_6ee161212694a7",
+      "EV_bb536e6e19a00c",
+      "EV_636ced0cbca586",
+      "EV_0b60241f19c696",
+      "EV_a4578acff3cbbc"
+    ]
+  },
+  {
+    "customer_id": "ACC_8f9993747cad",
+    "account_number": "38211367068923",
+    "metadata": {
+      "account_holder": "Page No .: 1",
+      "bank": "IDFC FIRST Bank",
+      "ifsc": "AIRP0000001",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "multiple reversals",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_4106df0233e476",
+      "EV_df35e9ebf1397a",
+      "EV_eced0fee32b120",
+      "EV_a0986072e9a2bb",
+      "EV_2152e30b318da7",
+      "EV_adbec9cf81e2ac",
+      "EV_ba23eff670cdbe",
+      "EV_2334859c6bd8d2"
+    ]
+  },
+  {
+    "customer_id": "ACC_05641dcf6481",
+    "account_number": "38347344323",
+    "metadata": {
+      "account_holder": "PO- BAHIRCHAK, PS- DHOLAHAT, Nominee Name ADITYA VERMA",
+      "bank": "State Bank of India",
+      "ifsc": "AIRP0000001",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "multiple reversals",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_8d1bac0643ce30",
+      "EV_d757e73846f451",
+      "EV_434730ba8dbc62",
+      "EV_5f2ddc10a7c275",
+      "EV_2f1471ee20c894",
+      "EV_b3e094b9b69607",
+      "EV_565c2933e1bb22",
+      "EV_a7b784674bd8ea"
+    ]
+  },
+  {
+    "customer_id": "ACC_ff0271b91ffa",
+    "account_number": "38675866795",
+    "metadata": {
+      "account_holder": "VIVAAN",
+      "bank": "State Bank of India",
+      "ifsc": "SBIN0060087",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_777e394f456375",
+      "EV_c58e2bb5fcc8c1",
+      "EV_698664e09479c9",
+      "EV_6e926e3636677c",
+      "EV_cae1ab2836bed7",
+      "EV_4aff8a6a077911",
+      "EV_94a5f28086f7ff",
+      "EV_72e2d0002d7d99"
+    ]
+  },
+  {
+    "customer_id": "ACC_c1ebca1257fd",
+    "account_number": "39716024090418",
+    "metadata": {
+      "account_holder": "Page 1 of 3",
+      "bank": "Axis Bank",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_674470479ea8ef",
+      "EV_5d4dbac51ea169",
+      "EV_3467af60f67035",
+      "EV_1ad232f65695d1",
+      "EV_3ab9e35bd1b1ec",
+      "EV_597e5d4c883edd",
+      "EV_c83fc3224ce818",
+      "EV_d914c6dbc4d8ab"
+    ]
+  },
+  {
+    "customer_id": "ACC_18463326f0b7",
+    "account_number": "39883624816624",
+    "metadata": {
+      "account_holder": "RITU ISHA JOSHI Branch IFSC Code : ESMF0001770",
+      "bank": "State Bank of India",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_b380c4152d3282",
+      "EV_faa87995305ff8",
+      "EV_c47bba0abf61d0",
+      "EV_1f86c0b3cd75ac",
+      "EV_f430213b482d1c",
+      "EV_8b75a1a3a152c6",
+      "EV_7b076f5b509900",
+      "EV_aed5cbde108894"
+    ]
+  },
+  {
+    "customer_id": "ACC_2cece6bf71a4",
+    "account_number": "40332817636018",
+    "metadata": {
+      "account_holder": "MR. RAVI MANOJ TIWARI",
+      "bank": "Bank of Baroda",
+      "ifsc": "BARB0MANNAR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_1a04b4e68ba79e",
+      "EV_54e3df74fb1ed0",
+      "EV_f0d8344c9089cf",
+      "EV_9fd633527db8e3",
+      "EV_08d3a0c8fefd9c",
+      "EV_88e79f5c2923f3",
+      "EV_194120336458c9",
+      "EV_b2b2507b76ecc4"
+    ]
+  },
+  {
+    "customer_id": "ACC_466374584f8e",
+    "account_number": "4185179967",
+    "metadata": {
+      "account_holder": "Cust.Reln.No : 934004261",
+      "bank": "Kotak Mahindra Bank",
+      "ifsc": "KKBK0000203",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_b50d099ca37d40",
+      "EV_ce13574da55155",
+      "EV_c781c32401f4d5",
+      "EV_5a86fd3d4c18b6",
+      "EV_5f8b94572f448a",
+      "EV_03c06f660193a7",
+      "EV_3926d6ac8d512e",
+      "EV_d9304772020213"
+    ]
+  },
+  {
+    "customer_id": "ACC_0978fd6e97bd",
+    "account_number": "42618891001229",
+    "metadata": {
+      "account_holder": "NEERAJ KUMAR Branch Name : Noida Sector 18",
+      "bank": "Federal Bank",
+      "ifsc": "FDRL0001917",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_3d2cdb010d3ad5",
+      "EV_c4edf5babafa1e",
+      "EV_9e334254e2532e",
+      "EV_c2915d6280fb18",
+      "EV_9911da00a48c5f",
+      "EV_8437e7e8e6169c",
+      "EV_054fad6e9b2889",
+      "EV_7094a7dc308862"
+    ]
+  },
+  {
+    "customer_id": "ACC_de87bdc7c578",
+    "account_number": "43920027363506",
+    "metadata": {
+      "account_holder": "M/S UNITED ENTERPRISE ENTERPRISES MICR: 411750006",
+      "bank": "Bandhan Bank",
+      "ifsc": "BDBL0001756",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_5b0df248e24649",
+      "EV_23261489c3fbf2",
+      "EV_a80dc340d65aed",
+      "EV_8ab9f90aab9fa4",
+      "EV_c1563da3567a49",
+      "EV_a648020b8638e1",
+      "EV_e975b579f0e88f",
+      "EV_816854b1b30e1b"
+    ]
+  },
+  {
+    "customer_id": "ACC_54d008f80013",
+    "account_number": "464196045738107",
+    "metadata": {
+      "account_holder": "- DEEPA CHHAYA DESAI",
+      "bank": "IDFC FIRST Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_6c32261e9d9570",
+      "EV_aa53d0c819c3e9",
+      "EV_7206777cb073c4",
+      "EV_9315100c602517",
+      "EV_d76cfde0fcd3d4",
+      "EV_6edcaf1d97c474",
+      "EV_45b00752938548",
+      "EV_cd55b11ecc1779"
+    ]
+  },
+  {
+    "customer_id": "ACC_76f6b27690cd",
+    "account_number": "46652787342452",
+    "metadata": {
+      "account_holder": "Page No .: 1",
+      "bank": "Axis Bank",
+      "ifsc": "AIRP0000001",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_8c73a48524c99a",
+      "EV_784941d6b155cc",
+      "EV_93b4bc4ae1a7c8",
+      "EV_4a70dddd533233",
+      "EV_35924954227bbd",
+      "EV_5dbbf6245c9715",
+      "EV_9cbe2d2cca677c",
+      "EV_a5e1c8180c2e0f"
+    ]
+  },
+  {
+    "customer_id": "ACC_94db7c5c3689",
+    "account_number": "46796183240954",
+    "metadata": {
+      "account_holder": "Page No .: 1",
+      "bank": "HDFC Bank",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_739b631fbe5c60",
+      "EV_5d60f66f66091f",
+      "EV_b3aaf10a20388a",
+      "EV_2277238a79613e",
+      "EV_11a087b1df4e2c",
+      "EV_450e839b682e8d",
+      "EV_f66a66fac5332f",
+      "EV_338a9f140d8a46"
+    ]
+  },
+  {
+    "customer_id": "ACC_9808c81917de",
+    "account_number": "489506257213",
+    "metadata": {
+      "bank": "Canara Bank",
+      "ifsc": "CBIN0282510",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_bde94eaea5d7b6",
+      "EV_ba2ef801d28bf3",
+      "EV_1087afc25a3b1e",
+      "EV_50e692ac27ef0a",
+      "EV_6ba8530f428324",
+      "EV_3301b5584ad249",
+      "EV_69bd0017427181",
+      "EV_73abbed95bcb79"
+    ]
+  },
+  {
+    "customer_id": "ACC_7f48c39799fa",
+    "account_number": "49952935790",
+    "metadata": {
+      "account_holder": "KUNAL SHARMA",
+      "bank": "State Bank of India",
+      "ifsc": "SBIN0008603",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_c96f0e0516f66c",
+      "EV_6212226a2ec3f0",
+      "EV_8d3c607be9d895",
+      "EV_b18d365511ca5d",
+      "EV_bbc7df5c15be4b",
+      "EV_37644b032b1b03",
+      "EV_bd58ee2b29e62f",
+      "EV_e86173524c3446"
+    ]
+  },
+  {
+    "customer_id": "ACC_62028a1e38e7",
+    "account_number": "50192424882238",
+    "metadata": {
+      "account_holder": "M/S UNITED SUPPLY LLP MICR: 110750050",
+      "bank": "Bandhan Bank",
+      "ifsc": "BARB0DILSUK",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_3dd9652fa266b3",
+      "EV_6fb7dc3985e7d7",
+      "EV_399d9f67efd152",
+      "EV_a540b71b9a304b",
+      "EV_12b2741a7f7add",
+      "EV_64bfd3f6a30677",
+      "EV_fa6e5d47545041",
+      "EV_8befdcc1489fcb"
+    ]
+  },
+  {
+    "customer_id": "ACC_1f6074199c08",
+    "account_number": "520698390475976",
+    "metadata": {
+      "account_holder": "- AISHWARYA PATEL",
+      "bank": "Axis Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "multiple reversals",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_c016033da5e99d",
+      "EV_259285bd4eeb41",
+      "EV_f901711f789349",
+      "EV_64fb4022835317",
+      "EV_e7dcb47bb2409d",
+      "EV_bef51faa4bdc83",
+      "EV_b3810309c4ce92",
+      "EV_be452d2e98c2fd"
+    ]
+  },
+  {
+    "customer_id": "ACC_b2fa05b404db",
+    "account_number": "524159813738",
+    "metadata": {
+      "account_holder": "NIKHIL",
+      "bank": "IndusInd Bank",
+      "ifsc": "BDBL0001000"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_e573693f261132",
+      "EV_632e2a394951cd",
+      "EV_5daf34a9647e25",
+      "EV_4eb2f14dd637b2",
+      "EV_6cd42e24bb8d77",
+      "EV_4e823af4b8d752",
+      "EV_9b69d99ed6385e",
+      "EV_aef44a4e25985d"
+    ]
+  },
+  {
+    "customer_id": "ACC_d4947c4f8f1e",
+    "account_number": "5629592364",
+    "metadata": {
+      "account_holder": "FARAH DESAI Period : 28-02-2025 To 27-11-2025",
+      "bank": "Kotak Mahindra Bank",
+      "ifsc": "FDRL0001212",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_184288554fb406",
+      "EV_38532e4b6eb705",
+      "EV_d546092b426f1d",
+      "EV_a1a04c6955e8eb",
+      "EV_e1822df3816686",
+      "EV_4cb21dc2cb0228",
+      "EV_ef1953a861b696",
+      "EV_45327adae50090"
+    ]
+  },
+  {
+    "customer_id": "ACC_74c7c8637583",
+    "account_number": "5745305385",
+    "metadata": {
+      "account_holder": "BINA_BINA",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_0b2a305368cc68",
+      "EV_058dcbaad24b19",
+      "EV_1c48b3f6f6a8d3",
+      "EV_402252753dec95",
+      "EV_3ee388448175d9",
+      "EV_c06cde4ffd9935",
+      "EV_c2802276b9e645",
+      "EV_475739ce1476ab"
+    ]
+  },
+  {
+    "customer_id": "ACC_42a4d7ed0c48",
+    "account_number": "5781302792632557",
+    "metadata": {
+      "account_holder": "ADITYA Ranipur Mode, Haridwar, Uttarakhand",
+      "ifsc": "IDFB0010204",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Low Risk",
+    "supporting_evidence": [
+      "EV_676a262eff0c1e",
+      "EV_a1ff4c4ecb8611",
+      "EV_4ec1779a3994fb",
+      "EV_9fc703a787195b",
+      "EV_be3691a50cb635",
+      "EV_0faa03976a4745",
+      "EV_9ca14a5b03f577",
+      "EV_2c941e1e621895"
+    ]
+  },
+  {
+    "customer_id": "ACC_c99d1d097c69",
+    "account_number": "57856891688032",
+    "metadata": {
+      "account_holder": "MR. AISHWARYA MEHTA",
+      "bank": "Bank of Baroda",
+      "ifsc": "BARB0DBKDER"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_f39338bf60d0bf",
+      "EV_987af9a706595a",
+      "EV_8a3f788d2e79b9",
+      "EV_26297c1fc0212b",
+      "EV_00ddc0c606d8b6",
+      "EV_675075a25b8bd4",
+      "EV_02447165501734",
+      "EV_bdbe162292ba46"
+    ]
+  },
+  {
+    "customer_id": "ACC_7ff34be47ff8",
+    "account_number": "57918678797",
+    "metadata": {
+      "account_holder": "PANKAJ",
+      "bank": "State Bank of India",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_f8619c3cb7df72",
+      "EV_1f5937c191d0d8",
+      "EV_826292f1952bd4",
+      "EV_a7991de93d2b10",
+      "EV_86ab41a575bac8",
+      "EV_4469544161563c",
+      "EV_868bcfc5998389",
+      "EV_83239dbc8445d2"
+    ]
+  },
+  {
+    "customer_id": "ACC_1dba0cff1136",
+    "account_number": "59649123506884",
+    "metadata": {
+      "account_holder": "Page No .: 1",
+      "bank": "HDFC Bank",
+      "ifsc": "HDFC0002928",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Low Risk",
+    "supporting_evidence": [
+      "EV_76670ce0a3f20f",
+      "EV_8c5437a955184d",
+      "EV_88bcebab80ea98",
+      "EV_173e0614cba076",
+      "EV_66af5803182835",
+      "EV_50ccaaeffcf273"
+    ]
+  },
+  {
+    "customer_id": "ACC_c8838090fbf3",
+    "account_number": "6147181405386",
+    "metadata": {
+      "account_holder": "Areacode (Areekode)[03431]",
+      "bank": "IndusInd Bank",
+      "ifsc": "BDBL0001000"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_acba91925db5af",
+      "EV_4cc0018820b5fc",
+      "EV_0d9e2867859d90",
+      "EV_7a4e649cf24f49",
+      "EV_d93ccfd35fe6ec",
+      "EV_db87c0fe679c42",
+      "EV_a230cd5446e0d4",
+      "EV_932d1136818f89"
+    ]
+  },
+  {
+    "customer_id": "ACC_6a394ef3c053",
+    "account_number": "61577175569879",
+    "metadata": {
+      "account_holder": "M/S ANJALI KAPOOR MICR: 390750001",
+      "bank": "Bandhan Bank",
+      "ifsc": "AIRP0000001",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_9fe9cdaa66b6b3",
+      "EV_2449192b98d8bd",
+      "EV_aeae4197a3e349",
+      "EV_340f6d73a35793",
+      "EV_240d0d3389cf13",
+      "EV_58fde27915e6cc",
+      "EV_2e87b9d9e6b341",
+      "EV_2499b81d9f0448"
+    ]
+  },
+  {
+    "customer_id": "ACC_63c55f1e48f8",
+    "account_number": "61ASHOKAROADMYSURU57000",
+    "metadata": {
+      "account_holder": "ANIL KAPOOR",
+      "bank": "State Bank of India",
+      "ifsc": "SBIN0040054",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_4dd8a8b005759e",
+      "EV_9735c659b93b4d",
+      "EV_0feab6eef3a52f",
+      "EV_ca1fba42ffab7f",
+      "EV_d5bc6ec3719f6a",
+      "EV_c50c541656954b",
+      "EV_5a4fbb28ef6a6d",
+      "EV_439b78651bbf33"
+    ]
+  },
+  {
+    "customer_id": "ACC_1282ac51289c",
+    "account_number": "64711576662",
+    "metadata": {
+      "account_holder": "ARJUN",
+      "bank": "State Bank of India",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "multiple reversals",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_0204320af661d1",
+      "EV_9958a33a9e2158",
+      "EV_b68574ffdb807b",
+      "EV_312ff3decd6ce2",
+      "EV_5eda64f26a69ef",
+      "EV_731ad326a70720",
+      "EV_746994c3bd0839",
+      "EV_f293f0af1565eb"
+    ]
+  },
+  {
+    "customer_id": "ACC_fc17a91c84f9",
+    "account_number": "654658757412329",
+    "metadata": {
+      "account_holder": "- YASH SINGH",
+      "bank": "Bandhan Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_6167c225a1df06",
+      "EV_3fdc1d69502ed6",
+      "EV_5c4f379242461e",
+      "EV_ffbc2139dee368",
+      "EV_541b71cfd087db",
+      "EV_dfb57b09d2e245",
+      "EV_c6cac2896141aa",
+      "EV_522a9e02213062"
+    ]
+  },
+  {
+    "customer_id": "ACC_121d41dccf64",
+    "account_number": "6560210068678236",
+    "metadata": {
+      "account_holder": "REKHA",
+      "bank": "Punjab National Bank",
+      "ifsc": "PUNB0014710",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_18965a439ff39e",
+      "EV_b5353e24f21fd3",
+      "EV_fc5e898748a6e6",
+      "EV_4ad0867beabe29",
+      "EV_4921a1876cc697",
+      "EV_334d095c1626e2",
+      "EV_9da2107a4505a9",
+      "EV_228ffa5ff1ae80"
+    ]
+  },
+  {
+    "customer_id": "ACC_217eff65dd4e",
+    "account_number": "68388838099",
+    "metadata": {
+      "account_holder": "Anita Shetty",
+      "bank": "State Bank of India",
+      "ifsc": "IBKL0NEFT01",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_93c7d300c439f2",
+      "EV_ce4a5667463fc7",
+      "EV_b68ba3f63cf72e",
+      "EV_b4d598c783f639",
+      "EV_5da1c50d8f2df4",
+      "EV_3de1ce3879a023",
+      "EV_42743264d4156d",
+      "EV_29701ee77a3548"
+    ]
+  },
+  {
+    "customer_id": "ACC_b0d4a26fce4f",
+    "account_number": "700870937566",
+    "metadata": {
+      "account_holder": "MR. VIKRAM NIKHIL MALHOTRA",
+      "ifsc": "RATN0000176",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_43b2207ddf191e",
+      "EV_5aaf7a10f0ec33",
+      "EV_a1e1e45c73805e",
+      "EV_1c6c9d5f52efe1",
+      "EV_6fcacda673c1f8",
+      "EV_e7edf74c4081e9",
+      "EV_0f6e6f61146921",
+      "EV_45d3145a2c0139"
+    ]
+  },
+  {
+    "customer_id": "ACC_b92ce3a8b59f",
+    "account_number": "72615533841078",
+    "metadata": {
+      "account_holder": "M/S RITU SARITA MICR: 755750102",
+      "bank": "Bandhan Bank",
+      "ifsc": "BDBL0002211",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_7d9f8d845b62d0",
+      "EV_e48a0bc47de4e9",
+      "EV_076a66e888ecc4",
+      "EV_7206c6b6c2b96f",
+      "EV_c3f09726f4dc12",
+      "EV_40a0aaac5128de",
+      "EV_98e02f5a50e81f",
+      "EV_97c995c2974edf"
+    ]
+  },
+  {
+    "customer_id": "ACC_9dc3aaa01f05",
+    "account_number": "72735988647",
+    "metadata": {
+      "account_holder": "SWATI PANDEY",
+      "bank": "State Bank of India",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_d4d6b3f754901a",
+      "EV_14beb8491d01af",
+      "EV_64a56e6924e4cd",
+      "EV_10f01fec0e77b2",
+      "EV_4a4c7270959223",
+      "EV_8a29acca891c82",
+      "EV_bec00cf69dc8ec",
+      "EV_acc0040c296a12"
+    ]
+  },
+  {
+    "customer_id": "ACC_6574798e50a5",
+    "account_number": "74437247504910",
+    "metadata": {
+      "account_holder": "MAVOOR,MAVOOR",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_79eced92a6e031",
+      "EV_188333f6cec8d2",
+      "EV_b15426bfb78115",
+      "EV_4cb835af642c7f",
+      "EV_d2207bb72d5c5e",
+      "EV_f71cb9653654fe",
+      "EV_fb51f99eccabd6",
+      "EV_f7c1ea5b6cf8fb"
+    ]
+  },
+  {
+    "customer_id": "ACC_6a9d307cfe29",
+    "account_number": "74715157448",
+    "metadata": {
+      "account_holder": "Nitin : 0.00",
+      "bank": "State Bank of India",
+      "ifsc": "IDFB0010201",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_66250e37d6a946",
+      "EV_5468b7f8afedff",
+      "EV_d559616ef0e744",
+      "EV_dd14cd2cf308e6",
+      "EV_b0712fa63288a5",
+      "EV_2235c4c99885d9",
+      "EV_61f19b30c0fdd0",
+      "EV_305035b044c38b"
+    ]
+  },
+  {
+    "customer_id": "ACC_6d8c94e29573",
+    "account_number": "74818428274975",
+    "metadata": {
+      "account_holder": "MR. MANOJ",
+      "bank": "Bank of Baroda",
+      "ifsc": "BARB0BHAHAN"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_9fe6e15d75eb0e",
+      "EV_cfc9bb4e584d89",
+      "EV_c78ba866bf2873",
+      "EV_322f78ac4826d5",
+      "EV_55a642d37f2cfa",
+      "EV_c0c03ec103ca3e",
+      "EV_0390e96eedd46a",
+      "EV_bdd8ba504e0eab"
+    ]
+  },
+  {
+    "customer_id": "ACC_eed5cd338f92",
+    "account_number": "772342103350",
+    "metadata": {
+      "account_holder": "INSTRUM DEBIT CREDIT BALANCE",
+      "bank": "Indian Bank"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_ac167f516739ca",
+      "EV_e22e8dd33ebd94",
+      "EV_4351d35902d643",
+      "EV_b3632222431561",
+      "EV_ce043cf1a0a034",
+      "EV_1a57c1ad09a47d",
+      "EV_a236e5ec9b9922",
+      "EV_47c924c938ea47"
+    ]
+  },
+  {
+    "customer_id": "ACC_8d43448fecdb",
+    "account_number": "7979137025",
+    "metadata": {
+      "account_holder": "Vikram Joshi Period : 25-01-2025 To 27-11-2025",
+      "bank": "Kotak Mahindra Bank",
+      "ifsc": "KKBK0005190",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_5a885707af1f7f",
+      "EV_a743f60da22f3b",
+      "EV_edfd11de49a2e0",
+      "EV_e60e6fed8a5f21",
+      "EV_4f50cb8bcdfec9",
+      "EV_1f743b1fc019f0",
+      "EV_f5755b0688aad5",
+      "EV_75df6e227a16b9"
+    ]
+  },
+  {
+    "customer_id": "ACC_0b63e817cbab",
+    "account_number": "79895082327702",
+    "metadata": {
+      "account_holder": "TRAN-DATE TRAN_PARTICULAR CHQ-NUM WITHDRAWAL DEPOSIT BALANCE",
+      "bank": "Axis Bank",
+      "ifsc": "DCBL0000378",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_f392edcf226900",
+      "EV_193429cf6543a4",
+      "EV_3b7905996fc5cd",
+      "EV_31c5cc14329dbf",
+      "EV_a38186d3687a8e",
+      "EV_57ce7fc54e93c6",
+      "EV_6460fab345955d",
+      "EV_37d39c2e6f066d"
+    ]
+  },
+  {
+    "customer_id": "ACC_66696d4904f9",
+    "account_number": "80417906569",
+    "metadata": {
+      "account_holder": "YASH",
+      "bank": "State Bank of India",
+      "ifsc": "SBIN0060087",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_ec7818fad47091",
+      "EV_488ddfe11687a0",
+      "EV_60c805c43e83b9",
+      "EV_5f08beef2a113f",
+      "EV_a377b339624e12",
+      "EV_898aecd1a33fcb",
+      "EV_b525b0b174ca86",
+      "EV_518bc825c80837"
+    ]
+  },
+  {
+    "customer_id": "ACC_05a6f7ec7da7",
+    "account_number": "80708265377",
+    "metadata": {
+      "account_holder": "Nitin : 0.00",
+      "bank": "State Bank of India",
+      "ifsc": "BDBL0001000",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_aa73bbf2863eb6",
+      "EV_d630d73b071444",
+      "EV_535b3384ab94e1",
+      "EV_c87530b79ba675",
+      "EV_4b5dacaa0d368e",
+      "EV_764a55f636df9b",
+      "EV_5fdb67782d18ae",
+      "EV_1a2c89fe19a897"
+    ]
+  },
+  {
+    "customer_id": "ACC_6a0f8e5ed973",
+    "account_number": "81271119214",
+    "metadata": {
+      "account_holder": "SANJAY SHETTY",
+      "bank": "State Bank of India",
+      "ifsc": "ALLA0212547",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "multiple reversals",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_f134891cb0d77d",
+      "EV_2623325f5155d6",
+      "EV_accd017ce08ba4",
+      "EV_ed4f10195fcb4b",
+      "EV_8455fe05b2ed0b",
+      "EV_cb0ace574c180e",
+      "EV_e2ba952f6780ae",
+      "EV_f4c13dafec4a44"
+    ]
+  },
+  {
+    "customer_id": "ACC_d51c8595c0fa",
+    "account_number": "81954044160",
+    "metadata": {
+      "account_holder": "2nd Cross, Lashkar Mohalla Nominee Name ANIL KAPOOR",
+      "bank": "State Bank of India",
+      "ifsc": "SBIN0040054",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_dcdf8b1d5fea34",
+      "EV_1ee20001b74a44",
+      "EV_c38177669922c9",
+      "EV_2d9fab011f207e",
+      "EV_765de847115308",
+      "EV_2d6fc7ce671b95",
+      "EV_9441a81f296ecf",
+      "EV_81652272180400"
+    ]
+  },
+  {
+    "customer_id": "ACC_1669e73a7b00",
+    "account_number": "839178205347",
+    "metadata": {
+      "account_holder": "MR. SURESH SHETTY",
+      "bank": "IndusInd Bank",
+      "ifsc": "RATN0000176",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_facf533edc7008",
+      "EV_6d0a0ec03de0ea",
+      "EV_294a3be59d9961",
+      "EV_a868f476d58138",
+      "EV_d9511d3035ab39",
+      "EV_028bdbd1d4214c",
+      "EV_de515491e979c3",
+      "EV_85d5b564f4b8ea"
+    ]
+  },
+  {
+    "customer_id": "ACC_a3098ef26b00",
+    "account_number": "8442098066767557",
+    "metadata": {
+      "account_holder": "Mr Rajesh Aditya Kapoor",
+      "bank": "Kotak Mahindra Bank",
+      "ifsc": "CNRB0000817"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "multiple reversals",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_62176342773885",
+      "EV_32a4e3f24667d4",
+      "EV_10d60cbf9c07cc",
+      "EV_23703213d066cb",
+      "EV_55b5db8c0008e5",
+      "EV_9304a9a5f32c32",
+      "EV_543d4348b3d26a",
+      "EV_0b6eca1157d78f"
+    ]
+  },
+  {
+    "customer_id": "ACC_005252f86473",
+    "account_number": "85393777281",
+    "metadata": {
+      "account_holder": "TANVI PILLAI",
+      "bank": "State Bank of India",
+      "ifsc": "RATN0000999",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_08088a9e8c5e00",
+      "EV_ec01313c1a9a6a",
+      "EV_846a3b0dfc13af",
+      "EV_185bd23a25a52a",
+      "EV_e335c76c5e8ad5",
+      "EV_5a9cbd452f2dac",
+      "EV_df272d4bbb413d",
+      "EV_a2e87785b87b31"
+    ]
+  },
+  {
+    "customer_id": "ACC_e05c6d497c3c",
+    "account_number": "8642666611469255",
+    "metadata": {
+      "account_holder": "Transaction Details Page 1 of 8",
+      "bank": "IndusInd Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Medium Risk",
+    "supporting_evidence": [
+      "EV_4bb49cfeb56830",
+      "EV_7f33bbed57d62a",
+      "EV_d78544b762fd8f",
+      "EV_d67df12b2e86a0",
+      "EV_ec29dd87da3967",
+      "EV_657fd0c762a7c6",
+      "EV_531d53ad896995",
+      "EV_568a45e09cefe1"
+    ]
+  },
+  {
+    "customer_id": "ACC_44d700dcbf67",
+    "account_number": "86968597794425",
+    "metadata": {
+      "account_holder": "SUMIT PATEL Branch IFSC Code : ESMF0001904",
+      "ifsc": "ESMF0001904",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_30d83a7736c44a",
+      "EV_b41e62c8d26317",
+      "EV_fbac70fa8e216a",
+      "EV_ab7829f6638ee3",
+      "EV_347aac6f386769",
+      "EV_12b0ee64740c4f",
+      "EV_9fbaceeee97272",
+      "EV_031f862f5083dc"
+    ]
+  },
+  {
+    "customer_id": "ACC_cc1c01a33805",
+    "account_number": "8743200949",
+    "metadata": {
+      "account_holder": "SAUSAR_SAUSAR(MADHYA PRADESH)",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "no strong risk indicators in extracted transactions"
+    ],
+    "risk_category": "Very Low Risk",
+    "supporting_evidence": [
+      "EV_646667c1bfa566",
+      "EV_6b0d5b88b8a476",
+      "EV_bbaafaa2ec7b1d",
+      "EV_408da33c8b0cf3",
+      "EV_92bdbfeef3b257",
+      "EV_2541678fa29852",
+      "EV_68044b02bfa70e",
+      "EV_e18b88b9a80647"
+    ]
+  },
+  {
+    "customer_id": "ACC_b0acefbea61d",
+    "account_number": "87889641689",
+    "metadata": {
+      "account_holder": "JOINT HOLDER :",
+      "bank": "IDFC FIRST Bank",
+      "ifsc": "ICIC0000011",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "multiple reversals",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_023deffb3ce39f",
+      "EV_3201526d775519",
+      "EV_b19da6b7738540",
+      "EV_f12fdfb94ee466",
+      "EV_cde5e67027001d",
+      "EV_5e884c428cada8",
+      "EV_09d93a81a68ae7",
+      "EV_32c0dad5651fa2"
+    ]
+  },
+  {
+    "customer_id": "ACC_110088467944",
+    "account_number": "882358884158137",
+    "metadata": {
+      "account_holder": "Date 19-12-2025",
+      "bank": "Bank of India",
+      "ifsc": "BKID0005781",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_67b853b9afe7e1",
+      "EV_47b2d2c931f187",
+      "EV_a2813681e724f8",
+      "EV_ea1c36034f5186",
+      "EV_51383b800a9f6b",
+      "EV_a256c0f9f8bbb7",
+      "EV_8784b544cded3a",
+      "EV_ccc82bc9cac510"
+    ]
+  },
+  {
+    "customer_id": "ACC_fa10424957ec",
+    "account_number": "8855611820",
+    "metadata": {
+      "account_holder": "PRADEEP YASH GHOSH Period : 29-06-2021 To 27-11-2025",
+      "bank": "ICICI Bank",
+      "ifsc": "KKBK0005195",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_81d2556864db67",
+      "EV_42609481db21ee",
+      "EV_b048f9f93ab975",
+      "EV_9fa1757f985d86",
+      "EV_f35b93f1bea43b",
+      "EV_da6d8e6849bb5c",
+      "EV_885f1505b0a173",
+      "EV_3735ea93ec3335"
+    ]
+  },
+  {
+    "customer_id": "ACC_9d60b7adfb0b",
+    "account_number": "913628731289",
+    "metadata": {
+      "account_holder": "GAURAV KUNAL GHOSH",
+      "bank": "Axis Bank"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_fcb932c699777f",
+      "EV_dc11f14efa04bd",
+      "EV_bc994d0abbf0ec",
+      "EV_bcff09c531410e",
+      "EV_9e8372b5b62e05",
+      "EV_5edfe1110c6ae2",
+      "EV_44ddaf2e904f83",
+      "EV_35caf755544285"
+    ]
+  },
+  {
+    "customer_id": "ACC_624a8215d5fb",
+    "account_number": "91612657813",
+    "metadata": {
+      "account_holder": "PRIYA CHAUHAN",
+      "bank": "State Bank of India",
+      "ifsc": "ICIC0000104",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_e2ebb2e876a06b",
+      "EV_4cdf03bc3cae81",
+      "EV_dcef529ff7734c",
+      "EV_f73f595d6bdf1c",
+      "EV_4348a513081a3b",
+      "EV_57e3223f4aa2e8",
+      "EV_6970d48fd900eb",
+      "EV_ebbba04ec73f56"
+    ]
+  },
+  {
+    "customer_id": "ACC_82ce4660a613",
+    "account_number": "92460899397",
+    "metadata": {
+      "account_holder": "RADHA PILLAI",
+      "bank": "State Bank of India",
+      "ifsc": "SBIN0020413",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "large cash-out relative to credits",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "Critical Risk",
+    "supporting_evidence": [
+      "EV_c6d1bbdce9f2f0",
+      "EV_beddf07235db32",
+      "EV_35ec4a76cd1921",
+      "EV_92ff93958d7a36",
+      "EV_6fba4b9a7702d0",
+      "EV_7edb0dfd86ce39",
+      "EV_16f7aef9ece368",
+      "EV_2c3acd422a4f92"
+    ]
+  },
+  {
+    "customer_id": "ACC_207a0104291c",
+    "account_number": "9256443494527112",
+    "metadata": {
+      "account_holder": "GAEKWAD DEVANSHU JITENDRABHAI",
+      "bank": "Punjab National Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Low Risk",
+    "supporting_evidence": [
+      "EV_5f9fc1a2c720ef",
+      "EV_f48ea1a6c29756",
+      "EV_9f8c8b036e9d97",
+      "EV_1d0307bc472684",
+      "EV_7ad0587b58641c",
+      "EV_76910ca5bd8414",
+      "EV_1872b9f39c83ae",
+      "EV_b397b9e442a29c"
+    ]
+  },
+  {
+    "customer_id": "ACC_5115d7deeeed",
+    "account_number": "92883409730",
+    "metadata": {
+      "account_holder": "STATEMENT FOR 07-May-2025 TO 23-Jul-2025",
+      "bank": "IDFC FIRST Bank",
+      "ifsc": "BARB0RANAGH",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_508c3656debafa",
+      "EV_13b63c13853af8",
+      "EV_60983559ed7e5b",
+      "EV_3a39b106c80f36",
+      "EV_23c5078b186446",
+      "EV_f92b716bc72564",
+      "EV_e9921a73092620",
+      "EV_c28b2b8440f6ec"
+    ]
+  },
+  {
+    "customer_id": "ACC_e127afcae6ba",
+    "account_number": "95773447976527",
+    "metadata": {
+      "account_holder": "M/S SUNITA MICR: 400750012",
+      "bank": "Bandhan Bank",
+      "ifsc": "BARB0NAINIX",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_02fa962808fe26",
+      "EV_75906ffdce8ddc",
+      "EV_7c0746475cc2fe",
+      "EV_983aad1914c281",
+      "EV_8d2ff4832e70b0",
+      "EV_bff728c7725e2d",
+      "EV_4e20674ebe5716",
+      "EV_2bbc58cef529c4"
+    ]
+  },
+  {
+    "customer_id": "ACC_feda4cd5fdfc",
+    "account_number": "958533930537174",
+    "metadata": {
+      "account_holder": "- SNEHA MALHOTRA",
+      "bank": "HDFC Bank",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_715930526acadf",
+      "EV_25ad575f0db1bb",
+      "EV_6d3663eba6df01",
+      "EV_a0e0159e78fa00",
+      "EV_1eb518c0679bfc",
+      "EV_a6cb708031e7ad",
+      "EV_635372d76a25d6",
+      "EV_6507a8cb90b4ae"
+    ]
+  },
+  {
+    "customer_id": "ACC_90ef96a8f98a",
+    "account_number": "9810055876",
+    "metadata": {
+      "account_holder": "MRS REKHA",
+      "bank": "Kotak Mahindra Bank",
+      "ifsc": "BARB0TUMKUR",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "digital-intensive activity",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_6d9180a020f596",
+      "EV_1d83f4dd64b1d3",
+      "EV_9a435b7fc246a3",
+      "EV_5c56079e216868",
+      "EV_d3adde10330d4c",
+      "EV_82bf7121cb9348",
+      "EV_1eb9755b3066b2",
+      "EV_c7825616c755eb"
+    ]
+  },
+  {
+    "customer_id": "ACC_a7875b19dd94",
+    "account_number": "987109318802197",
+    "metadata": {
+      "account_holder": "Transaction Details Page 1 of 3",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Low Risk",
+    "supporting_evidence": [
+      "EV_273efbf1f4233a",
+      "EV_f7a2338ab164fe",
+      "EV_4c489fa02857ff",
+      "EV_e8b80148af106b",
+      "EV_97c0aeeb93df97",
+      "EV_e7beba4fa221cf",
+      "EV_ff8c8e36fd9f92",
+      "EV_6270d85be909bc"
+    ]
+  },
+  {
+    "customer_id": "ACC_e803ebb533fe",
+    "account_number": "99572217148131",
+    "metadata": {
+      "account_holder": "M/S GOLDEN RETAIL MICR: 825750002",
+      "bank": "Bandhan Bank",
+      "ifsc": "ASBL0000034",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_0ed82dbab5e127",
+      "EV_58493311a89a1b",
+      "EV_8528ecd1751282",
+      "EV_0ecce9d144b514",
+      "EV_169806ec1d68bf",
+      "EV_4e24b7014da30c",
+      "EV_d51fc086e621e4",
+      "EV_3b7c8b2f4a4415"
+    ]
+  },
+  {
+    "customer_id": "ACC_c53bcc1022bb",
+    "account_number": "99853120144",
+    "metadata": {
+      "account_holder": "QAB Required 5000.000 QAB Maintained 48.600",
+      "bank": "Bank of Maharashtra",
+      "ifsc": "MAHB0001701",
+      "currency": "INR"
+    },
+    "behaviour_summary": [
+      "rapid balance depletion / high volatility"
+    ],
+    "risk_category": "Low Risk",
+    "supporting_evidence": [
+      "EV_5e74c1e20b6c10",
+      "EV_287d97e9ee55d5",
+      "EV_0bce961ef361bf",
+      "EV_ddc584b26b47d4",
+      "EV_6b3091203dc492",
+      "EV_3aacce6c8c8f28",
+      "EV_32ac5c88f82538",
+      "EV_1bfd140f6163a7"
+    ]
+  },
+  {
+    "customer_id": "ACC_25ba44ec3b39",
+    "account_number": "UNKNOWN",
+    "metadata": {
+      "account_holder": "ANJALI RAM",
+      "ifsc": "UCBA0000882"
+    },
+    "behaviour_summary": [
+      "high transaction volume",
+      "rapid balance depletion / high volatility",
+      "diverse counterparties"
+    ],
+    "risk_category": "High Risk",
+    "supporting_evidence": [
+      "EV_abd5004cdefcc8",
+      "EV_2e229be16d1ed8",
+      "EV_039f5396a62297",
+      "EV_54de94a82a3c8b",
+      "EV_124b0868461b3b",
+      "EV_1e4fafe30c8948",
+      "EV_669a576a5b7ddc",
+      "EV_b5b5633d857b1d"
+    ]
+  }
+]

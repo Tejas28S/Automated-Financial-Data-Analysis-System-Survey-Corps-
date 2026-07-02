@@ -21,6 +21,7 @@ from typing import Any, Dict, List
 import pandas as pd
 
 logger = logging.getLogger(__name__)
+SOURCE_ACCOUNT_ID_COLUMN = "source_account_id"
 
 
 def generate_extraction_report(
@@ -47,8 +48,11 @@ def generate_extraction_report(
         md = flagged_df[flagged_df.get("flag_reason") == "balance_mismatch"]["mismatch_diagnosis"]
         mismatch_diag = dict(Counter(v for v in md if str(v).strip()))
 
-    top_flagged = (Counter(flagged_df["Account_ID"]).most_common(5)
-                   if "Account_ID" in flagged_df.columns and n_flagged else [])
+    flagged_account_col = (
+        SOURCE_ACCOUNT_ID_COLUMN if SOURCE_ACCOUNT_ID_COLUMN in flagged_df.columns else "Account_ID"
+    )
+    top_flagged = (Counter(flagged_df[flagged_account_col]).most_common(5)
+                   if flagged_account_col in flagged_df.columns and n_flagged else [])
 
     graded = [f for f in files if f.get("status") != "FAILED"]
     zero_row = [f.get("file") for f in graded if f.get("rows_standardised", 0) == 0]
@@ -142,6 +146,7 @@ def _write_ledger(files: List[Dict[str, Any]], path) -> None:
             zr_status, zr_reason = "ok", ""
         ledger.append({
             "file_name": f.get("file"),
+            "source_account_id": f.get("source_account_id", ""),
             "route": f.get("route"),
             "parser_tier": f.get("tier"),
             "fallback_method_used": f.get("fallback_method_used", ""),

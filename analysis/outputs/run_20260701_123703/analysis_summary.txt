@@ -1,0 +1,70 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260701_123703
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260701_123703
+Run timestamp: 2026-07-01T07:07:13.846310+00:00
+Elapsed seconds: 4.32
+
+Input Contract
+--------------
+Clean rows: 1306
+Flagged rows: 22
+Duplicate rows: 29
+Metadata clean rows: 1335
+Summary-report clean rows: 1335
+Count reconciliation: ok_reconciled_by_duplicates
+Reconciliation detail: Metadata clean_rows includes duplicate rows; final clean CSV excludes duplicates stored separately.
+
+Analysis Scope
+--------------
+Total stored rows: 1357
+Eligible detection rows: 1047
+Excluded rows: 310
+Accounts: 3
+Graph nodes: 407
+Graph edges: 491
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 1047
+Resolved counterparty rows: 491
+Resolution rate percent: 46.895893027698186
+LLM calls made: 0
+
+Finding Counts
+--------------
+1_duplicate_detection_cross_check: 110
+2_failed_reversed_transaction_detection: 0
+3_balance_consistency_validation: 260
+4_round_trip_detection: 0
+5_transit_pass_through_detection: 0
+6_accumulation_account_detection: 0
+7_structuring_smurfing_detection: 4
+8_money_flow_graph_construction: 1
+9_circular_flow_multi_hop_cycle_detection: 0
+10_money_trail_tracing: 0
+11_credit_to_cash_out_chains: 0
+12_cross_statement_links: 0
+13_high_throughput_accounts: 0
+14_holding_accounts: 0
+15_hub_ranking: 0
+16_internal_flow_hub: 0
+17_low_value_account_testing: 0
+18_reversal_clusters: 0
+19_round_value_debit_patterns: 2
+20_shared_upi_identifiers: 0
+21_suspicious_account_ranking: 2
+22_llm_investigated_anomalies: 1
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 281
+duplicate: 29
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+acct_003: total_score=836.1704, distinct_patterns=5, total_findings=365
+acct_001: total_score=418.3, distinct_patterns=4, total_findings=13
+acct_002: total_score=100.5, distinct_patterns=1, total_findings=1

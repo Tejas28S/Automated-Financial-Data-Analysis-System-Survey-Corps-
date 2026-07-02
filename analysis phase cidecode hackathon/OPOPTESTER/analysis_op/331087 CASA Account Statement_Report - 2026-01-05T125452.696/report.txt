@@ -1,0 +1,2149 @@
+======================================================================
+  331087 CASA Account Statement_Report - 2026-01-05T125452.696 — Analysis Summary
+======================================================================
+
+Fraud Transactions:
+----------------------------------------
+  17243920250327100400692370
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 100000.0
+    Direction : credit
+    Narration : NEFT Cr-N086250145186012-BDBL0001000-MsS OLYMPIA GYM-
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20240929115453354016
+    Account   : 110200939775
+    Date      : 2024-09-29
+    Amount    : 10.0
+    Direction : credit
+    Narration : UPI/CR/427317305531/ADITYA ME/PUNB/**46015@ptyes/Sent fro//PTM6f627e61c8e44b9583236964b054357a/29/09/2024 11:54:53
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20240930074425418488
+    Account   : 110200939775
+    Date      : 2024-09-30
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/427442464666/ADITYA ME/PUNB/**46015@ptyes/Payment //YBLab69ff3f889442d286c94273698f1106/30/09/2024 07:44:25
+    Pattern   : High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241008201506743924
+    Account   : 110200939775
+    Date      : 2024-10-08
+    Amount    : 19.0
+    Direction : debit
+    Narration : UPI/DR/464869394584/Jio Recha/YESB/**anita@ybl/Payment //YBLc7468692bae54d2c9d7df6025b36e00c/08/10/2024 20:15:06
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241009123537969066
+    Account   : 110200939775
+    Date      : 2024-10-09
+    Amount    : 310.0
+    Direction : debit
+    Narration : UPI/DR/428310529034/OSWAL GAS/YESB/**aishw@paytm/Payment //YBLce26576585c74bbda663c8eec4296d4d/09/10/2024 12:35:37
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241009134042064597
+    Account   : 110200939775
+    Date      : 2024-10-09
+    Amount    : 35.0
+    Direction : debit
+    Narration : UPI/DR/428344721360/Suresh ch/YESB/**priya@paytm/Payment //YBL0429a05ace9e43449ddd25407bc0ff99/09/10/2024 13:40:42
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241009151848702549
+    Account   : 110200939775
+    Date      : 2024-10-09
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/428363766940/BHURA LAL/YESB/**swati@paytm/Payment //YBLd58327d9c3b6430fab3a1cfcfff5d674/09/10/2024 15:18:48
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241009163219856298
+    Account   : 110200939775
+    Date      : 2024-10-09
+    Amount    : 20.0
+    Direction : debit
+    Narration : UPI/DR/464942451217/JAKIR HUS/YESB/**49845@ybl/Payment //YBLa8c228124b1c4259884e8d2cd23c553f/09/10/2024 16:32:19
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241009164958925286
+    Account   : 110200939775
+    Date      : 2024-10-09
+    Amount    : 15.0
+    Direction : debit
+    Narration : UPI/DR/464974418661/JAKIR HUS/YESB/**49845@ybl/Payment //YBLb3eeed4443b8434bbe75bc339bb9d73c/09/10/2024 16:49:58
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241009174505581789
+    Account   : 110200939775
+    Date      : 2024-10-09
+    Amount    : 15.0
+    Direction : debit
+    Narration : UPI/DR/464915405320/JAKIR HUS/YESB/**49845@ybl/Payment //YBL279f0e5050674ccdb85a5a41849e57d3/09/10/2024 17:45:05
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241009174607656927
+    Account   : 110200939775
+    Date      : 2024-10-09
+    Amount    : 30.0
+    Direction : debit
+    Narration : UPI/DR/464922398135/PHOOL  SA/YESB/**43641@ybl/Payment //YBL317f427d194e480592d56fc7d4f7f5f8/09/10/2024 17:46:07
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241009180655188440
+    Account   : 110200939775
+    Date      : 2024-10-09
+    Amount    : 900.0
+    Direction : debit
+    Narration : UPI/DR/464931651378/SHYOJIRAM/YESB/**54027@ybl/Payment //YBLb31599a7b6874da98d68d3f84e085f29/09/10/2024 18:06:55
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241009180830308634
+    Account   : 110200939775
+    Date      : 2024-10-09
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/464954840442/JAKIR HUS/YESB/**49845@ybl/Payment //YBLf0b7a6cabc714149b0f5c98605311280/09/10/2024 18:08:30
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018092106489705
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 1.0
+    Direction : debit
+    Narration : UPI/DR/465889387834/RAKESH ME/BARB/**rajes@ybl/Payment //YBL48880fb6b02e47d1a7d302adc4a32177/18/10/2024 09:21:06
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018141326135759
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 15000.0
+    Direction : credit
+    Narration : UPI/CR/520620645264/RAKESH  M/YESB/**09400@ybl/Payment //YBL1c2abdb55a7d4c14b2f92caa180e985c/18/10/2024 14:13:26
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018141638024750
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 15000.0
+    Direction : debit
+    Narration : ATM Cash-4229L001-CANARABANKCHAKSURJIN-18/10/24 14:16:38/0024
+    Pattern   : Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern
+
+  20241018143654380428
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 2500.0
+    Direction : credit
+    Narration : UPI/CR/404699873806/RAKESH  M/YESB/**09400@ybl/Payment //YBLeb4aaf1e77d5443ab8b7201036c8452c/18/10/2024 14:36:54
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018151448316588
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 20.0
+    Direction : debit
+    Narration : UPI/DR/429264892722/Ram Kalya/YESB/**yvzku@ptys/Payment //YBLf3aa546379a7446b8aebad7379ca03f7/18/10/2024 15:14:48
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018154036612702
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 1000.0
+    Direction : debit
+    Narration : UPI/DR/429205317262/Chandel G/UTIB/**29354@okbizaxis/Payment //YBL43e7c8a51a134c38b0ae90f3b2050c16/18/10/2024 15:40:36
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018162035679734
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 150.0
+    Direction : debit
+    Narration : UPI/DR/465889300190/SATESH KU/YESB/**09489@ybl/Payment //YBLc9e049f6e9e04b17bbba0d5d6322861d/18/10/2024 16:20:35
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018163301352680
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 40.0
+    Direction : debit
+    Narration : UPI/DR/465893677413/VipindraK/YESB/**09034@ybl/Payment //YBL286f57d6ee84462f9122fe63364b59f2/18/10/2024 16:33:01
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018163629539904
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/465867138562/PHOOL  SA/YESB/**43641@ybl/Payment //YBL9ccda3da4d814b1185bc38286a3e3ffc/18/10/2024 16:36:29
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018164557061773
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 60.0
+    Direction : debit
+    Narration : UPI/DR/465818996805/ADITYA LA/YESB/**58405@ybl/Payment //YBLaed5c7c4e087480ca46ed70f6a9e2422/18/10/2024 16:45:57
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018164722141268
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 20.0
+    Direction : debit
+    Narration : UPI/DR/465800543926/ADITYA LA/YESB/**17408@ybl/Payment //YBL8f8c5ef14d5b44858b5e9096389c25fb/18/10/2024 16:47:22
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018184903408508
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/429233625981/AMAR MILK/CNRB/**66336@cnrb/USFZW//PTMf3a24e91113b4403a1e234aff35aea74/18/10/2024 18:49:03
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018193805256878
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 352.0
+    Direction : debit
+    Narration : UPI/DR/465872024191/Airtel Re/YESB/**sunit@ybl/Payment //YBL049d40796d154fbf90323d3f454fe788/18/10/2024 19:38:05
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018195113243554
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 65.0
+    Direction : debit
+    Narration : UPI/DR/465837283828/ADITYA ME/PUNB/**46015@axl/Sent fro//PTM39f00ee91ec544c6a7d285ac81b1acd4/18/10/2024 19:51:13
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018211056487452
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 1000.0
+    Direction : credit
+    Narration : UPI/CR/465877361794/KEDAR/BARB/**69203@ybl/Payment //YBL240b3af70e3242658337c3d225c73205/18/10/2024 21:10:56
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018215138486525
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 110.0
+    Direction : debit
+    Narration : UPI/DR/429219982142/SURESH GU/YESB/**z47ht@ptys/Payment //YBLd53ab0e487744547b768ce161f18fb6c/18/10/2024 21:51:38
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241018215449618563
+    Account   : 110200939775
+    Date      : 2024-10-18
+    Amount    : 890.0
+    Direction : debit
+    Narration : UPI/DR/429298480862/JAGDAMBAF/PPIW/**l4jq5@mbk/Payment //YBL5016a796ff79460fb1742d864d8381ca/18/10/2024 21:54:49
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241019092308586300
+    Account   : 110200939775
+    Date      : 2024-10-19
+    Amount    : 40.0
+    Direction : debit
+    Narration : UPI/DR/429344372488/DEEPAK JA/YESB/**vpn2s@ptys/Payment //YBLe40158ef2b3e4055868b6dcb21382e9f/19/10/2024 09:23:08
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241019102646596426
+    Account   : 110200939775
+    Date      : 2024-10-19
+    Amount    : 30.0
+    Direction : debit
+    Narration : UPI/DR/429377104399/Mr BABU L/ICIC/**43795@icici/Pay To M//YBLb801de0ec4b542268e2fd6e5a9bc2f5d/19/10/2024 10:26:46
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241019130744516237
+    Account   : 110200939775
+    Date      : 2024-10-19
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/465925495149/PRADEEP K/BARB/**07068@ybl/Payment //YBL039217015b904cf098a0f138e479705b/19/10/2024 13:07:44
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020091954578665
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/429470337959/Tesni/YESB/**12138@ypbiz/Pay to f//YBLdb49eb55274140aa8d7f63a60ba48170/20/10/2024 09:19:54
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020122437395280
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 90.0
+    Direction : debit
+    Narration : UPI/DR/429430292743/BHURA LAL/YESB/**swati@paytm/Payment //YBLb31e1e798471473a95378579a64f7ef1/20/10/2024 12:24:37
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020125616212058
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 75.0
+    Direction : debit
+    Narration : UPI/DR/429465236020/BHURA LAL/YESB/**swati@paytm/Payment //YBL1dc515079bf4446c8b80e6b9e7e5f90b/20/10/2024 12:56:16
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020130806887786
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 200.0
+    Direction : debit
+    Narration : UPI/DR/429448072880/U S GARME/CNRB/**00380@cnrb/09ZLI//PTM2c09e8eb84d74ea9973aeff63012fec6/20/10/2024 13:08:06
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020131744436866
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 1500.0
+    Direction : credit
+    Narration : UPI/CR/848218954902/JITENDRA /SBIN/**09595@ybl/Payment //YBLc4d283a3305a44849958bf7e0f64053e/20/10/2024 13:17:44
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020131920526753
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 1000.0
+    Direction : debit
+    Narration : UPI/DR/429448119555/WARSHI FO/CNRB/**28257@cnrb/5SP54//PTM5e417c46ec7e403cae65af42f2651a73/20/10/2024 13:19:20
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020160039887805
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 210.0
+    Direction : debit
+    Narration : UPI/DR/429404798642/SHRI PARA/YESB/**ritu@paytm/Payment //YBLe7043619ead348c3b919ca71d6742eb4/20/10/2024 16:00:39
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020163300535295
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 60.0
+    Direction : debit
+    Narration : UPI/DR/429440918912/BUNTY JAN/YESB/**wp7e4@ptys/Payment //YBLf2b7ae2d17df404ebac288ab60621ab6/20/10/2024 16:33:00
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020172327369796
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/466035049807/SANTA RAM/SBIN/**43257@axl/Payment //YBL9e4c6b35e4914b1fb474ae4931f3d247/20/10/2024 17:23:27
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020174048454034
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 80.0
+    Direction : debit
+    Narration : UPI/DR/429439913204/YOGENDER /BARB/**60754@ybl/Payment //YBL9748b8662efe444a8d4d966fbdcfab74/20/10/2024 17:40:48
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020174505732500
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/429456005434/YOGENDER /BARB/**60754@ybl/Payment //YBL392843c6050343ada0ed69cb26292e2e/20/10/2024 17:45:05
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020190140273775
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 90.0
+    Direction : debit
+    Narration : UPI/DR/466048371164/RAKESH  M/YESB/**09400@ybl/Payment //YBLf463aa05d01f4ebc84eac3cb527fb750/20/10/2024 19:01:40
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241020190345428753
+    Account   : 110200939775
+    Date      : 2024-10-20
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/429451559965/VINAY SIN/CNRB/**35517@cnrb/RY268//PTMbe2ed74902944e948e32a780c5060173/20/10/2024 19:03:45
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241021140559540464
+    Account   : 110200939775
+    Date      : 2024-10-21
+    Amount    : 2.0
+    Direction : debit
+    Narration : UPI/DR/429545182517/OMPRAKASH/UTIB/**58058@okbizaxis/Payment //YBL8bf45a673d3c448ab50475e55f55a6eb/21/10/2024 14:05:59
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241022153053032609
+    Account   : 110200939775
+    Date      : 2024-10-22
+    Amount    : 17200.0
+    Direction : credit
+    Narration : UPI/CR/261028492721/RAKESH  M/YESB/**09400@ybl/Payment //YBLe35d9f23f24a4e9ea311432cd9ad95b7/22/10/2024 15:30:53
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241022160549756975
+    Account   : 110200939775
+    Date      : 2024-10-22
+    Amount    : 55.0
+    Direction : debit
+    Narration : UPI/DR/467125608067/KESHANTA /CNRB/**905-2@axl/Payment //YBLbcf4b8d1116544c58b494cced0311aef/22/10/2024 16:05:49
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241022170132749997
+    Account   : 110200939775
+    Date      : 2024-10-22
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/631771716555/BHURA LAL/YESB/**swati@paytm/Payment //YBLf2131af107eb463f84a45e42b4692376/22/10/2024 17:01:32
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241022200014248672
+    Account   : 110200939775
+    Date      : 2024-10-22
+    Amount    : 90.0
+    Direction : debit
+    Narration : UPI/DR/429663932285/SURJEET  /CNRB/**74156@cnrb/M4t8181//PTM6edf28ddaabb4303a72d6542331fa8ce/22/10/2024 20:00:14
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241023124311169201
+    Account   : 110200939775
+    Date      : 2024-10-23
+    Amount    : 17000.0
+    Direction : debit
+    Narration : UPI/DR/802078155686/RAKESH  M/YESB/**09400@ybl/Payment //YBLeef79cbff7204e25955cef886fec5798/23/10/2024 12:43:11
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241023132830849838
+    Account   : 110200939775
+    Date      : 2024-10-23
+    Amount    : 1100.0
+    Direction : credit
+    Narration : UPI/CR/523194834016/LACHHAMA /PUNB/**70515@ybl/Payment //YBLc4bcfc0769194b76b5c6600f9019d0e4/23/10/2024 13:28:30
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241023133348166727
+    Account   : 110200939775
+    Date      : 2024-10-23
+    Amount    : 500.0
+    Direction : debit
+    Narration : UPI/DR/398164161230/SHRI PARA/YESB/**c36ob@ptys/Payment //YBL763fc70bc5a947b2a5d945441611a5e9/23/10/2024 13:33:48
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241023140502975553
+    Account   : 110200939775
+    Date      : 2024-10-23
+    Amount    : 500.0
+    Direction : credit
+    Narration : UPI/CR/752336338238/LACHHAMA /PUNB/**70515@ybl/Payment //YBL3a338cfa20d6433982ff45261ec0bf58/23/10/2024 14:05:02
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241023140524995307
+    Account   : 110200939775
+    Date      : 2024-10-23
+    Amount    : 1090.0
+    Direction : debit
+    Narration : UPI/DR/594870745939/KRISHANA /BARB/**28413@barodampay/UPI//YBLc852d93c215b4d22ae7623c1e462d2e7/23/10/2024 14:05:24
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024091434022567
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 15.0
+    Direction : debit
+    Narration : UPI/DR/321240442132/CHHOTULAL/YESB/**44402@ybl/Payment //YBL680017bc3dd540c7ab99e24f56f8a059/24/10/2024 09:14:34
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024151549184842
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 4000.0
+    Direction : credit
+    Narration : UPI/CR/454466078523/RAKESH  M/YESB/**09400@ybl/Payment //YBLff0ae8bfcf2e49eba5101e5d1d3ce2df/24/10/2024 15:15:49
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024153155981643
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 470.0
+    Direction : debit
+    Narration : UPI/DR/056802187455/KAMLESH K/YESB/**haris@paytm/Payment //YBL93e3e633366548809384d6efa8a10bbd/24/10/2024 15:31:55
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024153644225964
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 60.0
+    Direction : debit
+    Narration : UPI/DR/603652873161/Babu Singh/YESB/**jtn8u@ptys/Payment //YBL7abafdaaf0894b65b2ead425f703c13a/24/10/2024 15:36:44
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024160850877594
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 1500.0
+    Direction : debit
+    Narration : UPI/DR/668741233526/JAGDAMBAF/PPIW/**vj6vj@mbk/Payment //YBL9630e6cfbf9645eab3f65211dacbc891/24/10/2024 16:08:50
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024161259098321
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/863502099673/BHURA LAL/YESB/**swati@paytm/Payment //YBLd7972eed3f764e22a80236e0cc8d90ce/24/10/2024 16:12:59
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024163526316596
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 150.0
+    Direction : debit
+    Narration : UPI/DR/525477746568/Jag Mohan/YESB/**xq0p8@ptys/Payment //YBLf31a68ea6b5846e093873758e60fc4de/24/10/2024 16:35:26
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024173137637812
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 200.0
+    Direction : debit
+    Narration : UPI/DR/718305127737/BHURA LAL/YESB/**swati@paytm/Payment //YBL7c40de8f8b8742c6a33e4196a055ac0c/24/10/2024 17:31:37
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024202941466709
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/429887765573/SHIVAM  E/CNRB/**40001@cnrb/BNNEC//PTMa689e7e914984c29b035d14d5e60ec64/24/10/2024 20:29:41
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024231530383126
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 500.0
+    Direction : debit
+    Narration : UPI/DR/616080439309/VILLAGE V/CNRB/**02504@cnrb/7bahoq//YBL4f79033216d74df7864506e98fa6e1b0/24/10/2024 23:15:30
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241024234502841312
+    Account   : 110200939775
+    Date      : 2024-10-24
+    Amount    : 200.0
+    Direction : debit
+    Narration : UPI/DR/429881486559/GANPATI  /CNRB/**54590@cnrb/7bcgc4//PTMf6ce807d6b1747e680c166329070221d/24/10/2024 23:45:02
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241025083720164869
+    Account   : 110200939775
+    Date      : 2024-10-25
+    Amount    : 30.0
+    Direction : debit
+    Narration : UPI/DR/481152671768/CHHOTULAL/YESB/**22603@ybl/Payment //YBL41dc98ca92e44f5ba275daab2f36180d/25/10/2024 08:37:20
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241025114948653551
+    Account   : 110200939775
+    Date      : 2024-10-25
+    Amount    : 1000.0
+    Direction : credit
+    Narration : UPI/CR/144277144526/CHANDRA M/PUNB/**61996@ybl/Payment //YBLd7326601b6fc4abc85f8cb7663ba2fc3/25/10/2024 11:49:48
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241025120009214179
+    Account   : 110200939775
+    Date      : 2024-10-25
+    Amount    : 1000.0
+    Direction : debit
+    Narration : UPI/DR/429928121845/Daluram M/IDFB/**60710@pthdfc/NA//PTM85fb4ec1cfe14c669e7b6987baf610a3/25/10/2024 12:00:09
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241025124942947888
+    Account   : 110200939775
+    Date      : 2024-10-25
+    Amount    : 150.0
+    Direction : credit
+    Narration : UPI/CR/739376282635/PAYLET ME/BARB/**08781@ybl/Payment //YBLeaf1293b252940ee885a2b7d874086ca/25/10/2024 12:49:42
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241025125021984356
+    Account   : 110200939775
+    Date      : 2024-10-25
+    Amount    : 210.0
+    Direction : debit
+    Narration : UPI/DR/429992058446/SHREE BAL/YESB/**19067@ybl/NA//PTM703eb5dd18664ed4b791200525da272e/25/10/2024 12:50:21
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241025131404310125
+    Account   : 110200939775
+    Date      : 2024-10-25
+    Amount    : 50.0
+    Direction : credit
+    Narration : UPI/CR/685042009188/PAYLET ME/BARB/**08781@ybl/Payment //YBL9890d03568d047de9955f90fe4d7e677/25/10/2024 13:14:04
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241025131614432783
+    Account   : 110200939775
+    Date      : 2024-10-25
+    Amount    : 73.0
+    Direction : debit
+    Narration : UPI/DR/429984159690/CHHOTULAL/YESB/**90544@ybl/NA//PTMfc62d583ae3c4415b1c17c5bc843b71c/25/10/2024 13:16:14
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241025173748881792
+    Account   : 110200939775
+    Date      : 2024-10-25
+    Amount    : 650.0
+    Direction : debit
+    Narration : UPI/DR/429904276420/ADITYA Me/PUNB/**46015@ptyes/NA//PTM7c539cabb71e4890afa6a51efbb865a3/25/10/2024 17:37:48
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241027004201760620
+    Account   : 110200939775
+    Date      : 2024-10-27
+    Amount    : 40.0
+    Direction : debit
+    Narration : UPI/DR/430108198550/Hansraj G/YESB/**d2i1b@ptys/NA//PTM5098e551c82e492593f5c4d7e0051c69/27/10/2024 00:42:01
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241027140655199987
+    Account   : 110200939775
+    Date      : 2024-10-27
+    Amount    : 2.0
+    Direction : credit
+    Narration : UPI/CR/069574043394/YASHWANT /PUNB/**929-2@ybl/Payment //YBLf3a878b418294942bb1bd86b38d9ea9e/27/10/2024 14:06:55
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241027185330078122
+    Account   : 110200939775
+    Date      : 2024-10-27
+    Amount    : 500.0
+    Direction : credit
+    Narration : UPI/CR/011387391892/RAJESH  M/YESB/**kavya@ibl/Payment //IBL442db087762246bcbee0b730a24a3823/27/10/2024 18:53:30
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241027185914507898
+    Account   : 110200939775
+    Date      : 2024-10-27
+    Amount    : 500.0
+    Direction : debit
+    Narration : UPI/DR/466702244823/LAXMI GAN/YESB/**gaura@paytm/NA//PTM748aaf0ea59d41bcaec255a8cecf51ee/27/10/2024 18:59:14
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241028014349922586
+    Account   : 110200939775
+    Date      : 2024-10-28
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/466810373279/ADITYA Me/PUNB/**46015@ptyes/NA//PTM7534c882eed4400ca9233b47b0e30495/28/10/2024 01:43:49
+    Pattern   : High-Throughput Pass-Through Accounts, Low-Value Reciprocal Account Testing, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241030094133436507
+    Account   : 110200939775
+    Date      : 2024-10-30
+    Amount    : 100.0
+    Direction : credit
+    Narration : UPI/CR/151601917986/CHANDRA M/PUNB/**61996@ybl/Payment //YBL3919dbe4f7ca49bb8f0d17d398dd4fa8/30/10/2024 09:41:33
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241030094348555749
+    Account   : 110200939775
+    Date      : 2024-10-30
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/430423700996/BABA COOL/CNRB/**19422@cnrb/7gupu1//PTMa8f6f3d78f6c47c5ac105071812ebde9/30/10/2024 09:43:48
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241030123358986242
+    Account   : 110200939775
+    Date      : 2024-10-30
+    Amount    : 100.0
+    Direction : credit
+    Narration : UPI/CR/222896649758/RAMESH  M/PUNB/**52182@ybl/Payment //YBL7017b33c11fe4240a5e18dd92dc11853/30/10/2024 12:33:58
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241030123456050976
+    Account   : 110200939775
+    Date      : 2024-10-30
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/430425053071/EKDANT  A/CNRB/**44400@cnrb/7h0gnm//PTM35c3865c29d24178a4f54f21fe5d8819/30/10/2024 12:34:56
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241030133332026603
+    Account   : 110200939775
+    Date      : 2024-10-30
+    Amount    : 5.0
+    Direction : credit
+    Narration : UPI/CR/176645318753/YASHWANT /PUNB/**929-2@ybl/Payment //YBL9fbbe7281dd749d08719bb5ab0e1808d/30/10/2024 13:33:32
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241030203627372032
+    Account   : 110200939775
+    Date      : 2024-10-30
+    Amount    : 100.0
+    Direction : credit
+    Narration : UPI/CR/853111819086/KRISHAN  /SBIN/**42266@ibl/Payment //IBLc0e97ec6acd14064a002f92e8c6e477d/30/10/2024 20:36:27
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241030203632378875
+    Account   : 110200939775
+    Date      : 2024-10-30
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/430429720926/NEO LINE /CNRB/**86906@cnrb/BSCP//PTM1ebbdf9983664424b6125580392cae5a/30/10/2024 20:36:32
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241030204534049823
+    Account   : 110200939775
+    Date      : 2024-10-30
+    Amount    : 200.0
+    Direction : credit
+    Narration : UPI/CR/314773542182/RAMJI LAL/SBIN/**yash@ybl/Payment //YBLff6837e6466f46a69a9de54b0c5c0fa0/30/10/2024 20:45:34
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241030204651143277
+    Account   : 110200939775
+    Date      : 2024-10-30
+    Amount    : 200.0
+    Direction : debit
+    Narration : UPI/DR/430429823831/OM SAI EN/CNRB/**57062@cnrb/7hjk1g//PTMce407c95bc6942c389562ceb7c88e637/30/10/2024 20:46:51
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241031212409337983
+    Account   : 110200939775
+    Date      : 2024-10-31
+    Amount    : 200.0
+    Direction : credit
+    Narration : UPI/CR/259985621484/CHANDRA M/PUNB/**61996@ybl/Payment //YBLfcf4838693794efe82c2a11dc25038f6/31/10/2024 21:24:09
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241031212726490935
+    Account   : 110200939775
+    Date      : 2024-10-31
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/430539243064/G T B ENG/CNRB/**87565@cnrb/7izyln//PTMcf97a44f33144e399e0c8185ee6227f3/31/10/2024 21:27:26
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241031214111100057
+    Account   : 110200939775
+    Date      : 2024-10-31
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/430556454818/G T B ENG/CNRB/**87565@cnrb/7j0jjm//PTM0edf7fdcee27446f9cf34217bc62ff88/31/10/2024 21:41:11
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241101182310610427
+    Account   : 110200939775
+    Date      : 2024-11-01
+    Amount    : 200.0
+    Direction : credit
+    Narration : UPI/CR/068068224706/RAMJI LAL/SBIN/**yash@ybl/Payment //YBLe807610815c94f2ea0376a1e7973fbbb/01/11/2024 18:23:10
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241101182557824735
+    Account   : 110200939775
+    Date      : 2024-11-01
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/430645217409/KANYA ENT/SBIN/**78228@sbi/b2v0//PTM42858254b72b4cbb9e8bddb87df827cf/01/11/2024 18:25:57
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241101202212201809
+    Account   : 110200939775
+    Date      : 2024-11-01
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/430664894114/KANYA ENT/SBIN/**78228@sbi/bMhb//PTMc96113a5a9a34b71add1eb16623becc3/01/11/2024 20:22:12
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241103130535948114
+    Account   : 110200939775
+    Date      : 2024-11-03
+    Amount    : 200.0
+    Direction : credit
+    Narration : UPI/CR/052676534743/RAKESH  M/YESB/**09400@ybl/Payment //YBLca80fd66b5f34a208e6e7cc69c513f30/03/11/2024 13:05:35
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241103133112363753
+    Account   : 110200939775
+    Date      : 2024-11-03
+    Amount    : 30.0
+    Direction : debit
+    Narration : UPI/DR/430858148275/RAMWATAR /YESB/**53055@ybl/NA//PTM440dec545a2340c990495a72635c95fd/03/11/2024 13:31:12
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241103185525164288
+    Account   : 110200939775
+    Date      : 2024-11-03
+    Amount    : 7000.0
+    Direction : credit
+    Narration : UPI/CR/366569387022/POOJA GUR/BARB/**kiran@ybl/Payment //YBLa9626cb8700b4d6abdec03b2aebfd4cb/03/11/2024 18:55:25
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241103185620229082
+    Account   : 110200939775
+    Date      : 2024-11-03
+    Amount    : 1000.0
+    Direction : credit
+    Narration : UPI/CR/832735805370/DINESH GU/CNRB/**89544@ybl/Payment //YBLc90cec83233f4d478139ed5aad5617a0/03/11/2024 18:56:20
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241103185942467606
+    Account   : 110200939775
+    Date      : 2024-11-03
+    Amount    : 8000.0
+    Direction : debit
+    Narration : UPI/DR/430807550681/Chandra P/AIRP/**10352@airtel/Sent fro//PTMd38e6739fee64f8aa6b9a8aa8cd1fe95/03/11/2024 18:59:42
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241103192550321051
+    Account   : 110200939775
+    Date      : 2024-11-03
+    Amount    : 20000.0
+    Direction : credit
+    Narration : UPI/CR/407759382561/SUMAN DEVI/JSFB/**02782@ybl/Payment //YBL54c1d38318a0417d918460064a14330c/03/11/2024 19:25:50
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241103192949594435
+    Account   : 110200939775
+    Date      : 2024-11-03
+    Amount    : 10000.0
+    Direction : debit
+    Narration : UPI/DR/430881585432/SURENDRA /YESB/**4u8ok@pty/20241134//PTMc062b54301e34611adb719fb6a563480/03/11/2024 19:29:49
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241103193032643674
+    Account   : 110200939775
+    Date      : 2024-11-03
+    Amount    : 10000.0
+    Direction : debit
+    Narration : UPI/DR/430861095729/SURENDRA /YESB/**4u8ok@pty/20241134//PTMb5451f67091c4731b2be501258589d23/03/11/2024 19:30:32
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241104113507317055
+    Account   : 110200939775
+    Date      : 2024-11-04
+    Amount    : 120.0
+    Direction : credit
+    Narration : UPI/CR/618229198496/RAMJI LAL/SBIN/**yash@ybl/Payment //YBL5d16a107a28c4223a0816a5003115c40/04/11/2024 11:35:07
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241104113912564691
+    Account   : 110200939775
+    Date      : 2024-11-04
+    Amount    : 70.0
+    Direction : debit
+    Narration : UPI/DR/430985593786/MOHAMMAD /YESB/**68804@ybl/NA//PTM72830a04be444daeb0bd011dce589d85/04/11/2024 11:39:12
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241104114827127596
+    Account   : 110200939775
+    Date      : 2024-11-04
+    Amount    : 20.0
+    Direction : debit
+    Narration : UPI/DR/430964739688/SURENDRAS/YESB/**69878@ybl/NA//PTMf78c39e468e446f7946f0bd0247246be/04/11/2024 11:48:27
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241104115626611623
+    Account   : 110200939775
+    Date      : 2024-11-04
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/430985722808/SHRI PARA/YESB/**c36ob@ptys/NA//PTMdefd19abaf5044bcbd9773d87dbf2793/04/11/2024 11:56:26
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241104130259760418
+    Account   : 110200939775
+    Date      : 2024-11-04
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/467510802659/LALI WO F/PUNB/**65978@ptaxis/NA//PTM92c16544519d467ab372f40237f45563/04/11/2024 13:02:59
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241104140728770515
+    Account   : 110200939775
+    Date      : 2024-11-04
+    Amount    : 30.0
+    Direction : debit
+    Narration : UPI/DR/430986816289/Gopal swa/YESB/**yx967@ptys/NA//PTM8f2fed6e82cf45cf87e181f606240848/04/11/2024 14:07:28
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241104151023313717
+    Account   : 110200939775
+    Date      : 2024-11-04
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/430966227984/SONIC  EN/CNRB/**71151@cnrb/S093//PTM57e05af441404c0f8d73fbd4e21dc58f/04/11/2024 15:10:23
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241105162216409738
+    Account   : 110200939775
+    Date      : 2024-11-05
+    Amount    : 100.0
+    Direction : credit
+    Narration : UPI/CR/042064150164/CHANDRA M/PUNB/**61996@ybl/Payment //YBLa85b8fb955e24690b0753042ca212e16/05/11/2024 16:22:16
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241105164455723889
+    Account   : 110200939775
+    Date      : 2024-11-05
+    Amount    : 60.0
+    Direction : debit
+    Narration : UPI/DR/857375113700/ASHOK KUM/YESB/**mohit@paytm/Payment //YBL340cacc6805a41308be34ffc1903aa0f/05/11/2024 16:44:55
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241105164634822874
+    Account   : 110200939775
+    Date      : 2024-11-05
+    Amount    : 52.0
+    Direction : debit
+    Narration : UPI/DR/268068118750/HANUMAN M/YESB/**96525@ybl/Payment //YBL7b972d7e2d7140c3930ea44647404f69/05/11/2024 16:46:34
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241105184558383100
+    Account   : 110200939775
+    Date      : 2024-11-05
+    Amount    : 200.0
+    Direction : credit
+    Narration : UPI/CR/139248263282/CHANDRA M/PUNB/**61996@ybl/Payment //YBL84ce2849b508408496ecf6f3507af82b/05/11/2024 18:45:58
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241105184709480091
+    Account   : 110200939775
+    Date      : 2024-11-05
+    Amount    : 200.0
+    Direction : debit
+    Narration : UPI/DR/431098881660/BIAKO TRA/MAHB/**57uov@mahb/00hic//PTM4c53d8d6e6c64a2096e206683358e48f/05/11/2024 18:47:09
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106110028693563
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 50.0
+    Direction : credit
+    Narration : UPI/CR/068238596413/CHANDRA M/PUNB/**61996@ybl/Payment //YBL563461a763334f08b80401c523666016/06/11/2024 11:00:28
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106113502729095
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/431104117711/HEISANAM /CNRB/**97337@cnrb/A7c3227//PTMac48988d63794c05952b8a7b7cf05fa9/06/11/2024 11:35:02
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106135031848456
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 1000.0
+    Direction : credit
+    Narration : UPI/CR/273124654798/Rukaman K/BARB/**56566@ybl/Payment //YBLac8199dcff614fe2a8f3e7fcd7c182ae/06/11/2024 13:50:31
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106135335030797
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 500.0
+    Direction : debit
+    Narration : UPI/DR/431105426060/SPARKS  S/CNRB/**08422@cnrb/7q8gy0//PTM479cd2f34225415b98d332ce588a31d0/06/11/2024 13:53:35
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106140442681996
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 200.0
+    Direction : debit
+    Narration : UPI/DR/431105542488/A R ENTER/CNRB/**00467@cnrb/7q8z89//PTMe0e08b5e7f294e319cd360b10ec0bde6/06/11/2024 14:04:42
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106145210363963
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 260.0
+    Direction : debit
+    Narration : UPI/DR/228238394015/SURESH GU/YESB/**z47ht@ptys/Payment //YBLff4c46aa030b4dae99771bbbbe46313f/06/11/2024 14:52:10
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106150310962131
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 5.0
+    Direction : debit
+    Narration : UPI/DR/164854393713/ASHISH KU/BARB/**meera@ybl/Payment //YBLf7c4a96a2d3e4e02902297868371ec5d/06/11/2024 15:03:10
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106173530826890
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 20.0
+    Direction : debit
+    Narration : UPI/DR/341446910289/CHHOTULAL/YESB/**44402@ybl/Payment //YBL6eadc5fd36654eb0ab01fd9b0b185d42/06/11/2024 17:35:30
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106190134510251
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 50.0
+    Direction : credit
+    Narration : UPI/CR/274886802732/KALI  MEE/SBIN/**689-3@axl/Payment //AXL95924f0e0a22427890e70f1621d6169f/06/11/2024 19:01:34
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106200613574959
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 40.0
+    Direction : debit
+    Narration : UPI/DR/909210233046/SURESH KU/BKID/**sneha@ybl/Payment //YBL8c95b2de04b842d79f50baae7d6c407e/06/11/2024 20:06:13
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241106200728666084
+    Account   : 110200939775
+    Date      : 2024-11-06
+    Amount    : 30.0
+    Direction : debit
+    Narration : UPI/DR/656614352149/SURESH KU/BKID/**sneha@ybl/Payment //YBL783a8382d41e40f190a0b829757a7591/06/11/2024 20:07:28
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241107103243993293
+    Account   : 110200939775
+    Date      : 2024-11-07
+    Amount    : 200.0
+    Direction : credit
+    Narration : UPI/CR/513395384125/CHANDRA M/PUNB/**61996@ybl/Payment //YBLea66d97b74bb4ae3a280c5e7282b8f7f/07/11/2024 10:32:43
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241107104259569810
+    Account   : 110200939775
+    Date      : 2024-11-07
+    Amount    : 10.0
+    Direction : credit
+    Narration : UPI/CR/044330958164/PAYLET ME/BARB/**08781@ybl/Payment //YBL174a6a00cd994ff2b358f6a51247476a/07/11/2024 10:42:59
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241107104408634182
+    Account   : 110200939775
+    Date      : 2024-11-07
+    Amount    : 200.8
+    Direction : debit
+    Narration : UPI/DR/431288901163/Jio/YESB/**l3066@ptybl/NA//PYTM41107802937970936865/07/11/2024 10:44:08
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241108170546864210
+    Account   : 110200939775
+    Date      : 2024-11-08
+    Amount    : 200.0
+    Direction : credit
+    Narration : UPI/CR/606937534734/RAKESH  M/YESB/**09400@ybl/Payment //YBL95113d22ead44b338577af8fa9c3751c/08/11/2024 17:05:46
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241108171514467167
+    Account   : 110200939775
+    Date      : 2024-11-08
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/922747566974/SURESH KU/BKID/**sneha@ybl/Payment //YBL8637676b49344231b484c10da88eb7ed/08/11/2024 17:15:14
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241108182241289536
+    Account   : 110200939775
+    Date      : 2024-11-08
+    Amount    : 90.0
+    Direction : debit
+    Narration : UPI/DR/630573058421/Mr BABU L/ICIC/**43795@icici/Pay To M//YBL719d6853c7f94e7e95324af729856de7/08/11/2024 18:22:41
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241108202201481102
+    Account   : 110200939775
+    Date      : 2024-11-08
+    Amount    : 40.0
+    Direction : debit
+    Narration : UPI/DR/556059745345/BHURA LAL/YESB/**swati@paytm/Payment //YBL15d1e8d748c64f6c977cc078dc3ed3eb/08/11/2024 20:22:01
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241109114729536143
+    Account   : 110200939775
+    Date      : 2024-11-09
+    Amount    : 25.0
+    Direction : debit
+    Narration : UPI/DR/818533500508/BABU LAL /YESB/**4s1nd@pty/Payment //YBLdb0f1b9441a94fa9acaaebadd0543d2c/09/11/2024 11:47:29
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241109191206468692
+    Account   : 110200939775
+    Date      : 2024-11-09
+    Amount    : 4.0
+    Direction : debit
+    Narration : UPI/DR/224462118620/OMPRAKASH/UTIB/**58058@okbizaxis/Payment //YBL3be314b80f064b8898c26e36c5445ad5/09/11/2024 19:12:06
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241112150031302888
+    Account   : 110200939775
+    Date      : 2024-11-12
+    Amount    : 400.0
+    Direction : credit
+    Narration : UPI/CR/113682327129/RAKESH  M/YESB/**09400@ybl/Payment //YBL0184d9d4ea94416fb4e05a37e93735cf/12/11/2024 15:00:31
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241112192933954301
+    Account   : 110200939775
+    Date      : 2024-11-12
+    Amount    : 300.0
+    Direction : debit
+    Narration : UPI/DR/236022682116/SHRI PARA/YESB/**neha@paytm/Payment //YBLbac0fbad372b4c8ba0e78d73b0508629/12/11/2024 19:29:33
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241112221813819632
+    Account   : 110200939775
+    Date      : 2024-11-12
+    Amount    : 300.0
+    Direction : credit
+    Narration : UPI/CR/351413181501/RAKESH  M/YESB/**09400@ybl/Payment //YBL4d7fa54c078b4c6fb16f754e1508bd2b/12/11/2024 22:18:13
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241112221920856513
+    Account   : 110200939775
+    Date      : 2024-11-12
+    Amount    : 300.0
+    Direction : debit
+    Narration : UPI/DR/129805190803/MANGAL PE/YESB/**6slkj@pty/Payment //YBLbaa09d7834804ab3a9745e0476ed0360/12/11/2024 22:19:20
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113031144896076
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/959668893908/SHRI PARA/YESB/**neha@paytm/Payment //YBL6c58c741c5d148e7bce8c2986f8b7d4c/13/11/2024 03:11:44
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113034854002463
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/284528500228/Hansraj G/YESB/**chhay@paytm/Payment //YBLbca408f27fcb45918572bb34e269546f/13/11/2024 03:48:54
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113075338622567
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 400.0
+    Direction : credit
+    Narration : UPI/CR/299920666396/RAMESH  M/PUNB/**52182@ybl/Payment //YBL0b992d4eae784941bc6a4221b6f240ea/13/11/2024 07:53:38
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113075644719948
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 350.0
+    Direction : debit
+    Narration : UPI/DR/686481230348/SHRI PARA/YESB/**neha@paytm/Payment //YBL25ef6be301c54fd097e55ffd5d6cf71d/13/11/2024 07:56:44
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113082657793004
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 50.0
+    Direction : debit
+    Narration : UPI/DR/562758245599/DINESH KU/YESB/**swati@paytm/Payment //YBLe7b441643a6c4fcc93233d71c261e05f/13/11/2024 08:26:57
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113100945579965
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 400.0
+    Direction : credit
+    Narration : UPI/CR/818379157575/RAKESH  M/YESB/**09400@ybl/Payment //YBL54b77b078bee4884a1686bd42ac713d6/13/11/2024 10:09:45
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113101109654253
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 400.0
+    Direction : debit
+    Narration : UPI/DR/966367056832/MANGAL PE/YESB/**6slkj@pty/Payment //YBL032247cbc82647e886ad995985df7582/13/11/2024 10:11:09
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113114011612634
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 120.0
+    Direction : credit
+    Narration : UPI/CR/468520653351/RAMESH  M/PUNB/**52182@ybl/Payment //YBL8fb0bfb8ed914b37a65aef4f7957ac01/13/11/2024 11:40:11
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113115137267139
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/350266434262/KAILASH C/YESB/**3gmco@paytm/Payment //YBL527ed8c8a50a4e55a1ca8192c2451db1/13/11/2024 11:51:37
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113115811645045
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 60.0
+    Direction : debit
+    Narration : UPI/DR/480674244567/varma fil/YESB/**nikhi@paytm/Payment //YBL58735ed208164c33bad923e6760d6bc1/13/11/2024 11:58:11
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241113123047559960
+    Account   : 110200939775
+    Date      : 2024-11-13
+    Amount    : 40.0
+    Direction : debit
+    Narration : UPI/DR/554372824843/PADAM KUM/YESB/**52399@ybl/Payment //YBL49e1e1f3e8294d16b2fa77688b5b7069/13/11/2024 12:30:47
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20241114081650730516
+    Account   : 110200939775
+    Date      : 2024-11-14
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/431908270858/LALI WO F/PUNB/**65978@ptaxis/NA//PTM2d85689cb8b04cecba7de00892fa4d27/14/11/2024 08:16:50
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250203140155247435
+    Account   : 110200939775
+    Date      : 2025-02-03
+    Amount    : 5100.0
+    Direction : credit
+    Narration : UPI/CR/121522768591/Manish  M/SBIN/**32902@ibl/Payment //IBL79d3b92f21e041e5b67a5d2adb9e89d9/03/02/2025 14:01:55
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250203140741617282
+    Account   : 110200939775
+    Date      : 2025-02-03
+    Amount    : 1000.0
+    Direction : credit
+    Narration : UPI/CR/701509056516/Manish  M/SBIN/**32902@ibl/Payment //IBLd5517d619b8e434ea9b81dbdfeb80038/03/02/2025 14:07:41
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250203142038429204
+    Account   : 110200939775
+    Date      : 2025-02-03
+    Amount    : 5000.0
+    Direction : debit
+    Narration : UPI/DR/503449509321/GANPAT ME/UBIN/**22641@ptsbi/NA//PTM0011e5a67fdb4c1e82509bf482be7c4d/03/02/2025 14:20:38
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250205164435226161
+    Account   : 110200939775
+    Date      : 2025-02-05
+    Amount    : 5000.0
+    Direction : credit
+    Narration : UPI/CR/157034421683/Manish  M/SBIN/**32902@ibl/Payment //IBL6afdf2b4f80342faad7a4724816a7871/05/02/2025 16:44:35
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250205164629377777
+    Account   : 110200939775
+    Date      : 2025-02-05
+    Amount    : 6000.0
+    Direction : debit
+    Narration : UPI/DR/100000446765/INITIAL F/UTKS/**pfund@utkarshbank/3676057//UTK1D3EEFEB1143484486E94875EE6F9675/05/02/2025 16:46:29
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250206155014024284
+    Account   : 110200939775
+    Date      : 2025-02-06
+    Amount    : 100.0
+    Direction : debit
+    Narration : UPI/DR/503701447725/JAKEER KH/BARB/**033-3@ybl/Sent usi//PTM9ab63dfec1274856a048ec19dd6d1113/06/02/2025 15:50:14
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250218160935952746
+    Account   : 110200939775
+    Date      : 2025-02-18
+    Amount    : 10000.0
+    Direction : credit
+    Narration : UPI/CR/630427434662/Manish  M/SBIN/**32902@ibl/Payment //IBL51984a8da20245c2915e81a0d052957e/18/02/2025 16:09:35
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250219103537502158
+    Account   : 110200939775
+    Date      : 2025-02-19
+    Amount    : 800.0
+    Direction : credit
+    Narration : UPI/CR/505016371491/JEEVATRAM/BARB/**44176@ptsbi/NA//PTM5e94baf9f030432d9676ffa206b9eadc/19/02/2025 10:35:37
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250219104726184602
+    Account   : 110200939775
+    Date      : 2025-02-19
+    Amount    : 410.0
+    Direction : debit
+    Narration : UPI/DR/505016537342/Anita Sai/YESB/**7h9sc@pty/Sent usi//PTM6064f41cde1345f38ce43bcb9d3459b0/19/02/2025 10:47:26
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250219124420330503
+    Account   : 110200939775
+    Date      : 2025-02-19
+    Amount    : 30.0
+    Direction : debit
+    Narration : UPI/DR/505018389842/CHHOTULAL/YESB/**36735@ybl/Sent usi//PTM99f4c274a6664e6e91c3c945dbe92015/19/02/2025 12:44:20
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250219131755474483
+    Account   : 110200939775
+    Date      : 2025-02-19
+    Amount    : 10000.0
+    Direction : debit
+    Narration : UPI/DR/505018988092/Manish  M/SBIN/**67016@ptyes/NA//PTMd80933b1121949cbb0f0ffeae1ecc6f1/19/02/2025 13:17:55
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250219135316763030
+    Account   : 110200939775
+    Date      : 2025-02-19
+    Amount    : 300.8
+    Direction : debit
+    Narration : UPI/DR/505019641366/Airtel/YESB/**r7673@ptybl/Sent usi//PYTM50219803801799950361/19/02/2025 13:53:16
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250219150257804935
+    Account   : 110200939775
+    Date      : 2025-02-19
+    Amount    : 10.0
+    Direction : debit
+    Narration : UPI/DR/505020745902/NAMOMARAY/PUNB/**99125@ybl/Sent usi//PTM614467ec63124c28b8efaace3825f78c/19/02/2025 15:02:57
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250221154629914982
+    Account   : 110200939775
+    Date      : 2025-02-21
+    Amount    : 49.0
+    Direction : debit
+    Narration : UPI/DR/505254004000/BADRI NAR/YESB/**53751@ybl/Sent usi//PTM55600c60b2f5404aa8b329489629b700/21/02/2025 15:46:29
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250327121358625058
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 50.0
+    Direction : credit
+    Narration : UPI/CR/545218617054/Manish  M/SBIN/**67016@ptyes/Sent fro//PTMbfba32a08ded4b4495956987f4d284bc/27/03/2025 12:13:58
+    Pattern   : Accumulation Account Detection, High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327122834524284
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 5.0
+    Direction : debit
+    Narration : UPI/DR/676724768164/RAKESH ME/BARB/**rajes@axl/Payment //AXLe88bb14428e44b2480c61b49e892dec5/27/03/2025 12:28:34
+    Pattern   : High-Throughput Pass-Through Accounts, Structuring / Smurfing Detection, Transit / Pass-Through Detection
+
+  20250327132502023379
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 15000.0
+    Direction : debit
+    Narration : ATM Cash-3317BY01-CANARABANKJAIPURRJIN-27/03/25 13:25:02/2315
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  20250327132627025322
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 15000.0
+    Direction : debit
+    Narration : ATM Cash-3317BY01-CANARABANKJAIPURRJIN-27/03/25 13:26:27/2315
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  20250327133051031250
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-3317BY01-CANARABANKJAIPURRJIN-27/03/25 13:30:51/2315
+    Pattern   : Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection
+
+  20250327144435008196
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : PRAGFILLINGSTATIONJAIPURRJIN-27/03/25 14:44:35/2315
+    Pattern   : Duplicate Transaction Cross-Check, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  20250327144514008348
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : PRAGFILLINGSTATIONJAIPURRJIN-27/03/25 14:45:14/2315
+    Pattern   : Duplicate Transaction Cross-Check, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  20250327144607008543
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : PRAGFILLINGSTATIONJAIPURRJIN-27/03/25 14:46:07/2315
+    Pattern   : Duplicate Transaction Cross-Check, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  20250327145001009395
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : PRAGFILLINGSTATIONJAIPURRJIN-27/03/25 14:50:01/2315
+    Pattern   : Duplicate Transaction Cross-Check, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  20250327145035009533
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : PRAGFILLINGSTATIONJAIPURRJIN-27/03/25 14:50:35/2315
+    Pattern   : Duplicate Transaction Cross-Check, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  20250327151027013997
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 9180.0
+    Direction : debit
+    Narration : SRFILLINGSTATIONJAIPURRJIN-27/03/25 15:10:27/2315
+    Pattern   : Structuring / Smurfing Detection
+
+  20250327184439134568
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 2.0
+    Direction : debit
+    Narration : UPI/DR/193784925495/Mohan Lal/SBIN/**19941@axl/Payment //AXL583b493e67f045a6a5c2805c8932f005/27/03/2025 18:44:39
+    Pattern   : High-Throughput Pass-Through Accounts, Structuring / Smurfing Detection, Transit / Pass-Through Detection
+
+  20250327184825185283
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 50000.0
+    Direction : credit
+    Narration : MOB-IMPS-CR/STREETSANS/YBP       /032026900000095/CREDIT2025/9432337092/27/03/2025 18:48:25/508618214708
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250327185123708537
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 8000.0
+    Direction : debit
+    Narration : UPI/DR/185447610704/SANGANER /PPIW/**k2t4e@mbk/Payment //AXLdb724da773e84a768a3ef52810732f3e/27/03/2025 18:51:23
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Transit / Pass-Through Detection
+
+  20250327185148740907
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 5100.0
+    Direction : debit
+    Narration : UPI/DR/280939654068/SANGANER /YESB/**divya@paytm/Payment //AXL07f2ea8782164d8590e3d9f5d3d7466b/27/03/2025 18:51:48
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Structuring / Smurfing Detection, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327185201762981
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 5100.0
+    Direction : debit
+    Narration : UPI/DR/607114760656/SANGANER /YESB/**divya@paytm/Payment //AXL18fbc97a98464844b568956cb7de5c3e/27/03/2025 18:52:01
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Structuring / Smurfing Detection, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250327185808019817
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 10000.0
+    Direction : debit
+    Narration : SRFILLINGSTATIONJAIPURRJIN-27/03/25 18:58:08/2315
+    Pattern   : Duplicate Transaction Cross-Check, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Top Suspicious Account Ranking
+
+  20250327185859020091
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 10400.0
+    Direction : debit
+    Narration : SRFILLINGSTATIONJAIPURRJIN-27/03/25 18:58:59/2315
+    Pattern   : Structuring / Smurfing Detection
+
+  20250327191258672995
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 7000.0
+    Direction : debit
+    Narration : UPI/DR/164050871131/SANGANER /PPIW/**k2t4e@mbk/Payment //AXL5051718bcb804ee2b4c65095bb8c74e8/27/03/2025 19:12:58
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Transit / Pass-Through Detection
+
+  20250327191504025157
+    Account   : 110200939775
+    Date      : 2025-03-27
+    Amount    : 5100.0
+    Direction : debit
+    Narration : BOHRAINDIANOILSJAIPURRJIN-27/03/25 19:15:04/2315
+    Pattern   : Structuring / Smurfing Detection
+
+  20250328095346741160
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 50000.0
+    Direction : credit
+    Narration : MOB-IMPS-CR/RAHUL REMA/The Federa/20720100070464/ADITYA  ME/9656127661/28/03/2025 09:53:46/508709734974
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250328100218010452
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-28/03/25 10:02:18/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328100305011455
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-28/03/25 10:03:05/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328100353012450
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-28/03/25 10:03:53/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328100442013484
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-28/03/25 10:04:42/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250328162256718430
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 2.0
+    Direction : debit
+    Narration : UPI/DR/911897443161/SUNIL JOGI/CNRB/**pooja@ybl/Payment //YBLfd446db2e317411b8c92a4596d9f01f4/28/03/2025 16:22:56
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250328162900659186
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 55000.0
+    Direction : credit
+    Narration : MOB-IMPS-CR/JAYAKRISHN/The Federa/10130100177396/ADITYA  ME/8590901117/28/03/2025 16:29:00/508716858540
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250328164823012096
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 15000.0
+    Direction : debit
+    Narration : SRFILLINGSTATIONJAIPURRJIN-28/03/25 16:48:23/2315
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  20250328165729824177
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 15300.0
+    Direction : debit
+    Narration : UPI/DR/545719757344/BOHRA IND/YESB/**34719@ybl/Payment //YBL8f0eaa16c5194b3a8df0e2d5935ee6bc/28/03/2025 16:57:29
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250328170040015267
+    Account   : 110200939775
+    Date      : 2025-03-28
+    Amount    : 5000.0
+    Direction : debit
+    Narration : BOHRAINDIANOILSJAIPURRJIN-28/03/25 17:00:40/2315
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  20250329101146125901
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 2.0
+    Direction : debit
+    Narration : UPI/DR/152422383721/SUMIT  ME/YESB/**83361@ybl/Payment //YBLc2cba2eb9e634480bf91726f819e949b/29/03/2025 10:11:46
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250329103743637384
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 5.0
+    Direction : debit
+    Narration : UPI/DR/014098661239/SUNIL JOGI/CNRB/**pooja@ybl/Payment //YBLd58ce63d8bf34610b839cb2f7c41ba2c/29/03/2025 10:37:43
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250329103814940835
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 70000.0
+    Direction : credit
+    Narration : MOB-IMPS-CR/THAHIRABAN/The Federa/15270100108176/B/7397643892/29/03/2025 10:38:14/508810159093
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250329103929014676
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-7NPNEWAI-NEWAINIWAIRJIN-29/03/25 10:39:29/2315
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250329104100017158
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329104100017158#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-7NPNEWAI-NEWAINIWAIRJIN-29/03/25 10:41:00/2315
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250329104206018961
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-7NPNEWAI-NEWAINIWAIRJIN-29/03/25 10:42:06/2315
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250329104206018961#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329104312020779
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-7NPNEWAI-NEWAINIWAIRJIN-29/03/25 10:43:12/2315
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking
+
+  20250329104312020779#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250329105620775098
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 5000.0
+    Direction : debit
+    Narration : UPI/DR/626428150382/SHIV MANG/YESB/**sneha@paytm/Payment //YBLc1148b1d48314e75898a03bb8310629a/29/03/2025 10:56:20
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+  20250329105714834067
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 6620.0
+    Direction : debit
+    Narration : UPI/DR/371540799565/Mr Radhes/IDIB/**97623@ybl/Payment //YBL2f4e1b3b4edc41629d02eca054a92e82/29/03/2025 10:57:14
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250329112915032188
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 15000.0
+    Direction : debit
+    Narration : BALAJIPETROLPUMPTONKRJIN-29/03/25 11:29:15/2315
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  20250329120743605197
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 50000.0
+    Direction : credit
+    Narration : MOB-IMPS-CR/SUBEESH P/The Federa/13420100347090/ADITYA mee/7994327084/29/03/2025 12:07:43/508812184053
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250329122232015638
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 15000.0
+    Direction : debit
+    Narration : SRIBALAJIPETROLEUJAIPURRJIN-29/03/25 12:22:32/2315
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  20250329122757724634
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 5000.0
+    Direction : debit
+    Narration : UPI/DR/705158378055/DHARMRAJ /CNRB/**37954@ybl/Payment //YBL55da6926e2b544978b3d2b3aedbc9288/29/03/2025 12:27:57
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+  20250329122847774803
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 15000.0
+    Direction : debit
+    Narration : UPI/DR/939197794146/DEEPAK KU/BKID/**59423@ybl/Payment //YBLbb00954ee55042b39ed7ec1d33905e94/29/03/2025 12:28:47
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+  20250329123131957497
+    Account   : 110200939775
+    Date      : 2025-03-29
+    Amount    : 15000.0
+    Direction : debit
+    Narration : UPI/DR/398474190112/VIKRANT S/INDB/**97999@axl/Payment //AXL867f709b9e7a46b8a5a30a8ea696d4fa/29/03/2025 12:31:31
+    Pattern   : High-Throughput Pass-Through Accounts, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+  20250330124738111576
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 202.0
+    Direction : debit
+    Narration : UPI/DR/760557385477/Airtel Re/YESB/**anita@ybl/Payment //YBL8c511d67638d41d49a48d524a7ad5b96/30/03/2025 12:47:38
+    Pattern   : High-Throughput Pass-Through Accounts, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250330163323559559
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 70000.0
+    Direction : credit
+    Narration : INET-IMPS-CR/Mrs Mahini/Bank of Ma/60529175699/1/8453150158/30/03/2025 16:33:23/508916499779
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250330163522022397
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250330163522022397#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-30/03/25 16:35:22/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250330163622023684
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250330163622023684#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-30/03/25 16:36:22/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250330163715024838
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250330163715024838#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-30/03/25 16:37:15/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250330163808025894
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250330163808025894#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-30/03/25 16:38:08/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250330165827011706
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 10000.0
+    Direction : debit
+    Narration : SRFILLINGSTATIONJAIPURRJIN-30/03/25 16:58:27/2315
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  20250330171410015611
+    Account   : 110200939775
+    Date      : 2025-03-30
+    Amount    : 10000.0
+    Direction : debit
+    Narration : BOHRAINDIANOILSJAIPURRJIN-30/03/25 17:14:10/2315
+    Pattern   : Repeated Round-Value Debit Pattern
+
+  20250331094413077397
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 2.0
+    Direction : debit
+    Narration : UPI/DR/956054936088/ASHOK KUM/SBIN/**yash@axl/Payment //AXL1719d725b09441d68097838eb8c8acbc/31/03/2025 09:44:13
+    Pattern   : High-Throughput Pass-Through Accounts, Transit / Pass-Through Detection
+
+  20250331101226694015
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 50000.0
+    Direction : credit
+    Narration : MOB-IMPS-CR/RUKSANA P/The Federa/99980111113317/ADITYA  ME/9544948896/31/03/2025 10:12:26/509010693741
+    Pattern   : Large Credit Followed by Cash Withdrawal
+
+  20250331102014014529
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250331102014014529#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-31/03/25 10:20:14/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331102105015740
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250331102105015740#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-31/03/25 10:21:05/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331102156016901
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-31/03/25 10:21:56/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331102156016901#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250331102301018341
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 24.78
+    Direction : debit
+    Narration : ATM / IMPS Transaction Charges
+    Pattern   : Duplicate Transaction Cross-Check, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking
+
+  20250331102301018341#occurrence-2
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 10000.0
+    Direction : debit
+    Narration : ATM Cash-32090057-CHOUDHARYPETROLPUMPJAIPURRJIN-31/03/25 10:23:01/2315
+    Pattern   : Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+
+  20250331102420227275
+    Account   : 110200939775
+    Date      : 2025-03-31
+    Amount    : 5000.0
+    Direction : debit
+    Narration : UPI/DR/849745835958/SBI ATM C/SBIN/**priy@sbi/Amt shal//SBI319d35dc4644666fe063efd6bf0a2529/31/03/2025 10:24:20
+    Pattern   : High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Repeated Round-Value Debit Pattern, Transit / Pass-Through Detection
+
+Accounts:
+----------------------------------------
+  110200939775
+    Holder             : ADITYA REDDY
+    Patterns Triggered : Accumulation Account Detection, Duplicate Transaction Cross-Check, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Low-Value Reciprocal Account Testing, Repeated Round-Value Debit Pattern, Structuring / Smurfing Detection, Top Suspicious Account Ranking, Transit / Pass-Through Detection
+    Flagged Txns       : 1084
+    Total Credit       : 595728.0
+    Total Debit        : 590431.18
+
+  46015@ptyes
+    Patterns Triggered : Low-Value Reciprocal Account Testing
+    Flagged Txns       : 3
+    Total Credit       : 0
+    Total Debit        : 0
+
+Key Transactions to Detect:
+----------------------------------------
+  17243920250327100400692370
+  20240929115453354016
+  20240930074425418488
+  20241008201506743924
+  20241009123537969066
+  20241009134042064597
+  20241009151848702549
+  20241009163219856298
+  20241009164958925286
+  20241009174505581789
+  20241009174607656927
+  20241009180655188440
+  20241009180830308634
+  20241018092106489705
+  20241018141326135759
+  20241018141638024750
+  20241018143654380428
+  20241018151448316588
+  20241018154036612702
+  20241018162035679734
+  20241018163301352680
+  20241018163629539904
+  20241018164557061773
+  20241018164722141268
+  20241018184903408508
+  20241018193805256878
+  20241018195113243554
+  20241018211056487452
+  20241018215138486525
+  20241018215449618563
+  20241019092308586300
+  20241019102646596426
+  20241019130744516237
+  20241020091954578665
+  20241020122437395280
+  20241020125616212058
+  20241020130806887786
+  20241020131744436866
+  20241020131920526753
+  20241020160039887805
+  20241020163300535295
+  20241020172327369796
+  20241020174048454034
+  20241020174505732500
+  20241020190140273775
+  20241020190345428753
+  20241021140559540464
+  20241022153053032609
+  20241022160549756975
+  20241022170132749997
+  20241022200014248672
+  20241023124311169201
+  20241023132830849838
+  20241023133348166727
+  20241023140502975553
+  20241023140524995307
+  20241024091434022567
+  20241024151549184842
+  20241024153155981643
+  20241024153644225964
+  20241024160850877594
+  20241024161259098321
+  20241024163526316596
+  20241024173137637812
+  20241024202941466709
+  20241024231530383126
+  20241024234502841312
+  20241025083720164869
+  20241025114948653551
+  20241025120009214179
+  20241025124942947888
+  20241025125021984356
+  20241025131404310125
+  20241025131614432783
+  20241025173748881792
+  20241027004201760620
+  20241027140655199987
+  20241027185330078122
+  20241027185914507898
+  20241028014349922586
+  20241030094133436507
+  20241030094348555749
+  20241030123358986242
+  20241030123456050976
+  20241030133332026603
+  20241030203627372032
+  20241030203632378875
+  20241030204534049823
+  20241030204651143277
+  20241031212409337983
+  20241031212726490935
+  20241031214111100057
+  20241101182310610427
+  20241101182557824735
+  20241101202212201809
+  20241103130535948114
+  20241103133112363753
+  20241103185525164288
+  20241103185620229082
+  20241103185942467606
+  20241103192550321051
+  20241103192949594435
+  20241103193032643674
+  20241104113507317055
+  20241104113912564691
+  20241104114827127596
+  20241104115626611623
+  20241104130259760418
+  20241104140728770515
+  20241104151023313717
+  20241105162216409738
+  20241105164455723889
+  20241105164634822874
+  20241105184558383100
+  20241105184709480091
+  20241106110028693563
+  20241106113502729095
+  20241106135031848456
+  20241106135335030797
+  20241106140442681996
+  20241106145210363963
+  20241106150310962131
+  20241106173530826890
+  20241106190134510251
+  20241106200613574959
+  20241106200728666084
+  20241107103243993293
+  20241107104259569810
+  20241107104408634182
+  20241108170546864210
+  20241108171514467167
+  20241108182241289536
+  20241108202201481102
+  20241109114729536143
+  20241109191206468692
+  20241112150031302888
+  20241112192933954301
+  20241112221813819632
+  20241112221920856513
+  20241113031144896076
+  20241113034854002463
+  20241113075338622567
+  20241113075644719948
+  20241113082657793004
+  20241113100945579965
+  20241113101109654253
+  20241113114011612634
+  20241113115137267139
+  20241113115811645045
+  20241113123047559960
+  20241114081650730516
+  20250203140155247435
+  20250203140741617282
+  20250203142038429204
+  20250205164435226161
+  20250205164629377777
+  20250206155014024284
+  20250218160935952746
+  20250219103537502158
+  20250219104726184602
+  20250219124420330503
+  20250219131755474483
+  20250219135316763030
+  20250219150257804935
+  20250221154629914982
+  20250327121358625058
+  20250327122834524284
+  20250327132502023379
+  20250327132627025322
+  20250327133051031250
+  20250327144435008196
+  20250327144514008348
+  20250327144607008543
+  20250327145001009395
+  20250327145035009533
+  20250327151027013997
+  20250327184439134568
+  20250327184825185283
+  20250327185123708537
+  20250327185148740907
+  20250327185201762981
+  20250327185808019817
+  20250327185859020091
+  20250327191258672995
+  20250327191504025157
+  20250328095346741160
+  20250328100218010452
+  20250328100305011455
+  20250328100353012450
+  20250328100442013484
+  20250328162256718430
+  20250328162900659186
+  20250328164823012096
+  20250328165729824177
+  20250328170040015267
+  20250329101146125901
+  20250329103743637384
+  20250329103814940835
+  20250329103929014676
+  20250329104100017158
+  20250329104100017158#occurrence-2
+  20250329104206018961
+  20250329104206018961#occurrence-2
+  20250329104312020779
+  20250329104312020779#occurrence-2
+  20250329105620775098
+  20250329105714834067
+  20250329112915032188
+  20250329120743605197
+  20250329122232015638
+  20250329122757724634
+  20250329122847774803
+  20250329123131957497
+  20250330124738111576
+  20250330163323559559
+  20250330163522022397
+  20250330163522022397#occurrence-2
+  20250330163622023684
+  20250330163622023684#occurrence-2
+  20250330163715024838
+  20250330163715024838#occurrence-2
+  20250330163808025894
+  20250330163808025894#occurrence-2
+  20250330165827011706
+  20250330171410015611
+  20250331094413077397
+  20250331101226694015
+  20250331102014014529
+  20250331102014014529#occurrence-2
+  20250331102105015740
+  20250331102105015740#occurrence-2
+  20250331102156016901
+  20250331102156016901#occurrence-2
+  20250331102301018341
+  20250331102301018341#occurrence-2
+  20250331102420227275
+
+======================================================================

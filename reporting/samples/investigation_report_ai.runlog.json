@@ -1,0 +1,45 @@
+{
+  "mode": "ai",
+  "accounts": [
+    {
+      "acct_004": "groq:overview=ai,bullets=9/9"
+    },
+    {
+      "acct_001": "groq:overview=ai,bullets=7/7"
+    },
+    {
+      "acct_003": "groq:overview=ai,bullets=8/8"
+    },
+    {
+      "acct_002": "groq:overview=ai,bullets=6/6"
+    }
+  ],
+  "graphs": [
+    {
+      "Account Interconnection Graph": "groq"
+    },
+    {
+      "Suspicious Activity Timeline": "groq"
+    },
+    {
+      "Fraud-Pattern Summary": "groq"
+    }
+  ],
+  "pool": {
+    "pool": "report_GROQ6-9",
+    "loaded_keys": [
+      "GROQ6",
+      "GROQ7",
+      "GROQ8",
+      "GROQ9"
+    ],
+    "status_label": "active",
+    "per_key_status": {
+      "GROQ6": "active",
+      "GROQ7": "active",
+      "GROQ8": "active",
+      "GROQ9": "active"
+    },
+    "calls_made": 7
+  }
+}

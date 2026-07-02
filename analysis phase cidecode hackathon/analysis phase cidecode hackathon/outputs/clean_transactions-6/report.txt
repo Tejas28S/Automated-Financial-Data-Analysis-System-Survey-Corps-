@@ -1,0 +1,2427 @@
+======================================================================
+  clean_transactions-6 — Analysis Summary
+======================================================================
+
+Fraud Transactions:
+----------------------------------------
+  00000013497951549_009450
+    Account   : 00000013497951549
+    Date      : 2024-05-21
+    Amount    : 249.0
+    Direction : debit
+    Narration : ATM WDL/4105/MUMBAI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  00000013497951549_009452
+    Account   : 00000013497951549
+    Date      : 2024-05-22
+    Amount    : 249.0
+    Direction : debit
+    Narration : ATM WDL/1982/MUMBAI
+    Pattern   : Duplicate Transaction Cross-Check
+
+  00000015527496586_004369
+    Account   : 00000015527496586
+    Date      : 2023-01-01
+    Amount    : 999.0
+    Direction : credit
+    Narration : TO TRANSFER-UPI/424987918922/divyamenon117@oksbi 424987918922
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004371
+    Account   : 00000015527496586
+    Date      : 2023-01-03
+    Amount    : 78500.0
+    Direction : credit
+    Narration : BY TRANSFER-1817183505233 SALARY PRADEEP SING 059107414667
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004416
+    Account   : 00000015527496586
+    Date      : 2023-02-02
+    Amount    : 78000.0
+    Direction : credit
+    Narration : BY TRANSFER-3600936039730 SALARY PRADEEP SING 684514912980
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004461
+    Account   : 00000015527496586
+    Date      : 2023-03-02
+    Amount    : 77250.0
+    Direction : credit
+    Narration : BY TRANSFER-8208803747901 SALARY PRADEEP SING 405085121348
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004523
+    Account   : 00000015527496586
+    Date      : 2023-04-01
+    Amount    : 78500.0
+    Direction : credit
+    Narration : BY TRANSFER-1607818833998 SALARY PRADEEP SING 347000025518
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004569
+    Account   : 00000015527496586
+    Date      : 2023-05-03
+    Amount    : 77250.0
+    Direction : credit
+    Narration : BY TRANSFER-3039089612258 SALARY PRADEEP SING 428706232163
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004629
+    Account   : 00000015527496586
+    Date      : 2023-06-03
+    Amount    : 78500.0
+    Direction : credit
+    Narration : BY TRANSFER-5292675501715 SALARY PRADEEP SING 760377862619
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004672
+    Account   : 00000015527496586
+    Date      : 2023-07-01
+    Amount    : 77250.0
+    Direction : credit
+    Narration : BY TRANSFER-3618562120751 SALARY PRADEEP SING 461963142381
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004725
+    Account   : 00000015527496586
+    Date      : 2023-08-03
+    Amount    : 78500.0
+    Direction : credit
+    Narration : BY TRANSFER-1323933757553 SALARY PRADEEP SING 179634603962
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004771
+    Account   : 00000015527496586
+    Date      : 2023-09-03
+    Amount    : 78000.0
+    Direction : credit
+    Narration : BY TRANSFER-9170413975219 SALARY PRADEEP SING 436695514693
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004822
+    Account   : 00000015527496586
+    Date      : 2023-10-02
+    Amount    : 78000.0
+    Direction : credit
+    Narration : BY TRANSFER-2663089953177 SALARY PRADEEP SING 824768647927
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004864
+    Account   : 00000015527496586
+    Date      : 2023-11-01
+    Amount    : 78000.0
+    Direction : credit
+    Narration : BY TRANSFER-1404424107478 SALARY PRADEEP SING 691417961081
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004926
+    Account   : 00000015527496586
+    Date      : 2023-12-03
+    Amount    : 78000.0
+    Direction : credit
+    Narration : BY TRANSFER-5608636004263 SALARY PRADEEP SING 202691977190
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_004975
+    Account   : 00000015527496586
+    Date      : 2024-01-01
+    Amount    : 78000.0
+    Direction : credit
+    Narration : BY TRANSFER-3609142126499 SALARY PRADEEP SING 635369092321
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005029
+    Account   : 00000015527496586
+    Date      : 2024-02-01
+    Amount    : 77250.0
+    Direction : credit
+    Narration : BY TRANSFER-4382357740395 SALARY PRADEEP SING 166097160527
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005079
+    Account   : 00000015527496586
+    Date      : 2024-03-03
+    Amount    : 77250.0
+    Direction : credit
+    Narration : BY TRANSFER-1938136264823 SALARY PRADEEP SING 009005288016
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005128
+    Account   : 00000015527496586
+    Date      : 2024-04-02
+    Amount    : 78500.0
+    Direction : credit
+    Narration : BY TRANSFER-6592300802021 SALARY PRADEEP SING 460433315333
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005183
+    Account   : 00000015527496586
+    Date      : 2024-05-01
+    Amount    : 77250.0
+    Direction : credit
+    Narration : BY TRANSFER-7288766733563 SALARY PRADEEP SING 100412506510
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005235
+    Account   : 00000015527496586
+    Date      : 2024-06-03
+    Amount    : 77250.0
+    Direction : credit
+    Narration : BY TRANSFER-8745018029811 SALARY PRADEEP SING 395448995572
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005287
+    Account   : 00000015527496586
+    Date      : 2024-07-02
+    Amount    : 78000.0
+    Direction : credit
+    Narration : BY TRANSFER-8585137872971 SALARY PRADEEP SING 639609483184
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005338
+    Account   : 00000015527496586
+    Date      : 2024-08-01
+    Amount    : 78500.0
+    Direction : credit
+    Narration : BY TRANSFER-5947829625806 SALARY PRADEEP SING 006701202333
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005384
+    Account   : 00000015527496586
+    Date      : 2024-09-03
+    Amount    : 78000.0
+    Direction : credit
+    Narration : BY TRANSFER-1784006275389 SALARY PRADEEP SING 179096329196
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005441
+    Account   : 00000015527496586
+    Date      : 2024-10-03
+    Amount    : 77250.0
+    Direction : credit
+    Narration : BY TRANSFER-6165064279483 SALARY PRADEEP SING 500000971985
+    Pattern   : Accumulation Account Detection
+
+  00000015527496586_005493
+    Account   : 00000015527496586
+    Date      : 2024-11-03
+    Amount    : 78000.0
+    Direction : credit
+    Narration : BY TRANSFER-9923917692279 SALARY PRADEEP SING 496952349431
+    Pattern   : Accumulation Account Detection
+
+  020211290257_006311
+    Account   : 020211290257
+    Date      : 2023-01-26
+    Amount    : 1680.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/29723080/CASH WDL/26-01-23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020211290257_006312
+    Account   : 020211290257
+    Date      : 2023-01-26
+    Amount    : 1680.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/99403924/CASH WDL/26-01-23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020211290257_006313
+    Account   : 020211290257
+    Date      : 2023-01-27
+    Amount    : 7800.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/71295128/CASH WDL/27-01-23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020211290257_006316
+    Account   : 020211290257
+    Date      : 2023-01-28
+    Amount    : 7800.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/31018256/CASH WDL/28-01-23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020211290257_006320
+    Account   : 020211290257
+    Date      : 2023-01-31
+    Amount    : 2500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/334181246957/DEEPA NAIR/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006333
+    Account   : 020211290257
+    Date      : 2023-02-06
+    Amount    : 120.0
+    Direction : debit
+    Narration : UPI UPI/280249586307/UPI/kiranreddy397@paytm/State Bank Of I/
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006382
+    Account   : 020211290257
+    Date      : 2023-03-24
+    Amount    : 850.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/461732518452/DEEPA NAIR/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006411
+    Account   : 020211290257
+    Date      : 2023-04-12
+    Amount    : 79.0
+    Direction : debit
+    Narration : UPI UPI/721168085841/UPI/kiranreddy479@okhdfcbank/State Bank Of I/
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006505
+    Account   : 020211290257
+    Date      : 2023-06-21
+    Amount    : 7500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/046589907047/SURESH BABU/HDFC BANK LTD DEBIT CARD VPS/IOCL/305599653928/MANGALURU
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006546
+    Account   : 020211290257
+    Date      : 2023-07-25
+    Amount    : 11200.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/676201767067/PRAKASH RAO/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006714
+    Account   : 020211290257
+    Date      : 2023-12-02
+    Amount    : 7500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/903373635279/DEEPA NAIR/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006719
+    Account   : 020211290257
+    Date      : 2023-12-10
+    Amount    : 11200.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/643706969056/KIRAN REDDY/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006780
+    Account   : 020211290257
+    Date      : 2024-01-26
+    Amount    : 850.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/255698511755/DEEPA NAIR/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006787
+    Account   : 020211290257
+    Date      : 2024-02-02
+    Amount    : 11200.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/138254943510/LAKSHMI VENKAT/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006820
+    Account   : 020211290257
+    Date      : 2024-02-25
+    Amount    : 24000.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/469163984574/KIRAN REDDY/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection, Round Trip Detection
+
+  020211290257_006842
+    Account   : 020211290257
+    Date      : 2024-03-09
+    Amount    : 850.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/260660663464/ANITHA KRISHNAN/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006875
+    Account   : 020211290257
+    Date      : 2024-03-28
+    Amount    : 7500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/069787292836/ANITHA KRISHNAN/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_006880
+    Account   : 020211290257
+    Date      : 2024-03-31
+    Amount    : 24000.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/960290106273/PRAKASH RAO/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_007002
+    Account   : 020211290257
+    Date      : 2024-07-01
+    Amount    : 999.0
+    Direction : debit
+    Narration : UPI UPI/836520609156/UPI/kiranreddy21@okaxis/State Bank Of I/
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_007037
+    Account   : 020211290257
+    Date      : 2024-07-30
+    Amount    : 2500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/303760902250/ANITHA KRISHNAN/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_007068
+    Account   : 020211290257
+    Date      : 2024-08-25
+    Amount    : 1200.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/477317527417/KIRAN REDDY/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_007143
+    Account   : 020211290257
+    Date      : 2024-11-01
+    Amount    : 3499.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/77531604/CASH WDL/01-11-24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020211290257_007146
+    Account   : 020211290257
+    Date      : 2024-11-02
+    Amount    : 3499.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/67902754/CASH WDL/02-11-24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020211290257_007150
+    Account   : 020211290257
+    Date      : 2024-11-03
+    Amount    : 500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/480651560776/LAKSHMI VENKAT/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_007167
+    Account   : 020211290257
+    Date      : 2024-11-16
+    Amount    : 7500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/172990133488/ANITHA KRISHNAN/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020211290257_007175
+    Account   : 020211290257
+    Date      : 2024-11-22
+    Amount    : 18500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/467852069159/LAKSHMI VENKAT/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_001904
+    Account   : 020245929381
+    Date      : 2023-01-25
+    Amount    : 1200.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/528917626205/PRAKASH RAO/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_001970
+    Account   : 020245929381
+    Date      : 2023-03-20
+    Amount    : 1250.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/31748358/CASH WDL/20-03-23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_001972
+    Account   : 020245929381
+    Date      : 2023-03-21
+    Amount    : 1250.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/33478983/CASH WDL/21-03-23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_002131
+    Account   : 020245929381
+    Date      : 2023-07-25
+    Amount    : 500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/322154359777/KIRAN REDDY/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002167
+    Account   : 020245929381
+    Date      : 2023-08-20
+    Amount    : 18500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/099332334531/PRAKASH RAO/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002227
+    Account   : 020245929381
+    Date      : 2023-10-07
+    Amount    : 310.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/47902204/CASH WDL/07-10-23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_002230
+    Account   : 020245929381
+    Date      : 2023-10-08
+    Amount    : 310.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/25147664/CASH WDL/08-10-23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_002357
+    Account   : 020245929381
+    Date      : 2024-01-25
+    Amount    : 1200.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/249469787812/FATIMA SHEIKH/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002400
+    Account   : 020245929381
+    Date      : 2024-03-04
+    Amount    : 4800.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/201968424051/LAKSHMI VENKAT/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002402
+    Account   : 020245929381
+    Date      : 2024-03-04
+    Amount    : 310.0
+    Direction : debit
+    Narration : UPI UPI/036187445738/UPI/kiranreddy736@ybl/State Bank Of I/
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002414
+    Account   : 020245929381
+    Date      : 2024-03-14
+    Amount    : 1250.0
+    Direction : debit
+    Narration : UPI UPI/513760697509/UPI/kiranreddy298@okaxis/State Bank Of I/
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002437
+    Account   : 020245929381
+    Date      : 2024-03-29
+    Amount    : 3499.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/78958755/CASH WDL/29-03-24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_002439
+    Account   : 020245929381
+    Date      : 2024-03-30
+    Amount    : 3499.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/35411726/CASH WDL/30-03-24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_002499
+    Account   : 020245929381
+    Date      : 2024-05-13
+    Amount    : 11200.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/377928785246/LAKSHMI VENKAT/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002500
+    Account   : 020245929381
+    Date      : 2024-05-14
+    Amount    : 2500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/409695416674/RAMESH PILLAI/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002501
+    Account   : 020245929381
+    Date      : 2024-05-14
+    Amount    : 4800.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/872850397096/KIRAN REDDY/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002520
+    Account   : 020245929381
+    Date      : 2024-05-29
+    Amount    : 18500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/373316411662/ANITHA KRISHNAN/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002546
+    Account   : 020245929381
+    Date      : 2024-06-21
+    Amount    : 7500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/446004386260/FATIMA SHEIKH/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002644
+    Account   : 020245929381
+    Date      : 2024-09-11
+    Amount    : 11200.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/315185432286/MOHAMMED IRFAN/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002685
+    Account   : 020245929381
+    Date      : 2024-10-15
+    Amount    : 310.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/61045958/CASH WDL/15-10-24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_002686
+    Account   : 020245929381
+    Date      : 2024-10-15
+    Amount    : 310.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/15433859/CASH WDL/15-10-24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_002714
+    Account   : 020245929381
+    Date      : 2024-11-09
+    Amount    : 310.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/21743695/CASH WDL/09-11-24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_002715
+    Account   : 020245929381
+    Date      : 2024-11-09
+    Amount    : 310.0
+    Direction : debit
+    Narration : OTHER ATMS NFS/79167460/CASH WDL/09-11-24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  020245929381_002717
+    Account   : 020245929381
+    Date      : 2024-11-09
+    Amount    : 2500.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/023361787465/FATIMA SHEIKH/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  020245929381_002729
+    Account   : 020245929381
+    Date      : 2024-11-20
+    Amount    : 1200.0
+    Direction : credit
+    Narration : MOBILE BANKING MMT/IMPS/069209726772/DEEPA NAIR/HDFC BANK LTD
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001252
+    Account   : 50103894318937
+    Date      : 2023-02-13
+    Amount    : 2380.0
+    Direction : debit
+    Narration : UPI-1501303710 48-kiranreddy173 @paytm-OK 150130371048 UPI-1501303710 150130371048 13/02/23 13/02/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001261
+    Account   : 50103894318937
+    Date      : 2023-02-23
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-985426547 476-FATIMASHE IKH-HDFC-XXXX XXXXXX9186-PE RSONAL 0000985426547476 IMPS-985426547 0000985426547476 23/02/23 23/02/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001265
+    Account   : 50103894318937
+    Date      : 2023-02-27
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS-107094610 486-SURESHBA BU-HDFC-XXXX XXXXXX2056-PE RSONAL 0000107094610486 IMPS-107094610 0000107094610486 27/02/23 27/02/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001268
+    Account   : 50103894318937
+    Date      : 2023-03-02
+    Amount    : 1250.0
+    Direction : debit
+    Narration : UPI-3704301711 82-kiranreddy213 @oksbi-OK 370430171182 UPI-3704301711 370430171182 02/03/23 02/03/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001320
+    Account   : 50103894318937
+    Date      : 2023-04-28
+    Amount    : 1250.0
+    Direction : debit
+    Narration : POS 416021XXX XXX7060 RELIANCE FRESH POS DEBIT 538864244886 POS 416021XXX 603087612796 28/04/23 28/04/23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50103894318937_001321
+    Account   : 50103894318937
+    Date      : 2023-04-28
+    Amount    : 1250.0
+    Direction : debit
+    Narration : POS 416021XXX XXX2974 UBER POS DEBIT 603087612796 POS 416021XXX 603087612796 28/04/23 28/04/23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50103894318937_001329
+    Account   : 50103894318937
+    Date      : 2023-05-07
+    Amount    : 120.0
+    Direction : debit
+    Narration : UPI-4438452685 95-kiranreddy349 @okhdfcbank-OK 443845268595 UPI-4438452685 443845268595 07/05/23 07/05/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001385
+    Account   : 50103894318937
+    Date      : 2023-07-07
+    Amount    : 22000.0
+    Direction : debit
+    Narration : NEFT DR-HDFC 0333604-KIRAN REDDY-9046249 60039-RENT 241620014581 NEFT DR-HDFC 241620014581 07/07/23 07/07/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001471
+    Account   : 50103894318937
+    Date      : 2023-10-05
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS-629512063 723-MOHAMME DIRFAN-HDFC-X XXXXXXXXX357 2-PERSONAL 0000629512063723 IMPS-629512063 0000629512063723 05/10/23 05/10/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001496
+    Account   : 50103894318937
+    Date      : 2023-11-05
+    Amount    : 850.0
+    Direction : credit
+    Narration : IMPS-778298882 913-PRAKASHR AO-HDFC-XXXX XXXXXX6402-PE RSONAL 0000778298882913 IMPS-778298882 0000778298882913 05/11/23 05/11/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001573
+    Account   : 50103894318937
+    Date      : 2024-02-02
+    Amount    : 3499.0
+    Direction : debit
+    Narration : UPI-9346115892 54-kiranreddy954 @oksbi-OK 934611589254 UPI-9346115892 934611589254 02/02/24 02/02/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001596
+    Account   : 50103894318937
+    Date      : 2024-02-28
+    Amount    : 24000.0
+    Direction : credit
+    Narration : IMPS-120364140 093-RAMESHPIL LAI-HDFC-XXXX XXXXXX2349-PE RSONAL 0000120364140093 IMPS-120364140 0000120364140093 28/02/24 28/02/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection, Round Trip Detection
+
+  50103894318937_001601
+    Account   : 50103894318937
+    Date      : 2024-03-03
+    Amount    : 31000.0
+    Direction : debit
+    Narration : NEFT DR-HDFC 0621942-KIRAN REDDY-3887270 96886-RENT 891820291876 NEFT DR-HDFC 891820291876 03/03/24 03/03/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection, Round Trip Detection
+
+  50103894318937_001716
+    Account   : 50103894318937
+    Date      : 2024-06-19
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-822682769 141-RAMESHPIL LAI-HDFC-XXXX XXXXXX7368-PE RSONAL 0000822682769141 IMPS-822682769 0000822682769141 19/06/24 19/06/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001749
+    Account   : 50103894318937
+    Date      : 2024-08-01
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-734969809 253-RAMESHPIL LAI-HDFC-XXXX XXXXXX3896-PE RSONAL 0000734969809253 IMPS-734969809 0000734969809253 01/08/24 01/08/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001755
+    Account   : 50103894318937
+    Date      : 2024-08-05
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS-076644575 373-ANITHAKRI SHNAN-HDFC-X XXXXXXXXX440 3-PERSONAL 0000076644575373 NEFT DR-HDFC 792026722782 05/08/24 05/08/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001789
+    Account   : 50103894318937
+    Date      : 2024-09-11
+    Amount    : 850.0
+    Direction : debit
+    Narration : UPI-4975581597 71-kiranreddy423 @ybl-OK 497558159771 POS 416021XXX 787350912668 11/09/24 11/09/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50103894318937_001853
+    Account   : 50103894318937
+    Date      : 2024-11-13
+    Amount    : 850.0
+    Direction : credit
+    Narration : IMPS-091393572 385-RAMESHPIL LAI-HDFC-XXXX XXXXXX2322-PE RSONAL 0000091393572385 IMPS-091393572 0000091393572385 13/11/24 13/11/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005550
+    Account   : 50108363220770
+    Date      : 2023-01-05
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-869742511740-SURESHBABU-HDFC-XXXXXXXXXX5580-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005560
+    Account   : 50108363220770
+    Date      : 2023-01-14
+    Amount    : 2500.0
+    Direction : credit
+    Narration : IMPS-272035719842-ANITHAKRISHNAN-HDFC-XXXXXXXXXX9655-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005584
+    Account   : 50108363220770
+    Date      : 2023-02-06
+    Amount    : 1250.0
+    Direction : debit
+    Narration : UPI-223786239194-kiranreddy202@ybl-OK
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005616
+    Account   : 50108363220770
+    Date      : 2023-03-01
+    Amount    : 500.0
+    Direction : credit
+    Narration : IMPS-394990986120-PRAKASHRAO-HDFC-XXXXXXXXXX4997-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005677
+    Account   : 50108363220770
+    Date      : 2023-04-30
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-328142779096-LAKSHMIVENKAT-HDFC-XXXXXXXXXX4936-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005678
+    Account   : 50108363220770
+    Date      : 2023-05-01
+    Amount    : 850.0
+    Direction : credit
+    Narration : IMPS-781994332571-KIRANREDDY-HDFC-XXXXXXXXXX7430-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005727
+    Account   : 50108363220770
+    Date      : 2023-06-10
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS-371434640757-ANITHAKRISHNAN-HDFC-XXXXXXXXXX3851-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005760
+    Account   : 50108363220770
+    Date      : 2023-07-05
+    Amount    : 249.0
+    Direction : debit
+    Narration : NWD-416021XXXXXX8579-S10621-MYSURU
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_005761
+    Account   : 50108363220770
+    Date      : 2023-07-05
+    Amount    : 249.0
+    Direction : debit
+    Narration : POS 416021XXXXXX0517 PVR CINEMAS POS DEBIT
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_005762
+    Account   : 50108363220770
+    Date      : 2023-07-05
+    Amount    : 500.0
+    Direction : credit
+    Narration : IMPS-753542481878-ANITHAKRISHNAN-HDFC-XXXXXXXXXX1898-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005786
+    Account   : 50108363220770
+    Date      : 2023-07-28
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-767527672436-SURESHBABU-HDFC-XXXXXXXXXX6904-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005798
+    Account   : 50108363220770
+    Date      : 2023-08-08
+    Amount    : 7800.0
+    Direction : debit
+    Narration : UPI-970255665951-kiranreddy839@okhdfcbank-OK
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005812
+    Account   : 50108363220770
+    Date      : 2023-08-19
+    Amount    : 120.0
+    Direction : debit
+    Narration : UPI-044778641197-kiranreddy856@okaxis-OK
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005828
+    Account   : 50108363220770
+    Date      : 2023-09-04
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS-375190840073-DEEPANAIR-HDFC-XXXXXXXXXX8887-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005866
+    Account   : 50108363220770
+    Date      : 2023-10-12
+    Amount    : 120.0
+    Direction : debit
+    Narration : POS 416021XXXXXX8474 UBER POS DEBIT
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_005871
+    Account   : 50108363220770
+    Date      : 2023-10-13
+    Amount    : 120.0
+    Direction : debit
+    Narration : POS 416021XXXXXX2939 BPCL POS DEBIT
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_005897
+    Account   : 50108363220770
+    Date      : 2023-11-03
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS-267211115711-RAMESHPILLAI-HDFC-XXXXXXXXXX9728-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005958
+    Account   : 50108363220770
+    Date      : 2023-12-22
+    Amount    : 500.0
+    Direction : credit
+    Narration : IMPS-659530202724-SURESHBABU-HDFC-XXXXXXXXXX6644-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_005965
+    Account   : 50108363220770
+    Date      : 2024-01-05
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS-792156589027-PRAKASHRAO-HDFC-XXXXXXXXXX6880-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_006048
+    Account   : 50108363220770
+    Date      : 2024-04-08
+    Amount    : 1250.0
+    Direction : debit
+    Narration : UPI-541825678423-kiranreddy390@okaxis-OK
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_006049
+    Account   : 50108363220770
+    Date      : 2024-04-09
+    Amount    : 999.0
+    Direction : debit
+    Narration : UPI-272108172091-kiranreddy543@oksbi-OK
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_006081
+    Account   : 50108363220770
+    Date      : 2024-05-17
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS-730988458478-MOHAMMEDIRFAN-HDFC-XXXXXXXXXX9895-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_006091
+    Account   : 50108363220770
+    Date      : 2024-05-31
+    Amount    : 500.0
+    Direction : credit
+    Narration : IMPS-197389572775-SURESHBABU-HDFC-XXXXXXXXXX6956-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_006116
+    Account   : 50108363220770
+    Date      : 2024-06-24
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-254185255962-PRAKASHRAO-HDFC-XXXXXXXXXX6754-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection, Round Trip Detection
+
+  50108363220770_006130
+    Account   : 50108363220770
+    Date      : 2024-07-07
+    Amount    : 449.0
+    Direction : debit
+    Narration : POS 416021XXXXXX2982 AMAZON POS DEBIT
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_006131
+    Account   : 50108363220770
+    Date      : 2024-07-07
+    Amount    : 449.0
+    Direction : debit
+    Narration : POS 416021XXXXXX3120 BESCOM POS DEBIT
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_006132
+    Account   : 50108363220770
+    Date      : 2024-07-08
+    Amount    : 449.0
+    Direction : debit
+    Narration : POS 416021XXXXXX8823 UBER POS DEBIT
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_006139
+    Account   : 50108363220770
+    Date      : 2024-07-19
+    Amount    : 2380.0
+    Direction : debit
+    Narration : POS 416021XXXXXX8246 OLA POS DEBIT
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_006140
+    Account   : 50108363220770
+    Date      : 2024-07-19
+    Amount    : 2380.0
+    Direction : debit
+    Narration : POS 416021XXXXXX9575 AIRTEL POS DEBIT
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_006153
+    Account   : 50108363220770
+    Date      : 2024-07-28
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-190246835962-ANITHAKRISHNAN-HDFC-XXXXXXXXXX8865-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_006168
+    Account   : 50108363220770
+    Date      : 2024-08-13
+    Amount    : 850.0
+    Direction : credit
+    Narration : IMPS-267270910067-DEEPANAIR-HDFC-XXXXXXXXXX2169-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_006169
+    Account   : 50108363220770
+    Date      : 2024-08-13
+    Amount    : 1250.0
+    Direction : debit
+    Narration : IB BILLPAY DR-HDFCPE-545964XXXXXX0975 IB684515704164
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_006172
+    Account   : 50108363220770
+    Date      : 2024-08-14
+    Amount    : 1250.0
+    Direction : debit
+    Narration : IB BILLPAY DR-HDFCPE-545964XXXXXX9407 IB063054174304
+    Pattern   : Duplicate Transaction Cross-Check
+
+  50108363220770_006246
+    Account   : 50108363220770
+    Date      : 2024-10-19
+    Amount    : 2380.0
+    Direction : debit
+    Narration : UPI-300453211132-kiranreddy19@oksbi-OK
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  50108363220770_006258
+    Account   : 50108363220770
+    Date      : 2024-11-07
+    Amount    : 24000.0
+    Direction : credit
+    Narration : IMPS-286942487801-MOHAMMEDIRFAN-HDFC-XXXXXXXXXX0955-PERSONAL
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_007865
+    Account   : 59953720424372
+    Date      : 2023-01-01
+    Amount    : 79.0
+    Direction : debit
+    Narration : UPI/840888386137/kiranreddy875@okhdfcbank/CNRB 840888386137
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_007894
+    Account   : 59953720424372
+    Date      : 2023-01-22
+    Amount    : 850.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/477342991692/DEEPA NAIR/CNRB 477342991692
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_007915
+    Account   : 59953720424372
+    Date      : 2023-02-05
+    Amount    : 18500.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/846098277312/RAMESH PILLAI/CNRB 846098277312
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_007971
+    Account   : 59953720424372
+    Date      : 2023-03-15
+    Amount    : 500.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/156082574930/FATIMA SHEIKH/CNRB 156082574930
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_007989
+    Account   : 59953720424372
+    Date      : 2023-03-31
+    Amount    : 1200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/823238046947/SURESH BABU/CNRB 823238046947
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008008
+    Account   : 59953720424372
+    Date      : 2023-04-09
+    Amount    : 3499.0
+    Direction : debit
+    Narration : UPI/034277858928/kiranreddy922@okhdfcbank/CNRB 034277858928
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008050
+    Account   : 59953720424372
+    Date      : 2023-05-05
+    Amount    : 18000.0
+    Direction : debit
+    Narration : NEFT DR-HDFC0240236-KIRAN REDDY-640797498138-RENT 176621436231
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008068
+    Account   : 59953720424372
+    Date      : 2023-05-11
+    Amount    : 7500.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/752522749551/DEEPA NAIR/CNRB 752522749551
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008094
+    Account   : 59953720424372
+    Date      : 2023-05-30
+    Amount    : 699.0
+    Direction : debit
+    Narration : UPI/739050155311/kiranreddy531@oksbi/CNRB 739050155311
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008193
+    Account   : 59953720424372
+    Date      : 2023-08-11
+    Amount    : 850.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/091272408151/DEEPA NAIR/CNRB 091272408151
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008197
+    Account   : 59953720424372
+    Date      : 2023-08-13
+    Amount    : 7800.0
+    Direction : debit
+    Narration : UPI/634039439600/kiranreddy733@paytm/CNRB 634039439600
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008203
+    Account   : 59953720424372
+    Date      : 2023-08-16
+    Amount    : 4800.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/713484218954/ANITHA KRISHNAN/CNRB 713484218954
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008207
+    Account   : 59953720424372
+    Date      : 2023-08-19
+    Amount    : 1250.0
+    Direction : debit
+    Narration : UPI/416889067247/kiranreddy701@okhdfcbank/CNRB 416889067247
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008224
+    Account   : 59953720424372
+    Date      : 2023-08-31
+    Amount    : 24000.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/102068775405/SURESH BABU/CNRB 102068775405
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008242
+    Account   : 59953720424372
+    Date      : 2023-09-10
+    Amount    : 120.0
+    Direction : debit
+    Narration : UPI/994686871969/kiranreddy224@okhdfcbank/CNRB 994686871969
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008317
+    Account   : 59953720424372
+    Date      : 2023-10-23
+    Amount    : 11200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/055303127776/LAKSHMI VENKAT/CNRB 055303127776
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008341
+    Account   : 59953720424372
+    Date      : 2023-11-03
+    Amount    : 7500.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/725927422208/FATIMA SHEIKH/CNRB 725927422208
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008344
+    Account   : 59953720424372
+    Date      : 2023-11-08
+    Amount    : 4800.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/272503244798/FATIMA SHEIKH/CNRB 272503244798
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008346
+    Account   : 59953720424372
+    Date      : 2023-11-09
+    Amount    : 449.0
+    Direction : debit
+    Narration : UPI/639174614652/kiranreddy371@oksbi/CNRB 639174614652
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008391
+    Account   : 59953720424372
+    Date      : 2023-12-04
+    Amount    : 11200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/469899920400/DEEPA NAIR/CNRB 469899920400
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008415
+    Account   : 59953720424372
+    Date      : 2023-12-21
+    Amount    : 850.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/285147137411/FATIMA SHEIKH/CNRB 285147137411
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008425
+    Account   : 59953720424372
+    Date      : 2023-12-26
+    Amount    : 2500.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/738985217165/SURESH BABU/CNRB 738985217165
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008456
+    Account   : 59953720424372
+    Date      : 2024-01-17
+    Amount    : 1200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/190359191363/FATIMA SHEIKH/CNRB 190359191363
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008503
+    Account   : 59953720424372
+    Date      : 2024-02-16
+    Amount    : 310.0
+    Direction : debit
+    Narration : UPI/329745795014/kiranreddy752@okaxis/CNRB 329745795014
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008508
+    Account   : 59953720424372
+    Date      : 2024-02-18
+    Amount    : 850.0
+    Direction : debit
+    Narration : UPI/587639593428/kiranreddy870@okaxis/CNRB 587639593428
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008569
+    Account   : 59953720424372
+    Date      : 2024-04-07
+    Amount    : 1200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/782899778138/RAMESH PILLAI/CNRB 782899778138
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008598
+    Account   : 59953720424372
+    Date      : 2024-04-21
+    Amount    : 500.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/555362110656/PRAKASH RAO/CNRB 555362110656
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008604
+    Account   : 59953720424372
+    Date      : 2024-04-26
+    Amount    : 850.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/103078809139/KIRAN REDDY/CNRB 103078809139
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008614
+    Account   : 59953720424372
+    Date      : 2024-05-05
+    Amount    : 18500.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/746866754064/FATIMA SHEIKH/CNRB 746866754064
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008625
+    Account   : 59953720424372
+    Date      : 2024-05-17
+    Amount    : 18500.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/615006568287/SURESH BABU/CNRB 615006568287
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008669
+    Account   : 59953720424372
+    Date      : 2024-06-11
+    Amount    : 4800.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/487479623508/LAKSHMI VENKAT/CNRB 487479623508
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008679
+    Account   : 59953720424372
+    Date      : 2024-06-17
+    Amount    : 120.0
+    Direction : debit
+    Narration : UPI/030578972599/kiranreddy675@ybl/CNRB 030578972599
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008781
+    Account   : 59953720424372
+    Date      : 2024-09-03
+    Amount    : 1680.0
+    Direction : debit
+    Narration : UPI/121413939921/kiranreddy479@okaxis/CNRB 121413939921
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008792
+    Account   : 59953720424372
+    Date      : 2024-09-10
+    Amount    : 1200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/545824479426/FATIMA SHEIKH/CNRB 545824479426
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008809
+    Account   : 59953720424372
+    Date      : 2024-09-22
+    Amount    : 5200.0
+    Direction : debit
+    Narration : UPI/189840802025/kiranreddy531@ybl/CNRB 189840802025
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008822
+    Account   : 59953720424372
+    Date      : 2024-09-28
+    Amount    : 3499.0
+    Direction : debit
+    Narration : UPI/662416436241/kiranreddy623@okaxis/CNRB 662416436241
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  59953720424372_008859
+    Account   : 59953720424372
+    Date      : 2024-10-25
+    Amount    : 5200.0
+    Direction : debit
+    Narration : UPI/672651360609/kiranreddy950@okaxis/CNRB 672651360609
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  7118404892_000481
+    Account   : 7118404892
+    Date      : 2023-10-23
+    Amount    : 1680.0
+    Direction : debit
+    Narration : POS/1300/PVR CINEMAS/KORAMANGALA 572529503987
+    Pattern   : Duplicate Transaction Cross-Check
+
+  7118404892_000482
+    Account   : 7118404892
+    Date      : 2023-10-23
+    Amount    : 1680.0
+    Direction : debit
+    Narration : POS/3066/PVR CINEMAS/KORAMANGALA 828595069348
+    Pattern   : Duplicate Transaction Cross-Check
+
+  7118404892_000917
+    Account   : 7118404892
+    Date      : 2024-06-16
+    Amount    : 9783.36
+    Direction : credit
+    Narration : BY TRANSFER-INB IMPS316106588037/pradeepsin435@okhdfcbank/PRADE Tr- 316106588037
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_000918
+    Account   : 7118404892
+    Date      : 2024-06-16
+    Amount    : 9285.87
+    Direction : credit
+    Narration : BY TRANSFER-INB IMPS301550916990/santoshkum722@ybl/SANTO Tr- 301550916990
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_000919
+    Account   : 7118404892
+    Date      : 2024-06-16
+    Amount    : 9409.41
+    Direction : credit
+    Narration : BY TRANSFER-INB IMPS550049777564/santoshkum920@paytm/SANTO Tr- 550049777564
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_000920
+    Account   : 7118404892
+    Date      : 2024-06-16
+    Amount    : 18500.0
+    Direction : credit
+    Narration : BY TRANSFER-INB IMPS647209322530/0955357007/XX6584/Remitly Tr- MAC5186532659
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_001024
+    Account   : 7118404892
+    Date      : 2024-08-17
+    Amount    : 15000.0
+    Direction : debit
+    Narration : ATM WDL/6034/BANJARA HILLS 4235674131
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_001025
+    Account   : 7118404892
+    Date      : 2024-08-17
+    Amount    : 17500.0
+    Direction : debit
+    Narration : ATM WDL/8624/JUBILEE HILLS 4283397466
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_001026
+    Account   : 7118404892
+    Date      : 2024-08-17
+    Amount    : 17500.0
+    Direction : debit
+    Narration : ATM WDL/0621/KUKATPALLY 5951306072
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_001027
+    Account   : 7118404892
+    Date      : 2024-08-17
+    Amount    : 18000.0
+    Direction : debit
+    Narration : ATM WDL/0791/SECUNDERABAD 0676336170
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_001028
+    Account   : 7118404892
+    Date      : 2024-08-17
+    Amount    : 17500.0
+    Direction : debit
+    Narration : ATM WDL/5030/HITEC CITY 0233577165
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_001029
+    Account   : 7118404892
+    Date      : 2024-08-17
+    Amount    : 18000.0
+    Direction : debit
+    Narration : ATM WDL/8243/KONDAPUR 0146349207
+    Pattern   : Structuring / Smurfing Detection
+
+  7118404892_001030
+    Account   : 7118404892
+    Date      : 2024-08-17
+    Amount    : 18000.0
+    Direction : debit
+    Narration : ATM WDL/6728/GACHIBOWLI 6858136523
+    Pattern   : Structuring / Smurfing Detection
+
+  89860512500290_003783
+    Account   : 89860512500290
+    Date      : 2023-03-17
+    Amount    : 11200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/628282262370/MOHAMMED IRFAN/CNRB 628282262370
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  89860512500290_003861
+    Account   : 89860512500290
+    Date      : 2023-06-09
+    Amount    : 850.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/891495254353/SURESH BABU/CNRB 891495254353
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  89860512500290_004024
+    Account   : 89860512500290
+    Date      : 2023-12-02
+    Amount    : 1200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/146822486893/FATIMA SHEIKH/CNRB 146822486893
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  89860512500290_004241
+    Account   : 89860512500290
+    Date      : 2024-07-17
+    Amount    : 500.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/771072844380/FATIMA SHEIKH/CNRB 771072844380
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  89860512500290_004270
+    Account   : 89860512500290
+    Date      : 2024-08-12
+    Amount    : 11200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/565538998762/DEEPA NAIR/CNRB 565538998762
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  89860512500290_004351
+    Account   : 89860512500290
+    Date      : 2024-11-06
+    Amount    : 1200.0
+    Direction : credit
+    Narration : BY TRANSFER/IMPS/633717431688/MOHAMMED IRFAN/CNRB 633717431688
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007215
+    Account   : 92000555502494
+    Date      : 2023-02-09
+    Amount    : 4800.0
+    Direction : credit
+    Narration : IMPS/P2A/580726336191/KIRANREDDY/AXIS 580726336191
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007239
+    Account   : 92000555502494
+    Date      : 2023-03-02
+    Amount    : 24000.0
+    Direction : credit
+    Narration : IMPS/P2A/931335247013/KIRANREDDY/AXIS 931335247013
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007353
+    Account   : 92000555502494
+    Date      : 2023-06-27
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS/P2A/501742167748/KIRANREDDY/AXIS 501742167748
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007361
+    Account   : 92000555502494
+    Date      : 2023-07-04
+    Amount    : 31000.0
+    Direction : debit
+    Narration : NEFT DR-HDFC0754306-KIRAN REDDY-296959424935-RENT 251269468959
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007363
+    Account   : 92000555502494
+    Date      : 2023-07-08
+    Amount    : 500.0
+    Direction : credit
+    Narration : IMPS/P2A/936686340504/KIRANREDDY/AXIS 936686340504
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007458
+    Account   : 92000555502494
+    Date      : 2023-10-11
+    Amount    : 2500.0
+    Direction : credit
+    Narration : IMPS/P2A/478993760127/FATIMASHEIKH/AXIS 478993760127
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007510
+    Account   : 92000555502494
+    Date      : 2023-12-06
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS/P2A/487997384736/PRAKASHRAO/AXIS 487997384736
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007530
+    Account   : 92000555502494
+    Date      : 2023-12-28
+    Amount    : 2380.0
+    Direction : debit
+    Narration : UPI/P2A/593403714940/kiranreddy606@oksbi/PAY 593403714940
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007575
+    Account   : 92000555502494
+    Date      : 2024-02-15
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS/P2A/672314281577/FATIMASHEIKH/AXIS 672314281577
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007646
+    Account   : 92000555502494
+    Date      : 2024-04-28
+    Amount    : 5200.0
+    Direction : debit
+    Narration : UPI/P2A/942817149505/kiranreddy237@okaxis/PAY 942817149505
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007706
+    Account   : 92000555502494
+    Date      : 2024-06-23
+    Amount    : 1250.0
+    Direction : debit
+    Narration : UPI/P2A/802795751236/kiranreddy949@oksbi/PAY 802795751236
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007727
+    Account   : 92000555502494
+    Date      : 2024-07-14
+    Amount    : 2380.0
+    Direction : debit
+    Narration : UPI/P2A/275768696865/kiranreddy924@paytm/PAY 275768696865
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007788
+    Account   : 92000555502494
+    Date      : 2024-09-07
+    Amount    : 79.0
+    Direction : debit
+    Narration : UPI/P2A/298945539499/kiranreddy349@paytm/PAY 298945539499
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007827
+    Account   : 92000555502494
+    Date      : 2024-10-14
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS/P2A/379124588826/SURESHBABU/AXIS 379124588826
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007828
+    Account   : 92000555502494
+    Date      : 2024-10-14
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS/P2A/896755909914/KIRANREDDY/AXIS 896755909914
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92000555502494_007832
+    Account   : 92000555502494
+    Date      : 2024-10-18
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS/P2A/969355350352/SURESHBABU/AXIS 969355350352
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_002765
+    Account   : 92007575318980
+    Date      : 2023-01-17
+    Amount    : 850.0
+    Direction : credit
+    Narration : IMPS/P2A/470317841520/PRAKASHRAO/AXIS 470317841520
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_002864
+    Account   : 92007575318980
+    Date      : 2023-04-07
+    Amount    : 2500.0
+    Direction : credit
+    Narration : IMPS/P2A/209087567677/LAKSHMIVENKAT/AXIS 209087567677
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_002939
+    Account   : 92007575318980
+    Date      : 2023-05-29
+    Amount    : 449.0
+    Direction : debit
+    Narration : UPI/P2A/655062429716/kiranreddy990@ybl/PAY 655062429716
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_002969
+    Account   : 92007575318980
+    Date      : 2023-06-20
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS/P2A/853338159974/SURESHBABU/AXIS 853338159974
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003036
+    Account   : 92007575318980
+    Date      : 2023-08-05
+    Amount    : 850.0
+    Direction : credit
+    Narration : IMPS/P2A/410640687281/RAMESHPILLAI/AXIS 410640687281
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003050
+    Account   : 92007575318980
+    Date      : 2023-08-17
+    Amount    : 2500.0
+    Direction : credit
+    Narration : IMPS/P2A/240790529062/MOHAMMEDIRFAN/AXIS 240790529062
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003161
+    Account   : 92007575318980
+    Date      : 2023-10-28
+    Amount    : 2500.0
+    Direction : credit
+    Narration : IMPS/P2A/573237409378/MOHAMMEDIRFAN/AXIS 573237409378
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003241
+    Account   : 92007575318980
+    Date      : 2023-12-23
+    Amount    : 24000.0
+    Direction : credit
+    Narration : IMPS/P2A/308567027064/SURESHBABU/AXIS 308567027064
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003262
+    Account   : 92007575318980
+    Date      : 2024-01-09
+    Amount    : 49.0
+    Direction : debit
+    Narration : UPI/P2A/680574254035/kiranreddy209@paytm/PAY 680574254035
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003268
+    Account   : 92007575318980
+    Date      : 2024-01-11
+    Amount    : 24000.0
+    Direction : credit
+    Narration : IMPS/P2A/753717700819/FATIMASHEIKH/AXIS 753717700819
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003278
+    Account   : 92007575318980
+    Date      : 2024-01-19
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS/P2A/576805363885/SURESHBABU/AXIS 576805363885
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003279
+    Account   : 92007575318980
+    Date      : 2024-01-19
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS/P2A/477223328189/KIRANREDDY/AXIS 477223328189
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003293
+    Account   : 92007575318980
+    Date      : 2024-02-01
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS/P2A/064679442031/PRAKASHRAO/AXIS 064679442031
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003360
+    Account   : 92007575318980
+    Date      : 2024-03-21
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS/P2A/570877067242/FATIMASHEIKH/AXIS 570877067242
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003365
+    Account   : 92007575318980
+    Date      : 2024-03-22
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS/P2A/978895744845/SURESHBABU/AXIS 978895744845
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003492
+    Account   : 92007575318980
+    Date      : 2024-06-19
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS/P2A/646526388594/KIRANREDDY/AXIS 646526388594
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003529
+    Account   : 92007575318980
+    Date      : 2024-07-17
+    Amount    : 500.0
+    Direction : credit
+    Narration : IMPS/P2A/081429009121/MOHAMMEDIRFAN/AXIS 081429009121
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003571
+    Account   : 92007575318980
+    Date      : 2024-08-25
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS/P2A/160660976807/RAMESHPILLAI/AXIS 160660976807
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003581
+    Account   : 92007575318980
+    Date      : 2024-09-03
+    Amount    : 500.0
+    Direction : credit
+    Narration : IMPS/P2A/429601394419/RAMESHPILLAI/AXIS 429601394419
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003667
+    Account   : 92007575318980
+    Date      : 2024-11-02
+    Amount    : 249.0
+    Direction : debit
+    Narration : UPI/P2A/278705156348/kiranreddy232@okhdfcbank/PAY 278705156348
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  92007575318980_003703
+    Account   : 92007575318980
+    Date      : 2024-11-28
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS/P2A/968108314328/LAKSHMIVENKAT/AXIS 968108314328
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009684
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-01-25
+    Amount    : 2380.0
+    Direction : debit
+    Narration : UPI-3093939690 45-kiranreddy560 @oksbi-OK 309393969045 NWD-416021XX 302458634985 25/01/23 25/01/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009706
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-02-10
+    Amount    : 249.0
+    Direction : debit
+    Narration : UPI-3762437888 12-kiranreddy853 @okhdfcbank-OK 376243788812 IMPS-929432219 0000929432219799 10/02/23 10/02/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009709
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-02-10
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-929432219 799-MOHAMME DIRFAN-HDFC-X XXXXXXXXX847 5-PERSONAL 0000929432219799 IMPS-929432219 0000929432219799 10/02/23 10/02/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009740
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-03-08
+    Amount    : 999.0
+    Direction : debit
+    Narration : UPI-3495761370 13-kiranreddy97 @ybl-OK 349576137013 UPI-3495761370 349576137013 08/03/23 08/03/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009754
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-03-19
+    Amount    : 79.0
+    Direction : debit
+    Narration : UPI-5346617691 54-sunilshett388 @paytm-OK 534661769154 UPI-7156711720 715671172004 19/03/23 19/03/23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009756
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-03-19
+    Amount    : 79.0
+    Direction : debit
+    Narration : UPI-7156711720 04-sunilshett900 @paytm-OK 715671172004 UPI-7156711720 715671172004 19/03/23 19/03/23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009774
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-04-03
+    Amount    : 500.0
+    Direction : credit
+    Narration : IMPS-531355997 797-LAKSHMIVE NKAT-HDFC-XX XXXXXXXX6207-PERSONAL 0000531355997797 NWD-416021XX 463752357938 03/04/23 03/04/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009838
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-06-01
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS-781139848 317-MOHAMME DIRFAN-HDFC-X XXXXXXXXX794 7-PERSONAL 0000781139848317 IMPS-781139848 0000781139848317 01/06/23 01/06/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009864
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-06-21
+    Amount    : 5200.0
+    Direction : debit
+    Narration : UPI-0996706826 39-kiranreddy864 @okhdfcbank-OK 099670682639 UPI-0996706826 099670682639 21/06/23 21/06/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009870
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-06-25
+    Amount    : 2500.0
+    Direction : credit
+    Narration : IMPS-489697167 810-RAMESHPIL LAI-HDFC-XXXX XXXXXX4220-PE RSONAL 0000489697167810 IMPS-489697167 0000489697167810 25/06/23 25/06/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009892
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-07-19
+    Amount    : 449.0
+    Direction : debit
+    Narration : POS 416021XXX XXX4503 SWIGGY POS DEBIT 725631608416 POS 416021XXX 148899337648 19/07/23 19/07/23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009894
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-07-19
+    Amount    : 449.0
+    Direction : debit
+    Narration : POS 416021XXX XXX6533 AIRTEL POS DEBIT 148899337648 POS 416021XXX 148899337648 19/07/23 19/07/23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009907
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-07-27
+    Amount    : 2500.0
+    Direction : credit
+    Narration : IMPS-827512361 984-ANITHAKRI SHNAN-HDFC-X XXXXXXXXX990 4-PERSONAL 0000827512361984 POS 416021XXX 991066072676 27/07/23 27/07/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009931
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-08-14
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS-265065516 494-PRIYANAIR-HDFC-XXXXXXX XXX6946-PERS ONAL 0000265065516494 POS 416021XXX 392944675387 14/08/23 14/08/23
+    Pattern   : Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009932
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-08-14
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS-784652534 734-DEEPANAIR -HDFC-XXXXXX XXXX9779-PERS ONAL 0000784652534734 POS 416021XXX 392944675387 14/08/23 14/08/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection, Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009939
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-08-20
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-183539009 034-DEEPANAIR -HDFC-XXXXXX XXXX8129-PERS ONAL 0000183539009034 NWD-416021XX 266805499606 20/08/23 20/08/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009988
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-09-29
+    Amount    : 2500.0
+    Direction : credit
+    Narration : IMPS-294743787 623-DEEPANAIR -HDFC-XXXXXX XXXX8473-PERS ONAL 0000294743787623 UPI-8315755981 831575598115 29/09/23 29/09/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009994
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-10-01
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-912488432 357-DEEPANAIR -HDFC-XXXXXX XXXX6341-PERS ONAL 0000912488432357 IMPS-498655171 0000498655171316 01/10/23 01/10/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009996
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-10-01
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-498655171 316-KIRANREDD Y-HDFC-XXXXX XXXXX8957-PER SONAL 0000498655171316 IMPS-498655171 0000498655171316 01/10/23 01/10/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010020
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-10-19
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS-383258213 931-LAKSHMIVE NKAT-HDFC-XX XXXXXXXX1949-PERSONAL 0000383258213931 IMPS-383258213 0000383258213931 19/10/23 19/10/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010028
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-10-22
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-047811047 776-KIRANREDD Y-HDFC-XXXXX XXXXX6365-PER SONAL 0000047811047776 NWD-416021XX 277590691183 22/10/23 22/10/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010045
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-11-11
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-899258518 418-DEEPANAIR -HDFC-XXXXXX XXXX9025-PERS ONAL 0000899258518418 POS 416021XXX 888107155343 11/11/23 11/11/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010089
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2023-12-19
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-248866745 910-MOHAMME DIRFAN-HDFC-X XXXXXXXXX284 9-PERSONAL 0000248866745910 IMPS-416563722 0000416563722797 19/12/23 19/12/23
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010134
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-01-14
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-250863691 126-RAMESHPIL LAI-HDFC-XXXX XXXXXX9135-PE RSONAL 0000250863691126 IMPS-250863691 0000250863691126 14/01/24 14/01/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010137
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-01-19
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-108439205 786-LAKSHMIVE NKAT-HDFC-XX XXXXXXXX9248-PERSONAL 0000108439205786 NWD-416021XX 404879152738 19/01/24 19/01/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010141
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-01-21
+    Amount    : 5200.0
+    Direction : debit
+    Narration : IB BILLPAY DR-HDFCPE-545964 XXXXXX9973 IB238556587843 238556587843 IB BILLPAY DR- 104155230930 21/01/24 21/01/24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010142
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-01-21
+    Amount    : 5200.0
+    Direction : debit
+    Narration : IB BILLPAY DR-HDFCPE-545964 XXXXXX5934 IB104155230930 104155230930 IB BILLPAY DR- 104155230930 21/01/24 21/01/24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010143
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-01-22
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS-780495479 021-LAKSHMIVE NKAT-HDFC-XX XXXXXXXX2382-PERSONAL 0000780495479021 NWD-416021XX 016649592929 22/01/24 22/01/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010146
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-01-23
+    Amount    : 1200.0
+    Direction : credit
+    Narration : IMPS-050204777 234-LAKSHMIVE NKAT-HDFC-XX XXXXXXXX7222-PERSONAL 0000050204777234 IMPS-050204777 0000050204777234 23/01/24 23/01/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010292
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-05-20
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-332936944 522-LAKSHMIVE NKAT-HDFC-XX XXXXXXXX0521-PERSONAL 0000332936944522 IMPS-332936944 0000332936944522 20/05/24 20/05/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010314
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-06-07
+    Amount    : 2500.0
+    Direction : credit
+    Narration : IMPS-696833388 679-MOHAMME DIRFAN-HDFC-X XXXXXXXXX564 1-PERSONAL 0000696833388679 IMPS-696833388 0000696833388679 07/06/24 07/06/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010328
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-06-22
+    Amount    : 7500.0
+    Direction : credit
+    Narration : IMPS-365112676 952-FATIMASHE IKH-HDFC-XXXX XXXXXX9882-PE RSONAL 0000365112676952 IMPS-365112676 0000365112676952 22/06/24 22/06/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection, Round Trip Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010375
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-08-01
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-303655692 928-ARCHANAPI LLAI-HDFC-XXX XXXXXXX7341-P ERSONAL 0000303655692928 IMPS-715006456 0000715006456297 01/08/24 01/08/24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010377
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-08-01
+    Amount    : 18500.0
+    Direction : credit
+    Narration : IMPS-715006456 297-REKHAPILL AI-HDFC-XXXXX XXXXX9914-PER SONAL 0000715006456297 IMPS-715006456 0000715006456297 01/08/24 01/08/24
+    Pattern   : Duplicate Transaction Cross-Check
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010531
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-11-22
+    Amount    : 24000.0
+    Direction : credit
+    Narration : IMPS-604985253 994-RAMESHPIL LAI-HDFC-XXXX XXXXXX7309-PE RSONAL 0000604985253994 IMPS-604985253 0000604985253994 22/11/24 22/11/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010537
+    Account   : UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Date      : 2024-11-26
+    Amount    : 11200.0
+    Direction : credit
+    Narration : IMPS-014133410 711-SURESHBA BU-HDFC-XXXX XXXXXX9449-PE RSONAL 0000014133410711 IMPS-014133410 0000014133410711 26/11/24 26/11/24
+    Pattern   : Circular Flow (Multi-Hop Cycle) Detection
+
+Accounts:
+----------------------------------------
+  UNKNOWN-A012_PRAKASH_RAO_HDFC
+    Holder             : PRAKASH RAO
+    Patterns Triggered : Circular Flow (Multi-Hop Cycle) Detection, Duplicate Transaction Cross-Check, Round Trip Detection
+    Flagged Txns       : 54489
+    Total Credit       : 2083598.28
+    Total Debit        : 1078418.2
+
+  020211290257
+    Holder             : RAMESH PILLAI
+    Patterns Triggered : Circular Flow (Multi-Hop Cycle) Detection, Duplicate Transaction Cross-Check, Round Trip Detection
+    Flagged Txns       : 50799
+    Total Credit       : 4286115.04
+    Total Debit        : 1527085.2
+
+  50108363220770
+    Holder             : FATIMA SHEIKH
+    Patterns Triggered : Circular Flow (Multi-Hop Cycle) Detection, Duplicate Transaction Cross-Check, Round Trip Detection
+    Flagged Txns       : 50561
+    Total Credit       : 1416179.65
+    Total Debit        : 863602.2
+
+  50103894318937
+    Holder             : DEEPA NAIR
+    Patterns Triggered : Circular Flow (Multi-Hop Cycle) Detection, Duplicate Transaction Cross-Check, Round Trip Detection
+    Flagged Txns       : 39716
+    Total Credit       : 1726233.11
+    Total Debit        : 1312650.2
+
+  89860512500290
+    Holder             : KIRAN REDDY
+    Patterns Triggered : Circular Flow (Multi-Hop Cycle) Detection, Round Trip Detection
+    Flagged Txns       : 58183
+    Total Credit       : 3485022.49
+    Total Debit        : 1277983.2
+
+  020245929381
+    Holder             : SURESH BABU
+    Patterns Triggered : Circular Flow (Multi-Hop Cycle) Detection, Duplicate Transaction Cross-Check
+    Flagged Txns       : 53303
+    Total Credit       : 3347949.62
+    Total Debit        : 1418738.2
+
+  7118404892
+    Holder             : RAVI KUMAR
+    Patterns Triggered : Duplicate Transaction Cross-Check, Structuring / Smurfing Detection
+    Flagged Txns       : 13
+    Total Credit       : 3957769.93
+    Total Debit        : 2229683.65
+
+  92007575318980
+    Holder             : ANITHA KRISHNAN
+    Patterns Triggered : Circular Flow (Multi-Hop Cycle) Detection
+    Flagged Txns       : 64125
+    Total Credit       : 3371183.36
+    Total Debit        : 1604996.2
+
+  59953720424372
+    Holder             : MOHAMMED IRFAN
+    Patterns Triggered : Circular Flow (Multi-Hop Cycle) Detection
+    Flagged Txns       : 50326
+    Total Credit       : 2765475.23
+    Total Debit        : 1782506.2
+
+  92000555502494
+    Holder             : LAKSHMI VENKAT
+    Patterns Triggered : Circular Flow (Multi-Hop Cycle) Detection
+    Flagged Txns       : 34909
+    Total Credit       : 2248000.52
+    Total Debit        : 1256231.2
+
+  00000015527496586
+    Holder             : PRADEEP SINGH
+    Patterns Triggered : Accumulation Account Detection
+    Flagged Txns       : 24
+    Total Credit       : 4401679.78
+    Total Debit        : 1811403.2
+
+  00000013497951549
+    Holder             : SNEHA PATIL
+    Patterns Triggered : Duplicate Transaction Cross-Check
+    Flagged Txns       : 2
+    Total Credit       : 2715449.85
+    Total Debit        : 1345389.2
+
+Key Transactions to Detect:
+----------------------------------------
+  00000013497951549_009450
+  00000013497951549_009452
+  00000015527496586_004369
+  00000015527496586_004371
+  00000015527496586_004416
+  00000015527496586_004461
+  00000015527496586_004523
+  00000015527496586_004569
+  00000015527496586_004629
+  00000015527496586_004672
+  00000015527496586_004725
+  00000015527496586_004771
+  00000015527496586_004822
+  00000015527496586_004864
+  00000015527496586_004926
+  00000015527496586_004975
+  00000015527496586_005029
+  00000015527496586_005079
+  00000015527496586_005128
+  00000015527496586_005183
+  00000015527496586_005235
+  00000015527496586_005287
+  00000015527496586_005338
+  00000015527496586_005384
+  00000015527496586_005441
+  00000015527496586_005493
+  020211290257_006311
+  020211290257_006312
+  020211290257_006313
+  020211290257_006316
+  020211290257_006320
+  020211290257_006333
+  020211290257_006382
+  020211290257_006411
+  020211290257_006505
+  020211290257_006546
+  020211290257_006714
+  020211290257_006719
+  020211290257_006780
+  020211290257_006787
+  020211290257_006820
+  020211290257_006842
+  020211290257_006875
+  020211290257_006880
+  020211290257_007002
+  020211290257_007037
+  020211290257_007068
+  020211290257_007143
+  020211290257_007146
+  020211290257_007150
+  020211290257_007167
+  020211290257_007175
+  020245929381_001904
+  020245929381_001970
+  020245929381_001972
+  020245929381_002131
+  020245929381_002167
+  020245929381_002227
+  020245929381_002230
+  020245929381_002357
+  020245929381_002400
+  020245929381_002402
+  020245929381_002414
+  020245929381_002437
+  020245929381_002439
+  020245929381_002499
+  020245929381_002500
+  020245929381_002501
+  020245929381_002520
+  020245929381_002546
+  020245929381_002644
+  020245929381_002685
+  020245929381_002686
+  020245929381_002714
+  020245929381_002715
+  020245929381_002717
+  020245929381_002729
+  50103894318937_001252
+  50103894318937_001261
+  50103894318937_001265
+  50103894318937_001268
+  50103894318937_001320
+  50103894318937_001321
+  50103894318937_001329
+  50103894318937_001385
+  50103894318937_001471
+  50103894318937_001496
+  50103894318937_001573
+  50103894318937_001596
+  50103894318937_001601
+  50103894318937_001716
+  50103894318937_001749
+  50103894318937_001755
+  50103894318937_001789
+  50103894318937_001853
+  50108363220770_005550
+  50108363220770_005560
+  50108363220770_005584
+  50108363220770_005616
+  50108363220770_005677
+  50108363220770_005678
+  50108363220770_005727
+  50108363220770_005760
+  50108363220770_005761
+  50108363220770_005762
+  50108363220770_005786
+  50108363220770_005798
+  50108363220770_005812
+  50108363220770_005828
+  50108363220770_005866
+  50108363220770_005871
+  50108363220770_005897
+  50108363220770_005958
+  50108363220770_005965
+  50108363220770_006048
+  50108363220770_006049
+  50108363220770_006081
+  50108363220770_006091
+  50108363220770_006116
+  50108363220770_006130
+  50108363220770_006131
+  50108363220770_006132
+  50108363220770_006139
+  50108363220770_006140
+  50108363220770_006153
+  50108363220770_006168
+  50108363220770_006169
+  50108363220770_006172
+  50108363220770_006246
+  50108363220770_006258
+  59953720424372_007865
+  59953720424372_007894
+  59953720424372_007915
+  59953720424372_007971
+  59953720424372_007989
+  59953720424372_008008
+  59953720424372_008050
+  59953720424372_008068
+  59953720424372_008094
+  59953720424372_008193
+  59953720424372_008197
+  59953720424372_008203
+  59953720424372_008207
+  59953720424372_008224
+  59953720424372_008242
+  59953720424372_008317
+  59953720424372_008341
+  59953720424372_008344
+  59953720424372_008346
+  59953720424372_008391
+  59953720424372_008415
+  59953720424372_008425
+  59953720424372_008456
+  59953720424372_008503
+  59953720424372_008508
+  59953720424372_008569
+  59953720424372_008598
+  59953720424372_008604
+  59953720424372_008614
+  59953720424372_008625
+  59953720424372_008669
+  59953720424372_008679
+  59953720424372_008781
+  59953720424372_008792
+  59953720424372_008809
+  59953720424372_008822
+  59953720424372_008859
+  7118404892_000481
+  7118404892_000482
+  7118404892_000917
+  7118404892_000918
+  7118404892_000919
+  7118404892_000920
+  7118404892_001024
+  7118404892_001025
+  7118404892_001026
+  7118404892_001027
+  7118404892_001028
+  7118404892_001029
+  7118404892_001030
+  89860512500290_003783
+  89860512500290_003861
+  89860512500290_004024
+  89860512500290_004241
+  89860512500290_004270
+  89860512500290_004351
+  92000555502494_007215
+  92000555502494_007239
+  92000555502494_007353
+  92000555502494_007361
+  92000555502494_007363
+  92000555502494_007458
+  92000555502494_007510
+  92000555502494_007530
+  92000555502494_007575
+  92000555502494_007646
+  92000555502494_007706
+  92000555502494_007727
+  92000555502494_007788
+  92000555502494_007827
+  92000555502494_007828
+  92000555502494_007832
+  92007575318980_002765
+  92007575318980_002864
+  92007575318980_002939
+  92007575318980_002969
+  92007575318980_003036
+  92007575318980_003050
+  92007575318980_003161
+  92007575318980_003241
+  92007575318980_003262
+  92007575318980_003268
+  92007575318980_003278
+  92007575318980_003279
+  92007575318980_003293
+  92007575318980_003360
+  92007575318980_003365
+  92007575318980_003492
+  92007575318980_003529
+  92007575318980_003571
+  92007575318980_003581
+  92007575318980_003667
+  92007575318980_003703
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009684
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009706
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009709
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009740
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009754
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009756
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009774
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009838
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009864
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009870
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009892
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009894
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009907
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009931
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009932
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009939
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009988
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009994
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_009996
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010020
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010028
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010045
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010089
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010134
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010137
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010141
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010142
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010143
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010146
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010292
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010314
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010328
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010375
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010377
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010531
+  UNKNOWN-A012_PRAKASH_RAO_HDFC_010537
+
+======================================================================

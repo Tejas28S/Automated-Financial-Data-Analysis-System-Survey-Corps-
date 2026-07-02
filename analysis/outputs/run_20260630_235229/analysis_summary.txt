@@ -1,0 +1,72 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/uploads/run_20260630_235229/ba_case_01.csv
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260630_235229
+Run timestamp: 2026-06-30T18:22:31.592352+00:00
+Elapsed seconds: 2.23
+
+Input Contract
+--------------
+Clean rows: 594
+Flagged rows: 0
+Duplicate rows: 0
+Metadata clean rows: 
+Summary-report clean rows: 
+Count reconciliation: ok
+Reconciliation detail: Single flat CSV input.
+
+Analysis Scope
+--------------
+Total stored rows: 594
+Eligible detection rows: 594
+Excluded rows: 0
+Accounts: 5
+Graph nodes: 6
+Graph edges: 98
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 594
+Resolved counterparty rows: 511
+Resolution rate percent: 86.02693602693603
+LLM calls made: 0
+
+Finding Counts
+--------------
+1_duplicate_detection_cross_check: 0
+2_failed_reversed_transaction_detection: 0
+3_balance_consistency_validation: 0
+4_round_trip_detection: 0
+5_transit_pass_through_detection: 1
+6_accumulation_account_detection: 0
+7_structuring_smurfing_detection: 3
+8_money_flow_graph_construction: 1
+9_circular_flow_multi_hop_cycle_detection: 0
+10_money_trail_tracing: 0
+11_credit_to_cash_out_chains: 5
+12_cross_statement_links: 0
+13_high_throughput_accounts: 0
+14_holding_accounts: 1
+15_hub_ranking: 1
+16_internal_flow_hub: 98
+17_low_value_account_testing: 0
+18_reversal_clusters: 0
+19_round_value_debit_patterns: 2
+20_shared_upi_identifiers: 9
+21_suspicious_account_ranking: 5
+22_llm_investigated_anomalies: 1
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 0
+duplicate: 0
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+52085645014: total_score=1328.7021, distinct_patterns=8, total_findings=118
+9275713700: total_score=604.8617, distinct_patterns=4, total_findings=43
+42403500363456: total_score=578.7112, distinct_patterns=4, total_findings=44
+301880669130: total_score=507.9061, distinct_patterns=3, total_findings=43
+46430145038: total_score=210.1, distinct_patterns=2, total_findings=9

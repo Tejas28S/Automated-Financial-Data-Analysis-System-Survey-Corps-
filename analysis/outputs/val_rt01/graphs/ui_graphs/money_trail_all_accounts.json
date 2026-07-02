@@ -1,0 +1,552 @@
+{
+  "trails": [
+    {
+      "accounts": [
+        "51703956546"
+      ],
+      "allocations": [
+        {
+          "allocated_from_credit": 1127.0,
+          "balance_after_debit": 680074.0,
+          "counterparty_account": "fuelpay@ybl",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-02-13",
+          "debit_amount": 1127.0,
+          "debit_txn_id": "51703956546_000019",
+          "narration": "UPI/MOB/216280558301/Pay request to Indianoil/fuelpay@ybl@hdfc0379045.ifsc.npci/INDIANOIL",
+          "remaining_after_allocation": 258756.0
+        },
+        {
+          "allocated_from_credit": 249498.0,
+          "balance_after_debit": 430576.0,
+          "counterparty_account": "76469732163180",
+          "counterparty_name_raw": "Anjali Sunita",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-02-14",
+          "debit_amount": 249498.0,
+          "debit_txn_id": "51703956546_000020",
+          "narration": "NEFT/IDFBN2502147229052/Anjali Sunita/BARB0508103",
+          "remaining_after_allocation": 9258.0
+        },
+        {
+          "allocated_from_credit": 8000.0,
+          "balance_after_debit": 422576.0,
+          "counterparty_account": "629600847008",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.65,
+          "counterparty_resolution_method": "narration_similarity_match",
+          "date": "2025-02-15",
+          "debit_amount": 8000.0,
+          "debit_txn_id": "51703956546_000021",
+          "narration": "ATM-NFS/CASH WITHDRAWAL/PUNE BRANCH ATM PUNE IN/629600847008/SELF",
+          "remaining_after_allocation": 1258.0
+        },
+        {
+          "allocated_from_credit": 1258.0,
+          "balance_after_debit": 419658.0,
+          "counterparty_account": "irctc.pay@axisbank",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-02-18",
+          "debit_amount": 2918.0,
+          "debit_txn_id": "51703956546_000022",
+          "narration": "UPI/MOB/007507802074/Pay request to Irctc/irctc.pay@axisbank@barb0333021.ifsc.npci/IRCTC",
+          "remaining_after_allocation": 0.0
+        }
+      ],
+      "credited_amount": 259883.0,
+      "finding_id": "c1e87de452f54177404b",
+      "source_credit_txn_id": "51703956546_000018",
+      "trace_status": "exhausted"
+    },
+    {
+      "accounts": [
+        "76469732163180"
+      ],
+      "allocations": [
+        {
+          "allocated_from_credit": 3924.0,
+          "balance_after_debit": 591949.0,
+          "counterparty_account": "bbdaily@okhdfcbank",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-02-16",
+          "debit_amount": 3924.0,
+          "debit_txn_id": "76469732163180_000020",
+          "narration": "UPI/838546425794/12:53:49/UPI/bbdaily@okhdfcbank@cnrb0953670.ifsc.npci/Payment/BIGBASKET",
+          "remaining_after_allocation": 245574.0
+        },
+        {
+          "allocated_from_credit": 2729.0,
+          "balance_after_debit": 589220.0,
+          "counterparty_account": "irctc.pay@axisbank",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-02-17",
+          "debit_amount": 2729.0,
+          "debit_txn_id": "76469732163180_000021",
+          "narration": "UPI/227408239698/22:06:19/UPI/irctc.pay@axisbank@icic0943577.ifsc.npci/Payment/IRCTC",
+          "remaining_after_allocation": 242845.0
+        },
+        {
+          "allocated_from_credit": 1298.0,
+          "balance_after_debit": 587922.0,
+          "counterparty_account": "irctc.pay@axisbank",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-02-19",
+          "debit_amount": 1298.0,
+          "debit_txn_id": "76469732163180_000022",
+          "narration": "UPI/040770980920/08:00:40/UPI/irctc.pay@axisbank@kkbk0129421.ifsc.npci/Payment/IRCTC",
+          "remaining_after_allocation": 241547.0
+        },
+        {
+          "allocated_from_credit": 10000.0,
+          "balance_after_debit": 577922.0,
+          "counterparty_account": "004905551560",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.65,
+          "counterparty_resolution_method": "narration_similarity_match",
+          "date": "2025-02-20",
+          "debit_amount": 10000.0,
+          "debit_txn_id": "76469732163180_000023",
+          "narration": "CWDR/004905551560/20-02-2025 19:47:14/CMN",
+          "remaining_after_allocation": 231547.0
+        },
+        {
+          "allocated_from_credit": 112.0,
+          "balance_after_debit": 577810.0,
+          "counterparty_account": "bescom.bill@upi",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-02-23",
+          "debit_amount": 112.0,
+          "debit_txn_id": "76469732163180_000024",
+          "narration": "UPI/683497030527/20:32:57/UPI/bescom.bill@upi@cnrb0893669.ifsc.npci/Payment/BESCOM",
+          "remaining_after_allocation": 231435.0
+        },
+        {
+          "allocated_from_credit": 231435.0,
+          "balance_after_debit": 334888.5,
+          "counterparty_account": "21081385298452",
+          "counterparty_name_raw": "SHIV LAL BISHNOI",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-02-24",
+          "debit_amount": 242921.5,
+          "debit_txn_id": "76469732163180_000025",
+          "narration": "DIGITA-MUMBAI/ NEFT-BARBN2502245950312-SHIV LAL BISHNOI",
+          "remaining_after_allocation": 0.0
+        }
+      ],
+      "credited_amount": 249498.0,
+      "finding_id": "24457c2cd331595d36e5",
+      "source_credit_txn_id": "76469732163180_000019",
+      "trace_status": "exhausted"
+    },
+    {
+      "accounts": [
+        "21081385298452"
+      ],
+      "allocations": [
+        {
+          "allocated_from_credit": 15000.0,
+          "balance_after_debit": 885173.5,
+          "counterparty_account": "172818626200",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.65,
+          "counterparty_resolution_method": "narration_similarity_match",
+          "date": "2025-02-24",
+          "debit_amount": 15000.0,
+          "debit_txn_id": "21081385298452_000029",
+          "narration": "NFSCWD ATM 6NLUCKNOW/172818626200/08:12:47/LUCKNOW",
+          "remaining_after_allocation": 227921.5
+        },
+        {
+          "allocated_from_credit": 4472.0,
+          "balance_after_debit": 880701.5,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-02-26",
+          "debit_amount": 4472.0,
+          "debit_txn_id": "21081385298452_000030",
+          "narration": "UPI:PAY:227501588957/INDIANOIL         /Punjab Nat",
+          "remaining_after_allocation": 223449.5
+        },
+        {
+          "allocated_from_credit": 3952.0,
+          "balance_after_debit": 876749.5,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-02-28",
+          "debit_amount": 3952.0,
+          "debit_txn_id": "21081385298452_000031",
+          "narration": "UPI:PAY:765168844515/DMART             /IDFC FIRST",
+          "remaining_after_allocation": 219497.5
+        },
+        {
+          "allocated_from_credit": 2468.0,
+          "balance_after_debit": 874281.5,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-03-02",
+          "debit_amount": 2468.0,
+          "debit_txn_id": "21081385298452_000032",
+          "narration": "UPI:PAY:903028478800/INDIANOIL         /State Bank",
+          "remaining_after_allocation": 217029.5
+        },
+        {
+          "allocated_from_credit": 1948.0,
+          "balance_after_debit": 872333.5,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-03-04",
+          "debit_amount": 1948.0,
+          "debit_txn_id": "21081385298452_000033",
+          "narration": "UPI:PAY:150374627315/Jio               /Bank of Ba/JIO",
+          "remaining_after_allocation": 215081.5
+        },
+        {
+          "allocated_from_credit": 3738.0,
+          "balance_after_debit": 868595.5,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-03-07",
+          "debit_amount": 3738.0,
+          "debit_txn_id": "21081385298452_000034",
+          "narration": "UPI:PAY:910110823681/Airtel            /Federal Ba/AIRTEL",
+          "remaining_after_allocation": 211343.5
+        },
+        {
+          "allocated_from_credit": 761.0,
+          "balance_after_debit": 867834.5,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-03-08",
+          "debit_amount": 761.0,
+          "debit_txn_id": "21081385298452_000035",
+          "narration": "UPI:PAY:108948766607/DMART             /Axis Bank",
+          "remaining_after_allocation": 210582.5
+        },
+        {
+          "allocated_from_credit": 210582.5,
+          "balance_after_debit": 638323.5,
+          "counterparty_account": "51703956546",
+          "counterparty_name_raw": "BHAVANA RAO",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-09",
+          "debit_amount": 229511.0,
+          "debit_txn_id": "21081385298452_000036",
+          "narration": "MB NEFT/UTIBN2503096348242/BHAVANA RA/BHAVANA RAO/",
+          "remaining_after_allocation": 0.0
+        }
+      ],
+      "credited_amount": 242921.5,
+      "finding_id": "ec772625a0c2f565ec51",
+      "source_credit_txn_id": "21081385298452_000028",
+      "trace_status": "exhausted"
+    },
+    {
+      "accounts": [
+        "51703956546"
+      ],
+      "allocations": [
+        {
+          "allocated_from_credit": 2448.0,
+          "balance_after_debit": 616144.0,
+          "counterparty_account": "bbdaily@okhdfcbank",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-10",
+          "debit_amount": 2448.0,
+          "debit_txn_id": "51703956546_000034",
+          "narration": "UPI/MOB/293928385204/Pay request to BIGBASKET/bbdaily@okhdfcbank@kkbk0226459.ifsc.npci",
+          "remaining_after_allocation": 227063.0
+        },
+        {
+          "allocated_from_credit": 1698.0,
+          "balance_after_debit": 699374.0,
+          "counterparty_account": "dmart.pay@okaxis",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-13",
+          "debit_amount": 1698.0,
+          "debit_txn_id": "51703956546_000037",
+          "narration": "UPI/MOB/951514518665/Pay request to DMART/dmart.pay@okaxis@cnrb0721905.ifsc.npci",
+          "remaining_after_allocation": 225365.0
+        },
+        {
+          "allocated_from_credit": 222476.1,
+          "balance_after_debit": 476897.9,
+          "counterparty_account": "76469732163180",
+          "counterparty_name_raw": "Anjali Sunita",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-13",
+          "debit_amount": 222476.1,
+          "debit_txn_id": "51703956546_000038",
+          "narration": "NEFT/IDFBN2503136912123/Anjali Sunita/BARB0508103",
+          "remaining_after_allocation": 2888.899999999994
+        },
+        {
+          "allocated_from_credit": 1106.0,
+          "balance_after_debit": 475791.9,
+          "counterparty_account": "bescom.bill@upi",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-16",
+          "debit_amount": 1106.0,
+          "debit_txn_id": "51703956546_000039",
+          "narration": "UPI/MOB/099854540181/Pay request to Bescom/bescom.bill@upi@icic0632491.ifsc.npci/BESCOM",
+          "remaining_after_allocation": 1782.8999999999942
+        },
+        {
+          "allocated_from_credit": 447.0,
+          "balance_after_debit": 475344.9,
+          "counterparty_account": "irctc.pay@axisbank",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-18",
+          "debit_amount": 447.0,
+          "debit_txn_id": "51703956546_000040",
+          "narration": "UPI/MOB/105690447626/Pay request to IRCTC/irctc.pay@axisbank@idib0118904.ifsc.npci",
+          "remaining_after_allocation": 1335.8999999999942
+        },
+        {
+          "allocated_from_credit": 1335.8999999999942,
+          "balance_after_debit": 470901.9,
+          "counterparty_account": "fuelpay@ybl",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-19",
+          "debit_amount": 4443.0,
+          "debit_txn_id": "51703956546_000041",
+          "narration": "UPI/MOB/312735647634/Pay request to Indianoil/fuelpay@ybl@barb0867217.ifsc.npci/INDIANOIL",
+          "remaining_after_allocation": 0.0
+        }
+      ],
+      "credited_amount": 229511.0,
+      "finding_id": "d9558c4563c1e6019b2e",
+      "source_credit_txn_id": "51703956546_000033",
+      "trace_status": "exhausted"
+    },
+    {
+      "accounts": [
+        "76469732163180"
+      ],
+      "allocations": [
+        {
+          "allocated_from_credit": 3747.0,
+          "balance_after_debit": 579192.6,
+          "counterparty_account": "bbdaily@okhdfcbank",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-15",
+          "debit_amount": 3747.0,
+          "debit_txn_id": "76469732163180_000036",
+          "narration": "UPI/512224546668/17:20:55/UPI/bbdaily@okhdfcbank@cnrb0335285.ifsc.npci/Payment/BIGBASKET",
+          "remaining_after_allocation": 218729.1
+        },
+        {
+          "allocated_from_credit": 15000.0,
+          "balance_after_debit": 564192.6,
+          "counterparty_account": "668279523930",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.65,
+          "counterparty_resolution_method": "narration_similarity_match",
+          "date": "2025-03-18",
+          "debit_amount": 15000.0,
+          "debit_txn_id": "76469732163180_000037",
+          "narration": "CWDR/668279523930/18-03-2025 20:54:31/CMN",
+          "remaining_after_allocation": 203729.1
+        },
+        {
+          "allocated_from_credit": 4341.0,
+          "balance_after_debit": 559851.6,
+          "counterparty_account": "jio.mobile@ibl",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-20",
+          "debit_amount": 4341.0,
+          "debit_txn_id": "76469732163180_000038",
+          "narration": "UPI/715707509138/18:56:05/UPI/jio.mobile@ibl@cnrb0970563.ifsc.npci/Payment/JIO",
+          "remaining_after_allocation": 199388.1
+        },
+        {
+          "allocated_from_credit": 199388.1,
+          "balance_after_debit": 350779.5,
+          "counterparty_account": "21081385298452",
+          "counterparty_name_raw": "SHIV LAL BISHNOI",
+          "counterparty_resolution_confidence": 1.0,
+          "counterparty_resolution_method": "exact_reference_or_upi_match",
+          "date": "2025-03-21",
+          "debit_amount": 209072.1,
+          "debit_txn_id": "76469732163180_000039",
+          "narration": "DIGITA-MUMBAI/ NEFT-BARBN2503217686319-SHIV LAL BISHNOI",
+          "remaining_after_allocation": 0.0
+        }
+      ],
+      "credited_amount": 222476.1,
+      "finding_id": "35f455432652b6478a4e",
+      "source_credit_txn_id": "76469732163180_000035",
+      "trace_status": "exhausted"
+    },
+    {
+      "accounts": [
+        "21081385298452"
+      ],
+      "allocations": [
+        {
+          "allocated_from_credit": 3164.0,
+          "balance_after_debit": 869939.9,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-05-12",
+          "debit_amount": 3164.0,
+          "debit_txn_id": "21081385298452_000078",
+          "narration": "UPI:PAY:305349695680/Indianoil         /Bank of Ba/INDIANOIL",
+          "remaining_after_allocation": 213305.4
+        },
+        {
+          "allocated_from_credit": 3412.0,
+          "balance_after_debit": 866527.9,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-05-15",
+          "debit_amount": 3412.0,
+          "debit_txn_id": "21081385298452_000079",
+          "narration": "UPI:PAY:902034574785/INDIANOIL         /Axis Bank",
+          "remaining_after_allocation": 209893.4
+        },
+        {
+          "allocated_from_credit": 8000.0,
+          "balance_after_debit": 858527.9,
+          "counterparty_account": "265762446590",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.65,
+          "counterparty_resolution_method": "narration_similarity_match",
+          "date": "2025-05-18",
+          "debit_amount": 8000.0,
+          "debit_txn_id": "21081385298452_000080",
+          "narration": "NFSCWD ATM 6NJAIPUR/265762446590/17:02:48/JAIPUR",
+          "remaining_after_allocation": 201893.4
+        },
+        {
+          "allocated_from_credit": 15000.0,
+          "balance_after_debit": 843527.9,
+          "counterparty_account": "015413967929",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.65,
+          "counterparty_resolution_method": "narration_similarity_match",
+          "date": "2025-05-21",
+          "debit_amount": 15000.0,
+          "debit_txn_id": "21081385298452_000081",
+          "narration": "NFSCWD ATM 6NJAIPUR/015413967929/16:25:41/JAIPUR",
+          "remaining_after_allocation": 186893.4
+        },
+        {
+          "allocated_from_credit": 18.0,
+          "balance_after_debit": 843509.9,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-05-23",
+          "debit_amount": 18.0,
+          "debit_txn_id": "21081385298452_000082",
+          "narration": "ECSRTNCHGS230525_SR763787745GST",
+          "remaining_after_allocation": 186875.4
+        },
+        {
+          "allocated_from_credit": 8000.0,
+          "balance_after_debit": 835509.9,
+          "counterparty_account": "625524662142",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.65,
+          "counterparty_resolution_method": "narration_similarity_match",
+          "date": "2025-05-24",
+          "debit_amount": 8000.0,
+          "debit_txn_id": "21081385298452_000083",
+          "narration": "NFSCWD ATM 6NPUNE/625524662142/09:53:06/PUNE",
+          "remaining_after_allocation": 178875.4
+        },
+        {
+          "allocated_from_credit": 369.0,
+          "balance_after_debit": 835140.9,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-05-27",
+          "debit_amount": 369.0,
+          "debit_txn_id": "21081385298452_000084",
+          "narration": "UPI:PAY:145537422647/BESCOM            /Kotak Mahi",
+          "remaining_after_allocation": 178506.4
+        },
+        {
+          "allocated_from_credit": 3539.0,
+          "balance_after_debit": 831601.9,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-05-30",
+          "debit_amount": 3539.0,
+          "debit_txn_id": "21081385298452_000085",
+          "narration": "UPI:PAY:292161180256/IRCTC             /Punjab Nat",
+          "remaining_after_allocation": 174967.4
+        },
+        {
+          "allocated_from_credit": 2347.0,
+          "balance_after_debit": 829254.9,
+          "counterparty_account": "nan",
+          "counterparty_name_raw": "nan",
+          "counterparty_resolution_confidence": 0.0,
+          "counterparty_resolution_method": "unresolved",
+          "date": "2025-05-31",
+          "debit_amount": 2347.0,
+          "debit_txn_id": "21081385298452_000086",
+          "narration": "UPI:PAY:382554471925/BESCOM            /Axis Bank",
+          "remaining_after_allocation": 172620.4
+        }
+      ],
+      "credited_amount": 216469.4,
+      "finding_id": "9a8a9700485a156a7091",
+      "source_credit_txn_id": "21081385298452_000077",
+      "trace_status": "partially_traced"
+    }
+  ],
+  "type": "money_trail_all_accounts"
+}

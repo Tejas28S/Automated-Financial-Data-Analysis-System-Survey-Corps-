@@ -1,0 +1,337 @@
+{
+  "case_name": "331087 CASA Account Statement_Report - 2026-01-05T125543.717",
+  "input_file": "331087 CASA Account Statement_Report - 2026-01-05T125543.717.csv",
+  "generated_at": "2026-06-29T19:36:16.190644+00:00",
+  "total_transactions_analyzed": 11,
+  "total_accounts": 1,
+  "date_range": {
+    "start": "2024-12-19",
+    "end": "2025-05-05"
+  },
+  "fraud_transactions": [
+    {
+      "transaction_id": "17243920250502000600632491",
+      "account_id": "110216248295",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 500000.0,
+      "direction": "credit",
+      "narration": "RTGS Cr-ICICR42025050200522496-ICIC0000011-RG ENTERPRISE--/URGENT/",
+      "reference": "",
+      "balance": 500050.0,
+      "counterparty": "42025050200522496",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "58403ceab10ad8d759bb",
+        "61662cf89fcccd8fcc5b",
+        "aa1370bf9ae314ae2088",
+        "eaac1de8db482d2044b9",
+        "eee47c0eef68f80af356"
+      ]
+    },
+    {
+      "transaction_id": "20250426194536389886",
+      "account_id": "110216248295",
+      "date": "2025-04-26",
+      "time": "",
+      "amount": 19500.0,
+      "direction": "credit",
+      "narration": "UPI/CR/548214083402/Muhammed /ESMF/**nitin@okaxis/UPI//AXIeaad039e5e844319b6141cc784efd4e9/26/04/2025 19:45:36",
+      "reference": "548214083402",
+      "balance": 19500.0,
+      "counterparty": "nitin@okaxis",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "58403ceab10ad8d759bb",
+        "61662cf89fcccd8fcc5b",
+        "71236683d6a977fc7ede",
+        "aa1370bf9ae314ae2088",
+        "eaac1de8db482d2044b9"
+      ]
+    },
+    {
+      "transaction_id": "20250426194714006864",
+      "account_id": "110216248295",
+      "date": "2025-04-26",
+      "time": "",
+      "amount": 5000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-ESAF0633-VELLAMUNDAWAYANADKLIN-26/04/25 19:47:14/0008",
+      "reference": "511619416389",
+      "balance": 14500.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "58403ceab10ad8d759bb",
+        "71236683d6a977fc7ede"
+      ]
+    },
+    {
+      "transaction_id": "20250426194850009121",
+      "account_id": "110216248295",
+      "date": "2025-04-26",
+      "time": "",
+      "amount": 10000.0,
+      "direction": "debit",
+      "narration": "ATM Cash-ESAF0633-VELLAMUNDAWAYANADKLIN-26/04/25 19:48:50/0008",
+      "reference": "511619416391",
+      "balance": 4500.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "58403ceab10ad8d759bb",
+        "71236683d6a977fc7ede"
+      ]
+    },
+    {
+      "transaction_id": "20250426194944010402",
+      "account_id": "110216248295",
+      "date": "2025-04-26",
+      "time": "",
+      "amount": 4500.0,
+      "direction": "debit",
+      "narration": "ATM Cash-ESAF0633-VELLAMUNDAWAYANADKLIN-26/04/25 19:49:44/0008",
+      "reference": "511619416392",
+      "balance": 0.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "58403ceab10ad8d759bb",
+        "71236683d6a977fc7ede"
+      ]
+    },
+    {
+      "transaction_id": "20250501172148549817",
+      "account_id": "110216248295",
+      "date": "2025-05-01",
+      "time": "",
+      "amount": 100.0,
+      "direction": "credit",
+      "narration": "UPI/CR/512122328244/Muhammed /SBIN/**geeta@okicici/UPI//ICI426df9070ef9446c99133ebce8402584/01/05/2025 17:21:48",
+      "reference": "512122328244",
+      "balance": 100.0,
+      "counterparty": "geeta@okicici",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "58403ceab10ad8d759bb",
+        "61662cf89fcccd8fcc5b",
+        "aa1370bf9ae314ae2088",
+        "eaac1de8db482d2044b9"
+      ]
+    },
+    {
+      "transaction_id": "20250501235256362421",
+      "account_id": "110216248295",
+      "date": "2025-05-01",
+      "time": "",
+      "amount": 50.0,
+      "direction": "debit",
+      "narration": "UPI/DR/104111329554/Mr DONISH/CBIN/**palla@axl/UPI//HDF5875d70e57cc4f119c7f6a86fa18f3d6/01/05/2025 23:52:56",
+      "reference": "104111329554",
+      "balance": 50.0,
+      "counterparty": "palla@axl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "58403ceab10ad8d759bb",
+        "61662cf89fcccd8fcc5b",
+        "aa1370bf9ae314ae2088"
+      ]
+    },
+    {
+      "transaction_id": "20250505184624045697",
+      "account_id": "110216248295",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 10.0,
+      "direction": "debit",
+      "narration": "UPI/DR/104320465511/USMAN/YESB/**12902@ybl/UPI//HDFab635e88005a45a18c4252db081f2cb0/05/05/2025 18:46:24",
+      "reference": "104320465511",
+      "balance": 40.0,
+      "counterparty": "12902@ybl",
+      "patterns_detected": [
+        "High-Throughput Pass-Through Accounts",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "58403ceab10ad8d759bb",
+        "61662cf89fcccd8fcc5b",
+        "aa1370bf9ae314ae2088"
+      ]
+    },
+    {
+      "transaction_id": "79508320250502000800000160",
+      "account_id": "110216248295",
+      "date": "2025-05-02",
+      "time": "",
+      "amount": 500000.0,
+      "direction": "debit",
+      "narration": "Cash Withdrawal - NALLOORNAD",
+      "reference": "000000000000",
+      "balance": 50.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking"
+      ],
+      "finding_ids": [
+        "58403ceab10ad8d759bb",
+        "eee47c0eef68f80af356"
+      ]
+    }
+  ],
+  "flagged_accounts": [
+    {
+      "account_id": "110216248295",
+      "patterns_triggered": [
+        "Accumulation Account Detection",
+        "High-Throughput Pass-Through Accounts",
+        "Large Credit Followed by Cash Withdrawal",
+        "Top Suspicious Account Ranking",
+        "Transit / Pass-Through Detection"
+      ],
+      "distinct_pattern_count": 5,
+      "total_flagged_transactions": 28,
+      "account_holder": "AISHWARYA KIRAN",
+      "bank_name": "14751",
+      "total_credit": 519800.0,
+      "total_debit": 519760.0,
+      "total_volume": 1039560.0,
+      "transaction_count": 11,
+      "total_findings": 6
+    }
+  ],
+  "patterns_detected": [
+    {
+      "pattern_id": 5,
+      "pattern_name": "Transit / Pass-Through Detection",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "61662cf89fcccd8fcc5b",
+          "accounts": [
+            "110216248295"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110216248295 processed 1039560.00 in combined inflow/outflow with a 100.0% throughput ratio across multiple counterparties, consistent with pass-through use.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 6,
+      "pattern_name": "Accumulation Account Detection",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "eaac1de8db482d2044b9",
+          "accounts": [
+            "110216248295"
+          ],
+          "transaction_count": 3,
+          "explanation": "Account 110216248295 received 519800.00 from many counterparties while debiting only 100.0% of total credits, consistent with accumulation.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 11,
+      "pattern_name": "High-Throughput Pass-Through Accounts",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "aa1370bf9ae314ae2088",
+          "accounts": [
+            "110216248295"
+          ],
+          "transaction_count": 5,
+          "explanation": "Account 110216248295 received 519800.00 from 3 sources and disbursed 519760.00 to 2 targets, retaining only 0.0% of inflow — consistent with high-throughput pass-through.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 14,
+      "pattern_name": "Large Credit Followed by Cash Withdrawal",
+      "findings_count": 2,
+      "findings": [
+        {
+          "finding_id": "71236683d6a977fc7ede",
+          "accounts": [
+            "110216248295"
+          ],
+          "transaction_count": 4,
+          "explanation": "Account 110216248295 received a credit of 19500.00 followed by 3 ATM/cash withdrawal(s) totalling 19500.00 (100% of credit) within 0 day(s).",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "eee47c0eef68f80af356",
+          "accounts": [
+            "110216248295"
+          ],
+          "transaction_count": 2,
+          "explanation": "Account 110216248295 received a credit of 500000.00 followed by 1 ATM/cash withdrawal(s) totalling 500000.00 (100% of credit) within 0 day(s).",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 21,
+      "pattern_name": "Top Suspicious Account Ranking",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "58403ceab10ad8d759bb",
+          "accounts": [
+            "110216248295"
+          ],
+          "transaction_count": 9,
+          "explanation": "Account 110216248295 is flagged by 4 distinct pattern types with 5 total finding(s): accumulation_account_detection, high_throughput_pass_through_detection, large_credit_followed_by_cash_withdrawal, transit_pass_through_detection.",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "key_transactions": [
+    "17243920250502000600632491",
+    "20250426194536389886",
+    "20250426194714006864",
+    "20250426194850009121",
+    "20250426194944010402",
+    "20250501172148549817",
+    "20250501235256362421",
+    "20250505184624045697",
+    "79508320250502000800000160"
+  ],
+  "overview": "Analysis of 331087 CASA Account Statement_Report - 2026-01-05T125543.717.csv containing 11 transactions across 1 accounts from 2024-12-19 to 2025-05-05. The engine detected 6 finding(s) across 5 pattern type(s): Transit / Pass-Through Detection, Accumulation Account Detection, High-Throughput Pass-Through Accounts, Large Credit Followed by Cash Withdrawal, Top Suspicious Account Ranking. 1 account(s) were flagged as suspicious with 9 transaction(s) identified as potentially fraudulent."
+}

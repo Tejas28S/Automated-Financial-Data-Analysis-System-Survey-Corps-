@@ -1,0 +1,1897 @@
+{
+  "run_metadata": {
+    "run_id": "run_20260701_110432",
+    "analysis_timestamp": "2026-07-01T05:34:33.537073+00:00",
+    "input_extraction_run_id": "run_20260701_110432",
+    "input_path": "/Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260701_110432",
+    "output_dir": "/Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260701_110432",
+    "db_path": "/Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260701_110432/analysis.db",
+    "run_timestamp": "2026-07-01T05:34:33.537073+00:00",
+    "elapsed_seconds": 0.27,
+    "input_manifest": [
+      {
+        "path": "/Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260701_110432/clean_transactions.csv",
+        "headers": [
+          "account_number",
+          "account_holder",
+          "ifsc_code",
+          "Date",
+          "Time",
+          "Narration",
+          "Transaction_ID",
+          "Reference_Number",
+          "Transaction_Reference",
+          "Cheque_Number",
+          "Debit",
+          "Credit",
+          "Balance",
+          "Transaction_Type",
+          "Bank_Name",
+          "txn_id",
+          "duplicate_of",
+          "is_reversed"
+        ],
+        "rows": 51
+      },
+      {
+        "path": "/Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260701_110432/flagged_transactions.csv",
+        "headers": [
+          "Date",
+          "Time",
+          "Narration",
+          "Debit",
+          "Credit",
+          "Balance",
+          "Account_ID",
+          "Bank_Name",
+          "Transaction_ID",
+          "Reference_Number",
+          "Transaction_Reference",
+          "Cheque_Number",
+          "flag_reason"
+        ],
+        "rows": 0
+      },
+      {
+        "path": "/Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260701_110432/duplicates.csv",
+        "headers": [
+          "duplicate_row_number",
+          "original_row_number",
+          "account_number",
+          "date",
+          "amount",
+          "debit",
+          "credit",
+          "narration",
+          "reason_flagged"
+        ],
+        "rows": 0
+      }
+    ],
+    "input_contract_warnings": [],
+    "narration_summary": {
+      "template": 8,
+      "groq": 0
+    },
+    "config": {
+      "balance_tolerance": 1.0,
+      "money_epsilon": 0.01,
+      "duplicate_date_window_days": 1,
+      "duplicate_amount_relative_tolerance": 0.005,
+      "duplicate_narration_similarity": 0.8,
+      "reversal_amount_relative_tolerance": 0.02,
+      "reversal_narration_similarity": 0.45,
+      "reversal_window_multiplier": 3.0,
+      "default_round_trip_window_days": 30,
+      "settlement_window_multiplier": 10.0,
+      "max_round_trip_hops": 5,
+      "max_cycle_length": 6,
+      "upper_amount_quantile": 0.99,
+      "high_volume_quantile": 0.75,
+      "high_ratio_quantile": 0.75,
+      "low_ratio_quantile": 0.25,
+      "dense_activity_quantile": 0.95,
+      "minimum_cluster_size": 3,
+      "maximum_findings_per_pattern": 5000,
+      "maximum_trace_debits": 10000,
+      "llm_model": "llama-3.1-8b-instant",
+      "enable_llm_fallback": true,
+      "groq_api_keys_env": "GROQ_API_KEYS",
+      "groq_api_key_env": "GROQ_API_KEY",
+      "llm_role_a_max_calls": 500,
+      "llm_role_b_auto_percentile": 0.95,
+      "llm_role_b_max_auto_accounts": 15,
+      "llm_role_b_max_manual_accounts": 10,
+      "llm_key_retry_cooldown_seconds": 60,
+      "sqlite_busy_timeout_ms": 30000,
+      "high_throughput_min_counterparties": 3,
+      "high_throughput_retention_max": 0.1,
+      "credit_to_cash_window_days": 3,
+      "round_value_min_repeats": 3,
+      "round_value_divisor": 1000.0,
+      "low_value_test_max_amount": 100.0,
+      "low_value_test_min_pairs": 2,
+      "reversal_cluster_min_pairs": 3,
+      "hub_ranking_min_degree": 3
+    }
+  },
+  "input_contract": {
+    "input_path": "/Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260701_110432",
+    "clean_row_count": 51,
+    "flagged_row_count": 0,
+    "duplicate_row_count": 0,
+    "metadata_clean_rows": 51,
+    "summary_report_clean_rows": 51,
+    "count_reconciliation_status": "ok",
+    "count_reconciliation_detail": "CSV counts match extraction metadata.",
+    "warnings": []
+  },
+  "baseline_summary": {
+    "row_counts": {
+      "total": 51,
+      "eligible": 51,
+      "excluded": 0,
+      "by_source_bucket": {
+        "clean": 51
+      },
+      "by_exclusion_reason": {}
+    },
+    "account_count": 1,
+    "date_range": {
+      "start": "2023-02-16",
+      "end": "2023-03-31"
+    },
+    "transaction_amounts": {
+      "median": 37000.0,
+      "p75": 150000.0,
+      "p90": 275000.0,
+      "p95": 400000.0,
+      "p99": 790000.0,
+      "maximum": 1000000.0,
+      "median_absolute_deviation": 36976.4
+    },
+    "median_transactions_per_account": 51.0,
+    "thresholds": {
+      "typical_transaction_gap_days": 1.0,
+      "reversal_window_days": 3,
+      "round_trip_window_days": 10,
+      "round_trip_min_retention_ratio": 0.6,
+      "transit_throughput_ratio_min": 0.9918465387967857,
+      "transit_volume_min": 5511813.84,
+      "transit_transaction_count_min": 51.0,
+      "accumulation_credit_min": 2767188.0,
+      "accumulation_outflow_to_inflow_max": 0.9918465387967857,
+      "accumulation_unique_counterparty_min": 3.0,
+      "structuring_individual_amount_max": 790000.0,
+      "structuring_min_count": 4,
+      "structuring_collective_amount_min": 1100000.0,
+      "high_value_amount": 150000.0,
+      "high_throughput_volume_min": 5511813.84,
+      "credit_to_cash_amount_min": 150000.0,
+      "round_value_collective_min": 111000.0,
+      "holding_credit_min": 2767188.0,
+      "holding_retention_min": 0.3,
+      "hub_flow_volume_min": 5511813.84
+    },
+    "top_accounts_by_volume": [
+      {
+        "account_id": "120002879229",
+        "transaction_count": 51,
+        "total_volume": 5511813.84,
+        "throughput_ratio": 0.9918465387967857
+      }
+    ],
+    "top_accounts_by_connectivity": [
+      {
+        "account_id": "120002879229",
+        "unique_counterparty_count": 3,
+        "total_volume": 5511813.84
+      }
+    ]
+  },
+  "counterparty_resolution": {
+    "eligible_rows": 51,
+    "resolved_counterparty_rows": 3,
+    "resolution_rate_percent": 5.882352941176471,
+    "method_counts": {
+      "deterministic": 11,
+      "unresolved": 40
+    },
+    "ledger_pair_count": 0,
+    "llm_call_count": 0,
+    "llm_available": false,
+    "cache_entry_count": 0,
+    "llm_assist_summary": {
+      "candidate_count": 0,
+      "attempted_calls": 0,
+      "inferred_edges": 0,
+      "skipped_due_to_cap": 0,
+      "unavailable": true,
+      "rotation_events": []
+    }
+  },
+  "suspicious_accounts": [
+    {
+      "account_id": "120002879229",
+      "distinct_pattern_count": 5,
+      "pattern_breakdown": {
+        "1_duplicate_detection_cross_check": 1,
+        "2_failed_reversed_transaction_detection": 2,
+        "5_transit_pass_through_detection": 1,
+        "8_money_flow_graph_construction": 1,
+        "19_round_value_debit_patterns": 1
+      },
+      "finding_ids": [
+        "be575848bee6a9166431",
+        "ac15f9cbfab360eb869f",
+        "a6c0ab2b00d54f88250b",
+        "92da154dd11e8fe389cd",
+        "7fe1068f6f459ab1b498",
+        "d0a08a4db5efb29ca9de"
+      ],
+      "source_txn_ids": [
+        "120002879229_000030",
+        "120002879229_000033",
+        "120002879229_000013",
+        "120002879229_000014",
+        "120002879229_000047",
+        "120002879229_000048",
+        "120002879229_000003",
+        "120002879229_000027",
+        "120002879229_000043",
+        "120002879229_000004",
+        "120002879229_000005",
+        "120002879229_000006",
+        "120002879229_000008",
+        "120002879229_000010",
+        "120002879229_000012",
+        "120002879229_000017",
+        "120002879229_000019",
+        "120002879229_000022",
+        "120002879229_000023",
+        "120002879229_000024",
+        "120002879229_000025",
+        "120002879229_000029",
+        "120002879229_000032",
+        "120002879229_000034",
+        "120002879229_000036",
+        "120002879229_000042",
+        "120002879229_000044",
+        "120002879229_000046"
+      ],
+      "total_findings": 6,
+      "total_score": 523.8517,
+      "score_breakdown": {
+        "total_score": 523.8517,
+        "breadth_component": 500.0,
+        "weighted_severity": 7.3,
+        "value_component": 16.5517,
+        "centrality_bonus": 0.0,
+        "pattern_components": {
+          "1_duplicate_detection_cross_check": {
+            "finding_count": 1.0,
+            "base_weight": 1.0,
+            "weighted_severity": 1.0
+          },
+          "2_failed_reversed_transaction_detection": {
+            "finding_count": 2.0,
+            "base_weight": 1.2,
+            "weighted_severity": 2.4
+          },
+          "5_transit_pass_through_detection": {
+            "finding_count": 1.0,
+            "base_weight": 1.4,
+            "weighted_severity": 1.4
+          },
+          "8_money_flow_graph_construction": {
+            "finding_count": 1.0,
+            "base_weight": 0.5,
+            "weighted_severity": 0.5
+          },
+          "19_round_value_debit_patterns": {
+            "finding_count": 1.0,
+            "base_weight": 2.0,
+            "weighted_severity": 2.0
+          }
+        },
+        "runtime_thresholds": {
+          "base_weight_by_pattern": {
+            "1": 1.0,
+            "2": 1.2,
+            "3": 0.8,
+            "4": 2.0,
+            "5": 1.4,
+            "6": 1.4,
+            "7": 1.5,
+            "8": 0.5,
+            "9": 1.8,
+            "10": 2.0,
+            "11": 1.6,
+            "12": 1.5,
+            "13": 1.2,
+            "14": 1.2,
+            "15": 1.0,
+            "16": 1.4,
+            "17": 1.0,
+            "18": 1.2,
+            "19": 2.0,
+            "20": 1.2
+          },
+          "confidence_multiplier": {
+            "high": 1.0,
+            "low": 0.5
+          },
+          "breadth_weight": 100.0,
+          "value_weight": 5.0,
+          "centrality_bonus_weight": 10.0
+        }
+      }
+    }
+  ],
+  "findings_by_pattern": {
+    "1_duplicate_detection_cross_check": [
+      {
+        "pattern_id": 1,
+        "pattern_name": "duplicate_detection_cross_check",
+        "accounts": [
+          "120002879229"
+        ],
+        "txn_ids": [
+          "120002879229_000030",
+          "120002879229_000033"
+        ],
+        "explanation": "Transactions 120002879229_000030 and 120002879229_000033 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+        "confidence_tier": "high",
+        "detection_method": "deterministic",
+        "details": {
+          "reconciliation_category": "missed_by_extraction",
+          "date_difference_days": 1,
+          "amount_difference_ratio": 0.0,
+          "narration_similarity": 0.8790322580645161,
+          "same_reference": false,
+          "same_counterparty": false,
+          "source_documents": [
+            {
+              "txn_id": "120002879229_000030",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000033",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            }
+          ],
+          "explanation_source": "template"
+        },
+        "finding_id": "be575848bee6a9166431"
+      }
+    ],
+    "2_failed_reversed_transaction_detection": [
+      {
+        "pattern_id": 2,
+        "pattern_name": "failed_reversed_transaction_detection",
+        "accounts": [
+          "120002879229"
+        ],
+        "txn_ids": [
+          "120002879229_000013",
+          "120002879229_000014"
+        ],
+        "explanation": "Debit 120002879229_000013 is followed 0 day(s) later by near-equal credit 120002879229_000014 with explicit reversal/reference evidence.",
+        "confidence_tier": "high",
+        "detection_method": "deterministic",
+        "details": {
+          "debit_amount": 37000.0,
+          "credit_amount": 37000.0,
+          "date_difference_days": 0,
+          "source_label_cross_check": true,
+          "keyword_evidence": true,
+          "shared_reference_number": true,
+          "same_reference": true,
+          "same_counterparty": false,
+          "narration_similarity": 1.0,
+          "source_documents": [
+            {
+              "txn_id": "120002879229_000013",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000014",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            }
+          ],
+          "explanation_source": "template"
+        },
+        "finding_id": "ac15f9cbfab360eb869f"
+      },
+      {
+        "pattern_id": 2,
+        "pattern_name": "failed_reversed_transaction_detection",
+        "accounts": [
+          "120002879229"
+        ],
+        "txn_ids": [
+          "120002879229_000047",
+          "120002879229_000048"
+        ],
+        "explanation": "Debit 120002879229_000047 is followed 0 day(s) later by near-equal credit 120002879229_000048 with explicit reversal/reference evidence.",
+        "confidence_tier": "high",
+        "detection_method": "deterministic",
+        "details": {
+          "debit_amount": 37000.0,
+          "credit_amount": 37000.0,
+          "date_difference_days": 0,
+          "source_label_cross_check": true,
+          "keyword_evidence": true,
+          "shared_reference_number": true,
+          "same_reference": true,
+          "same_counterparty": false,
+          "narration_similarity": 1.0,
+          "source_documents": [
+            {
+              "txn_id": "120002879229_000047",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000048",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            }
+          ],
+          "explanation_source": "template"
+        },
+        "finding_id": "a6c0ab2b00d54f88250b"
+      }
+    ],
+    "3_balance_consistency_validation": [],
+    "4_round_trip_detection": [],
+    "5_transit_pass_through_detection": [
+      {
+        "pattern_id": 5,
+        "pattern_name": "transit_pass_through_detection",
+        "accounts": [
+          "120002879229"
+        ],
+        "txn_ids": [
+          "120002879229_000003",
+          "120002879229_000027",
+          "120002879229_000043"
+        ],
+        "explanation": "Account 120002879229 processed 5511813.84 in combined inflow/outflow with a 99.2% throughput ratio across multiple counterparties, consistent with pass-through use.",
+        "confidence_tier": "high",
+        "detection_method": "deterministic",
+        "details": {
+          "total_credit": 2767188.0,
+          "total_debit": 2744625.84,
+          "total_volume": 5511813.84,
+          "throughput_ratio": 0.9918465387967857,
+          "counterparty_count": 3,
+          "runtime_thresholds": {
+            "throughput_ratio_min": 0.9918465387967857,
+            "volume_min": 5511813.84,
+            "transaction_count_min": 51.0
+          },
+          "source_documents": [
+            {
+              "txn_id": "120002879229_000003",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000027",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000043",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            }
+          ],
+          "explanation_source": "template"
+        },
+        "finding_id": "92da154dd11e8fe389cd"
+      }
+    ],
+    "6_accumulation_account_detection": [],
+    "7_structuring_smurfing_detection": [],
+    "8_money_flow_graph_construction": [
+      {
+        "pattern_id": 8,
+        "pattern_name": "money_flow_graph_construction",
+        "accounts": [
+          "120002879229"
+        ],
+        "txn_ids": [
+          "120002879229_000027",
+          "120002879229_000043",
+          "120002879229_000003"
+        ],
+        "explanation": "Money-flow graph constructed with 4 nodes and 3 directed transaction edges.",
+        "confidence_tier": "high",
+        "detection_method": "deterministic",
+        "details": {
+          "node_count": 4,
+          "edge_count": 3,
+          "edge_source_counts": {
+            "deterministic": 3,
+            "llm_inferred": 0
+          },
+          "explanation_source": "template",
+          "source_documents": []
+        },
+        "finding_id": "7fe1068f6f459ab1b498"
+      }
+    ],
+    "9_circular_flow_multi_hop_cycle_detection": [],
+    "10_money_trail_tracing": [],
+    "11_credit_to_cash_out_chains": [],
+    "12_cross_statement_links": [],
+    "13_high_throughput_accounts": [],
+    "14_holding_accounts": [],
+    "15_hub_ranking": [],
+    "16_internal_flow_hub": [],
+    "17_low_value_account_testing": [],
+    "18_reversal_clusters": [],
+    "19_round_value_debit_patterns": [
+      {
+        "pattern_id": 19,
+        "pattern_name": "round_value_debit_patterns",
+        "accounts": [
+          "120002879229"
+        ],
+        "txn_ids": [
+          "120002879229_000004",
+          "120002879229_000005",
+          "120002879229_000006",
+          "120002879229_000008",
+          "120002879229_000010",
+          "120002879229_000012",
+          "120002879229_000013",
+          "120002879229_000017",
+          "120002879229_000019",
+          "120002879229_000022",
+          "120002879229_000023",
+          "120002879229_000024",
+          "120002879229_000025",
+          "120002879229_000027",
+          "120002879229_000029",
+          "120002879229_000032",
+          "120002879229_000034",
+          "120002879229_000036",
+          "120002879229_000042",
+          "120002879229_000043",
+          "120002879229_000044",
+          "120002879229_000046",
+          "120002879229_000047"
+        ],
+        "explanation": "Account 120002879229 made 23 round-value debits (multiples of 1000) totalling 2743000.00.",
+        "confidence_tier": "high",
+        "detection_method": "deterministic",
+        "details": {
+          "round_debit_count": 23,
+          "total_round_debits": 2743000.0,
+          "repeated_amounts": {},
+          "individual_amounts": [
+            300000.0,
+            100000.0,
+            180000.0,
+            200000.0,
+            150000.0,
+            120000.0,
+            37000.0,
+            38000.0,
+            200000.0,
+            45000.0,
+            30000.0,
+            165000.0,
+            50000.0,
+            2000.0,
+            12000.0,
+            10000.0,
+            50000.0,
+            27000.0,
+            400000.0,
+            100000.0,
+            400000.0,
+            90000.0,
+            37000.0
+          ],
+          "divisor": 1000.0,
+          "runtime_thresholds": {
+            "min_repeats": 3,
+            "collective_min": 111000.0
+          },
+          "source_documents": [
+            {
+              "txn_id": "120002879229_000004",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000005",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000006",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000008",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000010",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000012",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000013",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000017",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000019",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000022",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000023",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000024",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000025",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000027",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000029",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000032",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000034",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000036",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000042",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000043",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000044",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000046",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000047",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            }
+          ],
+          "explanation_source": "template"
+        },
+        "finding_id": "d0a08a4db5efb29ca9de"
+      }
+    ],
+    "20_shared_upi_identifiers": [],
+    "21_suspicious_account_ranking": [
+      {
+        "pattern_id": 21,
+        "pattern_name": "suspicious_account_ranking",
+        "accounts": [
+          "120002879229"
+        ],
+        "txn_ids": [
+          "120002879229_000030",
+          "120002879229_000033",
+          "120002879229_000013",
+          "120002879229_000014",
+          "120002879229_000047",
+          "120002879229_000048",
+          "120002879229_000003",
+          "120002879229_000027",
+          "120002879229_000043",
+          "120002879229_000004",
+          "120002879229_000005",
+          "120002879229_000006",
+          "120002879229_000008",
+          "120002879229_000010",
+          "120002879229_000012",
+          "120002879229_000017",
+          "120002879229_000019",
+          "120002879229_000022",
+          "120002879229_000023",
+          "120002879229_000024",
+          "120002879229_000025",
+          "120002879229_000029",
+          "120002879229_000032",
+          "120002879229_000034",
+          "120002879229_000036",
+          "120002879229_000042",
+          "120002879229_000044",
+          "120002879229_000046"
+        ],
+        "explanation": "Account 120002879229 has an overall suspicious-account score of 523.85, based on 5 distinct pattern type(s) and 6 total finding(s): duplicate_detection_cross_check, failed_reversed_transaction_detection, money_flow_graph_construction, round_value_debit_patterns, transit_pass_through_detection.",
+        "confidence_tier": "high",
+        "detection_method": "deterministic",
+        "details": {
+          "total_score": 523.8517,
+          "score_breakdown": {
+            "total_score": 523.8517,
+            "breadth_component": 500.0,
+            "weighted_severity": 7.3,
+            "value_component": 16.5517,
+            "centrality_bonus": 0.0,
+            "pattern_components": {
+              "1_duplicate_detection_cross_check": {
+                "finding_count": 1.0,
+                "base_weight": 1.0,
+                "weighted_severity": 1.0
+              },
+              "2_failed_reversed_transaction_detection": {
+                "finding_count": 2.0,
+                "base_weight": 1.2,
+                "weighted_severity": 2.4
+              },
+              "5_transit_pass_through_detection": {
+                "finding_count": 1.0,
+                "base_weight": 1.4,
+                "weighted_severity": 1.4
+              },
+              "8_money_flow_graph_construction": {
+                "finding_count": 1.0,
+                "base_weight": 0.5,
+                "weighted_severity": 0.5
+              },
+              "19_round_value_debit_patterns": {
+                "finding_count": 1.0,
+                "base_weight": 2.0,
+                "weighted_severity": 2.0
+              }
+            },
+            "runtime_thresholds": {
+              "base_weight_by_pattern": {
+                "1": 1.0,
+                "2": 1.2,
+                "3": 0.8,
+                "4": 2.0,
+                "5": 1.4,
+                "6": 1.4,
+                "7": 1.5,
+                "8": 0.5,
+                "9": 1.8,
+                "10": 2.0,
+                "11": 1.6,
+                "12": 1.5,
+                "13": 1.2,
+                "14": 1.2,
+                "15": 1.0,
+                "16": 1.4,
+                "17": 1.0,
+                "18": 1.2,
+                "19": 2.0,
+                "20": 1.2
+              },
+              "confidence_multiplier": {
+                "high": 1.0,
+                "low": 0.5
+              },
+              "breadth_weight": 100.0,
+              "value_weight": 5.0,
+              "centrality_bonus_weight": 10.0
+            }
+          },
+          "distinct_pattern_count": 5,
+          "pattern_ids": [
+            1,
+            2,
+            5,
+            8,
+            19
+          ],
+          "pattern_names": [
+            "duplicate_detection_cross_check",
+            "failed_reversed_transaction_detection",
+            "money_flow_graph_construction",
+            "round_value_debit_patterns",
+            "transit_pass_through_detection"
+          ],
+          "pattern_breakdown": {
+            "1_duplicate_detection_cross_check": 1,
+            "2_failed_reversed_transaction_detection": 2,
+            "5_transit_pass_through_detection": 1,
+            "8_money_flow_graph_construction": 1,
+            "19_round_value_debit_patterns": 1
+          },
+          "total_findings": 6,
+          "total_transactions_involved": 28,
+          "source_finding_ids": [
+            "be575848bee6a9166431",
+            "ac15f9cbfab360eb869f",
+            "a6c0ab2b00d54f88250b",
+            "92da154dd11e8fe389cd",
+            "7fe1068f6f459ab1b498",
+            "d0a08a4db5efb29ca9de"
+          ],
+          "runtime_thresholds": {
+            "base_weight_by_pattern": {
+              "1": 1.0,
+              "2": 1.2,
+              "3": 0.8,
+              "4": 2.0,
+              "5": 1.4,
+              "6": 1.4,
+              "7": 1.5,
+              "8": 0.5,
+              "9": 1.8,
+              "10": 2.0,
+              "11": 1.6,
+              "12": 1.5,
+              "13": 1.2,
+              "14": 1.2,
+              "15": 1.0,
+              "16": 1.4,
+              "17": 1.0,
+              "18": 1.2,
+              "19": 2.0,
+              "20": 1.2
+            },
+            "confidence_multiplier": {
+              "high": 1.0,
+              "low": 0.5
+            },
+            "breadth_weight": 100.0,
+            "value_weight": 5.0,
+            "centrality_bonus_weight": 10.0
+          },
+          "source_documents": [
+            {
+              "txn_id": "120002879229_000003",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000004",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000005",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000006",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000008",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000010",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000012",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000013",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000014",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000017",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000019",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000022",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000023",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000024",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000025",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000027",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000029",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000030",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000032",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000033",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000034",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000036",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000042",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000043",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000044",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000046",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000047",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            },
+            {
+              "txn_id": "120002879229_000048",
+              "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+              "page": ""
+            }
+          ],
+          "explanation_source": "template"
+        },
+        "finding_id": "c39f4b1b6ae27c233576"
+      }
+    ],
+    "22_llm_investigated_anomalies": [
+      {
+        "pattern_id": 22,
+        "pattern_name": "llm_investigated_anomalies",
+        "accounts": [],
+        "txn_ids": [],
+        "explanation": "Pattern 22 did not trigger because no high-anomaly account had zero deterministic findings.",
+        "confidence_tier": "low",
+        "detection_method": "llm_investigated_anomaly",
+        "details": {
+          "trigger_status": "not_triggered",
+          "trigger_reason": "run_level",
+          "runtime_thresholds": {
+            "anomaly_percentile": 0.95,
+            "score_cutoff": 0.0,
+            "max_auto_accounts": 15,
+            "max_manual_accounts": 10
+          },
+          "source_documents": [],
+          "explanation_source": "template"
+        },
+        "finding_id": "4538ed28fa15d5dc837a"
+      }
+    ]
+  },
+  "all_findings": [
+    {
+      "pattern_id": 1,
+      "pattern_name": "duplicate_detection_cross_check",
+      "accounts": [
+        "120002879229"
+      ],
+      "txn_ids": [
+        "120002879229_000030",
+        "120002879229_000033"
+      ],
+      "explanation": "Transactions 120002879229_000030 and 120002879229_000033 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+      "confidence_tier": "high",
+      "detection_method": "deterministic",
+      "details": {
+        "reconciliation_category": "missed_by_extraction",
+        "date_difference_days": 1,
+        "amount_difference_ratio": 0.0,
+        "narration_similarity": 0.8790322580645161,
+        "same_reference": false,
+        "same_counterparty": false,
+        "source_documents": [
+          {
+            "txn_id": "120002879229_000030",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000033",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          }
+        ],
+        "explanation_source": "template"
+      },
+      "finding_id": "be575848bee6a9166431"
+    },
+    {
+      "pattern_id": 2,
+      "pattern_name": "failed_reversed_transaction_detection",
+      "accounts": [
+        "120002879229"
+      ],
+      "txn_ids": [
+        "120002879229_000013",
+        "120002879229_000014"
+      ],
+      "explanation": "Debit 120002879229_000013 is followed 0 day(s) later by near-equal credit 120002879229_000014 with explicit reversal/reference evidence.",
+      "confidence_tier": "high",
+      "detection_method": "deterministic",
+      "details": {
+        "debit_amount": 37000.0,
+        "credit_amount": 37000.0,
+        "date_difference_days": 0,
+        "source_label_cross_check": true,
+        "keyword_evidence": true,
+        "shared_reference_number": true,
+        "same_reference": true,
+        "same_counterparty": false,
+        "narration_similarity": 1.0,
+        "source_documents": [
+          {
+            "txn_id": "120002879229_000013",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000014",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          }
+        ],
+        "explanation_source": "template"
+      },
+      "finding_id": "ac15f9cbfab360eb869f"
+    },
+    {
+      "pattern_id": 2,
+      "pattern_name": "failed_reversed_transaction_detection",
+      "accounts": [
+        "120002879229"
+      ],
+      "txn_ids": [
+        "120002879229_000047",
+        "120002879229_000048"
+      ],
+      "explanation": "Debit 120002879229_000047 is followed 0 day(s) later by near-equal credit 120002879229_000048 with explicit reversal/reference evidence.",
+      "confidence_tier": "high",
+      "detection_method": "deterministic",
+      "details": {
+        "debit_amount": 37000.0,
+        "credit_amount": 37000.0,
+        "date_difference_days": 0,
+        "source_label_cross_check": true,
+        "keyword_evidence": true,
+        "shared_reference_number": true,
+        "same_reference": true,
+        "same_counterparty": false,
+        "narration_similarity": 1.0,
+        "source_documents": [
+          {
+            "txn_id": "120002879229_000047",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000048",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          }
+        ],
+        "explanation_source": "template"
+      },
+      "finding_id": "a6c0ab2b00d54f88250b"
+    },
+    {
+      "pattern_id": 5,
+      "pattern_name": "transit_pass_through_detection",
+      "accounts": [
+        "120002879229"
+      ],
+      "txn_ids": [
+        "120002879229_000003",
+        "120002879229_000027",
+        "120002879229_000043"
+      ],
+      "explanation": "Account 120002879229 processed 5511813.84 in combined inflow/outflow with a 99.2% throughput ratio across multiple counterparties, consistent with pass-through use.",
+      "confidence_tier": "high",
+      "detection_method": "deterministic",
+      "details": {
+        "total_credit": 2767188.0,
+        "total_debit": 2744625.84,
+        "total_volume": 5511813.84,
+        "throughput_ratio": 0.9918465387967857,
+        "counterparty_count": 3,
+        "runtime_thresholds": {
+          "throughput_ratio_min": 0.9918465387967857,
+          "volume_min": 5511813.84,
+          "transaction_count_min": 51.0
+        },
+        "source_documents": [
+          {
+            "txn_id": "120002879229_000003",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000027",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000043",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          }
+        ],
+        "explanation_source": "template"
+      },
+      "finding_id": "92da154dd11e8fe389cd"
+    },
+    {
+      "pattern_id": 8,
+      "pattern_name": "money_flow_graph_construction",
+      "accounts": [
+        "120002879229"
+      ],
+      "txn_ids": [
+        "120002879229_000027",
+        "120002879229_000043",
+        "120002879229_000003"
+      ],
+      "explanation": "Money-flow graph constructed with 4 nodes and 3 directed transaction edges.",
+      "confidence_tier": "high",
+      "detection_method": "deterministic",
+      "details": {
+        "node_count": 4,
+        "edge_count": 3,
+        "edge_source_counts": {
+          "deterministic": 3,
+          "llm_inferred": 0
+        },
+        "explanation_source": "template",
+        "source_documents": []
+      },
+      "finding_id": "7fe1068f6f459ab1b498"
+    },
+    {
+      "pattern_id": 19,
+      "pattern_name": "round_value_debit_patterns",
+      "accounts": [
+        "120002879229"
+      ],
+      "txn_ids": [
+        "120002879229_000004",
+        "120002879229_000005",
+        "120002879229_000006",
+        "120002879229_000008",
+        "120002879229_000010",
+        "120002879229_000012",
+        "120002879229_000013",
+        "120002879229_000017",
+        "120002879229_000019",
+        "120002879229_000022",
+        "120002879229_000023",
+        "120002879229_000024",
+        "120002879229_000025",
+        "120002879229_000027",
+        "120002879229_000029",
+        "120002879229_000032",
+        "120002879229_000034",
+        "120002879229_000036",
+        "120002879229_000042",
+        "120002879229_000043",
+        "120002879229_000044",
+        "120002879229_000046",
+        "120002879229_000047"
+      ],
+      "explanation": "Account 120002879229 made 23 round-value debits (multiples of 1000) totalling 2743000.00.",
+      "confidence_tier": "high",
+      "detection_method": "deterministic",
+      "details": {
+        "round_debit_count": 23,
+        "total_round_debits": 2743000.0,
+        "repeated_amounts": {},
+        "individual_amounts": [
+          300000.0,
+          100000.0,
+          180000.0,
+          200000.0,
+          150000.0,
+          120000.0,
+          37000.0,
+          38000.0,
+          200000.0,
+          45000.0,
+          30000.0,
+          165000.0,
+          50000.0,
+          2000.0,
+          12000.0,
+          10000.0,
+          50000.0,
+          27000.0,
+          400000.0,
+          100000.0,
+          400000.0,
+          90000.0,
+          37000.0
+        ],
+        "divisor": 1000.0,
+        "runtime_thresholds": {
+          "min_repeats": 3,
+          "collective_min": 111000.0
+        },
+        "source_documents": [
+          {
+            "txn_id": "120002879229_000004",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000005",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000006",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000008",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000010",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000012",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000013",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000017",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000019",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000022",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000023",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000024",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000025",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000027",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000029",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000032",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000034",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000036",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000042",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000043",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000044",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000046",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000047",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          }
+        ],
+        "explanation_source": "template"
+      },
+      "finding_id": "d0a08a4db5efb29ca9de"
+    },
+    {
+      "pattern_id": 21,
+      "pattern_name": "suspicious_account_ranking",
+      "accounts": [
+        "120002879229"
+      ],
+      "txn_ids": [
+        "120002879229_000030",
+        "120002879229_000033",
+        "120002879229_000013",
+        "120002879229_000014",
+        "120002879229_000047",
+        "120002879229_000048",
+        "120002879229_000003",
+        "120002879229_000027",
+        "120002879229_000043",
+        "120002879229_000004",
+        "120002879229_000005",
+        "120002879229_000006",
+        "120002879229_000008",
+        "120002879229_000010",
+        "120002879229_000012",
+        "120002879229_000017",
+        "120002879229_000019",
+        "120002879229_000022",
+        "120002879229_000023",
+        "120002879229_000024",
+        "120002879229_000025",
+        "120002879229_000029",
+        "120002879229_000032",
+        "120002879229_000034",
+        "120002879229_000036",
+        "120002879229_000042",
+        "120002879229_000044",
+        "120002879229_000046"
+      ],
+      "explanation": "Account 120002879229 has an overall suspicious-account score of 523.85, based on 5 distinct pattern type(s) and 6 total finding(s): duplicate_detection_cross_check, failed_reversed_transaction_detection, money_flow_graph_construction, round_value_debit_patterns, transit_pass_through_detection.",
+      "confidence_tier": "high",
+      "detection_method": "deterministic",
+      "details": {
+        "total_score": 523.8517,
+        "score_breakdown": {
+          "total_score": 523.8517,
+          "breadth_component": 500.0,
+          "weighted_severity": 7.3,
+          "value_component": 16.5517,
+          "centrality_bonus": 0.0,
+          "pattern_components": {
+            "1_duplicate_detection_cross_check": {
+              "finding_count": 1.0,
+              "base_weight": 1.0,
+              "weighted_severity": 1.0
+            },
+            "2_failed_reversed_transaction_detection": {
+              "finding_count": 2.0,
+              "base_weight": 1.2,
+              "weighted_severity": 2.4
+            },
+            "5_transit_pass_through_detection": {
+              "finding_count": 1.0,
+              "base_weight": 1.4,
+              "weighted_severity": 1.4
+            },
+            "8_money_flow_graph_construction": {
+              "finding_count": 1.0,
+              "base_weight": 0.5,
+              "weighted_severity": 0.5
+            },
+            "19_round_value_debit_patterns": {
+              "finding_count": 1.0,
+              "base_weight": 2.0,
+              "weighted_severity": 2.0
+            }
+          },
+          "runtime_thresholds": {
+            "base_weight_by_pattern": {
+              "1": 1.0,
+              "2": 1.2,
+              "3": 0.8,
+              "4": 2.0,
+              "5": 1.4,
+              "6": 1.4,
+              "7": 1.5,
+              "8": 0.5,
+              "9": 1.8,
+              "10": 2.0,
+              "11": 1.6,
+              "12": 1.5,
+              "13": 1.2,
+              "14": 1.2,
+              "15": 1.0,
+              "16": 1.4,
+              "17": 1.0,
+              "18": 1.2,
+              "19": 2.0,
+              "20": 1.2
+            },
+            "confidence_multiplier": {
+              "high": 1.0,
+              "low": 0.5
+            },
+            "breadth_weight": 100.0,
+            "value_weight": 5.0,
+            "centrality_bonus_weight": 10.0
+          }
+        },
+        "distinct_pattern_count": 5,
+        "pattern_ids": [
+          1,
+          2,
+          5,
+          8,
+          19
+        ],
+        "pattern_names": [
+          "duplicate_detection_cross_check",
+          "failed_reversed_transaction_detection",
+          "money_flow_graph_construction",
+          "round_value_debit_patterns",
+          "transit_pass_through_detection"
+        ],
+        "pattern_breakdown": {
+          "1_duplicate_detection_cross_check": 1,
+          "2_failed_reversed_transaction_detection": 2,
+          "5_transit_pass_through_detection": 1,
+          "8_money_flow_graph_construction": 1,
+          "19_round_value_debit_patterns": 1
+        },
+        "total_findings": 6,
+        "total_transactions_involved": 28,
+        "source_finding_ids": [
+          "be575848bee6a9166431",
+          "ac15f9cbfab360eb869f",
+          "a6c0ab2b00d54f88250b",
+          "92da154dd11e8fe389cd",
+          "7fe1068f6f459ab1b498",
+          "d0a08a4db5efb29ca9de"
+        ],
+        "runtime_thresholds": {
+          "base_weight_by_pattern": {
+            "1": 1.0,
+            "2": 1.2,
+            "3": 0.8,
+            "4": 2.0,
+            "5": 1.4,
+            "6": 1.4,
+            "7": 1.5,
+            "8": 0.5,
+            "9": 1.8,
+            "10": 2.0,
+            "11": 1.6,
+            "12": 1.5,
+            "13": 1.2,
+            "14": 1.2,
+            "15": 1.0,
+            "16": 1.4,
+            "17": 1.0,
+            "18": 1.2,
+            "19": 2.0,
+            "20": 1.2
+          },
+          "confidence_multiplier": {
+            "high": 1.0,
+            "low": 0.5
+          },
+          "breadth_weight": 100.0,
+          "value_weight": 5.0,
+          "centrality_bonus_weight": 10.0
+        },
+        "source_documents": [
+          {
+            "txn_id": "120002879229_000003",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000004",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000005",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000006",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000008",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000010",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000012",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000013",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000014",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000017",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000019",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000022",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000023",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000024",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000025",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000027",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000029",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000030",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000032",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000033",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000034",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000036",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000042",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000043",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000044",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000046",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000047",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          },
+          {
+            "txn_id": "120002879229_000048",
+            "doc_id": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+            "page": ""
+          }
+        ],
+        "explanation_source": "template"
+      },
+      "finding_id": "c39f4b1b6ae27c233576"
+    },
+    {
+      "pattern_id": 22,
+      "pattern_name": "llm_investigated_anomalies",
+      "accounts": [],
+      "txn_ids": [],
+      "explanation": "Pattern 22 did not trigger because no high-anomaly account had zero deterministic findings.",
+      "confidence_tier": "low",
+      "detection_method": "llm_investigated_anomaly",
+      "details": {
+        "trigger_status": "not_triggered",
+        "trigger_reason": "run_level",
+        "runtime_thresholds": {
+          "anomaly_percentile": 0.95,
+          "score_cutoff": 0.0,
+          "max_auto_accounts": 15,
+          "max_manual_accounts": 10
+        },
+        "source_documents": [],
+        "explanation_source": "template"
+      },
+      "finding_id": "4538ed28fa15d5dc837a"
+    }
+  ],
+  "excluded_rows": {
+    "balance_mismatch": [],
+    "duplicate": [],
+    "other": []
+  },
+  "possible_same_owner": [],
+  "balance_validation": {
+    "rows_checked": 51,
+    "status_counts": {
+      "anchor": 1,
+      "consistent": 50
+    },
+    "newly_excluded_count": 0
+  },
+  "graph_summary": {
+    "node_count": 4,
+    "edge_count": 3
+  },
+  "graph": {
+    "directed": true,
+    "multigraph": true,
+    "graph": {
+      "pattern_id": 8,
+      "pattern_name": "money_flow_graph_construction"
+    },
+    "nodes": [
+      {
+        "observed_account": true,
+        "account_holder": "TOLLWAYS INFRA PROJECTS PRIVATE LIMITED",
+        "bank_name": "Canara Bank",
+        "ifsc_code": "CNRB0005120",
+        "total_volume": 5511813.84,
+        "throughput_ratio": 0.9918465387967857,
+        "unique_counterparty_count": 3,
+        "id": "120002879229"
+      },
+      {
+        "observed_account": false,
+        "id": "86897150"
+      },
+      {
+        "observed_account": false,
+        "id": "211472700"
+      },
+      {
+        "observed_account": false,
+        "id": "63330700"
+      }
+    ],
+    "edges": [
+      {
+        "amount": 2000.0,
+        "date": "2023-03-22",
+        "time": "12:11:05",
+        "txn_id": "120002879229_000027",
+        "txn_ids": [
+          "120002879229_000027"
+        ],
+        "confidence_tier": "high",
+        "flag_reason": "",
+        "reference": "5120101005955",
+        "ledger_pair_id": "",
+        "source_document": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+        "edge_source": "deterministic",
+        "llm_reasoning": "",
+        "source": "120002879229",
+        "target": "211472700",
+        "key": "120002879229_000027"
+      },
+      {
+        "amount": 100000.0,
+        "date": "2023-03-28",
+        "time": "08:17:08",
+        "txn_id": "120002879229_000043",
+        "txn_ids": [
+          "120002879229_000043"
+        ],
+        "confidence_tier": "high",
+        "flag_reason": "",
+        "reference": "5120101005955",
+        "ledger_pair_id": "",
+        "source_document": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+        "edge_source": "deterministic",
+        "llm_reasoning": "",
+        "source": "120002879229",
+        "target": "63330700",
+        "key": "120002879229_000043"
+      },
+      {
+        "amount": 580000.0,
+        "date": "2023-02-18",
+        "time": "13:58:47",
+        "txn_id": "120002879229_000003",
+        "txn_ids": [
+          "120002879229_000003"
+        ],
+        "confidence_tier": "high",
+        "flag_reason": "",
+        "reference": "42023021800512551",
+        "ledger_pair_id": "",
+        "source_document": "TOLLWAYS_INFRA_PROJECTS_PRIVATE_LIMITED_120002879229",
+        "edge_source": "deterministic",
+        "llm_reasoning": "",
+        "source": "86897150",
+        "target": "120002879229",
+        "key": "120002879229_000003"
+      }
+    ]
+  }
+}

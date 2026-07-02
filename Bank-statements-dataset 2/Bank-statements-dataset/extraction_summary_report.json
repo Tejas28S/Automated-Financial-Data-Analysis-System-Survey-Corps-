@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-06-28T08:59:16",
+  "totals": {
+    "files_processed": 144,
+    "files_failed": 0,
+    "transactions_clean": 181994,
+    "transactions_flagged": 926,
+    "duplicates_tagged": 41078
+  },
+  "flag_breakdown": {
+    "balance_mismatch": 918,
+    "narration_contains_multiple_transactions": 8
+  },
+  "mismatch_diagnosis": {
+    "missing_transaction": 32,
+    "missing_amount": 885,
+    "direction_inverted": 1
+  },
+  "top_flagged_accounts": [
+    {
+      "account": "0167042251865512",
+      "flags": 882
+    },
+    {
+      "account": "UNKNOWN-AccountStmt_0882XXXXXX5304 (1)",
+      "flags": 14
+    },
+    {
+      "account": "001029700065",
+      "flags": 4
+    },
+    {
+      "account": "16423304381803",
+      "flags": 4
+    },
+    {
+      "account": "46796183240954",
+      "flags": 4
+    }
+  ],
+  "reconciliation": {
+    "average": 0.951,
+    "files_below_0.90": [
+      {
+        "file": "4513362998.pdf",
+        "recon": 0.0
+      },
+      {
+        "file": "AccountStmt_0882XXXXXX5304 (1).pdf",
+        "recon": 0.891
+      },
+      {
+        "file": "BOM_Statement_FTP_02107_xxxxxxxx7596_20240812_20250801_20250801012337.pdf",
+        "recon": 0.0
+      },
+      {
+        "file": "BOM_Statement_FTP_02107_xxxxxxxx7596_20250812_20250811_20251112013551.pdf",
+        "recon": 0.0
+      },
+      {
+        "file": "BOM_Statement_FTP_02772_xxxxxxxx8123_20250514_20251127_20251127115931.pdf",
+        "recon": 0.0
+      },
+      {
+        "file": "shivlal statement.txt",
+        "recon": 0.0
+      },
+      {
+        "file": "soa_0167042251865512.pdf",
+        "recon": 0.156
+      },
+      {
+        "file": "stm REKHA.pdf",
+        "recon": 0.0
+      }
+    ],
+    "zero_row_files": [
+      "4513362998.pdf",
+      "BOM_Statement_FTP_02107_xxxxxxxx7596_20240812_20250801_20250801012337.pdf",
+      "BOM_Statement_FTP_02107_xxxxxxxx7596_20250812_20250811_20251112013551.pdf",
+      "BOM_Statement_FTP_02772_xxxxxxxx8123_20250514_20251127_20251127115931.pdf",
+      "shivlal statement.txt",
+      "stm REKHA.pdf"
+    ]
+  },
+  "metadata_quality": {
+    "graded_files": 144,
+    "with_holder_name": 136,
+    "with_account_number": 136,
+    "with_ifsc": 85,
+    "missing_holder_files": [
+      "AccountStmt_0882XXXXXX5304 (1).pdf",
+      "AccountStmt_1228XXXXXX3352.pdf",
+      "shivlal statement.txt",
+      "statement-33500513952.pdf",
+      "statement-38347344323 (1).pdf",
+      "statement-38347344323.pdf",
+      "statement-42935093151.pdf",
+      "statement-49952935790.pdf"
+    ],
+    "source_breakdown": {
+      "regex": 85,
+      "excel_metadata_block": 56,
+      "llm_fallback": 3
+    }
+  },
+  "llm_usage": {
+    "total_calls": 49,
+    "key_rotations": 0
+  }
+}

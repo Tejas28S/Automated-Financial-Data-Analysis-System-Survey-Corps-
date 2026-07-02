@@ -1,0 +1,55 @@
+{
+  "dataset": {
+    "dataset_root": "/Users/tejas.m.s/Desktop/Bank-statements-dataset",
+    "source_folders": [
+      "primary",
+      "Secondary"
+    ],
+    "supported_files_processed": 162,
+    "file_type_counts": {
+      "pdf": 103,
+      "xlsx": 23,
+      "csv": 11,
+      "xls": 22,
+      "txt": 3
+    },
+    "unsupported_files": [],
+    "processed_with_errors": []
+  },
+  "total_accounts": 111,
+  "total_transactions": 183192,
+  "raw_transactions_extracted_before_dedupe": 205455,
+  "total_banks": 17,
+  "banks": [
+    "Axis Bank",
+    "Bandhan Bank",
+    "Bank of Baroda",
+    "Bank of India",
+    "Bank of Maharashtra",
+    "Canara Bank",
+    "Federal Bank",
+    "HDFC Bank",
+    "ICICI Bank",
+    "IDFC FIRST Bank",
+    "Indian Bank",
+    "IndusInd Bank",
+    "Kerala Gramin Bank",
+    "Kotak Mahindra Bank",
+    "Punjab National Bank",
+    "State Bank of India",
+    "Unknown",
+    "YES Bank"
+  ],
+  "date_range": {
+    "from": "2009-06-12",
+    "to": "2026-01-21"
+  },
+  "average_transaction": 11333.85,
+  "largest_transaction": 17764659.71,
+  "smallest_transaction": 0.01,
+  "most_active_account": "38347344323",
+  "highest_risk_account": "10140211101047567",
+  "most_connected_account": "098030016134598",
+  "most_common_payment_method": "UPI",
+  "most_common_merchant": "Payment from Ph"
+}

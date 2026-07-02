@@ -1,0 +1,2032 @@
+{
+  "case_name": "dup_case_03",
+  "input_file": "dup_case_03.csv",
+  "generated_at": "2026-06-28T12:07:23.296417+00:00",
+  "total_transactions_analyzed": 429,
+  "total_accounts": 5,
+  "date_range": {
+    "start": "2025-01-31",
+    "end": "2025-07-10"
+  },
+  "fraud_transactions": [
+    {
+      "transaction_id": "219320109917_000000",
+      "account_id": "219320109917",
+      "date": "2025-02-01",
+      "time": "",
+      "amount": 73523.0,
+      "direction": "credit",
+      "narration": "N/IDIBN2502019150927/IDFB0519334/CRYSTAL SUPPLY ENTERPRISE",
+      "reference": "IDIBN2502019150927",
+      "balance": 283925.0,
+      "counterparty": "2502019150927",
+      "patterns_detected": [
+        "Accumulation Account Detection"
+      ],
+      "finding_ids": [
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "219320109917_000019",
+      "account_id": "219320109917",
+      "date": "2025-03-03",
+      "time": "",
+      "amount": 35318.0,
+      "direction": "credit",
+      "narration": "N/IDIBN2503033339083/PUNB0575893/CARMEN TRINITY VENTURE",
+      "reference": "IDIBN2503033339083",
+      "balance": 228146.0,
+      "counterparty": "2503033339083",
+      "patterns_detected": [
+        "Accumulation Account Detection"
+      ],
+      "finding_ids": [
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "219320109917_000027",
+      "account_id": "219320109917",
+      "date": "2025-03-17",
+      "time": "",
+      "amount": 22520.0,
+      "direction": "credit",
+      "narration": "UPI/554444191817/CR/KAVYABOSE/SBIN/60274405686@sbin0408236.ifsc.npci/UPI",
+      "reference": "554444191817",
+      "balance": 230486.0,
+      "counterparty": "60274405686",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "126e2fc3e244cd54b017",
+        "2e51b69fa927659e9acc",
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "219320109917_000035",
+      "account_id": "219320109917",
+      "date": "2025-04-03",
+      "time": "",
+      "amount": 81285.0,
+      "direction": "credit",
+      "narration": "N/IDIBN2504038850904/ICIC0474758/Global Enterprise",
+      "reference": "IDIBN2504038850904",
+      "balance": 288624.0,
+      "counterparty": "2504038850904",
+      "patterns_detected": [
+        "Accumulation Account Detection"
+      ],
+      "finding_ids": [
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "219320109917_000043",
+      "account_id": "219320109917",
+      "date": "2025-04-14",
+      "time": "",
+      "amount": 15774.0,
+      "direction": "credit",
+      "narration": "UPI/639604991817/CR/KAVYABOSE/SBIN/60274405686@sbin0408236.ifsc.npci/UPI",
+      "reference": "639604991817",
+      "balance": 296668.0,
+      "counterparty": "60274405686",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc",
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "219320109917_000053",
+      "account_id": "219320109917",
+      "date": "2025-05-03",
+      "time": "",
+      "amount": 50557.0,
+      "direction": "credit",
+      "narration": "N/IDIBN2505032163734/MAHB0221058/Northern Traders Company",
+      "reference": "IDIBN2505032163734",
+      "balance": 307786.0,
+      "counterparty": "2505032163734",
+      "patterns_detected": [
+        "Accumulation Account Detection"
+      ],
+      "finding_ids": [
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "219320109917_000060",
+      "account_id": "219320109917",
+      "date": "2025-05-12",
+      "time": "",
+      "amount": 20334.0,
+      "direction": "credit",
+      "narration": "UPI/363086437404/CR/KAVYABOSE/SBIN/60274405686@sbin0408236.ifsc.npci/UPI",
+      "reference": "363086437404",
+      "balance": 299683.0,
+      "counterparty": "60274405686",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc",
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "219320109917_000072",
+      "account_id": "219320109917",
+      "date": "2025-06-01",
+      "time": "",
+      "amount": 77255.0,
+      "direction": "credit",
+      "narration": "N/IDIBN2506019281087/PUNB0532501/HANUMAN DICO",
+      "reference": "IDIBN2506019281087",
+      "balance": 352853.0,
+      "counterparty": "2506019281087",
+      "patterns_detected": [
+        "Accumulation Account Detection"
+      ],
+      "finding_ids": [
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "219320109917_000077",
+      "account_id": "219320109917",
+      "date": "2025-06-09",
+      "time": "",
+      "amount": 20742.0,
+      "direction": "credit",
+      "narration": "UPI/288841300706/CR/KAVYABOSE/SBIN/60274405686@sbin0408236.ifsc.npci/UPI",
+      "reference": "288841300706",
+      "balance": 362921.0,
+      "counterparty": "60274405686",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc",
+        "7d48b5f928a67c849f93",
+        "dfbdd85884dffaa1cb29"
+      ]
+    },
+    {
+      "transaction_id": "219320109917_000082",
+      "account_id": "219320109917",
+      "date": "2025-07-01",
+      "time": "",
+      "amount": 35385.0,
+      "direction": "credit",
+      "narration": "N/IDIBN2507015081906/CNRB0876036/BANSILAL TRADERS",
+      "reference": "IDIBN2507015081906",
+      "balance": 387031.0,
+      "counterparty": "2507015081906",
+      "patterns_detected": [
+        "Accumulation Account Detection"
+      ],
+      "finding_ids": [
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "342949044011_000034",
+      "account_id": "342949044011",
+      "date": "2025-03-31",
+      "time": "",
+      "amount": 14107.0,
+      "direction": "credit",
+      "narration": "UPI/CR/464611356308/KAVY/SBIN/**60274405686@sbin0408236.ifsc.npci/UPI//ICI4729635545",
+      "reference": "464611356308",
+      "balance": 244927.0,
+      "counterparty": "60274405686",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "342949044011_000049",
+      "account_id": "342949044011",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 22135.0,
+      "direction": "credit",
+      "narration": "UPI/CR/386656858763/KAVY/SBIN/**60274405686@sbin0408236.ifsc.npci/UPI//ICI1183170378",
+      "reference": "386656858763",
+      "balance": 242191.0,
+      "counterparty": "60274405686",
+      "patterns_detected": [
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "200071c1968a0bf1e8f6",
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "342949044011_000063",
+      "account_id": "342949044011",
+      "date": "2025-05-26",
+      "time": "",
+      "amount": 30124.0,
+      "direction": "credit",
+      "narration": "UPI/CR/843455142030/KAVY/SBIN/**60274405686@sbin0408236.ifsc.npci/UPI//ICI8582622296",
+      "reference": "843455142030",
+      "balance": 310352.0,
+      "counterparty": "60274405686",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "342949044011_000081",
+      "account_id": "342949044011",
+      "date": "2025-06-23",
+      "time": "",
+      "amount": 15315.0,
+      "direction": "credit",
+      "narration": "UPI/CR/954706442341/KAVY/SBIN/**60274405686@sbin0408236.ifsc.npci/UPI//ICI8519278025",
+      "reference": "954706442341",
+      "balance": 349808.0,
+      "counterparty": "60274405686",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000001",
+      "account_id": "60274405686",
+      "date": "2025-02-03",
+      "time": "08:34:32",
+      "amount": 2952.0,
+      "direction": "debit",
+      "narration": "UPI/074563282994/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@kkbk0847797.ifsc.npci. NPCI/UPI/BESCOM",
+      "reference": "074563282994",
+      "balance": 276681.0,
+      "counterparty": "bescom.bill@upi",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000002",
+      "account_id": "60274405686",
+      "date": "2025-02-06",
+      "time": "",
+      "amount": 3904.0,
+      "direction": "debit",
+      "narration": "UPI/614634895593/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@kkbk0838628.ifsc.npci. NPCI/UPI/INDIANOIL",
+      "reference": "614634895593",
+      "balance": 272777.0,
+      "counterparty": "fuelpay@ybl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000004",
+      "account_id": "60274405686",
+      "date": "2025-02-08",
+      "time": "",
+      "amount": 2228.0,
+      "direction": "debit",
+      "narration": "UPI/037704002979/FROM: 60274405686@sbin0408236.ifsc.npci/TO: medplus@ybl@fdrl0117022.ifsc.npci. NPCI/UPI/PHARMACY",
+      "reference": "037704002979",
+      "balance": 270531.0,
+      "counterparty": "medplus@ybl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000005",
+      "account_id": "60274405686",
+      "date": "2025-02-11",
+      "time": "",
+      "amount": 2406.0,
+      "direction": "debit",
+      "narration": "UPI/669141191683/FROM: 60274405686@sbin0408236.ifsc.npci/TO: jio.mobile@ibl@utib0309247.ifsc.npci. NPCI/UPI/JIO",
+      "reference": "669141191683",
+      "balance": 268125.0,
+      "counterparty": "jio.mobile@ibl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000006",
+      "account_id": "60274405686",
+      "date": "2025-02-12",
+      "time": "",
+      "amount": 1939.0,
+      "direction": "debit",
+      "narration": "UPI/561889455791/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@icic0932351.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "561889455791",
+      "balance": 266186.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000007",
+      "account_id": "60274405686",
+      "date": "2025-02-15",
+      "time": "",
+      "amount": 4092.0,
+      "direction": "debit",
+      "narration": "UPI/640974859218/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@punb0292324.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "640974859218",
+      "balance": 262094.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000013",
+      "account_id": "60274405686",
+      "date": "2025-02-26",
+      "time": "",
+      "amount": 2611.0,
+      "direction": "debit",
+      "narration": "UPI/900932414724/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@idfb0129795.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "900932414724",
+      "balance": 251279.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000014",
+      "account_id": "60274405686",
+      "date": "2025-02-27",
+      "time": "",
+      "amount": 2988.0,
+      "direction": "debit",
+      "narration": "UPI/758902147998/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@icic0100242.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "758902147998",
+      "balance": 248291.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000015",
+      "account_id": "60274405686",
+      "date": "2025-03-02",
+      "time": "",
+      "amount": 3054.0,
+      "direction": "debit",
+      "narration": "UPI/499764373974/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@cnrb0370050.ifsc.npci. NPCI/UPI/BESCOM",
+      "reference": "499764373974",
+      "balance": 245237.0,
+      "counterparty": "bescom.bill@upi",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000017",
+      "account_id": "60274405686",
+      "date": "2025-03-05",
+      "time": "",
+      "amount": 2606.0,
+      "direction": "debit",
+      "narration": "UPI/452934531040/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@barb0914932.ifsc.npci. NPCI/UPI/BESCOM",
+      "reference": "452934531040",
+      "balance": 302809.0,
+      "counterparty": "bescom.bill@upi",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000018",
+      "account_id": "60274405686",
+      "date": "2025-03-06",
+      "time": "",
+      "amount": 4313.0,
+      "direction": "debit",
+      "narration": "UPI/837762984194/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@idib0437750.ifsc.npci. NPCI/UPI/DMART",
+      "reference": "837762984194",
+      "balance": 298496.0,
+      "counterparty": "dmart.pay@okaxis",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000019",
+      "account_id": "60274405686",
+      "date": "2025-03-07",
+      "time": "",
+      "amount": 1057.0,
+      "direction": "debit",
+      "narration": "UPI/018175495162/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@utib0950045.ifsc.npci. NPCI/UPI/IRCTC",
+      "reference": "018175495162",
+      "balance": 297439.0,
+      "counterparty": "irctc.pay@axisbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000020",
+      "account_id": "60274405686",
+      "date": "2025-03-09",
+      "time": "",
+      "amount": 3895.0,
+      "direction": "debit",
+      "narration": "UPI/988477243226/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@mahb0358268.ifsc.npci. NPCI/UPI/INDIANOIL",
+      "reference": "988477243226",
+      "balance": 293544.0,
+      "counterparty": "fuelpay@ybl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000021",
+      "account_id": "60274405686",
+      "date": "2025-03-12",
+      "time": "",
+      "amount": 2511.0,
+      "direction": "debit",
+      "narration": "UPI/821439499336/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@fdrl0568689.ifsc.npci. NPCI/UPI/BESCOM",
+      "reference": "821439499336",
+      "balance": 291033.0,
+      "counterparty": "bescom.bill@upi",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000022",
+      "account_id": "60274405686",
+      "date": "2025-03-13",
+      "time": "",
+      "amount": 670.0,
+      "direction": "debit",
+      "narration": "UPI/831988835381/FROM: 60274405686@sbin0408236.ifsc.npci/TO: jio.mobile@ibl@cnrb0598335.ifsc.npci. NPCI/UPI/JIO",
+      "reference": "831988835381",
+      "balance": 290363.0,
+      "counterparty": "jio.mobile@ibl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000023",
+      "account_id": "60274405686",
+      "date": "2025-03-14",
+      "time": "",
+      "amount": 2757.0,
+      "direction": "debit",
+      "narration": "UPI/886993962398/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@punb0604068.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "886993962398",
+      "balance": 287606.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000024",
+      "account_id": "60274405686",
+      "date": "2025-03-15",
+      "time": "",
+      "amount": 814.0,
+      "direction": "debit",
+      "narration": "UPI/938242512063/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@cnrb0100684.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "938242512063",
+      "balance": 286792.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000026",
+      "account_id": "60274405686",
+      "date": "2025-03-17",
+      "time": "",
+      "amount": 22520.0,
+      "direction": "debit",
+      "narration": "UPI/554444191817/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI",
+      "reference": "554444191817",
+      "balance": 259272.0,
+      "counterparty": "219320109917",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "Failed / Reversed Transaction Detection",
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "126e2fc3e244cd54b017",
+        "2e51b69fa927659e9acc",
+        "7d48b5f928a67c849f93",
+        "9e1cf0293163a1745e46",
+        "db955e283ac833c5c529"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000027",
+      "account_id": "60274405686",
+      "date": "2025-03-17",
+      "time": "",
+      "amount": 22520.0,
+      "direction": "debit",
+      "narration": "UPI/554444191817/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI",
+      "reference": "554444191817",
+      "balance": 236752.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "9e1cf0293163a1745e46"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000028",
+      "account_id": "60274405686",
+      "date": "2025-03-18",
+      "time": "",
+      "amount": 3169.0,
+      "direction": "debit",
+      "narration": "UPI/969982459924/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@icic0308542.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "969982459924",
+      "balance": 233583.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000029",
+      "account_id": "60274405686",
+      "date": "2025-03-18",
+      "time": "",
+      "amount": 22520.0,
+      "direction": "credit",
+      "narration": "REVERSAL OF UPI/554444191817/SHIV LAL BISHNOI/219320109917",
+      "reference": "554444191817",
+      "balance": 256103.0,
+      "counterparty": "219320109917",
+      "patterns_detected": [
+        "Failed / Reversed Transaction Detection",
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "126e2fc3e244cd54b017",
+        "2e51b69fa927659e9acc",
+        "db955e283ac833c5c529"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000031",
+      "account_id": "60274405686",
+      "date": "2025-03-23",
+      "time": "",
+      "amount": 2697.0,
+      "direction": "debit",
+      "narration": "UPI/637165363270/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@kkbk0379343.ifsc.npci. NPCI/UPI/IRCTC",
+      "reference": "637165363270",
+      "balance": 242206.0,
+      "counterparty": "irctc.pay@axisbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000033",
+      "account_id": "60274405686",
+      "date": "2025-03-28",
+      "time": "22:37:34",
+      "amount": 637.0,
+      "direction": "debit",
+      "narration": "UPI/100469574878/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@hdfc0689623.ifsc.npci. NPCI/UPI/BESCOM",
+      "reference": "100469574878",
+      "balance": 230369.0,
+      "counterparty": "bescom.bill@upi",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000034",
+      "account_id": "60274405686",
+      "date": "2025-03-30",
+      "time": "",
+      "amount": 3319.0,
+      "direction": "debit",
+      "narration": "UPI/180753912492/FROM: 60274405686@sbin0408236.ifsc.npci/TO: jio.mobile@ibl@sbin0882076.ifsc.npci. NPCI/UPI/JIO",
+      "reference": "180753912492",
+      "balance": 227050.0,
+      "counterparty": "jio.mobile@ibl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000035",
+      "account_id": "60274405686",
+      "date": "2025-03-31",
+      "time": "",
+      "amount": 14107.0,
+      "direction": "debit",
+      "narration": "UPI/464611356308/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI",
+      "reference": "464611356308",
+      "balance": 212943.0,
+      "counterparty": "342949044011",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc",
+        "e2b6302f3b0157a62818"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000036",
+      "account_id": "60274405686",
+      "date": "2025-03-31",
+      "time": "",
+      "amount": 14107.0,
+      "direction": "debit",
+      "narration": "UPI/471421095485/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI",
+      "reference": "471421095485",
+      "balance": 198836.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "e2b6302f3b0157a62818"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000037",
+      "account_id": "60274405686",
+      "date": "2025-04-02",
+      "time": "",
+      "amount": 3581.0,
+      "direction": "debit",
+      "narration": "UPI/872203555006/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@kkbk0226031.ifsc.npci. NPCI/UPI/BESCOM",
+      "reference": "872203555006",
+      "balance": 195255.0,
+      "counterparty": "bescom.bill@upi",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000040",
+      "account_id": "60274405686",
+      "date": "2025-04-05",
+      "time": "14:20:33",
+      "amount": 1661.0,
+      "direction": "debit",
+      "narration": "UPI/178531874401/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@cnrb0311816.ifsc.npci. NPCI/UPI/IRCTC",
+      "reference": "178531874401",
+      "balance": 263640.0,
+      "counterparty": "irctc.pay@axisbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000043",
+      "account_id": "60274405686",
+      "date": "2025-04-11",
+      "time": "",
+      "amount": 3436.0,
+      "direction": "debit",
+      "narration": "UPI/449788613550/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@utib0117612.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "449788613550",
+      "balance": 236354.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000044",
+      "account_id": "60274405686",
+      "date": "2025-04-13",
+      "time": "",
+      "amount": 2807.0,
+      "direction": "debit",
+      "narration": "UPI/484085559930/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@barb0240722.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "484085559930",
+      "balance": 233547.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000045",
+      "account_id": "60274405686",
+      "date": "2025-04-14",
+      "time": "",
+      "amount": 15774.0,
+      "direction": "debit",
+      "narration": "UPI/639604991817/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI",
+      "reference": "639604991817",
+      "balance": 217773.0,
+      "counterparty": "219320109917",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "1367e485d854bd43820e",
+        "2e51b69fa927659e9acc",
+        "7d48b5f928a67c849f93"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000046",
+      "account_id": "60274405686",
+      "date": "2025-04-14",
+      "time": "",
+      "amount": 15774.0,
+      "direction": "debit",
+      "narration": "UPI/639604991817/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI",
+      "reference": "639604991817",
+      "balance": 201999.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "1367e485d854bd43820e"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000047",
+      "account_id": "60274405686",
+      "date": "2025-04-14",
+      "time": "20:18:43",
+      "amount": 3508.0,
+      "direction": "debit",
+      "narration": "UPI/901424464141/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@hdfc0158445.ifsc.npci. NPCI/UPI/INDIANOIL",
+      "reference": "901424464141",
+      "balance": 198491.0,
+      "counterparty": "fuelpay@ybl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000048",
+      "account_id": "60274405686",
+      "date": "2025-04-16",
+      "time": "",
+      "amount": 1241.0,
+      "direction": "debit",
+      "narration": "UPI/990655881645/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@fdrl0175967.ifsc.npci. NPCI/UPI/BESCOM",
+      "reference": "990655881645",
+      "balance": 197250.0,
+      "counterparty": "bescom.bill@upi",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000049",
+      "account_id": "60274405686",
+      "date": "2025-04-19",
+      "time": "",
+      "amount": 4143.0,
+      "direction": "debit",
+      "narration": "UPI/869793746599/FROM: 60274405686@sbin0408236.ifsc.npci/TO: jio.mobile@ibl@fdrl0506896.ifsc.npci. NPCI/UPI/JIO",
+      "reference": "869793746599",
+      "balance": 193107.0,
+      "counterparty": "jio.mobile@ibl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000050",
+      "account_id": "60274405686",
+      "date": "2025-04-21",
+      "time": "",
+      "amount": 3338.0,
+      "direction": "debit",
+      "narration": "UPI/479244939923/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@idib0236156.ifsc.npci. NPCI/UPI/DMART",
+      "reference": "479244939923",
+      "balance": 189769.0,
+      "counterparty": "dmart.pay@okaxis",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000051",
+      "account_id": "60274405686",
+      "date": "2025-04-23",
+      "time": "",
+      "amount": 4017.0,
+      "direction": "debit",
+      "narration": "UPI/699351361034/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@icic0551438.ifsc.npci. NPCI/UPI/DMART",
+      "reference": "699351361034",
+      "balance": 185752.0,
+      "counterparty": "dmart.pay@okaxis",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000052",
+      "account_id": "60274405686",
+      "date": "2025-04-26",
+      "time": "",
+      "amount": 18.0,
+      "direction": "debit",
+      "narration": "AMB CHRGS FOR APR 2025",
+      "reference": "",
+      "balance": 185734.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "3d3223f4031b0a8c3f02"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000053",
+      "account_id": "60274405686",
+      "date": "2025-04-27",
+      "time": "13:55:35",
+      "amount": 18.0,
+      "direction": "debit",
+      "narration": "AMB CHRGS FOR APR 2025",
+      "reference": "",
+      "balance": 185716.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "3d3223f4031b0a8c3f02"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000054",
+      "account_id": "60274405686",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 22135.0,
+      "direction": "debit",
+      "narration": "UPI/386656858763/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI",
+      "reference": "386656858763",
+      "balance": 163581.0,
+      "counterparty": "342949044011",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Failed / Reversed Transaction Detection",
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "08eebf76ac93f0e54fe7",
+        "200071c1968a0bf1e8f6",
+        "2e51b69fa927659e9acc",
+        "e18a8103f3ce8b382d8a"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000055",
+      "account_id": "60274405686",
+      "date": "2025-04-28",
+      "time": "",
+      "amount": 22135.0,
+      "direction": "debit",
+      "narration": "UPI/172193050526/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI",
+      "reference": "172193050526",
+      "balance": 141446.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "08eebf76ac93f0e54fe7"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000056",
+      "account_id": "60274405686",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 4395.0,
+      "direction": "debit",
+      "narration": "UPI/131336515356/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@cnrb0991106.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "131336515356",
+      "balance": 137051.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000057",
+      "account_id": "60274405686",
+      "date": "2025-04-29",
+      "time": "",
+      "amount": 22135.0,
+      "direction": "credit",
+      "narration": "REVERSAL OF UPI/386656858763/Yash Dubey/342949044011",
+      "reference": "386656858763",
+      "balance": 159186.0,
+      "counterparty": "342949044011",
+      "patterns_detected": [
+        "Failed / Reversed Transaction Detection",
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "200071c1968a0bf1e8f6",
+        "2e51b69fa927659e9acc",
+        "e18a8103f3ce8b382d8a"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000061",
+      "account_id": "60274405686",
+      "date": "2025-05-04",
+      "time": "",
+      "amount": 3247.0,
+      "direction": "debit",
+      "narration": "UPI/024658675707/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@punb0294148.ifsc.npci. NPCI/UPI/DMART",
+      "reference": "024658675707",
+      "balance": 207937.0,
+      "counterparty": "dmart.pay@okaxis",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000062",
+      "account_id": "60274405686",
+      "date": "2025-05-05",
+      "time": "",
+      "amount": 1088.0,
+      "direction": "debit",
+      "narration": "UPI/416089043970/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@utib0633211.ifsc.npci. NPCI/UPI/DMART",
+      "reference": "416089043970",
+      "balance": 206849.0,
+      "counterparty": "dmart.pay@okaxis",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000063",
+      "account_id": "60274405686",
+      "date": "2025-05-06",
+      "time": "",
+      "amount": 426.0,
+      "direction": "debit",
+      "narration": "UPI/269083893456/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@idfb0196414.ifsc.npci. NPCI/UPI/INDIANOIL",
+      "reference": "269083893456",
+      "balance": 206423.0,
+      "counterparty": "fuelpay@ybl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000064",
+      "account_id": "60274405686",
+      "date": "2025-05-09",
+      "time": "",
+      "amount": 1668.0,
+      "direction": "debit",
+      "narration": "UPI/752740480000/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@barb0333340.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "752740480000",
+      "balance": 204755.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000065",
+      "account_id": "60274405686",
+      "date": "2025-05-11",
+      "time": "",
+      "amount": 722.0,
+      "direction": "debit",
+      "narration": "UPI/294624194565/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@icic0274843.ifsc.npci. NPCI/UPI/IRCTC",
+      "reference": "294624194565",
+      "balance": 204033.0,
+      "counterparty": "irctc.pay@axisbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000066",
+      "account_id": "60274405686",
+      "date": "2025-05-12",
+      "time": "",
+      "amount": 20334.0,
+      "direction": "debit",
+      "narration": "UPI/363086437404/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI",
+      "reference": "363086437404",
+      "balance": 183699.0,
+      "counterparty": "219320109917",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc",
+        "7d48b5f928a67c849f93",
+        "8ce21d812e71e970e698"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000067",
+      "account_id": "60274405686",
+      "date": "2025-05-12",
+      "time": "",
+      "amount": 20334.0,
+      "direction": "debit",
+      "narration": "UPI/363086437404/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI",
+      "reference": "363086437404",
+      "balance": 163365.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "8ce21d812e71e970e698"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000068",
+      "account_id": "60274405686",
+      "date": "2025-05-12",
+      "time": "13:59:34",
+      "amount": 4017.0,
+      "direction": "debit",
+      "narration": "UPI/433291366510/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@cnrb0944415.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "433291366510",
+      "balance": 159348.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000069",
+      "account_id": "60274405686",
+      "date": "2025-05-15",
+      "time": "",
+      "amount": 3882.0,
+      "direction": "debit",
+      "narration": "UPI/727046268182/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@hdfc0419097.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "727046268182",
+      "balance": 155466.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000071",
+      "account_id": "60274405686",
+      "date": "2025-05-21",
+      "time": "",
+      "amount": 3263.0,
+      "direction": "debit",
+      "narration": "UPI/870586311156/FROM: 60274405686@sbin0408236.ifsc.npci/TO: dmart.pay@okaxis@icic0291521.ifsc.npci. NPCI/UPI/DMART",
+      "reference": "870586311156",
+      "balance": 141003.0,
+      "counterparty": "dmart.pay@okaxis",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000072",
+      "account_id": "60274405686",
+      "date": "2025-05-23",
+      "time": "",
+      "amount": 2431.0,
+      "direction": "debit",
+      "narration": "UPI/694857087737/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@idfb0479121.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "694857087737",
+      "balance": 138572.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000073",
+      "account_id": "60274405686",
+      "date": "2025-05-24",
+      "time": "",
+      "amount": 2225.0,
+      "direction": "debit",
+      "narration": "UPI/943554975123/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@kkbk0136121.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "943554975123",
+      "balance": 136347.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000074",
+      "account_id": "60274405686",
+      "date": "2025-05-26",
+      "time": "",
+      "amount": 30124.0,
+      "direction": "debit",
+      "narration": "UPI/843455142030/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI",
+      "reference": "843455142030",
+      "balance": 106223.0,
+      "counterparty": "342949044011",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc",
+        "c38072f78879fbd0f83d"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000075",
+      "account_id": "60274405686",
+      "date": "2025-05-26",
+      "time": "",
+      "amount": 30124.0,
+      "direction": "debit",
+      "narration": "UPI/163489082382/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI",
+      "reference": "163489082382",
+      "balance": 76099.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "c38072f78879fbd0f83d"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000076",
+      "account_id": "60274405686",
+      "date": "2025-05-27",
+      "time": "",
+      "amount": 4067.0,
+      "direction": "debit",
+      "narration": "UPI/314438948475/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@utib0529926.ifsc.npci. NPCI/UPI/IRCTC",
+      "reference": "314438948475",
+      "balance": 72032.0,
+      "counterparty": "irctc.pay@axisbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000079",
+      "account_id": "60274405686",
+      "date": "2025-05-31",
+      "time": "19:21:15",
+      "amount": 4069.0,
+      "direction": "debit",
+      "narration": "UPI/450982216118/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bescom.bill@upi@hdfc0499308.ifsc.npci. NPCI/UPI/BESCOM",
+      "reference": "450982216118",
+      "balance": 117779.0,
+      "counterparty": "bescom.bill@upi",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000080",
+      "account_id": "60274405686",
+      "date": "2025-06-03",
+      "time": "",
+      "amount": 2680.0,
+      "direction": "debit",
+      "narration": "UPI/665280558879/FROM: 60274405686@sbin0408236.ifsc.npci/TO: fuelpay@ybl@utib0109409.ifsc.npci. NPCI/UPI/INDIANOIL",
+      "reference": "665280558879",
+      "balance": 115099.0,
+      "counterparty": "fuelpay@ybl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000081",
+      "account_id": "60274405686",
+      "date": "2025-06-06",
+      "time": "",
+      "amount": 1951.0,
+      "direction": "debit",
+      "narration": "UPI/089287756423/FROM: 60274405686@sbin0408236.ifsc.npci/TO: medplus@ybl@mahb0690951.ifsc.npci. NPCI/UPI/PHARMACY",
+      "reference": "089287756423",
+      "balance": 113148.0,
+      "counterparty": "medplus@ybl",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000082",
+      "account_id": "60274405686",
+      "date": "2025-06-08",
+      "time": "17:16:59",
+      "amount": 661.0,
+      "direction": "debit",
+      "narration": "UPI/418503478063/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@icic0583125.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "418503478063",
+      "balance": 112487.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000083",
+      "account_id": "60274405686",
+      "date": "2025-06-09",
+      "time": "",
+      "amount": 20742.0,
+      "direction": "debit",
+      "narration": "UPI/288841300706/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI",
+      "reference": "288841300706",
+      "balance": 91745.0,
+      "counterparty": "219320109917",
+      "patterns_detected": [
+        "Accumulation Account Detection",
+        "Duplicate Transaction Cross-Check",
+        "Failed / Reversed Transaction Detection",
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc",
+        "4436ab56259e7e72d7ae",
+        "7d48b5f928a67c849f93",
+        "ab107b2420e198c20a46",
+        "dfbdd85884dffaa1cb29"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000084",
+      "account_id": "60274405686",
+      "date": "2025-06-09",
+      "time": "",
+      "amount": 20742.0,
+      "direction": "debit",
+      "narration": "UPI/288841300706/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 219320109917@idib0367430.ifsc.npci. NPCI/UPI",
+      "reference": "288841300706",
+      "balance": 71003.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "ab107b2420e198c20a46"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000085",
+      "account_id": "60274405686",
+      "date": "2025-06-10",
+      "time": "",
+      "amount": 20742.0,
+      "direction": "credit",
+      "narration": "REVERSAL OF UPI/288841300706/SHIV LAL BISHNOI/219320109917",
+      "reference": "288841300706",
+      "balance": 91745.0,
+      "counterparty": "219320109917",
+      "patterns_detected": [
+        "Failed / Reversed Transaction Detection",
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc",
+        "4436ab56259e7e72d7ae",
+        "dfbdd85884dffaa1cb29"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000086",
+      "account_id": "60274405686",
+      "date": "2025-06-11",
+      "time": "",
+      "amount": 686.0,
+      "direction": "debit",
+      "narration": "UPI/703194394698/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@idib0762436.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "703194394698",
+      "balance": 91059.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000088",
+      "account_id": "60274405686",
+      "date": "2025-06-16",
+      "time": "",
+      "amount": 3498.0,
+      "direction": "debit",
+      "narration": "UPI/910604039885/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@sbin0518692.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "910604039885",
+      "balance": 72561.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000089",
+      "account_id": "60274405686",
+      "date": "2025-06-18",
+      "time": "",
+      "amount": 3825.0,
+      "direction": "debit",
+      "narration": "UPI/894178071077/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@barb0826634.ifsc.npci. NPCI/UPI/IRCTC",
+      "reference": "894178071077",
+      "balance": 68736.0,
+      "counterparty": "irctc.pay@axisbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000091",
+      "account_id": "60274405686",
+      "date": "2025-06-21",
+      "time": "13:14:30",
+      "amount": 4458.0,
+      "direction": "debit",
+      "narration": "UPI/295174424517/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@kkbk0591719.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "295174424517",
+      "balance": 56778.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000092",
+      "account_id": "60274405686",
+      "date": "2025-06-22",
+      "time": "17:39:07",
+      "amount": 3884.0,
+      "direction": "debit",
+      "narration": "UPI/463999565270/FROM: 60274405686@sbin0408236.ifsc.npci/TO: irctc.pay@axisbank@barb0580138.ifsc.npci. NPCI/UPI/IRCTC",
+      "reference": "463999565270",
+      "balance": 52894.0,
+      "counterparty": "irctc.pay@axisbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000093",
+      "account_id": "60274405686",
+      "date": "2025-06-23",
+      "time": "",
+      "amount": 15315.0,
+      "direction": "debit",
+      "narration": "UPI/954706442341/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI",
+      "reference": "954706442341",
+      "balance": 37579.0,
+      "counterparty": "342949044011",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check",
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc",
+        "7ba7b58e99e4956fa7e4"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000094",
+      "account_id": "60274405686",
+      "date": "2025-06-23",
+      "time": "",
+      "amount": 15315.0,
+      "direction": "debit",
+      "narration": "UPI/092803715392/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 342949044011@icic0127609.ifsc.npci. NPCI/UPI",
+      "reference": "092803715392",
+      "balance": 22264.0,
+      "counterparty": "",
+      "patterns_detected": [
+        "Duplicate Transaction Cross-Check"
+      ],
+      "finding_ids": [
+        "7ba7b58e99e4956fa7e4"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000095",
+      "account_id": "60274405686",
+      "date": "2025-06-24",
+      "time": "",
+      "amount": 81.0,
+      "direction": "debit",
+      "narration": "UPI/028077482149/FROM: 60274405686@sbin0408236.ifsc.npci/TO: bbdaily@okhdfcbank@idib0243107.ifsc.npci. NPCI/UPI/BIGBASKET",
+      "reference": "028077482149",
+      "balance": 22183.0,
+      "counterparty": "bbdaily@okhdfcbank",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000096",
+      "account_id": "60274405686",
+      "date": "2025-06-27",
+      "time": "",
+      "amount": 694.0,
+      "direction": "debit",
+      "narration": "UPI/563423409391/FROM: 60274405686@sbin0408236.ifsc.npci/TO: airtel.recharge@airtel@utib0123796.ifsc.npci. NPCI/UPI/AIRTEL",
+      "reference": "563423409391",
+      "balance": 21489.0,
+      "counterparty": "airtel.recharge@airtel",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "60274405686_000099",
+      "account_id": "60274405686",
+      "date": "2025-07-10",
+      "time": "",
+      "amount": 2500.0,
+      "direction": "debit",
+      "narration": "UPI/305305914964/FROM: 60274405686@sbin0408236.ifsc.npci/TO: 84030412795@idfb0266918.ifsc.npci. NPCI/UPI",
+      "reference": "305305914964",
+      "balance": 94749.0,
+      "counterparty": "84030412795",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    },
+    {
+      "transaction_id": "84030412795_000080",
+      "account_id": "84030412795",
+      "date": "2025-07-10",
+      "time": "",
+      "amount": 2500.0,
+      "direction": "credit",
+      "narration": "UPI/MOB/305305914964/Payment from PhonePe KAVYA BOSE/60274405686@sbin0408236.ifsc.npci",
+      "reference": "305305914964",
+      "balance": 177326.0,
+      "counterparty": "60274405686",
+      "patterns_detected": [
+        "Transit / Pass-Through Detection"
+      ],
+      "finding_ids": [
+        "2e51b69fa927659e9acc"
+      ]
+    }
+  ],
+  "flagged_accounts": [
+    {
+      "account_id": "60274405686",
+      "patterns_triggered": [
+        "Duplicate Transaction Cross-Check",
+        "Failed / Reversed Transaction Detection",
+        "Round Trip Detection",
+        "Transit / Pass-Through Detection"
+      ],
+      "distinct_pattern_count": 4,
+      "total_flagged_transactions": 107,
+      "account_holder": "KAVYA BOSE",
+      "bank_name": "State Bank of India",
+      "total_credit": 463207.0,
+      "total_debit": 402205.0,
+      "total_volume": 865412.0,
+      "transaction_count": 92,
+      "total_findings": 16
+    },
+    {
+      "account_id": "219320109917",
+      "patterns_triggered": [
+        "Accumulation Account Detection",
+        "Round Trip Detection"
+      ],
+      "distinct_pattern_count": 2,
+      "total_flagged_transactions": 20,
+      "account_holder": "SHIV LAL BISHNOI",
+      "bank_name": "Indian Bank",
+      "total_credit": 433240.0,
+      "total_debit": 256243.0,
+      "total_volume": 689483.0,
+      "transaction_count": 84,
+      "total_findings": 3
+    },
+    {
+      "account_id": "342949044011",
+      "patterns_triggered": [
+        "Round Trip Detection"
+      ],
+      "distinct_pattern_count": 1,
+      "total_flagged_transactions": 3,
+      "account_holder": "Yash Dubey",
+      "bank_name": "ICICI Bank",
+      "total_credit": 392746.0,
+      "total_debit": 246816.0,
+      "total_volume": 639562.0,
+      "transaction_count": 84,
+      "total_findings": 1
+    }
+  ],
+  "patterns_detected": [
+    {
+      "pattern_id": 1,
+      "pattern_name": "Duplicate Transaction Cross-Check",
+      "findings_count": 9,
+      "findings": [
+        {
+          "finding_id": "3d3223f4031b0a8c3f02",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 60274405686_000052 and 60274405686_000053 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. Extraction did not place either row in the duplicate bucket.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "9e1cf0293163a1745e46",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 60274405686_000026 and 60274405686_000027 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. This independently confirms the extraction duplicate flag.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "e2b6302f3b0157a62818",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 60274405686_000035 and 60274405686_000036 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. This independently confirms the extraction duplicate flag.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "1367e485d854bd43820e",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 60274405686_000045 and 60274405686_000046 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. This independently confirms the extraction duplicate flag.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "08eebf76ac93f0e54fe7",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 60274405686_000054 and 60274405686_000055 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. This independently confirms the extraction duplicate flag.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "8ce21d812e71e970e698",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 60274405686_000066 and 60274405686_000067 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. This independently confirms the extraction duplicate flag.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "c38072f78879fbd0f83d",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 60274405686_000074 and 60274405686_000075 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. This independently confirms the extraction duplicate flag.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "ab107b2420e198c20a46",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 60274405686_000083 and 60274405686_000084 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. This independently confirms the extraction duplicate flag.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "7ba7b58e99e4956fa7e4",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Transactions 60274405686_000093 and 60274405686_000094 share an account, direction, near-equal amount, nearby date, and corroborating narration/reference evidence. This independently confirms the extraction duplicate flag.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 2,
+      "pattern_name": "Failed / Reversed Transaction Detection",
+      "findings_count": 3,
+      "findings": [
+        {
+          "finding_id": "db955e283ac833c5c529",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Debit 60274405686_000026 is followed 1 day(s) later by near-equal credit 60274405686_000029 with explicit reversal/reference evidence.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "e18a8103f3ce8b382d8a",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Debit 60274405686_000054 is followed 1 day(s) later by near-equal credit 60274405686_000057 with explicit reversal/reference evidence.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "4436ab56259e7e72d7ae",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 2,
+          "explanation": "Debit 60274405686_000083 is followed 1 day(s) later by near-equal credit 60274405686_000085 with explicit reversal/reference evidence.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 4,
+      "pattern_name": "Round Trip Detection",
+      "findings_count": 3,
+      "findings": [
+        {
+          "finding_id": "126e2fc3e244cd54b017",
+          "accounts": [
+            "219320109917",
+            "60274405686"
+          ],
+          "transaction_count": 3,
+          "explanation": "Money left 60274405686, moved through 219320109917, and returned to 60274405686 within 1 day(s) at comparable amounts.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "200071c1968a0bf1e8f6",
+          "accounts": [
+            "342949044011",
+            "60274405686"
+          ],
+          "transaction_count": 3,
+          "explanation": "Money left 60274405686, moved through 342949044011, and returned to 60274405686 within 1 day(s) at comparable amounts.",
+          "confidence": "high"
+        },
+        {
+          "finding_id": "dfbdd85884dffaa1cb29",
+          "accounts": [
+            "219320109917",
+            "60274405686"
+          ],
+          "transaction_count": 3,
+          "explanation": "Money left 60274405686, moved through 219320109917, and returned to 60274405686 within 1 day(s) at comparable amounts.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 5,
+      "pattern_name": "Transit / Pass-Through Detection",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "2e51b69fa927659e9acc",
+          "accounts": [
+            "60274405686"
+          ],
+          "transaction_count": 74,
+          "explanation": "Account 60274405686 processed 865412.00 in combined inflow/outflow with a 86.8% throughput ratio across multiple counterparties, consistent with pass-through use.",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": 6,
+      "pattern_name": "Accumulation Account Detection",
+      "findings_count": 1,
+      "findings": [
+        {
+          "finding_id": "7d48b5f928a67c849f93",
+          "accounts": [
+            "219320109917"
+          ],
+          "transaction_count": 14,
+          "explanation": "Account 219320109917 received 433240.00 from many counterparties while debiting only 59.1% of total credits, consistent with accumulation.",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "key_transactions": [
+    "219320109917_000000",
+    "219320109917_000019",
+    "219320109917_000027",
+    "219320109917_000035",
+    "219320109917_000043",
+    "219320109917_000053",
+    "219320109917_000060",
+    "219320109917_000072",
+    "219320109917_000077",
+    "219320109917_000082",
+    "342949044011_000034",
+    "342949044011_000049",
+    "342949044011_000063",
+    "342949044011_000081",
+    "60274405686_000001",
+    "60274405686_000002",
+    "60274405686_000004",
+    "60274405686_000005",
+    "60274405686_000006",
+    "60274405686_000007",
+    "60274405686_000013",
+    "60274405686_000014",
+    "60274405686_000015",
+    "60274405686_000017",
+    "60274405686_000018",
+    "60274405686_000019",
+    "60274405686_000020",
+    "60274405686_000021",
+    "60274405686_000022",
+    "60274405686_000023",
+    "60274405686_000024",
+    "60274405686_000026",
+    "60274405686_000027",
+    "60274405686_000028",
+    "60274405686_000029",
+    "60274405686_000031",
+    "60274405686_000033",
+    "60274405686_000034",
+    "60274405686_000035",
+    "60274405686_000036",
+    "60274405686_000037",
+    "60274405686_000040",
+    "60274405686_000043",
+    "60274405686_000044",
+    "60274405686_000045",
+    "60274405686_000046",
+    "60274405686_000047",
+    "60274405686_000048",
+    "60274405686_000049",
+    "60274405686_000050",
+    "60274405686_000051",
+    "60274405686_000052",
+    "60274405686_000053",
+    "60274405686_000054",
+    "60274405686_000055",
+    "60274405686_000056",
+    "60274405686_000057",
+    "60274405686_000061",
+    "60274405686_000062",
+    "60274405686_000063",
+    "60274405686_000064",
+    "60274405686_000065",
+    "60274405686_000066",
+    "60274405686_000067",
+    "60274405686_000068",
+    "60274405686_000069",
+    "60274405686_000071",
+    "60274405686_000072",
+    "60274405686_000073",
+    "60274405686_000074",
+    "60274405686_000075",
+    "60274405686_000076",
+    "60274405686_000079",
+    "60274405686_000080",
+    "60274405686_000081",
+    "60274405686_000082",
+    "60274405686_000083",
+    "60274405686_000084",
+    "60274405686_000085",
+    "60274405686_000086",
+    "60274405686_000088",
+    "60274405686_000089",
+    "60274405686_000091",
+    "60274405686_000092",
+    "60274405686_000093",
+    "60274405686_000094",
+    "60274405686_000095",
+    "60274405686_000096",
+    "60274405686_000099",
+    "84030412795_000080"
+  ],
+  "overview": "Analysis of dup_case_03.csv containing 429 transactions across 5 accounts from 2025-01-31 to 2025-07-10. The engine detected 17 finding(s) across 5 pattern type(s): Duplicate Transaction Cross-Check, Failed / Reversed Transaction Detection, Round Trip Detection, Transit / Pass-Through Detection, Accumulation Account Detection. 3 account(s) were flagged as suspicious with 90 transaction(s) identified as potentially fraudulent."
+}

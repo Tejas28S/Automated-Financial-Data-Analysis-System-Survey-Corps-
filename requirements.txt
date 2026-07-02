@@ -17,6 +17,8 @@ networkx
 reportlab
 openpyxl
 matplotlib
+plotly
+kaleido
 python-multipart
 aiofiles
 streamlit

@@ -1,0 +1,4499 @@
+# Financial Investigation Ground Truth Generation Prompt
+
+**Version:** 1.0
+
+**Purpose:** Generate a complete Ground Truth reference from the provided financial investigation dataset.
+
+---
+
+# Overview
+
+This task is **NOT** to build a software application.
+
+This task is **NOT** to generate source code.
+
+This task is **NOT** to modify the existing repository.
+
+This task is **NOT** to create an AI model.
+
+This task is **NOT** to build a fraud detection engine.
+
+Instead, your responsibility is to act as an independent financial investigation expert and produce the most accurate understanding possible of the provided dataset.
+
+The generated outputs will become the **Ground Truth** against which another software system will later be validated.
+
+Every conclusion must be supported by evidence extracted from the dataset.
+
+Never fabricate relationships.
+
+Never assume fraud without evidence.
+
+Never invent transactions.
+
+Everything must be derived directly from the supplied data.
+
+---
+
+# Background
+
+The project is an Automated Financial Investigation System.
+
+The extraction pipeline is developed separately.
+
+Its responsibility is:
+
+* Extract transactions
+* Extract metadata
+* Standardize outputs
+* Produce structured datasets
+
+This task begins **after extraction**.
+
+Your responsibility starts once the dataset exists.
+
+You are **not** evaluating OCR.
+
+You are **not** evaluating extraction.
+
+Assume extracted information is available.
+
+Your task is understanding.
+
+---
+
+# Important Context
+
+The competition mentors clarified:
+
+> The dataset is based on case data.
+
+> Some parameters have been modified.
+
+Interpretation:
+
+The dataset is not random.
+
+The dataset contains meaningful financial behaviour.
+
+Sensitive information may have been modified.
+
+However:
+
+The behavioural patterns remain.
+
+The transaction relationships remain.
+
+The investigation logic remains.
+
+Therefore:
+
+Your responsibility is to discover those patterns.
+
+---
+
+# Objective
+
+Read the entire dataset.
+
+Understand every document.
+
+Correlate information across every file.
+
+Construct a complete understanding of the investigation.
+
+Generate a complete Ground Truth reference.
+
+This Ground Truth will later be compared against the outputs produced by another financial investigation system.
+
+---
+
+# Dataset
+
+Inside the repository there is a folder named:
+
+```text
+bank statements/
+```
+
+Inside this folder there may exist:
+
+* Primary
+* Secondary
+* Supporting folders
+* PDFs
+* Excel files
+* CSV files
+* TXT files
+
+There may also be nested folders.
+
+Traverse everything recursively.
+
+Never ignore supported files.
+
+---
+
+# Supported File Types
+
+Read and understand:
+
+* PDF
+* CSV
+* XLS
+* XLSX
+* TXT
+
+Future formats should also be handled gracefully.
+
+Unsupported files should be listed separately.
+
+---
+
+# Processing Philosophy
+
+Think like:
+
+* Financial Crime Investigator
+* AML Investigator
+* Banking Auditor
+* Intelligence Officer
+* Digital Forensics Analyst
+* Banking Compliance Expert
+
+Do not think like a software engineer.
+
+Do not think like an OCR engine.
+
+Think like a human investigator reconstructing an entire financial case.
+
+---
+
+# Fundamental Principle
+
+Every finding must answer one question:
+
+"What evidence in the dataset supports this conclusion?"
+
+If evidence cannot be produced:
+
+Do not report the finding.
+
+---
+
+# Accuracy
+
+Accuracy is the highest priority.
+
+Higher than:
+
+* Runtime
+* Speed
+* Complexity
+* Number of findings
+
+One correct finding is more valuable than twenty speculative findings.
+
+---
+
+# Investigation Workflow
+
+The investigation must follow these phases:
+
+1. Dataset Discovery
+2. File Understanding
+3. Metadata Collection
+4. Transaction Collection
+5. Entity Resolution
+6. Cross-file Correlation
+7. Timeline Reconstruction
+8. Money Flow Analysis
+9. Fraud Pattern Discovery
+10. Behaviour Analysis
+11. Network Analysis
+12. Risk Assessment
+13. Ground Truth Generation
+
+Each phase should be completed before moving to the next.
+
+---
+
+# Phase 1 — Dataset Discovery
+
+Recursively inspect the dataset.
+
+Generate an inventory.
+
+For every file determine:
+
+* Path
+* File type
+* Size
+* Last modified date (if available)
+* Statement type
+* Bank (if identifiable)
+
+Produce a complete dataset inventory.
+
+---
+
+# Phase 2 — File Understanding
+
+Read every supported file.
+
+Do not skip pages.
+
+Do not summarize prematurely.
+
+Understand the document before extracting conclusions.
+
+For PDFs:
+
+Read every page.
+
+For Excel:
+
+Read every worksheet.
+
+For CSV:
+
+Read every record.
+
+For TXT:
+
+Read every line.
+
+---
+
+# Metadata Extraction
+
+For every account identify every available attribute.
+
+Examples include:
+
+* Account Holder
+* Joint Holder
+* Business Name
+* Customer Name
+* Account Number
+* Customer ID
+* CIF
+* IFSC
+* MICR
+* Branch Name
+* Branch Address
+* Branch Code
+* Currency
+* Account Type
+* Product Type
+* Statement Period
+* Opening Balance
+* Closing Balance
+
+Do not stop after identifying only a few fields.
+
+Extract everything available.
+
+---
+
+# Metadata Quality
+
+Every extracted field should have:
+
+* Value
+* Source document
+* Source page
+* Confidence
+
+Missing fields should be explicitly marked as:
+
+Unknown
+
+Never invent metadata.
+
+---
+
+# Statement Understanding
+
+Understand the structure of each statement.
+
+Determine:
+
+* Date format
+* Transaction layout
+* Debit representation
+* Credit representation
+* Balance representation
+* Running balance style
+* Currency notation
+* Reference number format
+* Transaction ID format
+
+This information will be useful during later analysis.
+
+---
+
+# Transaction Understanding
+
+For every transaction identify:
+
+* Date
+* Time (if available)
+* Narration
+* Debit
+* Credit
+* Balance
+* Transaction Reference
+* Reference Number
+* Transaction ID
+* Instrument Type
+* Payment Method
+
+Maintain original ordering.
+
+Never reorder transactions unless chronological reconstruction is explicitly required.
+
+---
+
+# Entity Extraction
+
+Identify every meaningful entity including:
+
+People
+
+Businesses
+
+Merchants
+
+Banks
+
+Branches
+
+Phone Numbers
+
+UPI IDs
+
+Email Addresses
+
+Account Numbers
+
+Reference Numbers
+
+Transaction IDs
+
+Cheque Numbers
+
+Card Numbers (masked)
+
+Virtual Payment Addresses
+
+Merchant IDs
+
+Terminal IDs
+
+Extract entities even if they appear only once.
+
+Every entity becomes part of the investigation graph.
+
+---
+
+# Entity Normalization
+
+Normalize entities where possible.
+
+Examples:
+
+Different representations of the same merchant.
+
+Different spacing.
+
+Uppercase/lowercase.
+
+Abbreviations.
+
+Typographical differences.
+
+Do not merge entities without sufficient evidence.
+
+When uncertain:
+
+Preserve both.
+
+Record ambiguity.
+
+---
+
+# Output Philosophy
+
+At every stage preserve traceability.
+
+Every extracted observation should always be traceable back to:
+
+* File
+* Page
+* Transaction
+* Original evidence
+
+Nothing should exist without evidence.
+
+---
+
+**End of Part 1**
+
+The next part will cover:
+
+* Cross-document correlation
+* Money-flow reconstruction
+* Fraud pattern discovery
+* Network graph generation
+* Timeline analysis
+* Behaviour profiling
+* Risk scoring
+* Ground Truth generation framework
+# Financial Investigation Ground Truth Generation Prompt
+
+## Part 2 — Correlation, Investigation & Ground Truth Generation
+
+---
+
+# Phase 3 — Cross-Document Correlation
+
+Once every document has been understood individually, begin treating the entire dataset as a **single investigation** rather than a collection of isolated bank statements.
+
+Do **not** analyze files independently from this point onward.
+
+Instead, correlate information across all files.
+
+The objective is to reconstruct the complete financial picture.
+
+---
+
+## Build Global Entity Index
+
+Create a master entity database containing every unique entity discovered.
+
+Examples include:
+
+* Account Numbers
+* Customer IDs
+* IFSC Codes
+* Bank Names
+* Branches
+* Account Holders
+* Joint Holders
+* Nominees
+* UPI IDs
+* Phone Numbers
+* Merchant Names
+* Businesses
+* Companies
+* Reference Numbers
+* Transaction IDs
+* Beneficiaries
+
+Each entity should receive a unique internal identifier.
+
+---
+
+## Resolve Duplicate Entities
+
+Different statements may represent the same entity differently.
+
+Examples:
+
+```
+ABC Traders
+ABC TRADERS
+A.B.C Traders
+ABC Traders Pvt Ltd
+```
+
+Determine whether these refer to the same entity.
+
+Only merge entities when there is strong supporting evidence.
+
+Otherwise maintain separate identities.
+
+Record ambiguity.
+
+---
+
+# Cross-Statement Linking
+
+Determine whether statements are related.
+
+Possible indicators include:
+
+* Same account number
+* Same IFSC
+* Same customer ID
+* Same account holder
+* Same nominee
+* Same phone number
+* Same address
+* Same email
+* Same UPI ID
+* Same beneficiary
+* Same branch
+* Shared transaction references
+* Shared counterparties
+
+Create explicit relationships between related statements.
+
+---
+
+# Transaction Correlation
+
+Analyze transactions globally.
+
+Look for:
+
+Money leaving one account and entering another.
+
+Repeated payments between accounts.
+
+Shared beneficiaries.
+
+Repeated merchants.
+
+Internal transfers.
+
+Round-trip transfers.
+
+Circular transfers.
+
+Chains of transfers.
+
+Delayed settlements.
+
+Multi-account routing.
+
+---
+
+# Phase 4 — Timeline Reconstruction
+
+Construct a global chronological timeline.
+
+Merge every transaction from every statement.
+
+Sort chronologically.
+
+Never lose statement provenance.
+
+Every timeline event must retain:
+
+* File
+* Page
+* Statement
+* Account
+* Original transaction
+
+---
+
+## Timeline Analysis
+
+Identify:
+
+Beginning of activity.
+
+End of activity.
+
+Periods of inactivity.
+
+Activity spikes.
+
+Recurring behaviour.
+
+Sudden behavioural changes.
+
+Large balance changes.
+
+Large deposits.
+
+Large withdrawals.
+
+Clusters of activity.
+
+Seasonal behaviour.
+
+Weekend behaviour.
+
+Holiday behaviour.
+
+Business-hour behaviour.
+
+Late-night behaviour.
+
+---
+
+# Phase 5 — Money Flow Reconstruction
+
+This is one of the most important phases.
+
+The objective is to understand where money originated and where it eventually arrived.
+
+---
+
+## Build Money Flow Chains
+
+For every outgoing transaction determine whether a corresponding incoming transaction exists elsewhere in the dataset.
+
+Example:
+
+```
+Account A
+
+↓
+
+Account B
+
+↓
+
+Account C
+
+↓
+
+Merchant
+```
+
+Reconstruct the complete chain whenever possible.
+
+---
+
+## Multi-Hop Analysis
+
+Money frequently moves through multiple accounts.
+
+Example:
+
+```
+A
+
+↓
+
+B
+
+↓
+
+C
+
+↓
+
+D
+```
+
+Do not stop after one hop.
+
+Continue until the trail ends.
+
+---
+
+## Circular Money Movement
+
+Detect situations where money returns to its origin.
+
+Example:
+
+```
+A
+
+↓
+
+B
+
+↓
+
+C
+
+↓
+
+A
+```
+
+Record:
+
+* cycle length
+* amount
+* duration
+* participating accounts
+
+---
+
+## Layering
+
+Look for behaviour where funds move rapidly through multiple accounts.
+
+Characteristics include:
+
+* Many intermediate accounts.
+* Short time intervals.
+* Minimal balance retention.
+* Similar transfer amounts.
+
+Document every identified layering chain.
+
+---
+
+## Structuring
+
+Identify repeated transactions just below common thresholds.
+
+Examples:
+
+```
+49,500
+
+49,800
+
+49,900
+
+49,750
+```
+
+rather than
+
+```
+2,00,000
+```
+
+Look for:
+
+Repeated amounts.
+
+Repeated beneficiaries.
+
+Repeated timing.
+
+Repeated branches.
+
+---
+
+## Smurfing
+
+Detect situations where large transfers are broken into many small transfers.
+
+Example:
+
+```
+10 × ₹49,000
+```
+
+instead of
+
+```
+₹4,90,000
+```
+
+Determine whether multiple accounts participate.
+
+---
+
+# Phase 6 — Payment Method Intelligence
+
+Classify every transaction.
+
+Examples:
+
+UPI
+
+IMPS
+
+NEFT
+
+RTGS
+
+ATM
+
+Cash Withdrawal
+
+Cash Deposit
+
+POS
+
+Cheque
+
+Interest
+
+Charges
+
+Loan EMI
+
+Salary
+
+Refund
+
+Reversal
+
+Internal Transfer
+
+Merchant Payment
+
+Standing Instruction
+
+Auto Debit
+
+Unknown
+
+Compute frequency statistics.
+
+---
+
+## Payment Behaviour
+
+For every account determine:
+
+Preferred payment method.
+
+Least-used payment method.
+
+Cash dependency.
+
+Digital dependency.
+
+Merchant dependency.
+
+Internal transfer frequency.
+
+---
+
+# Phase 7 — Behaviour Profiling
+
+Construct behavioural profiles.
+
+For every account determine:
+
+Average debit.
+
+Average credit.
+
+Median transaction.
+
+Largest transaction.
+
+Smallest transaction.
+
+Typical transaction size.
+
+Transaction frequency.
+
+Preferred hours.
+
+Preferred weekdays.
+
+Most common beneficiaries.
+
+Most common merchants.
+
+Most common branches.
+
+Balance behaviour.
+
+Cash behaviour.
+
+Digital behaviour.
+
+Salary pattern.
+
+Business pattern.
+
+Personal pattern.
+
+---
+
+## Behaviour Changes
+
+Identify abrupt behavioural shifts.
+
+Examples:
+
+Dormant account becomes active.
+
+Cash usage suddenly increases.
+
+Digital payments suddenly stop.
+
+Large transfers begin.
+
+Merchant category changes.
+
+Balance growth accelerates.
+
+Transaction frequency doubles.
+
+These changes should be highlighted.
+
+---
+
+# Phase 8 — Network Analysis
+
+Treat every account as a node.
+
+Treat every transfer as an edge.
+
+Construct a transaction network.
+
+Compute:
+
+Degree.
+
+In-degree.
+
+Out-degree.
+
+Weighted degree.
+
+Centrality.
+
+Betweenness.
+
+Community detection.
+
+Clusters.
+
+Bridges.
+
+Isolated components.
+
+Identify:
+
+Hub accounts.
+
+Collector accounts.
+
+Distributor accounts.
+
+Money mule candidates.
+
+Bridge accounts.
+
+Exit accounts.
+
+Entry accounts.
+
+---
+
+# Phase 9 — Fraud Pattern Discovery
+
+Do NOT assume fraud.
+
+Instead discover behaviour that may indicate financial crime.
+
+Possible patterns include:
+
+Rapid fund movement.
+
+Round tripping.
+
+Layering.
+
+Structuring.
+
+Smurfing.
+
+Circular transfers.
+
+Burst activity.
+
+Velocity anomalies.
+
+Unusual cash withdrawals.
+
+Repeated merchant behaviour.
+
+Dormant account activation.
+
+Repeated failed reversals.
+
+Large incoming followed by immediate outgoing.
+
+Repeated transfers between fixed account groups.
+
+Many accounts paying one account.
+
+One account paying many accounts.
+
+Repeated UPI transfers.
+
+Repeated IMPS transfers.
+
+Repeated ATM withdrawals after salary credits.
+
+Multiple beneficiaries receiving similar amounts.
+
+Multiple branches being used.
+
+Frequent balance depletion.
+
+Unusual reference patterns.
+
+Merchant concentration.
+
+Network hubs.
+
+Bridge accounts.
+
+Money parking.
+
+Temporary holding accounts.
+
+Potential mule behaviour.
+
+Document only evidence-backed findings.
+
+---
+
+# Confidence Scoring
+
+Every finding must include:
+
+High Confidence
+
+Medium Confidence
+
+Low Confidence
+
+Explain why.
+
+Never assign High Confidence without strong supporting evidence.
+
+---
+
+# Evidence
+
+Every observation must cite:
+
+Statement
+
+Page
+
+Transaction
+
+Account
+
+Date
+
+Amount
+
+Narration
+
+Supporting transactions
+
+Evidence should always be reproducible.
+
+---
+
+# End of Part 2
+
+Part 3 will cover:
+
+* Risk scoring framework
+* Ground truth JSON schema
+* Markdown report structure
+* Deliverables
+* Verification methodology
+* Comparison framework for your software
+* Final constraints and quality checklist.
+# Financial Investigation Ground Truth Generation Prompt
+
+# Part 3 — Risk Assessment, Ground Truth Generation & Validation Framework
+
+---
+
+# Phase 10 — Risk Assessment
+
+After all entities, transactions, relationships and money flows have been reconstructed, perform a comprehensive risk assessment.
+
+The objective is **not** to label every account as fraudulent.
+
+Instead, identify the level of investigative attention each account deserves based on observed behaviour.
+
+Every risk assessment must be evidence-driven.
+
+---
+
+## Risk Categories
+
+Every account should receive one of the following categories:
+
+* Very Low Risk
+* Low Risk
+* Medium Risk
+* High Risk
+* Critical Risk
+
+Do not assign a category based on a single transaction.
+
+Evaluate the complete behavioural history.
+
+---
+
+## Risk Factors
+
+Consider factors such as:
+
+* Transaction velocity
+* Cash intensity
+* Digital payment intensity
+* Circular money movement
+* Layering behaviour
+* Structuring behaviour
+* Smurfing
+* Multiple incoming sources
+* Multiple outgoing destinations
+* High network centrality
+* Frequent UPI transfers
+* Large transaction values
+* Frequent reversals
+* High balance volatility
+* Dormant account activation
+* Multiple linked accounts
+* High-risk merchant interaction
+* Repeated ATM withdrawals after credits
+* Frequent inter-bank transfers
+* Frequent intra-bank transfers
+* Temporary holding behaviour
+* Shared identifiers
+* Shared beneficiaries
+* Shared phone numbers
+* Shared UPI IDs
+* Shared customer details
+
+---
+
+## Risk Explanation
+
+Every assigned risk score must include:
+
+* Why it received the score
+* Supporting evidence
+* Related accounts
+* Related transactions
+* Confidence level
+
+Never assign a score without justification.
+
+---
+
+# Phase 11 — Case Reconstruction
+
+Treat the complete dataset as a financial investigation.
+
+Reconstruct possible scenarios.
+
+Questions to answer include:
+
+Where did the money originate?
+
+Where did it finally arrive?
+
+Who appears central?
+
+Who appears to receive funds?
+
+Who appears to distribute funds?
+
+Which accounts simply relay money?
+
+Which accounts accumulate funds?
+
+Which accounts immediately empty themselves?
+
+Which entities repeatedly appear?
+
+Which relationships seem intentional?
+
+Document every reconstruction.
+
+---
+
+# Phase 12 — Pattern Catalogue
+
+Produce a catalogue of every behavioural pattern discovered.
+
+Each pattern should contain:
+
+Pattern ID
+
+Pattern Name
+
+Description
+
+Evidence
+
+Accounts involved
+
+Transactions involved
+
+Confidence
+
+Related patterns
+
+Potential investigation relevance
+
+Example:
+
+Pattern:
+
+Rapid UPI Distribution
+
+Description:
+
+Account receives a large incoming transfer and distributes nearly the entire amount through multiple UPI transactions within a short time window.
+
+Evidence:
+
+List all supporting transactions.
+
+---
+
+# Pattern Taxonomy
+
+Group discovered patterns into categories.
+
+Examples:
+
+Money Movement
+
+Cash Behaviour
+
+UPI Behaviour
+
+Merchant Behaviour
+
+Network Behaviour
+
+Balance Behaviour
+
+Velocity Behaviour
+
+Temporal Behaviour
+
+Cross-bank Behaviour
+
+Relationship Behaviour
+
+Unknown Behaviour
+
+If new categories emerge from the dataset, create them.
+
+---
+
+# Phase 13 — Ground Truth Generation
+
+This is the most important deliverable.
+
+The generated Ground Truth becomes the reference against which another financial investigation system will later be evaluated.
+
+It should contain only verified findings.
+
+Never include speculative conclusions.
+
+---
+
+# Ground Truth Principles
+
+Every conclusion must satisfy:
+
+Supported by evidence.
+
+Reproducible.
+
+Traceable.
+
+Explainable.
+
+Consistent.
+
+Evidence-backed.
+
+If a finding cannot satisfy these conditions, exclude it.
+
+---
+
+# Deliverable 1
+
+ground_truth.md
+
+This should be a complete investigation report.
+
+Suggested structure:
+
+Executive Summary
+
+Dataset Overview
+
+Banks Involved
+
+Accounts Investigated
+
+Entity Summary
+
+Money Flow Summary
+
+Behaviour Summary
+
+Fraud Indicators
+
+Timeline
+
+Network Summary
+
+Account Profiles
+
+Suspicious Relationships
+
+Case Reconstruction
+
+Evidence
+
+Limitations
+
+Conclusion
+
+---
+
+# Deliverable 2
+
+ground_truth.json
+
+Structured machine-readable representation.
+
+Suggested structure:
+
+```json
+{
+  "dataset": {},
+  "accounts": [],
+  "transactions": [],
+  "relationships": [],
+  "money_flows": [],
+  "patterns": [],
+  "risk_assessments": [],
+  "timeline": [],
+  "network": [],
+  "evidence": []
+}
+```
+
+Every object should include confidence and evidence references.
+
+---
+
+# Deliverable 3
+
+account_profiles.json
+
+For every account:
+
+* Metadata
+* Behaviour profile
+* Common counterparties
+* Payment preferences
+* Transaction statistics
+* Risk category
+* Supporting evidence
+
+---
+
+# Deliverable 4
+
+money_flow.json
+
+Represent all money movement.
+
+Each record should include:
+
+Source Account
+
+Destination Account
+
+Amount
+
+Date
+
+Payment Method
+
+Reference
+
+Confidence
+
+Supporting Transactions
+
+---
+
+# Deliverable 5
+
+entity_relationships.json
+
+Capture relationships between:
+
+Accounts
+
+People
+
+Businesses
+
+UPI IDs
+
+Phone Numbers
+
+Branches
+
+Banks
+
+Merchants
+
+Customer IDs
+
+Nominees
+
+Joint Holders
+
+Each relationship should specify:
+
+Relationship Type
+
+Strength
+
+Evidence
+
+Confidence
+
+---
+
+# Deliverable 6
+
+fraud_patterns.json
+
+Every discovered pattern should include:
+
+Pattern ID
+
+Pattern Name
+
+Description
+
+Category
+
+Accounts
+
+Transactions
+
+Evidence
+
+Confidence
+
+Possible Interpretation
+
+---
+
+# Deliverable 7
+
+timeline.json
+
+Chronological reconstruction.
+
+Each event should include:
+
+Timestamp
+
+Account
+
+Transaction
+
+Description
+
+Evidence
+
+---
+
+# Deliverable 8
+
+verification_notes.md
+
+This report should explain:
+
+Assumptions made
+
+Ambiguous cases
+
+Conflicting evidence
+
+Incomplete information
+
+Potential false positives
+
+Potential false negatives
+
+Recommendations for human investigators
+
+---
+
+# Validation Requirements
+
+Before finalizing the Ground Truth:
+
+Verify:
+
+Every file processed.
+
+Every worksheet processed.
+
+Every page processed.
+
+Every transaction considered.
+
+No duplicate entities.
+
+No unsupported conclusions.
+
+No fabricated fraud.
+
+No fabricated relationships.
+
+No invented accounts.
+
+---
+
+# Comparison Philosophy
+
+The Ground Truth generated here will later be compared against another software system.
+
+Therefore:
+
+Do not optimize for quantity.
+
+Optimize for correctness.
+
+A smaller but highly accurate Ground Truth is preferable to a larger speculative one.
+
+---
+
+# Constraints
+
+Do NOT generate source code.
+
+Do NOT modify the repository.
+
+Do NOT create APIs.
+
+Do NOT build dashboards.
+
+Do NOT create user interfaces.
+
+Do NOT build machine learning models.
+
+Do NOT train neural networks.
+
+Do NOT perform OCR.
+
+Do NOT rewrite extracted transactions.
+
+Operate only as an independent financial investigator.
+
+---
+
+# Final Quality Checklist
+
+Before considering the task complete, verify:
+
+✓ Every supported file has been analyzed.
+
+✓ Every account has been profiled.
+
+✓ Every relationship has supporting evidence.
+
+✓ Every pattern has confidence scoring.
+
+✓ Every suspicious behaviour has justification.
+
+✓ Every money-flow chain has been reconstructed where possible.
+
+✓ Every conclusion is traceable to source evidence.
+
+✓ No fabricated findings exist.
+
+✓ No unsupported fraud allegations exist.
+
+✓ Ground Truth is suitable for validating an independent financial investigation system.
+
+---
+
+# Final Objective
+
+Your success is **not** measured by how many fraud cases you identify.
+
+Your success is measured by how accurately you understand the dataset and how faithfully you document its financial behaviour.
+
+The resulting Ground Truth should be sufficiently detailed, evidence-backed, and reproducible that another investigation system can be objectively compared against it.
+
+You are not building the investigation software.
+
+You are producing the authoritative reference against which that software will ultimately be evaluated.
+
+**End of Document (Part 3).**
+# Financial Investigation Ground Truth Generation Prompt
+
+# Part 4 — Advanced Banking Intelligence & Financial Behaviour Analysis
+
+---
+
+# Purpose
+
+The objective of this phase is not simply to classify transactions.
+
+The objective is to **understand the financial behaviour behind every transaction**.
+
+A transaction by itself rarely indicates fraud.
+
+A sequence of transactions often does.
+
+Therefore, analysis must focus on behavioural patterns instead of isolated records.
+
+---
+
+# Behaviour First Philosophy
+
+Never investigate a transaction alone.
+
+Always investigate:
+
+* Previous transaction
+* Next transaction
+* Account history
+* Counterparty history
+* Overall account behaviour
+* Overall network behaviour
+
+Every transaction gains meaning from its surrounding context.
+
+---
+
+# Transaction Classification
+
+Every transaction should first be classified into one or more behavioural categories.
+
+Examples include:
+
+## Digital Payments
+
+* UPI
+* IMPS
+* NEFT
+* RTGS
+* Wallet Transfer
+* QR Payment
+* Merchant Payment
+* Payment Gateway
+
+---
+
+## Cash Transactions
+
+* Cash Deposit
+* Cash Withdrawal
+* ATM Withdrawal
+* ATM Deposit
+* Cash Transfer
+
+---
+
+## Banking Operations
+
+* Interest Credit
+* Interest Debit
+* Bank Charges
+* GST Charges
+* Penalty
+* Service Charges
+* Annual Charges
+* Reversal
+* Refund
+* Chargeback
+
+---
+
+## Salary Related
+
+* Salary Credit
+* Bonus
+* Incentive
+* Reimbursement
+* Pension
+* Scholarship
+* Government Benefit
+
+---
+
+## Loan Related
+
+* EMI Debit
+* Loan Disbursement
+* Loan Repayment
+* Credit Card Payment
+* Mortgage Payment
+* Gold Loan
+* Vehicle Loan
+
+---
+
+## Investment Related
+
+* Mutual Fund
+* SIP
+* Insurance
+* Stock Market
+* Fixed Deposit
+* Recurring Deposit
+* Bonds
+
+---
+
+## Business Related
+
+* Vendor Payment
+* Customer Payment
+* GST
+* Tax Payment
+* Payroll
+* Distributor Payment
+* Merchant Settlement
+
+---
+
+## Unknown
+
+If the transaction cannot confidently be classified:
+
+Label it as
+
+Unknown
+
+rather than making assumptions.
+
+---
+
+# Transaction Purpose Identification
+
+For every transaction determine:
+
+Why did this transaction likely occur?
+
+Possible purposes include:
+
+Salary
+
+Business payment
+
+Family transfer
+
+Investment
+
+Savings
+
+Loan repayment
+
+Cash requirement
+
+Merchant purchase
+
+Utility payment
+
+Tax payment
+
+Subscription
+
+Refund
+
+Charge reversal
+
+Internal transfer
+
+Unknown
+
+Support every purpose with reasoning.
+
+---
+
+# Narration Intelligence
+
+Transaction narrations contain significant information.
+
+Extract useful entities from narrations.
+
+Examples:
+
+Merchant
+
+Store
+
+Hospital
+
+Fuel Station
+
+School
+
+University
+
+Government Department
+
+UPI Handle
+
+Reference Number
+
+Phone Number
+
+Vehicle Number
+
+Invoice Number
+
+GST Number
+
+Location
+
+Branch
+
+Payment Gateway
+
+Order ID
+
+Terminal ID
+
+Merchant Category
+
+Normalize extracted entities.
+
+---
+
+# Merchant Intelligence
+
+Create a merchant knowledge base.
+
+For every merchant determine:
+
+Frequency
+
+Average payment
+
+Accounts using merchant
+
+Payment method
+
+Possible category
+
+Examples:
+
+Restaurant
+
+Fuel
+
+Shopping
+
+Hospital
+
+Medical
+
+Travel
+
+Government
+
+Tax
+
+Education
+
+Subscription
+
+Telecom
+
+Entertainment
+
+Investment
+
+Insurance
+
+Unknown
+
+---
+
+# Beneficiary Intelligence
+
+Build beneficiary profiles.
+
+Determine:
+
+How often beneficiary appears.
+
+Accounts interacting.
+
+Average amount.
+
+Largest amount.
+
+Smallest amount.
+
+Payment methods.
+
+Relationship strength.
+
+Risk score.
+
+---
+
+# Recurring Payment Detection
+
+Identify recurring transactions.
+
+Examples:
+
+Monthly EMI
+
+Monthly Salary
+
+Rent
+
+Insurance
+
+Subscriptions
+
+Recurring SIP
+
+School Fees
+
+Utilities
+
+Memberships
+
+Recurring merchant payments.
+
+Determine recurrence frequency.
+
+---
+
+# Salary Detection
+
+Identify salary behaviour.
+
+Possible indicators:
+
+Monthly interval.
+
+Employer narration.
+
+Consistent amount.
+
+Fixed date.
+
+Recurring employer.
+
+Salary keywords.
+
+Salary should not be identified only through narration.
+
+Behaviour must also support it.
+
+---
+
+# EMI Detection
+
+Identify EMI transactions.
+
+Possible indicators:
+
+Recurring amount.
+
+Fixed schedule.
+
+Loan keywords.
+
+Finance companies.
+
+Banks.
+
+Consumer finance.
+
+NBFCs.
+
+Vehicle finance.
+
+Home loan.
+
+Education loan.
+
+---
+
+# Cashback Detection
+
+Identify:
+
+Rewards
+
+Cashback
+
+Promotions
+
+Offers
+
+Refunds
+
+Merchant credits
+
+Separate these from genuine income.
+
+---
+
+# Refund Intelligence
+
+Differentiate between:
+
+Refund
+
+Charge reversal
+
+Merchant correction
+
+Duplicate reversal
+
+Failed payment reversal
+
+Cashback
+
+These are not equivalent.
+
+---
+
+# ATM Behaviour
+
+Analyze ATM usage.
+
+Determine:
+
+Withdrawal frequency.
+
+Withdrawal locations.
+
+Withdrawal timing.
+
+Average amount.
+
+Maximum amount.
+
+Post-salary withdrawal.
+
+Repeated ATM usage.
+
+Cash dependency.
+
+---
+
+# Cash Behaviour
+
+Understand:
+
+Cash deposits.
+
+Cash withdrawals.
+
+Cash intensity.
+
+Cash ratio.
+
+Cash accumulation.
+
+Cash depletion.
+
+Cash cycling.
+
+---
+
+# Digital Banking Behaviour
+
+Determine:
+
+Digital adoption.
+
+Preferred digital payment.
+
+UPI dependency.
+
+NEFT dependency.
+
+IMPS dependency.
+
+RTGS dependency.
+
+Merchant preference.
+
+Online spending behaviour.
+
+---
+
+# Branch Behaviour
+
+Identify:
+
+Frequently used branch.
+
+Multiple branches.
+
+Branch switching.
+
+Inter-state activity.
+
+Inter-city activity.
+
+Branch anomalies.
+
+---
+
+# Geographic Intelligence
+
+Extract geographic information wherever available.
+
+Examples:
+
+City
+
+District
+
+State
+
+Country
+
+Branch
+
+Merchant location
+
+ATM location
+
+UPI location
+
+Build geographic clusters.
+
+---
+
+# Bank Intelligence
+
+Identify every participating bank.
+
+Examples:
+
+State Bank of India
+
+Axis Bank
+
+HDFC Bank
+
+ICICI Bank
+
+Canara Bank
+
+Bank of Baroda
+
+Punjab National Bank
+
+IDBI Bank
+
+Indian Bank
+
+Kotak Mahindra Bank
+
+IDFC FIRST Bank
+
+Federal Bank
+
+South Indian Bank
+
+Karnataka Bank
+
+Union Bank
+
+Central Bank
+
+Bandhan Bank
+
+RBL Bank
+
+IndusInd Bank
+
+YES Bank
+
+AU Small Finance Bank
+
+Equitas
+
+Ujjivan
+
+Recognize banks through:
+
+IFSC
+
+Narration
+
+Branch
+
+Footer
+
+Header
+
+Metadata
+
+Never rely on only one source.
+
+---
+
+# IFSC Intelligence
+
+Maintain a mapping between IFSC prefixes and banks.
+
+Examples:
+
+SBIN
+
+UTIB
+
+ICIC
+
+HDFC
+
+BARB
+
+IDIB
+
+IDFB
+
+PUNB
+
+CNRB
+
+KARB
+
+YESB
+
+KKBK
+
+INDB
+
+UBIN
+
+FDRL
+
+SIBL
+
+This mapping should assist metadata extraction and validation.
+
+---
+
+# Customer Behaviour
+
+Profile every customer.
+
+Understand:
+
+Income pattern.
+
+Expense pattern.
+
+Savings pattern.
+
+Investment pattern.
+
+Borrowing pattern.
+
+Cash behaviour.
+
+Digital behaviour.
+
+Merchant behaviour.
+
+Lifestyle indicators.
+
+Business indicators.
+
+Risk indicators.
+
+---
+
+# Account Lifecycle
+
+Determine:
+
+Account opening period (if available).
+
+Dormancy.
+
+Reactivation.
+
+Growth.
+
+Decline.
+
+Closure indicators.
+
+Long-term stability.
+
+---
+
+# Temporal Intelligence
+
+Analyze:
+
+Hour of day.
+
+Day of week.
+
+Week of month.
+
+Month.
+
+Quarter.
+
+Year.
+
+Festival periods.
+
+Salary periods.
+
+Financial year transitions.
+
+Tax season.
+
+Weekend activity.
+
+Holiday activity.
+
+---
+
+# Behaviour Comparison
+
+Compare accounts.
+
+Identify:
+
+Accounts behaving similarly.
+
+Accounts behaving differently.
+
+Accounts with synchronized activity.
+
+Accounts following identical payment schedules.
+
+Accounts likely belonging to the same organization.
+
+---
+
+# Output Requirements
+
+Generate:
+
+banking_behaviour.json
+
+merchant_profiles.json
+
+beneficiary_profiles.json
+
+customer_profiles.json
+
+payment_method_statistics.json
+
+ifsc_mapping_validation.json
+
+temporal_analysis.json
+
+These files become supporting evidence for the Ground Truth and should not replace the primary investigation report.
+
+---
+
+# Final Principle
+
+This phase should answer one question:
+
+**"How does each account actually behave financially?"**
+
+Not:
+
+**"What transactions occurred?"**
+
+Behaviour is significantly more valuable than individual transactions.
+
+**End of Part 4**
+# Financial Investigation Ground Truth Generation Prompt
+
+# Part 5 — Fraud Pattern Discovery Framework & Investigation Intelligence
+
+---
+
+# Purpose
+
+This phase is the heart of the investigation.
+
+The objective is **NOT** to label transactions as fraudulent.
+
+The objective is to discover **behavioural patterns** that may indicate financial crime.
+
+The dataset is based on real case data with modified parameters.
+
+Therefore, meaningful patterns are expected to exist.
+
+However, never assume every unusual transaction is fraud.
+
+Every conclusion must be evidence-backed.
+
+---
+
+# Investigation Philosophy
+
+Think like an experienced financial crime investigator.
+
+Never ask:
+
+> "Is this transaction fraudulent?"
+
+Instead ask:
+
+* Why did this happen?
+* What happened before?
+* What happened after?
+* Does this behaviour repeat?
+* Does another account show the same behaviour?
+* Does this fit into a larger money movement?
+
+Fraud is rarely visible from one transaction.
+
+Fraud emerges from behaviour.
+
+---
+
+# Fraud Pattern Library
+
+Investigate every account for the following behavioural patterns.
+
+Each pattern must include:
+
+* Pattern ID
+* Pattern Name
+* Description
+* Accounts Involved
+* Transactions Involved
+* Evidence
+* Confidence
+* Possible Interpretation
+
+---
+
+# Pattern FP-001
+
+## Rapid Fund Movement
+
+Money enters an account.
+
+Within a short period:
+
+* Most or all money leaves.
+
+Investigate:
+
+* Time difference.
+* Percentage transferred.
+* Number of outgoing transactions.
+* Destination accounts.
+
+---
+
+# Pattern FP-002
+
+## Money Mule Behaviour
+
+Characteristics:
+
+Receives funds.
+
+Rarely retains funds.
+
+Immediately forwards money.
+
+Keeps very small balance.
+
+Receives from many unrelated accounts.
+
+Sends to many unrelated accounts.
+
+---
+
+# Pattern FP-003
+
+## Circular Money Flow
+
+Money eventually returns to its source.
+
+Example:
+
+A
+
+↓
+
+B
+
+↓
+
+C
+
+↓
+
+A
+
+Determine:
+
+Cycle length.
+
+Amount retained.
+
+Time required.
+
+---
+
+# Pattern FP-004
+
+## Layering
+
+Money moves through several intermediate accounts.
+
+Characteristics:
+
+Short intervals.
+
+Minimal balance retention.
+
+Many accounts.
+
+Large values.
+
+Purpose appears to obscure origin.
+
+---
+
+# Pattern FP-005
+
+## Structuring
+
+Large amount divided into many smaller transfers.
+
+Example:
+
+₹49,000
+
+₹49,500
+
+₹49,800
+
+instead of
+
+₹2,00,000
+
+Investigate:
+
+Frequency.
+
+Recipients.
+
+Timing.
+
+---
+
+# Pattern FP-006
+
+## Smurfing
+
+Many small deposits into one account.
+
+Later consolidated.
+
+Look for:
+
+Multiple senders.
+
+Similar amounts.
+
+Short duration.
+
+---
+
+# Pattern FP-007
+
+## Funnel Account
+
+Many incoming accounts.
+
+One outgoing account.
+
+Money converges.
+
+---
+
+# Pattern FP-008
+
+## Distributor Account
+
+One incoming account.
+
+Many outgoing accounts.
+
+Money disperses.
+
+---
+
+# Pattern FP-009
+
+## Collector Account
+
+Receives frequent transfers.
+
+Minimal outgoing.
+
+Balance continually increases.
+
+---
+
+# Pattern FP-010
+
+## Temporary Holding Account
+
+Receives money.
+
+Stores briefly.
+
+Transfers later.
+
+No other meaningful activity.
+
+---
+
+# Pattern FP-011
+
+## Dormant Account Activation
+
+Long inactivity.
+
+Sudden burst.
+
+Large transfers.
+
+Then inactivity again.
+
+---
+
+# Pattern FP-012
+
+## High Velocity Transactions
+
+Large number of transactions.
+
+Very short intervals.
+
+Repeated transfers.
+
+Continuous movement.
+
+---
+
+# Pattern FP-013
+
+## Round Value Behaviour
+
+Frequent values like:
+
+₹50,000
+
+₹1,00,000
+
+₹5,00,000
+
+₹10,000
+
+Investigate intent.
+
+---
+
+# Pattern FP-014
+
+## Exact Repeated Amounts
+
+Same amount.
+
+Same destination.
+
+Repeated many times.
+
+---
+
+# Pattern FP-015
+
+## Repeated Beneficiary
+
+One beneficiary appears unusually often.
+
+Across multiple accounts.
+
+---
+
+# Pattern FP-016
+
+## Shared Beneficiary Network
+
+Many accounts paying one beneficiary.
+
+---
+
+# Pattern FP-017
+
+## Shared UPI Behaviour
+
+Same UPI ID.
+
+Multiple accounts.
+
+Repeated payments.
+
+---
+
+# Pattern FP-018
+
+## Shared Phone Numbers
+
+Same phone number.
+
+Multiple entities.
+
+Multiple accounts.
+
+---
+
+# Pattern FP-019
+
+## Shared Address
+
+Same address.
+
+Multiple account holders.
+
+Possible business.
+
+Possible fraud.
+
+Investigate.
+
+---
+
+# Pattern FP-020
+
+## Shared IFSC Behaviour
+
+Many accounts.
+
+Same branch.
+
+Frequent interaction.
+
+---
+
+# Pattern FP-021
+
+## Cross-Bank Routing
+
+Money deliberately routed through multiple banks.
+
+---
+
+# Pattern FP-022
+
+## ATM Cash-Out Chain
+
+Money credited.
+
+Immediately withdrawn.
+
+Minimal digital spending.
+
+---
+
+# Pattern FP-023
+
+## Salary Diversion
+
+Salary credited.
+
+Entire salary transferred elsewhere.
+
+Repeated monthly.
+
+---
+
+# Pattern FP-024
+
+## Merchant Concentration
+
+Single merchant dominates spending.
+
+Investigate merchant.
+
+---
+
+# Pattern FP-025
+
+## Merchant Rotation
+
+Payments rotate between similar merchants.
+
+Possible concealment.
+
+---
+
+# Pattern FP-026
+
+## Refund Abuse
+
+Repeated:
+
+Payment
+
+Refund
+
+Payment
+
+Refund
+
+Investigate abuse.
+
+---
+
+# Pattern FP-027
+
+## Reversal Abuse
+
+Large number of reversals.
+
+Unusual compared to peers.
+
+---
+
+# Pattern FP-028
+
+## Velocity Spike
+
+Transaction frequency suddenly increases.
+
+No historical explanation.
+
+---
+
+# Pattern FP-029
+
+## Balance Volatility
+
+Large fluctuations.
+
+Rapid depletion.
+
+Rapid replenishment.
+
+---
+
+# Pattern FP-030
+
+## Cash Intensive Behaviour
+
+Heavy dependence on cash.
+
+Little digital usage.
+
+---
+
+# Pattern FP-031
+
+## Digital Intensive Behaviour
+
+Almost exclusively:
+
+UPI
+
+IMPS
+
+NEFT
+
+RTGS
+
+Little cash.
+
+---
+
+# Pattern FP-032
+
+## Weekend Activity
+
+Major financial movement during weekends.
+
+---
+
+# Pattern FP-033
+
+## Midnight Activity
+
+Repeated transactions during unusual hours.
+
+---
+
+# Pattern FP-034
+
+## Geographic Anomaly
+
+Transactions across distant locations.
+
+Within impossible time.
+
+---
+
+# Pattern FP-035
+
+## Branch Hopping
+
+Frequent usage of many unrelated branches.
+
+---
+
+# Pattern FP-036
+
+## High Network Centrality
+
+One account connects many others.
+
+Potential hub.
+
+---
+
+# Pattern FP-037
+
+## Bridge Account
+
+Connects unrelated clusters.
+
+Critical network node.
+
+---
+
+# Pattern FP-038
+
+## Community Behaviour
+
+Cluster of accounts.
+
+Mostly transact internally.
+
+---
+
+# Pattern FP-039
+
+## Unusual Counterparty Diversity
+
+Too many unique counterparties.
+
+Compared to peers.
+
+---
+
+# Pattern FP-040
+
+## Repeated Internal Transfers
+
+Frequent movement between linked accounts.
+
+---
+
+# Pattern FP-041
+
+## Business Account behaving like Personal
+
+Business account.
+
+Mostly personal expenses.
+
+Investigate.
+
+---
+
+# Pattern FP-042
+
+## Personal Account behaving like Business
+
+Large merchant activity.
+
+Payroll.
+
+Vendor payments.
+
+Repeated collections.
+
+---
+
+# Pattern FP-043
+
+## Tax Avoidance Indicators
+
+Repeated transactions near tax dates.
+
+Round values.
+
+Fragmentation.
+
+Evidence only.
+
+No assumptions.
+
+---
+
+# Pattern FP-044
+
+## Loan Misuse
+
+Loan credited.
+
+Immediately transferred elsewhere.
+
+---
+
+# Pattern FP-045
+
+## Investment Cycling
+
+Investment redeemed.
+
+Immediately moved repeatedly.
+
+---
+
+# Pattern FP-046
+
+## Artificial Balance Inflation
+
+Temporary credits.
+
+Temporary withdrawals.
+
+Balance appears inflated.
+
+---
+
+# Pattern FP-047
+
+## Network Synchronization
+
+Multiple accounts.
+
+Transactions at similar times.
+
+Repeated.
+
+---
+
+# Pattern FP-048
+
+## Unknown Behaviour
+
+Behaviour does not fit existing categories.
+
+Document separately.
+
+Never ignore.
+
+---
+
+# Pattern Discovery Rules
+
+Patterns should emerge from evidence.
+
+Do not force every account into a category.
+
+If no suspicious behaviour exists:
+
+Explicitly report:
+
+"No significant suspicious behavioural pattern detected."
+
+This is a valid conclusion.
+
+---
+
+# Confidence Scoring
+
+Each pattern should include:
+
+High
+
+Medium
+
+Low
+
+Explain why.
+
+---
+
+# False Positive Prevention
+
+Never classify behaviour as suspicious solely because:
+
+Large amount.
+
+Many transactions.
+
+Many beneficiaries.
+
+Cash usage.
+
+Business activity.
+
+Support conclusions using multiple indicators.
+
+---
+
+# Cross-Validation
+
+Before accepting a pattern:
+
+Check:
+
+Neighbouring transactions.
+
+Historical behaviour.
+
+Related accounts.
+
+Related statements.
+
+Counterparties.
+
+Money flow.
+
+Timeline.
+
+Network.
+
+If evidence conflicts:
+
+Lower confidence.
+
+---
+
+# Deliverables
+
+Generate:
+
+fraud_patterns.md
+
+fraud_patterns.json
+
+risk_patterns.json
+
+money_flow_patterns.json
+
+network_patterns.json
+
+behavioural_patterns.json
+
+Each file should contain structured, evidence-backed findings that will later serve as the reference ("Ground Truth") for validating the project's financial analysis engine.
+
+---
+
+# Final Principle
+
+The objective is not to maximize the number of detected fraud patterns.
+
+The objective is to maximize **correctness**.
+
+One genuine, evidence-backed pattern is significantly more valuable than twenty speculative ones.
+
+**End of Part 5**
+# Financial Investigation Ground Truth Generation Prompt
+
+# Part 6 — Investigation Report Specification, Evidence Framework & Ground Truth Documentation
+
+---
+
+# Purpose
+
+This phase defines **how the investigation findings should be documented**.
+
+The purpose is not simply to produce a report.
+
+The purpose is to create an investigation document that could realistically be handed to:
+
+* Financial Crime Investigation Team
+* Bank Compliance Team
+* AML Team
+* Internal Audit
+* Cyber Crime Investigation Unit
+* Law Enforcement
+* Financial Intelligence Unit
+
+The report should be professional, structured, evidence-backed and reproducible.
+
+---
+
+# Investigation Report Philosophy
+
+The report should answer:
+
+* What was analyzed?
+* What was discovered?
+* Why was it discovered?
+* What evidence supports it?
+* How confident are we?
+* What requires further investigation?
+
+Never produce a report that only lists suspicious transactions.
+
+Instead explain the complete financial story.
+
+---
+
+# Deliverable 1
+
+## investigation_report.md
+
+This will become the primary Ground Truth report.
+
+Suggested structure:
+
+---
+
+# Executive Summary
+
+Provide:
+
+* Total files analyzed
+* Total accounts
+* Total banks
+* Total transactions
+* Statement period covered
+* Overall dataset observations
+* High-level investigation summary
+
+This section should be understandable by a non-technical reader.
+
+---
+
+# Dataset Overview
+
+Describe:
+
+Number of PDFs
+
+Number of CSV files
+
+Number of Excel files
+
+Number of TXT files
+
+Number of banks
+
+Number of statements
+
+Date range
+
+Currencies involved
+
+Account types
+
+Business accounts
+
+Personal accounts
+
+Unknown accounts
+
+---
+
+# Metadata Summary
+
+Summarize extracted metadata.
+
+Examples:
+
+Account holders
+
+Branches
+
+Banks
+
+IFSC codes
+
+Customer IDs
+
+Currencies
+
+Products
+
+Statement periods
+
+Unknown fields
+
+Mention metadata completeness.
+
+---
+
+# Entity Summary
+
+Summarize discovered entities.
+
+Examples:
+
+Accounts
+
+People
+
+Businesses
+
+UPI IDs
+
+Merchants
+
+Branches
+
+Banks
+
+Phone numbers
+
+Emails
+
+Beneficiaries
+
+Nominees
+
+Joint holders
+
+Customer IDs
+
+---
+
+# Transaction Summary
+
+Include:
+
+Total transactions
+
+Total debit
+
+Total credit
+
+Largest debit
+
+Largest credit
+
+Average debit
+
+Average credit
+
+Median transaction
+
+Cash transactions
+
+Digital transactions
+
+Unknown transactions
+
+Payment method distribution
+
+---
+
+# Account Profiles
+
+For every account create a profile.
+
+Include:
+
+Account Holder
+
+Bank
+
+Branch
+
+IFSC
+
+Account Type
+
+Behaviour Summary
+
+Transaction Summary
+
+Payment Preferences
+
+Risk Level
+
+Money Flow Summary
+
+Important Relationships
+
+Confidence
+
+---
+
+# Bank Summary
+
+For every bank include:
+
+Number of statements
+
+Accounts
+
+Transactions
+
+Payment methods
+
+Relationship with other banks
+
+Observed behaviour
+
+Notable findings
+
+---
+
+# Money Flow Summary
+
+Summarize:
+
+Major money flow chains
+
+Large transfers
+
+Distribution accounts
+
+Collection accounts
+
+Intermediate accounts
+
+Temporary holding accounts
+
+Circular movement
+
+Cross-bank movement
+
+Cross-account movement
+
+Do not simply list transfers.
+
+Explain behaviour.
+
+---
+
+# Timeline Summary
+
+Describe:
+
+Major investigation events.
+
+Chronological evolution.
+
+Behaviour changes.
+
+Large movements.
+
+Network evolution.
+
+---
+
+# Network Analysis
+
+Describe:
+
+Hub accounts
+
+Bridge accounts
+
+Communities
+
+Clusters
+
+Highly connected entities
+
+Weakly connected entities
+
+Network density
+
+Network observations
+
+---
+
+# Behaviour Analysis
+
+Summarize:
+
+Digital behaviour
+
+Cash behaviour
+
+Merchant behaviour
+
+Salary behaviour
+
+Business behaviour
+
+Personal behaviour
+
+Recurring behaviour
+
+Unusual behaviour
+
+---
+
+# Fraud Pattern Summary
+
+Summarize every evidence-backed pattern.
+
+For every pattern include:
+
+Pattern ID
+
+Pattern Name
+
+Description
+
+Evidence
+
+Accounts
+
+Transactions
+
+Confidence
+
+Risk
+
+---
+
+# High Risk Accounts
+
+List only evidence-backed accounts.
+
+For each include:
+
+Reason
+
+Evidence
+
+Money flow
+
+Relationships
+
+Confidence
+
+---
+
+# High Risk Relationships
+
+Document relationships between:
+
+Accounts
+
+Businesses
+
+Beneficiaries
+
+UPI IDs
+
+Merchants
+
+Banks
+
+Branches
+
+Explain why each relationship matters.
+
+---
+
+# Significant Findings
+
+Highlight:
+
+Unexpected behaviour.
+
+Rare behaviour.
+
+Interesting observations.
+
+Large financial movements.
+
+Network anomalies.
+
+Timeline anomalies.
+
+Anything requiring investigator attention.
+
+---
+
+# Investigation Limitations
+
+Clearly mention:
+
+Incomplete metadata.
+
+Ambiguous entities.
+
+Missing relationships.
+
+Insufficient evidence.
+
+Modified dataset parameters.
+
+Potential false positives.
+
+Potential false negatives.
+
+Unknown information.
+
+---
+
+# Recommendations
+
+Recommend:
+
+Further investigation.
+
+Manual review.
+
+Additional evidence.
+
+Additional documentation.
+
+Potential next steps.
+
+---
+
+# Conclusion
+
+Provide a concise investigation conclusion.
+
+Avoid sensational language.
+
+Remain evidence-based.
+
+---
+
+# Deliverable 2
+
+ground_truth.md
+
+This should be a condensed version of the investigation.
+
+It should contain only verified findings.
+
+Every conclusion must reference evidence.
+
+This document will later be used to compare the outputs of the actual software.
+
+---
+
+# Deliverable 3
+
+ground_truth.json
+
+This file should contain structured versions of every finding.
+
+Suggested sections:
+
+Dataset
+
+Accounts
+
+Transactions
+
+Entities
+
+Relationships
+
+Money Flows
+
+Timeline
+
+Patterns
+
+Behaviour
+
+Risk Scores
+
+Evidence
+
+Confidence
+
+Recommendations
+
+---
+
+# Deliverable 4
+
+summary.json
+
+Provide quick statistics:
+
+Total Accounts
+
+Total Statements
+
+Total Transactions
+
+Banks
+
+Currencies
+
+Average Transaction
+
+Largest Transaction
+
+Smallest Transaction
+
+Most Active Account
+
+Highest Risk Account
+
+Most Connected Account
+
+Most Common Payment Method
+
+Most Common Merchant
+
+---
+
+# Deliverable 5
+
+entity_dictionary.json
+
+This should contain every discovered entity.
+
+Examples:
+
+Account
+
+Merchant
+
+Phone
+
+UPI
+
+Branch
+
+Business
+
+Person
+
+Customer ID
+
+Nominee
+
+Joint Holder
+
+Bank
+
+Each entity should contain:
+
+Unique ID
+
+Entity Type
+
+Normalized Name
+
+Aliases
+
+Supporting Evidence
+
+Confidence
+
+---
+
+# Deliverable 6
+
+relationship_dictionary.json
+
+Every relationship should include:
+
+Entity A
+
+Entity B
+
+Relationship Type
+
+Strength
+
+Evidence
+
+Confidence
+
+Supporting Transactions
+
+---
+
+# Deliverable 7
+
+timeline.md
+
+Human-readable chronological reconstruction.
+
+Every event should include:
+
+Timestamp
+
+Event
+
+Accounts
+
+Money movement
+
+Evidence
+
+Importance
+
+---
+
+# Deliverable 8
+
+executive_summary.md
+
+This document should be less than three pages.
+
+Designed for:
+
+Mentors
+
+Judges
+
+Managers
+
+Investigators
+
+It should summarize:
+
+Dataset
+
+Major findings
+
+Major risks
+
+Money movement
+
+Important relationships
+
+Recommended investigation priorities
+
+---
+
+# Evidence Framework
+
+Every finding must include:
+
+Evidence ID
+
+Source File
+
+Page Number
+
+Transaction Number
+
+Account
+
+Transaction Date
+
+Transaction Reference
+
+Supporting Narration
+
+Confidence
+
+Evidence should always be reproducible.
+
+---
+
+# Confidence Framework
+
+Every observation should include:
+
+High
+
+Medium
+
+Low
+
+Explain:
+
+Why this confidence was assigned.
+
+What evidence supports it.
+
+What uncertainty remains.
+
+---
+
+# Explainability
+
+Every conclusion must answer:
+
+Why was this conclusion reached?
+
+Which transactions support it?
+
+Which files support it?
+
+Can another investigator reproduce it?
+
+If the answer is "No"
+
+Do not include the finding.
+
+---
+
+# Documentation Principles
+
+The generated reports should be:
+
+Readable
+
+Professional
+
+Structured
+
+Evidence-backed
+
+Traceable
+
+Auditable
+
+Consistent
+
+Reproducible
+
+Explainable
+
+Suitable for financial investigations.
+
+---
+
+# Final Principle
+
+The investigation report is not merely documentation.
+
+It is the **authoritative Ground Truth** against which another financial investigation engine will later be validated.
+
+Every sentence should therefore be treated as evidence rather than opinion.
+
+**End of Part 6**
+# Financial Investigation Ground Truth Generation Prompt
+
+# Part 7 — Self Verification, Ground Truth Validation, Quality Assurance & Final Deliverables
+
+---
+
+# Purpose
+
+This is the final phase of the investigation.
+
+The purpose of this phase is **not** to discover additional fraud patterns.
+
+The purpose is to verify that every previous phase has been completed correctly.
+
+The Ground Truth produced by this investigation will later be used to evaluate another financial investigation system.
+
+Therefore, this Ground Truth must itself undergo rigorous validation before being accepted.
+
+The Ground Truth should be treated as the "gold standard."
+
+---
+
+# Investigation Mindset
+
+Before declaring the investigation complete, assume that **your own findings may contain mistakes**.
+
+Challenge every conclusion.
+
+Re-read the supporting evidence.
+
+Attempt to disprove your own findings.
+
+If a finding cannot survive verification, remove it.
+
+The objective is not to maximize findings.
+
+The objective is to maximize correctness.
+
+---
+
+# Phase 14 — Self Verification
+
+Perform a complete audit of your own work.
+
+For every output file verify:
+
+* Was every source document processed?
+* Was every supported file type processed?
+* Were all pages analyzed?
+* Were all worksheets analyzed?
+* Were all CSV records analyzed?
+* Were all TXT records analyzed?
+
+Nothing should remain unprocessed.
+
+---
+
+# Dataset Completeness Verification
+
+Generate a verification checklist.
+
+Confirm:
+
+✓ Every PDF processed.
+
+✓ Every CSV processed.
+
+✓ Every XLS processed.
+
+✓ Every XLSX processed.
+
+✓ Every TXT processed.
+
+List any unsupported files separately.
+
+---
+
+# Statement Completeness
+
+For every statement verify:
+
+Opening balance identified.
+
+Closing balance identified.
+
+Transaction count extracted.
+
+Statement period extracted.
+
+Metadata extracted.
+
+Bank identified.
+
+Account identified.
+
+Branch identified.
+
+IFSC identified where available.
+
+If any field is missing:
+
+Explain why.
+
+---
+
+# Transaction Completeness
+
+For every statement verify:
+
+No transaction skipped.
+
+No duplicate transaction created.
+
+No transaction reordered incorrectly.
+
+No narration truncated.
+
+No continuation line lost.
+
+No footer interpreted as transaction.
+
+No header interpreted as transaction.
+
+No page summary interpreted as transaction.
+
+---
+
+# Entity Verification
+
+Verify:
+
+Every entity appears only once in the normalized entity dictionary.
+
+Aliases correctly linked.
+
+Duplicate entities resolved correctly.
+
+Ambiguous entities documented.
+
+Unknown entities preserved.
+
+No entity invented.
+
+---
+
+# Relationship Verification
+
+For every relationship verify:
+
+Evidence exists.
+
+Supporting transactions exist.
+
+Relationship type is correct.
+
+Relationship strength is justified.
+
+Confidence score is justified.
+
+---
+
+# Money Flow Verification
+
+For every reconstructed money flow verify:
+
+Origin supported.
+
+Destination supported.
+
+Intermediate accounts supported.
+
+Amounts consistent.
+
+Timeline consistent.
+
+No fabricated links.
+
+No missing evidence.
+
+---
+
+# Fraud Pattern Verification
+
+For every fraud pattern ask:
+
+Could another investigator independently reach the same conclusion?
+
+If the answer is no:
+
+Lower confidence or remove the finding.
+
+---
+
+# False Positive Review
+
+Specifically search for:
+
+Patterns incorrectly classified as suspicious.
+
+Normal salary behaviour.
+
+Normal EMI behaviour.
+
+Normal business payments.
+
+Normal merchant behaviour.
+
+Normal cash withdrawals.
+
+Normal recurring subscriptions.
+
+Normal investment activity.
+
+Do not classify legitimate banking behaviour as fraud.
+
+---
+
+# False Negative Review
+
+Search for:
+
+Potential suspicious behaviour that may have been missed.
+
+Review:
+
+Money flows.
+
+High-risk accounts.
+
+Bridge accounts.
+
+Velocity spikes.
+
+Dormant activation.
+
+Round trips.
+
+Layering.
+
+Structuring.
+
+Network anomalies.
+
+---
+
+# Internal Consistency Check
+
+Verify:
+
+No contradictory findings.
+
+No account assigned conflicting behaviours without explanation.
+
+No transaction belonging to two unrelated investigations.
+
+No duplicated entities.
+
+No duplicated money flows.
+
+No duplicated fraud patterns.
+
+---
+
+# Ground Truth Consistency
+
+Verify:
+
+ground_truth.md
+
+ground_truth.json
+
+fraud_patterns.json
+
+money_flow.json
+
+account_profiles.json
+
+relationship_dictionary.json
+
+All should agree with each other.
+
+No conflicting information.
+
+---
+
+# Confidence Audit
+
+Review every confidence score.
+
+Ask:
+
+Is High confidence justified?
+
+Should this actually be Medium?
+
+Should this be Low?
+
+Confidence inflation should be avoided.
+
+---
+
+# Explainability Audit
+
+Every conclusion should answer:
+
+What evidence supports it?
+
+Why was this conclusion reached?
+
+Which transactions prove it?
+
+Which accounts are involved?
+
+Which files support it?
+
+If any answer is missing:
+
+Do not include the finding.
+
+---
+
+# Ground Truth Validation Report
+
+Generate:
+
+ground_truth_validation.md
+
+Include:
+
+Files Processed
+
+Statements Processed
+
+Accounts
+
+Transactions
+
+Patterns
+
+Relationships
+
+Money Flows
+
+Warnings
+
+Errors
+
+Limitations
+
+Confidence Summary
+
+Validation Result
+
+---
+
+# Human Investigator Checklist
+
+Produce a checklist for investigators.
+
+Examples:
+
+High-risk accounts requiring review.
+
+Suspicious relationships.
+
+Unusual timelines.
+
+Large unexplained movements.
+
+Potential mule accounts.
+
+Potential layering.
+
+Potential structuring.
+
+Potential circular movement.
+
+Important merchants.
+
+Important beneficiaries.
+
+Accounts requiring manual verification.
+
+---
+
+# Expected Deliverables
+
+At completion the following files should exist:
+
+investigation_report.md
+
+ground_truth.md
+
+ground_truth.json
+
+fraud_patterns.json
+
+money_flow.json
+
+timeline.json
+
+timeline.md
+
+account_profiles.json
+
+customer_profiles.json
+
+merchant_profiles.json
+
+beneficiary_profiles.json
+
+entity_dictionary.json
+
+relationship_dictionary.json
+
+risk_patterns.json
+
+network_patterns.json
+
+payment_method_statistics.json
+
+banking_behaviour.json
+
+summary.json
+
+executive_summary.md
+
+verification_notes.md
+
+ground_truth_validation.md
+
+---
+
+# Comparison Objective
+
+Remember why this Ground Truth exists.
+
+Another software system will later analyze the same dataset.
+
+Its outputs will be compared against these Ground Truth files.
+
+Therefore:
+
+Your responsibility is not to optimize for quantity.
+
+Your responsibility is not to optimize for runtime.
+
+Your responsibility is to create the most accurate and reproducible financial investigation possible.
+
+---
+
+# Constraints
+
+Do NOT generate source code.
+
+Do NOT build APIs.
+
+Do NOT modify project files.
+
+Do NOT create dashboards.
+
+Do NOT train AI models.
+
+Do NOT perform OCR.
+
+Do NOT rewrite extracted transactions.
+
+Do NOT fabricate evidence.
+
+Do NOT fabricate fraud.
+
+Do NOT overfit to one statement.
+
+Do NOT rely on assumptions.
+
+Operate only as an independent financial investigator.
+
+---
+
+# Final Success Criteria
+
+The task is considered successful only if:
+
+✓ Every supported document has been analyzed.
+
+✓ Every meaningful entity has been identified.
+
+✓ Every important relationship has been documented.
+
+✓ Every money-flow chain has been reconstructed where possible.
+
+✓ Every fraud indicator is supported by evidence.
+
+✓ Every confidence score is justified.
+
+✓ Every report is internally consistent.
+
+✓ Every JSON file agrees with every Markdown report.
+
+✓ The Ground Truth can be used as the authoritative benchmark for validating an independent financial investigation engine.
+
+---
+
+# Final Instruction
+
+Think like the lead investigator assigned to reconstruct a complex financial case from documentary evidence.
+
+Do not rush.
+
+Do not speculate.
+
+Be conservative with conclusions.
+
+Be rigorous with evidence.
+
+Produce a Ground Truth that another expert investigator could independently verify and reach the same conclusions.
+
+The resulting Ground Truth should become the definitive reference for evaluating the financial investigation capabilities of our software.
+
+**End of Part 7 – End of Financial Investigation Ground Truth Generation Prompt**

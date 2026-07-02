@@ -1,0 +1,77 @@
+Analysis Summary
+================
+
+Input path: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/outputs/extractions/run_20260630_223630
+Output directory: /Users/tejas.m.s/Automated-Financial-Data-Analysis-System-Survey-Corps-/analysis/outputs/run_20260630_223630
+Run timestamp: 2026-06-30T17:08:46.540718+00:00
+Elapsed seconds: 85.3
+
+Input Contract
+--------------
+Clean rows: 14660
+Flagged rows: 14
+Duplicate rows: 840
+Metadata clean rows: 15500
+Summary-report clean rows: 15500
+Count reconciliation: ok_reconciled_by_duplicates
+Reconciliation detail: Metadata clean_rows includes duplicate rows; final clean CSV excludes duplicates stored separately.
+
+Analysis Scope
+--------------
+Total stored rows: 15514
+Eligible detection rows: 14489
+Excluded rows: 1025
+Accounts: 18
+Graph nodes: 415
+Graph edges: 524
+
+Counterparty Resolution
+-----------------------
+Eligible rows: 14489
+Resolved counterparty rows: 525
+Resolution rate percent: 3.623438470563876
+LLM calls made: 0
+
+Finding Counts
+--------------
+1_duplicate_detection_cross_check: 5000
+2_failed_reversed_transaction_detection: 61
+3_balance_consistency_validation: 171
+4_round_trip_detection: 0
+5_transit_pass_through_detection: 1
+6_accumulation_account_detection: 0
+7_structuring_smurfing_detection: 25
+8_money_flow_graph_construction: 1
+9_circular_flow_multi_hop_cycle_detection: 0
+10_money_trail_tracing: 0
+11_credit_to_cash_out_chains: 2
+12_cross_statement_links: 0
+13_high_throughput_accounts: 3
+14_holding_accounts: 0
+15_hub_ranking: 0
+16_internal_flow_hub: 0
+17_low_value_account_testing: 5
+18_reversal_clusters: 4
+19_round_value_debit_patterns: 18
+20_shared_upi_identifiers: 2
+21_suspicious_account_ranking: 18
+22_llm_investigated_anomalies: 1
+
+Excluded Row Counts
+-------------------
+balance_mismatch: 185
+duplicate: 840
+other: 0
+
+Top Suspicious Accounts
+-----------------------
+24704559049070: total_score=5504.4586, distinct_patterns=7, total_findings=4795
+098030016134598: total_score=1156.0305, distinct_patterns=9, total_findings=69
+18306700003: total_score=988.6149, distinct_patterns=8, total_findings=163
+UNKNOWN-280442153117: total_score=855.4188, distinct_patterns=8, total_findings=37
+99572217148131: total_score=775.9295, distinct_patterns=7, total_findings=56
+00869354051: total_score=775.1909, distinct_patterns=7, total_findings=59
+92883409730: total_score=630.3458, distinct_patterns=6, total_findings=20
+95773447976527: total_score=532.2522, distinct_patterns=5, total_findings=20
+2248145316: total_score=531.6769, distinct_patterns=5, total_findings=23
+50192424882238: total_score=520.4783, distinct_patterns=5, total_findings=11

@@ -5,7 +5,7 @@
 
 ---
 
-## Team — Survey Corps
+## Team - Survey Corps
 
 * Tejas M S
 * Nikhil Santosh
